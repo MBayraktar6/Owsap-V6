@@ -1,0 +1,44 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\smhtower_boss\normal_attack1.GR2"
+MotionDuration           1.000000
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     3
+    Group Event00
+    {
+        MotionEventType      6
+        StartingTime         0.394161
+        
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FlyFileName       "d:/ymir work/effect/monster2/smh_king_n1_throw.msf"
+        FlyPosition       0.000000 0.000000 178.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.384428
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/maze_g_boss_s1_start.mse"
+        EffectPosition       0.000000 0.000000 178.000000
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         0.021411
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bone19"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_n1_fire.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+}

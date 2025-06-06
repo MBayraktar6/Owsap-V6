@@ -1,0 +1,31 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\goblin_eastboss\normal_attack2.GR2"
+MotionDuration           1.466667
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.034615
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bip01 L Hand"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/goblin_eastboss_n2_making.mse"
+        EffectPosition       0.000000 -10.000000 10.000000
+    }
+    Group Event01
+    {
+        MotionEventType      6
+        StartingTime         0.738462
+        
+        AttachingEnable      1
+        AttachingBoneName    "Bip01 L Hand"
+        FlyFileName       "d:/ymir work/effect/monster2/goblin_eastboss_n1_throw.msf"
+        FlyPosition       0.000000 0.000000 0.000000
+    }
+}

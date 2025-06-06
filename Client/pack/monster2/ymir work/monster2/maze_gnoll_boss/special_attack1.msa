@@ -1,0 +1,152 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\maze_gnoll_boss\special_attack1.GR2"
+MotionDuration           2.333333
+
+Group MotionEventData
+{
+    MotionEventDataCount     8
+    Group Event00
+    {
+        MotionEventType      4
+        StartingTime         1.305758
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -350.000000 100.000000
+        }
+    }
+    Group Event01
+    {
+        MotionEventType      4
+        StartingTime         1.373885
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -650.000000 100.000000
+        }
+    }
+    Group Event02
+    {
+        MotionEventType      4
+        StartingTime         1.413625
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -950.000000 100.000000
+        }
+    }
+    Group Event03
+    {
+        MotionEventType      4
+        StartingTime         1.453366
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -1250.000000 100.000000
+        }
+    }
+    Group Event04
+    {
+        MotionEventType      4
+        StartingTime         1.498784
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -1550.000000 100.000000
+        }
+    }
+    Group Event05
+    {
+        MotionEventType      2
+        StartingTime         1.334144
+        
+        DuringTime           0.200000
+        Power                200
+        AffectingRange       200
+    }
+    Group Event06
+    {
+        MotionEventType      1
+        StartingTime         1.260341
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/maze_g_boss_s1_blow.mse"
+        EffectPosition       0.000000 -150.000000 0.000000
+    }
+    Group Event07
+    {
+        MotionEventType      1
+        StartingTime         1.231955
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/maze_g_boss_s1_start.mse"
+        EffectPosition       0.000000 -450.000000 250.000000
+    }
+}

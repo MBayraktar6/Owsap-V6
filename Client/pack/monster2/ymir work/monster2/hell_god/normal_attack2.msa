@@ -1,0 +1,53 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\hell_god\normal_attack2.GR2"
+MotionDuration           1.200000
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      4
+        StartingTime         0.464234
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          2
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           70.000000
+            Position         0.000000 -120.000000 100.000000
+        }
+    }
+    Group Event01
+    {
+        MotionEventType      4
+        StartingTime         0.741606
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          2
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           70.000000
+            Position         0.000000 -120.000000 100.000000
+        }
+    }
+}

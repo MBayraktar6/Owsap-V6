@@ -1,0 +1,52 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\maze_keindog_boss\special_attack1.GR2"
+MotionDuration           2.900000
+
+Group MotionEventData
+{
+    MotionEventDataCount     3
+    Group Event00
+    {
+        MotionEventType      4
+        StartingTime         1.263017
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           150.000000
+            Position         0.000000 -300.000000 80.000000
+        }
+    }
+    Group Event01
+    {
+        MotionEventType      2
+        StartingTime         1.241849
+        
+        DuringTime           0.100000
+        Power                200
+        AffectingRange       200
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         1.206569
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 R Finger0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/maze_boss_s1_blow.mse"
+        EffectPosition       0.000000 -300.000000 0.000000
+    }
+}

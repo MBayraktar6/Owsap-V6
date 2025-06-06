@@ -1,0 +1,52 @@
+ScriptType               MotionData
+
+MotionFileName           "D:/Ymir Work/monster2/whitedragon_cave_s_knight/normal_attack2.GR2"
+MotionDuration           1.500000
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     4
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.529197
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger22"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_s_knight_n2_blow.mse"
+        EffectPosition       0.000000 -300.000000 300.000000
+    }
+    Group Event01
+    {
+        MotionEventType      6
+        StartingTime         0.551095
+        
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger22"
+        FlyFileName       "d:/ymir work/effect/monster2/whitedragon_s_knight_n2.msf"
+        FlyPosition       0.000000 -250.000000 300.000000
+    }
+    Group Event02
+    {
+        MotionEventType      6
+        StartingTime         0.649635
+        
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger22"
+        FlyFileName       "d:/ymir work/effect/monster2/whitedragon_s_knight_n2.msf"
+        FlyPosition       -100.000000 -250.000000 300.000000
+    }
+    Group Event03
+    {
+        MotionEventType      6
+        StartingTime         0.762774
+        
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger22"
+        FlyFileName       "d:/ymir work/effect/monster2/whitedragon_s_knight_n2.msf"
+        FlyPosition       100.000000 -250.000000 300.000000
+    }
+}

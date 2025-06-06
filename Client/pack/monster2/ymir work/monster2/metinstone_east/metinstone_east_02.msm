@@ -1,0 +1,71 @@
+ScriptType            RaceDataScript
+
+BaseModelFileName     "D:\Ymir Work\monster2\metinstone_east\metinstone_east.GR2"
+
+Group ShapeData
+{
+	PathName 		 "D:\Ymir Work\monster2\metinstone_east/"
+	ShapeDataCount			1
+
+	Group ShapeData00
+	{
+		ShapeIndex			0
+
+		Model				"metinstone_east.GR2"
+		SourceSkin			"metinstone_east_01.dds"
+		TargetSkin			"metinstone_east_02.dds"
+	}
+}
+Group AttachingData
+{
+    AttachingDataCount       3
+    
+    Group AttachingData00
+    {
+        AttachingDataType    1
+        
+        isAttaching          1
+        AttachingModelIndex  0
+        AttachingBoneName    "root"
+        
+        CollisionType        1
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           100.000000
+            Position         -30.000000 0.000000 70.000000
+        }
+    }
+    
+    Group AttachingData01
+    {
+        AttachingDataType    1
+        
+        isAttaching          1
+        AttachingModelIndex  0
+        AttachingBoneName    "root"
+        
+        CollisionType        3
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           110.000000
+            Position         -30.000000 0.000000 70.000000
+        }
+    }
+    
+    Group AttachingData02
+    {
+        AttachingDataType    2
+        
+        isAttaching          1
+        AttachingModelIndex  0
+        AttachingBoneName    "root"
+        
+        EffectScriptName     "D:\Ymir Work\effect\background\metinstone_loop_bluegreen.mse"
+        EffectPosition       -30.000000 0.000000 70.000000
+        EffectRotation       0.000000 0.000000 0.000000
+    }
+}

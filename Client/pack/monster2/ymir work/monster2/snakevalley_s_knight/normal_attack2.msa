@@ -1,0 +1,31 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\snakevalley_s_knight\normal_attack2.GR2"
+MotionDuration           1.000000
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      6
+        StartingTime         0.396594
+        
+        AttachingEnable      0
+        AttachingBoneName    "snake L Finger32"
+        FlyFileName       "d:/ymir work/effect/monster2/snakevalley_s_knight_n.msf"
+        FlyPosition       0.000000 50.000000 130.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.408759
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "snake L Finger32"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/snakevalley_s_knight_n_blow.mse"
+        EffectPosition       0.000000 -140.000000 130.000000
+    }
+}

@@ -1,0 +1,31 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\maze_gnoll_magic\normal_attack1.GR2"
+MotionDuration           0.800000
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      6
+        StartingTime         0.334793
+        
+        AttachingEnable      1
+        AttachingBoneName    "Box01"
+        FlyFileName       "d:/ymir work/effect/monster2/maze_gmagic_n1.msf"
+        FlyPosition       0.000000 0.000000 0.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.000000
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Box01"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/maze_gmagic_n1_making.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+}

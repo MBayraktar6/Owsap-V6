@@ -1,0 +1,156 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\smhtower_boss\special_attack1.GR2"
+MotionDuration           2.666667
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     14
+    Group Event00
+    {
+        MotionEventType      8
+        StartingTime         0.129765
+    }
+    Group Event01
+    {
+        MotionEventType      7
+        StartingTime         0.639092
+    }
+    Group Event02
+    {
+        MotionEventType      9
+        StartingTime         0.389294
+    }
+    Group Event03
+    {
+        MotionEventType      1
+        StartingTime         0.107056
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s1_start.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event04
+    {
+        MotionEventType      1
+        StartingTime         0.467153
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s1_end.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event05
+    {
+        MotionEventType      4
+        StartingTime         0.668289
+        DuringTime           0.000000
+        EnableHitProcess     0
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           100.000000
+            Position         0.000000 -150.000000 100.000000
+        }
+    }
+    Group Event06
+    {
+        MotionEventType      1
+        StartingTime         0.622871
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/earth_soldier2_s1_blow.mse"
+        EffectPosition       0.000000 -150.000000 80.000000
+    }
+    Group Event07
+    {
+        MotionEventType      8
+        StartingTime         1.544201
+    }
+    Group Event08
+    {
+        MotionEventType      7
+        StartingTime         1.939984
+    }
+    Group Event09
+    {
+        MotionEventType      9
+        StartingTime         1.80373‬
+    }
+    Group Event10
+    {
+        MotionEventType      1
+        StartingTime         1.521492
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s1_start.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event11
+    {
+        MotionEventType      1
+        StartingTime         1.881589
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s1_end.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event12
+    {
+        MotionEventType      4
+        StartingTime         2.082725‬
+        DuringTime           0.000000
+        EnableHitProcess     0
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           100.000000
+            Position         0.000000 -150.000000 100.000000
+        }
+    }
+    Group Event13
+    {
+        MotionEventType      1
+        StartingTime         2.037307‬
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/earth_soldier2_s1_blow.mse"
+        EffectPosition       0.000000 -150.000000 80.000000
+    }
+}

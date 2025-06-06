@@ -1,0 +1,31 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\maze_keindog_magic\normal_attack2.GR2"
+MotionDuration           0.800000
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      6
+        StartingTime         0.338686
+        
+        AttachingEnable      1
+        AttachingBoneName    "Bip01 R Hand"
+        FlyFileName       "d:/ymir work/effect/monster2/maze_gmagic_n1.msf"
+        FlyPosition       0.000000 0.000000 0.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.019059
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bip01 R Hand"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/maze_gmagic_n1_making.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+}

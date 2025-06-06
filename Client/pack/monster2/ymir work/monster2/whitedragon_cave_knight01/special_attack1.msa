@@ -1,0 +1,44 @@
+ScriptType               MotionData
+
+MotionFileName           "D:/Ymir Work/monster2/whitedragon_cave_knight01/special_attack1.GR2"
+MotionDuration           1.500000
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      4
+        StartingTime         0.496350
+        DuringTime           0.400000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          2
+        StiffenTime          0.000000
+        InvisibleTime        0.500000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           370.000000
+            Position         0.000000 0.000000 185.000000
+        }
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.467153
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Hand"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_knight01_s1_blow.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+}

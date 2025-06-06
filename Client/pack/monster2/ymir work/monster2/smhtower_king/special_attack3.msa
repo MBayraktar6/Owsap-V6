@@ -1,0 +1,425 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\smhtower_king\special_attack3.GR2"
+MotionDuration           3.666667
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     29
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.124899
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bone19"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s2_fire.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.124899
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bone17"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s2_fire.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         0.124899
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bone15"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s2_fire.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event03
+    {
+        MotionEventType      1
+        StartingTime         0.124899
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bone13"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s2_fire.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event04
+    {
+        MotionEventType      1
+        StartingTime         0.124899
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bone11"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s2_fire.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event05
+    {
+        MotionEventType      1
+        StartingTime         0.205191
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s2_making.mse"
+        EffectPosition       0.000000 0.000000 490.000000
+    }
+    Group Event06
+    {
+        MotionEventType      1
+        StartingTime         2.435523
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/maze_g_boss_s1_start.mse"
+        EffectPosition       0.000000 0.000000 490.000000
+    }
+    Group Event07
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_poison.mse"
+        EffectPosition       -800.000000 0.000000 0.000000
+    }
+    Group Event08
+    {
+        MotionEventType      2
+        StartingTime         2.462287
+        
+        DuringTime           1.000000
+        Power                200
+        AffectingRange       300
+    }
+    Group Event09
+    {
+        MotionEventType      4
+        StartingTime         2.649635
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         800.000000 0.000000 0.000000
+        }
+    }
+    Group Event10
+    {
+        MotionEventType      4
+        StartingTime         2.649635
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         -800.000000 0.000000 0.000000
+        }
+    }
+    Group Event11
+    {
+        MotionEventType      4
+        StartingTime         2.649635
+        DuringTime           0.000000
+        EnableHitProcess     0
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         400.000000 700.000000 0.000000
+        }
+    }
+    Group Event12
+    {
+        MotionEventType      4
+        StartingTime         2.649635
+        DuringTime           0.000000
+        EnableHitProcess     0
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         -400.000000 700.000000 0.000000
+        }
+    }
+    Group Event13
+    {
+        MotionEventType      4
+        StartingTime         2.649635
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         400.000000 -700.000000 0.000000
+        }
+    }
+    Group Event14
+    {
+        MotionEventType      4
+        StartingTime         2.649635
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         -400.000000 -700.000000 0.000000
+        }
+    }
+    Group Event15
+    {
+        MotionEventType      4
+        StartingTime         2.649635
+        DuringTime           0.000000
+        EnableHitProcess     0
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         0.000000 0.000000 0.000000
+        }
+    }
+    Group Event16
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_poison.mse"
+        EffectPosition       800.000000 0.000000 0.000000
+    }
+    Group Event17
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_poison.mse"
+        EffectPosition       400.000000 700.000000 0.000000
+    }
+    Group Event18
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_poison.mse"
+        EffectPosition       -400.000000 700.000000 0.000000
+    }
+    Group Event19
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_poison.mse"
+        EffectPosition       400.000000 -700.000000 0.000000
+    }
+    Group Event20
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_poison.mse"
+        EffectPosition       -400.000000 -700.000000 0.000000
+    }
+    Group Event21
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_poison.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event22
+    {
+        MotionEventType      1
+        StartingTime         2.533658
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_drop.mse"
+        EffectPosition       800.000000 0.000000 0.000000
+    }
+    Group Event23
+    {
+        MotionEventType      1
+        StartingTime         2.533658
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_drop.mse"
+        EffectPosition       -800.000000 0.000000 0.000000
+    }
+    Group Event24
+    {
+        MotionEventType      1
+        StartingTime         2.533658
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_drop.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event25
+    {
+        MotionEventType      1
+        StartingTime         2.533658
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_drop.mse"
+        EffectPosition       -400.000000 700.000000 0.000000
+    }
+    Group Event26
+    {
+        MotionEventType      1
+        StartingTime         2.533658
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_drop.mse"
+        EffectPosition       400.000000 700.000000 0.000000
+    }
+    Group Event27
+    {
+        MotionEventType      1
+        StartingTime         2.533658
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_drop.mse"
+        EffectPosition       -400.000000 -700.000000 0.000000
+    }
+    Group Event28
+    {
+        MotionEventType      1
+        StartingTime         2.533658
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smh_king_s3_drop.mse"
+        EffectPosition       400.000000 -700.000000 0.000000
+    }
+}

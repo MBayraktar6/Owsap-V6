@@ -1,0 +1,596 @@
+ScriptType               MotionData
+
+MotionFileName           "D:/Ymir Work/monster2/whitedragon_cave_boss2/special_attack1.GR2"
+MotionDuration           4.333333
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     39
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.258881
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_making.mse"
+        EffectPosition       0.000000 0.000000 300.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         3.074209
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_blow.mse"
+        EffectPosition       0.000000 0.000000 300.000000
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       1500.000000 0.000000 0.000000
+    }
+    Group Event03
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       600.000000 0.000000 0.000000
+    }
+    Group Event04
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       -600.000000 0.000000 0.000000
+    }
+    Group Event05
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       0.000000 600.000000 0.000000
+    }
+    Group Event06
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       0.000000 -600.000000 0.000000
+    }
+    Group Event07
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       -850.000000 850.000000 0.000000
+    }
+    Group Event08
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       850.000000 850.000000 0.000000
+    }
+    Group Event09
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       -850.000000 -850.000000 0.000000
+    }
+    Group Event10
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       850.000000 -850.000000 0.000000
+    }
+    Group Event11
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       0.000000 1500.000000 0.000000
+    }
+    Group Event12
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       0.000000 -1500.000000 0.000000
+    }
+    Group Event13
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       -1500.000000 0.000000 0.000000
+    }
+    Group Event14
+    {
+        MotionEventType      1
+        StartingTime         0.312247
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_circle.mse"
+        EffectPosition       1500.000000 0.000000 0.000000
+    }
+    Group Event15
+    {
+        MotionEventType      2
+        StartingTime         3.138930
+        
+        DuringTime           0.500000
+        Power                300
+        AffectingRange       300
+    }
+    Group Event16
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         600.000000 0.000000 0.000000
+        }
+    }
+    Group Event17
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         -600.000000 0.000000 0.000000
+        }
+    }
+    Group Event18
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.000000
+        EnableHitProcess     0
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         0.000000 600.000000 0.000000
+        }
+    }
+    Group Event19
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         0.000000 -600.000000 0.000000
+        }
+    }
+    Group Event20
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         -850.000000 850.000000 0.000000
+        }
+    }
+    Group Event21
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          2
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         850.000000 850.000000 0.000000
+        }
+    }
+    Group Event22
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         -850.000000 -850.000000 0.000000
+        }
+    }
+    Group Event23
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         850.000000 -850.000000 0.000000
+        }
+    }
+    Group Event24
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         0.000000 1500.000000 0.000000
+        }
+    }
+    Group Event25
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         0.000000 -1500.000000 0.000000
+        }
+    }
+    Group Event26
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         -1500.000000 0.000000 0.000000
+        }
+    }
+    Group Event27
+    {
+        MotionEventType      4
+        StartingTime         3.203650
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           300.000000
+            Position         1500.000000 0.000000 0.000000
+        }
+    }
+    Group Event28
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       600.000000 0.000000 0.000000
+    }
+    Group Event29
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       -600.000000 0.000000 0.000000
+    }
+    Group Event30
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       0.000000 600.000000 0.000000
+    }
+    Group Event31
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       0.000000 -600.000000 0.000000
+    }
+    Group Event32
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       -850.000000 850.000000 0.000000
+    }
+    Group Event33
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       850.000000 850.000000 0.000000
+    }
+    Group Event34
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       -850.000000 -850.000000 0.000000
+    }
+    Group Event35
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       850.000000 -850.000000 0.000000
+    }
+    Group Event36
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       0.000000 1500.000000 0.000000
+    }
+    Group Event37
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       0.000000 -1500.000000 0.000000
+    }
+    Group Event38
+    {
+        MotionEventType      1
+        StartingTime         3.138930
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger11"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/whitedragon_boss2_s1_drop.mse"
+        EffectPosition       -1500.000000 0.000000 0.000000
+    }
+
+}
