@@ -1,0 +1,10 @@
+AreaAmbienceDataFile
+
+Start Object000
+    23081.224609 -31923.164063 15922.997070
+    2293772605
+    9000
+    0.400000
+End Object
+
+ObjectCount 1

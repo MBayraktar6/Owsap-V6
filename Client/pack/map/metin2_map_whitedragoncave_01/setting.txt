@@ -1,0 +1,13 @@
+ScriptType	MapSetting
+
+CellScale	200
+HeightScale	0.500000
+
+ViewRadius	128
+
+MapSize	6	6
+BasePosition	998400	1203200
+TextureSet	textureset\metin2_map_whitedragoncave_01.txt
+Environment	metin2_map_whitedragoncave_01.msenv
+
+TerrainVisible 0

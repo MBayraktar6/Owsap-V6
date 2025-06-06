@@ -1,0 +1,6 @@
+ScriptType MapProperty
+
+MapType "Outdoor"
+
+ParentMapName "map_n_snowm_01"
+

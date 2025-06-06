@@ -1,0 +1,6 @@
+ScriptType MapProperty
+
+MapType "Outdoor"
+
+ParentMapName "map_a2"
+

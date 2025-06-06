@@ -1,0 +1,12 @@
+ScriptType	MapSetting
+
+CellScale	200
+HeightScale	0.500000
+
+ViewRadius	128
+
+MapSize	5	4
+BasePosition	0	1510400
+TextureSet	textureset\metin2_map_whitdragonvalley.txt
+Environment	metin2_map_icecrystalcave.msenv
+
