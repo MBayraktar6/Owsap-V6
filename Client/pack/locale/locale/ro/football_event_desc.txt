@@ -1,0 +1,6 @@
+[DELAY value;0]
+Descriere Eveniment[ENTER]
+Evenimentul Cupa Mondialã a început. Mingiile de[ENTER]
+fotbal nu mai apar în inventarul tãu. Colecteazã cât[ENTER]
+mai multe ºi apoi schimbã-le pentru Mingi de Aur de la[ENTER]
+Yu-Hwan sau foloseºte-le pentru a primi obiecte.

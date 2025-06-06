@@ -1,0 +1,11 @@
+[DELAY value;0]
+Listelenen ödüllerden birini alýrsýn.[ENTER]
+1 turu tamamlamak için 9 ödül toplamalýsýn.[ENTER]
+Tamamlanan turlar için de ödüller alýrsýn.[ENTER]
+Yeni ödülleri belirleyebilmen için en az 1 ödül talep[ENTER]
+etmiþ olmalýsýn.[ENTER]
+6. ve 9. turlarda ödül olarak sýnýrlý kutsama[ENTER]
+alabilirsin.[ENTER]
+Ancak bunlarýn sayýsý etkinlik baþýna sýnýrlýdýr.[ENTER]
+Her karakter, her etkinlikte her kutsamayý yalnýzca 1[ENTER]
+kez alabilir.

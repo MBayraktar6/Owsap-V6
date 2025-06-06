@@ -1,0 +1,12 @@
+1613	Grundstücksverwalter:
+1614	Ich bin nur der Grundstücksverwalter und kann den[ENTER]Preis daher nicht senken. Du benötigst mehr Yang.
+1615	Die Gilde hat das Grundstück erworben!
+1616	Komm wieder, wenn du es dir anders überlegt hast.[ENTER]Und bedenke: Wer zuerst kommt, mahlt zuerst.
+1617	Ich bin Grundstücksverwalter und zuständig für[ENTER]den Verkauf von Landflächen. Bevor die Monster[ENTER]das Land in der Mitte des Kontinents besetzten,[ENTER]hatten wir nicht unter Landknappheit zu leiden[ENTER]und es ging allen gut. Jetzt verkaufe ich das[ENTER]Land nur noch an die Gildenleiter, die es als[ENTER]Gildenland nutzen.[ENTER]Willst du dieses Grundstück kaufen?
+1618	Wie ich schon sagte, kann das Land nicht an jeden[ENTER]verkauft werden.[ENTER]Ich hoffe, du verstehst das.
+1619	Eine Gilde, die bereits Land besitzt, kann kein[ENTER]weiteres Grundstück kaufen.
+1620	Es ist ein Auftragsfehler aufgetreten.
+1621	Um dieses Grundstück kaufen zu können, muss das[ENTER]Gildenlevel über %s liegen.[ENTER]Der Preis beträgt %s.
+1622	Deine Gilde hat dieses Level noch nicht erreicht.[ENTER]Tut mir leid.
+1623	Willst du das Land kaufen?
+1624	Dieses Grundstück wurde bereits an eine andere[ENTER]Gilde verkauft. Tut mir leid.

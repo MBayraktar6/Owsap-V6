@@ -1,0 +1,8 @@
+[DELAY value;0]
+Získal jsi jednu z odmìn na seznamu. Po sebrání[ENTER]
+9 odmìn dokonèíš kolo. Každé dokonèené kolo[ENTER]
+ti dá další odmìny. Musíš sebrat alespoò[ENTER]
+jednu odmìnu, než mùžeš zaèít nové. Za kola[ENTER]
+6 a 9 získáš extra požehnání, ale[ENTER]
+jejich poèet na každou událost je omezen. Každá postava[ENTER]
+mùže získat požehnání pouze jednou za událost.

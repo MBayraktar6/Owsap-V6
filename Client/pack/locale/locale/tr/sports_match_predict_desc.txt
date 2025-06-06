@@ -1,0 +1,6 @@
+[DELAY value;0]
+Seçtiðin takým kazanýrsa ve onlarý daha sýk[ENTER]
+alkýþladýysan daha fazla ödül alýrsýn.[ENTER]
+Ülke Bileti: Þampiyonluk Kupasý karþýlýðýnda[ENTER]
+alýnabilir.[ENTER]
+Alkýþ Bileti: Þampiyonluk sandýðýndan alýnabilir.

@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Rendezvény leírása][ENTER]
+[ENTER]
+Elkezdõdött a Nyári rendezvény![ENTER]
+[ENTER]
+Figyelj arra, hogy csak a Rendezvény felületen található[ENTER]
+Fagylaltgombócok válthatók be.[ENTER]
+[ENTER]
+Látogasd meg Summert a városban, hogy a Fagylaltgombócaid nagyszerû[ENTER]
+jutalmakra válthasd!

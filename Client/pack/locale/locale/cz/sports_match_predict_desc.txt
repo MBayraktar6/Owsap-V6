@@ -1,0 +1,5 @@
+[DELAY value;0]
+Pokud tebou zvolený tým vyhraje, získáš tím více[ENTER]
+odmìn, èím jsi je víckrát podpoøil.[ENTER]
+Lístek zemì: Lze jej získat výmìnou za Cenu turnaje.[ENTER]
+Lístek podpory: Lze jej získat z Truhly turnaje.

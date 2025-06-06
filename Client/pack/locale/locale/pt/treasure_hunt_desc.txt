@@ -1,0 +1,10 @@
+[DELAY value;0]
+Recebes uma das recompensas da lista. Após recolheres[ENTER]
+9 recompensas, concluis uma ronda. Cada ronda[ENTER]
+concluída também te dá recompensas Tens de recolher[ENTER]
+pelo[ENTER]
+menos uma recompensa antes de poderes definir novas.[ENTER]
+Nas[ENTER]
+rondas 6 e 9 podes receber bênçãos extra, mas existe[ENTER]
+um número limitado delas por evento. Cada personagem[ENTER]
+pode receber cada bênção apenas uma vez por evento.

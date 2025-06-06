@@ -1,0 +1,2 @@
+#index	x	y	npc_vnum	enable_helper	icon
+0	8200	46700	10031	1	1

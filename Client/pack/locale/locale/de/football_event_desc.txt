@@ -1,0 +1,6 @@
+[DELAY value;0]
+Event-Beschreibung[ENTER]
+Das Meisterschafts-Event hat begonnen! Fuﬂb‰lle[ENTER]
+erscheinen nicht mehr im Inventar. Sammele so viele du[ENTER]
+kannst und tausche sie bei Yu-Hwan gegen goldene B‰lle[ENTER]
+ein, oder verwende sie, um Gegenst‰nde zu erhalten.

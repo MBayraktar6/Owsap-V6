@@ -1,0 +1,1033 @@
+# achiev_vnum 은 고유값 중복 될수 없음.
+# rank 는 5부터 뒤로 갯수를셈 rank_count (2 면 4,5) (3이면 3,4,5) (5면 1,2,3,4,5)
+# rank 가 없어도 값을 0 으로 세팅필요함.
+# rank_bonus 와 rank_count 갯수는 같아야함 값이 0 이면 카운트 안함.
+# typy 0 = 필드, 1 = 던전
+# 최대 개수 monster 8, rank_bonus 5, apply_type 2
+
+Group info
+{
+	achiev_vnum 1
+	achiev_type 0
+	achiev_rank_count 5
+
+	Group monster
+	{
+		1	151
+		2	152
+	}
+
+	Group rank_bonus
+	{
+		1	7
+		2	13
+		3	25
+		4	30
+		5	40
+	}
+
+	Group apply_type
+	{
+		1	54
+	}
+}
+
+Group info
+{
+	achiev_vnum 2
+	achiev_type 0
+	achiev_rank_count 5
+
+	Group monster
+	{
+		1	151
+		2	152
+		3	191
+	}
+
+	Group rank_bonus
+	{
+		1	5
+		2	10
+		3	25
+		4	35
+		5	50
+	}
+
+	Group apply_type
+	{
+		1	54
+	}
+}
+
+Group info
+{
+	achiev_vnum 3
+	achiev_type 0
+	achiev_rank_count 5
+
+	Group monster
+	{
+		1	191
+		2	192
+		3	193
+		4	194
+	}
+
+	Group rank_bonus
+	{
+		1	5
+		2	10
+		3	15
+		4	20
+		5	25
+	}
+
+	Group apply_type
+	{
+		1	18
+	}
+}
+
+Group info
+{
+	achiev_vnum 4
+	achiev_type 0
+	achiev_rank_count 5
+
+	Group monster
+	{
+		1	153
+		2	154
+		3	155
+	}
+
+	Group rank_bonus
+	{
+		1	15
+		2	30
+		3	55
+		4	75
+		5	100
+	}
+
+	Group apply_type
+	{
+		1	53
+	}
+}
+
+Group info
+{
+	achiev_vnum 5
+	achiev_type 0
+	achiev_rank_count 5
+
+	Group monster
+	{
+		1	391
+		2	393
+		3	394
+	}
+
+	Group rank_bonus
+	{
+		1	60
+		2	80
+		3	110
+		4	150
+		5	200
+	}
+
+	Group apply_type
+	{
+		1	1
+	}
+}
+
+Group info
+{
+	achiev_vnum 6
+	achiev_type 0
+	achiev_rank_count 5
+	Group monster
+	{
+		1	431
+		2	432
+		3	433
+		4	434
+		5	435
+		6	436
+	}
+	Group rank_bonus
+	{
+		1	3
+		2	5
+		3	7
+		4	9
+		5	12
+	}
+	Group apply_type
+	{
+		1	8
+	}
+}
+
+Group info
+{
+	achiev_vnum 7
+	achiev_type 0
+	achiev_rank_count 5
+	Group monster
+	{
+		1	491
+		2	493
+	}
+	Group rank_bonus
+	{
+		1	50
+		2	75
+		3	100
+		4	200
+		5	300
+	}
+	Group apply_type
+	{
+		1	1
+	}
+}
+
+Group info
+{
+	achiev_vnum 8
+	achiev_type 0
+	achiev_rank_count 5
+	Group monster
+	{
+		1	491
+		2	492
+		3	493
+		4	494
+	}
+	Group rank_bonus
+	{
+		1	10
+		2	25
+		3	50
+		4	100
+		5	125
+	}
+	Group apply_type
+	{
+		1	53
+	}
+}
+
+Group info
+{
+	achiev_vnum 9
+	achiev_type 0
+	achiev_rank_count 5
+	Group monster
+	{
+		1	533
+		2	534
+		3	691
+	}
+	Group rank_bonus
+	{
+		1	3
+		2	5
+		3	10
+		4	12
+		5	15
+	}
+	Group apply_type
+	{
+		1	7
+	}
+}
+
+Group info
+{
+	achiev_vnum 10
+	achiev_type 0
+	achiev_rank_count 5
+	Group monster
+	{
+		1	591
+		2	494
+	}
+	Group rank_bonus
+	{
+		1	80
+		2	160
+		3	240
+		4	320
+		5	400
+	}
+	Group apply_type
+	{
+		1	2
+	}
+}
+
+Group info
+{
+	achiev_vnum 11
+	achiev_type 0
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	3091
+		2	3291
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	2
+	}
+	Group apply_type
+	{
+		1	4
+	}
+}
+
+Group info
+{
+	achiev_vnum 12
+	achiev_type 0
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	3491
+		2	3591
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	2
+	}
+	Group apply_type
+	{
+		1	5
+	}
+}
+
+Group info
+{
+	achiev_vnum 13
+	achiev_type 0
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	3191
+		2	3596
+		3	3791
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	2
+	}
+	Group apply_type
+	{
+		1	3
+	}
+}
+
+Group info
+{
+	achiev_vnum 14
+	achiev_type 0
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	3910
+		2	6392
+		3	3891
+		4	6407
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	2
+	}
+	Group apply_type
+	{
+		1	6
+	}
+}
+
+Group info
+{
+	achiev_vnum 15
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	5161
+		2	5162
+		3	5163
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	3
+	}
+	Group apply_type
+	{
+		1	28
+	}
+}
+
+Group info
+{
+	achiev_vnum 16
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2092
+		2	1192
+		3	2402
+		4	2492
+		5	2597
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	3
+	}
+	Group apply_type
+	{
+		1	86
+	}
+}
+
+Group info
+{
+	achiev_vnum 17
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	1093
+		2	1091
+		3	2597
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	3
+	}
+	Group apply_type
+	{
+		1	47
+	}
+}
+
+Group info
+{
+	achiev_vnum 18
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2493
+		2	6116
+		3	6405
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	3
+	}
+	Group apply_type
+	{
+		1	63
+	}
+}
+
+Group info
+{
+	achiev_vnum 19
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	6009
+		2	6109
+		3	6191
+		4	6091
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	2
+	}
+	Group apply_type
+	{
+		1	3
+	}
+}
+
+Group info
+{
+	achiev_vnum 20
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	6405
+		2	6408
+		3	6192
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	3
+	}
+	Group apply_type
+	{
+		1	70
+	}
+}
+
+Group info
+{
+	achiev_vnum 21
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2493
+		2	6191
+		3	6091
+		4	6192
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	1
+		5	3
+	}
+	Group apply_type
+	{
+		1	69
+	}
+}
+
+Group info
+{
+	achiev_vnum 22
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2822
+		2	2792
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	99
+	}
+}
+
+Group info
+{
+	achiev_vnum 23
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2862
+		2	2772
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	100
+	}
+}
+
+Group info
+{
+	achiev_vnum 24
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2802
+		2	2812
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	101
+	}
+}
+
+Group info
+{
+	achiev_vnum 25
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2782
+		2	2842
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	102
+	}
+}
+
+Group info
+{
+	achiev_vnum 26
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2762
+		2	2832
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	103
+	}
+}
+
+Group info
+{
+	achiev_vnum 27
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	2852
+		2	2752
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	104
+	}
+}
+
+Group info
+{
+	achiev_vnum 28
+	achiev_type 0
+	achiev_rank_count 3
+
+	Group monster
+	{
+		1	6699
+		2	6705
+		3	6706
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	1
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	241
+	}
+}
+
+Group info
+{
+	achiev_vnum 29
+	achiev_type 0
+	achiev_rank_count 3
+
+	Group monster
+	{
+		1	6723
+		2	6724
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	1
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	242
+	}
+}
+
+Group info
+{
+	achiev_vnum 30
+	achiev_type 0
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	6749
+		2	6764
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	243
+	}
+}
+
+Group info
+{
+	achiev_vnum 31
+	achiev_type 0
+	achiev_rank_count 3
+
+	Group monster
+	{
+		1	6776
+		2	6783
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	1
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	240
+	}
+}
+
+Group info
+{
+	achiev_vnum 32
+	achiev_type 1
+	achiev_rank_count 3
+
+	Group monster
+	{
+		1	6805
+		2	6815
+		3	6820
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	1
+		4	3
+		5	10
+	}
+	Group apply_type
+	{
+		1	27
+	}
+}
+
+Group info
+{
+	achiev_vnum 33
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	6756
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	239
+	}
+}
+
+Group info
+{
+	achiev_vnum 34
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	7609
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	35
+	}
+}
+
+Group info
+{
+	achiev_vnum 35
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	7610
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	87
+	}
+}
+
+Group info
+{
+	achiev_vnum 36
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	7611
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	36
+	}
+}
+
+Group info
+{
+	achiev_vnum 37
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	7612
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	38
+	}
+}
+
+Group info
+{
+	achiev_vnum 38
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	7613
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	88
+	}
+}
+
+Group info
+{
+	achiev_vnum 39
+	achiev_type 1
+	achiev_rank_count 2
+
+	Group monster
+	{
+		1	7614
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	0
+		4	2
+		5	5
+	}
+	Group apply_type
+	{
+		1	89
+	}
+}
+
+Group info
+{
+	achiev_vnum 40
+	achiev_type 1
+	achiev_rank_count 3
+
+	Group monster
+	{
+		1	6789
+		2	6797
+		3	6791
+	}
+	Group rank_bonus
+	{
+		1	0
+		2	0
+		3	150
+		4	175
+		5	250
+	}
+	Group apply_type
+	{
+		1	53
+	}
+}

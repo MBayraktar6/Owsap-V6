@@ -1,0 +1,8 @@
+[DELAY value;0]
+[Popis události][ENTER]
+[ENTER]
+Letní událost byla zahájena![ENTER]
+[ENTER]
+Nezapomeò, že lze mìnit pouze Kopeèky zmrzliny v UI události.[ENTER]
+[ENTER]
+Navštiv Summer ve mìstì a vymìò Kopeèky zmrzliny za skvìlé odmìny.

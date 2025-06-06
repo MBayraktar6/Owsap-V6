@@ -1,0 +1,40 @@
+1	Alfa Wilki
+2	Przywódca Stada
+3	Unikaty
+4	Tygrys, NiedŸwiedŸ, Dzik
+5	Zemsta Bia³ych Zaprzysiê¿onych
+6	Zemsta Czarnej Burzy
+7	Bracia
+8	Rodzinne Wiêzi
+9	Okrutny i Brutalny
+10	Prawie Nieludzcy
+11	Wieczni Stra¿nicy
+12	Nefrytowi Stra¿nicy
+13	W³adcy Gromistych Gór
+14	K³opoty przy Klifie Gautama
+15	Bracia Ma³piszony
+16	W³adcy Jaskiñ.
+17	Demoniczny
+18	S³udzy Sunga Mahi
+19	Cel Uœwiêca Œrodki
+20	Leœni Stra¿nicy
+21	Genera³owie Sunga Mahi
+22	Zodiak B³yskawicy
+23	Zodiak Ognia
+24	Zodiak Lodu
+25	Zodiak Wiatru
+26	Zodiak Ziemi
+27	Zodiak Mroku
+28	Stra¿nik Równiny
+29	Myr Sunga Mahi
+30	W³adcy Pó³ludzie
+31	Lodowi Stra¿nicy
+32	Jaskiniowe Trio
+33	Jadowita Królowa
+34	P³on¹ca Wie¿a
+35	Zamarzniêta Wie¿a
+36	Elektryczna Wie¿a
+37	Wichrowa Wie¿a
+38	Stabilna Wie¿a
+39	Mroczna Wie¿a
+40	Zag³ada Alastora

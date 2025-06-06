@@ -1,0 +1,40 @@
+1	Silní vlci
+2	Vùdce smeèky
+3	Jedineèný.
+4	Tygr, medvìd, kanec
+5	Pomsta klanu Bílé pøísahy
+6	Pomsta klanu Èerné bouøe
+7	Bratøi
+8	Rodinné záležitosti
+9	Krutý a brutální.
+10	Témìø èlovìk
+11	Vìèní strážci
+12	Nefritoví strážci
+13	Vládci Bouøných hor
+14	Potíže na Útesu Gautama
+15	Opièí strýèci
+16	Vládci jeskynì.
+17	Ïábelský.
+18	Služebníci Sung Mahi
+19	Konec srovná vše
+20	Lesní strážci
+21	Generálové Sung Mahi
+22	Zvìrokruh blesku
+23	Zvìrokruh ohnì.
+24	Zvìrokruh ledu
+25	Zvìrokruh vìtru
+26	Zvìrokruh Zemì.
+27	Zvìrokruh Temnoty
+28	Strážce úrovní.
+29	Quag Sung Mahi
+30	Pololidský vládce
+31	Ledový strážce
+32	Jeskynní trio
+33	Jedovatá královna
+34	Hoøící vìž.
+35	Zmrzlá vìž.
+36	Elektrická vìž.
+37	Bouølivá vìž.
+38	Pevná vìž.
+39	Temná vìž.
+40	Alastorùv konec

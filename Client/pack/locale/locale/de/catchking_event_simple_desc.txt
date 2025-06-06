@@ -1,0 +1,9 @@
+[DELAY value;0]
+1. Pro Spiel kannst du mehrere Decks einsetzen und so die[ENTER]
+entsprechende Anzahl an Truhen gewinnen.[ENTER]
+[ENTER]
+2. Du kannst maximal 5 Königsdecks auf einmal einsetzen.[ENTER]
+[ENTER]
+3. Königsdecks werden nach dem Start nicht rückerstattet.[ENTER]
+[ENTER]
+4. Unter "Regeln" findest du eine ausführliche Spielanleitung.

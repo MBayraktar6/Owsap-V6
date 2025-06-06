@@ -1,0 +1,14 @@
+1	ÚÇÏí	30000
+1	Ãáİ áíáÉ æáíáÉ	30002
+1	ãáß ÇáÔæÇÁ	30003
+1	ŞäÇÕ ÇáßäæÒ	30004
+1	ÔÚáÉ ÇáÊæİíÑ	30005
+1	ÊÇÌÑ ÇáÃÓáÍÉ	30006
+1	ãÊÌÑ ÇáÏÑæÚ	30007
+1	ÇáßíãíÇÆí	30008
+2	ÌÍíã	d:/ymir work/ui/pattern/myshop/fire/p_fire	0xFF976D
+2	ÇáÚÕÑ ÇáÌáíÏí	d:/ymir work/ui/pattern/myshop/ice/p_ice	0xF9F4FF
+2	áİíİÉ	d:/ymir work/ui/pattern/myshop/paper/p_paper	0xFFBF8B
+2	áæÇÁ ÇáÍÑÈ	d:/ymir work/ui/pattern/myshop/ribon/p_ribon	0xFFECD1
+2	ÃÌäÍÉ	d:/ymir work/ui/pattern/myshop/wing/p_wing	0xF1ECE1
+

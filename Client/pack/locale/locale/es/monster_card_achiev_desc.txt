@@ -1,0 +1,40 @@
+1	Lobos alfa
+2	Líderes de la manada
+3	Únicos
+4	Tigre, oso, verraco
+5	Venganza del Juramento Blanco
+6	Venganza de la Tormenta Negra
+7	Hermanos
+8	Cuadrilla familiar
+9	Cruel y brutal
+10	Humanoides
+11	Guardias eternos
+12	Guardias de Nephrit
+13	Soberanos de las Montañas Trueno
+14	Mal del Acantilado de Gautama
+15	Hermanos monos
+16	Señores del los infiernos
+17	Demoníacos
+18	Siervos de Sung Mahi
+19	El fin justifica los medios
+20	Guardias del bosque
+21	Generales de Sung Mahi
+22	Zodíaco del relámpago
+23	Zodíaco del fuego
+24	Zodíaco del hielo
+25	Zodíaco del viento
+26	Zodíaco de la tierra
+27	Zodíaco de la oscuridad
+28	Vigilante de los niveles
+29	Myr de Sung Mahi
+30	Soberano mitad humano
+31	Guardias gélidos
+32	El trío cavernario
+33	La reina venenosa
+34	La torre ardiente
+35	La torre helada
+36	La torre eléctrica
+37	La torre huracanada
+38	La torre terrestre
+39	La torre oscura
+40	Fin de Alastor

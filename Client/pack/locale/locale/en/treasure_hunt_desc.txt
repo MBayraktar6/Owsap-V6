@@ -1,0 +1,8 @@
+[DELAY value;0]
+You receive one of the rewards listed. After collecting[ENTER]
+9 rewards, you will complete a round. Each round[ENTER]
+completed also gives you rewards. You must collect at[ENTER]
+least one reward before you can set new ones. For[ENTER]
+rounds 6 and 9 you can receive extra blessings, but[ENTER]
+these are limited in number per event. Each character[ENTER]
+can receive each blessing only once per event.

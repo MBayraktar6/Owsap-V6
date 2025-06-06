@@ -1,0 +1,7 @@
+[DELAY value;0]
+Descrizione dell'evento[ENTER]
+L'Evento Campionato è iniziato. I palloni non[ENTER]
+compaiono più nell'Inventario. Recuperane il più[ENTER]
+possibile e consegnali a Yu-Hwan: lui ti darà in[ENTER]
+cambio dei Palloni d'oro. In alternativa puoi anche[ENTER]
+usarli per ottenere degli item.

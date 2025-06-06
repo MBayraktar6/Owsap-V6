@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Descrizione dell'evento][ENTER]
+[ENTER]
+L'evento estivo è cominciato![ENTER]
+[ENTER]
+Ricorda: puoi scambiare con delle ricompense solo Palline di gelato[ENTER]
+presenti nella tua interfaccia dell'evento.[ENTER]
+[ENTER]
+Passa da Summer in città per scambiare le Palline di gelato con delle[ENTER]
+fantastiche ricompense.

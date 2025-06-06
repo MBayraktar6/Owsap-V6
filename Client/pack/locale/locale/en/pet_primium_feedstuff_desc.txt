@@ -1,0 +1,7 @@
+[DELAY value;0]
+You can revive your deceased pet by combining Divine[ENTER]
+Protein Bites with your deceased pet.\n[ENTER]
+The number of items required depends on the age of your[ENTER]
+pet.\n[ENTER]
+The deceased pet will be revived with 80% of their original[ENTER]
+age.\n

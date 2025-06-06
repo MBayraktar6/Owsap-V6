@@ -1,0 +1,9 @@
+[DELAY value;0]
+1. You can wager multiple decks per game to win the same number of[ENTER]
+chests.[ENTER]
+[ENTER]
+2. You can wager up to 5 King Decks.[ENTER]
+[ENTER]
+3. King Decks cannot be reclaimed once the game starts.[ENTER]
+[ENTER]
+4. More detailed game instructions can be found under 'Rules'.

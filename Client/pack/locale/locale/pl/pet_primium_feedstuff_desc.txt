@@ -1,0 +1,7 @@
+[DELAY value;0]
+Mo¿esz wskrzesiæ swojego zwierzaka, ³¹cz¹c go z bosk¹[ENTER]
+od¿ywk¹.\n[ENTER]
+Liczba wymaganych do tego przedmiotów zale¿y od wieku[ENTER]
+twojego zwierzaka.\n[ENTER]
+Martwy zwierzak zostanie wskrzeszony z 80% swojego[ENTER]
+pierwotnego wieku. \n

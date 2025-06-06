@@ -1,0 +1,23 @@
+1	Odolnost (váleèník)	jijoong	PASSIVE	Odolnost vùèi útokùm váleèníka (pasivní)	0
+2	Odolnost (Sura)	jijoong	PASSIVE	Odolnost vùèi útokùm Sury (pasivní)	0
+3	Odolnost (ninja)	jijoong	PASSIVE	Odolnost vùèi útokùm ninjy (pasivní)	0
+4	Odolnost (šaman)	jijoong	PASSIVE	Odolnost vùèi útokùm šamana (pasivní)	0
+5	Odolnost (Lykant)	jijoong	PASSIVE	Odolnost vùèi útokùm Lykanta (pasivní)	0
+6	Berserker	pacheon	PASSIVE	Zvýšena hodnota útoku (pasivní)	0
+7	Antimagie	cheonryeong	PASSIVE	Snižuje protivníkovu odolnost proti magii (pasivní)	0
+8	Rychlost	banya	PASSIVE	Èekací doba na znovupoužití schopnosti redukována (pasivní)	0
+9	Výcvik	choehoenbimu	PASSIVE	Zvyšuje šanci na pronikavý zásah (pasivní)	0
+10	Obnova	heal	AUTO	ZB budou obnoveny jakmile spadnou pod 20%	480
+11	Upírství	stealhp	PASSIVE	Vysávání ZB z protivníka (pasivní)	0
+12	Duševno	stealmp	PASSIVE	Vysávání MB z protivníka (pasivní)	0
+13	Bulwark	block	PASSIVE	Fyzické poškození je blokováno (pasivní)	0
+14	Odraz	reflect_melee	PASSIVE	Poškození je odráženo zpìt na protivníka (pasivní)	0
+15	Padání Yangù	gold_drop	PASSIVE	Je zvýšena èetnost padání Yangù (pasivní)	0
+16	Dosah	bow_distance	PASSIVE	Dosah zvýšen (pasivní)	0
+17	Nesmrtelnost	invincibility	AUTO	Šance na doèasnou nesmrtelnost	600
+18	Všelék	removal	AUTO	Šance na vyléèení krvácení, otravy a zpomalení	480
+19	Mistr sládek	potion	PASSIVE	Zvyšuje efektivitu regeneraèního lektvaru (pasivní)	0
+20	Lovec pøíšer	mob_bonus	PASSIVE	Zvyšuje efekt síly proti monstrùm (pasivní)	0
+21	Orlí oèi	exp	PASSIVE	Zvyšuje zisk BZK (pasivní)	0
+22	Vysátí života	hp_recover	PASSIVE	Absorbuje ZB ze zabitých pøíšer (pasivní)	0
+23	Lehký jako pírko	feather	AUTO	Na krátkou dobu aktivuje Našlapování polehouèku	180

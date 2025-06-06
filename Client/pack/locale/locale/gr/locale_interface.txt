@@ -1,0 +1,1344 @@
+ACCEPT	ΟΚ
+ACCE_ABSORB	Απορρόφηση των μπόνους
+ACCE_COMBINE	Συνδυασμός
+ACCE_MAIN	Κορδέλα 1
+ACCE_RESULT	Αποτέλεσμα
+ACCE_SERVE	Κορδέλα 2
+alsoExportToCharset	windows-1253
+ATTACH_METIN_INFO	Θέλεις να χρησιμοποιήσεις έναν Λίθο Πνεύματος;
+ATTACH_METIN_TITLE	Χρήση Λίθου Πνεύματος
+ATTENDANCE_TITLE	Event Κυνηγού Αρχηγών
+ATTR_67_ADD	Προσθήκη μπόνους
+ATTR_67_ADD_TITLE	Προσθήκη μπόνους
+ATTR_67_MATERIAL_SLOT_TITLE	Θραύσματα
+ATTR_67_REGIST_SLOT_TITLE	Αντικείμενο-στόχος
+ATTR_67_SUPPORT_SLOT_TITLE	Συμπλήρωση
+AURA_MAIN	Ρούχα αύρας
+AURA_SUB	Υλικό
+AUTO_AUTO_ATTACK	Επίθεση
+AUTO_AUTO_POSITION	Φίλτρα
+AUTO_AUTO_POTION	Φίλτρα
+AUTO_AUTO_RANGE	Εστίαση
+AUTO_AUTO_RESTART	Αναγέννηση
+AUTO_AUTO_SKILL	Ικανότητες
+AUTO_CLEAR	’δειασμα
+AUTO_END	Σταμάτημα
+AUTO_OFF	Off
+AUTO_ON	On
+AUTO_POSITION_SETTING	Φίλτρα
+AUTO_POTION_SETTING	Φίλτρα
+AUTO_SAVE	Αποθήκευση
+AUTO_SETTING	Ρυθμίσεις
+AUTO_SKILL_SETTING	Ικανότητες
+AUTO_START	Εκκίνηση
+AUTO_TITLE	Αυτ. κυνήγι
+BANNER_ATTENDANCE_BUTTON	Event Κυνηγού Αρχηγών
+BANNER_BATTLE_ROYALE_BUTTON	Battle Royale
+BANNER_BLACK_AND_WHITE_BUTTON	Διαγωνισμός μαντών
+BANNER_CATCHKING_BUTTON	’ρπαξε τον Βασιλιά
+BANNER_EASTER_BUTTON	ΠΑΣΧΑ
+BANNER_FISH_BUTTON	ΠΑΙΧΝΙΔΙ ΨΑΡΟΠΑΖΛ
+BANNER_FLOWER_BUTTON	ΠΑΙΔΙΑ ΤΩΝ ΛΟΥΛΟΥΔΙΩΝ
+BANNER_FOOTBALL_BUTTON	ΠΟΔΟΣΦΑΙΡΟ
+BANNER_FORCE_EVENT	Ηχώ εξουσίας
+BANNER_GOLDEN_LAND_BUTTON	Η Χρυσή Γη
+BANNER_HALLOWEEN_BUTTON	HALLOWEEN
+BANNER_LUCKY_EVENT	ΤΕΡΑΤΑ
+BANNER_METINSTONE_RAIN_EVENT_BUTTON	Πυρετός Metin
+BANNER_MINIBOSS_BUTTON	Ζωδιακή Αποκάλυψη
+BANNER_MONSTERBACK_BUTTON	Εξαργύρωση HP
+BANNER_MYSTERY_BOX_BUTTON	EVENT ΛΕΙΑΣ Ι
+BANNER_MYSTERY_BOX_BUTTON_2	EVENT ΛΕΙΑΣ ΙΙ
+BANNER_NEW_XMAS_BUTTON	ΧΡΙΣΤΟΥΓΕΝΝΑ
+BANNER_OKEY_BUTTON	Event Okey
+BANNER_OLYMPIC_BUTTON	EVENT ΗΡΩΩΝ
+BANNER_OTHER_WORLD_BUTTON	Ταξίδι στον Αλλόκοσμο
+BANNER_RAMADAN_BUTTON	ΡΑΜΑΖΑΝΙ
+BANNER_ROULETTE_BUTTON	Βωμός Αίματος
+BANNER_SNOWFLAKE_STICK_EVENT_BUTTON	Event Χιονονιφάδας
+BANNER_SOUL_BUTTON	EVENT ΨΥΧΩΝ
+BANNER_SPORTS_MATCH_BUTTON	Event Πρωταθλήματος
+BANNER_SUMMER_BUTTON	ΚΑΛΟΚΑΙΡΙΝΟ EVENT
+BANNER_TREASURE_HUNT	Κυνήγι θησαυρού
+BANNER_VALENTINE_BUTTON	ΗΜΕΡΑ ΑΓΙΟΥ ΒΑΛΕΝΤΝΟΥ
+BANNER_WORLD_BOSS_BUTTON	Αρχηγός κόσμου
+BANNER_YUTNORI_BUTTON	Γιουτνόρι
+BATTLE_FIELD_INFO	Ζώνη μάχης
+BATTLE_FIELD_OPERATION_TIME	Η συμμετοχή στη Ζώνη μάχης είναι δυνατή από τις %s:00 ως τις %s:00.
+BATTLE_FIELD_OPERATION_TIME_ALL	Η συμμετοχή είναι δυνατή ανά πάσα στιγμή.
+BATTLE_FIELD_OPERATION_TIME_END	Η Ζώνη μάχης θα είναι ανοιχτή ακόμη %s ώρες.
+BATTLE_FIELD_OPERATION_TIME_NA	Αυτήν τη στιγμή δεν είναι δυνατή η συμμετοχή.
+BATTLE_FIELD_OPERATION_TIME_OPEN	Η συμμετοχή θα είναι και πάλι δυνατή σε %s ώρες για %s ώρες.
+BATTLE_FILED_RANK	Θέση
+BATTLE_FILED_RANK_EMPIRE	Βασίλειο
+BATTLE_FILED_RANK_NAME	Όνομα
+BATTLE_FILED_RANK_POINT	Πόντοι
+BATTLE_ROYALE_APPLICATION_TITLE	Battle Royale
+BATTLE_ROYALE_MAINBUTTON_APPLICATION	Συμμετοχή
+BATTLE_ROYALE_MAINBUTTON_RANKING	Λίστα κατάταξης
+BATTLE_ROYALE_RETURN_TO_TOWN	Επιστροφή στο χωριό
+BELT_INVENTORY_TITLE	Κατάλογος Ζωνών
+BNW_GAME_UI_COM	Εχθροί
+BNW_RANK_UI_COUNT	Αριθμός δωρεών
+BNW_RANK_UI_NAME	Όνομα
+BNW_RANK_UI_RANK	Κατάταξη
+CANCEL	Ακύρωση
+CHANGE_ATTR_SELECT	Αλλαγή μπόνους
+CHANGE_PASSWORD_CONFIRM	Επανάληψη κωδικού
+CHANGE_PASSWORD_NEW	Νέο συνθηματικό
+CHANGE_PASSWORD_OLD	Παλιό συνθηματικό
+CHANGE_PASSWORD_TITLE	Αλλαγή συνθηματικού
+CHARACTER_ACTION	Ενέργειες
+CHARACTER_EMOTICON	Συναίσθημα
+CHARACTER_MAIN	Χαρακτήρας
+CHARACTER_MUTUAL_ACTION	Αλληλεπιδράσεις
+CHARACTER_NORMAL_ACTION	Κανονικές ενέργειες
+CHARACTER_QUEST	Αποστολές
+CHARACTER_SKILL	Ικανότητες
+CHARACTER_SPECTIAL_ACTION	Ειδικές ενέργειες
+CHATTING_SETTING_CANCLE	Ακύρωση
+CHATTING_SETTING_CLEAR	Μηδενισμός
+CHATTING_SETTING_DEFAULT_TITLE	Γενικά
+CHATTING_SETTING_DETAIL	Ρυθμίσεις συστήματος
+CHATTING_SETTING_DICE	Ζάρι
+CHATTING_SETTING_DICE_SETTING	Ρυθμίσεις ζαριού
+CHATTING_SETTING_EXP	Εμπειρία
+CHATTING_SETTING_GOLD	Νόμισμα
+CHATTING_SETTING_GUILD	Συντεχνία
+CHATTING_SETTING_ITEM	Αντικείμενα
+CHATTING_SETTING_LANGUAGE_1	Γλώσσα 1
+CHATTING_SETTING_LANGUAGE_2	Γλώσσα 2
+CHATTING_SETTING_LANGUAGE_3	Γλώσσα 3
+CHATTING_SETTING_LANGUAGE_CUR	Παρούσα γλώσσα (%s)
+CHATTING_SETTING_LANGUAGE_ONOFF	Φίλτρο
+CHATTING_SETTING_LIST	Λίστα
+CHATTING_SETTING_NOTICE	Μήνυμα
+CHATTING_SETTING_PARTY	Ομάδα
+CHATTING_SETTING_SAVE	Αποθήκευση
+CHATTING_SETTING_SHOUT	Συνομιλία καλέσματος
+CHATTING_SETTING_SYSTEM	Σύστημα
+CHATTING_SETTING_TABNAME	Ρυθμίσεις ονόματος συνομιλίας
+CHATTING_SETTING_TALKING	Γενικά
+CHATTING_SETTING_TITLE	Ρυθμίσεις συνομιλίας
+CHAT_FILTER	Φίλτρο συνομιλίας
+CHAT_FILTER_DICE	Ζάρι
+CLOSE	Κλείσιμο
+COMB_APPEARANCE	Παραλήπτης
+COMB_ATTRIBUTE	Πρωτότυπο
+COMB_MAIN	Παραλήπτης
+COMB_MATERIAL	Πρωτότυπο
+COMB_SKILLBOOK_TILE	Ανταλλαγή βιβλίων
+COMB_TITLE	
+COSTUME_TITLE	Φορεσιές
+COSTUME_WINDOW_TITLE	Φορεσιές
+CREATE_ATT_GRADE	STR
+CREATE_CREATE	Δημιούργησε
+CREATE_DEX_GRADE	DEX
+CREATE_HP	VIT
+CREATE_LAST_POINT	Βαθμοί
+CREATE_MAN	’ντρας
+CREATE_NAME	Όνομα
+CREATE_NEXT	Επόμενο
+CREATE_PREV	Πίσω
+CREATE_SEX	Φύλο
+CREATE_SHAPE	Εμφάνιση
+CREATE_SP	INT
+CREATE_STAT_RESET	Επαναφορά
+CREATE_WOMAN	Γυναίκα
+CUBE_INFO_TITLE	Εγχειρίδιο εξευγενισμού
+CUBE_RENEWAL_BELT_IMPROVE	Αύξηση Πιθαν.
+CUBE_RENEWAL_TITLE	Εξευγενισμός
+CUBE_REQUIRE_MATERIAL	Απαιτούμενα υλικά
+CUBE_REQUIRE_MATERIAL_OR	ή
+CUBE_TITLE	Παράθυρο εξευγενισμού
+CURRENT_POINT	Συλλεγμένοι πόντοι: %s
+CZ_REWARD_WINDOW_TITLE	Ζωδιακός Ναός
+DO_CHANGE_ATTR	Εφαρμογή
+DO_REFINE	Εξευγενισμός
+DRAGONSOUL_ACTIVATE	Ενεργοποίηση
+DRAGONSOUL_CHANGE_ATTR_WINDOW_TITLE	Αλλαγή μπόνους μυθικών Δρακόλιθων
+DRAGONSOUL_PAGE_BUTTON_1	Ακατέργαστο
+DRAGONSOUL_PAGE_BUTTON_2	Επεξεργασμένο
+DRAGONSOUL_PAGE_BUTTON_3	Σπάνιο
+DRAGONSOUL_PAGE_BUTTON_4	Αρχαίο
+DRAGONSOUL_PAGE_BUTTON_5	Θρυλικό
+DRAGONSOUL_PAGE_BUTTON_6	Μυθικό
+DRAGONSOUL_REFINE_WINDOW_TITLE	Παράθυρο εξευγενισμού
+DRAGONSOUL_TAP_TITLE_1	Δρακοδιαμάντι
+DRAGONSOUL_TAP_TITLE_2	Δρακορουμπίνι
+DRAGONSOUL_TAP_TITLE_3	Δρακοϊάδης
+DRAGONSOUL_TAP_TITLE_4	Δρακοζαφείρι
+DRAGONSOUL_TAP_TITLE_5	Δρακογρανάτης
+DRAGONSOUL_TAP_TITLE_6	Δρακόνυχας
+DRAGONSOUL_TAP_TITLE_7	Δρακοαμέθυστος
+DRAGONSOUL_TITLE	Αλχημεία Δρακόλιθων
+DRAGON_GATE_AUTO_REINFORCE_TEXT	
+DRAGON_GATE_BASE_NAME	
+DRAGON_GATE_NAME	
+DRAGON_GATE_REINFORCE_TEXT	
+DRAGON_GATE_SIDE_NAME	
+DRAGON_GATE_SIDE_NAME_BY_INDEX	
+DUTCHAUCTION_BUTTON	Πάμε
+DUTCHAUCTION_TITLE	SALE
+EMPIRE_A	Shinsoo
+EMPIRE_ALL	Όλα
+EMPIRE_B	Chunjo
+EMPIRE_C	Jinno
+EMPIRE_EXIT	Έξοδος
+EMPIRE_NEXT	Επόμενο
+EMPIRE_PREV	Πίσω
+EMPIRE_SELECT	Επιλογή
+END_TIME	Τρέχον event
+ENTER_BATTLE_FIELD	Συμμετοχή
+EQUIPMENT_SLOT_1	Πρώτη σελίδα εξοπλισμού
+EQUIPMENT_SLOT_2	Δεύτερη σελίδα εξοπλισμού
+EVENT_ALARM_TITLE	Επισκόπηση event:
+EVENT_NAME_TITLE	Όνομα
+EVENT_REWARD_CHECK	Προβολή
+EVENT_REWARD_LIST_TITLE	Ανταμοιβή
+EVENT_REWARD_TITLE	Ανταμοιβή
+EXCHANGE_ACCEPT	ΟΚ
+EXCHANGE_TITLE	Εμπόριο
+EXIT_BATTLE_FIELD	Θέλεις πράγματι να εγκαταλείψεις την Ζώνη μάχης;
+EXIT_BATTLE_FIELD_ON_DEAD	Θέλεις να εγκαταλείψεις τη Ζώνη μάχης με %d πόντους;
+EXPIRED_TIME	Το event ολοκληρώθηκε.
+FISHING_RENEWAL_TITLE	Ψάρεμα
+FLOWER_EVENT_EXCHANGE_BUTTON_TEXT	Ανταλλαγή
+FLOWER_EVENT_SHOOT_CHRYSANTHEMUM_TEXT	Βλαστάρια Χρυσάνθεμου
+FLOWER_EVENT_SHOOT_DAFFODIL_TEXT	Βλαστάρια Νάρκισσου
+FLOWER_EVENT_SHOOT_LILY_TEXT	Βλαστάρια Κρίνου
+FLOWER_EVENT_SHOOT_MAY_BELL_TEXT	Βλαστάρια Μιγκέ
+FLOWER_EVENT_SHOOT_SUNFLOWER_TEXT	Βλαστάρια Ηλίανθου
+FLOWER_EVENT_TITLE	Βλαστάρια στον κατάλογο
+FOOTBALL_EVENT_TITLE	Event Ποδοσφαίρου
+FOOTBALL_USE_BUTTON	Χρήση
+FORCE_EVENT_FORCE_MENU_TYPE	Ηχώ
+FORCE_EVENT_FORCE_PLAY_TIME	Χρόνος παιχνιδιού
+FORCE_EVENT_TITLE	Ηχώ εξουσίας
+FRAGMENT_COMB_TITLE	Συνδυασμός Βιβλίων Ικανοτήτων
+GAMEOPTION_TITLE	Επιλογές Παιχνιδιού
+GAME_EXIT_OBSERVER	Τέλος Observer Mode
+GAME_GUILD_WAR_JOIN	Συμμετοχή στον Πόλεμο Συντεχνιών
+GAME_HELP	Βοήθεια
+GAME_QUEST	Αποστολές
+GAME_SKILL_UP	Αύξηση ικανοτήτων
+GAME_STAT_UP	Αύξηση Κατάστασης
+GEMSHOP_LEFTTIME	Υπολειπόμενος χρόνος
+GEMSHOP_TITLA	ΕΜΠΟΡΙΟ GAYA
+GOLDEN_LAND_EVENT_POSSESSION_COUNT	Ποσότητα
+GOLDEN_LAND_EVENT_TITLE	Εκστρατεία Πρωταρχικού
+GOLDEN_LAND_EVENT_TREE_FRUIT_TOOLTIP	Στον Έμπορο Καραβανιού μπορείς να ανταλλάσσεις τα Πικρά Μούρα που βρήκες στα επίπεδα με Χρυσά Μούρα.
+GOLDEN_LAND_EVENT_YELLOW_FRUIT_TOOLTIP	Στον Έμπορο Καραβανιού μπορείς να ανταλλάσσεις τα Πικρά Μούρα που βρήκες στα επίπεδα με Χρυσά Μούρα.
+GOLDEN_LAND_FIND_GOLDEN_FRUIT_FIND_CARD	Αποκάλυψη πεδίων
+GOLDEN_LAND_FIND_GOLDEN_FRUIT_NEED_YELLOW_FRUIT_COUNT	Απαιτούμενα Μούρα:
+GOLDEN_LAND_FIND_GOLDEN_FRUIT_REWARD	Ανταμοιβή
+GOLDEN_LAND_FIND_GOLDEN_FRUIT_TITLE	Η Αναζήτηση Χρυσών Μούρων
+GOLDEN_LAND_FIND_GOLDEN_FRUIT_TOOLTIP_RESET	Μηδενισμός
+GOLDEN_LAND_FIND_GOLDEN_FRUIT_YELLOW_FRUIT_COUNT	Χρυσά Μούρα που έχεις:
+GOLDEN_LAND_STAGE_EXIT_BUTTON	Έξοδος
+GOLDEN_LAND_STAGE_EXIT_QUESTION	Θέλεις στ' αλήθεια να τα παρατήσεις; Θα τηλεμεταφερθείς πίσω στη Χρυσή Γη.
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_1	Επίπεδο 1
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_2	Επίπεδο 2
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_3	Επίπεδο 3
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_4	Επίπεδο 4 (Όαση)
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_5	Επίπεδο 5
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_6	Επίπεδο 6
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_7	Επίπεδο 7
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_8	Επίπεδο 8 (Όαση)
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_9	Επίπεδο 9
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_10	Επίπεδο 10
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_11	Επίπεδο 11
+GOLDEN_LAND_STAGE_NUMBER_TOOLTIP_12	Επίπεδο 12 (Όαση)
+GOLDEN_LAND_STAGE_REMAIN_TIME	%d λεπτά
+GOLDEN_LAND_STAGE_REMAIN_TIME_1M	Κάτω από 1 λεπτό
+GRADE	Βαθμίδα
+GRADE_SELECT	Βαθμίδα
+GRAPHICONOFF_DROP_ITEM_APPLY	Εφαρμογή
+GRAPHICONOFF_DROP_ITEM_LEVEL	Ρίψη αντικειμένων
+GRAPHICONOFF_DROP_ITEM_LEVEL1	1
+GRAPHICONOFF_DROP_ITEM_LEVEL1_TOOLTIP	Προβολή εφέ & ονόματος
+GRAPHICONOFF_DROP_ITEM_LEVEL2	2
+GRAPHICONOFF_DROP_ITEM_LEVEL2_TOOLTIP	Απόκρυψη εφέ
+GRAPHICONOFF_DROP_ITEM_LEVEL3	3
+GRAPHICONOFF_DROP_ITEM_LEVEL3_TOOLTIP	Απόκρυψη εφέ & ονόματος
+GRAPHICONOFF_DROP_ITEM_LEVEL4	4
+GRAPHICONOFF_DROP_ITEM_LEVEL4_TOOLTIP	Απόκρυψη αντικειμένων & Όνομα με άγγιγμα ποντικιού
+GRAPHICONOFF_DROP_ITEM_LEVEL5	5
+GRAPHICONOFF_DROP_ITEM_LEVEL5_TOOLTIP	Να μην προβάλλονται αντικείμενα & ονόματα
+GRAPHICONOFF_EFFECT_APPLY	Εφαρμογή
+GRAPHICONOFF_EFFECT_LEVEL	Εφέ
+GRAPHICONOFF_EFFECT_LEVEL1	1
+GRAPHICONOFF_EFFECT_LEVEL1_TOOLTIP	Προβολή όλων
+GRAPHICONOFF_EFFECT_LEVEL2	2
+GRAPHICONOFF_EFFECT_LEVEL2_TOOLTIP	Μόνο δικά σου κι εφέ τεράτων
+GRAPHICONOFF_EFFECT_LEVEL3	3
+GRAPHICONOFF_EFFECT_LEVEL3_TOOLTIP	Μόνο δικά σου κι εφέ άλλων παικτών
+GRAPHICONOFF_EFFECT_LEVEL4	4
+GRAPHICONOFF_EFFECT_LEVEL4_TOOLTIP	Προβολή μόνο δικών σου
+GRAPHICONOFF_EFFECT_LEVEL5	5
+GRAPHICONOFF_EFFECT_LEVEL5_TOOLTIP	Να μην προβάλλεται κανένα
+GRAPHICONOFF_NPC_NAME_STATUS	Όνομα NPC
+GRAPHICONOFF_NPC_NAME_STATUS_OFF	Off
+GRAPHICONOFF_NPC_NAME_STATUS_OFF_TOOLTIP	Απόκρυψη ονόματος NPC
+GRAPHICONOFF_NPC_NAME_STATUS_ON	On
+GRAPHICONOFF_NPC_NAME_STATUS_ON_TOOLTIP	Προβολή ονόματος NPC
+GRAPHICONOFF_PET_STATUS	Κατοικίδια
+GRAPHICONOFF_PET_STATUS_OFF	Off
+GRAPHICONOFF_PET_STATUS_OFF_TOOLTIP	Απόκρυψη κατοικιδίου
+GRAPHICONOFF_PET_STATUS_ON	On
+GRAPHICONOFF_PET_STATUS_ON_TOOLTIP	Προβολή κατοικιδίου
+GRAPHICONOFF_PRIVATE_SHOP_APPLY	Εφαρμογή
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL	Ιδιωτικά καταστήματα
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL1	1
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL1_TOOLTIP	Προβολή όλων
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL2	2
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL2_TOOLTIP	Προβολή όλων σε μεγάλη περιφέρεια
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL3	3
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL3_TOOLTIP	Προβολή όλων σε μεσαία περιφέρεια
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL4	4
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL4_TOOLTIP	Προβολή όλων σε κοντινή περιφέρεια
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL5	5
+GRAPHICONOFF_PRIVATE_SHOP_LEVEL5_TOOLTIP	Προβολή όλων σε άμεση περιφέρεια
+GUILDWINDOW_BASE_BUFF	Μπόνους συντεχνίας
+GUILD_ATTENDANCE_LOCA1	Πρώτη συμμετοχή: 1x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA2	10 ή περισσότερες: 1x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA3	20 ή περισσότερες: 2x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA4	30 ή περισσότερες: 4x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA5	40 ή περισσότερες: 6x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA6	50 ή περισσότερες: 8x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA7	60 ή περισσότερες: 10x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA8	70 ή περισσότερες: 12x Μετάλλιο Θάρρους
+GUILD_ATTENDANCE_LOCA9	Εκκίνηση συμμετοχής: Καθημερινά στις 5:00
+GUILD_ATTENDANCE_TITLE	Ανταμοιβή συμμετοχής
+GUILD_BANKINFO_CLOSE	Κλείσιμο
+GUILD_BANKINFO_NAME	Μέλος
+GUILD_BANKINFO_TITLE	Αρχείο Αποθήκης συντεχνίας
+GUILD_BANKINFO_TYPE	Αντικείμ./Νόμισμα
+GUILD_BANKINFO_USETYPE	Προσφορά
+GUILD_BANK_CLOSE	Κλείσιμο
+GUILD_BANK_INFO	Σελ. αποθ.:
+GUILD_BASEINFO_BANK	Αποθήκη συντεχνίας
+GUILD_BASEINFO_BANKLASTOUT	Τελ. ανάλ. αντ.
+GUILD_BASEINFO_BUILDING	Κτίριο συντεχνίας
+GUILD_BASEINFO_FACTORY	Σιδεράς συντεχνίας
+GUILD_BASEINFO_GUILDLAND	Γη συντεχνίας
+GUILD_BASEINFO_LANDSCAPE	’λλα
+GUILD_BASEINFO_LOCALE	Τοποθεσία
+GUILD_BASEINFO_MONEY	Κατάσταση λογαριασμού
+GUILD_BASEINFO_MONEYBANKINFO	Πληροφορίες τράπεζας συντεχνίας
+GUILD_BASEINFO_MONEYLASTOUT	Τελευταία ανάληψη
+GUILD_BASEINFO_POWER	Βωμός της Δύναμης
+GUILD_BASEINFO_SMEITER	Αλχημιστής συντεχνίας
+GUILD_BASEINFO_TITLE	Στοιχεία γης
+GUILD_BASENAME	Βασικό Όνομα
+GUILD_BATTLE_AREA_MOVE_BUTTON	Τηλεμεταφορά
+GUILD_BATTLE_RANK_BOARD	Λίστα κατάταξης
+GUILD_BATTLE_RANK_BOARD_MOB_KILL	MOB\nKills
+GUILD_BATTLE_RANK_BOARD_NAME	Όνομα
+GUILD_BATTLE_RANK_BOARD_PC_DEAD	Θάνατοι\nπαικτών
+GUILD_BATTLE_RANK_BOARD_PC_KILL	Kills\nπαικτών
+GUILD_BATTLE_RANK_BOARD_RANK	Θέση
+GUILD_BATTLE_RANK_BOARD_TEAM	Ομάδα
+GUILD_BATTLE_RESULT_BOARD	Αποτελέσματα Μάχης συντεχνίας
+GUILD_BATTLE_RESULT_BOARD_EXIT	Έξοδος
+GUILD_BATTLE_RESULT_BOARD_RANKING	Κατάταξη
+GUILD_BATTLE_STATUS_BOARD	Λίστα κατάταξης
+GUILD_BOARD_ID	Όνομα
+GUILD_BOARD_REFRESH	Ανανέωση
+GUILD_BOARD_TEXT	Μήνυμα
+GUILD_BUILDING_CATEGORY_TITLE	Κατηγορίες Κτιρίων
+GUILD_BUILDING_CHANGE	Αλλαγή
+GUILD_BUILDING_CHANGE_DELETE	Διαγραφή
+GUILD_BUILDING_CHANGE_FIX	Αναμόρφωση συντεχνίας
+GUILD_BUILDING_CHANGE_LIST	Λίστα αντικειμένων συντεχνίας
+GUILD_BUILDING_DIRECTION	Κατεύθυνση
+GUILD_BUILDING_FIX	Αναμόρφωση
+GUILD_BUILDING_GRADE	Βαθμός
+GUILD_BUILDING_INFO	Πληροφορίες Κτιρίων και Κόστους
+GUILD_BUILDING_LIST_TITLE	Λίστα Κτιρίων
+GUILD_BUILDING_LOG	Κούτσουρο
+GUILD_BUILDING_NAME	Όνομα Κτιρίου
+GUILD_BUILDING_OPERATE	Λειτουργία
+GUILD_BUILDING_PLY	Καπλαμάς
+GUILD_BUILDING_POSITION	Θέση
+GUILD_BUILDING_PREVIEW	Προεπισκόπηση
+GUILD_BUILDING_PRICE	Τιμή
+GUILD_BUILDING_REFRESH	Ανανέωση
+GUILD_BUILDING_STONE	Λίθος
+GUILD_BUILDING_TITLE	Κτίριο Συντεχνίας
+GUILD_CRYSTAL	Κρύσταλλος
+GUILD_DEPOSIT	Κατάθεση
+GUILD_DONATE_BUTTON_OVER_TEXT	Τυχαίο Αντικείμενο
+GUILD_DONATE_COUNT	Διαθέσιμες δωρεές: %d/%d
+GUILD_DONATE_GET_MEDAL_OF_HONOR	%d
+GUILD_DONATE_GUILD_EXP	ΕΜΠ συντεχνίας
+GUILD_DONATE_HIGH_MATERIAL	Υψηλή δωρεά
+GUILD_DONATE_MEDAL_OF_HONOR	Μετάλλιο θάρρους
+GUILD_DONATE_MIDDLE_MATERIAL	Μεσαία δωρεά
+GUILD_DONATE_MY_MEDAL_OF_HONOR	Τα Μετάλλια θάρρους μου
+GUILD_DONATE_NORMAL_MATERIAL	120.000 Yang
+GUILD_DONATE_TAB_HIGH	Υψηλή δωρεά
+GUILD_DONATE_TAB_MIDDLE	Μεσαία δωρεά
+GUILD_DONATE_TAB_NORMAL	Μικρή δωρεά
+GUILD_DONATE_TITLE	ΕΜΠ δωρεών
+GUILD_DRAGONLAIR_RANKING	Λίστα κατάταξης
+GUILD_DRAGONLAIR_RANKING_COUNT	Θέση
+GUILD_DRAGONLAIR_RANKING_MEMBER	Μέλη
+GUILD_DRAGONLAIR_RANKING_NAME	Συντεχνία
+GUILD_DRAGONLAIR_RANKING_TIME	Χρόνος
+GUILD_DROP_RESOURCE1	εδώ
+GUILD_DROP_RESOURCE2	Πέταγμα πρώτης ύλης
+GUILD_GEM	Πετράδι
+GUILD_GRADE_CHANGE_GRADE_NAME	Νέο όνομα Βαθμού
+GUILD_GRADE_NUM	Βαθμός
+GUILD_GRADE_PERMISSION_BANK	Μπορεί να χρησιμοποιεί την τράπεζα και την αποθήκη συντεχνίας.
+GUILD_GRADE_PERMISSION_DELETE	Αφαίρεση από τη συντεχνία
+GUILD_GRADE_PERMISSION_JOIN	Μπορεί να δέχεται νέα μέλη στη συντεχνία.
+GUILD_GRADE_PERMISSION_NOTICE	Μπορεί να αφήνει σημειώσεις συντεχνίας.
+GUILD_GRADE_PERMISSION_SKILL	Ικανότητες συντεχνίας
+GUILD_GRADE_PERMISSION_WAR	Μπορεί να επιλέγει μέλη, που θα συμμετέχουν ως πολεμιστές.
+GUILD_GRADE_RANK	Βαθμός
+GUILD_GRADE_WRITE	Γράψιμο
+GUILD_INFO	Πληροφορίες Συντεχνίας
+GUILD_INFO_CUR_EXP	Εμπειρία
+GUILD_INFO_DECALRE_WAR	Κήρυξη Πολέμου
+GUILD_INFO_ENEMY_GUILD	Εχθρική Συντεχνία
+GUILD_INFO_ENEMY_GUILD_EMPTY	Κενό
+GUILD_INFO_LEVEL	Επίπεδο Συντεχνίας
+GUILD_INFO_MARK	Σήμα Συντεχνίας
+GUILD_INFO_MASTER	Ηγέτης
+GUILD_INFO_MASTER_VALUE	Ηγέτης
+GUILD_INFO_MEMBER_AVG_LEVEL	Μέσο Επίπεδο
+GUILD_INFO_MEMBER_NUM	Αριθμός μελών
+GUILD_INFO_NAME	Όνομα Συντεχνίας
+GUILD_INFO_NAME_VALUE	Αυτό είναι Όνομα Συντεχνίας
+GUILD_INFO_OFFER_EXP	Επένδυσε
+GUILD_INFO_REST_EXP	Απαιτούμενη Εμπ.
+GUILD_INFO_UPLOAD_MARK	Upload Σήμα
+GUILD_INFO_UPLOAD_SYMBOL	Upload Σημαία
+GUILD_MARK	Σήμα Συντεχνίας
+GUILD_MASTER_CHANGE_TITLEBAR	Παράδοση αρχηγίας συντεχνίας
+GUILD_MEMBER_JOB	Κλάση
+GUILD_MEMBER_KNIGHT	Πολεμιστής
+GUILD_MEMBER_LEVEL	Επίπεδο
+GUILD_MEMBER_NAME	Όνομα
+GUILD_MEMBER_OUT_TITLEBAR	Αφαίρεση μέλους
+GUILD_MEMBER_PACE_ATTENDANCE	Συμμετοχή ({0}/{1})
+GUILD_MEMBER_RANK	Βαθμός
+GUILD_MEMBER_SPECIFIC_GRAVITY	Επενδ.
+GUILD_METIN_STONE	Λίθος Metin
+GUILD_MINENAL	Μετάλλευμα
+GUILD_MONEY	Yang
+GUILD_NAME	Συντεχνία
+GUILD_RESOURCE_INFO	Πληροφορίες Πόρων
+GUILD_SKILLPAGE_LADDER	Πόντοι κατάταξης
+GUILD_SKILLPAGE_RANK	Θέση
+GUILD_SKILL_ACTIVE	Ενεργητικό
+GUILD_SKIlL_HEAL_GSP	Αναπλήρωση
+GUILD_SKILL_PASSIVE	Παθητικό
+GUILD_SKILL_POWER	Ενέργεια
+GUILD_SKILL_STATE	Ικανότητα Συντεχνίας
+GUILD_SYMBOL	Σημαία Συντεχνίας
+GUILD_WAR_ACCEPT	Αποδοχή κήρυξης Πολέμου Συντεχνιών
+GUILD_WAR_ALLSCORE	Όλες οι μάχες
+GUILD_WAR_BATTLE_TYPE	Τύπος Μάχης
+GUILD_WAR_CTF	Σημαία
+GUILD_WAR_DECLARE	Κήρυξε Πόλεμο Συντεχνιών
+GUILD_WAR_ENEMY	Εχθροί
+GUILD_WAR_GAINSCORE	Πόντοι
+GUILD_WAR_GAINSCORE_FIFTY	50
+GUILD_WAR_GAINSCORE_HUNDRED	100
+GUILD_WAR_GAINSCORE_THIRTY	30
+GUILD_WAR_GAMETIME	Χρόνος μάχης
+GUILD_WAR_GAMETIME_SIXTY	60 λεπ.
+GUILD_WAR_GAMETIME_TEN	10 λεπ.
+GUILD_WAR_GAMETIME_THIRTY	30 λεπ.
+GUILD_WAR_JOINMEMBER	Μέλη
+GUILD_WAR_JOINMEMBER_COUNT	Μέλη
+GUILD_WAR_JOINMEMBER_FIFTEEN	15
+GUILD_WAR_JOINMEMBER_FIVE	5
+GUILD_WAR_JOINMEMBER_TEN	10
+GUILD_WAR_NORMAL	Στάδιο
+GUILD_WAR_REPORT	Επισκόπηση πολέμου
+GUILD_WAR_REPORTLIST	Επισκόπηση (Μάχες: Μ, Νίκες: Ν, Ήττες: Η, Ισοπαλίες: Ι)
+GUILD_WAR_SCORE	Επισκόπηση πολέμου
+GUILD_WAR_SKILL	Ικανότητες συντεχνίας
+GUILD_WAR_TYPE_DEFENSE	Μάχη ασπίδων
+GUILD_WAR_TYPE_DIE	Μάχη αρένας
+GUILD_WAR_TYPE_FLAG	Μάχη σημαίας
+GUILD_WAR_TYPE_NORMAL	Μάχη πεδίου
+GUILD_WAR_TYPE_TIGER	Μάχη καταστροφής
+GUILD_WAR_TYPE_TIME	Επίθεση χρόνου
+GUILD_WAR_WARP	Αρένα
+GUILD_WAR_WIN	Γύροι
+GUILD_WAR_WIN_FIVE	5
+GUILD_WAR_WIN_ONE	1
+GUILD_WAR_WIN_THREE	3
+GUILD_WATER	Νερό
+GUILD_WATER_STONE	Νερόλιθος
+GUILD_WITHDRAW	Πάρε
+HELP_ATTACK	Ενεργοποιεί την μεμονωμένη επίθεση με ένα κλικ.
+HELP_ATTACK_KEY	Επίθεση: αριστερό κουμπί ποντικιού ή πλήκτρο space
+HELP_AUTO_ATTACK	Ενεργοποιεί την αυτόματη επίθεση με ένα κλικ.
+HELP_CAMERA	Κάμερα
+HELP_CHANGE_PK_MODE	Αλλαγή τρόπου επίθεσης: αλλαγή ρύθμισης αριστερού ποντικιού
+HELP_CHARACTER_BUTTON1	(Παράθυρο Χαρακτ., Παράθυρο Καταλ.,
+HELP_CHARACTER_BUTTON2	Λίστα φίλων και Ρυθμίσεις)
+HELP_CHAT	Για να μιλήσεις με την αντίστοιχη ομάδα, γράψε μπροστά από το κείμενό σου: !(Συνομιλία με περιβάλλον), #(Συνομιλία ομάδας) oder %(Συνομιλία συντεχνίας).
+HELP_CLICK_OTHER_PLAYER	Με δεξί κλικ σε άλλον παίκτη μπορείς να κάνεις εμπόριο, να ιδρύσεις ομάδες και να προκαλέσεις κάποιον σε μονομαχία.
+HELP_CONTROL_CAMERA_BY_MIDDLEBUTTON	Θέση κάμερας: μεσαίο κουμπί ποντικιού
+HELP_CONTROL_CAMERA_BY_RIGHTBUTTON	Αλλαγή θέσης κάμερας: δεξί ή αριστερό κουμπί ποντικιού
+HELP_EMOTINO	Με τους συνδυασμούς πλήκτρων <CTRL> + <1~9> μπορείς να δείχνεις τα συναισθήματά σου.
+HELP_EXP	Εμπειρία
+HELP_FURY	Ingame Item Shop
+HELP_GUILD_WINDOW	’νοιγμα παραθύρου: Alt + G
+HELP_HELP	Προβολή βοήθειας: Η
+HELP_HELP_KEY	Στη βοήθεια εμφανίζονται οι συνήθεις ρυθμίσεις.
+HELP_HP	HP
+HELP_KEYSETTING	Στις ρυθμίσεις παιχνιδιού μπορείς να καθορίσεις δικούς σου συνδυασμούς πλήκτρων.
+HELP_MESSENGER_WINDOW	’νοιγμα λίστας φίλων: Alt + M
+HELP_MINIMAP	Προβάλλει τον μίνι χάρτη.
+HELP_MINIMAP_QUEST	Στον Μικρό και Μεγάλο χάρτη, τα σημεία αποστολών θα αναβοσβήνουν.
+HELP_MOUSE_LEFT	Λειτουργία αριστερού κουμπιού στο ποντίκι
+HELP_MOUSE_RIGHT	Λειτουργία δεξιού κουμπιού στο ποντίκι
+HELP_MOVE_KEY	Κίνηση: W, A, S, D ή βέλη
+HELP_OFF_QUESTSCROLL	Με <CTRL> + Q μπορείς να προβάλλεις και να κρύβεις τους παπύρους αποστολών.
+HELP_OPEN_CHARACTER	’νοιγμα παραθύρου χαρακτήρα: C
+HELP_OPEN_CHAT	’νοιγμα παραθύρου chat: Enter
+HELP_OPEN_INVENTORY	’νοιγμα παραθύρου καταλόγου: I
+HELP_OPEN_LOG	Εμφάνιση Chatlog: L
+HELP_OPEN_MINIMAP	’νοιγμα μικρού χάρτη: Shift + M
+HELP_OPEN_QUEST	’νοιγμα παραθύρου αποστολών: Ν
+HELP_OPEN_SKILL	’νοιγμα παραθύρου ικανοτήτων: V
+HELP_OPEN_WHISPER	’νοιγμα παραθύρου Ψιθύρων: Shift + Enter
+HELP_OPEN_ZONEMAP	’νοιγμα μεγάλου χάρτη: M
+HELP_PICK_ITEM	Συλλογή αντικειμένων: Z, ~ ή αριστερό κλικ
+HELP_QUICKSLOT	Πεδία Γρήγορης Πρόσβασης
+HELP_SCREEN_CAPTURE	Αποθήκευση στιγμιότυπου: PrtSc (τόπος αποθήκευσης: Φάκελος «Metin2\screenshot»)
+HELP_SERVER	Σου προβάλλει τον σέρβερ και το κανάλι.
+HELP_SHOW_ALL_NAME	Εμφάνιση ονομάτων: Alt
+HELP_SKILL	Από εδώ μπορείς να χρησιμοποιήσεις την ικανότητά σου με δεξί κλικ.
+HELP_SP	SP
+HELP_SYSTEM_BUTTON	Κουμπιά Συστήματος
+ICECREAM_EVENT_TITL	Καλοκαιρινό event
+INVENTORY_PAGE_BUTTON_TOOLTIP_1	1ος Κατάλογος
+INVENTORY_PAGE_BUTTON_TOOLTIP_2	2ος Κατάλογος
+INVENTORY_PAGE_BUTTON_TOOLTIP_3	3ος Κατάλογος
+INVENTORY_PAGE_BUTTON_TOOLTIP_4	4ος Κατάλογος
+INVENTORY_TITLE	Κατάλογος
+ITEM_MALL	Item Shop
+KEYCHANGE_ACTION_WINDOW	Ενέργειες
+KEYCHANGE_ATTACK	Επίθεση
+KEYCHANGE_AUTORUN	Αυτόμ. περπάτ.
+KEYCHANGE_AUTO_WINDOW	Αυτόματο κυνήγι
+KEYCHANGE_BASEACTION	Βασικές ρυθμίσεις
+KEYCHANGE_CAM_DOWN1	Κάμερα (κάτω)
+KEYCHANGE_CAM_DOWN2	Κάμερα (κάτω)
+KEYCHANGE_CAM_LEFT1	Κάμερα (αριστερά)
+KEYCHANGE_CAM_LEFT2	Κάμερα (αριστερά)
+KEYCHANGE_CAM_RIGHT1	Κάμερα (δεξιά)
+KEYCHANGE_CAM_RIGHT2	Κάμερα (δεξιά)
+KEYCHANGE_CAM_UP1	Κάμερα (πάνω)
+KEYCHANGE_CAM_UP2	Κάμερα (πάνω)
+KEYCHANGE_CAM_ZOOM_IN1	Κάμερα (ζουμ +)
+KEYCHANGE_CAM_ZOOM_IN2	Κάμερα (Ζουμ +)
+KEYCHANGE_CAM_ZOOM_OUT1	Κάμερα (ζουμ -)
+KEYCHANGE_CAM_ZOOM_OUT2	Κάμερα (Ζουμ -)
+KEYCHANGE_CANCLE	Διακοπή
+KEYCHANGE_CHAT_WINDOW	Πρωτόκολλο συνομ.
+KEYCHANGE_CLEAR	Κανονικό
+KEYCHANGE_DDS_WINDOW	ΣΔΛ
+KEYCHANGE_DOWN1	Πίσω
+KEYCHANGE_DOWN2	Πίσω
+KEYCHANGE_DRAGON_GATE	
+KEYCHANGE_DSS1	ΔΛ [Ουρανός]
+KEYCHANGE_DSS2	ΔΛ [Γη]
+KEYCHANGE_EMOTION1	Συναίσθημα (λύπη)
+KEYCHANGE_EMOTION2	Συναίσθημα (Yang)
+KEYCHANGE_EMOTION3	Συναίσθημα (μουσική)
+KEYCHANGE_EMOTION4	Συναίσθημα (καρδιά)
+KEYCHANGE_EMOTION5	Συναίσθημα (καρδούλα)
+KEYCHANGE_EMOTION6	Συναίσθημα (βόμβα)
+KEYCHANGE_EMOTION7	Συναίσθημα (ιδέα)
+KEYCHANGE_EMOTION8	Συναίσθημα (καταιγίδα)
+KEYCHANGE_EMOTION9	Συναίσθημα (συγνώμη)
+KEYCHANGE_GUILD_WINDOW	Συντεχνία
+KEYCHANGE_HELP_WINDOW	Βοήθεια
+KEYCHANGE_IMPOSSIBLE_CHANGE	Δεν επιτρέπονται εδώ: [CTRL], [ALT], [SHIFT]!
+KEYCHANGE_INGAMEEVENT	EVENT
+KEYCHANGE_INTERFACE	Παράθυρο
+KEYCHANGE_INVENTORY_WINDOW	Κατάλογος
+KEYCHANGE_KEY_SETTING	Ρυθμίσεις πληκτρολογίου
+KEYCHANGE_LEFT1	Αριστερά
+KEYCHANGE_LEFT2	Αριστερά
+KEYCHANGE_MERCENARY	Μισθοφόρος
+KEYCHANGE_MESSENGER_WINDOW	Φίλοι
+KEYCHANGE_MINIMAP_MINER	Μικρός χάρτης (-)
+KEYCHANGE_MINIMAP_PLUS	Μικρός χάρτης (+)
+KEYCHANGE_MINIMAP_WINDOW	Μεγάλος Χάρτης
+KEYCHANGE_MONSTER_CARD_WINDOW	Κάρτα τεράτων
+KEYCHANGE_NEXT_TARGET	Επόμενος στόχος
+KEYCHANGE_PARTY_MATCH_WINDOW	Αναζήτηση ομάδας
+KEYCHANGE_PASSIVE_ATTR1	Μπόνους κειμηλίων (Ουρανός)
+KEYCHANGE_PASSIVE_ATTR2	Μπόνους κειμηλίων (Γη)
+KEYCHANGE_PET_WINDOW	Κατοικίδιο
+KEYCHANGE_QUEST_SCROLL_ONOFF	Προβολή αποστολών
+KEYCHANGE_QUEST_WINDOW	Αποστολές
+KEYCHANGE_QUICKSLOT1	Επίπεδο 1
+KEYCHANGE_QUICKSLOT2	Επίπεδο 2
+KEYCHANGE_QUICKSLOT3	Επίπεδο 3
+KEYCHANGE_QUICKSLOT4	Επίπεδο 4
+KEYCHANGE_RIDE	Ιππασία
+KEYCHANGE_RIDE_BYE	Διώξιμο αλόγου
+KEYCHANGE_RIDE_HORSE	Ιππασία
+KEYCHANGE_RIDE_PEED	Τάισμα αλόγου
+KEYCHANGE_RIGHT1	Δεξιά
+KEYCHANGE_RIGHT2	Δεξιά
+KEYCHANGE_ROOT1	Μάζεμα
+KEYCHANGE_ROOT2	Μάζεμα
+KEYCHANGE_SAVE	Αποθήκευση
+KEYCHANGE_SCREENSHOT	Στιγμιότυπο
+KEYCHANGE_SHOW_NAME	Προβολή ονομάτων
+KEYCHANGE_SKILL_WINDOW	Ικανότητες
+KEYCHANGE_SLOT1	Θέση 1
+KEYCHANGE_SLOT2	Θέση 2
+KEYCHANGE_SLOT3	Θέση 3
+KEYCHANGE_SLOT4	Θέση 4
+KEYCHANGE_SLOT5	Θέση 5
+KEYCHANGE_SLOT6	Θέση 6
+KEYCHANGE_SLOT7	Θέση 7
+KEYCHANGE_SLOT8	Θέση 8
+KEYCHANGE_SLOT_KET	Γρήγορη πρόσβαση
+KEYCHANGE_STATUS_WINDOW	Χαρακτήρας
+KEYCHANGE_SUNGMAHEE_GATE_ACHIEV	Τρόπαιο
+KEYCHANGE_UP1	Μπροστά
+KEYCHANGE_UP2	Μπροστά
+LANGUAGE_AE	Αραβικά
+LANGUAGE_CZ	Τσεχικά
+LANGUAGE_DE	Γερμανικά
+LANGUAGE_DK	Δανικά
+LANGUAGE_EN	Αγγλικά
+LANGUAGE_ES	Ισπανικά
+LANGUAGE_FR	Γαλλικά
+LANGUAGE_GR	Ελληνικά
+LANGUAGE_HU	Ουγγρικά
+LANGUAGE_IT	Ιταλικά
+LANGUAGE_NL	Ολλανδικά
+LANGUAGE_NONE	Καμία επιλογή
+LANGUAGE_PL	Πολωνικά
+LANGUAGE_PT	Πορτογαλικά
+LANGUAGE_RO	Ρουμανικά
+LANGUAGE_RU	Ρωσικά
+LANGUAGE_TR	Τουρκικά
+LEFT_SEAT	AFK
+LEFT_SEAT_10_MIN	10 λεπ.
+LEFT_SEAT_30_MIN	30 λεπ.
+LEFT_SEAT_60_MIN	60 λεπ.
+LEFT_SEAT_90_MIN	90 λεπ.
+LEFT_SEAT_120_MIN	120 λεπ.
+LEFT_SEAT_180_MIN	180 λεπ.
+LEFT_SEAT_LOGOUT	Αποσύνδεση
+LEFT_SEAT_OFF	OFF
+LOAD_ERROR	Το αρχείο είναι κατεστραμμένο. Παρακαλούμε εγκατάστησε εκ νέου. Πάτα ESC.
+LOGIN_CONNECT	Σύνδεση
+LOGIN_CONNECTING	Συνδέεσαι με τον σέρβερ.
+LOGIN_DEFAULT_SERVERADDR	Όνομα σέρβερ, Κανάλι 1
+LOGIN_EXIT	Έξοδος
+LOGIN_ID	Όνομα χρήστη
+LOGIN_PASSWORD	Κωδικός Σύνδεσης
+LOGIN_REGION_TITLE	Επιλογή θέσης για την έκδοση τιμολογίου
+LOGIN_SELECT_BUTTON	Επιλογή
+LOGIN_SELECT_EXIT	Έξοδος
+LOGIN_SELECT_OK	OK
+LOGIN_SELECT_TITLE	Επιλογή σέρβερ
+LOOTING_SYSTEM_ARMOR	Πανοπλία
+LOOTING_SYSTEM_CATEGORY_COMMON	’λλα
+LOOTING_SYSTEM_CATEGORY_COMMON_BELT	Ζώνες
+LOOTING_SYSTEM_CATEGORY_COMMON_EAR	Σκουλαρίκια
+LOOTING_SYSTEM_CATEGORY_COMMON_FOOTS	Παπούτσια
+LOOTING_SYSTEM_CATEGORY_COMMON_GLOVE	Γάντια
+LOOTING_SYSTEM_CATEGORY_COMMON_NECK	Περιδέραια
+LOOTING_SYSTEM_CATEGORY_COMMON_PENDANT	Φυλαχτά
+LOOTING_SYSTEM_CATEGORY_COMMON_PICK	Αξίνες
+LOOTING_SYSTEM_CATEGORY_COMMON_ROD	Καλάμια Ψαρέμ.
+LOOTING_SYSTEM_CATEGORY_COMMON_SHIELD	Ασπίδες
+LOOTING_SYSTEM_CATEGORY_COMMON_WRIST	Βραχιόλια
+LOOTING_SYSTEM_CATEGORY_COSTUME	Φορεσιά
+LOOTING_SYSTEM_CATEGORY_COSTUME_ACCE	Κορδέλες
+LOOTING_SYSTEM_CATEGORY_COSTUME_ARMOR	Φορεσιές
+LOOTING_SYSTEM_CATEGORY_COSTUME_AURA	Ρούχα Αύρας
+LOOTING_SYSTEM_CATEGORY_COSTUME_ETC	’λλα
+LOOTING_SYSTEM_CATEGORY_COSTUME_HAIR	Κομμώσεις
+LOOTING_SYSTEM_CATEGORY_COSTUME_WEAPON	Εμφανίσεις Όπλων
+LOOTING_SYSTEM_CATEGORY_DS	Είδος
+LOOTING_SYSTEM_CATEGORY_DS_DS	Cor Draconis
+LOOTING_SYSTEM_CATEGORY_DS_ETC	’λλα
+LOOTING_SYSTEM_CATEGORY_ETC	’λλα
+LOOTING_SYSTEM_CATEGORY_ETC_ETC	’λλα
+LOOTING_SYSTEM_CATEGORY_ETC_GIFTBOX	Κουτί δώρου
+LOOTING_SYSTEM_CATEGORY_ETC_MATRIMONY	Γάμος & Τελετή
+LOOTING_SYSTEM_CATEGORY_ETC_PARTY	Ομάδα
+LOOTING_SYSTEM_CATEGORY_ETC_POLYMORPH	Πολυμορφία
+LOOTING_SYSTEM_CATEGORY_ETC_RECIPE	Παρασκευή
+LOOTING_SYSTEM_CATEGORY_ETC_SEAL	Πάπυροι
+LOOTING_SYSTEM_CATEGORY_ETC_WEAPON_ARROW	Βέλη
+LOOTING_SYSTEM_CATEGORY_FISH_MINING	Είδος
+LOOTING_SYSTEM_CATEGORY_FISH_MINING_ETC	’λλα
+LOOTING_SYSTEM_CATEGORY_FISH_MINING_FOOD	Τροφή
+LOOTING_SYSTEM_CATEGORY_FISH_MINING_STONE	Μεταλλεύμ.&Πετρώμ.
+LOOTING_SYSTEM_CATEGORY_JOB	Κλάση
+LOOTING_SYSTEM_CATEGORY_JOB_ASSASSIN	Νίντζα
+LOOTING_SYSTEM_CATEGORY_JOB_PUBLIC	’λλα
+LOOTING_SYSTEM_CATEGORY_JOB_SHAMAN	Σαμάνος
+LOOTING_SYSTEM_CATEGORY_JOB_SURA	Sura
+LOOTING_SYSTEM_CATEGORY_JOB_WARRIOR	Πολεμιστής
+LOOTING_SYSTEM_CATEGORY_JOB_WOLFMAN	Λυκανός
+LOOTING_SYSTEM_CATEGORY_MOUNT_PET	Είδος
+LOOTING_SYSTEM_CATEGORY_MOUNT_PET_CHARGED_PET	Κατοικίδια
+LOOTING_SYSTEM_CATEGORY_MOUNT_PET_EGG	Αβγά κατοικιδίων
+LOOTING_SYSTEM_CATEGORY_MOUNT_PET_FREE_PET	Αξεσουάρ κατοικιδ.
+LOOTING_SYSTEM_CATEGORY_MOUNT_PET_MOUNT	Ζώα ιππασίας
+LOOTING_SYSTEM_CATEGORY_POTION	Είδος
+LOOTING_SYSTEM_CATEGORY_POTION_ABILITY	Καταναλ. αγαθά
+LOOTING_SYSTEM_CATEGORY_POTION_ETC	’λλα
+LOOTING_SYSTEM_CATEGORY_POTION_HAIRDYE	Χρώματα μαλλιών
+LOOTING_SYSTEM_CATEGORY_REFINE	Είδος
+LOOTING_SYSTEM_CATEGORY_REFINE_ALCHEMY	Αυξάνει την Πιθανότητα
+LOOTING_SYSTEM_CATEGORY_REFINE_ETC	’λλα
+LOOTING_SYSTEM_CATEGORY_REFINE_MATERIAL	Υλικά
+LOOTING_SYSTEM_CATEGORY_REFINE_STONE	Λίθοι Πνεύματος
+LOOTING_SYSTEM_CATEGORY_UNIQUE	Είδος
+LOOTING_SYSTEM_CATEGORY_UNIQUE_ABILITY	Καταναλωτικά είδη
+LOOTING_SYSTEM_CATEGORY_UNIQUE_ETC	’λλα
+LOOTING_SYSTEM_COMMON	Περαιτέρω εξοπλισμός
+LOOTING_SYSTEM_COSTUME	Φορεσιά
+LOOTING_SYSTEM_DS	Αλχημεία Δρακόλιθων
+LOOTING_SYSTEM_ETC	’λλο αντικείμενο
+LOOTING_SYSTEM_EVENT	Αντικείμενο event
+LOOTING_SYSTEM_EXIT_WITHOUT_SAVING	Κλείσιμο χωρίς αποθήκευση;
+LOOTING_SYSTEM_EXIT_WITH_SAVING	Αποθήκευση και κλείσιμο; Οι αλλαγές σου θα αποθηκευτούν μόλις χρησιμοποιήσεις ένα Πάσο Λείας.
+LOOTING_SYSTEM_FISH_MINING	Ψάρεμα & Εξόρυξη
+LOOTING_SYSTEM_HEAD	Κράνος
+LOOTING_SYSTEM_INIT	Μηδενισμός
+LOOTING_SYSTEM_INIT_QUESTION_DIALOG_TITLE	Θέλεις να μηδενίσεις τις ρυθμίσεις;
+LOOTING_SYSTEM_MESSAGE_ENABLE_VOUCHER	Οι λειτουργίες ενεργοποιούνται με Πάσο λείας
+LOOTING_SYSTEM_MESSAGE_POSSIBLE_ITEM_PICKUP	Αποκτάς λεία ανάλογα με τις ρυθμίσεις σου.
+LOOTING_SYSTEM_MOUNT_PET	Ζώα ιππασίας & Κατοικίδια
+LOOTING_SYSTEM_OFF	OFF
+LOOTING_SYSTEM_ON	ON
+LOOTING_SYSTEM_POTION	Φίλτρα
+LOOTING_SYSTEM_QUESTION_ARMOR	Εδώ μπορείς να ορίσεις τις παραμέτρους συλλογής για πανοπλίες.
+LOOTING_SYSTEM_QUESTION_COMMON	Μπορείς να καθορίσεις παραμέτρους συλλογής για άλλα αντικείμενα, τα οποία χρησιμοποιούνται από όλες τις κλάσεις.
+LOOTING_SYSTEM_QUESTION_COSTUME	Εδώ μπορείς να καθορίσεις παραμέτρους συλλογής για φορεσιές (όπλα, πανοπλίες, καλύμματα κεφαλής, κορδέλες και Ρούχα Αύρας).
+LOOTING_SYSTEM_QUESTION_DS	Εδώ μπορείς να ορίσεις τις παραμέτρους συλλογής για αντικείμενα Αλχημείας Δρακόλιθων.
+LOOTING_SYSTEM_QUESTION_ETC	Εδώ μπορείς να καθορίσεις παραμέτρους συλλογής για άλλα αντικείμενα των κατηγοριών εξοπλισμός, φορεσιές, εξευγενισμός, φίλτρα, ζώα ιππασίας, κατοικίδια, ψάρεμα, εξόρυξη, Βιβλία ικανοτήτων και αντικείμενα event.
+LOOTING_SYSTEM_QUESTION_EVENT	Εδώ μπορούν να οριστούν παράμετροι συλλογής για αντικείμενα event.
+LOOTING_SYSTEM_QUESTION_FISH_MINING	Εδώ μπορείς να καθορίσεις παραμέτρους συλλογής για αντικείμενα ψαρέματος κι εξόρυξης.
+LOOTING_SYSTEM_QUESTION_HEAD	Εδώ μπορείς να ορίσεις τις παραμέτρους συλλογής για κράνη.
+LOOTING_SYSTEM_QUESTION_MOUNT_PET	Εδώ μπορείς να καθορίσεις παραμέτρους συλλογής για ζώα ιππασίας και κατοικίδια.
+LOOTING_SYSTEM_QUESTION_POTION	Εδώ μπορείς να καθορίσεις παραμέτρους συλλογής για φίλτρα.
+LOOTING_SYSTEM_QUESTION_REFINE	Εδώ μπορείς να καθορίσεις παραμέτρους συλλογής για αντικείμενα εξευγενισμού.
+LOOTING_SYSTEM_QUESTION_SKILL_BOOK	Περιέχει βιβλία ικανοτήτων για συγκεκριμένες κλάσεις και ικανότητες αλόγων.
+LOOTING_SYSTEM_QUESTION_UNIQUE	Εδώ μπορείς να ορίσεις τις παραμέτρους συλλογής για μοναδικά αντικείμενα.
+LOOTING_SYSTEM_QUESTION_WEAPON	Ως όπλα μετράνε όλα τα όπλα που μπορείς να εξοπλίσεις, εκτός από τα βέλη.
+LOOTING_SYSTEM_REFINE	Εξευγενισμός
+LOOTING_SYSTEM_SAVE	Αποθήκευση
+LOOTING_SYSTEM_SKILL_BOOK	Βιβλίο Ικανοτήτων
+LOOTING_SYSTEM_TITLE	Φίλτρο Λείας
+LOOTING_SYSTEM_UNIQUE	Μοναδικό
+LOOTING_SYSTEM_WEAPON	Όπλο
+LOOTING_SYSTEM_WEARING_LEVEL	Απαιτούμενο επίπεδο
+LUCKY_BOX_NOTICE_YANG	Τιμή Yang για νέα τύχη αντικειμένων
+LUCKY_BOX_RECV_BUTTON	Αποδοχή αντικειμένου
+LUCKY_BOX_RECV_NAME	Περιεχόμενο:
+LUCKY_BOX_RETRY_BUTTON	Νέα τύχη αντικειμένου
+LUCKY_BOX_TITLE_NAME	Κουτάκι τύχης
+MAILBOX_POST_ALL_DELETE_BUTTON	Διαγραφή όλων
+MAILBOX_POST_ALL_RECEIVE	Αποδοχή όλων
+MAILBOX_POST_READ_BLOCK	Αποκλεισμός
+MAILBOX_POST_READ_DELETE	Διαγραφή
+MAILBOX_POST_READ_FROM	Από
+MAILBOX_POST_READ_MAIN_TITLE	Μήνυμα
+MAILBOX_POST_READ_RECV	Αποδοχή
+MAILBOX_POST_READ_TITLE	Θέμα
+MAILBOX_POST_SEND_TITLE	Μήνυμα
+MAILBOX_POST_WRITE_BUTTON_TEXT	Αποστολή
+MAILBOX_POST_WRITE_CLOSE_TEXT	Κλείσιμο
+MAILBOX_POST_WRITE_CONFIRM_TEXT	Έλεγχος παραλήπτη
+MAILBOX_POST_WRITE_SEND_TEXT	Αποστολή
+MAILBOX_POST_WRITE_TITLE	Θέμα
+MAILBOX_POST_WRITE_TO	Προς
+MAILBOX_TITLE	Εισερχόμενα
+MALL_PASSWORD_TITLE	Συνθηματικό
+MALL_TITLE	Αποθήκη Item Shop
+MARKET_TITLE	Φόρτωση
+MARKLIST_REFRESH	Ανανέωση
+MARKLIST_TITLE	Καταχώριση Σήματος Συντεχνίας
+MC_ACHIEV_ABLE_REGIST	Ζήτηση
+MC_ACHIEV_APPLY	Εφαρμογή
+MC_ACHIEV_APPLYING	Ενεργό
+MC_ACHIEV_BONUS_NONE	Κανένα μπόνους
+MC_ACHIEV_DISABLE	Ανενεργό
+MC_ACHIEV_DUNGEON	Επιτυχίες Μπουντρουμιών
+MC_ACHIEV_DUNGEON_BONUS	Μπόνους Μπουντρουμιών
+MC_ACHIEV_FIELD	Επιτυχίες πεδίου
+MC_ACHIEV_FIELD_BONUS	Μπόνους πεδίου
+MC_ACHIEV_REGIST	Ζήτηση επιτυχίας
+MC_ACHIEV_SHOW	Λεπτομέρειες
+MC_ACHIEV_SORT_ABLE_REGIST	Ζήτηση
+MC_ACHIEV_SORT_ALL	Όλα
+MC_ACHIEV_SORT_APPLYING	Ενεργό
+MC_ACHIEV_SORT_DISABLE	Ανεκπλήρωτα
+MC_ACHIEV_SORT_REGIST	Ενεργοποιήσιμα
+MC_EXCHANGE_BUTTON	Αλλαγή
+MC_MISSION_INIT_BUTTON	Ακύρωση επιπέδου αποστολής
+MC_MOTION_BUTTON	Κίνηση
+MC_POLY_BUTTON	Μεταμόρφωση
+MC_PROMOTION_BUTTON	Βελτίωση
+MC_REQUEST_MISSION_BUTTON	Αποδοχή αποστολής
+MC_REWARD_CARD_BUTTON	Παραλαβή Κάρτας τεράτων
+MC_SHUFFLE_BUTTON	Ανακατάταξη Καρτών τεράτων
+MC_SUMMON_BUTTON	Επίκληση
+MC_TAB_BUTTON_ACHIEV	Μπόνους επιτυχίας
+MC_TAB_BUTTON_CARD_MISSION	Αποστολή κάρτας
+MC_TAB_BUTTON_PARTY	Συλλογή μπουντρουμιού
+MC_TAB_BUTTON_SOLO	Συλλογή υπαίθρου
+MC_WARP_BUTTON	Τηλεμεταφορά
+MERCENARY_MANAGE_DELAY_CURE	Αργή Θεραπεία
+MERCENARY_MANAGE_DRAIN_MAIN	Μισθοφόρος προς Εκπαίδευση
+MERCENARY_MANAGE_DRAIN_START	Εκπαίδευση
+MERCENARY_MANAGE_DRAIN_SUB	Εκπαιδευόμενος μισθοφόρος
+MERCENARY_MANAGE_EXP	Πόντοι εμπειρίας μισθοφόρων
+MERCENARY_MANAGE_FIRE	Διώξιμο
+MERCENARY_MANAGE_IMMEDIATELY_CURE	’μεση Θεραπεία
+MERCENARY_MANAGE_INFO	Πληροφορίες μισθοφόρου
+MERCENARY_MANAGE_LEVEL	Επίπεδο μισθοφόρου
+MERCENARY_MANAGE_LEVELUP	Αύξηση επιπέδου μισθοφόρων
+MERCENARY_MANAGE_NAME	Όνομα
+MERCENARY_MANAGE_NEXT_EXP	Απαιτούμενη ΕΜΠ αποστολής
+MERCENARY_MANAGE_NEXT_LEVEL	Επόμενο επίπεδο
+MERCENARY_MANAGE_REGIST_DRAIN	Εκπαίδευση
+MERCENARY_MANAGE_SKILL	Ικανότητα
+MERCENARY_MANAGE_SPECIFICITY	Ειδίκευση
+MERCENARY_MISSION_ACTIVE	Αντοχή
+MERCENARY_MISSION_ALL_CANCLE	Απόλυση όλων
+MERCENARY_MISSION_AUTO_JOIN	Αυτόματη επιλογή
+MERCENARY_MISSION_BONUS_REWARD	Απόκτηση επιπλέον ανταμοιβής!
+MERCENARY_MISSION_CURRENT_INFO	Τρέχουσα Κατάσταση αποστολής
+MERCENARY_MISSION_DECREASE_RUNTIME	Μείωση διάρκειας αποστολής
+MERCENARY_MISSION_DECREAS_INJURE	Μείωσε το ρίσκο τραυματισμού
+MERCENARY_MISSION_DISPATCH_BENEFITS	Προτέρημα στρατεύματος
+MERCENARY_MISSION_DISPATCH_MERCENARY	Αποστολή μισθοφόρων
+MERCENARY_MISSION_EXP_BONUS	Απέκτησες μπόνους πόντων Εμπειρίας!
+MERCENARY_MISSION_INFO	Πληροφορίες αποστολής
+MERCENARY_MISSION_JOIN	Συμμετοχή
+MERCENARY_MISSION_LIMIT_ACTIVE	Απαιτούμενη Αντοχή
+MERCENARY_MISSION_LIMIT_LEVEL	Απαιτούμενο Επίπεδο μισθοφόρου
+MERCENARY_MISSION_MERCENARY_LIST	Προλημμένοι μισθοφόροι
+MERCENARY_MISSION_REGIST	Αποστολές
+MERCENARY_MISSION_REWARD_LIST	Ανταμοιβές
+MERCENARY_MISSION_SUCCESS_PCT	Πιθανότητα επιτυχίας
+MERCENARY_MISSION_SUGGESTION	Συνιστώμενος μισθοφόρος
+MERCENARY_MISSION_TYPE	Είδος αποστολής
+MERCENARY_TITLE	Σύστημα μισθοφόρων
+MESSAGE	Αυτό είναι ένα μήνυμα
+MESSENGER_ADD_FRIEND	Προσθήκη φίλου
+MESSENGER_BLOCK_FRIEND	Αποκλεισμός
+MESSENGER_DELETE_FRIEND	Διαγραφή
+MESSENGER_MOBILE	Αποστολή SMS
+MESSENGER_OPEN_GUILD	’νοιγμα παραθύρου συντεχνίας
+MESSENGER_TITLE	Φίλοι
+MESSENGER_USE_GUILD_MOVE_SKILL	Χρήση της Ικανότητας Μετακίνησης Συντεχνίας
+MESSENGER_WHISPER	Ψίθυρος
+MINIGAME_FISH_EVENT_USE_COUNT	Ποσότητα
+MINIMIZE	Ελαχιστοποίηση
+MINI_BOSS_DUNGEON_DESC_BTN	Κανόνες event
+MINI_BOSS_DUNGEON_TITLE_NAME	Συμμετέχοντες
+MINI_BOSS_DUNGEON_TITLE_NUM	Κατάταξη
+MINI_BOSS_DUNGEON_TITLE_POINT	Πόντοι Αποκάλυψης
+MINI_BOSS_DUNGEON_TOOTIP_01	Επισκόπηση μπουντρουμιού
+MINI_BOSS_DUNGEON_TOOTIP_02	Αποκάλυψη για επίπεδα 40 ως 80
+MINI_BOSS_DUNGEON_TOOTIP_03	Αποκάλυψη από επίπεδο 81
+MINI_BOSS_DUNGEON_TOOTIP_04	Είσοδος
+MINI_BOSS_DUNGEON_TOOTIP_05	Υπολειπόμενος χρόνος
+MINI_BOSS_DUNGEON_TOOTIP_06	Οι Πόντοι Αποκάλυψής μου
+MINI_BOSS_DUNGEON_TOOTIP_07	Υπόλοιπες Αποκαλύψεις
+MINI_BOSS_DUNGEON_TOOTIP_08	Η ανταμοιβή μου
+MINI_BOSS_TITLE	Ζωδιακή Αποκάλυψη
+MINI_GAME_BLACK_AND_WHITE_DONATE	Δωρεές
+MINI_GAME_BLACK_AND_WHITE_GAME_TITLE	Διαγωνισμός μαντών
+MINI_GAME_BLACK_AND_WHITE_RANK_BUTTON	Λίστα κατάταξης
+MINI_GAME_BLACK_AND_WHITE_REWARD_TRADE	Βραβεία
+MINI_GAME_BLACK_AND_WHITE_START_BUTTON	Εκκίνηση
+MINI_GAME_BLACK_AND_WHITE_WAITTING_TITLE	Διαγωνισμός μαντών
+MINI_GAME_CATCHKING_CHALLENGE	Στοίχημα
+MINI_GAME_CATCHKING_HELP_TEXT	Κανόνες
+MINI_GAME_CATCHKING_HIGH_SCORE	Κατάταξη
+MINI_GAME_CATCHKING_MYNUMBER	Η κάρτα μου
+MINI_GAME_CATCHKING_POPUP_CONFIRM	Pop up on/off
+MINI_GAME_CATCHKING_RETRY	Νέο παιχνίδι
+MINI_GAME_CATCHKING_REWARD	Η ανταμοιβή σου
+MINI_GAME_CATCHKING_SCORE	Πόντοι
+MINI_GAME_CATCHKING_SELECTION_NUMBER	Γυρισμένη κάρτα
+MINI_GAME_CATCHKING_START_TEXT	Εκκίνηση
+MINI_GAME_CATCHKING_TITLE	’ρπαξε τον Βασιλιά
+MINI_GAME_FISH_HELP_TEXT	Βοήθεια
+MINI_GAME_FISH_START_TEXT	Εκκίνηση
+MINI_GAME_FISH_TITLE	Παιχνίδι ψαροπάζλ
+MINI_GAME_RUMI_DISCARD_TEXT	Ασφαλής λειτουργία
+MINI_GAME_RUMI_EXIT	Κλείσιμο
+MINI_GAME_RUMI_LBUTTON_DESC	Προσθήκη κάρτας με αριστερό κλικ
+MINI_GAME_RUMI_RBUTTON_DESC	Αφαίρεση κάρτας με δεξί κλικ
+MINI_GAME_RUMI_SCORE	Πόντοι
+MINI_GAME_RUMI_START_TEXT	Εκκίνηση
+MINI_GAME_RUMI_TITLE	Παιχνίδι Okey
+MINI_GAME_YUTNORI_COM_TEXT	Υπολογιστής
+MINI_GAME_YUTNORI_PLAYER_TEXT	Παίκτης
+MINI_GAME_YUTNORI_PROBABILITY	Πιθανότητα
+MINI_GAME_YUTNORI_PROB_DESC	Επίλεξε μια ζαριά Yut, για να της δώσεις μεγαλύτερη πιθανότητα.
+MINI_GAME_YUTNORI_REMAIN_COUNT	Κινήσεις
+MINI_GAME_YUTNORI_REWARD_TEXT	Ανταμοιβή
+MINI_GAME_YUTNORI_SCORE	Πόντοι
+MINI_GAME_YUTNORI_START_TEXT	Εκκίνηση
+MINI_GAME_YUTNORI_THROW	Ρίψη
+MINI_GAME_YUTNORI_TITLE	Γιουτνόρι
+MINI_GAME_YUTNORI_YUTSEM1	Do
+MINI_GAME_YUTNORI_YUTSEM2	Ge
+MINI_GAME_YUTNORI_YUTSEM3	Geol
+MINI_GAME_YUTNORI_YUTSEM4	Yut
+MINI_GAME_YUTNORI_YUTSEM5	Mo
+MINI_GAME_YUTNORI_YUTSEM6	Back do
+MISTS_ISLAND_EMPIRE_NAME	Όνομα Βασιλείου
+MISTS_ISLAND_EMPIRE_SCORE	Βαθμοί Βασιλείου
+MISTS_ISLAND_END_TIME	Ημερομηνία λήξης
+MISTS_ISLAND_EXIT	Έξοδος
+MISTS_ISLAND_INFO_TEXT	Στοιχεία Θέσης και Κατάστασης
+MISTS_ISLAND_RANK	Κατάταξη
+MISTS_ISLAND_SCORE	Βαθμοί
+MISTS_ISLAND_TITLE_RANK	Στοιχεία Θέσης και Κατάστασης
+MISTS_ISLAND_TITLE_SCORE	Επισκόπηση
+MONSTER_CARD_ACHIEV_BONUS	Επιτυχίες
+MOUNT_UPGRADE_SYSTEM_DISABLE_GIVE_FEED_BUTTON_POPUP_MESSAGE	Δεν μπορείς να ταΐσεις άλλο το ’λογο.
+MOUNT_UPGRADE_SYSTEM_GIVE_FEED	Τάισμα Αλόγου
+MOUNT_UPGRADE_SYSTEM_GIVE_FEED_BUTTON_POPUP_MESSAGE	Για να αυξηθεί το επίπεδο, πρέπει να ταΐσεις όλη την Τροφή αλόγου.
+MOUNT_UPGRADE_SYSTEM_GIVE_FEED_NOT_ENOUGH	Ανεπαρκής Τροφή αλόγων
+MOUNT_UPGRADE_SYSTEM_LEVEL_UP	Αύξηση επιπέδου
+MOUNT_UPGRADE_SYSTEM_TITLE	Αύξηση επιπέδου Αλόγων
+MOUSEBUTTON_ATTACK	Επίθεση
+MOUSEBUTTON_AUTO_ATTACK	Αυτόματη επίθεση
+MOUSEBUTTON_CAMERA	Κάμερα
+MOUSEBUTTON_SKILL	Ικανότητες
+MUSICLIST_TITLE	Επιλογές Μουσικής
+MYSHOP_DECO_CANCEL	Κλείσιμο
+MYSHOP_DECO_DEFAULT	Κανονικό
+MYSHOP_DECO_NEXT	Συνέχεια
+MYSHOP_DECO_OK	Ολοκλήρωση
+MYSHOP_DECO_PREV	Πίσω
+MYSHOP_DECO_SELECT_MODEL	Διάλεξε την εμφάνιση του καταστήματός σου.
+MYSHOP_DECO_SELECT_TITLE	Διάλεξε την εμφάνιση του τίτλου σου.
+NO	Όχι
+NPC_HELPER_ATLAS_EXPAND_BUTTON_TOOLTIP	Προβολή Εύρεσης χαρακτήρα
+NPC_HELPER_ATLAS_SHRINK_BUTTON_TOOLTIP	Κλείσιμο Εύρεσης χαρακτήρα
+NPC_HELPER_ATLAS_SWITCH_TO_NPC_LOCATION_HELPER_BUTTON_TOOLTIP	Αλλαγή χάρτη στην Εύρεση χαρακτήρα
+NPC_HELPER_ATLAS_SWITCH_TO_SMALL_BUTTON_TOOLTIP	Αλλάζει στην παλιά προβολή χάρτη
+NPC_HELPER_ATLAS_TITLE	Μεγάλος Χάρτης
+NPC_HELPER_NPC_INFO_CONQUEROR_LEVEL	Επ. C
+NPC_HELPER_NPC_INFO_LEVEL	Επ.
+NPC_HELPER_NPC_INFO_MENU_NPC_LIST	Χαρακτήρες
+NPC_HELPER_NPC_INFO_MENU_SELECT_CATEGORY	Επιλογή περιοχής
+NPC_HELPER_NPC_INFO_MENU_SELECT_MAP	Επιλογή χάρτη
+NPC_HELPER_NPC_INFO_TITLE	Εύρεση χαρακτήρα
+NPC_LOCATION_HELPER_MAP_CATEGORY_EMPIRE_DUNGEON	Μπουντρούμια
+NPC_LOCATION_HELPER_MAP_CATEGORY_EMPIRE_FIELD	Βασίλεια
+NPC_LOCATION_HELPER_MAP_CATEGORY_EVIL_DRAGON_TERRITORY	Βράχος των Σκοτεινών Δράκων
+NPC_LOCATION_HELPER_MAP_CATEGORY_LABYRINTH	Οροπέδιο Ψευδαισθήσεων
+NPC_LOCATION_HELPER_MAP_CATEGORY_NEUTRAL	Ουδέτερες περιοχές
+NPC_LOCATION_HELPER_MAP_CATEGORY_NEW_WORLD_DUNGEON	Μπουντρούμια στη Yohara
+NPC_LOCATION_HELPER_MAP_CATEGORY_NEW_WORLD_FIELD	Yohara
+NPC_LOCATION_HELPER_MOB_INFO_DROP_ITEM_INFO	Πιθανή λεία
+NPC_LOCATION_HELPER_MOB_INFO_MOB_INFO	Τέρας
+NPC_LOCATION_HELPER_MOB_INFO_TITLE	Κατάλογος τεράτων
+NPC_LOCATION_HELPER_QUEST_PROGRESS_STATE_ACCEPT	Αποδεκτές
+NPC_LOCATION_HELPER_QUEST_PROGRESS_STATE_COMPLETE	Ολοκληρώθηκαν
+NPC_LOCATION_HELPER_QUEST_PROGRESS_STATE_PROGRESS	Ενεργές
+NPC_LOCATION_HELPER_TOOLTIP_DROP_ITEM_INFO	Κατάλογος τεράτων: Σου δείχνει πού μπορεί να παρουσιαστούν συγκεκριμένα τέρατα και ποια λεία μπορείς να βρεις σε αυτά.
+NPC_LOCATION_HELPER_TOOLTIP_GUILD_LAND	Γη συντεχνίας: Οι πληροφορίες ανανεώνονται. Μπορεί να χρησιμοποιηθεί 1 φορά το λεπτό.
+NPC_LOCATION_HELPER_TOOLTIP_MOB_INFO_SEARCH_BUTTON	Διάλεξε το τέρας που θέλεις να βρεις και κάνε κλικ στο σύμβολο, για να προβληθεί η περιοχή του. Πρέπει να έχεις ενεργοποιήσει την Εύρεση τεράτων.
+NPC_LOCATION_HELPER_TOOLTIP_MY_LOCATION	Επιστροφή στην Τοποθεσία: Δείχνει τον χάρτη στον οποίο βρίσκεσαι. Αν βρίσκεσαι στον ίδιο χάρτη, η προβολή εστιάζεται στον χαρακτήρα σου.
+NPC_LOCATION_HELPER_TOOLTIP_SCALE_DOWN	Ελαχιστοποίηση
+NPC_LOCATION_HELPER_TOOLTIP_SCALE_UP	Μεγέθυνση
+OK	OK
+OPPOSITES	Απόρριψη
+OPTION_ALWAYS_SHOW_NAME	Όνομα
+OPTION_ALWAYS_SHOW_NAME_OFF	Περιορισμένο
+OPTION_ALWAYS_SHOW_NAME_ON	Πάντα
+OPTION_ATTACKED_MOTION	Ανιμασιόν
+OPTION_ATTACKED_MOTION_ALL	Κανονικός
+OPTION_ATTACKED_MOTION_ALL_DESC	Εμφανίζονται όλα τα ανιμασιόν μάχης εξ επαφής.
+OPTION_ATTACKED_MOTION_SELF	Επίδοση
+OPTION_ATTACKED_MOTION_SELF_DESC	Κάποια ανιμασιόν μάχης εξ επαφής εμφανίζονται σε όλους, εκτός από τον χαρακτήρα και τον στόχο.
+OPTION_BLOCK	Φραγμός
+OPTION_BLOCK_EXCHANGE	Εμπόριο
+OPTION_BLOCK_FRIEND	Φίλοι
+OPTION_BLOCK_GUILD	Συντεχνία
+OPTION_BLOCK_PARTY	Ομάδα
+OPTION_BLOCK_PARTY_REQUEST	Αίτηση
+OPTION_BLOCK_WHISPER	Ψίθυρος
+OPTION_CAMERA_DISTANCE	Κάμερα
+OPTION_CAMERA_DISTANCE_LONG	Μακριά
+OPTION_CAMERA_DISTANCE_SHORT	Κοντά
+OPTION_DELETE_MOBILE_BUTTON	Διαγραφή Νούμερου Κινητού Τηλεφώνου
+OPTION_EFFECT	Χτυπήματα.
+OPTION_ENV_EFFECT	Περιβάλλον
+OPTION_ENV_EFFECT_OFF	Off
+OPTION_ENV_EFFECT_ON	On
+OPTION_FOG	Ομίχλη
+OPTION_FOG_DENSE	Έντονη
+OPTION_FOG_LIGHT	Ελαφριά
+OPTION_FOG_MIDDLE	Μεσαία
+OPTION_FOG_OFF	Off
+OPTION_FOG_ON	On
+OPTION_INPUT_MOBILE_BUTTON	Εισαγωγή Νούμερου Κινητού Τηλεφώνου
+OPTION_KEY_SETTING	Πληκτρολόγιο
+OPTION_LANGUAGE_CHANGE	Εφαρμογή
+OPTION_LANGUAGE_SELECT	Γλώσσα
+OPTION_LOOTING_SETTING	Λεία
+OPTION_MOBILE	Κινητό Τηλέφωνο
+OPTION_MOB_INFO	Στοιχ. τέρ.
+OPTION_MOB_INFO_AGGR	Επιθετικό
+OPTION_MOB_INFO_LEVEL	Επίπεδο
+OPTION_MUSIC	Μουσική
+OPTION_MUSIC_CHANGE	Αλλαγή
+OPTION_MUSIC_DEFAULT_THEMA	Συνήθης μουσική του Metin2
+OPTION_NAME_COLOR	Χρώμα
+OPTION_NAME_COLOR_EMPIRE	Χρώμα Βασ/ου
+OPTION_NAME_COLOR_NORMAL	Κανονικό
+OPTION_NIGHT_MODE	Νύχτα
+OPTION_NIGHT_MODE_OFF	Off
+OPTION_NIGHT_MODE_ON	On
+OPTION_PVPMODE	Εφαρμογή PvP
+OPTION_PVPMODE_FREE	Ελεύθερο
+OPTION_PVPMODE_FREE_TOOLTIP	Μπορείς να επιτεθείς σε όλους τους παίκτες.
+OPTION_PVPMODE_GUILD	Συντεχνία
+OPTION_PVPMODE_GUILD_TOOLTIP	Μπορείς να επιτεθείς σε όλους του παίκτες, εκτός από τα μέλη της Συντεχνίας σου.
+OPTION_PVPMODE_PEACE	Ειρήνη
+OPTION_PVPMODE_PEACE_TOOLTIP	Δεν μπορείς να επιτεθείς σε παίκτες του Βασιλείου σου.
+OPTION_PVPMODE_REVENGE	Εχθρικό
+OPTION_PVPMODE_REVENGE_TOOLTIP	Μπορείς να επιτεθείς μόνο σε παίκτες αντίθετου ήθους.
+OPTION_SALESTEXT	Όνομα καταστήματος
+OPTION_SALESTEXT_VIEW_OFF	Κρύψε
+OPTION_SALESTEXT_VIEW_ON	Εμφάνιση
+OPTION_SETTING	’νοιγμα
+OPTION_SHADOW_QUALITY	Ποιότητα σκιάς
+OPTION_SHADOW_QUALITY_AVERAGE	Μεσαία
+OPTION_SHADOW_QUALITY_AVERAGE_TOOLTIP	Μεσαία Ποιότητα σκιάς
+OPTION_SHADOW_QUALITY_BAD	Χαμηλή
+OPTION_SHADOW_QUALITY_BAD_TOOLTIP	Χαμηλή Ποιότητα σκιάς
+OPTION_SHADOW_QUALITY_GOOD	Υψηλή
+OPTION_SHADOW_QUALITY_GOOD_TOOLTIP	Υψηλή Ποιότητα σκιάς
+OPTION_SHADOW_TARGET	Σκιά στόχου
+OPTION_SHADOW_TARGET_ALL	4
+OPTION_SHADOW_TARGET_ALL_TOOLTIP	Σκιά για όλους τους στόχους.
+OPTION_SHADOW_TARGET_GROUND	2
+OPTION_SHADOW_TARGET_GROUND_AND_SOLO	3
+OPTION_SHADOW_TARGET_GROUND_AND_SOLO_TOOLTIP	Σκιές φόντου και σκιές παικτών
+OPTION_SHADOW_TARGET_GROUND_TOOLTIP	Σκιές φόντου
+OPTION_SHADOW_TARGET_NONE	1
+OPTION_SHADOW_TARGET_NONE_TOOLTIP	Καμία σκιά
+OPTION_SNOW_MODE	Χιονόπτωση
+OPTION_SNOW_MODE_OFF	Off
+OPTION_SNOW_MODE_ON	On
+OPTION_SNOW_TEXTURE_MODE	Χιόνι
+OPTION_SNOW_TEXTURE_MODE_OFF	Off
+OPTION_SNOW_TEXTURE_MODE_ON	On
+OPTION_SOUND	Ηχητικά Εφέ
+OPTION_TARGET_BOARD	Επιλογές Στόχου
+OPTION_TARGET_BOARD_NO_VIEW	Κλείσιμο
+OPTION_TARGET_BOARD_VIEW	Εμφάνιση
+OPTION_TITLE	Επιλογές
+OPTION_VIEW_CHAT	Βλέπε Chat
+OPTION_VIEW_CHAT_OFF	Κρύψιμο
+OPTION_VIEW_CHAT_ON	Εμφάνιση
+OTHER_WORLD_COUNT_TEXT	Ποσότητα
+OTHER_WORLD_DEAD_SOUL_TEXT	Ψυχή Θανάτου
+OTHER_WORLD_DROP_DOWN_X1	x1
+OTHER_WORLD_DROP_DOWN_X5	x5
+OTHER_WORLD_DROP_DOWN_X10	x10
+OTHER_WORLD_EVENT_TIME_TEXT	Μέρες ως την Εξαφάνιση του Αλλόκοσμου
+OTHER_WORLD_EVENT_TITLE	Ταξίδι στον Αλλόκοσμο
+OTHER_WORLD_EVE_EVENT_TIME_TEXT	Μέρες ως το άνοιγμα της Πύλης
+OTHER_WORLD_EXCHANGE_MENU_TEXT	Αλλαγή
+OTHER_WORLD_EXCHANGE_TEXT	Αλλαγή
+OTHER_WORLD_EXIT_BUTTON	Έξοδος
+OTHER_WORLD_HELL_GATE_KEY_TEXT	Κλειδί Ασμόδεου
+OTHER_WORLD_ITEM_NAME_TEXT	Αντικείμενο
+OTHER_WORLD_LIFE_AND_DEATH_LIST_TEXT	Μαύρη Επιστολή
+OTHER_WORLD_NEED_TEXT	Απαιτείται:
+OTHER_WORLD_REINCARNATION_WATER_TEXT	Νερό της Ζωής
+OTHER_WORLD_SLASH_TEXT	/
+OTHER_WORLD_WISP_BOARD_TITLE	Αριθμός Νεκροφλογών
+PARTY_MATCH_TEXT_DUNGEON_NAME	Μπουντρούμι
+PARTY_MATCH_TEXT_DUNGEON_SELECT	Επίλεξε μπουντρούμι
+PARTY_MATCH_TEXT_ENTREE_LEVEL	Επίπεδο: %d
+PARTY_MATCH_TEXT_LEVEL_LIMIT	Προϋπόθεση επιπέδου
+PARTY_MATCH_TEXT_REQUEST_MATCH	Αναζήτηση
+PARTY_MATCH_TEXT_REQUEST_MATCH_CANCEL	Ακύρωση
+PARTY_MATCH_TEXT_REQUIRED_ITEMS	Προϋπόθεση αντικειμένων
+PARTY_MEMBER_INFO_NAME	Όνομα μέλους της Ομάδας
+PASSIVE_ATTR_ACTIVATE_BUTTON	Ενεργοποίηση
+PASSIVE_ATTR_UI_ADD_BUTTON	Προσθήκη
+PASSIVE_ATTR_UI_CHARGE_BUTTON	Αναπλήρωση
+PASSIVE_ATTR_UI_TITLE	Μπόνους κειμηλίων
+PASSWORD_DESC_1	Πληκτρολογήστε τον κωδικό σας,
+PASSWORD_DESC_2	για να ανοίξετε την αποθήκη.
+PASSWORD_DESC_3	’λλαξες τον κωδικό σου;
+PASSWORD_DESC_4	Αν όχι, ο κωδικός σου είναι «000000».
+PASSWORD_DESC_5	’λλαξε τον κωδικό σου στην αποθήκη.
+PASSWORD_TITLE	Συνθηματικό μνήμης
+PET_AGE_TEXT	Ηλικία κατοικιδίου
+PET_ATTR_CHANGE_ITEM_TEXT	Μάγεμα κατοικιδίου
+PET_ATTR_CHANGE_TITLE	Αλλαγή είδους κατοικιδίου
+PET_ATTR_CONFIRMATION	Αλλαγή
+PET_ATTR_DETERMINE_TITLE	Νέο είδος κατοικιδίου
+PET_ATTR_OK	Κλείσιμο
+PET_CHANGE_TEXT	Κατοικίδιο
+PET_FEED_TITLE	Τάισμα
+PET_FEED_TITLE_EVOLVE	Εξέλιξη
+PET_FEED_TITLE_EXP	ΕΜΠ αντικειμένου
+PET_FFED_BUTTON_TEXT	Τάισμα
+PET_HATCHING_BUTTON	Εκκόλαψη
+PET_HATCHING_NIK	Όνομα κατοικιδίου
+PET_HATCHING_WINDOW_TITLE	Κουτί Επώασης
+PET_INFORMATION_ABILITIES	Μπόνους
+PET_INFORMATION_AGE	Ηλικία
+PET_INFORMATION_COSTUME_BONUS	Μπόνους φορεσιάς
+PET_INFORMATION_DEFENCE	’μυνα
+PET_INFORMATION_EVOL_BUTTON	Εξέλιξη
+PET_INFORMATION_EXP	Εμπειρία
+PET_INFORMATION_EXP_BUTTON	ΕΜΠ αντικ.
+PET_INFORMATION_HP	HP
+PET_INFORMATION_LEVEL	Επίπεδο
+PET_INFORMATION_LIFE	Διάρκεια
+PET_INFORMATION_LIFETIME_BUTTON	Τάισμα
+PET_INFORMATION_LIFE_TIME	Ώρες
+PET_INFORMATION_SKILL	Ικανότητα
+PET_INFORMATION_SP	SP
+PET_INFORMATION_TITLE	Κατοικίδιο
+PET_NAME_CHANGE_BUTTON	Αλλαγή
+PET_NAME_CHANGE_WINDOW_TITLE	Αλλαγή ονόματος
+PET_REVIVE_BUTTON	Ανάνηψη
+PET_REVIVE_CANCEL_BUTTON	Ακύρωση
+PET_REVIVE_MATERIAL_TITLE	Υλικό
+PET_REVIVE_REUSLT_TEXT	Αποτέλεσμα
+PET_REVIVE_TARGET	Κατοικίδιο προς ανάνηψη
+PET_REVIVE_TITLE	Ανάνηψη κατοικιδίου
+PICK_MONEY_TITLE	Μοιρασιά
+POPUP_NOTICE_BUTTON_TEXT	Τι νέο υπάρχει;
+PREMIUM_PRIVATE_SHOP	Προσωπικό προνομιούχο κατάστημα
+PREMIUM_PRIVATE_SHOP_ITEM_TAKE_OUT	Παραλαβή αντικειμένου
+PREMIUM_PRIVATE_SHOP_MODIFY_BUTTON	Διαχείριση
+PREMIUM_PRIVATE_SHOP_NOTICE_MODIFY	Γίνεται διαχείριση του προσωπικού καταστήματος.
+PREMIUM_PRIVATE_SHOP_NOTICE_NONE	Το προσωπικό κατάστημα δεν είναι ανοιχτό.
+PREMIUM_PRIVATE_SHOP_NOTICE_NO_TICKET	Χωρίς εισιτήριο
+PREMIUM_PRIVATE_SHOP_NOTICE_OPEN	Το προσωπικό κατάστημα άνοιξε.
+PREMIUM_PRIVATE_SHOP_REMAIN_TEXT_ICON	Υπόλοιπος χρόνος
+PREMIUM_PRIVATE_SHOP_REOPEN_BUTTON	’νοιγμα
+PREMIUM_PRIVATE_SHOP_SHOP_CLOSE_BUTTON	Κλείσιμο καταστήματος
+PREMIUM_PRIVATE_SHOP_TAX_ADJUSTMENT_BUTTON	Παραλαβή
+PREMIUM_PRIVATE_SHOP_TAX_ADJUSTMENT_DIALOG_TITLE	Παραλαβή
+PREMIUM_PRIVATE_SHOP_TITLE	Προσωπικό κατάστημα
+PREMIUM_PRIVATE_SHOP_WON_ICON	Won που μπορείς να καταλάβεις
+PREMIUM_PRIVATE_SHOP_YANG_ICON	Yang που μπορείς να καταλάβεις
+PRIVATESHOPSEARCH_BUY	Αγορά
+PRIVATESHOPSEARCH_COUNT	Τεμάχια
+PRIVATESHOPSEARCH_ITEMNAME	Όνομα
+PRIVATESHOPSEARCH_ITEMTYPE	Αντικείμενα
+PRIVATESHOPSEARCH_JOB	Κλάση
+PRIVATESHOPSEARCH_LEVEL	Επίπεδο
+PRIVATESHOPSEARCH_PRICE	Τιμή
+PRIVATESHOPSEARCH_REFINE	Επίπεδο αντικειμένου
+PRIVATESHOPSEARCH_SEARCH	Αναζήτηση
+PRIVATESHOPSEARCH_SEARCH_BAR	Αναζήτηση
+PRIVATESHOPSEARCH_SELECT	Επιλογή
+PRIVATESHOPSEARCH_SELLER	Πωλητής
+PRIVATE_SHOP_CLOSE_BUTTON	Κλείσιμο καταστήματος
+PRIVATE_SHOP_NAME	Όνομα Καταστήματος
+PRIVATE_SHOP_SEARCH_BY_VNUM_BOARD_TITLE	Όλα τα αποτελέσματα
+PRIVATE_SHOP_SEARCH_BY_VNUM_CANCEL_BUTTON_TEXT	Ακύρωση
+PRIVATE_SHOP_SEARCH_BY_VNUM_SEARCH_BUTTON_TEXT	Αναζήτηση
+PRIVATE_SHOP_TITLE	’νοιξε Ιδιωτικό Κατάστημα
+QUEST_UI_TEXT_COLLECTION	Αποστολές βιολόγου
+QUEST_UI_TEXT_DAILY	Καθημερινή αποστολή
+QUEST_UI_TEXT_EVENT	Αποστολές event
+QUEST_UI_TEXT_LEVELUP	Αποστολή κυνηγιού
+QUEST_UI_TEXT_MAIN	Κύριες αποστολές
+QUEST_UI_TEXT_SCROLL	Αποστολές βιβλίου αποστολών
+QUEST_UI_TEXT_SUB	Δευτερεύουσες αποστολές
+QUEST_UI_TEXT_SYSTEM	Αποστολές παιχνιδιού
+RAMADAN_EVENT_TITL	Event Ραμαζανιού
+REFINE_COST	Κόστος βελτίωσης: 0 Yang
+REFINE_ELEMENT_CHANGE_COST_TITLE	Κόστος
+REFINE_ELEMENT_CHANGE_DARK	Σκοτάδι
+REFINE_ELEMENT_CHANGE_EARTH	Γη
+REFINE_ELEMENT_CHANGE_ELECT	Αστραπή
+REFINE_ELEMENT_CHANGE_FIRE	Φωτιά
+REFINE_ELEMENT_CHANGE_ICE	Πάγος
+REFINE_ELEMENT_CHANGE_TITLE	Αλλαγή στοιχείου
+REFINE_ELEMENT_CHANGE_WIND	’νεμος
+REFINE_ELEMENT_DOWNGRADE_TITLE	Υποβάθμιση
+REFINE_ELEMENT_UPGRADE_TITLE	Βελτίωση
+REFINE_INFO	Πιθανότητα επιτυχούς βελτίωσης: 100%
+REFINE_MONEY	Κόστος εξευγενισμού
+REFINE_SELECT	Εξευγενισμός
+REFINE_TTILE	Βελτιώσεις
+REPORT_VIOLENT_WHISPER	
+RESTART_GIVEUP	Παράτησε τα.
+RESTART_HERE	Επανεκκίνηση εδώ
+RESTART_IMMEDIATE	Μετεμψύχωση
+RESTART_TOWN	Επανεκκίνηση στην Πόλη
+ROULETTE_SPECIAL_TITLE	Ανταμοιβές (%s)
+ROULETTE_SPIN_TEXT1	ΓΥΡΙΣΜΑ
+ROULETTE_SPIN_TEXT2	50 ψυχές
+ROULETTE_SPIN_TEXT3	250.000 Yang
+ROULETTE_TITLE	Ανταμοιβές
+SAFE_CHANGE_PASSWORD	Αλλαγή Συνθηματικού
+SAFE_TITLE	Αποθήκη
+SELECT_ATTR_CHANGED	Νέο
+SELECT_ATTR_CURRENT	Παλιό
+SELECT_ATTR_SELECT	Επιλογή
+SELECT_ATTR_TITLE	Μάγεμα Αντικειμένου+
+SELECT_ATT_GRADE	STR
+SELECT_CREATE	Δημιουργία
+SELECT_DELETE	Διαγραφή
+SELECT_DEX_GRADE	DEX
+SELECT_EMPIRE_NAME	Όνομα Βασιλείου
+SELECT_EXIT	Κλείσιμο
+SELECT_HP	VIT
+SELECT_LEVEL	Επίπεδο
+SELECT_METIN_STONE_TITLE	Επιλογή Λίθου Πνεύματος
+SELECT_NAME	Όνομα
+SELECT_NO_GUILD	Χωρίς Συντεχνία
+SELECT_ORIGIN_STAT	Σημείο εκκίνησης
+SELECT_PLAYTIME	Χρόνος παιχνιδιού
+SELECT_SELECT	Αρχή
+SELECT_SP	SP
+SELECT_SUNGMA_STAT	Θέληση SungMa
+SELECT_TITLE	Επιλογή Τίτλου
+SHOP_BUY	Αγορά
+SHOP_SELL	Πώληση
+SHOP_TITLE	Κατάστημα
+SKILL_SUPPORT_TITLE	Βασικές Ικανότητες
+SNOWFLAKE_STICK_EVENT_EXCHANGE_BUTTON_TEXT	Ανταλλαγή
+SNOWFLAKE_STICK_EVENT_EXCHANGE_PAGE_SUBTITLE_1	Ανταλλαγή με 1 μαγικό ραβδί Χιονονιφάδας
+SNOWFLAKE_STICK_EVENT_EXCHANGE_PAGE_SUBTITLE_2	Μπορείς να ανταλλάξεις 3x κατά τη διάρκεια του event.
+SNOWFLAKE_STICK_EVENT_EXCHANGE_REWARD_BUTTON_TEXT	Ανταμοιβές
+SNOWFLAKE_STICK_EVENT_TITLE	Event Χιονονιφάδας
+SNOWFLAKE_STICK_EVENT_TOOLTIP_HELP_BUTTON_1	Μπορείς να ανταλλάξεις 5x μέσα σε 24 ώρες. Υπόλοιπος χρόνος μέχρι τον μηδενισμό:
+SNOWFLAKE_STICK_EVENT_TOOLTIP_HELP_BUTTON_2	Μπορείς να ανταλλάξεις 5x μέσα σε 24 ώρες. Υπόλοιπος χρόνος μέχρι τον μηδενισμό: -
+SNOWFLAKE_STICK_EVENT_TOOLTIP_RIGHT_ARROW	Μάζεψε 12 Χιονόμπαλες και 12 Κλαδιά Χιονάνθρωπου κι αντάλλαξέ τα με ένα μαγικό ραβδί Χιονονιφάδας.
+SNOWFLAKE_STICK_EVENT_TOOLTIP_RIGHT_ARROW_MOUNT	Μπορεί να ανταλλαχθεί με 15 μαγικά ραβδιά Χιονονιφάδας.
+SNOWFLAKE_STICK_EVENT_TOOLTIP_RIGHT_ARROW_PET	Μπορεί να ανταλλαχθεί με 15 μαγικά ραβδιά Χιονονιφάδας.
+SNOWFLAKE_STICK_EVENT_TOOLTIP_SNOW_BALL	Μπορείς να αποκτήσεις χιονόμπαλες νικώντας τέρατα, όσο είναι ενεργή η μαγεία Χιονονιφάδας.
+SNOWFLAKE_STICK_EVENT_TOOLTIP_TITLE_SNOW_BALL	Χιονόμπαλα
+SNOWFLAKE_STICK_EVENT_TOOLTIP_TITLE_TREE_BRANCH	Κλαδί Χιονάνθρωπου
+SNOWFLAKE_STICK_EVENT_TOOLTIP_TREE_BRANCH	Μπορείς να αοκτήσεις Κλαδιά Χιονάνθρωπου νικώντας τέρατα, όσο είναι ενεργή η Μαγεία Χιονονιφάδας.
+STEP	Βαθμός καθαρότητας
+STEP_SELECT	Βαθμός καθαρότητας
+STRENGTH	Ενίσχυση
+STRENGTH_SELECT	Επίπεδο
+STRUCTURE_VIEW_MODE	Διακόσμηση
+STRUCTURE_VIEW_TYPE_STRUCTURE	Απόκρυψη
+SUNGHAHEE_TOWER_CLEAR	Τα κατάφερες
+SUNGMAHEE_GATE_ACHIEV_COUNT	Αριθμός Τροπαίων
+SUNGMAHEE_GATE_ACHIEV_TOOLTIP_GET_REWARD	Απέκτησες ανταμοιβή
+SUNGMAHEE_GATE_ACHIEV_TOOLTIP_REWARD_LIST	Λίστα ανταμοιβών
+SUNGMAHEE_GATE_TITLE	Πύλη Εισβολής SungMa
+SUNGMAHEE_GATE_TITLE_ACHIEV	Τρόπαια
+SUNGMAHEE_GATE_TITLE_REWARD	Ανταμοιβή Τροπαίων
+SUNGMAHEE_TOWER_DUNGEON_ENTER_QUESTION	Θέλεις να μπεις στο επίπεδο %d;
+SUNGMAHEE_TOWER_DUNGEON_EXIT_QUESTION	Θέλεις να διακόψεις την πρόκληση;
+SUNGMAHEE_TOWER_ELEMENT_ALL	Όλα
+SUNGMAHEE_TOWER_ELEMENT_DARK	Σκοτάδι
+SUNGMAHEE_TOWER_ELEMENT_EARTH	Γη
+SUNGMAHEE_TOWER_ELEMENT_ELEC	Αστραπή
+SUNGMAHEE_TOWER_ELEMENT_FIRE	Φωτιά
+SUNGMAHEE_TOWER_ELEMENT_ICE	Πάγος
+SUNGMAHEE_TOWER_ELEMENT_TITLE	Στοιχεία στο Επίπεδο
+SUNGMAHEE_TOWER_ELEMENT_WIND	’νεμος
+SUNGMAHEE_TOWER_ENTER_BUTTON	Είσοδος
+SUNGMAHEE_TOWER_ENTER_TITLE	Πύργος Κόλασης Sung Mahi
+SUNGMAHEE_TOWER_EXIT_BUTTON	Έξοδος
+SUNGMAHEE_TOWER_INFO_BOARD_FLOOR	E%d
+SUNGMAHEE_TOWER_MISSION_TYPE_ALL_KILL_MOB_PAUSE_SPECIAL	Νίκησε όλα τα τέρατα και τους Δαιμονικούς Λίθους!
+SUNGMAHEE_TOWER_MISSION_TYPE_BOSS	Νίκησε όλα τα τέρατα!
+SUNGMAHEE_TOWER_MISSION_TYPE_CHESS_FAIL	Νίκησε όλα τα τέρατα!
+SUNGMAHEE_TOWER_MISSION_TYPE_COMPLETE	Αποστολή εξετελέσθη
+SUNGMAHEE_TOWER_MISSION_TYPE_CORRECT_ITEM_USE	Βρες το κλειδί και ξέφυγε!
+SUNGMAHEE_TOWER_MISSION_TYPE_DEBUFF_RELEASE	Νίκησε όλα τα τέρατα!
+SUNGMAHEE_TOWER_MISSION_TYPE_FINDING_RIGHT_MATCH_METIN_STONE	Κατάστρεψε το καταραμένο Metin!
+SUNGMAHEE_TOWER_MISSION_TYPE_FINDING_RIGHT_MATCH_METIN_STONE_FAIL	Νίκησε όλα τα τέρατα!
+SUNGMAHEE_TOWER_MISSION_TYPE_MONSTER_CHESS	Σκότωσε ένα ζευγάρι τεράτων που δεν ταιριάζει!
+SUNGMAHEE_TOWER_MISSION_TYPE_NORMAL	Νίκησε όλα τα τέρατα!
+SUNGMAHEE_TOWER_MISSION_TYPE_SEAL_RELEASE	Σπάσε τη σφραγίδα με τον Λίθο σφραγίδας!
+SUNGMAHEE_TOWER_MISSION_TYPE_STAIRS	Ανέβα τα σκαλιά στο επόμενο επίπεδο!
+SUNGMAHEE_TOWER_MISSION_TYPE_SURVIVE	Ξέφυγε από όλες τις επιθέσεις!
+SUNGMAHEE_TOWER_MY_RANK_TITLE	Κατάταξη
+SUNGMAHEE_TOWER_REWARD_INFO_TITLE	Ανταμοιβές
+SYSTEMOPTION_TITLE	Επιλογές Συστήματος
+SYSTEM_CANNOT_CONTROL_AND_ESCAPTE	Απελευθέρωση
+SYSTEM_CHANGE	Αλλαγή Χαρακτήρα
+SYSTEM_EXIT	Έξοδος από Παιχνίδι
+SYSTEM_HELP	Βοήθεια
+SYSTEM_LOGOUT	Αποσύνδεση
+SYSTEM_MALL	Item Shop
+SYSTEM_MOVE_CHANNEL	Αλλαγή καναλιού
+SYSTEM_OPTION	Επιλογές Συστήματος
+TASKBAR_CHARACTER	Χαρακτήρας [C/V/B/N]
+TASKBAR_CHAT	Παράθυρο Chat [Enter]
+TASKBAR_DISABLE	Απενεργοποιημένο
+TASKBAR_DRAGON_SOUL	Αλχημεία Δρακόλιθων
+TASKBAR_EXPAND	Μεγέθυνση παραθύρου
+TASKBAR_INVENTORY	Κατάλογος [I]
+TASKBAR_MESSENGER	Φίλοι [Alt+M]
+TASKBAR_MONEY_EXPAND	Περιουσία
+TASKBAR_NEXT_QUICKSLOT	Επόμενο Πεδίο Γρήγορης Πρόσβασης [Shift+Number, Alt]
+TASKBAR_PET_INFO	Στοιχεία κατοικιδίου
+TASKBAR_PREV_QUICKSLOT	Προηγούμενο Πεδίο Γρήγορης Πρόσβασης [Shift+Number]
+TASKBAR_SYSTEM	Επιλογές[ESC]
+TOTAL_RANKING	Συνολική λίστα κατάταξης
+TREASURE_HUNT_EVENT_ACCUMULATE_COUNT	Γύρος
+TREASURE_HUNT_EVENT_GOLD	Δουβλόνια που απέκτησες
+TREASURE_HUNT_EVENT_RANKING_COUNT	Γύρος
+TREASURE_HUNT_EVENT_RANKING_NAME	Όνομα
+TREASURE_HUNT_EVENT_RANKING_RANK	Κατάταξη
+TREASURE_HUNT_EVENT_RANKING_TITLE	Λίστα κατάταξης Κυνηγιού θησαυρού
+TREASURE_HUNT_EVENT_REWARD_LIST	Ανταμοιβές
+TREASURE_HUNT_EVENT_REWARD_LIST_ACCUMULATE_COUNT	Γύροι
+TREASURE_HUNT_EVENT_REWARD_LIST_TITLE	Ανταμοιβές γύρων
+TREASURE_HUNT_EVENT_TITLE	Κυνήγι θησαυρού
+VALENTINE_DAY_EVENT_CURRENT_COUNT	Διαθέσιμη Ποσότητα
+VALENTINE_DAY_EVENT_MAX_COUNT	Μέγιστη Ποσότητα
+VALENTINE_DAY_EVENT_TITLE	Επισκόπηση event Αγίου Βαλεντίνου
+VALENTINE_DAY_EVENT_USE_BUTTON	Εξαργύρωση
+VALENTINE_DAY_EVENT_WRAP_BUTTON	Τύλιγμα
+WARP_MI_LABEL	Στον Βωμό που δέχεται επίθεση
+WEEKLY_RANKING	Εβδομαδιαία λίστα κατάταξης
+WHISPER_BAN	Φραγμός
+WHISPER_NAME	Ψίθυρος
+WHISPER_REPORT	
+WHISPER_SEND	Αποστολή
+WORLD_BOSS_BREAK_TIME_TEXT	Χρόνος ηρεμίας
+WORLD_BOSS_MIN_DAMAGE_TEXT	Απαιτ. Ελάχιστη ζημιά
+WORLD_BOSS_RANK	Θέση αρχηγού κόσμου
+WORLD_BOSS_RANKING_BUTTON	Λίστα κατάταξης
+WORLD_BOSS_RANK_EMPIRE	Βασίλειο
+WORLD_BOSS_RANK_GUILD_NAME	Συντεχνία
+WORLD_BOSS_RANK_NAME	Όνομα
+WORLD_BOSS_RANK_RANK	Κατάταξη
+WORLD_BOSS_RANK_TIER	Επίπεδο λείας
+WORLD_BOSS_RUN_TIME_TEXT	Χρόνος μάχης
+WORLD_BOSS_TITLE	Νίκησες τον αρχηγό του κόσμου
+WORLD_BOSS_TOTAL_DAMAGE_TEXT	Συνολική ζημιά
+WORLD_BUSS_REWARD_BUTTON	Παραλαβή ανταμοιβής
+YES	Ναι
+ZONE_MAP	Μεγάλος Χάρτης

@@ -1,0 +1,85 @@
+NEW_LOCALE_GAME_STRINGS	NEW_LOCALE_GAME_STRINGS
+SHOP_NOT_ENOUGH_ITEM	Yeterli eþyanýz yok.
+SHOP_NOT_ENOUGH_EXP	Yeterli tecrübeniz yok.
+GUILD_LEADER_GRADE0	[Lonca Lideri] 
+GUILD_LEADER_GRADE1	[Lonca Generali] 
+RESTART_CLIENT_DO_YOU_ACCEPT_1	Deðiþikliklerin etkili olmasý için istemcinin yeniden baþlatýlmasý gerekir.
+RESTART_CLIENT_DO_YOU_ACCEPT_2	Þimdi istemciyi yeniden baþlatmak istiyor musunuz?
+TOOLTIP_ITEM_SUMMON	Çaðýr
+TOOLTIP_ITEM_MOUNT	Binek
+MAP_NONE	Bilinmeyen
+MESSENGER_GM	Takým
+MESSENGER_OFFLINE_TIME_TOOLTIP	%s için çevrimdýþý
+DESTROY_ITEM_CONFIRM	Bu eþyayý silmek istediðinizden emin misiniz?
+TARGET_INFO_RACE	Bonus : %s
+TARGET_INFO_MAX_HP	Max. HP : %s
+TARGET_INFO_HP_REGEN	Can Yenilenmesi: Her %d saniyede %d%% (%s).
+TARGET_INFO_EXP	Deneyim : %s
+TARGET_INFO_SUNGMA_EXP	Sung-Ma Deneyimi : %s
+TARGET_INFO_GOLD_MIN_MAX	Yang : %s - %s
+TARGET_INFO_METIN_STONE_DROP	Taþ düþme ihtimali var.
+TARGET_INFO_ITEM_DROP	Canavardan düþen eþyalar.
+TARGET_INFO_NO_ITEM_DROP	Bu canavar hiçbir eþya düþürmez.
+TARGET_INFO_CHECKBOX_SHOW_ATTR_NULL_VALUE	Deðeri olmayan özellikleri göster.
+TARGET_INFO_CHECKBOX_SHOW_ATTR_COLOR	Özellikleri renkle göster.
+TARGET_INFO_RESIST_TITLE	Dirençler
+TARGET_INFO_RESIST_WEAPON_TITLE	Silah Dirençleri
+TARGET_INFO_ENCHANT_TITLE	Efsunlar
+TARGET_INFO_ELEMENT_TITLE	Element Gücü
+TARGET_INFO_RESIST_ELEMENT_TITLE	Element Direnci
+TARGET_INFO_ELEMENT_TOOLTIP_TITLE	Element
+TARGET_INFO_ELEMENT_TOOLTIP_LIST1	Listelenen elementler canavarýn size verdiði
+TARGET_INFO_ELEMENT_TOOLTIP_LIST2	element hasarýnýn türünü gösterir.
+TARGET_INFO_ATTR_TOOLTIP_TITLE	Özellikler
+TARGET_INFO_ATTR_TOOLTIP_LIST1	Özellikler canavarýn tüm dirençlerini,
+TARGET_INFO_ATTR_TOOLTIP_LIST2	zayýflýklarýný ve efsunlarýný içerir.
+TARGET_INFO_REWARD_TOOLTIP_TITLE	Deneyim
+TARGET_INFO_REWARD_TOOLTIP_LIST1	Gösterilen deneyim,
+TARGET_INFO_REWARD_TOOLTIP_LIST2	oyuncunun seviyesine göre dinamik olarak ayarlanýr ve
+TARGET_INFO_REWARD_TOOLTIP_LIST3	kazanýlan deneyimin doðru bir yansýmasý saðlanýr.
+TARGET_INFO_RACE_UNKNOWN	Bilinmeyen
+TARGET_INFO_RACE_METIN	Metin Taþý
+TARGET_INFO_RACE_ANIMAL	Hayvan
+TARGET_INFO_RACE_UNDEAD	Ölümsüz
+TARGET_INFO_RACE_DEVIL	Þeytan
+TARGET_INFO_RACE_HUMAN	Yarý Ýnsan
+TARGET_INFO_RACE_ORC	Ork
+TARGET_INFO_RACE_MILGYO	Mistik
+TARGET_INFO_RACE_INSECT	Böcek
+TARGET_INFO_RACE_DESERT	Çöl
+TARGET_INFO_RACE_TREE	Orman
+TARGET_INFO_RACE_ATT_CZ	Zodyak
+TARGET_INFO_RACE_AWEAKEN	Uyanýþ
+TARGET_INFO_RACE_SUNGMAHEE	Sung Ma
+TARGET_INFO_RACE_OUTPOST	Karakol
+TARGET_INFO_ENCHANT_SLOW	Yavaþlatma þansý %d%%
+TARGET_INFO_ENCHANT_POISON	Zehirlenme þansý %d%%
+TARGET_INFO_ENCHANT_STUN	Sersemletme þansý %d%%
+TARGET_INFO_ENCHANT_CRITICAL	Kritik vuruþ þansý +%d%%
+TARGET_INFO_ENCHANT_PENETRATE	Delici vuruþ þansý %d%%
+TARGET_INFO_ELEMENT_ELECT	Yýldýrým Gücü : %d%%
+TARGET_INFO_ELEMENT_FIRE	Ateþ Gücü : %d%%
+TARGET_INFO_ELEMENT_ICE	Buz Gücü : %d%%
+TARGET_INFO_ELEMENT_WIND	Rüzgar Gücü : %d%%
+TARGET_INFO_ELEMENT_EARTH	Toprak Gücü : %d%%
+TARGET_INFO_ELEMENT_DARK	Karanlýk Gücü : %d%%
+TARGET_INFO_RESIST_FIST	Yumruk Direnci: %d%%
+TARGET_INFO_RESIST_SWORD	Kýlýç Direnci : %d%%
+TARGET_INFO_RESIST_TWOHAND	Çiftel Direnci : %d%%
+TARGET_INFO_RESIST_DAGGER	Hançer Direnci : %d%%
+TARGET_INFO_RESIST_BOW	Yay Direnci : %d%%
+TARGET_INFO_RESIST_BELL	Çan Direnci : %d%%
+TARGET_INFO_RESIST_FAN	Yelpaze Direnci : %d%%
+TARGET_INFO_RESIST_CLAW	Pençe Direnci : %d%%
+TARGET_INFO_RESIST_FIRE	Ateþ Direnci : %d%%
+TARGET_INFO_RESIST_ELECT	Yýldýrým Direnci : %d%%
+TARGET_INFO_RESIST_MAGIC	Büyü Direnci : %d%%
+TARGET_INFO_RESIST_WIND	Rüzgar Direnci : %d%%
+TARGET_INFO_RESIST_POISON	Zehir Direnci : %d%%
+TARGET_INFO_RESIST_BLEEDING	Kanama Direnci : %d%%
+TARGET_INFO_RESIST_DARK	Karanlýk Direnci : %d%%
+TARGET_INFO_RESIST_ICE	Buz Direnci : %d%%
+TARGET_INFO_RESIST_EARTH	Toprak Direnci : %d%%
+SHOW_COSTUME_TOOLTIP	Kostümü Göster
+HIDE_COSTUME_TOOLTIP	Kostümü Gizle
+ACCOUNT_HAS_DELETED	Hesap Silindi

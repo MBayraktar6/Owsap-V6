@@ -1,0 +1,14 @@
+1	Standard	30000
+1	Tysi¹c i Jedna Noc	30002
+1	Mistrz Grillowania	30003
+1	Poszukiwacz Skarbów	30004
+1	P³omyk Oszczêdnoœci	30005
+1	Handlarz Broni¹	30006
+1	Sklep ze Zbroj¹	30007
+1	Alchemik	30008
+2	Piek³o	d:/ymir work/ui/pattern/myshop/fire/p_fire	0xFF976D
+2	Epoka Lodowcowa	d:/ymir work/ui/pattern/myshop/ice/p_ice	0xF9F4FF
+2	Pergamin	d:/ymir work/ui/pattern/myshop/paper/p_paper	0xFFBF8B
+2	Sztandar Wojenny	d:/ymir work/ui/pattern/myshop/ribon/p_ribon	0xFFECD1
+2	Skrzyd³a	d:/ymir work/ui/pattern/myshop/wing/p_wing	0xF1ECE1
+

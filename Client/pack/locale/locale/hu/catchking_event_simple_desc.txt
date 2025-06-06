@@ -1,0 +1,9 @@
+[DELAY value;0]
+1. Több paklit is feltehetsz tétként egy játékra és így ugyanennyi[ENTER]
+ládát nyerhetsz.[ENTER]
+[ENTER]
+2. Legfeljebb 5 Királypaklit tehetsz fel tétként.[ENTER]
+[ENTER]
+3. Miután a játék elkezdõdött, a Királypaklikat nem tudod visszavenni.[ENTER]
+[ENTER]
+4. A Szabályokra kattintva több részletet megtudhatsz a játékról.

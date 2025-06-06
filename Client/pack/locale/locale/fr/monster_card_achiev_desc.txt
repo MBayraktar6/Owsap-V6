@@ -1,0 +1,40 @@
+1	Loups alphas
+2	Chef de meute
+3	Unique
+4	Tigre, ours, sanglier
+5	Vengeance du Serment Blanc
+6	Vengeance de la Tempête Noire
+7	Frères
+8	Liens familiaux
+9	Cruel et brutal
+10	Presque plus humain
+11	Gardiens éternels
+12	Gardiens de Néphrite
+13	Seigneur des montagnes fulgurantes
+14	Colère de la Falaise de Gautama
+15	Frères singes
+16	Seigneur de la grotte
+17	Démoniaque
+18	Serviteur de Sung Mahi
+19	La fin justifie les moyens
+20	Gardiens de la forêt
+21	Généraux de Sung Mahi
+22	Zodiaque de l'éclair
+23	Zodiaque du feu
+24	Zodiaque de la glace
+25	Zodiaque du vent
+26	Zodiaque de la terre
+27	Zodiaque de l'obscurité.
+28	Gardien des niveaux
+29	Sung Mahi myre
+30	Seigneurs mi-homme
+31	Gardiens glacés
+32	Le trio infernal
+33	La reine venimeuse
+34	La tour brûlante
+35	La tour glacée
+36	La tour électrique
+37	La tour orageuse
+38	La tour solide
+39	La tour sombre
+40	La fin d'Alastor

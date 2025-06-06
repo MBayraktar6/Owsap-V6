@@ -1,0 +1,7 @@
+[DELAY value;0]
+Jeœli wybrana przez Ciebie dru¿yna wygra, otrzymasz[ENTER]
+wiêcej nagród, jeœli kibicowa³eœ jej czêœciej.[ENTER]
+Bilet krajowy: mo¿na otrzymaæ w zamian za trofeum[ENTER]
+mistrzowskie.[ENTER]
+Bilet kibicowski: mo¿na otrzymaæ ze skrzyni[ENTER]
+mistrzowskiej.

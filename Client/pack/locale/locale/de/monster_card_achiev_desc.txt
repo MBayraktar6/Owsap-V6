@@ -1,0 +1,40 @@
+1	Alphawölfe
+2	Rudelführer
+3	Einzigartig
+4	Tiger, Bär, Eber
+5	Rache des Weißen Eids
+6	Rache des Schwarzen Sturms
+7	Brüder
+8	Familienbande
+9	Grausam und brutal
+10	Kaum noch menschlich
+11	Ewige Wächter
+12	Nephritwächter
+13	Herrscher der Donnerberge
+14	Ärger am Gautamakliff
+15	Affenbrüder
+16	Höhlenherrscher
+17	Teuflisch
+18	Sung Mahis Diener
+19	Der Zweck heiligt die Mittel
+20	Waldwächter
+21	Sung Mahis Generäle
+22	Zodiak der Blitze
+23	Zodiak des Feuers
+24	Zodiak des Eises
+25	Zodiak des Windes
+26	Zodiak der Erde
+27	Zodiak der Dunkelheit
+28	Wächter der Ebenen
+29	Sung Mahis Myr
+30	Halb-menschliche Herrscher
+31	Eisige Wächter
+32	Das Höhlentrio
+33	Die giftige Königin
+34	Der brennende Turm
+35	Der gefrorene Turm
+36	Der elektrische Turm
+37	Der stürmische Turm
+38	Der standfeste Turm
+39	Der dunkle Turm
+40	Alastors Ende

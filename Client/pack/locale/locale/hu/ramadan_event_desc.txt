@@ -1,0 +1,9 @@
+[DELAY value;0]
+RAMADÁN RENDEZVÉNY[ENTER]
+[ENTER]
+Látogasd meg gyakran a Történészt, és szerezz[ENTER]
+néhány értékes tárgyat a kitartásodért a[ENTER]
+Ramadán végén.[ENTER]
+[ENTER]
+Ha Kenyeret vagy Áldás gyümölcsöt kapsz, ezek[ENTER]
+a rendezvény felületen tárolódnak.

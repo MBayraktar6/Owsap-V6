@@ -1,0 +1,7 @@
+[DELAY value;0]
+Se la squadra selezionata vince e si è fatto spesso il[ENTER]
+tifo, si ricevono più ricompense.[ENTER]
+Biglietto Nazionale: si può ottenere in cambio del[ENTER]
+Trofeo Campionato.[ENTER]
+Biglietto Tifoseria: si può trovare nello Scrigno[ENTER]
+Campionato.

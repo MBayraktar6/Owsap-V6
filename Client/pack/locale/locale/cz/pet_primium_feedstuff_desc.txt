@@ -1,0 +1,5 @@
+[DELAY value;0]
+Svého mazlíka mùžeš oživit zkombinováním jeho tìla s[ENTER]
+Božskými proteiny.\n[ENTER]
+Množství vyžadovaných materiálù záleží na vìku mazlíka.\n[ENTER]
+Mrtvý mazlík bude oživen s 80 % jeho pùvodního vìku.\n

@@ -1,0 +1,14 @@
+1	Standard	30000
+1	Mille et une nuits	30002
+1	Roi du barbecue	30003
+1	Chasseur de trésor	30004
+1	Flamme économe	30005
+1	Marchand d'armes	30006
+1	Boutique d'armures	30007
+1	Alchimiste	30008
+2	Fournaise	d:/ymir work/ui/pattern/myshop/fire/p_fire	0xFF976D
+2	Âge de glace	d:/ymir work/ui/pattern/myshop/ice/p_ice	0xF9F4FF
+2	Parchemin	d:/ymir work/ui/pattern/myshop/paper/p_paper	0xFFBF8B
+2	Étendard de guerre	d:/ymir work/ui/pattern/myshop/ribon/p_ribon	0xFFECD1
+2	Ailes	d:/ymir work/ui/pattern/myshop/wing/p_wing	0xF1ECE1
+

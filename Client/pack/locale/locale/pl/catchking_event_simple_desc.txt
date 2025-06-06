@@ -1,0 +1,9 @@
+[DELAY value;0]
+1. W ka¿dej grze mo¿esz u¿yæ kilku talii królewskich, by wygraæ[ENTER]
+liczbê skrzyñ odpowiadaj¹c¹ liczbie u¿ytych talii.[ENTER]
+[ENTER]
+2. Mo¿esz u¿yæ maksymalnie 5 talii królewskich naraz.[ENTER]
+[ENTER]
+3. Po rozpoczêciu gry u¿yte talie królewskie przepadaj¹.[ENTER]
+[ENTER]
+4. W dziale "Zasady" znajdziesz szczegó³ow¹ instrukcjê gry.

@@ -1,0 +1,13 @@
+[DELAY value;0]
+Recibes una de las recompensas de la lista:[ENTER]
+Debes reunir 9 recompensas para completar 1 ronda.[ENTER]
+También obtendrás recompensas por las rondas[ENTER]
+completadas.[ENTER]
+Debes haber recibido al menos 1 recompensa antes de[ENTER]
+poder establecer nuevas recompensas.[ENTER]
+Para las rondas 6 y 9 puedes obtener bendiciones[ENTER]
+ilimitadas como recompensa.[ENTER]
+Sin embargo, su cantidad está limitada para cada[ENTER]
+evento.[ENTER]
+Cada personaje puede recibir cada bendición solamente[ENTER]
+1 vez por evento.

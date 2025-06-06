@@ -1,0 +1,9 @@
+[DELAY value;0]
+RAMADAN EVENT[ENTER]
+[ENTER]
+Pay regular visits to the Historian and earn[ENTER]
+yourself some valuable items for your[ENTER]
+dedication at the end of Ramadan.[ENTER]
+[ENTER]
+If you receive Bread or Blessing Fruit, these[ENTER]
+will be saved in the event UI.

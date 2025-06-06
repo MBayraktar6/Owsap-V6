@@ -1,0 +1,6 @@
+[DELAY value;0]
+Descripción de evento[ENTER]
+¡Comienza el Evento del Campeonato! Las Pelotas de[ENTER]
+fútbol ya no aparecerán en el inventario. Reúne todas[ENTER]
+las que puedas y cámbiaselas a Yu-Hwan por Balones de[ENTER]
+oro o úsalas para obtener objetos.

@@ -1,0 +1,6 @@
+[DELAY value;0]
+Etkinlik açýklamasý[ENTER]
+Þampiyonluk etkinliði baþladý! Futbol toplarý artýk[ENTER]
+envanterde görünmüyor. Mümkün olduðu kadar çok topla[ENTER]
+ve Yu-Hwan'da altýn toplarla takas et veya bunlarý[ENTER]
+eþya almak için kullan.

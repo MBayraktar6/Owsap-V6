@@ -1,0 +1,9 @@
+[DELAY value;0]
+[Opis eventu][ENTER]
+[ENTER]
+Rozpocz¹³ siê Letni Event![ENTER]
+[ENTER]
+Pamiêtaj, ¿e na nagrody mo¿esz wymieniaæ jedynie ga³ki lodów znajduj¹ce[ENTER]
+siê w Twoim eventowym interfejsie.[ENTER]
+[ENTER]
+OdwiedŸ Summer w mieœcie, by wymieniæ ga³ki lodów na wspania³e nagrody.

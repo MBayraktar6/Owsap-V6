@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Descripción de evento][ENTER]
+[ENTER]
+¡El evento de verano ha comenzado![ENTER]
+[ENTER]
+Ten en cuenta que solo podrás cambiar las Bolas de hielo por recompensas[ENTER]
+en la interfaz de evento.[ENTER]
+[ENTER]
+Ve a ver a Summer en la ciudad para canjear Bolas de hielo por[ENTER]
+recompensas alucinantes.

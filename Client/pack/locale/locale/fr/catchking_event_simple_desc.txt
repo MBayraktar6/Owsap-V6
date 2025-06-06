@@ -1,0 +1,10 @@
+[DELAY value;0]
+1. À chaque partie, vous pouvez mettre plusieurs jeux royaux en jeu[ENTER]
+et remporter le nombre de coffres correspondant.[ENTER]
+[ENTER]
+2. Vous pouvez mettre jusqu'à 5 jeux royaux en jeu d'un coup.[ENTER]
+[ENTER]
+3. Les jeux royaux ne sont pas remboursés après le début de la partie.[ENTER]
+[ENTER]
+4. Lisez les « règles » pour une description détaillée du[ENTER]
+fonctionnement du jeu.

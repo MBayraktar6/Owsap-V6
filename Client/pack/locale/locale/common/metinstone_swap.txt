@@ -1,0 +1,156 @@
+# Group metinstone_range 설명
+# range				: 변경할 메틴석 범위 번호입니다. 그룹 metinstone_range에 같은 range가 있으면 안됩니다. range값이 256을 넘어갈 경우 프로그래머에게 말씀해주세요 (코드 수정 필요)
+# Group range_vnum	: 범위에 해당 될 메틴석 vnum 들을 추가해주세요.
+Group metinstone_range
+{
+	range	1
+	List range_vnum
+	{
+		8001
+		8002
+		8003
+		8004
+		8005
+		8006
+		8007
+		8008
+		8009
+		8010
+		8011
+		8012
+		8013
+		8014
+		8015
+		8016
+		8017
+		8018
+		8019
+		8020
+		8021
+		8022
+		8023
+		8024
+		8025
+		8026
+		8027
+		8031
+		8032
+		8033
+		8034
+		8035
+		8036
+		8037
+		8038
+		8039
+		8040
+	}
+}
+
+Group metinstone_range
+{
+	range	2
+	List range_vnum
+	{
+		8051
+		8052
+		8053
+		8054
+		8055
+		8056
+		8057
+		8058
+		8059
+		8060
+		8061
+		8062
+		8063
+		8064
+		8065
+		8066
+		8067
+		8076
+		8077
+		8101
+		8102
+		8103
+		8104
+		8105
+		8106
+		8107
+		8108
+		8109
+		8110
+		8111
+		8112
+		8113
+		8114
+		8115
+	}
+}
+
+# Group metinstone_swap 설명
+# event_flag_value		: 메틴석 외형 변경 이벤트 플래그 값
+# range_number			: 변경할 메틴석 vnum 범위 번호. ( 위에 있는 Group metinstone_swap_range 의 range 번호 )
+# swap_vnum				: 외형 변경 mob vnum 값
+# can_use_mob_color		: 다른 외형으로 변경될 때 mob_proto의 몹 색상을 허용하는지 여부 (false : 허용하지않음, true : 허용함)
+# : 메틴석 외형 변경 이벤트 플래그값일 때, 메틴석 vnum이 외형 변경될 범위에 있으면 외형을 swap_vnum으로 변경합니다.
+
+# 윷놀이, 잭오랜턴
+Group metinstone_swap
+{
+	event_flag_value	1
+	Group swap_data
+	{
+		#range_number	swap_vnum	can_use_mob_color
+		1	8060	true
+		2	8060	true
+	}
+}
+
+# 라마단 이벤트
+Group metinstone_swap
+{
+	event_flag_value	2
+	Group swap_data
+	{
+		#range_number	swap_vnum	can_use_mob_color
+		1	8203	true
+		2	8203	true
+	}
+}
+
+# 여름 이벤트
+Group metinstone_swap
+{
+	event_flag_value	3
+	Group swap_data
+	{
+		#range_number	swap_vnum	can_use_mob_color
+		1	8202	true
+		2	8202	true
+	}
+}
+
+# 발렌타인 이벤트
+Group metinstone_swap
+{
+	event_flag_value	4
+	Group swap_data
+	{
+		#range_number	swap_vnum	can_use_mob_color
+		1	8200	false
+		2	8201	false
+	}
+}
+
+# 뉴월드컵 축구공
+Group metinstone_swap
+{
+	event_flag_value	5
+	Group swap_data
+	{
+		#range_number	swap_vnum	can_use_mob_color
+		1	8207	true
+		2	8207	true
+	}
+}

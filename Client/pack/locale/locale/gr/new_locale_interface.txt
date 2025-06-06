@@ -1,0 +1,8 @@
+NEW_LOCALE_INTERFACE_STRINGS	NEW_LOCALE_INTERFACE_STRINGS
+DESTROY	Καταστροφή
+SHOW_COSTUME	Εμφάνιση Κοστουμιού
+HIDE_COSTUME	Απόκρυψη Κοστουμιού
+FOV_OPTION	Πεδίο προβολής
+FOV_OPTION_TOOLTIP	Επέκταση πεδιού προβολής
+FOV_RESET_OPTION_TOOLTIP	Επαναφορά πεδιού προβολής
+OPTION_ALWAYS_SHOW_COUNTRY	Country

@@ -1,0 +1,6 @@
+[DELAY value;0]
+Event Description[ENTER]
+The World Cup Event has started. Footballs no longer[ENTER]
+appear in your inventory. Collect as many as you can[ENTER]
+and then exchange them for Golden Footballs from[ENTER]
+Yu-Hwan, or use them to receive items.

@@ -1,0 +1,6 @@
+[DELAY value;0]
+Dacã echipa aleasã va câºtiga, recompensele primite[ENTER]
+vor fi pe mãsura susþinerii.[ENTER]
+Tichet Þarã: Poate fi obþinut în schimbul Trofeului[ENTER]
+Turneu.[ENTER]
+Tichet Susþinere: poate fi obþinut de la Cufãr Turneu.

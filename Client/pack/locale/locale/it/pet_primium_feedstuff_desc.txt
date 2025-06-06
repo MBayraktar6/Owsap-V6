@@ -1,0 +1,7 @@
+[DELAY value;0]
+Dai dei Bocconi divini a un pet defunto per farlo[ENTER]
+resuscitare. \n[ENTER]
+Il numero di item necessari varia in base all'età del pet.[ENTER]
+\n[ENTER]
+Sussiste la probabilità (80%) che, dopo la resurrezione, il[ENTER]
+pet riacquisisca l'età che aveva prima di morire. \n

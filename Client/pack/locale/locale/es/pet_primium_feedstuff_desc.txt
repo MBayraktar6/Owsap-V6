@@ -1,0 +1,7 @@
+[DELAY value;0]
+Puedes revivir a tu mascota fallecida si combinas a dicha[ENTER]
+mascota con un Complemento proteico divino. \n[ENTER]
+La cantidad de objetos necesarios depende de la edad de tu[ENTER]
+mascota. \n[ENTER]
+La mascota fallecida revivirá con un 80 % de su edad[ENTER]
+original. \n

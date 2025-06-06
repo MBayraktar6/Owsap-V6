@@ -1,0 +1,14 @@
+1	Padrão	30000
+1	1001 Noites	30002
+1	Rei do Barbecue	30003
+1	Caçador de Tesouros	30004
+1	Chama Frugal	30005
+1	Negociante de Armas	30006
+1	Revendedor de Armaduras	30007
+1	Alquimista	30008
+2	Inferno	d:/ymir work/ui/pattern/myshop/fire/p_fire	0xFF976D
+2	Idade do Gelo	d:/ymir work/ui/pattern/myshop/ice/p_ice	0xF9F4FF
+2	Pergaminho	d:/ymir work/ui/pattern/myshop/paper/p_paper	0xFFBF8B
+2	Estandarte de Guerra	d:/ymir work/ui/pattern/myshop/ribon/p_ribon	0xFFECD1
+2	Asas	d:/ymir work/ui/pattern/myshop/wing/p_wing	0xF1ECE1
+

@@ -1,0 +1,152 @@
+# 성마희 게이트 보상 1
+Group Sungma_gate_1
+{
+	vnum	1
+	
+	Group reward_items
+	{
+		#vnum	count
+		83073	10
+		83074	10
+	}
+}
+
+# 성마희 게이트 보상 2
+Group Sungma_gate_2
+{
+	vnum	2
+
+	Group reward_items
+	{
+		#vnum	count
+		56002	1
+		56003	1
+		56004	1
+		56005	1
+		56006	1
+		56007	1
+	}
+}
+
+# 성마희 게이트 보상 3
+Group Sungma_gate_3
+{
+	vnum	3
+
+	Group reward_items
+	{
+		#vnum	count
+		72760	1
+		72761	1
+		72762	1
+		72763	1
+		72764	1
+		72765	1
+		72766	1
+		72767	1
+		72768	1
+		72769	1
+		72770	1
+		72771	1
+		72772	1
+		72773	1
+		72774	1
+		72775	1
+		72776	1
+		72777	1
+	}
+}
+
+# 성마희 게이트 보상 4
+Group Sungma_gate_4
+{
+	vnum	4
+
+	Group reward_items
+	{
+		#vnum	count
+		72778	1
+		72779	1
+		72780	1
+		72781	1
+		72782	1
+		72783	1
+		72784	1
+		72785	1
+		72786	1
+		72787	1
+		72788	1
+		72789	1
+		72790	1
+	}
+}
+
+# 성마희 게이트 보상 5
+Group Sungma_gate_5
+{
+	vnum	5
+
+	Group reward_items
+	{
+		#vnum	count
+		53625	1
+	}
+}
+
+# 성마희 게이트 보상 6
+Group Sungma_gate_6
+{
+	vnum	6
+
+	Group reward_items
+	{
+		#vnum	count
+		10955	1
+		10956	1
+		10957	1
+		10958	1
+		10959	1
+		10960	1
+	}
+}
+
+# 성마희 게이트 보상 7
+Group Sungma_gate_7
+{
+	vnum	7
+
+	Group reward_items
+	{
+		#vnum	count
+		85028	1
+	}
+}
+
+# 성마희 게이트 보상 8
+Group Sungma_gate_8
+{
+	vnum	8
+
+	Group reward_items
+	{
+		#vnum	count
+		10955	1
+		10956	1
+		10957	1
+		10958	1
+		10959	1
+		10960	1
+	}
+}
+
+# 성마희 게이트 보상 9
+Group Sungma_gate_9
+{
+	vnum	9
+
+	Group reward_items
+	{
+		#vnum	count
+		55413	1
+	}
+}

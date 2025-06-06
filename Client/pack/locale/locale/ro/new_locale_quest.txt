@@ -1,0 +1,12 @@
+1613	Agent L¹dowy:
+1614	Jestem tylko Agentem L¹dowym.[ENTER]Nie mogê obni¿yæ ceny.[ENTER]Proszê, przynieœ mi wiêcej Yang.
+1615	Gildia naby³a teren!
+1616	Wróæ, gdy zdecydujesz co chcesz zrobiæ...[ENTER]Kto pierwszy ten lepszy.
+1617	Jestem Zarz¹dc¹ tego terenu i odpowiadam za jego[ENTER]sprzeda¿. Zanim potwory opanowa³y l¹d na[ENTER]kontynencie, nie brakowa³o nam ziemi i wszyscy[ENTER]ludzie byli zadowoleni. Teraz sprzedajê ziemie[ENTER]tylko pod tereny dla gildii. Robiê interesy tylko[ENTER]z przywódcami gildii.[ENTER]Czy chcesz kupiæ ten teren?
+1618	Ju¿ Ci mówi³em, nie mogê sprzedawaæ terenów[ENTER]ka¿demu. Mam nadziejê, ¿e mnie rozumiesz...
+1619	Gildia, która posiada ju¿ swój teren nie mo¿e[ENTER]kupiæ nastêpnego.
+1620	Wyst¹pi³ b³¹d podczas operacji.
+1621	Aby wykupiæ t¹ dzia³kê, poziom gildii musi[ENTER]wynosiæ powy¿ej %s.[ENTER]Cena wynosi %s.
+1622	Twoja gildia nie osi¹gnê³a jeszcze odpowiedniego[ENTER]poziomu. Przykro mi.
+1623	Chcesz kupiæ t¹ ziemiê?
+1624	Ten teren zosta³ ju¿ sprzedany innej gildii.[ENTER]Przykro mi.

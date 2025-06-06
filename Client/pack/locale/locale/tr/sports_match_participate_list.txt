@@ -1,0 +1,24 @@
+4	Hollanda
+12	Polonya
+13	Fransa
+15	Danimarka
+17	İspanya
+19	Almanya
+21	Belçika
+24	Hırvatistan
+26	Sırbistan
+27	İsviçre
+29	Portekiz
+33	İskoçya
+34	Türkiye
+35	Avusturya
+36	İngiltere
+37	Macaristan
+38	Slovakya
+39	Arnavutluk
+40	Romanya
+41	Çek Cumhuriyeti
+42	İtalya
+43	Slovenya
+44	Gürcistan
+45	Ukrayna

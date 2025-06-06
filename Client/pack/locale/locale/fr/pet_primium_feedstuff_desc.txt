@@ -1,0 +1,7 @@
+[DELAY value;0]
+Vous pouvez ressusciter votre défunt familier en combinant[ENTER]
+des fortifiants divins avec votre défunt familier. \n[ENTER]
+Le nombre d'objets requis dépend de l'âge de votre[ENTER]
+familier.\n[ENTER]
+Le familier défunt a 80 % de chances de ressusciter à son[ENTER]
+âge précédent. \n

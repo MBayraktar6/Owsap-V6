@@ -1,0 +1,9 @@
+[DELAY value;0]
+EVENIMENT RAMADAN[ENTER]
+[ENTER]
+Viziteazã cu regularitate Istoricul ºi obþine[ENTER]
+câteva obiecte valoroase pentru implicarea ta,[ENTER]
+la sfârºitul Ramadanului.[ENTER]
+[ENTER]
+Dacã primeºti Pâine sau Fructe Binecuvântate,[ENTER]
+acestea vor fi salvate în UI de eveniment.

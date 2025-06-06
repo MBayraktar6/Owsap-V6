@@ -1,0 +1,40 @@
+1	Alfa farkasok
+2	A falka vezére
+3	Különleges
+4	Tigris, medve, disznó.
+5	A fehér eskü bosszúja
+6	A fekete vihar bosszúja
+7	Testvérek
+8	Családi kötelék
+9	Kegyetlenség és brutalitás
+10	Embertelenek
+11	Örökös õrök
+12	Nefrit õrei
+13	A Mennydörgés-hegység urai
+14	Probléma a Gautama-sziklán
+15	Majom nagybácsik
+16	A barlang urai
+17	Ördögök
+18	Sung Mahi szolgái
+19	A cél szentesíti az eszközt
+20	Az erdõ õrei
+21	Sung Mahi hadvezérei
+22	Villám zodiákusa
+23	Tûz zodiákusa
+24	Jég zodiákusa
+25	Szél zodiákusa
+26	Föld zodiákusa
+27	Sötétség zodiákusa
+28	A szintek õrzõi
+29	Sung Mahi Quagjai
+30	Félember uralkodó.
+31	Jeges õr
+32	A barlang-trió.
+33	A mérges királynõ.
+34	Az égõ torony
+35	A megfagyott torony
+36	A felvillanyozott torony
+37	A viharos torony
+38	Az idõtálló torony
+39	A sötét torony
+40	Alasztór bukása

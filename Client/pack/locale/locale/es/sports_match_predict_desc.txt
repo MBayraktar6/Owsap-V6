@@ -1,0 +1,6 @@
+[DELAY value;0]
+Si gana tu equipo, obtendrás recompensas siempre que[ENTER]
+lo hayas animado a menudo.[ENTER]
+Tique de país: Se obtiene a cambio del Trofeo del[ENTER]
+Campeonato.[ENTER]
+Tique de vítores: Se saca del Baúl del Campeonato.

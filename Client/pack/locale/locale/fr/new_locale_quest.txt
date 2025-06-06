@@ -1,0 +1,12 @@
+1613	Le Préfet:
+1614	Je ne suis que le gérant, je ne peux pas baisser[ENTER]le prix. Amenez-moi plus de Yangs.
+1615	La guilde a acheté le terrain !
+1616	Revenez quand vous serez décidé. Premier arrivé,[ENTER]premier servi.
+1617	Je gère différents terrains et je m'occupe de la[ENTER]vente de terres ici. Avant que les monstres[ENTER]n'occupent le pays au milieu du continent, nous[ENTER]ne manquions pas de terres et tout allait bien.[ENTER]Maintenant, je ne peux vendre qu'aux chefs de[ENTER]guildes qui utilisent ces terrains comme terrains[ENTER]de guilde. Voulez-vous acheter un terrain?
+1618	Je vous ai déjà dit, je ne peux pas vendre de[ENTER]terrains à tout le monde. J'espère que vous[ENTER]comprendrez.
+1619	Une guilde qui possède déjà un terrain ne peut[ENTER]pas en acheter un autre.
+1620	Une erreur est survenue durant l'exécution de cet[ENTER]ordre.
+1621	Pour acheter cette propriété le niveau de la[ENTER]guilde doit être supérieur à %s.[ENTER]Le prix est de %s
+1622	Votre guilde n'a pas encore atteint le niveau[ENTER]requis. Je suis désolé.
+1623	Voulez-vous acheter ce terrain ?
+1624	Ce terrain a déjà été vendu à une autre guilde,[ENTER]je suis désolé.

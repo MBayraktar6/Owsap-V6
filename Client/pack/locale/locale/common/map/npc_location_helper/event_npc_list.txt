@@ -1,0 +1,80 @@
+## 이벤트가 켜질때 소환되는 NPC 목록				
+				
+#map_index	x	y	 vnum	event_flag
+1	608	614	20502	mini_game_yutnori	mini_game_yutnori_end
+21	596	608	20502	mini_game_yutnori	mini_game_yutnori_end
+41	358	748	20502	mini_game_yutnori	mini_game_yutnori_end
+373	497	662	20502	mini_game_yutnori	mini_game_yutnori_end
+1	608	620	20417	mini_game_okey	mini_game_okey_end
+21	596	612	20417	mini_game_okey	mini_game_okey_end
+41	354	740	20417	mini_game_okey	mini_game_okey_end
+373	497	672	20417	mini_game_okey	mini_game_okey_end
+1	608	617	30131	e_monsterback,1	e_monsterback_end,1
+21	596	610	30131	e_monsterback,1	e_monsterback_end,1
+41	357	743	30131	e_monsterback,1	e_monsterback_end,1
+373	497	667	30131	e_monsterback,1	e_monsterback_end,1
+1	608	622	30132	e_anniversary_ten	e_monsterback_end,2
+21	596	614	30132	e_anniversary_ten	e_monsterback_end,2
+41	351	739	30132	e_anniversary_ten	e_monsterback_end,2
+373	497	667	30132	e_anniversary_ten	e_monsterback_end,2
+1	608	623	20506	mini_game_catchking	mini_game_catchking_end
+21	596	614	20506	mini_game_catchking	mini_game_catchking_end
+41	350	738	20506	mini_game_catchking	mini_game_catchking_end
+373	505	672	20506	mini_game_catchking	mini_game_catchking_end
+1	697	636	30307	e_summer_spawn
+21	630	674	30307	e_summer_spawn
+41	305	588	30307	e_summer_spawn
+373	503	673	30307	e_summer_spawn
+1	591	472	30129	easter_rabbit
+21	517	742	30129	easter_rabbit
+41	306	828	30129	easter_rabbit
+373	503	662	30129	easter_rabbit
+1	593	646	33002	ramadan_drop
+21	593	623	33002	ramadan_drop
+41	367	748	33002	ramadan_drop
+373	494	752	33002	ramadan_drop
+1	619	701	33003	ramadan_drop
+21	564	613	33003	ramadan_drop
+41	344	723	33003	ramadan_drop
+373	542	647	33003	ramadan_drop
+1	658	534	33009	e_late_summer
+21	602	698	33009	e_late_summer
+41	363	702	33009	e_late_summer
+301	510	1197	33009	e_late_summer
+373	553	672	33009	e_late_summer
+1	663	623	20430	e_anniversary_ten
+21	670	650	20430	e_anniversary_ten
+41	350	625	20430	e_anniversary_ten
+373	534	685	20430	e_anniversary_ten
+1	685	577	20431	e_festival_npc
+21	610	656	20431	e_festival_npc
+41	373	693	20431	e_festival_npc
+373	561	681	20431	e_festival_npc
+1	608	617	20416	halloween_box
+21	596	610	20416	halloween_box
+41	357	743	20416	halloween_box
+373	539	757	20416	halloween_box
+1	608	617	20126	new_xmas_event
+21	596	610	20126	new_xmas_event
+41	357	743	20126	new_xmas_event
+373	520	740	20126	new_xmas_event
+1	608	617	33008	halloween_hair
+21	596	610	33008	halloween_hair
+41	357	743	33008	halloween_hair
+373	540	752	33008	halloween_hair
+3	415	638	20017	medal_part_drop
+23	375	317	20017	medal_part_drop
+43	384	453	20017	medal_part_drop
+1	545	397	20086	harvest_festival
+21	864	823	20086	harvest_festival
+41	447	928	20086	harvest_festival
+1	545	412	20087	harvest_festival
+21	854	827	20087	harvest_festival
+41	456	936	20087	harvest_festival
+301	849	1262	20146	e_otherworld_drop_1	e_otherworld_drop_2
+1	615	618	9004	xmas_boom
+21	598	665	9004	xmas_boom
+41	318	629	9004	xmas_boom
+3	500	625	9004	xmas_boom
+23	476	360	9004	xmas_boom
+43	478	375	9004	xmas_boom

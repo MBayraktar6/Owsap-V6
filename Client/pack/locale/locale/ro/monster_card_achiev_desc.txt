@@ -1,0 +1,40 @@
+1	Lup Alfa
+2	Liderul Clanului
+3	Unic
+4	Tigru, Urs, Mistreþ.
+5	Rãzbunarea Jurãmântului Alb
+6	Rãzbunarea Furtunii Negre
+7	Fraþi
+8	Legãturi de Familie
+9	Crud ºi Brutal
+10	Aproape Om
+11	Gardieni Eterni
+12	Gardieni Nephrite
+13	Liderii din Munþii Thunder
+14	Pericol pe Stâncile Gautama
+15	Unchiul Maimuþei
+16	Liderii Peºterii
+17	Diavolesc
+18	Servitorii lui Sung Mahi
+19	Scopul Scuzã Mijloacele
+20	Gardienii Pãdurii
+21	Generalii lui Sung Mahi
+22	Zodiacul Fulgerului
+23	Zodiacul Focului
+24	Zodiacul Gheþii
+25	Zodiacul Vântului
+26	Zodiacul Pãmântului
+27	Zodiacul Întunericului
+28	Gardianul Nivelelor
+29	Mlastina Sung Mahi
+30	Conducator Jumãtate-Om
+31	Gardianul Rece
+32	Peºtera Trio
+33	Regina Otrãvitoare
+34	Turnul Arzãtor
+35	Turnul Îngheþat
+36	Turnul Electric
+37	Turnul Furtunos
+38	Turnul Neclintit
+39	Turnul Întunecat
+40	Sfârºitul lui Alastor

@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Eventbeschreibung][ENTER]
+[ENTER]
+Das Sommer-Event hat begonnen![ENTER]
+[ENTER]
+Beachte bitte, dass du nur die Eiskugeln in deinem Event-UI gegen[ENTER]
+Belohnungen eintauschen kannst.[ENTER]
+[ENTER]
+Du kannst Summer in der Stadt besuchen, um deine Eiskugeln gegen[ENTER]
+groﬂartige Belohnungen einzutauschen.

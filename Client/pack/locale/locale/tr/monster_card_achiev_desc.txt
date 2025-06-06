@@ -1,0 +1,40 @@
+1	Alfa kurtlar
+2	Sürü lideri
+3	Eþsiz
+4	Kaplan, ayý, domuz
+5	Beyaz yeminin intikamý.
+6	Kara ölümün intikamý.
+7	Kardeþler
+8	Aile baðlarý.
+9	Zalim ve acýmasýz
+10	Neredeyse hiç insani deðil
+11	Ebedi Bekçiler
+12	Nefrit Bekçisi
+13	Yýldýrým Daðlarý'nýn Hükümdarý.
+14	Gautama Uçurumunda Bela
+15	Maymun Kardeþliði
+16	Maðara Hükümdarý.
+17	Þeytani
+18	Sung Mahi'nin Hizmetçileri
+19	Amaca giden her yol mubahtýr
+20	Orman Bekçileri
+21	Sung Mahi'nin Generalleri
+22	Þimþek Zodyaký.
+23	Ateþ Zodyaký.
+24	Buz Zodyaký.
+25	Rüzgar Zodyaký.
+26	Toprak Zodyaký.
+27	Karanlýðýn Zodyaký.
+28	Katlarýn bekçisi
+29	Sung Mahi'nin Myr'i
+30	Yarý-insan hükumdar
+31	Buzlu bekçiler
+32	Maðara üçlüsü.
+33	Zehirli kraliçe
+34	Yanan kule
+35	Donmuþ kule
+36	Elektrikli kule
+37	Fýrtýnalý kule
+38	Sarsýlmaz kule
+39	Karanlýk kule
+40	Alastor'un sonu

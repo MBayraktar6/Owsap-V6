@@ -1,0 +1,401 @@
+# ¿ëÈ¥¼® Å×ÀÌºíµé...
+# TAB À¸·Î ±¸ºÐµÇ´Ï ¿¢¼¿·Î º¼ °Í.
+# vimÀ¸·Î º»´Ù¸é ÅÇ°£ °£°ÝÀ» Á¶Á¤ÇÏ°í º¼ °Í. (set ts=16 ÃßÃµ)
+# Å« µû¿ÈÇ¥·Î ¹­ÀÎ ºÎºÐÀº ¾È ±¸ºÐ. 
+# \" ÀÌµý°Å Áö¿ø ¾ÈÇÔ.
+
+# ¿ëÈ¥¼® Vnum¿¡ ´ëÇÑ comment
+# ITEM VNUMÀ» 10¸¸ ÀÚ¸®ºÎÅÍ, FEDCBA¶ó°í ÇÑ´Ù¸é
+# FE : ¿ëÈ¥¼® Á¾·ù.	D : µî±Þ
+# C : ´Ü°è			B : °­È­
+# A : ¿©¹úÀÇ ¹øÈ£µé... 
+# ÀÌ Ã¼°è¿¡¼­ ¹þ¾î³ª´Â ¿ëÈ¥¼®Àº ¿ë¼­ÇÏÁö ¾ÊÀ» °ÍÀÌ´Ù.
+# ok?
+# ¿ëÈ¥¼®ÀÌ ³Ê¹«³ªµµ ¸¹±â ¶§¹®¿¡ VnumÀÌ Áß±¸³­¹æÀÌ¸é,
+#	Special item group¿¡¼­ groupÀ¸·Î ¹­¾î¼­ Ã³¸®ÇÏ±âµµ Èûµé°í-_-,
+#	VnumHelper.h¿¡¼­ Ã³¸®ÇÏ´Â °Íµµ Èûµé´Ù. -_-
+# 	Group Àâ´Âµ¥¸¸ ¼öÃµÁÙÀ» ½á¾ßÇÒ Áöµµ...
+# Vnum¿¡ Ã¼°è¸¦ Àâ¾Æ¼­ ÀÚ¸´¼ö ±â¹ÝÀ¸·Î ÇØ¾ß¸¸ ÇÑ´Ù.
+
+# TableÀº "Group"°ú "ÀÌ¸§"À¸·Î ½ÃÀÛÇÑ´Ù.
+# Table ³»ºÎ¿¡ ¶Ç TableÀÌ ÀÖÀ» ¼ö ÀÖ´Ù.
+# ±×·¸´Ù°í ¾û¶×ÇÑ Å×ÀÌºíÀ» ½á³õ´Â´Ù°í ¼­¹ö°¡ ÀÎ½ÄÇÏ´Â °ÍÀº ¾Æ´Ï´Ù.
+# ÇÊ¿äÇÑ Å×ÀÌºíÀº ´ÙÀ½°ú °°´Ù.
+# BaseVnums, BaseAttrs, AddtionalAttrs, AttrSettings, UpgradeTable, ImproveTable,
+# RefineTable, UpgradeMoneys, ImproveTable, RefineMoneys, WeightTable, DurationTable,
+# DragonHeartExtTable, DragonSoulExtTable
+
+# È®·ü Å×ÀÌºíÀÇ °ªÀº ±âº»ÀûÀ¸·Î floatÀÌ´Ù.
+
+# Áß¿ä !!!!!
+# Å×ÀÌºíÀ» º¸´Ù º¸¸é #--#ÀÌ¶ó ¾²¿©Áø ºÎºÐÀÌ ÀÖ´Âµ¥ Àý´ë·Î Áö¿ìÁö ¸»°Í.
+# 
+
+# ÀÌ°Ç vnum to ÀÌ¸§ mapping.
+# ÀÌ°É·Î Æ¯Á¤ vnumÀÇ ¿ëÈ¥¼®ÀÌ ¾î¶² Á¾·ùÀÇ ¿ëÈ¥¼®ÀÎÁö(ÀÌ¸§ÀÌ ¹ºÁö) ¾Ë¾Æ³½ ÈÄ,
+# ±× ¿ëÈ¥¼®¿¡ ÇØ´çÇÏ´Â ¼Ó¼ºÀ» Ã£´Â´Ù.
+# ¶ÇÇÑ ¿©±â¿¡ ÀûÇôÀÖÁö ¾ÊÀº ¿ëÈ¥¼®ÀÌ ¹Ø¿¡ Group Á¤ÀÇÇÏ´Â ºÎºÐ¿¡ ÀÖ´Ù¸é
+# ¿¡·¯.
+Group VnumMapper
+{
+	# ½ÃÀÛ vnum.
+	# ¿©±â¼­ ½á¾ßÇÒ ºÎºÐÀº À§¿¡ ¼³¸íÇÑ FE¿¡ ÇØ´çÇÏ´Â ºÎºÐ. 
+	# FE¸¦ ½áÁÙ °Í
+	#--#	DragonSoulName	Type
+	1	diamond	11
+	2	ruby	12
+	3	jade	13
+	4	sapphire	14
+	5	garnet	15
+	6	onyx	16
+	7	amethyst	17
+}
+
+Group BasicApplys
+{
+	Group diamond
+	{
+	# 1ºÎÅÍ ¼ø¼­´ë·Î ºÎ¿©µÈ´Ù.
+		#--#	Apply_Type	Apply_value
+		1	INT	10
+		2	RESIST_ICE	10
+		3	ENCHANT_ICE	10
+	}
+
+	Group ruby
+	{
+		#--#	Apply_Type	Apply_value
+		1	STR	10
+		2	RESIST_FIRE	10
+		3	ENCHANT_FIRE	10
+	}
+	Group jade
+	{
+		#--#	Apply_Type	Apply_value
+		1	MAX_SP	500
+		2	RESIST_WIND	10
+		3	ENCHANT_WIND	10
+	}
+	Group sapphire
+	{
+		#--#	Apply_Type	Apply_value
+		1	DEX	10
+		2	RESIST_EARTH	10
+		3	ENCHANT_EARTH	10
+	}
+	Group garnet
+	{
+		#--#	Apply_Type	Apply_value
+		1	MAX_HP	1500
+		2	RESIST_ELEC	10
+		3	ENCHANT_ELECT	10
+	}
+	Group onyx
+	{
+		#--#	Apply_Type	Apply_value
+		1	CON	10
+		2	RESIST_DARK	10
+		3	ENCHANT_DARK	10
+	}
+	Group amethyst
+	{
+		#--#	Apply_Type	Apply_value
+		1	ATTBONUS_DEVIL	10
+		2	HIT_PCT	10
+		3	SUNGMA_HP	10
+	}
+}
+
+Group AdditionalApplys
+{
+	Group diamond
+	{
+	# ¾ÕÀÇ Ã¹ ÄÃ·³Àº ¼ø¼­¿Í °ü°è ¾ø´Ù. Ã¶ÀúÈ÷ È®·ü¿¡ µû¶ó ¼Ó¼ºÀÌ ºÎ¿©µÉ »ÓÀÌ´Ù.
+		#--#	Apply_Type	Apply_value	Prob
+		1	MAGIC_ATT_GRADE	15	10
+		2	MAGIC_DEF_GRADE	15	10
+		3	SKILL_DAMAGE_BONUS	15	10
+		4	SKILL_DEFEND_BONUS	15	10
+	}
+	Group ruby
+	{
+		#--#	Apply_Type	Apply_value	Prob
+		1	ATT_BONUS	300	10
+		2	DEF_BONUS	200	10
+		3	NORMAL_HIT_DAMAGE_BONUS	15	10
+		4	NORMAL_HIT_DEFEND_BONUS	15	10
+	}
+	Group jade
+	{
+		#--#	Apply_Type	Apply_value	Prob
+		1	MAX_HP	3000	10
+		2	HP_REGEN	10	10
+		3	STEAL_HP	10	10
+		4	KILL_HP_RECOVER	5	10
+		5	MAX_HP_PCT	20	10
+	}
+	Group sapphire
+	{
+		#--#	Apply_Type	Apply_value	Prob
+		1	ATT_BONUS_TO_WARRIOR	15	10
+		2	ATT_BONUS_TO_ASSASSIN	15	10
+		3	ATT_BONUS_TO_SURA	15	10
+		4	ATT_BONUS_TO_SHAMAN	15	10
+		5	ATT_BONUS_TO_WOLFMAN	15	10
+		6	RESIST_WARRIOR	15	10
+		7	RESIST_ASSASSIN	15	10
+		8	RESIST_SURA	15	10
+		9	RESIST_SHAMAN	15	10
+		10	RESIST_WOLFMAN	15	10
+	}
+	Group garnet
+	{
+		#--#	Apply_Type	Apply_value	Prob
+		1	MAX_SP	1500	10
+		2	SP_REGEN	10	10
+		3	STEAL_SP	10	10
+		4	KILL_SP_RECOVER	5	10
+		5	MAX_SP_PCT	20	10
+	}
+	Group onyx
+	{
+		#--#	Apply_Type	Apply_value	Prob
+		1	BLOCK	10	10
+		2	DODGE	10	10
+		3	REFLECT_MELEE	10	10
+		4	RESIST_CRITICAL	10	10
+		5	RESIST_PENETRATE	10	10
+	}
+	Group amethyst
+	{
+		#--#	Apply_Type	Apply_value	Prob
+		1	SUNGMA_STR	10	10
+		2	SUNGMA_MOVE	10	10
+		3	SUNGMA_IMMUNE	10	10
+		4	ATTBONUS_STONE	5	10
+	}
+}
+
+# ¿©±âºÎÅÍ Default¸¦ µÐ´Ù.
+# Default °ªÀ» ¸ðµç ¿ëÈ¥¼®ÀÌ µû¸£°í, 
+# Æ¯Á¤ °ªÀÌ ÀÖ´Â ¿ëÈ¥¼®Àº Default¸¦ ¹ÙÅÁÀ¸·Î ±× °ªÀ» µ¤¾î¾´´Ù.
+# µî±Þ¿¡ µû¸¥ ¼Ó¼º¼ö
+# ´Ü, basis, add_max´Â 3º¸´Ù Å©¸é ¾ÈµÈ´Ù.
+Group ApplyNumSettings
+{
+	Group Default
+	{
+		#--#	GRADE_NORMAL	GRADE_BRILLIANT	GRADE_RARE	GRADE_ANCIENT	GRADE_LEGENDARY	GRADE_MYTH
+		basis	1	1	1	2	2	3
+		add_min	0	0	0	0	0	0
+		add_max	0	1	2	2	3	3
+	}
+#	Group diamond
+#	{
+#		#--#	GRADE_NORMAL	GRADE_BRILLIANT	GRADE_RARE	GRADE_ANCIENT	GRADE_LEGENDARY	GRADE_MYTH
+#		basis	1	1	1	2	2
+#	}
+}
+
+# ¿ëÈ¥¼® °¡ÁßÄ¡ Å×ÀÌºí.
+# ÀÌ Å×ÀÌºí¿¡¼­ °ªÀÌ 0ÀÌ¶ó¸é ±× ÀÌ»óÀÇ °­È­´Â ºÒ°¡´ÉÇÏ´Ù°í ÆÇ´ÜÇÑ´Ù.
+Group WeightTables
+{
+	Group Default
+	{
+		Group GRADE_NORMAL
+		{
+	#		´Ü°è	°­È­
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	1	2	3	0	0	0	0
+			STEP_LOW	2	3	4	0	0	0	0
+			STEP_MID	3	4	5	6	0	0	0
+			STEP_HIGH	4	5	6	7	0	0	0
+			STEP_HIGHEST	5	6	7	8	10	0	0
+		}
+		Group GRADE_BRILLIANT
+		{
+			STEP_LOWEST	3	4	5	6	0	0	0
+			STEP_LOW	4	5	6	8	0	0	0
+			STEP_MID	5	6	8	10	0	0	0
+			STEP_HIGH	6	8	10	12	15	0	0
+			STEP_HIGHEST	8	10	12	15	20	0	0
+		}
+		Group GRADE_RARE
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	6	7	9	11	15	0	0
+			STEP_LOW	7	9	11	15	20	0	0
+			STEP_MID	9	11	15	20	25	0	0
+			STEP_HIGH	11	15	20	25	30	0	0
+			STEP_HIGHEST	15	20	25	30	40	0	0
+		}
+		Group GRADE_ANCIENT
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	10	12	15	18	20	0	0
+			STEP_LOW	12	15	18	20	25	0	0
+			STEP_MID	15	18	20	25	35	0	0
+			STEP_HIGH	18	20	25	35	40	0	0
+			STEP_HIGHEST	20	25	35	40	60	80	0
+		}
+		Group GRADE_LEGENDARY
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	30	35	40	45	50	0	0
+			STEP_LOW	35	40	45	50	55	0	0
+			STEP_MID	40	45	50	55	65	0	0
+			STEP_HIGH	45	50	55	65	75	90	0
+			STEP_HIGHEST	50	55	65	75	90	105	120
+		}
+		Group GRADE_MYTH
+		{
+			#--#	0	1	2	3	4	5	6
+			STEP_LOWEST	35	40	45	50	55	0	0
+			STEP_LOW	45	50	55	60	65	0	0
+			STEP_MID	50	55	60	70	80	0	0
+			STEP_HIGH	65	75	85	95	105	120	0
+			STEP_HIGHEST	75	85	95	105	120	135	160
+		}
+	}
+#	Group diamond
+#	{
+#		Group GRADE_NORMAL
+#		{
+#			#--#	0	1	2	3	4	5	6
+#			STEP_LOWEST	10	20	53	0	0	0	0
+#			STEP_HIGHEST	50	60	37	18	10	0	0
+#		}
+#	}
+}
+
+# °³·® table
+Group RefineGradeTables
+{
+	Group Default
+	{
+		#--#	NEED_COUNT	FEE	GRADE_NORMAL	GRADE_BRILLIANT	GRADE_RARE	GRADE_ANCIENT	GRADE_LEGENDARY	GRADE_MYTH
+		GRADE_NORMAL	2	30000	50	50	0	0	0	0
+		GRADE_BRILLIANT	2	50000	0	50	50	0	0	0
+		GRADE_RARE	2	70000	0	0	50	50	0	0
+		GRADE_ANCIENT	2	100000	0	0	0	50	50	0
+		GRADE_LEGENDARY	2	150000	0	0	0	0	50	50
+	}
+}
+
+Group RefineStepTables
+{
+	Group Default
+	{
+		#--#	NEED_COUNT	FEE	STEP_LOWEST	STEP_LOW	STEP_MID	STEP_HIGH	STEP_HIGHEST
+		STEP_LOWEST	2	20000	30	70	0	0	0
+		STEP_LOW	2	30000	0	30	70	0	0
+		STEP_MID	2	40000	0	0	30	70	0
+		STEP_HIGH	2	50000	0	0	0	30	70
+	}
+}
+
+Group RefineStrengthTables
+{
+	Group Default
+	{
+		# MATERIAL_DS_REFINE_NORMAL : GRADE_NORMAL °­È­¼®
+		# MATERIAL_DS_REFINE_BLESSED : Ãàº¹ÀÇ °­È­¼®
+		# MATERIAL_DS_REFINE_HOLLY : ¿ë½ÅÀÇ °­È­¼®
+		#--#	FEE	0	1	2	3	4	5
+		MATERIAL_DS_REFINE_NORMAL	10000	100	80	70	50	30	20
+		MATERIAL_DS_REFINE_BLESSED	20000	100	88	77	55	33	22
+		MATERIAL_DS_REFINE_HOLLY	30000	100	90	80	60	40	30
+	}
+}
+
+Group VnumToChangeStoneTypeNameMapper
+{
+	# ½ÃÀÛ vnum.
+	#--#	Vnum	ChangeStoneTypeName
+	1	100600	STONE_OF_CHANGE_NORMAL
+}
+
+Group ChangeStoneTypeTables
+{
+	Group Default
+	{
+		#	µî±Þ¿¡ µû¸¥ º¯È¯ ¼º°øÈ®·ü
+		# STONE_OF_CONVERSION : ÀÏ¹Ý º¯È¯¼®
+		#--#	FEE	GRADE_NORMAL	GRADE_BRILLIANT	GRADE_RARE	GRADE_ANCIENT	GRADE_LEGENDARY	GRADE_MYTH
+		STONE_OF_CHANGE_NORMAL	0	80	65	55	45	35	25
+	}
+#	Group diamond
+#	{
+#		#--#	FEE	0	1	2	3	4	5
+#		STONE_OF_CHANGE_NORMAL	0	100	100	100	100	100	100
+#	}
+}
+
+Group ChangeDSTypeTables
+{
+	Group Default
+	{
+		# º¯È¯ ¼º°ø ½Ã Å¸ÀÔº°·Î º¯È¯ µÉ È®·ü
+		#--#	diamond	ruby	jade	sapphire	garnet	onyx	amethyst
+		diamond	50	10	10	10	10	10	10
+		ruby	10	50	10	10	10	10	10
+		jade	10	10	50	10	10	10	10
+		sapphire	10	10	10	50	10	10	10
+		garnet	10	10	10	10	50	10	10
+		onyx	10	10	10	10	10	50	10
+		amethyst	10	10	10	10	10	10	50
+	}
+}
+
+# ¿ë½É ÃßÃâ È®·ü Å×ÀÌºí
+# ÃæÀü·®ÀÌ 0ÀÌ¶ó´Â °ÍÀº ÃßÃâ ½ÇÆÐ¶ó´Â °Å.
+Group DragonHeartExtTables
+{
+	Group Default
+	{
+		#--#	1	2	3	4	5
+	# ¿ë½É ÃæÀü·®(%)
+		CHARGING	5	15	30	50	100
+	#	µî±Þ°ú ÃæÀü·®¿¡ µû¸¥ È®·ü Å×ÀÌºí
+	#	µî±Þ 	È®·ü
+		GRADE_NORMAL	30	25	24	20	1
+		GRADE_BRILLIANT	0	30	25	25	20
+		GRADE_RARE	0	0	30	30	40
+		GRADE_ANCIENT	0	0	0	30	70
+		GRADE_LEGENDARY	0	0	0	0	100
+		GRADE_MYTH	0	0	0	0	100
+	}
+}
+
+# ¿ëÈ¥¼® ÃßÃâ È®·ü Å×ÀÌºí.
+# ÀÌ°Íµµ 1, 2¾ÈÀÌ ÀÖ¾î ÅëÇÕÇÒ ¼ö ÀÖ´Â ¹æ¾ÈÀ¸·Î °¨.
+# ÃßÃâ È®·üÀ» Á¤ÇÒ ¼ö ÀÖ°í, ½ÇÆÐ ºÎ»ê¹°µµ Á¤ÇÒ ¼ö ÀÖÀ½.(0ÀÌ¸é ¾ÈÁÜ)
+Group DragonSoulExtTables
+{
+	Group Default
+	{
+				#½ÇÆÐ ºÎ»ê¹°
+		#--#	Prob	ByProduct
+		GRADE_NORMAL	50	30270
+		GRADE_BRILLIANT	40	30270
+		GRADE_RARE	30	30270
+		GRADE_ANCIENT	30	30270
+		GRADE_LEGENDARY	20	30270
+		GRADE_MYTH	15	30270
+	}
+}
+
+# ¿ëÈ¥¼® ¼Ó¼ºº¯°æ AddÈ®·ü Å×ÀÌºí (¿¬°ü Å×ÀÌºí : ApplyNumSettings)
+Group ChangeAttrStepTables
+{
+	Group GRADE_MYTH
+	{
+		#--#	STEP	0	1	2	3
+		STEP_LOWEST	500	400	8	1
+		STEP_LOW	500	400	16	5
+		STEP_MID	500	400	40	10
+		STEP_HIGH	500	400	100	30
+		STEP_HIGHEST	500	400	300	150
+	}
+}

@@ -1,0 +1,13 @@
+[DELAY value;0]
+Du erhältst eine der aufgelisteten Belohnungen.[ENTER]
+Du musst 9 Belohnungen einsammeln, um 1 Runde[ENTER]
+abzuschließen.[ENTER]
+Für abgeschlossene Runden erhältst du ebenfalls[ENTER]
+Belohnungen.[ENTER]
+Du musst mindestens 1 Belohnung abgeholt haben, bevor[ENTER]
+du neue Belohnungen festlegen kannst.[ENTER]
+Für Runde 6 und 9 kannst du limitierte Segen als[ENTER]
+Belohnung erhalten.[ENTER]
+Ihre Anzahl ist jedoch pro Event beschränkt.[ENTER]
+Jeder Charakter kann jeden Segen jeweils nur 1x pro[ENTER]
+Event erhalten.

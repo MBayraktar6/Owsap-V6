@@ -1,0 +1,6 @@
+[DELAY value;0]
+Descrição do evento[ENTER]
+O Evento do Mundial começou. As Bolas de Futebol já[ENTER]
+não aparecem no teu inventário. Recolhe tantas quantas[ENTER]
+conseguires e troca-as por Bolas de Futebol Douradas[ENTER]
+no Yu-Hwan ou usa-as para receberes itens.

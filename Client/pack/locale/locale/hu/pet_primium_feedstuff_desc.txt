@@ -1,0 +1,7 @@
+[DELAY value;0]
+Felélesztheted az elhunyt házikedvenced az Isteni protein[ENTER]
+falatkák és az elhunyt kedvenced kombinálásával.\n[ENTER]
+A szükséges tárgyak száma a házikedvenced életkorától[ENTER]
+függ.\n[ENTER]
+Az elhunyt házikedvenc az eredeti életkorának 80%-ával[ENTER]
+kerül felélesztésre.\n

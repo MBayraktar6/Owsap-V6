@@ -1,0 +1,7 @@
+[DELAY value;0]
+Wenn deine ausgewählte Mannschaft gewinnt, erhältst du[ENTER]
+mehr Belohnungen, wenn du öfter für sie gejubelt hast.[ENTER]
+Länder-Ticket: Kann im Austausch gegen die[ENTER]
+Meisterschafts-Trophäe erhalten werden.[ENTER]
+Jubel-Ticket: Kann aus der Meisterschafts-Truhe[ENTER]
+erhalten werden.

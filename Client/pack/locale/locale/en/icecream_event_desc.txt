@@ -1,0 +1,8 @@
+[DELAY value;0]
+[Event Description][ENTER]
+[ENTER]
+The Summer Event has started![ENTER]
+[ENTER]
+Please note that only Ice Cream Scoops in the event UI can be exchanged.[ENTER]
+[ENTER]
+Visit Summer in town to exchange your Ice Cream Scoops for great rewards.

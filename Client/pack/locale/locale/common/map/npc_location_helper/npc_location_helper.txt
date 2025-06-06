@@ -1,0 +1,259 @@
+# 맵별 NPC위치도우미 정보
+Group	MapInfo
+{
+	## 공통
+	# map_index (맵번호)
+	# map_name (맵이름, 클라이언트에선 읽지 않으며, 기획편의용 컬럼)
+	# map_dir (맵폴더)
+	# category (지역) { 0:미노출(Unexposed), 1:제국 지역, 2:중립 지역, 3:악룡군도, 4:미궁, 5:제국 던전, 6:신대륙 필드, 7:신대륙 던전 }
+	# min_level(레벨제한. 맵에 진입하기 위한 최소레벨)
+	# min_c_level (정복자 레벨제한. 맵에 진입하기 위한 최소 정복자레벨)
+	# recommended_level_min (추천레벨 min. 정복자 레벨제한이 0보다 크면 정복자레벨, 아니면 일반레벨. 값이0이면 표기안함)
+	# recommended_level_max (추천레벨 max. 정복자 레벨제한이 0보다 크면 정복자레벨, 아니면 일반레벨. 값이0이면 표기안함)
+	# empire (제국) { 0 : 전체, 1 : 신수국, 2 : 천조국, 3 : 진노국 }
+	# show_atlas (지도를 보여주는 맵인지) { 0 : Atlas 안보여줌, 1 : Atlas 기본적으로 제공됨, 2 : Atlas 완성된 지도로 획득해야만 보여줌 }
+	# show_npc_list(NPC목록을 보여주는 맵인지) { 0 : 안보여줌, 1 : 보여줌 }
+	# warp_need_yang (맵으로 워프할때 필요한 Yang)
+	# warp_need_item (맵으로 워프할때 필요한 아이템) { ex) 71130,1 | 71095,1 | 76019,1 }
+
+	#map_index	map_name	map_dir	category	min_level	min_c_level	recommended_level_min	recommended_level_max	empire	show_atlas	show_npc_list	warp_need_yang	warp_need_item
+	392	시장맵	metin2_map_privateshop	1	1	0	0	30	0	1	1	0	0
+	1	영안읍성	metin2_map_a1	1	1	0	1	25	1	1	1	0	0
+	3	자양현	metin2_map_a3	1	1	0	26	37	1	1	1	0	0
+	5	하선동	metin2_map_monkey_dungeon_11	5	1	0	30	37	1	2	1	0	0
+	21	조안읍성	metin2_map_b1	1	1	0	1	25	2	1	1	0	0
+	23	복정현	metin2_map_b3	1	1	0	26	37	2	1	1	0	0
+	25	하선동	metin2_map_monkey_dungeon_12	5	1	0	30	37	2	2	1	0	0
+	41	평무읍성	metin2_map_c1	1	1	0	1	25	3	1	1	0	0
+	43	박라현	metin2_map_c3	1	1	0	26	37	3	1	1	0	0
+	45	하선동	metin2_map_monkey_dungeon_13	5	1	0	30	37	3	2	1	0	0
+	4	중랑현	metin2_map_guild_01	1	1	0	1	25	1	1	1	0	0
+	6	보현리	metin2_guild_village_01	1	1	0	0	0	1	1	1	0	0
+	24	와룡현	metin2_map_guild_02	1	1	0	1	25	2	1	1	0	0
+	26	정각리	metin2_guild_village_02	1	1	0	0	0	2	1	1	0	0
+	44	임하현	metin2_map_guild_03	1	1	0	1	25	3	1	1	0	0
+	46	임석리	metin2_guild_village_03	1	1	0	0	0	3	1	1	0	0
+	108	중선동	metin2_map_monkeydungeon_02	5	10	0	36	43	0	2	1	0	0
+	109	상선동	metin2_map_monkeydungeon_03	5	10	0	44	55	0	2	1	0	0
+	61	서한산	map_n_snowm_01	2	10	0	49	65	0	1	1	0	0
+	62	도염화지	metin2_map_n_flame_01	2	60	0	69	72	0	1	1	0	0
+	63	영비사막	metin2_map_n_desert_01	2	10	0	37	50	0	1	1	0	0
+	64	승룡곡	map_n_threeway	2	10	0	34	49	0	1	1	0	0
+	65	밀교사원	metin2_map_milgyo	2	40	0	50	58	0	1	1	0	0
+	66	사귀타워	metin2_map_deviltower1	5	40	0	50	58	0	0	0	0	0
+	67	귀목림	metin2_map_trent	2	60	0	75	85	0	1	1	0	0
+	68	적귀목림	metin2_map_trent02	2	70	0	85	95	0	2	1	0	0
+	69	사황평야	metin2_map_WL_01	2	60	0	65	75	0	2	1	0	0
+	70	사황곡	metin2_map_nusluck01	2	60	0	68	75	0	2	1	0	0
+	104	거미던전1층	metin2_map_spiderdungeon	5	10	0	50	58	0	2	1	0	0
+	71	거미던전2층	metin2_map_spiderdungeon_02	5	10	0	58	67	0	2	1	0	71095,1
+	217	거미던전3층	metin2_map_spiderdungeon_03	5	50	0	61	74	0	2	1	0	71095,1
+	72	천의동굴1층	metin2_map_skipia_dungeon_01	5	75	0	75	85	0	2	1	0	76010,1
+	73	천의동굴2층	metin2_map_skipia_dungeon_02	5	75	0	85	95	0	2	1	0	76010,1
+	208	수룡방	metin2_map_skipia_dungeon_boss	5	75	0	75	95	0	0	0	0	0
+	81	결혼식장	metin2_map_wedding_01	0	0	0	0	0	0	1	1	0	0
+	91	수인마을	metin2_map_e1_01	1	1	0	1	5	1	1	1	0	0
+	92	수인마을	metin2_map_e1_02	1	1	0	1	5	2	1	1	0	0
+	93	수인마을	metin2_map_e1_03	1	1	0	1	5	3	1	1	0	0
+	103	길드전	metin2_map_t1	0	0	0	0	0	0	1	0	0	0
+	105	길드전	metin2_map_t2	0	0	0	0	0	0	1	0	0	0
+	110	길드맹장전	metin2_map_t3	0	0	0	0	0	0	1	0	0	0
+	111	길드수호전	metin2_map_t4	0	0	0	0	0	0	1	0	0	0
+	112	대련장	metin2_map_duel	0	0	0	0	0	0	1	0	0	0
+	130	길드맹호전	metin2_guild_war1	0	0	0	0	0	0	1	0	0	0
+	131	길드전	metin2_guild_war2	0	0	0	0	0	0	1	0	0	0
+	132	길드방어전전	metin2_guild_war3	0	0	0	0	0	0	1	0	0	0
+	133	길드시간전	metin2_guild_war4	0	0	0	0	0	0	1	0	0	0
+	216	아귀동굴	metin2_map_devilsCatacomb	5	75	0	85	90	0	0	0	0	0
+	230	PVP토너먼트	metin2_map_pvp_arena	0	0	0	0	0	0	1	1	0	0
+	301	용두곶	Metin2_map_CapeDragonHead	3	90	0	95	105	0	1	1	0	0
+	302	효무림	metin2_map_dawnmistwood	3	90	0	95	105	0	1	1	0	0
+	303	흑사만	metin2_map_BayBlackSand	3	90	0	95	105	0	1	1	0	0
+	304	뇌성산	metin2_map_Mt_Thunder	3	90	0	95	105	0	1	1	0	0
+	351	적룡지성	metin2_map_n_flame_dungeon_01	5	100	0	100	105	0	0	0	0	0
+	352	백룡지성	metin2_map_n_snow_dungeon_01	5	100	0	100	105	0	0	0	0	0
+	353	녹림지	metin2_map_dawnmist_dungeon_01	3	95	0	100	120	0	1	1	0	0
+	354	신목던전	metin2_map_Mt_Th_dungeon_01	3	95	0	95	110	0	2	1	0	0
+	355	십이지사원	metin2_12zi_stage	5	20	0	20	120	0	1	1	0	0
+	356	용방	metin2_map_n_flame_dragon	5	75	0	95	120	0	0	0	0	0
+	357	배틀필드	metin2_map_battlefied	0	0	0	0	0	0	1	0	0	0
+	358	디펜스웨이브	metin2_map_defensewave	5	90	0	90	105	0	0	0	0	0
+	359	항구	metin2_map_defensewave_port	3	90	0	0	0	0	1	1	0	0
+	363	미궁	metin2_map_labyrinth	4	110	0	110	120	0	1	1	0	0
+	364	균열 천의동굴	metin2_map_boss_crack_skipia	4	110	0	110	120	0	2	1	0	0
+	365	균열 적룡지성	metin2_map_boss_crack_flame	4	110	0	110	120	0	0	0	0	0
+	366	균열 백룡지성	metin2_map_boss_crack_snow	4	110	0	110	120	0	0	0	0	0
+	367	균열 녹림지	metin2_map_boss_crack_dawnmist	4	110	0	110	120	0	1	1	0	0
+	368	각성 천의동굴	metin2_map_boss_awaken_skipia	4	110	0	110	120	0	2	1	0	0
+	369	각성 적룡지성	metin2_map_boss_awaken_flame	4	110	0	110	120	0	0	0	0	0
+	370	각성 백룡지성	metin2_map_boss_awaken_snow	4	110	0	110	120	0	0	0	0	0
+	371	각성 녹림지	metin2_map_boss_awaken_dawnmist	4	110	0	110	120	0	1	1	0	0
+	373	동광평야	metin2_map_eastplain_01	6	120	0	120	0	0	1	1	0	0
+	374	제국성	metin2_map_empirecastle	6	120	0	120	0	0	1	1	0	0
+	375	배틀로얄	metin2_map_battleroyale	0	0	0	0	0	0	1	0	0	0
+	376	서광평야	metin2_map_eastplain_02	6	120	0	120	0	0	1	1	0	0
+	377	남광평야	metin2_map_eastplain_03	6	120	0	120	0	0	1	1	0	0
+	378	정령의땅1	metin2_map_elemental_01	3	90	0	90	120	0	1	1	0	0
+	379	정령의땅2	metin2_map_elemental_02	3	90	0	90	120	0	1	1	0	0
+	380	정령의땅3	metin2_map_elemental_03	3	90	0	90	120	0	1	1	0	0
+	381	정령의땅특수	metin2_map_elemental_04	3	90	0	90	120	0	1	1	0	0
+	382	미로던전1	metin2_map_maze_dungeon1	7	120	1	1	30	0	2	1	0	71095,1
+	383	미로던전2	metin2_map_maze_dungeon2	7	120	1	1	30	0	2	1	0	71095,1
+	384	미로던전3	metin2_map_maze_dungeon3	7	120	1	1	30	0	2	1	0	71095,1
+	385	스네이크밸리	metin2_map_snakevalley	6	120	1	1	30	0	1	1	0	0
+	386	성마희타워	metin2_map_smhdungeon_01	7	120	1	1	30	0	1	1	0	0
+	388	빙정골짜기	metin2_map_icecrystalcave	6	120	1	5	30	0	1	1	0	0
+	389	백룡계곡	metin2_map_whitdragonvalley	6	120	1	5	30	0	1	1	0	0
+	390	뱀사원필드	metin2_map_snake_temple_01	6	120	1	5	30	0	2	1	0	0
+	391	뱀사원	metin2_map_snake_temple_02	7	120	1	5	30	0	0	0	0	0
+	393	백룡동굴1층	metin2_map_whitedragoncave_01	7	120	1	10	30	0	2	1	0	71095,1
+	394	백룡동굴2층	metin2_map_whitedragoncave_02	7	120	1	10	30	0	2	1	0	71095,1
+	395	백룡방	metin2_map_whitedragoncave_boss	7	120	1	15	30	0	0	0	0	0
+	396	신비던전	metin2_map_anglar_dungeon_01	7	120	1	1	30	0	1	1	0	70408,1
+	399	비밀던전	metin2_map_secretdungeon_01	0	0	0	0	0	0	1	0	0	0
+	404	성마희게이트	metin2_map_smhgate_a1	0	0	0	0	0	0	1	0	0	0
+	405	성마희게이트	metin2_map_smhgate_b1	0	0	0	0	0	0	1	0	0	0
+	406	성마희게이트	metin2_map_smhgate_c1	0	0	0	0	0	0	1	0	0	0
+	407	성마희게이트	metin2_map_smhgate_threeway	0	0	0	0	0	0	1	0	0	0
+	408	성마희게이트	metin2_map_smhgate_desert	0	0	0	0	0	0	1	0	0	0
+	409	성마희게이트	metin2_map_smhgate_flame	0	0	0	0	0	0	1	0	0	0
+	410	성마희게이트	metin2_map_smhgate_snow	0	0	0	0	0	0	1	0	0	0
+	411	성마희게이트	metin2_map_smhgate_devils	0	0	0	0	0	0	1	0	0	0
+	412	성마희게이트	metin2_map_smhgate_dawnmist	0	0	0	0	0	0	1	0	0	0
+	413	길드대전전초기지	metin2_map_guild_battle_base	0	0	0	0	0	0	1	0	0	0
+	414	길드대전	metin2_map_guild_battle	0	0	0	0	0	0	1	0	0	0
+	419	보물섬	metin2_map_treasure_hunt	0	0	0	0	0	0	1	0	0	0
+}
+
+# 같은 맵에 있는 캐릭터만 NPC로 이동 가능
+Group	CanOnlyWarpFromSameMap
+{
+	0	359
+	1	91
+	2	92
+	3	93
+	4	353
+	5	390
+	6	378
+	7	379
+	8	380
+	9	381
+	10	354
+}
+
+# 같은 제국의 캐릭터만 맵으로 이동 가능
+Group	CanOnlyWarpSameEmpireMap
+{
+	0	1
+	1	21
+	2	41
+	3	3
+	4	23
+	5	43
+	6	4
+	7	24
+	8	44
+	9	6
+	10	26
+	11	46
+}
+
+# 던전맵이라 이동 불가능한 맵목록
+Group	CannotWarpToDungeonMap
+{
+	0	364
+	1	367
+	2	368
+	3	371
+	4	81
+}
+
+# 입장권 아이템을 사용하여 이동 가능한 맵인경우, 같은 맵끼리 이동시에는 입장권 소모 안됨
+# 같은 맵 정보
+Group	DungeonSameMap
+{
+	# 천의동굴
+	Group	skipia_dungeon
+	{
+		0	72
+		1	73
+	}
+	
+	# 백룡동굴
+	Group	white_dragon_cave
+	{
+		0	393
+		1	394
+	}
+	
+	# 거미동굴
+	Group	spider_dungeon
+	{
+		0	71
+		1	217
+	}
+	
+	# 미로던전
+	Group	maze_dungeon
+	{
+		0	382
+		1	383
+		2	384
+	}
+	
+	# 정령의땅
+	Group	elemental_dungeon
+	{
+		0	378
+		1	379
+		2	380
+		3	381
+	}
+	
+	# 신비던전
+	Group	faming_dungeon
+	{
+		0	396
+	}
+}
+
+# 길드부지에서 보여줄 NPC목록
+Group	GuildLandNPCVnum
+{
+	0	20040
+	1	20827
+	2	20044
+	3	20045
+	4	20046
+	5	20060
+	6	20061
+	7	20062
+	8	20063
+	9	20064
+	10	20065
+	11	20066
+	12	20067
+	13	20068
+	14	20069
+	15	20070
+	16	20071
+	17	20072
+	18	20077
+	19	20078
+	20	20079
+	21	20423
+	22	20424
+	23	20425
+	24	20426
+	25	20427
+	26	20428
+	27	20660
+	28	20661
+	29	20662
+	30	20663
+	31	60000
+	32	60001
+	33	60002
+	34	20835
+	35	20828
+}

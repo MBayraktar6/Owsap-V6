@@ -1,0 +1,24 @@
+4	Paesi Bassi
+12	Polonia
+13	Francia
+15	Danimarca
+17	Spagna
+19	Germania
+21	Belgio
+24	Croazia
+26	Serbia
+27	Svizzera
+29	Portogallo
+33	Scozia
+34	Turchia
+35	Austria
+36	Inghilterra
+37	Ungheria
+38	Slovacchia
+39	Albania
+40	Romania
+41	Repubblica Ceca
+42	Italia
+43	Slovenia
+44	Georgia
+45	Ucraina

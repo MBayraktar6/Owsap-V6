@@ -1,0 +1,40 @@
+1	Lupi Alfa
+2	Capibranco
+3	Unici
+4	Tigre, Orso, Cinghiale
+5	Vendetta delle Eid Bianche
+6	Vendetta dell'Uragano Oscuro
+7	Fratelli
+8	Legami familiari
+9	Crudele e brutale
+10	A malapena umani
+11	Guardiani eterni
+12	Guardiani di Nefrite
+13	Signori dei Monti Tonanti
+14	Guai presso la Falesia di Gautama
+15	Fratelli Gorillazov
+16	Signori delle caverne
+17	Diabolico
+18	Servitori Sung Mahi
+19	Il fine giustifica i mezzi
+20	Guardiani del bosco
+21	Generali Sung Mahi
+22	Zodiaco dei fulmini
+23	Zodiaco del fuoco
+24	Zodiaco del ghiaccio
+25	Zodiaco del vento
+26	Zodiaco della terra
+27	Zodiaco dell'oscurità.
+28	Guardiani dei piani
+29	Myr di Sung Mahi
+30	Sovrano semiumano
+31	Guardiani glaciali
+32	Trio della caverna
+33	Regina velenosa
+34	Torre infuocata
+35	Torre ghiacciata
+36	Torre elettrica
+37	Torre tempestosa
+38	Torre resistente
+39	Torre oscura
+40	Fine di Alastor

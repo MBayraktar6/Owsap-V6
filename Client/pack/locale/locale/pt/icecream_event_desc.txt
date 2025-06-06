@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Descrição do evento][ENTER]
+[ENTER]
+Começou o Evento de Verão![ENTER]
+[ENTER]
+Tem em atenção que só podem ser trocadas as Bolas de Gelado na interface[ENTER]
+de eventos.[ENTER]
+[ENTER]
+Visita a Summer na cidade e troca as tuas Bolas de Gelado por grandes[ENTER]
+recompensas.

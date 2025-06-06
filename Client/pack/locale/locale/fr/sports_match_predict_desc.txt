@@ -1,0 +1,8 @@
+[DELAY value;0]
+Si l'équipe que vous avez choisie gagne, vous recevez[ENTER]
+plus de récompenses si vous l'avez encouragée[ENTER]
+plusieurs fois.[ENTER]
+Ticket pays : vous pouvez le recevoir en échange du[ENTER]
+trophée de Coupe.[ENTER]
+Ticket d'encouragement : vous pouvez l'obtenir dans le[ENTER]
+coffre de Coupe.

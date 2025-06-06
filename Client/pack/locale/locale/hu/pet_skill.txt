@@ -1,0 +1,23 @@
+1	Ellenállás (Harcos)	jijoong	PASSIVE	Harcos támadásokkal szembeni ellenállás (passzív)	0
+2	Ellenállás (Sura)	jijoong	PASSIVE	Sura támadásokkal szembeni ellenállás (passzív)	0
+3	Ellenállás (Nindzsa)	jijoong	PASSIVE	Nindzsa támadásokkal szembeni ellenállás (passzív)	0
+4	Ellenállás (Sámán)	jijoong	PASSIVE	Sámán támadásokkal szembeni ellenállás (passzív)	0
+5	Ellenállás (Vérfarkas)	jijoong	PASSIVE	Vérfarkas támadásokkal szembeni ellenállás (passzív)	0
+6	Vad harcos	pacheon	PASSIVE	Megnövekedett támadóerõ érték (passzív)	0
+7	Ellenmágia	cheonryeong	PASSIVE	Csökkenti az ellenfél mágia ellenállását (passzív)	0
+8	Sietség	banya	PASSIVE	Csökkent készség újratöltési idõ (passzív)	0
+9	Átütés	choehoenbimu	PASSIVE	Megnövekedett esély átütõ találatokra (passzív)	0
+10	Helyreállítás	heal	AUTO	A TP helyre lesz állítva, amint 20% alá esik	480
+11	Vámpirizmus	stealhp	PASSIVE	TP elszívás az ellenségtõl (passzív)	0
+12	Spiritualizmus	stealmp	PASSIVE	MP elszívás az ellenségtõl (passzív)	0
+13	Bástya	block	PASSIVE	Fizikai sérülés blokkolva (passzív)	0
+14	Türközés	reflect_melee	PASSIVE	A kapott sebzés visszatükrözõdik az ellenségre (passzív)	0
+15	Yang-dobás	gold_drop	PASSIVE	Megnövekedett Yang-dobási ráta (passzív)	0
+16	Hatótáv	bow_distance	PASSIVE	Megnövekedett hatótáv (passzív)	0
+17	Legyõzhetetlenség	invincibility	AUTO	Esély ideiglenes legyõzhetetlenségre	600
+18	Csodaszer	removal	AUTO	Esély a vérzés, lassítás és mérgezés hatások eltávolítására	480
+19	Mester csapos	potion	PASSIVE	Növeli a bájital regenerálódás hatékonyságát (passzív)	0
+20	Szörny vadász	mob_bonus	PASSIVE	Növeli a szörnyek elleni erõ hatását (passzív)	0
+21	Sasszem	exp	PASSIVE	Növeli az EXP gyûjtést (passzív)	0
+22	Élet elszívás	hp_recover	PASSIVE	Elszívja a TP-t a megölt szörnyekbõl (passzív)	0
+23	Pehelykönnyûség	feather	AUTO	Aktiválja a Pehelykönnyû lépéseket egy rövid idõre	180

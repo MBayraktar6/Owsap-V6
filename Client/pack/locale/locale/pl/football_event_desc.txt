@@ -1,0 +1,6 @@
+[DELAY value;0]
+Opis eventu[ENTER]
+Rozpocz¹³ siê Event Mistrzowski! Pi³ki no¿ne przestaj¹[ENTER]
+pojawiaæ siê w ekwipunku. Zbierz tyle, ile potrafisz,[ENTER]
+i wymieñ je u Yu-Hwana na z³ote pi³ki lub wykorzystaj[ENTER]
+je, by otrzymaæ przedmioty.

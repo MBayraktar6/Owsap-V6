@@ -1,0 +1,10 @@
+[DELAY value;0]
+1. Puoi utilizzare più Mazzi del re insieme per partita e vincere il[ENTER]
+numero corrispondente di bauli.[ENTER]
+[ENTER]
+2. Puoi utilizzare al massimo 5 mazzi alla volta.[ENTER]
+[ENTER]
+3. I Mazzi del re non vengono restituiti dopo l'inizio della partita.[ENTER]
+[ENTER]
+4. Alla voce "Regolamento" trovi le istruzioni dettagliate per[ENTER]
+giocare.

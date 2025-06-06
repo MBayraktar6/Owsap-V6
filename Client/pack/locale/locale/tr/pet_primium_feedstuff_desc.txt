@@ -1,0 +1,5 @@
+[DELAY value;0]
+Ölen petini tanrýsal protein lokmasý ve ölen peti[ENTER]
+birleþtirerek diriltebilirsin. \n[ENTER]
+Gerekli olan eþyalarýn sayýsý petinin yaþýna baðlýdýr. \n[ENTER]
+Ölen pet, orijinal yaþýnýn %80'inde dirilir. \n

@@ -1,0 +1,8 @@
+[DELAY value;0]
+Du kannst dein verstorbenes Pet wiederbeleben, indem du[ENTER]
+Göttliche Proteinhappen und das verstorbene Pet[ENTER]
+zusammenfügst. \n[ENTER]
+Die Anzahl der benötigten Gegenstände hängt vom Alter[ENTER]
+deines Pets ab. \n[ENTER]
+Das verstorbene Pet wird mit 80% seines ursprünglichen[ENTER]
+Alters wiederbelebt. \n

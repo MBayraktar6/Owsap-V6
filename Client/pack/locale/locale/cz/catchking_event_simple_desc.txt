@@ -1,0 +1,8 @@
+[DELAY value;0]
+1. Mùžeš mít více kolekcí, abys tímto poètem vynásobil poèet truhel.[ENTER]
+[ENTER]
+2. Lze mít až 5 Královských kolekcí.[ENTER]
+[ENTER]
+3. Královskou kolekci již nelze použít po zaèátku hry.[ENTER]
+[ENTER]
+4. Více detailù o høe najdeš po kliknutí na 'Pravidla'

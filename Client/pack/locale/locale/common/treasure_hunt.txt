@@ -1,0 +1,190 @@
+# 이벤트 보상 목록 (index 순서대로 0~24까지 읽음)
+# 수정시 클라이언트 파일도 같이 수정 필요
+Group event_reward
+{
+	#index	item_vnum	count
+	0	27209	1
+	1	27212	1
+	2	70618	1
+	3	72050	1
+	4	76044	1
+	5	76029	1
+	6	50261	1
+	7	76019	1
+	8	71027	1
+	9	83074	1
+	10	72061	1
+	11	70003	1
+	12	70043	1
+	13	71028	1
+	14	76013	1
+	15	71030	1
+	16	71083	1
+	17	71018	1
+	18	76040	1
+	19	76014	1
+	20	79026	1
+	21	70058	1
+	22	51504	1
+	23	72348	1
+	24	55031	1
+}
+
+# 이벤트 누적 보상 목록
+# 클라이언트도 똑같은 Group 존재, 다른점은 확률값이 추가 됨
+# vnum, count 수정시 클라이언트 파일도 같이 수정 필요
+# probability : 확률 (확률값/probability 총합)
+# 보상은 reward_info 그룹당 보상을 총 15개 까지 세팅할 수 있다.
+Group event_accumulated_reward_list
+{
+	# 1회 누적
+	Group 1
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	27209	40	50
+			1	50261	3	50
+		}
+	}
+
+	# 2회 누적
+	Group 2
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	71044	10	50
+			1	71045	10	50
+		}
+	}
+
+	# 3회 누적
+	Group 3
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	50261	15	50
+			1	72057	1	50
+		}
+	}
+
+	# 4회 누적
+	Group 4
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	70619	1	50
+			1	71020	5	50
+		}
+	}
+
+	# 5회 누적
+	Group 5
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	113000	1	12
+			1	123000	1	12
+			2	133000	1	12
+			3	143000	1	12
+			4	153000	1	12
+			5	163000	1	12
+			6	173000	1	12
+			7	50261	20	12
+		}
+	}
+
+	# 6회 누적
+	Group 6
+	{
+		# 버프
+		Group affect_reward
+		{
+			#index	first_come	affect_type	point_type	apply_point	flag	duration
+			0	100	668	0	10	93	259200
+		}
+
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	49993	10	100
+		}
+	}
+
+	# 7회 누적
+	Group 7
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	72784	1	50
+			1	72774	1	50
+		}
+	}
+
+	# 8회 누적
+	Group 8
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	113000	1	10
+			1	123000	1	10
+			2	133000	1	10
+			3	143000	1	10
+			4	153000	1	10
+			5	163000	1	10
+			6	173000	1	10
+			7	100700	2	10
+		}
+	}
+
+	# 9회 누적
+	# 개량 재료 없이 개량할 수 있는 버프 1회권
+	# 51회 누적 부터, 9회차 보상만 지급
+	# 버프는 각 서버당 선착순 50명에게만 지급, 10개 미만 이후부터 서버 내 공지메시지를 띄워준다.
+	Group 9
+	{
+		# 버프
+		Group affect_reward
+		{
+			#index	first_come	affect_type	point_type	apply_point	flag	duration
+			0	50	669	0	0	94	259200
+		}
+
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	53315	1	100
+		}
+	}
+
+	# 10회 누적
+	# 11회차 이상누적 달성 시, 10회차 보상으로 계속 수령
+	Group 10
+	{
+		# 랜덤 아이템 보상
+		Group random_reward
+		{
+			#index	vnum	count	probability
+			0	79028	1	20
+			1	71020	10	20
+			2	76019	20	20
+			3	51506	1	20
+			4	79025	1	20
+		}
+	}
+}

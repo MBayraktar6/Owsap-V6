@@ -1,0 +1,10 @@
+[DELAY value;0]
+RAMADAN-EVENT[ENTER]
+[ENTER]
+Besucht regelmäßig den Historiker und sichert[ENTER]
+euch am Ende des Ramadans wertvolle Items für[ENTER]
+eure Tüchtigkeit.[ENTER]
+[ENTER]
+Wenn ihr Brot oder Früchte des Segens[ENTER]
+erhaltet, werden diese im Event-UI[ENTER]
+gespeichert.

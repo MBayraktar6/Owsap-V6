@@ -1,0 +1,11 @@
+[DELAY value;0]
+Otrzymujesz jedn¹ z podanych nagród.[ENTER]
+Musisz zebraæ 9 nagród, aby zakoñczyæ 1 rundê.[ENTER]
+Za ukoñczone rundy równie¿ otrzymujesz nagrody.[ENTER]
+Musisz odebraæ co najmniej 1 nagrodê, zanim bêdziesz[ENTER]
+mieæ mo¿liwoœæ ustalenia nowych nagród.[ENTER]
+Za rundy 6 i 9 mo¿esz otrzymaæ jako nagrodê limitowane[ENTER]
+b³ogos³awieñstwa.[ENTER]
+Jednak ich liczba na event jest ograniczona.[ENTER]
+Ka¿da postaæ mo¿e otrzymaæ ka¿de b³ogos³awieñstwo[ENTER]
+tylko 1x na event.

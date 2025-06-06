@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Description de l'évènement][ENTER]
+[ENTER]
+L'évènement estival a commencé ![ENTER]
+[ENTER]
+Attention, vous ne pouvez échanger vos orbes de glace contre des[ENTER]
+récompenses que dans l'interface utilisateur d'évènement.[ENTER]
+[ENTER]
+Vous pouvez aller voir Summer en ville pour échanger vos orbes de glace[ENTER]
+contre des récompenses grandioses.

@@ -1,0 +1,40 @@
+1	Lobos Alfa
+2	Líder da Matilha
+3	Único
+4	Tigre, Urso, Javali
+5	Vingança da Jura de Cristal
+6	Vingança do Trovão
+7	Irmãos
+8	Linhas de Família
+9	Cruel e Brutal
+10	Mal-Humano
+11	Guardiões Eternos
+12	Guardiões de Nephrite
+13	Governantes das Montanhas do Trovão
+14	Problemas na Falésia de Gautama
+15	Macaquinhos no Sótão
+16	Governantes da Caverna
+17	Diabólico
+18	Servos de Sung Mahi
+19	Os Fins Justificam os Meios
+20	Guardiões da Floresta
+21	Generais de Sung Mahi
+22	Zodíaco dos Raios
+23	Zodíaco do Fogo
+24	Zodíaco do Gelo
+25	Zodíaco do Vento
+26	Zodíaco da Terra
+27	Zodíaco das Trevas
+28	Guardião dos Níveis
+29	Quag de Sung Mahi
+30	Governante Semi-Humano
+31	Guardião Gelado
+32	O Trio da Caverna
+33	A Rainha Venenosa
+34	A Torre Ardente
+35	A Torre Gelada
+36	A Torre Elétrica
+37	A Torre da Tempestade
+38	A Torre da Determinação
+39	A Torre Negra
+40	O Fim do Alastor

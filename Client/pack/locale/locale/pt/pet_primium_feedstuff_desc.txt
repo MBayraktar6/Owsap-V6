@@ -1,0 +1,7 @@
+[DELAY value;0]
+Podes ressuscitar o teu pet morto combinando Biscoitos[ENTER]
+Proteína Divinos com o teu pet morto.\n[ENTER]
+A quantidade de itens necessária depende da idade do teu[ENTER]
+pet.\n[ENTER]
+O pet morto será ressuscitado com 80% da sua idade[ENTER]
+original.\n

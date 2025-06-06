@@ -1,0 +1,12 @@
+1613	Správce pozemkù:
+1614	Jsem pouhý správce pozemkù a nemùžu snížit cenu.[ENTER]Dones mi víc Yangù.
+1615	Cech koupil území!
+1616	Až si to rozmyslíš, pøijï znovu.[ENTER]Kdo døív pøijde, ten døív mele.
+1617	Jsem správce pozemkù a zodpovídám za prodej[ENTER]parcel. Pøedtím, než nestvùry obsadily zemi ve[ENTER]støedu kontinentu, mìli jsme všichni dostatek[ENTER]území a všem se daøilo dobøe. Teï prodávám[ENTER]pozemky jenom vùdcùm cechù, kteøí je pak[ENTER]využívají jako cechovní území.[ENTER]Chceš koupit tento pozemek?
+1618	Jak už jsem øekl, pozemek si nemùže koupit jen[ENTER]tak nìkdo.[ENTER]Doufám, že to chápeš.
+1619	Cech, který už jeden pozemek vlastní, nemùže[ENTER]koupit další.
+1620	Vyskytla se chyba pøi vyøizování zakázky.
+1621	Abys mohl koupit tento pozemek, musí být úroveò[ENTER]cechu vyšší než %s, cena èiní %s.
+1622	Tvùj cech ještì zatím nedosáhl tuto úroveò.[ENTER]Lituji.
+1623	Chceš si koupit tento pozemek?
+1624	Tento pozemek byl prodán jinému cechu.[ENTER]Lituji.

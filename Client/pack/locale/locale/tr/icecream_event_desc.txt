@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Etkinlik açýklamasý][ENTER]
+[ENTER]
+Yaz etkinliði baþladý![ENTER]
+[ENTER]
+Sadece etkinlik arayüzündeki buz toplarýný ödüllerle takas edebileceðini[ENTER]
+unutma.[ENTER]
+[ENTER]
+Þehirde bulunan Summer’i ziyaret edip buz toplarýný harika ödüllerle[ENTER]
+takas edebilirsin.

@@ -1,0 +1,10 @@
+[DELAY value;0]
+[Descriere Eveniment][ENTER]
+[ENTER]
+Evenimentul de Varã a început![ENTER]
+[ENTER]
+Reþine cã pot fi schimbate doar Cupele de Îngheþatã din interfaþa[ENTER]
+evenimentului.[ENTER]
+[ENTER]
+Vziteazã Vara în oraº pentru a schimba Cupe de Îngheþatã cu recompense[ENTER]
+grozave.

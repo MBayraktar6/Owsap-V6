@@ -1,0 +1,4 @@
+#index	x	y	npc_vnum	enable_helper	icon
+0	12600	12600	20414
+1	17800	7700	20414
+2	7400	17500	20414

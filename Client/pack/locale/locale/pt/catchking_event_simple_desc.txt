@@ -1,0 +1,10 @@
+[DELAY value;0]
+1. Podes apostar múltiplos decks por jogo para ganhares a mesma[ENTER]
+quantidade de cofres.[ENTER]
+[ENTER]
+2. Podes apostar até 5 Decks do Rei.[ENTER]
+[ENTER]
+3. Decks do Rei não podem ser recuperados assim que o jogo começar.[ENTER]
+[ENTER]
+4. Instruções do jogo mais detalhadas podem ser encontradas em[ENTER]
+"Regras".

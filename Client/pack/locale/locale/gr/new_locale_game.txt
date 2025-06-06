@@ -1,0 +1,85 @@
+NEW_LOCALE_GAME_STRINGS	NEW_LOCALE_GAME_STRINGS
+SHOP_NOT_ENOUGH_ITEM	Δεν έχετε αρκετά αντικείμενα.
+SHOP_NOT_ENOUGH_EXP	Δεν έχετε αρκετή εμπειρία.
+GUILD_LEADER_GRADE0	Αρχηγός της 
+GUILD_LEADER_GRADE1	Στρατηγός της 
+RESTART_CLIENT_DO_YOU_ACCEPT_1	Θα χρειαστεί να γίνει επανεκκίνηση του client για να ολοκληρωθούν οι αλλαγές.
+RESTART_CLIENT_DO_YOU_ACCEPT_2	Θέλετε να επανεκκινήσετε τον client τώρα;
+TOOLTIP_ITEM_SUMMON	Κάλεσμα
+TOOLTIP_ITEM_MOUNT	Ιππεύσιμο
+MAP_NONE	’γνωστο
+MESSENGER_GM	Διαχείριστικη Ομάδα
+MESSENGER_OFFLINE_TIME_TOOLTIP	Ανενεργός για %s
+DESTROY_ITEM_CONFIRM	Are you sure you want to delete this item?
+PARTY_DO_YOU_JOIN	 σε κάλεσε σε μια ομάδα. Αποδέχεσαι;
+TARGET_INFO_RACE	Race : %s
+TARGET_INFO_MAX_HP	Max. HP : %s
+TARGET_INFO_HP_REGEN	Health Regeneration : %d%% (%s) each %d sec.
+TARGET_INFO_EXP	Experience : %s
+TARGET_INFO_SUNGMA_EXP	Sung-Ma Experience : %s
+TARGET_INFO_GOLD_MIN_MAX	Yang : %s - %s
+TARGET_INFO_METIN_STONE_DROP	Possible drop of a Metin Stone.
+TARGET_INFO_ITEM_DROP	Items dropped from the monster.
+TARGET_INFO_NO_ITEM_DROP	This monster does not drop any items.
+TARGET_INFO_CHECKBOX_SHOW_ATTR_NULL_VALUE	Show attributes without value.
+TARGET_INFO_CHECKBOX_SHOW_ATTR_COLOR	Show attributes with color.
+TARGET_INFO_RESIST_TITLE	Resistances
+TARGET_INFO_RESIST_WEAPON_TITLE	Weapon Resistances
+TARGET_INFO_ENCHANT_TITLE	Enchantments
+TARGET_INFO_ELEMENT_TITLE	Power of Elements
+TARGET_INFO_RESIST_ELEMENT_TITLE	Element Resistances
+TARGET_INFO_ELEMENT_TOOLTIP_TITLE	Elements
+TARGET_INFO_ELEMENT_TOOLTIP_LIST1	The elements listed indicate the type of elemental
+TARGET_INFO_ELEMENT_TOOLTIP_LIST2	damage the monster deals to you.
+TARGET_INFO_ATTR_TOOLTIP_TITLE	Attributes
+TARGET_INFO_ATTR_TOOLTIP_LIST1	The attributes are all of the monster's resistances,
+TARGET_INFO_ATTR_TOOLTIP_LIST2	weaknesses and enchantments.
+TARGET_INFO_REWARD_TOOLTIP_TITLE	Experience
+TARGET_INFO_REWARD_TOOLTIP_LIST1	The experience displayed is dynamically adjusted based
+TARGET_INFO_REWARD_TOOLTIP_LIST2	on the player's level, providing an accurate reflection
+TARGET_INFO_REWARD_TOOLTIP_LIST3	of the gained experience.
+TARGET_INFO_RACE_UNKNOWN	Unknown
+TARGET_INFO_RACE_METIN	Metin Stone
+TARGET_INFO_RACE_ANIMAL	Animal
+TARGET_INFO_RACE_UNDEAD	Undead
+TARGET_INFO_RACE_DEVIL	Devil
+TARGET_INFO_RACE_HUMAN	Half Human
+TARGET_INFO_RACE_ORC	Orc
+TARGET_INFO_RACE_MILGYO	Mystic
+TARGET_INFO_RACE_INSECT	Insect
+TARGET_INFO_RACE_DESERT	Desert
+TARGET_INFO_RACE_TREE	Tree
+TARGET_INFO_RACE_ATT_CZ	Zodiac
+TARGET_INFO_RACE_AWEAKEN	Awaken
+TARGET_INFO_RACE_SUNGMAHEE	Sung Ma
+TARGET_INFO_RACE_OUTPOST	Outpost
+TARGET_INFO_ENCHANT_SLOW	Slowing chance %d%%
+TARGET_INFO_ENCHANT_POISON	Poisoning chance %d%%
+TARGET_INFO_ENCHANT_STUN	Blackout chance %d%%
+TARGET_INFO_ENCHANT_CRITICAL	Chance of critical hit +%d%%
+TARGET_INFO_ENCHANT_PENETRATE	%d%% Chance for piercing Hits
+TARGET_INFO_ELEMENT_ELECT	Lightning Power : %d%%
+TARGET_INFO_ELEMENT_FIRE	Fire Power : %d%%
+TARGET_INFO_ELEMENT_ICE	Ice Power : %d%%
+TARGET_INFO_ELEMENT_WIND	Wind Power : %d%%
+TARGET_INFO_ELEMENT_EARTH	Earth Power : %d%%
+TARGET_INFO_ELEMENT_DARK	Darkness Power : %d%%
+TARGET_INFO_RESIST_FIST	Fist Resistance : %d%%
+TARGET_INFO_RESIST_SWORD	Sword Resistance : %d%%
+TARGET_INFO_RESIST_TWOHAND	Two-handed Resistance : %d%%
+TARGET_INFO_RESIST_DAGGER	Dagger Resistance : %d%%
+TARGET_INFO_RESIST_BOW	Bow Resistance : %d%%
+TARGET_INFO_RESIST_BELL	Bell Resistance : %d%%
+TARGET_INFO_RESIST_FAN	Fan Resistance : %d%%
+TARGET_INFO_RESIST_CLAW	Claw Resistance : %d%%
+TARGET_INFO_RESIST_FIRE	Fire Resistance : %d%%
+TARGET_INFO_RESIST_ELECT	Lightning Resistance : %d%%
+TARGET_INFO_RESIST_MAGIC	Magic Resistance : %d%%
+TARGET_INFO_RESIST_WIND	Wind Resistance : %d%%
+TARGET_INFO_RESIST_POISON	Poison Resistance : %d%%
+TARGET_INFO_RESIST_BLEEDING	Bleeding Resistance : %d%%
+TARGET_INFO_RESIST_DARK	Darkness Resistance : %d%%
+TARGET_INFO_RESIST_ICE	Ice Resistance : %d%%
+TARGET_INFO_RESIST_EARTH	Earth Resistance : %d%%
+SHOW_COSTUME_TOOLTIP	Show Costume
+HIDE_COSTUME_TOOLTIP	Hide Costume

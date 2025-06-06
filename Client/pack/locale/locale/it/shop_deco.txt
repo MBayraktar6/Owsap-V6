@@ -1,0 +1,14 @@
+1	Standard	30000
+1	Mille e una notte	30002
+1	Maestro della griglia	30003
+1	Cacciatore di tesori	30004
+1	Fiamma minima	30005
+1	Mercante di armi	30006
+1	Vendita di armi	30007
+1	Alchimista	30008
+2	Inferno	d:/ymir work/ui/pattern/myshop/fire/p_fire	0xFF976D
+2	Era glaciale	d:/ymir work/ui/pattern/myshop/ice/p_ice	0xF9F4FF
+2	Pergamena	d:/ymir work/ui/pattern/myshop/paper/p_paper	0xFFBF8B
+2	Stendardo di guerra	d:/ymir work/ui/pattern/myshop/ribon/p_ribon	0xFFECD1
+2	Ali	d:/ymir work/ui/pattern/myshop/wing/p_wing	0xF1ECE1
+

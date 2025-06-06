@@ -1,0 +1,13 @@
+[DELAY value;0]
+Primeºti una dintre recompensele enumerate. Dupã[ENTER]
+colectarea a[ENTER]
+9 recompense, vei finaliza o rundã. Fiecare rundã[ENTER]
+finalizatã oferã ºi recompense. Trebuie sã colectezi[ENTER]
+cel puþin o recompensã înainte de a apãrea altele noi.[ENTER]
+Pentru[ENTER]
+rundele 6 ºi 9 poþi primi binecuvântãri suplimentare,[ENTER]
+dar[ENTER]
+acestea sunt limitate ca numãr pe eveniment. Fiecare[ENTER]
+caracter[ENTER]
+poate primi fiecare binecuvântare o singurã datã pe[ENTER]
+eveniment.

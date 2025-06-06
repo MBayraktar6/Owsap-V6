@@ -1,0 +1,7 @@
+[DELAY value;0]
+Description de l'évènement[ENTER]
+L'évènement de Coupe a commencé ! Les balles de foot[ENTER]
+n'apparaissent plus dans l'inventaire. Récoltez-en[ENTER]
+autant que vous pouvez et échangez-les auprès de[ENTER]
+Yu-Hwan contre des ballons d'or, ou utilisez-les pour[ENTER]
+recevoir des objets.

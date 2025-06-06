@@ -1,0 +1,12 @@
+1613	Emlakçý:
+1614	Ben sadece emlakçýyým, arsanýn sahibi deðilim.[ENTER]Sana indirim yapamam. Daha fazla Yang ödemelisin.
+1615	Lonca arsayý satýn aldý!
+1616	Ne yapacaðýna karar verdiðinde tekrar gel.[ENTER]Önce sen gel, önce sen al, kaçýrma.
+1617	Ben bu arsanýn satýþ temsilcisiyim. Ýstilacý[ENTER]yaratýklar, orta kýtayý talan etmeden önce arsa[ENTER]parselleme yoktu, herkesin topraðý vardý ve[ENTER]insanlar mutluydu... Her neyse, arsayý lonca[ENTER]bölgesi olarak kullanabilmeleri için sadece lonca[ENTER]liderlerine satýyorum. Arsa almak ister misin?
+1618	Sana zaten söylemiþtim; arsalarý herkese[ENTER]satmýyorum.[ENTER]Umarým bu defa beni anlamýþsýndýr.
+1619	Daha önce arsa satýn almýþ olan loncalar, yeni[ENTER]bir arsa satýn alamazlar.
+1620	Bu iþlemin gerçekleþmesi esnasýnda bir problem[ENTER]oluþtu.
+1621	Bu arsayý satýn alabilmek için, lonca seviyesi %s[ENTER]üzerinde olmalý. Ucreti ise %s
+1622	Loncanýn kademesi henüz yeterli seviyeye ulaþmýþ[ENTER]deðil.[ENTER]Üzgünüm...
+1623	Bu araziyi satýn almak istiyor musun?
+1624	Bu arsa baþka bir loncaya satýldý. Üzgünüm...

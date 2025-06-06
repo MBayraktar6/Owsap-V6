@@ -1,0 +1,14 @@
+1	Alapértelmezett	30000
+1	1001 éjszaka	30002
+1	Grillkirály	30003
+1	Kincsvadász	30004
+1	Takarékláng	30005
+1	Fegyverkereskedõ	30006
+1	Páncél-márkeszerviz	30007
+1	Alkimista	30008
+2	Pokol	d:/ymir work/ui/pattern/myshop/fire/p_fire	0xFF976D
+2	Jégkorszak	d:/ymir work/ui/pattern/myshop/ice/p_ice	0xF9F4FF
+2	Pergamen	d:/ymir work/ui/pattern/myshop/paper/p_paper	0xFFBF8B
+2	Harci zászló	d:/ymir work/ui/pattern/myshop/ribon/p_ribon	0xFFECD1
+2	Szárnyak	d:/ymir work/ui/pattern/myshop/wing/p_wing	0xF1ECE1
+

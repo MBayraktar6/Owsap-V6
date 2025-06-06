@@ -1,0 +1,9 @@
+[DELAY value;0]
+EVENTO DE RAMADÃO[ENTER]
+[ENTER]
+Visita o Historiador regularmente e, no fim do[ENTER]
+Ramadão, obtém itens valiosos pela tua[ENTER]
+dedicação.[ENTER]
+[ENTER]
+Se receberes Pão ou Fruta da Bênção, estes[ENTER]
+itens serão guardados na interface de eventos.

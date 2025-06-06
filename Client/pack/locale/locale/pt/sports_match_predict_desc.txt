@@ -1,0 +1,7 @@
+[DELAY value;0]
+Se a equipa que selecionares vencer, recebes mais[ENTER]
+recompensas consoante o número de vezes que a[ENTER]
+apoiaste.[ENTER]
+Bilhete de País: podes obtê-lo em troca do Troféu do[ENTER]
+Torneio.[ENTER]
+Bilhete de Apoio: podes obtê-lo do Cofre do Torneio.

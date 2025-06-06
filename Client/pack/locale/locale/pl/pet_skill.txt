@@ -1,0 +1,23 @@
+1	Odpornoœæ (wojownik) 	jijoong	PASSIVE	Odpornoœæ na ataki wojowników (pasywna)	0
+2	Odpornoœæ (sura) 	jijoong	PASSIVE	Odpornoœæ na ataki Sura (pasywna)	0
+3	Odpornoœæ (ninja) 	jijoong	PASSIVE	Odpornoœæ na ataki ninja (pasywna)	0
+4	Odpornoœæ (szaman) 	jijoong	PASSIVE	Odpornoœæ na ataki szamanów (pasywna)	0
+5	Odpornoœæ (Likan) 	jijoong	PASSIVE	Odpornoœæ na ataki Likanów (pasywna)	0
+6	Berserk	pacheon	PASSIVE	Wartoœæ ataku podwy¿sza siê (pasywna)	0
+7	Antymagia 	cheonryeong	PASSIVE	Prze³amuje magiê przeciwnika (pasywna)	0
+8	Przyspieszenie	banya	PASSIVE	Czasy ³adowania umiejêtnoœci ulegaj¹ redukcji (pasywna)	0
+9	Przebicie	choehoenbimu	PASSIVE	Wzrasta szansa na zadanie przeszywaj¹cego ciosu (pasywna)	0
+10	Odnowa	heal	AUTO	Regeneruje P¯, gdy te spadn¹ poni¿ej 20%	480
+11	Wampir	stealhp	PASSIVE	Kradnie P¯ przeciwnika (pasywna)	0
+12	Duchy	stealmp	PASSIVE	Kradnie PE przeciwnika (pasywna)	0
+13	Przeszkoda	block	PASSIVE	Blokuje fizyczne obra¿enia (pasywna)	0
+14	Zwierciad³o	reflect_melee	PASSIVE	Odnoszone obra¿enia s¹ odbijane w przeciwnika (pasywna)	0
+15	Drop Yang	gold_drop	PASSIVE	Szansa na drop Yang wzrasta (pasywna)	0
+16	Zasiêg	bow_distance	PASSIVE	Zasiêg zostaje zwiêkszony (pasywna)	0
+17	Nieœmiertelnoœæ	invincibility	AUTO	Szansa na tymczasow¹ nieœmiertelnoœæ	600
+18	Uzdrowienie	removal	AUTO	Szansa na usuniêcie efektów krwawienia, trucizny i spowolnienia	480
+19	Browarnik	potion	PASSIVE	Wzrost regeneracji dziêki miksturom (pasywna)	0
+20	£owca potworów	mob_bonus	PASSIVE	Wzrost efektu "Si³a w walce z potworami" (pasywna)	0
+21	Spostrzegawczoœæ	exp	PASSIVE	Wzrost zdobytych PD (pasywna)	0
+22	Absorpcja ¿ycia	hp_recover	PASSIVE	Absorbuje P¯ zabitych potworów (pasywna)	0
+23	Lekkie jak piórko	feather	AUTO	Na krótki czas aktywuje "Bezszelestny Chód"	180

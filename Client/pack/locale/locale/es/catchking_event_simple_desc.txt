@@ -1,0 +1,10 @@
+[DELAY value;0]
+1) En cada partida podrás hacer uso de hasta 5 barajas del rey y[ENTER]
+ganar el mismo número de baúles.[ENTER]
+[ENTER]
+2) Podrás utilizar un máximo de 5 barajas del rey a la vez.[ENTER]
+[ENTER]
+3) No podrás recuperar las barajas del rey que utilices una vez[ENTER]
+comience el juego.[ENTER]
+[ENTER]
+4) Dispones de instrucciones detalladas en la sección "Reglas".

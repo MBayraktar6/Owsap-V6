@@ -1,0 +1,13 @@
+[DELAY value;0]
+Vous obtenez une des récompenses listées.[ENTER]
+Vous devez récupérer 9 récompenses pour terminer[ENTER]
+1 manche.[ENTER]
+Vous recevez également des récompenses pour les[ENTER]
+manches terminées.[ENTER]
+Vous devez avoir récupéré au moins 1 récompense avant[ENTER]
+de pouvoir en fixer de nouvelles.[ENTER]
+Pour les tours 6 et 9, vous pouvez recevoir en[ENTER]
+récompense des bénédictions[ENTER]
+dont le nombre est limité par évènement.[ENTER]
+Chaque personnage ne peut recevoir chaque bénédiction[ENTER]
+que 1x par évènement.

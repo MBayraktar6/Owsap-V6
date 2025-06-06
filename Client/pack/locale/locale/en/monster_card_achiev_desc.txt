@@ -1,0 +1,40 @@
+1	Alpha Wolves
+2	Leader of the Pack
+3	Unique
+4	Tiger, Bear, Boar
+5	Revenge of the White Oath
+6	Revenge of the Black Storm
+7	Brothers
+8	Family Ties
+9	Cruel and Brutal
+10	Hardly Human
+11	Eternal Guardians
+12	Nephrite Guardians
+13	Rulers of the Thunder Mountains
+14	Trouble on Gautama Cliff
+15	Monkey’s Uncles
+16	Cave Rulers
+17	Devilish
+18	Sung Mahi’s Servants
+19	The End Justifies the Means
+20	Forest Guardians
+21	Sung Mahi’s Generals
+22	Zodiac of Lightning
+23	Zodiac of Fire
+24	Zodiac of Ice
+25	Zodiac of Wind
+26	Zodiac of Earth
+27	Zodiac of Darkness
+28	Guardian of the Levels
+29	Sung Mahi's Quag
+30	Half-Human Ruler
+31	Icy Guardian
+32	The Cave Trio
+33	The Poisonous Queen
+34	The Burning Tower
+35	The Frozen Tower
+36	The Electrified Tower
+37	The Stormy Tower
+38	The Steadfast Tower
+39	The Dark Tower
+40	Alastor's End

@@ -1,0 +1,10 @@
+[DELAY value;0]
+A listában levõ jutalmak egyikét kapod. Miután[ENTER]
+begyûjtöttél[ENTER]
+9 jutalmat, teljesítesz egy kört. Minden kör,[ENTER]
+amit teljesítesz, szintén jutalmat ad. Be kell[ENTER]
+gyûjtened[ENTER]
+legalább egy jutalmat, mielõtt a többit beállíthatod. A[ENTER]
+6. és 9. körökért extra áldásokat kaphatsz, de[ENTER]
+ezek száma rendezvényenként limitált. Minden karakter[ENTER]
+minden áldást egyszer kaphat meg rendezvényenként.

@@ -1,0 +1,5 @@
+[DELAY value;0]
+Minél többet szurkoltál a választott csapatodnak,[ENTER]
+annál több jutalmat kapsz, ha õk nyernek.[ENTER]
+Ország jegy: Bajnokság trófea beváltásakor szerezhetõ.[ENTER]
+Szurkolói jegy: Bajnokság ládából szerezhetõ.
