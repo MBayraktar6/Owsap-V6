@@ -1,0 +1,69 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  StdAfx.cpp
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  WeaponTrace.cpp
+  TerrainQuadtree.cpp
+  TerrainPatch.cpp
+  TerrainDecal.cpp
+  SnowParticle.cpp
+  SnowEnvironment.cpp
+  RaceMotionData.cpp
+  RaceManager.cpp
+  RaceDataFile.cpp
+  RaceData.cpp
+  PropertyManager.cpp
+  PropertyLoader.cpp
+  Property.cpp
+  PhysicsObject.cpp
+  MonsterAreaInfo.cpp
+  MapUtil.cpp
+  MapType.cpp
+  MapOutdoorWater.cpp
+  MapOutdoorUpdate.cpp
+  MapOutdoorRenderSTP.cpp
+  Kod Üretiliyor...
+  Derleniyor...
+  MapOutdoorRenderHTP.cpp
+  MapOutdoorRender.cpp
+  MapOutdoorQuadtree.cpp
+  MapOutdoorLoad.cpp
+  MapOutdoorIndexBuffer.cpp
+  MapOutdoorCharacterShadow.cpp
+  MapOutdoor.cpp
+  MapManager.cpp
+  MapBase.cpp
+  ItemUtil.cpp
+  ItemManager.cpp
+  ItemData.cpp
+  GameUtil.cpp
+  GameType.cpp
+  GameEventManager.cpp
+  FlyTrace.cpp
+  FlyTarget.cpp
+  FlyingObjectManager.cpp
+  FlyingInstance.cpp
+  FlyingData.cpp
+  Kod Üretiliyor...
+  Derleniyor...
+  DungeonBlock.cpp
+  DragonSoulTable.cpp
+  AreaTerrain.cpp
+  AreaLoaderThread.cpp
+  Area.cpp
+  ActorInstanceWeaponTrace.cpp
+  ActorInstanceSync.cpp
+  ActorInstanceRotation.cpp
+  ActorInstanceRender.cpp
+  ActorInstancePosition.cpp
+  ActorInstanceMotionEvent.cpp
+  ActorInstanceMotion.cpp
+  ActorInstanceFly.cpp
+  ActorInstanceEvent.cpp
+  ActorInstanceData.cpp
+  ActorInstanceCollisionDetection.cpp
+  ActorInstanceBlend.cpp
+  ActorInstanceBattle.cpp
+  ActorInstanceAttach.cpp
+  ActorInstance.cpp
+  Kod Üretiliyor...
+  GameLib.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\GameLib\Debug\GameLib.lib
