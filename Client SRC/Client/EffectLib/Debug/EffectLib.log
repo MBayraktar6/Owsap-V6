@@ -1,0 +1,22 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  StdAfx.cpp
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  Type.cpp
+  SimpleLightInstance.cpp
+  SimpleLightData.cpp
+  ParticleSystemInstance.cpp
+  ParticleSystemData.cpp
+  ParticleProperty.cpp
+  ParticleInstance.cpp
+  FrameController.cpp
+  EmitterProperty.cpp
+  EffectUpdateDecorator.cpp
+  EffectMeshInstance.cpp
+  EffectMesh.cpp
+  EffectManager.cpp
+  EffectInstance.cpp
+  EffectElementBaseInstance.cpp
+  EffectElementBase.cpp
+  EffectData.cpp
+  Kod Üretiliyor...
+  EffectLib.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\EffectLib\Debug\EffectLib.lib

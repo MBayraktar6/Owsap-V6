@@ -1,0 +1,2 @@
+C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\EffectLib\Release\EffectLib.lib
+C:\Users\musta\OneDrive\Masaüstü\OSF\Srcs\Client\EffectLib\Release\EffectLib.lib

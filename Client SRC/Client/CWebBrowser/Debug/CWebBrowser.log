@@ -1,0 +1,3 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  CWebBrowser.c
+  CWebBrowser.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\CWebBrowser\Debug\CWebBrowser.lib

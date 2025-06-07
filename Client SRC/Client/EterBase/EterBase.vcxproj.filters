@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="cipher.cpp" />
+    <ClCompile Include="CPostIt.cpp" />
+    <ClCompile Include="CRC32.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="FileBase.cpp" />
+    <ClCompile Include="FileDir.cpp" />
+    <ClCompile Include="FileLoader.cpp" />
+    <ClCompile Include="lzo.cpp" />
+    <ClCompile Include="MappedFile.cpp" />
+    <ClCompile Include="Random.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="Stl.cpp" />
+    <ClCompile Include="tea.cpp" />
+    <ClCompile Include="TempFile.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Poly\Base.cpp">
+      <Filter>Poly</Filter>
+    </ClCompile>
+    <ClCompile Include="Poly\Poly.cpp">
+      <Filter>Poly</Filter>
+    </ClCompile>
+    <ClCompile Include="Poly\Symbol.cpp">
+      <Filter>Poly</Filter>
+    </ClCompile>
+    <ClCompile Include="Poly\SymTable.cpp">
+      <Filter>Poly</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cipher.h" />
+    <ClInclude Include="CPostIt.h" />
+    <ClInclude Include="CRC32.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="error.h" />
+    <ClInclude Include="FileBase.h" />
+    <ClInclude Include="FileDir.h" />
+    <ClInclude Include="FileLoader.h" />
+    <ClInclude Include="Filename.h" />
+    <ClInclude Include="lzo.h" />
+    <ClInclude Include="MappedFile.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="ServiceDefs.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Stl.h" />
+    <ClInclude Include="tea.h" />
+    <ClInclude Include="TempFile.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="vk.h" />
+    <ClInclude Include="Poly\Base.h">
+      <Filter>Poly</Filter>
+    </ClInclude>
+    <ClInclude Include="Poly\Poly.h">
+      <Filter>Poly</Filter>
+    </ClInclude>
+    <ClInclude Include="Poly\Symbol.h">
+      <Filter>Poly</Filter>
+    </ClInclude>
+    <ClInclude Include="Poly\SymTable.h">
+      <Filter>Poly</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Code">
+      <UniqueIdentifier>{3623271d-d8c3-4c94-b8db-fd568fb840b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Poly">
+      <UniqueIdentifier>{eadb7d3c-67b0-4ca6-a75f-85127041d960}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

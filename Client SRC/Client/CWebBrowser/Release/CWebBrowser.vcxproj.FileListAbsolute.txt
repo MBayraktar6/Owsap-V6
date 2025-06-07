@@ -1,0 +1,2 @@
+C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\CWebBrowser\Release\CWebBrowser.lib
+C:\Users\musta\OneDrive\Masaüstü\OSF\Srcs\Client\CWebBrowser\Release\CWebBrowser.lib

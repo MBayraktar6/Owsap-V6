@@ -1,0 +1,25 @@
+﻿  StdAfx.cpp
+  cipher.cpp
+  CPostIt.cpp
+  CRC32.cpp
+  Debug.cpp
+  error.cpp
+  FileBase.cpp
+  FileDir.cpp
+  FileLoader.cpp
+  Grid.cpp
+  lzo.cpp
+  MappedFile.cpp
+  Random.cpp
+  Stl.cpp
+  tea.cpp
+  TempFile.cpp
+  Timer.cpp
+  Utils.cpp
+  Kod Üretiliyor...
+  Base.cpp
+  Poly.cpp
+  Symbol.cpp
+  SymTable.cpp
+  Kod Üretiliyor...
+  EterBase.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\OSF\Srcs\Client\EterBase\Release\EterBase.lib

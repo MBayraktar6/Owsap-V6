@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RootLib\cyTemp\colorInfo.c" />
+    <ClCompile Include="RootLib\cyTemp\consoleModule.c" />
+    <ClCompile Include="RootLib\cyTemp\constInfo.c" />
+    <ClCompile Include="RootLib\cyTemp\debugInfo.c" />
+    <ClCompile Include="RootLib\cyTemp\dragon_soul_refine_settings.c" />
+    <ClCompile Include="RootLib\cyTemp\emotion.c" />
+    <ClCompile Include="RootLib\cyTemp\exception.c" />
+    <ClCompile Include="RootLib\cyTemp\game.c" />
+    <ClCompile Include="RootLib\cyTemp\interfaceModule.c" />
+    <ClCompile Include="RootLib\cyTemp\introCreate.c" />
+    <ClCompile Include="RootLib\cyTemp\introEmpire.c" />
+    <ClCompile Include="RootLib\cyTemp\introLoading.c" />
+    <ClCompile Include="RootLib\cyTemp\introLogin.c" />
+    <ClCompile Include="RootLib\cyTemp\introLogo.c" />
+    <ClCompile Include="RootLib\cyTemp\introSelect.c" />
+    <ClCompile Include="RootLib\cyTemp\localeInfo.c" />
+    <ClCompile Include="RootLib\cyTemp\mouseModule.c" />
+    <ClCompile Include="RootLib\cyTemp\musicInfo.c" />
+    <ClCompile Include="RootLib\cyTemp\networkModule.c" />
+    <ClCompile Include="RootLib\cyTemp\New_introCreate.c" />
+    <ClCompile Include="RootLib\cyTemp\New_introSelect.c" />
+    <ClCompile Include="RootLib\cyTemp\osfInfo.c" />
+    <ClCompile Include="RootLib\cyTemp\playerSettingModule.c" />
+    <ClCompile Include="RootLib\cyTemp\Prototype.c" />
+    <ClCompile Include="RootLib\cyTemp\serverCommandParser.c" />
+    <ClCompile Include="RootLib\cyTemp\serverInfo.c" />
+    <ClCompile Include="RootLib\cyTemp\stringCommander.c" />
+    <ClCompile Include="RootLib\cyTemp\system.c" />
+    <ClCompile Include="RootLib\cyTemp\ui.c" />
+    <ClCompile Include="RootLib\cyTemp\uiAcce.c" />
+    <ClCompile Include="RootLib\cyTemp\uiAffectShower.c" />
+    <ClCompile Include="RootLib\cyTemp\uiAttachMetin.c" />
+    <ClCompile Include="RootLib\cyTemp\uiAttr67Add.c" />
+    <ClCompile Include="RootLib\cyTemp\uiAuction.c" />
+    <ClCompile Include="RootLib\cyTemp\uiAura.c" />
+    <ClCompile Include="RootLib\cyTemp\uiAutoBan.c" />
+    <ClCompile Include="RootLib\cyTemp\uiCandidate.c" />
+    <ClCompile Include="RootLib\cyTemp\uiChangeLook.c" />
+    <ClCompile Include="RootLib\cyTemp\uiCharacter.c" />
+    <ClCompile Include="RootLib\cyTemp\uiCharacterDetails.c" />
+    <ClCompile Include="RootLib\cyTemp\uiChat.c" />
+    <ClCompile Include="RootLib\cyTemp\uiCommon.c" />
+    <ClCompile Include="RootLib\cyTemp\uiCube.c" />
+    <ClCompile Include="RootLib\cyTemp\uiCubeRenewal.c" />
+    <ClCompile Include="RootLib\cyTemp\uiDragonSoul.c" />
+    <ClCompile Include="RootLib\cyTemp\uiEquipmentDialog.c" />
+    <ClCompile Include="RootLib\cyTemp\uiEscapePopup.c" />
+    <ClCompile Include="RootLib\cyTemp\uiEx.c" />
+    <ClCompile Include="RootLib\cyTemp\uiExchange.c" />
+    <ClCompile Include="RootLib\cyTemp\uiFishingGame.c" />
+    <ClCompile Include="RootLib\cyTemp\uiFlowerEvent.c" />
+    <ClCompile Include="RootLib\cyTemp\uiGameButton.c" />
+    <ClCompile Include="RootLib\cyTemp\uiGameOption.c" />
+    <ClCompile Include="RootLib\cyTemp\uiGemShop.c" />
+    <ClCompile Include="RootLib\cyTemp\uiGuild.c" />
+    <ClCompile Include="RootLib\cyTemp\uiGuildDragonLairRanking.c" />
+    <ClCompile Include="RootLib\cyTemp\uiHelp.c" />
+    <ClCompile Include="RootLib\cyTemp\uiInventory.c" />
+    <ClCompile Include="RootLib\cyTemp\uiItemCombination.c" />
+    <ClCompile Include="RootLib\cyTemp\uiKeyChange.c" />
+    <ClCompile Include="RootLib\cyTemp\uiLootingSystem.c" />
+    <ClCompile Include="RootLib\cyTemp\uiLuckyBox.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMailBox.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMapNameShower.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMessenger.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMiniGame.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMiniGameCatchKing.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMiniGameRoulette.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMiniGameRumi.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMiniGameYutnori.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMiniMap.c" />
+    <ClCompile Include="RootLib\cyTemp\uiMyShopDecoration.c" />
+    <ClCompile Include="RootLib\cyTemp\uiOption.c" />
+    <ClCompile Include="RootLib\cyTemp\uiParty.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPhaseCurtain.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPickETC.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPickMoney.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPlayerGauge.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPointReset.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPopupNotice.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPrivateShop.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPrivateShopBuilder.c" />
+    <ClCompile Include="RootLib\cyTemp\uiPrivateShopSearch.c" />
+    <ClCompile Include="RootLib\cyTemp\uiQuest.c" />
+    <ClCompile Include="RootLib\cyTemp\uiRankingBoard.c" />
+    <ClCompile Include="RootLib\cyTemp\uiRefine.c" />
+    <ClCompile Include="RootLib\cyTemp\uiRestart.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSafebox.c" />
+    <ClCompile Include="RootLib\cyTemp\uiScriptLocale.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSelectAttr.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSelectItem.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSelectItemEx.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSelectMusic.c" />
+    <ClCompile Include="RootLib\cyTemp\uiShop.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSkillBookCombination.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSnowflakeStickEvent.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSystem.c" />
+    <ClCompile Include="RootLib\cyTemp\uiSystemOption.c" />
+    <ClCompile Include="RootLib\cyTemp\uiTarget.c" />
+    <ClCompile Include="RootLib\cyTemp\uiTaskBar.c" />
+    <ClCompile Include="RootLib\cyTemp\uiTip.c" />
+    <ClCompile Include="RootLib\cyTemp\uiToolTip.c" />
+    <ClCompile Include="RootLib\cyTemp\uiUploadMark.c" />
+    <ClCompile Include="RootLib\cyTemp\uiWeb.c" />
+    <ClCompile Include="RootLib\cyTemp\uiWhisper.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E3D7F390-09E9-45DB-BC22-9099A47F345E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CRootLib</RootNamespace>
+    <ProjectName>CRootLib</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\External\bin\Python27\;$(IncludePath)</IncludePath>
+    <OutDir>..\..\External\library\win32\Debug</OutDir>
+    <TargetName>rootlib</TargetName>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>rootlib</TargetName>
+    <OutDir>..\..\External\library\win32\Release</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+    <IncludePath>..\External\bin\Python27\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../External/include;%(AdditionalIncludeDirectories);../../External/include/Python-2.7</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <CompileAs>CompileAsC</CompileAs>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>call Build.bat</Command>
+      <Message>Cythonizing Root</Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32, NDEBUG,_WINDOWS,USE_LOD,_DISTRIBUTE,_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../External/include;%(AdditionalIncludeDirectories);../../External/include/Python-2.7</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <CompileAs>CompileAsC</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <OmitFramePointers>false</OmitFramePointers>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <BrowseInformation>true</BrowseInformation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PreBuildEvent>
+      <Message>Cythonizing Root</Message>
+      <Command>call Build.bat</Command>
+    </PreBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

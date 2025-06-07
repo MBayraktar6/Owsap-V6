@@ -1,0 +1,28 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  StdAfx.cpp
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  Utils.cpp
+  Timer.cpp
+  TempFile.cpp
+  tea.cpp
+  Stl.cpp
+  Random.cpp
+  MappedFile.cpp
+  lzo.cpp
+  Grid.cpp
+  FileLoader.cpp
+  FileDir.cpp
+  FileBase.cpp
+  error.cpp
+  Debug.cpp
+  CRC32.cpp
+  CPostIt.cpp
+  cipher.cpp
+  Kod Üretiliyor...
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  SymTable.cpp
+  Symbol.cpp
+  Poly.cpp
+  Base.cpp
+  Kod Üretiliyor...
+  EterBase.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\EterBase\Debug\EterBase.lib
