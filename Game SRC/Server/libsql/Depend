@@ -1,0 +1,63 @@
+AsyncSQL.o: AsyncSQL.cpp AsyncSQL.h ../libthecore/include/stdafx.h \
+  ../libthecore/include/typedef.h ../libthecore/include/heart.h \
+  ../libthecore/include/fdwatch.h ../libthecore/include/socket.h \
+  ../libthecore/include/kstbl.h ../libthecore/include/hangul.h \
+  ../libthecore/include/buffer.h ../libthecore/include/signal.h \
+  ../libthecore/include/log.h ../libthecore/include/main.h \
+  ../libthecore/include/utils.h ../libthecore/include/crypt.h \
+  ../libthecore/include/memcpy.h ../libmysql/8.0.33/14.0/mysql/mysql.h \
+  ../libmysql/8.0.33/14.0/mysql/field_types.h \
+  ../libmysql/8.0.33/14.0/mysql/my_list.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_com.h \
+  ../libmysql/8.0.33/14.0/mysql/my_command.h \
+  ../libmysql/8.0.33/14.0/mysql/my_compress.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/udf_registration_types.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/client_plugin.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/plugin_auth_common.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_version.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_time.h \
+  ../libmysql/8.0.33/14.0/mysql/errmsg.h \
+  ../libmysql/8.0.33/14.0/mysql/mysqld_error.h Semaphore.h
+Semaphore.o: Semaphore.cpp stdafx.h ../libthecore/include/stdafx.h \
+  ../libthecore/include/typedef.h ../libthecore/include/heart.h \
+  ../libthecore/include/fdwatch.h ../libthecore/include/socket.h \
+  ../libthecore/include/kstbl.h ../libthecore/include/hangul.h \
+  ../libthecore/include/buffer.h ../libthecore/include/signal.h \
+  ../libthecore/include/log.h ../libthecore/include/main.h \
+  ../libthecore/include/utils.h ../libthecore/include/crypt.h \
+  ../libthecore/include/memcpy.h AsyncSQL.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql.h \
+  ../libmysql/8.0.33/14.0/mysql/field_types.h \
+  ../libmysql/8.0.33/14.0/mysql/my_list.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_com.h \
+  ../libmysql/8.0.33/14.0/mysql/my_command.h \
+  ../libmysql/8.0.33/14.0/mysql/my_compress.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/udf_registration_types.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/client_plugin.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/plugin_auth_common.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_version.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_time.h \
+  ../libmysql/8.0.33/14.0/mysql/errmsg.h \
+  ../libmysql/8.0.33/14.0/mysql/mysqld_error.h Semaphore.h
+Statement.o: Statement.cpp Statement.h AsyncSQL.h \
+  ../libthecore/include/stdafx.h ../libthecore/include/typedef.h \
+  ../libthecore/include/heart.h ../libthecore/include/fdwatch.h \
+  ../libthecore/include/socket.h ../libthecore/include/kstbl.h \
+  ../libthecore/include/hangul.h ../libthecore/include/buffer.h \
+  ../libthecore/include/signal.h ../libthecore/include/log.h \
+  ../libthecore/include/main.h ../libthecore/include/utils.h \
+  ../libthecore/include/crypt.h ../libthecore/include/memcpy.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql.h \
+  ../libmysql/8.0.33/14.0/mysql/field_types.h \
+  ../libmysql/8.0.33/14.0/mysql/my_list.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_com.h \
+  ../libmysql/8.0.33/14.0/mysql/my_command.h \
+  ../libmysql/8.0.33/14.0/mysql/my_compress.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/udf_registration_types.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/client_plugin.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql/plugin_auth_common.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_version.h \
+  ../libmysql/8.0.33/14.0/mysql/mysql_time.h \
+  ../libmysql/8.0.33/14.0/mysql/errmsg.h \
+  ../libmysql/8.0.33/14.0/mysql/mysqld_error.h Semaphore.h
+Tellwait.o: Tellwait.cpp
