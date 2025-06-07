@@ -1,0 +1,3 @@
+Client Extern.zip dosyasını indir ve projenin içerisine aktar.
+
+Download the Client Extern.zip file and import it into the project.
