@@ -1,0 +1,2 @@
+C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\SpeedTreeLib\Release\SpeedTreeLib.lib
+C:\Users\musta\OneDrive\Masaüstü\OSF\Srcs\Client\SpeedTreeLib\Release\SpeedTreeLib.lib
