@@ -1,32 +1,57 @@
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.pdb
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\symtable.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\symbol.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\poly.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\base.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.pch
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\stdafx.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\tea.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\lzo.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\error.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\cipher.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\utils.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\timer.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\tempfile.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\stl.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\random.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\mappedfile.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\grid.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\fileloader.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\filedir.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\filebase.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\debug.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\crc32.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\cpostit.obj
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.lib
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.tlog\cl.command.1.tlog
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.tlog\cl.items.tlog
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.tlog\cl.read.1.tlog
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.tlog\cl.write.1.tlog
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.tlog\lib-link.write.1.tlog
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.tlog\lib.command.1.tlog
-c:\users\musta\onedrive\masaüstü\owsap v6\srcs\client\eterbase\release\eterbase.tlog\lib.read.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\eterbase.pch
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\eterbase.pdb
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\stdafx.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\utils.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\timer.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\tempfile.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\tea.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\stl.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\random.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\mappedfile.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\lzo.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\grid.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\fileloader.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\filedir.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\filebase.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\error.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\debug.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\crc32.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\cpostit.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\cipher.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\symtable.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\symbol.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\poly.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\base.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterbase\release\eterbase.lib
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\base.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\cipher.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\cpostit.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\crc32.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\debug.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\error.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\filebase.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\filedir.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\fileloader.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\grid.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\lzo.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\mappedfile.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\poly.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\random.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\stdafx.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\stl.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\symbol.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\symtable.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\tea.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\tempfile.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\timer.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\utils.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.pch
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.pdb
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.lib
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.tlog\cl.command.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.tlog\cl.items.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.tlog\cl.read.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.tlog\cl.write.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.tlog\lib-link.write.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.tlog\lib.command.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterbase\release\eterbase.tlog\lib.read.1.tlog

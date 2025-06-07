@@ -1,2 +1,0 @@
-C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\EterPack\Release\EterPack.lib
-C:\Users\musta\OneDrive\Masaüstü\OSF\Srcs\Client\EterPack\Release\EterPack.lib

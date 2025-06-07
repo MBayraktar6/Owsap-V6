@@ -1,2 +1,0 @@
-C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\EterLocale\Release\EterLocale.lib
-C:\Users\musta\OneDrive\Masaüstü\OSF\Srcs\Client\EterLocale\Release\EterLocale.lib
