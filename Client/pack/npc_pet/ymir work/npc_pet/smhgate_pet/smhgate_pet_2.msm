@@ -1,0 +1,23 @@
+ScriptType            RaceDataScript
+
+BaseModelFileName     "D:\Ymir Work\npc_pet\smhgate_pet\smhgate_pet.GR2"
+
+Group ShapeData
+{
+    PathName 		 ""
+    ShapeDataCount 		 1
+	Group ShapeData00
+	{
+		ShapeIndex			0
+
+		Model				"D:\Ymir Work\npc_pet\smhgate_pet\smhgate_pet.GR2"
+		SourceSkin			"D:\Ymir Work\npc_pet\smhgate_pet\smhgate_pet.dds"
+		TargetSkin			"D:\Ymir Work\npc_pet\smhgate_pet\smhgate_pet_2.dds"
+		SourceSkin2			"D:\Ymir Work\monster2\smhgate_boss\smhgate_boss_wea.dds"
+		TargetSkin2			"D:\Ymir Work\monster2\smhgate_boss\smhgate_boss_wea_2.dds"
+	}
+}
+Group AttachingData
+{
+    AttachingDataCount       0
+}
