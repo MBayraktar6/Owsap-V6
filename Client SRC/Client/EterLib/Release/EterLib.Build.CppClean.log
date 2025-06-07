@@ -1,0 +1,175 @@
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\eterlib.pch
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\eterlib.pdb
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\stdafx.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpdib.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpdevice.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpdetector.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpd3dxbuffer.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpcolorinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpcolor.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpcollisionobject.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpbase.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grouptextparsetree.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\fileloaderthread.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\environmentmap.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\dibbar.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\decal.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\cullingmanager.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\colortransitionhelper.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\collisiondata.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\camera.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\blocktexture.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\attributeinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\attributedata.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpvertexbuffer.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grptexture.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grptextinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grptext.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpsubimage.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpshadowtexture.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpscreen.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grprendertargettexture.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpratioinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grppixelshader.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpobjectinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpmath.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpmarkinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grplightmanager.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpindexbuffer.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpimagetexture.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpimageinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpimage.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpfonttexture.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpexpandedimageinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\netdatagram.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\netaddress.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\mutex.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\mswindow.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\msapplication.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\lineintersect_utils.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\lensflare.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\jpegfile.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\input.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\imgui_widgets.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\imgui_tables.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\imgui_impl_win32.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\imgui_impl_dx8.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\imgui_draw.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\imgui_demo.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\imgui.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\ime.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpvertexshader.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpvertexbufferstatic.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\grpvertexbufferdynamic.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\util.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\thread.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\texttag.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\textfileloader.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\textbar.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\targaresource.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\statemanager.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\skybox.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\screenfilter.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\resourcemanager.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\resource.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\rendertargetmanager.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\referenceobject.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\pathstack.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\parser.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\netstream.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\netpacketheadermap.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\netdevice.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\netdatagramsender.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\netdatagramreceiver.obj
+c:\users\musta\onedrive\masaüstü\osf\srcs\client\eterlib\release\eterlib.lib
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\attributedata.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\attributeinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\blocktexture.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\camera.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\collisiondata.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\colortransitionhelper.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\cullingmanager.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\decal.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\dibbar.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\environmentmap.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\fileloaderthread.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grouptextparsetree.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpbase.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpcollisionobject.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpcolor.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpcolorinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpd3dxbuffer.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpdetector.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpdevice.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpdib.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpexpandedimageinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpfonttexture.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpimage.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpimageinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpimagetexture.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpindexbuffer.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grplightmanager.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpmarkinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpmath.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpobjectinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grppixelshader.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpratioinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grprendertargettexture.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpscreen.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpshadowtexture.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpsubimage.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grptext.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grptextinstance.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grptexture.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpvertexbuffer.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpvertexbufferdynamic.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpvertexbufferstatic.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\grpvertexshader.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\ime.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\imgui.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\imgui_demo.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\imgui_draw.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\imgui_impl_dx8.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\imgui_impl_win32.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\imgui_tables.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\imgui_widgets.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\input.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\jpegfile.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\lensflare.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\lineintersect_utils.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\msapplication.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\mswindow.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\mutex.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\netaddress.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\netdatagram.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\netdatagramreceiver.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\netdatagramsender.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\netdevice.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\netpacketheadermap.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\netstream.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\parser.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\pathstack.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\referenceobject.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\rendertargetmanager.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\resource.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\resourcemanager.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\screenfilter.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\skybox.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\statemanager.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\stdafx.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\targaresource.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\textbar.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\textfileloader.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\texttag.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\thread.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\util.obj
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.pch
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.pdb
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.lib
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.tlog\cl.command.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.tlog\cl.items.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.tlog\cl.read.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.tlog\cl.write.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.tlog\lib-link.write.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.tlog\lib.command.1.tlog
+c:\users\musta\onedrive\masaüstü\osf\client src\client\eterlib\release\eterlib.tlog\lib.read.1.tlog
