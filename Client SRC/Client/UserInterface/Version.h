@@ -1,0 +1,3 @@
+#define VERSION 6240
+#define VER_FILE_VERSION 6,2,4,0
+#define VER_FILE_VERSION_STR "6.2.4.0"

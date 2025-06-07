@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="minIni.c" />
+    <ClCompile Include="MovieMan.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
+    <ClCompile Include="CameraProcedure.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonBackground.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonBackgroundModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonCharacterManager.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonCharacterManagerModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonCharacterModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonEffectModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonEventManager.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonEventManagerMoudle.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonGameEventManagerModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonItem.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonItemModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNonPlayer.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNonPlayerModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlayer.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlayerEventHandler.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlayerInput.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonSkill.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonQuest.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlayerSkill.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlayerModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlayerInputMouse.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlayerInputKeyboard.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GuildMarkDownloader.cpp">
+      <Filter>GuildMark</Filter>
+    </ClCompile>
+    <ClCompile Include="GuildMarkUploader.cpp">
+      <Filter>GuildMark</Filter>
+    </ClCompile>
+    <ClCompile Include="MarkManager.cpp">
+      <Filter>GuildMark</Filter>
+    </ClCompile>
+    <ClCompile Include="MarkImage.cpp">
+      <Filter>GuildMark</Filter>
+    </ClCompile>
+    <ClCompile Include="AffectFlagContainer.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceBase.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceBaseBattle.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceBaseEffect.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceBaseEvent.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceBaseMotion.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceBaseMovement.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceBaseTransform.cpp">
+      <Filter>InstanceBase</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonTextTailModule.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonTextTail.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonShop.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonSafeBox.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonMiniMapModule.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonMiniMap.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonMessenger.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonGuild.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonFlyModule.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonExchangeModule.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonExchange.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonChat.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonChatModule.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Locale.cpp">
+      <Filter>Locale</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountConnector.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="InsultChecker.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkActorManager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessCRC.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerStateCheckerModule.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerStateChecker.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseSelect.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseOffline.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseLogin.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseLoading.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseHandShake.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseGameItem.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseGameActor.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamPhaseGame.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamModule.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamEvent.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStreamCommand.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkStream.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkDatagramModule.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonExceptionSender.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPackModule.cpp">
+      <Filter>Pack</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckLatestFiles.cpp">
+      <Filter>Security</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessScanner.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplication.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplicationCamera.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplicationCursor.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplicationEvent.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplicationLogo.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplicationModule.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplicationProcedure.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonApplicationWebPage.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonIME.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonIMEModule.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonProfilerModule.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonSoundManagerModule.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonSystemModule.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonNetworkDatagram.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="CefClientApp.cpp">
+      <Filter>Browser</Filter>
+    </ClCompile>
+    <ClCompile Include="CefClientHandler.cpp">
+      <Filter>Browser</Filter>
+    </ClCompile>
+    <ClCompile Include="CefClientV8ExtensionHandler.cpp">
+      <Filter>Browser</Filter>
+    </ClCompile>
+    <ClCompile Include="CefWebBrowser.cpp">
+      <Filter>Browser</Filter>
+    </ClCompile>
+    <ClCompile Include="GameType.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonrootlibManager.cpp" />
+    <ClCompile Include="PythonMailBox.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonRanking.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonLocale.cpp">
+      <Filter>Locale</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonIllustratedManager.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonMyShopDecoManager.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonYutnoriManager.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="MetinStoneSwapManager.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonCubeManager.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuiManager.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonInGameEventSystemManager.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MovieMan.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="AbstractApplication.h">
+      <Filter>Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractCharacterManager.h">
+      <Filter>Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractChat.h">
+      <Filter>Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractPlayer.h">
+      <Filter>Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractSingleton.h">
+      <Filter>Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonBackground.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonCharacterManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonEventManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonItem.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonNonPlayer.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonPlayer.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonPlayerEventHandler.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonSkill.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonQuest.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GuildMarkDownloader.h">
+      <Filter>GuildMark</Filter>
+    </ClInclude>
+    <ClInclude Include="GuildMarkUploader.h">
+      <Filter>GuildMark</Filter>
+    </ClInclude>
+    <ClInclude Include="MarkManager.h">
+      <Filter>GuildMark</Filter>
+    </ClInclude>
+    <ClInclude Include="MarkImage.h">
+      <Filter>GuildMark</Filter>
+    </ClInclude>
+    <ClInclude Include="AffectFlagContainer.h">
+      <Filter>InstanceBase</Filter>
+    </ClInclude>
+    <ClInclude Include="InstanceBase.h">
+      <Filter>InstanceBase</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonTextTail.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonShop.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonSafeBox.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonMiniMap.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonMessenger.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonGuild.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonExchange.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonChat.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Locale.h">
+      <Filter>Locale</Filter>
+    </ClInclude>
+    <ClInclude Include="Locale_inc.h">
+      <Filter>Locale</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountConnector.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="InsultChecker.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkActorManager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessCRC.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerStateChecker.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonNetworkStream.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonNetworkDatagram.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonExceptionSender.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckLatestFiles.h">
+      <Filter>Security</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessScanner.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonApplication.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonIME.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="CefClientApp.h">
+      <Filter>Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="CefClientHandler.h">
+      <Filter>Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="CefClientV8ExtensionHandler.h">
+      <Filter>Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="CefWebBrowser.h">
+      <Filter>Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="GameType.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Security</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonrootlibManager.h" />
+    <ClInclude Include="PythonMailBox.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonRanking.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonLocale.h">
+      <Filter>Locale</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonIllustratedManager.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonMyShopDecoManager.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonYutnoriManager.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="MetinStoneSwapManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonCubeManager.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Disclaimer.h">
+      <Filter>Locale</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGuiManager.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PythonInGameEventSystemManager.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Icons\Metin2Client_01.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_02.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_BR.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_CA.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_CN.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_EU.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_EU2.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_HK.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_JP.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_KO.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_SG.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\Metin2Client_TW.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\metin2.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\fishing_mouse_cursor.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="Icons\color_picker_mouse_cursor.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cursors\cursor.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_attack.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_buy.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_camera_rotate.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_chair.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_door.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_hsize.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_hvsize.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_no.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_pick.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_sell.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_talk.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\cursor_vsize.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+    <None Include="Cursors\fishing_mouse_cursor.cur">
+      <Filter>Resource Files\Cursors</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Abstract">
+      <UniqueIdentifier>{08c659af-1350-4776-b071-a5e360e1a508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{5184e350-17d6-4511-a991-4bcdc5fe9b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GuildMark">
+      <UniqueIdentifier>{de116775-9f1c-4059-bb10-ff90ceec3d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InstanceBase">
+      <UniqueIdentifier>{d62d0651-80be-4ecb-892a-4e5493e5c8ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{4f02577d-430b-45bf-b976-413d70558b4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Locale">
+      <UniqueIdentifier>{62b166c6-8595-406f-9538-f2b2637a73c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{aa0e9d49-5b48-4921-b3d7-a38d4e05a2ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pack">
+      <UniqueIdentifier>{d32d7482-f04b-41e7-b247-e00ae16e43d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{a0e03b11-7363-4cda-98b0-7ea89ba97439}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Security">
+      <UniqueIdentifier>{f60a92cf-3d2a-4c6f-9c51-35ffec363807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{b188447e-aca8-4166-b364-f92f262d5e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Browser">
+      <UniqueIdentifier>{cba5cb90-1c94-4bc0-9d90-6eb298afd339}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Cursors">
+      <UniqueIdentifier>{4bd1ad06-a729-4c9c-a66c-39d27b200530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Icons">
+      <UniqueIdentifier>{01519054-eef8-4410-98f9-a0665928ed10}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="metin2client.exe.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UserInterface.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

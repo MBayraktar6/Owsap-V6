@@ -1,0 +1,267 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+#include "Version.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "windows.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Japonês (Japão) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_POSSESSIVE_MORPHENE "'s"
+END
+
+#endif    // Japonês (Japão) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinês (Simplificado, China) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_POSSESSIVE_MORPHENE "'s"
+    IDS_WARN_BAD_DRIVER     "Ï£ÍûÄúÄÜ¸üÐÂÏÔ¿¨Çý¶¯¡£"
+    IDS_WARN_NO_TNL         "ÄúµÄÏÔ¿¨²»Ö§³Ö3D TnL Ó²¼þ¼ÓËÙ\nÓÎÏ·½«ÎÞ·¨Õý³£ÔËÐÐ¡£"
+END
+
+#endif    // Chinês (Simplificado, China) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Coreano (Coreia do Sul) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SELECT_LOCALE DIALOGEX 0, 0, 182, 142
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "SELECT LOCALE"
+FONT 10, "Arial", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "START",IDC_START,44,123,40,13
+    PUSHBUTTON      "EXIT",IDC_EXIT,96,123,40,13
+    LISTBOX         IDC_LOCALE_LIST,6,5,170,114,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""windows.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_NORMAL       CURSOR                  "Cursors\\cursor.cur"
+
+IDC_CURSOR_CHAIR        CURSOR                  "Cursors\\cursor_chair.cur"
+
+IDC_CURSOR_DOOR         CURSOR                  "Cursors\\cursor_door.cur"
+
+IDC_CURSOR_NO           CURSOR                  "Cursors\\cursor_no.cur"
+
+IDC_CURSOR_PICK         CURSOR                  "Cursors\\cursor_pick.cur"
+
+IDC_CURSOR_TALK         CURSOR                  "Cursors\\cursor_talk.cur"
+
+IDC_CURSOR_ATTACK       CURSOR                  "Cursors\\cursor_attack.cur"
+
+IDC_CURSOR_BUY          CURSOR                  "cursors\\cursor_buy.cur"
+
+IDC_CURSOR_SELL         CURSOR                  "cursors\\cursor_sell.cur"
+
+IDC_CURSOR_CAMERA_ROTATE CURSOR                  "Cursors\\cursor_camera_rotate.cur"
+
+IDC_CURSOR_HSIZE        CURSOR                  "Cursors\\cursor_hsize.cur"
+
+IDC_CURSOR_VSIZE        CURSOR                  "Cursors\\cursor_vsize.cur"
+
+IDC_CURSOR_HVSIZE       CURSOR                  "Cursors\\cursor_hvsize.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SELECT_LOCALE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 102
+        BOTTOMMARGIN, 141
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_METIN2              ICON                    "Icons/Metin2Client_EU.ico"
+
+IDI_FISHING_MOUSE_CURSOR ICON                    "Icons/fishing_mouse_cursor.ico"
+
+IDI_COLOR_PICKER_MOUSE_CURSOR ICON                    "Icons/color_picker_mouse_cursor.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION VER_FILE_VERSION
+ PRODUCTVERSION 1, 0, 0, 1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080003b5"
+        BEGIN
+            VALUE "FileDescription", "Metin2Client"
+            VALUE "FileVersion", VER_FILE_VERSION_STR "\0"
+            VALUE "InternalName", "Metin2Client"
+            VALUE "LegalCopyright", "Copyright (C) 2024"
+            VALUE "OriginalFilename", "Metin2Client.exe"
+            VALUE "ProductName", "Metin2Client"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x800, 949
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_NAME            "¸ÞÆ¾2"
+    IDS_POSSESSIVE_MORPHENE "ÀÇ"
+    IDS_WARN_BAD_DRIVER     "±×·¡ÇÈ µå¶óÀÌ¹ö¸¦ ¾÷µ¥ÀÌÆ® ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù."
+    IDS_WARN_NO_TNL         "»ç¿ëÇÏ°í °è½Å ½Ã½ºÅÛÀÇ ±×·¡ÇÈÄ«µå´Â 3D TnL ÇÏµå¿þ¾î °¡¼ÓÀÌ Áö¿øµÇÁö ¾Ê¾Æ\n°ÔÀÓÀÌ ´À¸®°Ô ½ÇÇàµÇ°Å³ª Á¦´ë·Î ½ÇÇàµÇÁö ¾ÊÀ»¼ö ÀÖ½À´Ï´Ù."
+    IDS_ERR_CANNOT_READ_FILE "%s ÆÄÀÏÀ» ÀÐÀ» ¼ö ¾ø½À´Ï´Ù."
+    IDS_ERR_NOT_LATEST_FILE "'%s' ÆÄÀÏÀº ÃÖ½Å¹öÀüÀÌ ¾Æ´Õ´Ï´Ù. ·±Ã³¸¦ ´Ù½Ã ½ÇÇàÇØÁÖ¼¼¿ä."
+    IDS_ERR_MUST_LAUNCH_FROM_PATCHER "Å¬¶óÀÌ¾ðÆ®´Â ÆÐÃ³¸¦ »ç¿ëÇØ¼­ ½ÇÇàµÇ¾î¾ß ÇÕ´Ï´Ù."
+END
+
+#endif    // Coreano (Coreia do Sul) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Inglês (Estados Unidos) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_NAME            "Metin 2"
+    IDS_POSSESSIVE_MORPHENE "'s"
+    IDS_WARN_BAD_DRIVER     "IDS_WARN_BAD_DRIVER"
+    IDS_WARN_NO_TNL         "IDS_WARN_NO_TNL"
+    IDS_ERR_CANNOT_READ_FILE "Cannot read %s file"
+    IDS_ERR_NOT_LATEST_FILE "File '%s' is not latest version. Please launch patcher."
+    IDS_ERR_MUST_LAUNCH_FROM_PATCHER "Please run patcher."
+END
+
+#endif    // Inglês (Estados Unidos) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
