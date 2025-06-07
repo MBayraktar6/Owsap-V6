@@ -1,0 +1,8 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  StdAfx.cpp
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  spherepack.cpp
+  sphere.cpp
+  frustum.cpp
+  Kod Üretiliyor...
+  SphereLib.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\SphereLib\Debug\SphereLib.lib
