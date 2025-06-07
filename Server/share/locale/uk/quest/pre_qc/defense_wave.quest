@@ -1,0 +1,226 @@
+quest defense_wave begin
+	state start begin
+		function in_dungeon(idx)
+			return idx >= 358 * 10000 and idx < (358 + 1) * 10000
+		end
+
+		function check_party(pids)
+			local no_cooldown_members = {}
+			local cooldown_check = true
+
+			local no_quest_members = {}
+			local quest_check = true
+
+			local no_ticket_members = {}
+			local ticket_check = true
+
+			local no_level_members = {}
+			local level_check = true
+
+			if not party.is_leader() then
+				-- "Only the group leader can register."
+				say(c_locale(10100))
+				return false
+			end
+
+			if party.get_near_count() < party.get_member_count() then
+				-- "At least one player is too far from the group."
+				say(c_locale(10110))
+				return false
+			end
+
+			for i, pid in next, pids, nil do
+				q.begin_other_pc_block(pid)
+
+				if pc.getf("defense_wave", "cooldown") > get_time() then
+					table.insert(no_cooldown_members, pc.get_name())
+					cooldown_check = false
+				end
+
+				if 0 ~= 0 then
+					if pc.getf("main_quest_meley_trail", "__status") ~= main_quest_meley_trail.__COMPLETE__ then
+						table.insert(no_quest_members, pc.get_name())
+						quest_check = false
+					end
+				end
+
+				if pc.get_level() < 90 then
+					table.insert(no_level_members, pc.get_name())
+					level_check = false
+				end
+
+				if not pc.has_item_from_special_item_group(10034) then
+					table.insert(no_ticket_members, pc.get_name())
+					ticket_check = false
+				end
+
+				q.end_other_pc_block()
+			end
+
+			if not cooldown_check then
+				-- "Group members do not meet the requirements to enter."
+				say(c_locale(14069))
+				return false
+			end
+
+			if not quest_check then
+				-- "At least one player has not completed the quest yet."
+				say(c_locale(10101))
+				for i, name in next, no_quest_members, nil do
+					say(color(1, 1, 0), " " .. name)
+				end
+				return false
+			end
+
+			if not level_check then
+				-- "At least one player does not meet the level requirements."
+				say(c_locale(10102))
+				for i, name in next, no_level_members, nil do
+					say(color(1, 1, 0), " " .. name)
+				end
+				return false
+			end
+
+			if not ticket_check then
+				-- "At least one player does not have a Passage Ticket."
+				say(c_locale(10103))
+				for i, name in next, no_ticket_members, nil do
+					say(color(1, 1, 0), " " .. name)
+				end
+				return false
+			end
+
+			return true
+		end
+
+		-- "Return"
+		when 20433.chat.c_locale(10149) begin
+			-- "Do you want to return to your village now?"
+			say(c_locale(10157))
+			if select(c_locale(10842), c_locale(10843)) == 1 then -- "Yes" / "No"
+				warp_to_village()
+			else
+				-- "Fine. Talk to me as soon as you wish to return."
+				say(c_locale(10158))
+			end
+		end
+
+		-- "Rankings"
+		when 20433.chat.c_locale(10150) begin
+			setskin(NOWINDOW)
+			game.open_ranking(1, 15)
+		end
+
+		-- "All Aboard!"
+		when 9009.chat.c_locale(10096) with pc.get_map_index() == 301 begin
+			-- "Do you want to start your journey in pursuit of Meley now?"
+			say(c_locale(10097))
+			if select(c_locale(10065), c_locale(10066)) == 1 then -- "Yes" / "No"
+				if pc.getqf("cooldown") > get_time() then
+					setskin(NOWINDOW)
+					-- "You cannot enter yet. Time remaining: %s"
+					syschat(c_locale(14070, get_time_remaining(pc.getqf("cooldown") - get_time())))
+					return
+				end
+
+				if not party.is_party() then
+					setskin(NOWINDOW)
+					-- "You can only start the journey with a group."
+					syschat(c_locale(10099))
+					return
+				end
+
+				local party_check = false
+				if dw.find(party.getf("dungeon_index")) then
+					party_check = (d.getf_from_map_index("party_leader_pid", party.getf("dungeon_index")) == party.get_leader_pid())
+				end
+
+				if not party_check then
+					local pids = { party.get_member_pids() }
+					if not defense_wave.check_party(pids) then
+						return
+					end
+				end
+
+				if pc.is_mount() then
+					-- "Mounts are not allowed on board. Dismount before you board the ship."
+					say(c_locale(10105))
+					return
+				end
+
+				if not dw.enter(358) then
+					-- "You're too late. The ship has sailed without you."
+					say(c_locale(10104))
+					return
+				end
+			end
+		end
+
+		-- "Start Ship Defence"
+		when 20436.chat.c_locale(10106) with defense_wave.in_dungeon(pc.get_map_index()) begin
+			-- "Do you want to set sail and start your journey?"
+			say(c_locale(10107))
+			if select(c_locale(10065), c_locale(10066)) == 1 then -- "Yes" / "No"
+				if dw.is_started() then
+					-- "The Ship Defence has already started."
+					say(c_locale(10111))
+					return
+				end
+
+				if not party.is_party() then
+					setskin(NOWINDOW)
+					-- "You can only start the journey with a group."
+					syschat(c_locale(10099))
+					return
+				end
+
+				local pids = { party.get_member_pids() }
+				if defense_wave.check_party(pids) then
+					for i, pid in next, pids, nil do
+						q.begin_other_pc_block(pid)
+
+						pc.remove_item_from_special_item_group(10034)
+						pc.setf("defense_wave", "cooldown", get_time() + 1800)
+
+						q.end_other_pc_block()
+					end
+
+					-- "What's going on?! The sea's getting rougher. Is there a storm brewing?"
+					say(c_locale(10098))
+					dw.start()
+				end
+			end
+		end
+
+		-- "Cancel Voyage"
+		when 20436.chat.c_locale(10114) with defense_wave.in_dungeon(d.get_map_index()) begin
+			if dw.is_started() then
+				-- "Do you want to leave the ship now?"
+				say(c_locale(10108))
+			else
+				-- "Do you want to turn around?"
+				say(c_locale(10115))
+			end
+			if select(c_locale(10065), c_locale(10066)) == 1 then -- "Yes" / "No"
+				dw.exit(301)
+			end
+		end
+
+		when 3949.click with defense_wave.in_dungeon(d.get_map_index()) begin
+			dw.exit(359)
+		end
+
+		when 3957.kill or 3958.kill or 3959.kill with defense_wave.in_dungeon(d.get_map_index()) begin
+			mob.spawn(20437, npc.get_local_x(), npc.get_local_y(), 0, 0)
+		end
+
+		when 20437.kill with defense_wave.in_dungeon(d.get_map_index()) begin
+			game.drop_item(31107, 1)
+		end
+
+		when 20434.take with defense_wave.in_dungeon(d.get_map_index()) and item.get_vnum() == 31107 begin
+			item.remove(1)
+			dw.set_alliance_hp_pct(1)
+		end
+	end
+end

@@ -1,0 +1,6 @@
+if pc . in_dungeon ( ) and pc . get_map_index ( ) >= 660000 and pc . get_map_index ( ) < 670000 then local pct = number ( 1 , 10 ) 
+if pct == 1 then 
+timer ( "devil_jump_8" , 6 ) 
+d . clear_regen ( ) 
+end 
+ return end 

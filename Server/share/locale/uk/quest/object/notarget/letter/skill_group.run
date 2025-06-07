@@ -1,0 +1,25 @@
+if pc . get_skill_group ( ) == 0 then send_letter ( c_locale ( 8077 ) ) 
+local job = pc . get_job ( ) 
+if job == 0 then 
+local v = pc_find_skill_teacher_vid ( 1 ) 
+if 0 ~= v then target . vid ( "teacher1" , v , c_locale ( 8088 ) ) end 
+local v = pc_find_skill_teacher_vid ( 2 ) 
+if 0 ~= v then target . vid ( "teacher2" , v , c_locale ( 8099 ) ) end 
+elseif job == 1 then 
+local v = pc_find_skill_teacher_vid ( 1 ) 
+if 0 ~= v then target . vid ( "teacher3" , v , c_locale ( 8110 ) ) end 
+local v = pc_find_skill_teacher_vid ( 2 ) 
+if 0 ~= v then target . vid ( "teacher4" , v , c_locale ( 8121 ) ) end 
+elseif job == 2 then 
+local v = pc_find_skill_teacher_vid ( 1 ) 
+if 0 ~= v then target . vid ( "teacher5" , v , c_locale ( 8132 ) ) end 
+local v = pc_find_skill_teacher_vid ( 2 ) 
+if 0 ~= v then target . vid ( "teacher6" , v , c_locale ( 8143 ) ) end 
+elseif job == 3 then 
+local v = pc_find_skill_teacher_vid ( 1 ) 
+if 0 ~= v then target . vid ( "teacher7" , v , c_locale ( 8151 ) ) end 
+local v = pc_find_skill_teacher_vid ( 2 ) 
+if 0 ~= v then target . vid ( "teacher8" , v , c_locale ( 8152 ) ) end 
+clear_letter ( ) 
+end 
+ return end 

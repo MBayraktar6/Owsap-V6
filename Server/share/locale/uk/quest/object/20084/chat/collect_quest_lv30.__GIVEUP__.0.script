@@ -1,0 +1,3 @@
+say_title ( c_locale ( 211 ) ) 
+say ( c_locale ( 325 ) ) 
+set_state ( "start" ) 

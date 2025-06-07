@@ -1,0 +1,34 @@
+define MYSTERIOUS_ALTAR 20850 -- Mysterious Altar
+define MYSTERIOUS_TICKET_GROUP 10036
+
+quest anglar_dungeon begin
+	state start begin
+		-- Refinement
+		when MYSTERIOUS_ALTAR.chat.c_locale(11832) begin
+			setskin(NOWINDOW)
+			game.open_cube(npc.get_race())
+		end
+
+		-- Enter the Mysterious Dungeon
+		when MYSTERIOUS_ALTAR.chat.c_locale(13586) begin
+			say_title(c_locale(13587)) -- Mysterious Altar
+			-- Hey! I know I've been turned to stone.
+			-- Sung Mahi's Curse is to blame for that! But I am a shaman and can tell you about a very interesting place...
+			-- If you have a Mysterious Ticket, I can take you to the Mysterious Dungeon.
+			-- Do you want to try?
+			say(c_locale(13588))
+			if select(c_locale(13589), c_locale(13590)) == 1 then -- Yes / No
+				if not pc.has_item_from_special_item_group(MYSTERIOUS_TICKET_GROUP) then
+					say_title(c_locale(13587)) -- Mysterious Altar
+					-- Oh! I'm afraid I cannot let you in without a Mysterious Ticket.
+					say(c_locale(13591))
+					return
+				end
+
+				if pc.remove_item_from_special_item_group(MYSTERIOUS_TICKET_GROUP) then
+					pc.warp((1609) * 100, (10615) * 100, 396)
+				end
+			end
+		end
+	end
+end

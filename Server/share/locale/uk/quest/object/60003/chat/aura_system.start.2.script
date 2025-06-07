@@ -1,0 +1,6 @@
+say_title ( c_mob_name ( 60003 ) ) 
+say ( c_locale ( 11828 ) ) 
+if select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) == 1 then 
+setskin ( NOWINDOW ) 
+game . open_aura_refine ( 1 ) 
+end 

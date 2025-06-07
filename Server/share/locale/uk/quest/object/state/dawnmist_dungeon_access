@@ -1,0 +1,31 @@
+dawnmist_dungeon_access={["start"]=0,["go_to_disciple"]=1675612723,["information"]=695801987,["primary_investigations_1"]=-1604597668,["primary_investigations_2"]=961714662,["primary_investigations_3"]=1314236784,["primary_investigations_4"]=-802079533,["primary_investigations_5"]=-1489630139,["primary_investigations_6"]=1044340223,["primary_investigations_7"]=1228434793,["primary_investigations_8"]=-645435144,["secondary_investigations_1"]=-2010563044,["secondary_investigations_10"]=-531453360,["secondary_investigations_11"]=-1755997498,["secondary_investigations_12"]=240962428,["secondary_investigations_2"]=287338406,["secondary_investigations_3"]=1713856304,["secondary_investigations_4"]=-129774957,["secondary_investigations_5"]=-1891304955,["secondary_investigations_6"]=374188991,["secondary_investigations_7"]=1632279337,["secondary_investigations_8"]=-235567432,["secondary_investigations_9"]=-2030914002,["talk_to_disciple"]=567070799,kill_count_1= function ()local total_remain = 0 
+local remain1 = 50 - pc . getqf ( "kill_count_1" ) 
+if remain1 < 0 then 
+remain1 = 0 
+end 
+total_remain = total_remain + remain1 
+q . set_counter_value ( total_remain ) 
+if total_remain == 0 then 
+set_state ( "primary_investigations_3" ) 
+end 
+end ,kill_count_2= function ()local total_remain = 0 
+local remain1 = 5 - pc . getqf ( "kill_count_2" ) 
+if remain1 < 0 then 
+remain1 = 0 
+end 
+total_remain = total_remain + remain1 
+q . set_counter_value ( total_remain ) 
+if total_remain == 0 then 
+set_state ( "secondary_investigations_3" ) 
+end 
+end ,collect_count_1= function ()local total_remain = 0 
+local remain1 = 5 - pc . getqf ( "collect_count_1" ) 
+if remain1 < 0 then 
+remain1 = 0 
+end 
+total_remain = total_remain + remain1 
+q . set_counter_value ( total_remain ) 
+if total_remain == 0 then 
+set_state ( "secondary_investigations_6" ) 
+end 
+end }

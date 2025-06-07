@@ -1,0 +1,43 @@
+quest a_life_reborn begin
+	state start begin
+		when login or levelup with pc.get_level() == 1 and pc.get_job() == 4 begin
+			set_state("goto_myonghorang")
+		end
+	end
+
+	state goto_myonghorang begin
+		when letter begin
+			send_letter(c_locale(6353))
+			local v = find_npc_by_vnum(20400)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6355))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6353))
+			say(c_locale(6354))
+		end
+
+		when __TARGET__.target.click or 20400.chat.c_locale(6355) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(250)
+
+			say_title(c_mob_name(20400))
+			say(c_locale(6356))
+			say_reward(c_locale(6882, 250))
+			wait()
+
+			say_title(c_mob_name(20400))
+			say(c_locale(6358))
+
+			set_state("__COMPLETE__")
+			set_quest_state("frenzied_beasts", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

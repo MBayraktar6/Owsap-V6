@@ -1,0 +1,4 @@
+say_title ( c_locale ( 469 ) ) 
+say ( c_locale ( 470 ) ) 
+say_item_vnum ( 30165 ) 
+say_reward ( c_locale ( 471 , pc . getqf ( "collect_count" ) ) ) 

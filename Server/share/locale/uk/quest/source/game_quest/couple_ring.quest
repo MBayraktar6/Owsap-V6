@@ -1,0 +1,116 @@
+quest couple_ring begin
+	state start begin
+		when 9006.chat.c_locale(678) with pc.get_level() >= 25 begin
+			say_title(c_locale(689))
+			say(c_locale(697))
+			local s = select(c_locale(698), c_locale(699))
+			if s == 1 then
+				say_title(c_locale(689))
+				say(c_locale(700))
+				set_state(kill)
+			elseif s == 2 then
+				say_title(c_locale(689))
+				say(c_locale(701))
+			end
+		end
+	end
+
+	state kill begin
+		when enter begin
+			pc.setqf("kill_count", 0)
+		end
+
+		when leave begin
+			pc.setqf("kill_count", 0)
+			q.done()
+		end
+
+		when letter begin
+			q.set_counter(c_locale(702), couple_ring.get_rest_count())
+		end
+
+		when 394.kill begin
+			local kill_count = pc.getqf("kill_count") + 1
+			pc.setqf("kill_count", kill_count)
+			q.set_counter(c_locale(702), couple_ring.get_rest_count())
+
+			if couple_ring.is_completed() then
+				say_title(c_locale(703))
+				say(c_locale(704))
+				set_state(report)
+			end
+		end
+
+		function get_rest_count()
+			return 30 - pc.getqf("kill_count")
+		end
+
+		function is_completed()
+			return pc.getqf("kill_count") >= 30
+		end
+
+		when letter begin
+			send_letter(c_locale(679))
+		end
+
+		when button or info begin
+			say_title(c_locale(114))
+			say(c_locale(680))
+			say_reward(c_locale(681, couple_ring.get_rest_count()))
+		end
+
+		when 9006.chat.c_locale(678) begin
+			say_title(c_locale(689))
+			say(c_locale(682))
+
+			local s = select(c_locale(2669), c_locale(2426))
+			if s == 1 then
+				say_title(c_locale(689))
+				say(c_locale(683))
+			else
+				say_title(c_locale(689))
+				say(c_locale(684))
+				wait()
+				say_title(c_locale(114))
+				say(c_locale(685))
+				local s = select(c_locale(686), c_locale(2426))
+				if s == 1 then
+					say_title(c_locale(689))
+					say(c_locale(687))
+				elseif s == 2 then
+					say_title(c_locale(689))
+					say(c_locale(688))
+					set_state(start)
+					q.done()
+				end
+			end
+		end
+	end
+
+	state report begin
+		when letter begin
+			send_letter(c_locale(690))
+		end
+
+		when button or info begin
+			say_title(c_locale(114))
+			say(c_locale(691))
+		end
+
+		when 9006.chat.c_locale(692) begin
+			say_title(c_locale(689))
+			say(c_locale(693))
+			say_reward(c_locale(694))
+			say_item(c_locale(695), 70301, c_locale(696))
+			pc.give_item2(70301)
+			set_state(__COMPLETE__)
+			q.done()
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+
+	state failure begin
+	end
+end

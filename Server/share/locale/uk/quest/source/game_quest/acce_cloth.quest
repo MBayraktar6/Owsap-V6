@@ -1,0 +1,327 @@
+define SCHOLAR 60003 -- Theowahdan
+define CAPTAIN 20355 -- Captain
+define MIN_LEVEL 40 -- Required Level
+define FINE_CLOTH_VNUM 80019 -- Fine Cloth
+define NEED_FINE_CLOTH_COUNT 40 -- Required Cloths
+define REWARD_VNUM 85005
+define WAIT_TIME 180 -- 3 hours (minutes)
+define REAL_TIME 0 -- Real time duration
+
+quest acce_cloth begin
+	state start begin
+		when login or levelup with pc.get_level() >= MIN_LEVEL begin
+			set_state(go_to_scholar)
+		end
+	end
+
+	state go_to_scholar begin
+		when letter begin
+			local v = find_npc_by_vnum(SCHOLAR)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(SCHOLAR))
+			end
+
+			-- A special cloth
+			send_letter(c_locale(1))
+		end
+
+		when button or info begin
+			-- A special cloth
+			say_title(c_locale(1))
+
+			-- Theowahdan would like to see you. Pay him a visit[ENTER]
+			-- and listen to his story.
+			say(c_locale(12))
+		end
+
+		when __TARGET__.target.click or SCHOLAR.chat.c_locale(1) begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(SCHOLAR))
+			-- You seem very powerful.[ENTER][ENTER]
+			--
+			-- I have been investigating how to hold back Sung[ENTER]
+			-- Mahi's powers for many years.
+			say(c_locale(13))
+			wait()
+
+			say_title(c_mob_name(SCHOLAR))
+			-- Now I have finally found a way to counteract his[ENTER]
+			-- incalculable power.[ENTER][ENTER]
+			--
+			-- You see, you can strengthen your power using a[ENTER]
+			-- Shoulder Sash. I think that you should be able to[ENTER]
+			-- defeat Sung Mahi with this sash. I do not have[ENTER]
+			-- enough materials, however. Go to the Captain. He[ENTER]
+			-- will give you the Fine Cloth needed to produce a[ENTER]
+			-- Shoulder Sash.
+			say(c_locale(14))
+			wait()
+
+			say_title(c_mob_name(SCHOLAR))
+			-- You know where the Captain can be found. I will[ENTER]
+			-- mark his position on the map so that it is a[ENTER]
+			-- little clearer. Seek him out now and talk to him.[ENTER]
+			-- He will give you the cloth.[ENTER][ENTER]
+			--
+			-- Once you have 40 Fine Cloths, bring them to me.[ENTER][ENTER]
+			--
+			-- I will then make an excellent Shoulder Sash out[ENTER]
+			-- of them for you.
+			say(c_locale(15))
+			wait()
+
+			-- Fetch 40 Fine Cloths? Yes / No
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(16))
+			say_item_vnum(FINE_CLOTH_VNUM)
+
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				-- Seek out the Captain to complete the task and to[ENTER]
+				-- acquire the necessary cloth.
+				notice_multiline(c_locale(17), notice)
+				set_state(go_to_captain)
+			end
+		end
+	end
+
+	state go_to_captain begin
+		when letter begin
+			local v = find_npc_by_vnum(CAPTAIN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(CAPTAIN))
+			end
+
+			-- Increase your power
+			send_letter(c_locale(3))
+		end
+
+		when button or info begin
+			-- Increase your power
+			say_title(c_locale(3))
+
+			-- Find the Captain to acquire the necessary cloth.
+			say(c_locale(4))
+
+			-- Follow the flashing dot on the minimap.
+			say_reward(c_locale(5643))
+		end
+
+		when __TARGET__.target.click or CAPTAIN.chat.c_locale(3) begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(CAPTAIN))
+			-- Greetings! Theowahdan must have told you to come[ENTER]
+			-- and see me. Recently I've felt how Sung Mahi[ENTER]
+			-- grows ever more powerful.[ENTER][ENTER]
+			--
+			-- Every last one of us must hone their powers, or[ENTER]
+			-- else Sung Mahi will destroy us all. I can get you[ENTER]
+			-- a special cloth for your Shoulder Sash, but it[ENTER]
+			-- won't be easy![ENTER][ENTER]
+			--
+			-- Give me three hours, then I'll be able to give[ENTER]you the cloth.
+			say(c_locale(5))
+			wait()
+
+			say_title(c_mob_name(CAPTAIN))
+			-- If you return in three hours, I'll have the cloth[ENTER]
+			-- ready for you.[ENTER][ENTER]
+			--
+			-- That's a promise![ENTER][ENTER]
+			--
+			-- Make sure to come back and meet me here in three[ENTER]
+			--hours!
+			say(c_locale(6))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				if REAL_TIME then
+					pc.setqf("duration", get_time() + (WAIT_TIME * 60))
+				else
+					pc.setqf("duration", pc.get_playtime() + WAIT_TIME)
+				end
+				pc.setqf("count", 0)
+
+				clear_letter()
+				set_state(waiting)
+			end
+		end
+
+		when SCHOLAR.chat.c_locale(1) begin
+			say_title(c_mob_name(SCHOLAR))
+			-- I've already told you all about the powers we'll[ENTER]
+			-- need to confront Sung Mahi.[ENTER][ENTER]
+			--
+			-- Hurry along and find the Captain.[ENTER][ENTER]
+			--
+			--Return when you have the necessary cloth.
+			say(c_locale(2))
+		end
+	end
+
+	state waiting begin
+		function get_remaining_playtime()
+			if REAL_TIME then
+				return get_time_remaining(pc.getqf("duration") - get_time())
+			else
+				return get_time_remaining((pc.getqf("duration") * 60) - (pc.get_playtime() * 60))
+			end
+		end
+
+		when letter begin
+			local v = find_npc_by_vnum(CAPTAIN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(CAPTAIN))
+			end
+
+			-- Increase your power
+			send_letter(c_locale(3))
+		end
+
+		when button or info begin
+			-- Increase your power
+			say_title(c_locale(3))
+
+			-- Find the Captain to acquire the necessary cloth.
+			say(c_locale(4))
+
+			local playtime_duration = REAL_TIME and get_time() or pc.get_playtime()
+			if pc.getqf("duration") > playtime_duration then
+				-- Time remaining:
+				say_reward(string.format("%s %s", c_locale(10), acce_cloth.get_remaining_playtime()))
+			else
+				-- Three hours have now passed.[ENTER][ENTER]
+				--
+				-- Go to the Captain.
+				say(c_locale(11))
+			end
+
+			-- Follow the flashing dot on the minimap.
+			say_reward(c_locale(5643))
+		end
+
+		when __TARGET__.target.click or CAPTAIN.chat.c_locale(3) begin
+			target.delete("__TARGET__")
+
+			local playtime_duration = REAL_TIME and get_time() or pc.get_playtime()
+			if pc.getqf("duration") > playtime_duration then
+				say_title(c_mob_name(CAPTAIN))
+				-- Too soon! The three hours haven't elapsed yet!
+				say(c_locale(9))
+
+				-- Time remaining:
+				say_reward(string.format("%s %s", c_locale(10), acce_cloth.get_remaining_playtime()))
+
+				if pc.is_gm() then
+					say_title(c_locale(2318))
+					if select(c_locale(4473), c_locale(3418)) == 1 then
+						pc.setqf("duration", 0)
+					end
+				end
+			else
+				if pc.enough_inventory(FINE_CLOTH_VNUM) then
+
+					pc.give_item2(FINE_CLOTH_VNUM, 1)
+					pc.setqf("count", pc.getqf("count") + 1)
+
+					say_title(c_mob_name(CAPTAIN))
+					-- Ah, you're back! I managed it: here's the cloth,[ENTER]
+					-- just as I promised.[ENTER][ENTER]
+					--
+					-- Remember, it is absolutely vital that every one[ENTER]
+					-- of us further increases their strength. This will[ENTER]
+					-- take some time.[ENTER][ENTER]
+					--
+					-- Pay me another visit, should you need my help.
+					say(c_locale(7))
+
+					local need_item_count = is_test_server() and 3 or NEED_FINE_CLOTH_COUNT
+					if pc.getqf("count") >= need_item_count then
+						-- You have gathered the necessary amount of Fine[ENTER]
+						-- Cloth. Return to Theowahdan and give them to him.
+						notice_multiline(c_locale(8), notice)
+
+						clear_letter()
+						set_state(reward)
+					else
+						if REAL_TIME then
+							pc.setqf("duration", get_time() + (WAIT_TIME * 60))
+						else
+							pc.setqf("duration", pc.get_playtime() + WAIT_TIME)
+						end
+					end
+
+					-- Reward
+					say_reward(c_locale(3482))
+					say_item_vnum(FINE_CLOTH_VNUM)
+				else
+					say_title(c_mob_name(CAPTAIN))
+					-- Too bad. You don't have any space in your[ENTER]
+					-- inventory. Come back once you have cleared up.
+					say(c_locale(11597))
+				end
+			end
+		end
+
+		when SCHOLAR.chat.c_locale(1) begin
+			say_title(c_mob_name(SCHOLAR))
+			-- I've already told you all about the powers we'll[ENTER]
+			-- need to confront Sung Mahi.[ENTER][ENTER]
+			--
+			-- Hurry along and find the Captain.[ENTER][ENTER]
+			--
+			--Return when you have the necessary cloth.
+			say(c_locale(2))
+		end
+	end
+
+	state reward begin
+		when letter begin
+			local v = find_npc_by_vnum(SCHOLAR)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(SCHOLAR))
+			end
+			-- A special cloth
+			send_letter(c_locale(1))
+		end
+
+		when button or info begin
+			-- A special cloth
+			say_title(c_locale(1))
+
+			-- Theowahdan would like to see you. Pay him a visit[ENTER]
+			-- and listen to his story.
+			say(c_locale(12))
+		end
+
+		when __TARGET__.target.click or SCHOLAR.chat.c_locale(1) begin
+			target.delete("__TARGET__")
+
+			if pc.enough_inventory(REWARD_VNUM) then
+
+				local need_item_count = is_test_server() and 3 or NEED_FINE_CLOTH_COUNT
+				pc.remove_item(FINE_CLOTH_VNUM, need_item_count)
+				pc.give_item2(REWARD_VNUM, 1)
+
+				say_title(c_mob_name(SCHOLAR))
+				-- Greetings. I see that you have gathered all the[ENTER]
+				-- cloth that we require. I am happy to say that you[ENTER]
+				-- now have the power to fight against Sung Mahi.[ENTER][ENTER]
+				--
+				-- We'll meet again!
+				say(c_locale(19))
+
+				-- Reward
+				say_reward(c_locale(3482))
+				say_item_vnum(REWARD_VNUM)
+
+				clear_letter()
+				set_state(go_to_scholar)
+			else
+				say_title(c_mob_name(SCHOLAR))
+				-- Too bad. You don't have any space in your[ENTER]
+				-- inventory. Come back once you have cleared up.
+				say(c_locale(11597))
+			end
+		end
+	end
+end

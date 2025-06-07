@@ -1,0 +1,87 @@
+quest reset_status begin
+	state start begin
+		when 71103.use or 71104.use or 71105.use or 71106.use begin
+			local name = {
+				c_locale(8031),
+				c_locale(8036),
+				c_locale(8037),
+				c_locale(8038)
+			}
+			local idx = item.get_vnum() - 71103
+			local func = {
+				pc.get_ht,
+				pc.get_iq,
+				pc.get_st,
+				pc.get_dx
+			}
+
+			if func[idx + 1]() == 1 then
+				say_title(c_locale(8004))
+				say(name[idx + 1] .. c_locale(8039))
+				say(name[idx + 1] .. c_locale(8040))
+				return
+			end
+
+			say_title(c_locale(8004))
+			say(name[idx + 1] .. c_locale(8041))
+			say(c_locale(8042))
+			say(c_locale(8043))
+
+			local s = select(c_locale(8032), c_locale(8033))
+			if s == 1 then
+				if pc.reset_status(idx) == true then
+					say_title(c_locale(8004))
+					say(c_locale(8034))
+					pc.remove_item(item.get_vnum())
+				else
+					say_title(c_locale(8004))
+					say(c_locale(8035))
+				end
+			end
+		end
+
+		when 72068.use or 72069.use or 72070.use or 72071.use begin
+			if pc.get_conqueror_level() == 0 then
+				say_title(c_locale(8004))
+				say(c_locale(12082))
+				return
+			end
+
+			local name = {
+				c_locale(12074),
+				c_locale(12075),
+				c_locale(12076),
+				c_locale(12077)
+			}
+			local idx = item.get_vnum() - 72068
+			local func = {
+				pc.get_sungma_str,
+				pc.get_sungma_vit,
+				pc.get_sungma_res,
+				pc.get_sungma_int
+			}
+
+			if func[idx + 1]() == 0 then
+				say_title(c_locale(8004))
+				say(name[idx + 1] .. c_locale(8039))
+				say(name[idx + 1] .. c_locale(8040))
+				return
+			end
+
+			say_title(c_locale(8004))
+			say(name[idx + 1] .. c_locale(12078))
+
+			local s = select(c_locale(12079), c_locale(12080))
+			if s == 1 then
+				if pc.reset_sungma_status(idx) == true then
+					say_title(c_locale(8004))
+					say(c_locale(12081))
+					pc.remove_item(item.get_vnum())
+				else
+					say_title(c_locale(8004))
+					say(c_locale(8035))
+				end
+			end
+		end
+	end
+end

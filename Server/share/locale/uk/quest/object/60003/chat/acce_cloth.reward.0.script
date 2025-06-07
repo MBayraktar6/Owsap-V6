@@ -1,0 +1,15 @@
+target . delete ( "__TARGET__" ) 
+if pc . enough_inventory ( 85005 ) then 
+local need_item_count = is_test_server ( ) and 3 or 40 
+pc . remove_item ( 80019 , need_item_count ) 
+pc . give_item2 ( 85005 , 1 ) 
+say_title ( c_mob_name ( 60003 ) ) 
+say ( c_locale ( 19 ) ) 
+say_reward ( c_locale ( 3482 ) ) 
+say_item_vnum ( 85005 ) 
+clear_letter ( ) 
+set_state ( "go_to_scholar" ) 
+else 
+say_title ( c_mob_name ( 60003 ) ) 
+say ( c_locale ( 11597 ) ) 
+end 

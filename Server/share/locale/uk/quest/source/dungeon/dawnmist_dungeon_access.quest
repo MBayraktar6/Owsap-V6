@@ -1,0 +1,751 @@
+-- Filename: dawnmist_dungeon_access.quest
+-- Author: Owsap
+-- Description: Arboreal menace access.
+
+define FOREST_MAP_INDEX 353 -- Forest Map Index
+define TEMPLE_GUARDIAN 20408 -- Temple Guardian
+define FOREST_GUARDIAN 20409 -- Guardian of the Forest
+define FOREST_SENTINEL 20410 -- Scout of the Forest
+define FOREST_OUTRIDER 20411 -- Outrider of the Forest
+define RESEARCH_ITEM 31098 -- Spirit of the Earth
+define AID_KIT 31100 -- Aid Kit
+define DEW 31097 -- En-Tai Dew
+define FINE_TIMBER 31096 -- Fine Timber
+define TREE_EMERALD 31099 -- Tree Emerald
+define DRYADS_STONE 30613 -- Stone of the Dryads
+
+quest dawnmist_dungeon_access begin
+	state start begin
+		when login with pc.get_level() >= 95 begin
+			set_state(information)
+		end
+	end
+
+	-- 1. Talk to the Temple Guardian about the Enchanted Forest.
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(TEMPLE_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(TEMPLE_GUARDIAN))
+			end
+			send_letter(c_locale(4490))
+		end
+
+		when button or info begin
+			say_title(c_locale(4490))
+			say(c_locale(4496))
+		end
+
+		when __TARGET__.target.click or TEMPLE_GUARDIAN.chat.c_locale(4490) begin
+			target.delete("__TARGET__")
+			say_title(c_mob_name(TEMPLE_GUARDIAN))
+			say(c_locale(4497))
+			select(c_locale(4498))
+			pc.give_item2(RESEARCH_ITEM, 1)
+			set_state(go_to_disciple)
+		end
+	end
+
+	-- 2. Take the research item to the Guardian of the Forest.
+	state go_to_disciple begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+			send_letter(c_locale(4499))
+		end
+
+		when button or info begin
+			say_title(c_locale(4499))
+			say(c_locale(4500))
+		end
+
+		when TEMPLE_GUARDIAN.chat.c_locale(4499) begin
+			say_title(c_mob_name(TEMPLE_GUARDIAN))
+			say(c_locale(4501))
+		end
+
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(4499) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4502))
+			wait()
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4503))
+			select(c_locale(4491))
+			pc.remove_item(RESEARCH_ITEM, pc.count_item(RESEARCH_ITEM))
+			set_state(talk_to_disciple)
+		end
+	end
+
+	-- 3. Talk to the Guardian of the Forest.
+	state talk_to_disciple begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+			send_letter(c_locale(4499))
+		end
+
+		when button or info begin
+			say_title(c_locale(4499))
+			say(c_locale(4495))
+		end
+
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(4499) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4492))
+			select(c_locale(4493))
+			say(c_locale(4494))
+			pc.give_item2(50727, 5)
+			pc.give_exp2(5825000)
+			say_reward(c_locale(5043, c_item_name(50727), 5))
+			say_reward(c_locale(5413, 5825000))
+			set_state(primary_investigations_1)
+		end
+	end
+
+	-- 4. Talk to the Guardian of the Forest about Primary Investigations.
+	state primary_investigations_1 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+			send_letter(c_locale(4504))
+		end
+
+		when button or info begin
+			say_title(c_locale(4504))
+			say(c_locale(4512))
+		end
+
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(4504) begin
+			target.delete("__TARGET__")
+			say_title(c_locale(4504))
+			if pc.getqf("passed") == 1 then
+				say(c_locale(4517))
+			else
+				say(c_locale(4513))
+				say(c_locale(4514))
+			end
+			select(c_locale(4515))
+			say(c_locale(4516))
+			set_state(primary_investigations_2)
+		end
+	end
+
+	-- 5. Kill x50 En-Tai Warriors.
+	state primary_investigations_2 begin
+		when enter begin
+			pc.setqf("kill_count_1", 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(4518))
+			q.set_counter_name(c_locale(5962))
+			dawnmist_dungeon_access.kill_count_1()
+		end
+
+		when button or info begin
+			say_title(c_locale(4518))
+			say(c_locale(4519))
+		end
+
+		when FOREST_GUARDIAN.chat.c_locale(4504) begin
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4506))
+		end
+
+		when 6401.kill begin
+			local kill_count = pc.getqf("kill_count_1")
+			pc.setqf("kill_count_1", kill_count + 1)
+			dawnmist_dungeon_access.kill_count_1()
+		end
+
+		function kill_count_1()
+			local total_remain = 0
+			local remain1 = 50 - pc.getqf("kill_count_1")
+
+			if remain1 < 0 then
+				remain1 = 0
+			end
+
+			total_remain = total_remain + remain1
+			q.set_counter_value(total_remain)
+			if total_remain == 0 then
+				set_state("primary_investigations_3")
+			end
+		end
+
+		when leave begin
+			pc.setqf("kill_count_1", 0)
+			q.done()
+		end
+	end
+
+	-- 6. Return to Guardian of the Forest.
+	state primary_investigations_3 begin
+		when enter begin
+			pc.setqf("kill_count_1", 0)
+			notice_multiline(c_locale(4505), notice)
+		end
+
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+			send_letter(c_locale(4504))
+		end
+
+		when button or info begin
+			say_title(c_locale(4504))
+			say(c_locale(4507))
+		end
+
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(4504) begin
+			--target.delete("__TARGET__")
+			say_title(c_locale(4504))
+			say(c_locale(4508))
+			say_reward(c_locale(4509))
+			say(c_locale(4510))
+			say_reward(c_locale(4511))
+			pc.give_exp2(776600)
+			say_reward(c_locale(5413, 776600))
+			set_state(primary_investigations_4)
+		end
+	end
+
+	-- 7. Talk to Guardian of the Forest about the Aid Kit.
+	state primary_investigations_4 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+			send_letter(c_locale(4520))
+		end
+
+		when button or info begin
+			say_title(c_locale(4520))
+			say(c_locale(4524))
+		end
+
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(4520) begin
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4525))
+			select(c_locale(4526))
+			say(c_locale(4527))
+			target.delete("__TARGET__")
+			set_state(primary_investigations_5)
+		end
+	end
+
+	-- [[ REVIEWED ]]
+	-- 8. Find the Aid Kit for the Guardian of the Forest.
+	state primary_investigations_5 begin
+		when letter begin
+			send_letter(c_locale(4528))
+		end
+
+		when button or info begin
+			say_title(c_locale(4528))
+			say(c_locale(4529))
+		end
+
+		when FOREST_GUARDIAN.chat.c_locale(4528) begin
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4531))
+		end
+
+		when 6403.kill begin
+			if number(1, 25) == 1 or is_test_server() then
+				pc.give_item2(AID_KIT, 1)
+				set_state(primary_investigations_6)
+			end
+		end
+	end
+
+	-- 9. Return the Aid Kit to the Guardian of the Forest.
+	state primary_investigations_6 begin
+		when enter begin
+			notice_multiline(c_locale(4530), notice)
+		end
+
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+			send_letter(c_locale(4532))
+		end
+
+		when button or info begin
+			say_title(c_locale(4532))
+			say(c_locale(4521))
+		end
+
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(4532) begin
+			target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4522))
+			say(c_locale(4523))
+			pc.remove_item(AID_KIT, pc.count_item(AID_KIT))
+			pc.give_exp2(776600)
+			say_reward(c_locale(5413, 776600))
+			set_state(primary_investigations_7)
+		end
+	end
+
+	-- 10. Talk to the Guardian of the Forest.
+	state primary_investigations_7 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+			send_letter(c_locale(4532))
+		end
+
+		when button or info begin
+			say_title(c_locale(4532))
+			say(c_locale(4535))
+		end
+
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(4532) begin
+			target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4536))
+			select(c_locale(4537))
+			say(c_locale(4538))
+			pc.give_item2(AID_KIT, 1)
+			set_state(primary_investigations_8)
+		end
+	end
+
+	-- 11. Deliver the Aid Kit to the Scout of the Forest.
+	state primary_investigations_8 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SENTINEL)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SENTINEL))
+			end
+			send_letter(c_locale(4532))
+		end
+
+		when button or info begin
+			say_title(c_locale(4532))
+			say(c_locale(4539))
+		end
+
+		when FOREST_GUARDIAN.chat.c_locale(4532) begin
+			say(c_mob_name(FOREST_GUARDIAN))
+			say(c_locale(4540))
+		end
+
+		when __TARGET__.target.click or FOREST_SENTINEL.chat.c_locale(4532) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_SENTINEL))
+			say(c_locale(4541))
+			say_reward(c_locale(4542))
+			say(c_locale(4533))
+			say_reward(c_locale(4534))
+			pc.remove_item(AID_KIT, pc.count_item(AID_KIT))
+			pc.give_item2(50724, 10)
+			pc.give_exp2(5582500)
+			say_reward(c_locale(5043, c_item_name(50724), 10))
+			say_reward(c_locale(5413, 5582500))
+			set_state(secondary_investigations_1)
+		end
+	end
+
+	-- 12. Talk to the Scout of the Forest.
+	state secondary_investigations_1 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SENTINEL)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SENTINEL))
+			end
+			send_letter(c_locale(4543))
+		end
+
+		when button or info begin
+			say_title(c_locale(4532))
+			say(c_locale(4548))
+		end
+
+		when __TARGET__.target.click or FOREST_SENTINEL.chat.c_locale(4543) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_SENTINEL))
+			say(c_locale(4549))
+			say_reward(c_locale(4550))
+			say(c_locale(4551))
+			say(c_locale(4552))
+			select(c_locale(4553))
+			target.delete("__TARGET__")
+			set_state(secondary_investigations_2)
+		end
+	end
+
+	-- 13. Destroy the Metins of the Tree Beings.
+	state secondary_investigations_2 begin
+		when enter begin
+			pc.setqf("kill_count_2", 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(4554))
+			q.set_counter_name(c_locale(5962))
+			dawnmist_dungeon_access.kill_count_2()
+		end
+
+		when button or info begin
+			say_title(c_locale(4554))
+			say(c_locale(4555))
+		end
+
+		when 8059.kill begin
+			local kill_count = pc.getqf("kill_count_2")
+			pc.setqf("kill_count_2", kill_count + 1)
+			dawnmist_dungeon_access.kill_count_2()
+		end
+
+		when FOREST_SENTINEL.chat.c_locale(4543) begin
+			say_title(c_mob_name(FOREST_SENTINEL))
+			say(c_locale(4545))
+		end
+
+		function kill_count_2()
+			local total_remain = 0
+			local remain1 = 5 - pc.getqf("kill_count_2")
+
+			if remain1 < 0 then
+				remain1 = 0
+			end
+
+			total_remain = total_remain + remain1
+			q.set_counter_value(total_remain)
+			if total_remain == 0 then
+				set_state("secondary_investigations_3")
+			end
+		end
+
+		when leave begin
+			pc.setqf("kill_count_2", 0)
+			q.done()
+		end
+	end
+
+	-- 13. Talk to the Scout of the Forest about the Metins of the Tree Beings.
+	state secondary_investigations_3 begin
+		when enter begin
+			pc.setqf("kill_count_2", 0)
+			notice_multiline(c_locale(4544), notice)
+		end
+
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SENTINEL)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SENTINEL))
+			end
+			send_letter(c_locale(4543))
+		end
+
+		when button or info begin
+			say_title(c_locale(4543))
+			say(c_locale(4546))
+		end
+
+		when __TARGET__.target.click or FOREST_SENTINEL.chat.c_locale(4543) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_SENTINEL))
+			say(c_locale(4547))
+			pc.give_exp2(7766000)
+			say_reward(c_locale(5413, 7766000))
+			set_state(secondary_investigations_4)
+		end
+	end
+
+	-- 13. Talk to the Scout of the Forest about the En-Tai Dew.
+	state secondary_investigations_4 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SENTINEL)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SENTINEL))
+			end
+			send_letter(c_locale(4556))
+		end
+
+		when button or info begin
+			say_title(c_locale(4556))
+			say(c_locale(4559))
+		end
+
+		when __TARGET__.target.click or FOREST_SENTINEL.chat.c_locale(4556) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_SENTINEL))
+			say(c_locale(4560))
+			say(c_locale(4561))
+			select(c_locale(4562))
+			target.delete("__TARGET__")
+			set_state(secondary_investigations_5)
+		end
+	end
+
+	-- 14. Collect En-Tai Dew.
+	state secondary_investigations_5 begin
+		when enter begin
+			pc.setqf("collect_count_1", 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(4563))
+			q.set_counter_name(c_locale(5962))
+			dawnmist_dungeon_access.collect_count_1()
+		end
+
+		when button or info begin
+			say_title(c_locale(4563))
+			say(c_locale(4564))
+		end
+
+		when 6406.kill begin
+			local collect_count = pc.getqf("collect_count_1")
+			if number(1, 10) == 1 or is_test_server() then
+				pc.setqf("collect_count_1", collect_count + 1)
+				pc.give_item2(DEW, 1)
+				dawnmist_dungeon_access.collect_count_1()
+			end
+		end
+
+		when FOREST_SENTINEL.chat.c_locale(4543) begin
+			say_title(c_mob_name(FOREST_SENTINEL))
+			say(c_locale(4566))
+		end
+
+		function collect_count_1()
+			local total_remain = 0
+			local remain1 = 5 - pc.getqf("collect_count_1")
+
+			if remain1 < 0 then
+				remain1 = 0
+			end
+
+			total_remain = total_remain + remain1
+			q.set_counter_value(total_remain)
+			if total_remain == 0 then
+				set_state("secondary_investigations_6")
+			end
+		end
+
+		when leave begin
+			pc.setqf("collect_count_1", 0)
+			q.done()
+		end
+	end
+
+	-- 15. Deliver the En-Tai Dew to the Scout of the Forest.
+	state secondary_investigations_6 begin
+		when enter begin
+			pc.setqf("collect_count_1", 0)
+			notice_multiline(c_locale(4565), notice)
+		end
+
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SENTINEL)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SENTINEL))
+			end
+			send_letter(c_locale(4556))
+		end
+
+		when button or info begin
+			say_title(c_locale(4556))
+			say(c_locale(4557))
+		end
+
+		when __TARGET__.target.click or FOREST_SENTINEL.chat.c_locale(4556) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_SENTINEL))
+			say(c_locale(4558))
+			pc.remove_item(DEW, pc.count_item(DEW))
+			pc.give_item2(50816, 10)
+			pc.give_exp2(7766000)
+			say_reward(c_locale(5043, c_item_name(50816), 10))
+			say_reward(c_locale(5413, 7766000))
+			set_state(secondary_investigations_7)
+		end
+	end
+
+	-- 16. Talk to the Outrider of the Forest.
+	state secondary_investigations_7 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+			send_letter(c_locale(4567))
+		end
+
+		when button or info begin
+			say_title(c_locale(4567))
+			say(c_locale(4582))
+		end
+
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(4567) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_OUTRIDER))
+			say(c_locale(4571))
+			wait()
+			say(c_locale(4572))
+			say(c_locale(4573))
+			select(c_locale(4574))
+			target.delete("__TARGET__")
+			set_state(secondary_investigations_8)
+		end
+	end
+
+	-- 17. Kill the En-Tai Sovereign to receive Fine Timber.
+	state secondary_investigations_8 begin
+		when letter begin
+			target.pos("__TARGET__", 590, 75, FOREST_MAP_INDEX, "")
+			send_letter(c_locale(4567))
+		end
+
+		when button or info begin
+			say_title(c_locale(4567))
+			say(c_locale(4575))
+		end
+
+		when FOREST_OUTRIDER.chat.c_locale(4567) begin
+			say_title(c_mob_name(FOREST_OUTRIDER))
+			say(c_locale(4577))
+		end
+
+		when 6407.kill begin
+			target.delete("__TARGET__")
+			pc.give_item2(FINE_TIMBER, 1)
+			set_state(secondary_investigations_9)
+		end
+	end
+
+	-- 18. Deliver the Fine Timber to the Outrider of the Forest.
+	state secondary_investigations_9 begin
+		when enter begin
+			notice_multiline(c_locale(4576), notice)
+		end
+
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+			send_letter(c_locale(4567))
+		end
+
+		when button or info begin
+			say_title(c_locale(4567))
+			say(c_locale(4568))
+		end
+
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(4567) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_OUTRIDER))
+			say(c_locale(4569, c_item_name(FINE_TIMBER)))
+			pc.remove_item(FINE_TIMBER, pc.count_item(FINE_TIMBER))
+			pc.give_exp2(11650000)
+			say_reward(c_locale(5413, 11650000))
+			set_state(secondary_investigations_10)
+		end
+	end
+
+	-- 18. Talk to the Outrider of the Forest about the Tree Emerald.
+	state secondary_investigations_10 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+			send_letter(c_locale(4578))
+		end
+
+		when button or info begin
+			say_title(c_locale(4578))
+			say(c_locale(4570))
+		end
+
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(4578) begin
+			--target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_OUTRIDER))
+			say(c_locale(4583))
+			say_reward(c_locale(4584))
+			wait()
+			say(c_locale(4585))
+			select(c_locale(4586))
+			target.delete("__TARGET__")
+			set_state(secondary_investigations_11)
+		end
+	end
+
+	-- 19. Get the Tree Emerald from the En-Tai Sovereign.
+	state secondary_investigations_11 begin
+		when letter begin
+			target.pos("__TARGET__", 590, 75, FOREST_MAP_INDEX, "")
+			send_letter(c_locale(4578))
+		end
+
+		when button or info begin
+			say_title(c_locale(4578))
+			say(c_locale(4587))
+		end
+
+		when FOREST_OUTRIDER.chat.c_locale(4578) begin
+			say_title(c_mob_name(FOREST_OUTRIDER))
+			say(c_locale(4589))
+		end
+
+		when 6407.kill begin
+			target.delete("__TARGET__")
+			pc.give_item2(TREE_EMERALD, 1)
+			set_state(secondary_investigations_12)
+		end
+	end
+
+	-- 20. Deliver the Tree Emerald to the Outrider of the Forest.
+	state secondary_investigations_12 begin
+		when enter begin
+			notice_multiline(c_locale(4588), notice)
+		end
+
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+			send_letter(c_locale(4578))
+		end
+
+		when button or info begin
+			say_title(c_locale(4578))
+			say(c_locale(4579))
+		end
+
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(4578) begin
+			target.delete("__TARGET__")
+			say_title(c_mob_name(FOREST_OUTRIDER))
+			say(c_locale(4580))
+			say(c_locale(4581))
+			pc.remove_item(TREE_EMERALD, pc.count_item(TREE_EMERALD))
+			pc.give_item2(DRYADS_STONE, 1)
+			pc.give_exp2(11650000)
+			say_reward(c_locale(5043, c_item_name(DRYADS_STONE), 1))
+			say_reward(c_locale(5413, 11650000))
+			pc.setqf("passed", 1)
+			set_state(primary_investigations_1)
+		end
+	end
+end

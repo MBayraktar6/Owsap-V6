@@ -1,0 +1,7 @@
+if npc . is_pc ( ) == false then local count = pc . getqf ( "unknown_stone_count" ) 
+if number ( 1 , 4 ) == 1 then 
+pc . setqf ( "unknown_stone_count" , count + 1 ) 
+pc . give_item2 ( 31093 ) 
+unknown_stone . update_counter ( ) 
+end 
+ return end 

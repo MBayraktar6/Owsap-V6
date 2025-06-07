@@ -1,0 +1,16 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_mob_name ( 20355 ) ) 
+say ( c_locale ( 5 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 20355 ) ) 
+say ( c_locale ( 6 ) ) 
+if select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) == 1 then 
+if 0 then 
+pc . setqf ( "duration" , get_time ( ) + ( 180 * 60 ) ) 
+else 
+pc . setqf ( "duration" , pc . get_playtime ( ) + 180 ) 
+end 
+pc . setqf ( "count" , 0 ) 
+clear_letter ( ) 
+set_state ( "waiting" ) 
+end 

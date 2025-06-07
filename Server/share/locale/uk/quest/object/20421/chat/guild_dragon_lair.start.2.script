@@ -1,0 +1,40 @@
+say ( c_locale ( 1823 ) ) 
+if select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) == 1 then 
+if not party . is_leader ( ) then 
+say ( c_locale ( 1856 ) ) 
+return 
+end 
+if guild_dragonlair . get_stage ( ) > 0 then 
+say ( c_locale ( 1822 ) ) 
+return 
+end 
+if party . get_near_count ( ) < GuildDragonLairSetting . Party . MinMember then 
+say ( c_locale ( 1861 ) ) 
+return 
+end 
+local pids = { party . get_member_pids ( ) } 
+local no_ticket_members = { } 
+local ticket_check = true 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if not pc . has_item_from_special_item_group ( GuildDragonLairSetting . Party . TicketGroup ) then 
+table . insert ( no_ticket_members , pc . get_name ( ) ) 
+ticket_check = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not ticket_check then 
+say ( c_locale ( 1862 ) ) 
+for i , name in next , no_ticket_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , c_locale ( 796 ) .. "    " .. name ) 
+end 
+return 
+end 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+pc . remove_item_from_special_item_group ( GuildDragonLairSetting . Party . TicketGroup ) 
+q . end_other_pc_block ( ) 
+end 
+say ( c_locale ( 1824 ) ) 
+guild_dragonlair . start ( ) 
+end 

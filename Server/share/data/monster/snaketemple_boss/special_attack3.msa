@@ -1,0 +1,210 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\snaketemple_boss\special_attack3.GR2"
+MotionDuration           2.833333
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     10
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.579886
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "snake R Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/snaketemple_boss_s3_making.mse"
+        EffectPosition       0.000000 -100.000000 550.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         1.623682
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "snake R Toe0Nub"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/snaketemple_boss_s3_blow.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event02
+    {
+        MotionEventType      4
+        StartingTime         1.644769
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -400.000000 0.000000
+        }
+    }
+    Group Event03
+    {
+        MotionEventType      4
+        StartingTime         1.723844
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -800.000000 0.000000
+        }
+    }
+    Group Event04
+    {
+        MotionEventType      4
+        StartingTime         1.808192
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -1200.000000 0.000000
+        }
+    }
+    Group Event05
+    {
+        MotionEventType      4
+        StartingTime         1.871452
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -1600.000000 0.000000
+        }
+    }
+    Group Event06
+    {
+        MotionEventType      4
+        StartingTime         1.934712
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -2000.000000 0.000000
+        }
+    }
+    Group Event07
+    {
+        MotionEventType      4
+        StartingTime         1.992701
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -2400.000000 0.000000
+        }
+    }
+    Group Event08
+    {
+        MotionEventType      4
+        StartingTime         2.055961
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -2800.000000 0.000000
+        }
+    }
+    Group Event09
+    {
+        MotionEventType      4
+        StartingTime         2.124493
+        DuringTime           0.300000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           400.000000
+            Position         0.000000 -3200.000000 0.000000
+        }
+    }
+}

@@ -1,0 +1,90 @@
+define QUEST_MGR "daily_quest_mgr"
+define TABLE_NAME "consume"
+define TABLE_INDEX 2
+
+quest daily_quest_consume_3 begin
+	state start begin
+	end
+
+	state run begin
+		function update()
+			daily_quest_consume_3.update_counter()
+			daily_quest_consume_3.update_clock()
+		end
+
+		function update_counter()
+			local remain = pc.getqf("count")
+			local remain_count = special.daily_quest.table[TABLE_NAME][TABLE_INDEX]["remain_count"] - remain
+
+			q.set_counter_name(c_locale(11690)) -- Remaining
+			q.set_counter_value(remain_count)
+
+			if remain_count <= 0 then
+				pc.setqf("count", 0)
+
+				notice(c_locale(11691, special.daily_quest.table[TABLE_NAME][TABLE_INDEX]["title"]))
+
+				set_state("reward")
+				q.done()
+			end
+		end
+
+		function update_clock()
+			local left_time = special.daily_quest.limit_time - (get_time() - pc.getf(QUEST_MGR, "start_time"))
+			if left_time > 0 then
+				q.set_clock(c_locale(11875), left_time) -- Time Remaining
+			else
+				set_state("clear")
+			end
+		end
+
+		when login or letter begin
+			send_letter(special.daily_quest.table[TABLE_NAME][TABLE_INDEX]["title"])
+			daily_quest_consume_3.update()
+		end
+
+		when button or info begin
+			say_title(special.daily_quest.table[TABLE_NAME][TABLE_INDEX]["title"])
+			say(special.daily_quest.table[TABLE_NAME][TABLE_INDEX]["desc"])
+			say_reward(special.daily_quest.table[TABLE_NAME][TABLE_INDEX]["reward"])
+			daily_quest_consume_3.update()
+		end
+
+		when craft begin
+			pc.setqf("count", pc.getqf("count") + 1)
+			daily_quest_consume_3.update()
+		end
+	end
+
+	state reward begin
+		when letter begin
+			send_letter(string.format(c_locale(11692, special.daily_quest.table[TABLE_NAME][TABLE_INDEX]["title"])))
+		end
+
+		when button or info begin
+			setskin(NOWINDOW)
+
+			give_daily_quest_reward(TABLE_NAME, TABLE_INDEX)
+
+			-- Update daily quest manager.
+			pc.setf("daily_quest_mgr", "count", pc.getf("daily_quest_mgr", "count") + 1)
+			set_quest_state("daily_quest_mgr", "trigger")
+
+			set_state("complete")
+		end
+	end
+
+	state clear begin
+		when enter begin
+			pc.setqf("count", 0)
+			q.done()
+		end
+	end
+
+	state complete begin
+		when enter begin
+			pc.setqf("count", 0)
+			q.done()
+		end
+	end
+end

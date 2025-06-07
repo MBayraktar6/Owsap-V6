@@ -1,0 +1,94 @@
+quest skill_reset2 begin
+	state start begin
+		when 9006.chat.c_locale(8153) begin
+			if pc.get_level() < 5 then
+				say_title(c_locale(689))
+				say(c_locale(8159))
+				return
+			end
+
+			if pc.get_level() > 30 then
+				say_title(c_locale(689))
+				say(c_locale(8160, pc.get_level()))
+				return
+			end
+
+			if pc.get_skill_group() == 0 then
+				say_title(c_locale(689))
+				say(c_locale(8161))
+				return
+			end
+
+			local cost = 10000 + pc.get_level() * 2000
+			local s = 0
+
+			if not pc.has_master_skill() then
+				say_title(c_locale(689))
+				say(c_locale(8162, cost))
+				s = select(c_locale(8153), c_locale(8163))
+			else
+				say_title(c_locale(689))
+				say(c_locale(8164))
+				wait()
+				say(c_locale(8165, cost))
+				s = select(c_locale(8166), c_locale(2426))
+			end
+
+			if 2 == s then
+				say_title(c_locale(689))
+				say(c_locale(8154))
+				return
+			end
+
+			if pc.get_gold() < cost then
+				say_title(c_locale(689))
+				say(c_locale(8155))
+				return
+			end
+
+			pc.change_gold(-cost)
+			pc.clear_skill()
+			if pc.get_job() == WOLFMAN then
+				pc.set_skill_group(1)
+			else
+				pc.set_skill_group(0)
+			end
+			set_quest_state("skill_group", "run")
+		end
+
+		when 71100.use begin
+			if not is_test_server() then
+				if pc.get_level() <= 31 or pc.get_level() >= 119 then
+					say_title(c_item_name(71100))
+					say(c_locale(8158))
+					return
+				end
+			end
+
+			if pc.get_skill_group() == 0 then
+				say_title(c_item_name(71100))
+				say(c_locale(8161))
+				return
+			end
+
+			say_title(c_item_name(71100))
+			say(c_locale(8156))
+
+			s = select(c_locale(4473), c_locale(3418))
+			if 2 == s then
+				return
+			end
+
+			pc.clear_skill()
+			if pc.get_job() == WOLFMAN then
+				pc.set_skill_group(1)
+			else
+				pc.set_skill_group(0)
+			end
+			horse.set_level(horse_level)
+			char_log(0, "RESET_SKILL", "RESET_SKILL_BY_71100")
+			pc.remove_item(71100)
+			set_quest_state("skill_group", "run")
+		end
+	end
+end

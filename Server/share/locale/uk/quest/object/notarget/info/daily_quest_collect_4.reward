@@ -1,0 +1,5 @@
+setskin ( NOWINDOW ) 
+give_daily_quest_reward ( "collect" , 2 ) 
+pc . setf ( "daily_quest_mgr" , "count" , pc . getf ( "daily_quest_mgr" , "count" ) + 1 ) 
+set_quest_state ( "daily_quest_mgr" , "trigger" ) 
+set_state ( "complete" ) 

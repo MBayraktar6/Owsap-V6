@@ -1,0 +1,14 @@
+if pc . getqf ( "refine_chance" ) > 0 then 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 5516 ) ) 
+say_item ( c_locale ( 5518 ) , 30001 , "" ) 
+wait ( ) 
+say_title ( c_locale ( 5519 ) ) 
+say_reward ( c_locale ( 5520 ) ) 
+else 
+say_title ( c_locale ( 5521 ) ) 
+say_reward ( c_locale ( 5522 ) ) 
+clear_letter ( ) 
+set_state ( "__COMPLETE__" ) 
+set_quest_state ( "main_quest_lv9" , "run" ) 
+end 

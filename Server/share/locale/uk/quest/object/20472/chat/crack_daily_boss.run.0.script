@@ -1,0 +1,11 @@
+say_title ( c_locale ( 11282 ) ) 
+say ( c_mob_name ( 20472 ) ) 
+say ( "" ) 
+say ( c_locale ( 11284 ) ) 
+if select ( c_locale ( 11285 ) , c_locale ( 11286 ) ) == 1 then 
+say_title ( c_locale ( 11282 ) ) 
+say ( c_mob_name ( 20472 ) ) 
+say ( "" ) 
+say ( c_locale ( 11287 ) ) 
+set_state ( "boss_hunt" ) 
+end 

@@ -1,0 +1,6 @@
+acce_cloth={["start"]=0,["go_to_captain"]=240364231,["go_to_scholar"]=667803339,["reward"]=1322349139,["waiting"]=1759153582,get_remaining_playtime= function ()if 0 then 
+return get_time_remaining ( pc . getqf ( "duration" ) - get_time ( ) ) 
+else 
+return get_time_remaining ( ( pc . getqf ( "duration" ) * 60 ) - ( pc . get_playtime ( ) * 60 ) ) 
+end 
+end }

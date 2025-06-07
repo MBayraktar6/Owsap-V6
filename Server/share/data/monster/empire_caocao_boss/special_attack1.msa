@@ -1,0 +1,80 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\empire_caocao_boss\special_attack1.GR2"
+MotionDuration           1.933333
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     5
+    Group Event00
+    {
+        MotionEventType      4
+        StartingTime         0.475101
+        DuringTime           0.400000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.500000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           80.000000
+            Position         0.000000 -180.000000 100.000000
+        }
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.460989
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "caocao_w2"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/empire_cao_s1_impect.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         0.493917
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "caocao_w2"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/empire_cao_s1_blow_small.mse"
+        EffectPosition       0.000000 -150.000000 100.000000
+    }
+    Group Event03
+    {
+        MotionEventType      1
+        StartingTime         0.884347
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "caocao_w2"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/empire_cao_s1_blow_small.mse"
+        EffectPosition       0.000000 -150.000000 100.000000
+    }
+    Group Event04
+    {
+        MotionEventType      1
+        StartingTime         1.382968
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "caocao_w2"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/empire_cao_s1_blow.mse"
+        EffectPosition       0.000000 -150.000000 100.000000
+    }
+}

@@ -1,0 +1,21 @@
+quest spider_dungeon_2floor begin
+	state start begin
+		when 20089.chat.c_locale(8236) begin
+			say_title(c_locale(8237))
+			say(c_locale(8238))
+
+			local a = select(c_locale(4473), c_locale(3418))
+			if 1 == a then
+				say_title(c_locale(8237))
+				say(c_locale(8239))
+				wait()
+
+				pc.warp(91700, 525300)
+				return
+			end
+
+			say_title(c_locale(8237))
+			say(c_locale(8240))
+		end
+	end
+end

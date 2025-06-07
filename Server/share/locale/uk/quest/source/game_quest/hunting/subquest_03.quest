@@ -1,0 +1,107 @@
+quest subquest_3 begin
+	state start begin
+		when login or levelup with pc.get_level() >= 8 and pc.get_level() <= 13 begin
+			set_state(information)
+		end
+	end
+
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(20018)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8348))
+			end
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(557))
+			say(c_locale(8359))
+			wait()
+
+			say_title(c_locale(557))
+			say(c_locale(8360))
+			say_item_vnum(30029)
+			say(c_locale(8361))
+
+			set_state(hunt_for_wolf)
+		end
+	end
+
+	state hunt_for_wolf begin
+		when letter begin
+			send_letter(c_locale(8355))
+		end
+
+		when button or info begin
+			say_title(c_locale(8356))
+			say_reward(c_locale(8362))
+			say_item_vnum(30029)
+		end
+
+		when 20018.chat.c_locale(8363) with pc.count_item(30029) == 0 begin
+			say_title(c_locale(557))
+			say(c_locale(8364))
+			say_item_vnum(30029)
+			say(c_locale(8365))
+		end
+
+		when 104.kill begin
+			local s = number(1, 100)
+			if s <= 5 then
+				pc.give_item2(30029, 1)
+				set_state(go_back_to_doctor)
+			end
+		end
+	end
+
+	state go_back_to_doctor begin
+		when letter begin
+			send_letter(c_locale(8366))
+			local v = find_npc_by_vnum(20018)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8366))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(8349))
+			say_reward(c_locale(8350))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			if pc.count_item(30029) >= 1 then
+				say_title(c_locale(557))
+				say(c_locale(8351))
+				say_item_vnum(30029)
+				say(c_locale(8352))
+				wait()
+
+				say_title(c_locale(557))
+				say(c_locale(8353))
+				say_item_vnum(30027)
+
+				say_title(c_locale(4297))
+				say_reward(c_locale(8354))
+
+				pc.remove_item(30029)
+				pc.give_item2(30027, 1)
+				pc.give_exp2(3000)
+				pc.change_money(5000)
+
+				set_quest_state("levelup", "run")
+
+				clear_letter()
+				set_state(__COMPLETE__)
+			end
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

@@ -1,0 +1,4 @@
+if pc . get_map_index ( ) == 363 then if pc . get_level ( ) < 110 then 
+warp_to_village ( ) 
+end 
+ return end 

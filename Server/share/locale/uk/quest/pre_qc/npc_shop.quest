@@ -1,0 +1,63 @@
+quest npc_shop begin
+	state start begin
+		when 9001.click or 9001.chat.c_locale(929) begin
+			npc.open_shop(1)
+			setskin(NOWINDOW)
+		end
+
+--		when 9009.click or 9009.chat.c_locale(1301) begin
+--			npc.open_shop(2)
+--			setskin(NOWINDOW)
+--		end
+
+		when 9003.click or 9003.chat.c_locale(929) begin
+			npc.open_shop(3)
+			setskin(NOWINDOW)
+		end
+
+		when 9002.click or 9002.chat.c_locale(929) begin
+			npc.open_shop(4)
+			setskin(NOWINDOW)
+		end
+
+		when 9007.click or 9007.chat.c_locale(929) begin
+			npc.open_shop(5)
+			setskin(NOWINDOW)
+		end
+
+		when 9008.click or 9008.chat.c_locale(929) begin
+			npc.open_shop(6)
+			setskin(NOWINDOW)
+		end
+
+--		when 20001.click or 20001.chat.c_locale(929) begin
+--			npc.open_shop(12)
+--			setskin(NOWINDOW)
+--		end
+
+--		when 9005.click or 9005.chat.c_locale(929) begin
+--			npc.open_shop(7)
+--			setskin(NOWINDOW)
+--		end
+
+		when 9004.click or 9004.chat.c_locale(929) begin
+			npc.open_shop(8)
+			setskin(NOWINDOW)
+		end
+
+		when 20042.click or 20042.chat.c_locale(929) begin
+			npc.open_shop(9)
+			setskin(NOWINDOW)
+		end
+
+--		when 20015.click or 20015.chat.c_locale(1301) begin
+--			npc.open_shop(10)
+--			setskin(NOWINDOW)
+--		end
+
+--		when 20349.click or 20349.chat.c_locale(7387) begin
+--			npc.open_shop(11)
+--			setskin(NOWINDOW)
+--		end
+	end
+end

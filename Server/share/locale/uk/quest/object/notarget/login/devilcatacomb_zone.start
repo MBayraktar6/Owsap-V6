@@ -1,0 +1,24 @@
+local setting = devilcatacomb_zone . setting ( ) 
+local idx = pc . get_map_index ( ) 
+if idx >= ( setting . map_idx * 10000 ) and idx < ( ( setting . map_idx + 1 ) * 10000 ) then 
+local level = d . getf ( "level" ) 
+d . set_warp_location ( 0 , 0 , 0 ) 
+if level == 2 then 
+say ( c_locale ( 805 ) ) 
+say ( c_locale ( 816 , 60 ) ) 
+elseif level == pc . getqf ( "level" ) then 
+say ( c_locale ( 827 ) ) 
+else 
+say ( c_locale ( 833 ) ) 
+timer ( "devilcatacomb_ban_timer" , 5 ) 
+end 
+end 
+if idx == setting . map_idx then 
+pc . setf ( "devilcatacomb_zone" , "last_exit_time" , get_global_time ( ) ) 
+if pc . get_x ( ) < setting . floor1_s . x + setting . base . x or pc . get_y ( ) < setting . floor1_s . y + setting . base . y or pc . get_x ( ) > setting . floor1_e . x + setting . base . x or pc . get_y ( ) > setting . floor1_e . y + setting . base . y then 
+say ( c_locale ( 833 ) ) 
+timer ( "devilcatacomb_ban_timer" , 5 ) 
+else 
+say ( c_locale ( 834 ) ) 
+end 
+end 

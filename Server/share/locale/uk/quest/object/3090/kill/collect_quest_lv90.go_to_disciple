@@ -1,0 +1,5 @@
+local s = number ( 1 , 100 ) 
+if s <= 30 then 
+pc . give_item2 ( 30168 , 1 ) 
+send_letter ( c_locale ( 582 ) ) 
+end 

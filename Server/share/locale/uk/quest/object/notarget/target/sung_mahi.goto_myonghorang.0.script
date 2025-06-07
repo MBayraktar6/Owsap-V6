@@ -1,0 +1,4 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_mob_name ( 20400 ) ) 
+say ( c_locale ( 6402 ) ) 
+set_state ( "goto_portal_guard" ) 

@@ -1,0 +1,84 @@
+quest stash begin
+	state start begin -- Status when nothing is open
+		when 9005.chat.c_locale(10016) begin
+			say_title(c_locale(10024))
+			-- changed handling, after we get a new button to open the storage directly
+			say(c_locale(10025))
+			wait()
+
+			if pc.get_gold() < 500 then
+				say_title(c_locale(10024))
+				say(c_locale(10026))
+			else
+				local s = select(c_locale(4443), c_locale(4442))
+				if s == 1 then
+					pc.change_gold(-500)
+					game.set_safebox_level(1)
+					set_state(use)
+					say_title(c_locale(9130))
+					say(c_locale(10027))
+					say_reward(c_locale(10028))
+					say(c_locale(10029))
+				else
+					say_title(c_locale(10024))
+					say(c_locale(10030))
+				end
+			end
+		end
+
+		when 9005.chat.c_locale(10019) begin
+			if pc.getqf("open_item_storage_count") < 3 then
+				say_title(c_locale(9130))
+				say(c_locale(10021))
+				wait()
+				say_title(c_locale(9130))
+				say_show_item(90013) -- icon of item
+				say(c_locale(10022))
+				wait()
+				pc.setqf("open_item_storage_count", pc.getqf("open_item_storage_count") + 1)
+			end
+
+			setskin(NOWINDOW)
+			game.open_mall()
+		end
+	end
+
+	state use begin
+		when 9005.chat.c_locale(10031) begin
+			if pc.getqf("open_count") < 3 then
+				say_title(c_locale(9130))
+				say(c_locale(10017))
+				wait()
+				say_title(c_locale(9130))
+				say(c_locale(10018))
+				wait()
+				pc.setqf("open_count", pc.getqf("open_count") + 1)
+			end
+
+			setskin(NOWINDOW)
+			game.open_safebox()
+		end
+
+		when 9005.chat.c_locale(10019) begin
+			if pc.getqf("open_item_storage_count") < 3 then
+				say_title(c_locale(9130))
+				say(c_locale(10021))
+				wait()
+				say_title(c_locale(9130))
+				say_show_item(90013) -- icon of item
+				say(c_locale(10022))
+				wait()
+				pc.setqf("open_item_storage_count", pc.getqf("open_item_storage_count") + 1)
+			end
+
+			setskin(NOWINDOW)
+			game.open_mall()
+		end
+
+		when 9005.chat.c_locale(4386) begin
+			npc.open_shop()
+			say_title(c_locale(9130))
+			say(c_locale(10020))
+		end
+	end -- end_of_state: use
+end -- end_of_quest

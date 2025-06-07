@@ -1,0 +1,29 @@
+local pet_info = pet_system . get_pet_info ( item . get_vnum ( ) ) 
+if nil ~= pet_info then 
+local vnum = pet_info [ 1 ] 
+local spawn_effect_file_name = pet_system . get_spawn_effect_file ( pet_info [ 2 ] ) 
+local loot = pet_info [ 3 ] 
+local spawn_far_away = false 
+local name = c_mob_name ( vnum ) 
+if true == pet . is_summon ( vnum ) then 
+if spawn_effect_file_name ~= nil then 
+pet . spawn_effect ( vnum , "d:\\ymir work\\effect\\etc\\appear_die\\monster_die.mse" ) 
+end 
+pet . unsummon ( vnum ) 
+if game . get_event_flag ( "spawn_pet_login" ) then 
+pc . setqf ( "use_item" , 0 ) 
+end 
+else 
+if pet . count_summoned ( ) < 1 then 
+pet . summon ( vnum , name , spawn_far_away , loot ) 
+if game . get_event_flag ( "spawn_pet_login" ) then 
+pc . setqf ( "use_item" , item . get_id ( ) ) 
+end 
+else 
+syschat ( c_locale ( 7638 ) ) 
+end 
+if spawn_effect_file_name ~= nil then 
+pet . spawn_effect ( vnum , spawn_effect_file_name ) 
+end 
+end 
+end 

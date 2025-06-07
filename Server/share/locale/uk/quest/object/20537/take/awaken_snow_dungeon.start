@@ -1,0 +1,53 @@
+if awaken_snow_dungeon . in_dungeon ( d . get_map_index ( ) ) and item . get_vnum ( ) == 31190 and d . getf ( "level" ) == 5 then local setting = awaken_snow_dungeon . setting ( ) 
+item . remove ( ) 
+if npc . get_vid ( ) == d . get_unique_vid ( "cube_1" ) then 
+npc . purge ( ) 
+say ( c_locale ( 11454 ) ) 
+d . setf ( "cubekill" , 2 ) 
+if d . count_monster ( ) < setting . level5_gen_limit then 
+d . regen_file ( setting . regen_file_path .. "sd_5.txt" ) 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "cube_2" ) then 
+if d . getf ( "cubekill" ) == 2 then 
+npc . purge ( ) 
+say ( c_locale ( 11455 ) ) 
+d . setf ( "cubekill" , 3 ) 
+if d . count_monster ( ) < setting . level5_gen_limit then 
+d . regen_file ( setting . regen_file_path .. "sd_5.txt" ) 
+end 
+else 
+say ( c_locale ( 8198 ) ) 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "cube_3" ) then 
+if d . getf ( "cubekill" ) == 3 then 
+npc . purge ( ) 
+say ( c_locale ( 11456 ) ) 
+d . setf ( "cubekill" , 4 ) 
+if d . count_monster ( ) < setting . level5_gen_limit then 
+d . regen_file ( setting . regen_file_path .. "sd_5.txt" ) 
+end 
+else 
+say ( c_locale ( 8198 ) ) 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "cube_4" ) then 
+if d . getf ( "cubekill" ) == 4 then 
+npc . purge ( ) 
+say ( c_locale ( 11457 ) ) 
+d . setf ( "cubekill" , 5 ) 
+if d . count_monster ( ) < setting . level5_gen_limit then 
+d . regen_file ( setting . regen_file_path .. "sd_5.txt" ) 
+end 
+else 
+say ( c_locale ( 8198 ) ) 
+end 
+else 
+if d . getf ( "cubekill" ) == 5 then 
+npc . purge ( ) 
+awaken_snow_dungeon . clear_level ( d . get_map_index ( ) ) 
+d . notice ( c_locale ( 11442 ) ) 
+server_timer ( "awaken_snow_dungeon_floor6_timer" , setting . floor_jump_time , d . get_map_index ( ) ) 
+else 
+say ( c_locale ( 8198 ) ) 
+end 
+end 
+ return end 

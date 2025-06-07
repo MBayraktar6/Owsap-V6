@@ -1,0 +1,83 @@
+Group	ice_dungeon_1
+{
+	Vnum	6051
+	1	6051	1
+	2	6052	1
+	3	6053	1
+	4	6054	1
+	5	6055	1
+}
+Group	ice_dungeon_2
+{
+	Vnum	6052
+	1	6055	1
+	2	6056	1
+	3	6057	1
+	4	6058	1
+	5	6059	1
+}
+Group	ice_dungeon_3
+{
+	Vnum	6053
+	1	6057	1
+	2	6058	1
+	3	6059	1
+	4	6060	1
+	5	6061	1
+}
+
+Group	crack_ice_dungeon_1
+{
+	Vnum	6071
+	1	6071	1
+	2	6072	1
+	3	6073	1
+	4	6074	1
+	5	6075	1
+}
+Group	crack_ice_dungeon_2
+{
+	Vnum	6072
+	1	6075	1
+	2	6076	1
+	3	6077	1
+	4	6078	1
+	5	6079	1
+}
+Group	crack_ice_dungeon_3
+{
+	Vnum	6073
+	1	6077	1
+	2	6078	1
+	3	6079	1
+	4	6080	1
+	5	6081	1
+}
+
+Group	awaken_ice_dungeon_1
+{
+	Vnum	6121
+	1	6121	1
+	2	6122	1
+	3	6123	1
+	4	6124	1
+	5	6125	1
+}
+Group	awaken_ice_dungeon_2
+{
+	Vnum	6122
+	1	6125	1
+	2	6126	1
+	3	6127	1
+	4	6128	1
+	5	6129	1
+}
+Group	awaken_ice_dungeon_3
+{
+	Vnum	6123
+	1	6127	1
+	2	6128	1
+	3	6129	1
+	4	6130	1
+	5	6131	1
+}

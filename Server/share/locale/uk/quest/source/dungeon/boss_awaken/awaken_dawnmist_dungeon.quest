@@ -1,0 +1,287 @@
+define ENTRY_MAP_INDEX 363
+define group ENTRY_START_POS [ 3197, 18045 ]
+define DUNGEON_MAP_INDEX 371
+define DUNGEON_MIN_GROUP 2
+define DUNGEON_EXIT_TIME 180
+define DUNGEON_REJOIN_TIME 60
+define DUNGEON_MAN 20542 -- RX: Forest Guard. Leader
+define DRYAD_STONE 31181 -- Stone of the Dryads (RX)
+define DRYAD_STONE_COUNT 1
+define group BOSS_ROOM_POS [ 3427, 20653 ]
+define group BOSS_POS [ 69, 941 ]
+define FIRST_BOSS 4352 -- RX: Bagjanamu
+define FINAL_BOSS 4413 -- RX: Jotun Thrym
+define FINAL_BOSS_SPAWN_TIME 60
+define REGEN_FILE_PATH "data/dungeon/awaken_dawnmist_dungeon/"
+
+quest awaken_dawnmist_dungeon begin
+	state start begin
+		function in_dungeon(idx)
+			return idx >= DUNGEON_MAP_INDEX * 10000 and idx < (DUNGEON_MAP_INDEX + 1) * 10000
+		end
+
+		function create(idx)
+			party.setf("dungeon_index", idx)
+
+			d.setf("created", 1)
+			d.setf("started", 0)
+			d.setf("finished", 0)
+			d.setf("party_leader_pid", party.get_leader_pid())
+
+			d.set_regen_file(REGEN_FILE_PATH .. "npc.txt")
+			d.set_regen_file(REGEN_FILE_PATH .. "regen.txt")
+			d.set_regen_file(REGEN_FILE_PATH .. "boss.txt")
+			d.set_regen_file(REGEN_FILE_PATH .. "stone.txt")
+
+			d.set_item_group("dryad_stone", 1, DRYAD_STONE, DRYAD_STONE_COUNT)
+
+			d.notice(c_locale(11507, 60)) -- Time remaining: 60 min.
+			d.notice(c_locale(11511)) -- When the time runs out, you'll be teleported out.
+
+			server_timer("awaken_dawnmist_dungeon_45m_left_timer", 60 * 15, d.get_map_index())
+		end
+
+		function warp_out()
+			pc.warp(ENTRY_START_POS[1] * 100, ENTRY_START_POS[2] * 100, ENTRY_MAP_INDEX)
+		end
+
+		function go_boss()
+			awaken_dawnmist_dungeon.clear(true)
+
+			d.delete_item_in_item_group_from_all("dryad_stone")
+			d.setf("started", 1)
+
+			d.jump_all(BOSS_ROOM_POS[1], BOSS_ROOM_POS[2])
+			d.spawn_mob(FIRST_BOSS, BOSS_POS[1], BOSS_POS[2])
+		end
+
+		function clear_server_timers(idx)
+			clear_server_timer("awaken_dawnmist_dungeon_45m_left_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_30m_left_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_15m_left_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_5m_left_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_1m_left_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_0m_left_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_end_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_quit_timer", idx)
+			clear_server_timer("awaken_dawnmist_dungeon_spawn_timer", idx)
+		end
+
+		function clear(purge)
+			d.clear_regen()
+			if purge then
+				d.purge()
+			else
+				d.kill_all()
+			end
+		end
+
+		function clear_and_exit()
+			awaken_dawnmist_dungeon.clear(true)
+			d.set_warp_location(ENTRY_MAP_INDEX, ENTRY_START_POS[1], ENTRY_START_POS[2])
+			d.exit_all()
+		end
+
+		when login begin
+			local idx = pc.get_map_index()
+
+			if idx == DUNGEON_MAP_INDEX then
+				awaken_dawnmist_dungeon.warp_out()
+
+			elseif awaken_dawnmist_dungeon.in_dungeon(idx) then
+
+				if not party.is_party() then
+					notice(c_locale(11345)) -- Cannot proceed, group doesn't exist. You will be teleported to the city.
+					awaken_dawnmist_dungeon.warp_out()
+
+				elseif d.getf("created") == 1 and party.is_party() and table.getn({ party.get_member_pids() }) < DUNGEON_MIN_GROUP then
+					notice(c_locale(11345)) -- Cannot proceed, group doesn't exist. You will be teleported to the city.
+					awaken_dawnmist_dungeon.warp_out()
+
+				elseif get_global_time() - pc.getf("awaken_dawnmist_dungeon", "exit_time") > DUNGEON_REJOIN_TIME then
+					notice(c_locale(11346)) -- Cannot proceed, time expired. You will be teleported to the city.
+					awaken_dawnmist_dungeon.warp_out()
+
+				elseif d.getf("finished") ~= 0 then
+					notice(c_locale(11347)) -- Cannot proceed, dungeon finished. You will be teleported to the city.
+					awaken_dawnmist_dungeon.warp_out()
+
+				else
+					if d.getf("created") == 0 then
+						awaken_dawnmist_dungeon.create(idx)
+					end
+
+					if pc.get_player_id() == d.getf("party_leader_pid") then
+						-- If the leader joins back, clear the quit timer.
+						clear_server_timer("awaken_dawnmist_dungeon_quit_timer", idx)
+					end
+
+					if d.getf("started") == 1 then
+						-- Jump to current level.
+						pc.jump(BOSS_ROOM_POS[1] * 100, BOSS_ROOM_POS[2] * 100, idx)
+					end
+
+					-- Begin dungeon access quest.
+					set_quest_state("awaken_dawnmist_dungeon_access", "investigation1a")
+				end
+			else
+				set_quest_state("awaken_dawnmist_dungeon_access", "start")
+			end
+		end
+
+		when logout with awaken_dawnmist_dungeon.in_dungeon(pc.get_map_index()) begin
+			if d.getf("created") == 1 then
+				pc.setf("awaken_dawnmist_dungeon", "exit_time", get_global_time())
+
+				if pc.get_player_id() == d.getf("party_leader_pid") then
+					d.notice(c_locale(11348)) -- Cannot proceed, the group leader has disappeared.
+					server_timer("awaken_dawnmist_dungeon_quit_timer", DUNGEON_REJOIN_TIME, d.get_map_index())
+				end
+
+				--set_quest_state("awaken_dawnmist_dungeon_access", "start")
+			end
+		end
+
+		-- Boss room
+		when DUNGEON_MAN.chat.c_locale(11512) with awaken_dawnmist_dungeon.in_dungeon(pc.get_map_index()) begin
+
+			if not party.is_party() then
+				-- Only groups may enter.
+				say(c_locale(11414))
+				return
+			end
+
+			if not party.is_leader() then
+				-- Only the group leader can proceed.
+				say(c_locale(11292))
+				return
+			end
+
+			-- Enter / Don't enter
+			if select(c_locale(11468), c_locale(11469)) == 1 then
+
+				local pids = { party.get_member_pids() }
+				local no_ticket_members = {}
+				local ticket_check = true
+
+				if not d.all_near_to(pc.get_x(), pc.get_y()) then
+					-- A group member has run on too far ahead.
+					say(c_locale(11301))
+					return
+				end
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					if pc.count_item(DRYAD_STONE) < DRYAD_STONE_COUNT then
+						table.insert(no_ticket_members, pc.get_name())
+						ticket_check = false
+					end
+
+					q.end_other_pc_block()
+				end
+
+				if not ticket_check then
+					-- Boss room
+					say_title(c_locale(11512))
+
+					-- A member of the group does not have the item required to enter.
+					say(c_locale(11305))
+
+					say_item_vnum(DRYAD_STONE)
+					for i, name in next, no_ticket_members, nil do
+						say(color(1, 1, 0), " " .. name)
+					end
+					return
+				end
+
+				awaken_dawnmist_dungeon.go_boss()
+			end
+		end
+
+		when FIRST_BOSS.kill with awaken_dawnmist_dungeon.in_dungeon(pc.get_map_index()) begin
+			server_timer("awaken_dawnmist_dungeon_spawn_timer", FINAL_BOSS_SPAWN_TIME, d.get_map_index())
+		end
+
+		when FINAL_BOSS.kill with awaken_dawnmist_dungeon.in_dungeon(d.get_map_index()) begin
+			d.setf("finished", 1)
+			d.setqf2_all_near("awaken_dawnmist_dungeon", "complete", 1, 800)
+
+			d.notice(c_locale(11678, c_mob_name(FINAL_BOSS))) -- You have defeated RX: Jotun Thrym.
+			d.notice(c_locale(11681)) -- All warriors will be teleported out in three minutes.
+
+			awaken_dawnmist_dungeon.clear_server_timers(d.get_map_index())
+			awaken_dawnmist_dungeon.clear(false)
+
+			server_timer("awaken_dawnmist_dungeon_end_timer", DUNGEON_EXIT_TIME, d.get_map_index())
+		end
+
+		when awaken_dawnmist_dungeon_spawn_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.spawn_mob(FINAL_BOSS, BOSS_POS[1], BOSS_POS[2])
+			end
+		end
+
+		when awaken_dawnmist_dungeon_45m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11507, 45)) -- Time remaining: 45 min.
+				d.notice(c_locale(11508)) -- The group will be teleported from the fortress once the time runs out.
+				server_timer("awaken_dawnmist_dungeon_30m_left_timer", 60 * 15, get_server_timer_arg())
+			end
+		end
+
+		when awaken_dawnmist_dungeon_30m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11507, 30)) -- Time remaining: 30 min.
+				d.notice(c_locale(11508)) -- The group will be teleported from the fortress once the time runs out.
+				server_timer("awaken_dawnmist_dungeon_15m_left_timer", 60 * 15, get_server_timer_arg())
+			end
+		end
+
+		when awaken_dawnmist_dungeon_15m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11507, 15)) -- Time remaining: 15 min.
+				d.notice(c_locale(11508)) -- The group will be teleported from the fortress once the time runs out.
+				server_timer("awaken_dawnmist_dungeon_5m_left_timer", 10 * 60, get_server_timer_arg())
+			end
+		end
+
+		when awaken_dawnmist_dungeon_5m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11507, 5)) -- Time remaining: 5 min.
+				d.notice(c_locale(11508)) -- The group will be teleported from the fortress once the time runs out.
+				server_timer("awaken_dawnmist_dungeon_1m_left_timer", 60 * 10, get_server_timer_arg())
+			end
+		end
+
+		when awaken_dawnmist_dungeon_1m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11507, 1)) -- Time remaining: 1 min.
+				d.notice(c_locale(11508)) -- The group will be teleported from the fortress once the time runs out.
+				server_timer("awaken_dawnmist_dungeon_0m_left_timer", 60, get_server_timer_arg())
+			end
+		end
+
+		when awaken_dawnmist_dungeon_0m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11515)) -- Time's up in the Enchanted Forest (RX).
+				d.notice(c_locale(11508)) -- The group will be teleported from the fortress once the time runs out.
+				server_timer("awaken_dawnmist_dungeon_end_timer", 10, get_server_timer_arg())
+			end
+		end
+
+		when awaken_dawnmist_dungeon_end_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				awaken_dawnmist_dungeon.clear_server_timers(get_server_timer_arg())
+				awaken_dawnmist_dungeon.clear_and_exit()
+			end
+		end
+
+		when awaken_dawnmist_dungeon_quit_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				awaken_dawnmist_dungeon.clear_server_timers(get_server_timer_arg())
+				awaken_dawnmist_dungeon.clear_and_exit()
+			end
+		end
+	end
+end

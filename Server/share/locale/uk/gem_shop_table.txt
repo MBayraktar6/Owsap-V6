@@ -1,0 +1,152 @@
+# @file: gem_shop_table.txt
+# @desc: Refine Settings, Shop Settings & Shop Items.
+# @author: Owsap
+# @date: 06.09.2022
+#
+
+# Settings of refining gems.
+Group RefineSettings
+{
+	REFINE_ITEM_VNUM	50926
+	REFINE_ITEM_COUNT	30
+	REFINE_PCT	30
+	REFINE_COST	5000
+	REFINE_RESULT_COUNT	3
+	REFINE_PCT_SPECIAL	70
+	REFINE_SPECIAL_MAP_INDEX	359
+}
+
+# Settings of the shop.
+Group ShopSettings
+{
+	DEFAULT_OPENED_SLOTS	3
+	REFRESH_TIME	18000
+	REFRESH_ITEM_VNUM	39063
+	ADD_SLOT_ITEM_VNUM	39064
+}
+
+# Amount of items needed to unlock a slot.
+Group ShopAddSlotItemCount
+{
+	1	0
+	2	0
+	3	0
+	4	1
+	5	2
+	6	4
+	7	8
+	8	8
+	9	8
+}
+
+# All the items available on the first row of the shop.
+Group ShopItemRow1
+{
+	ROW	1
+	1	76041	100	8 -- Sky Blue Potion
+	2	76007	20	284 -- Bravery Cape (b)
+	3	71221	1	129 -- Kashmir Bundle
+	4	22010	1	34 -- Scroll of the Location
+	5	76012	3	183 -- Potion of Speed (b)
+	6	71108	3	267 -- Pomegranate Juice
+	7	76012	5	305 -- Potion of Speed (b)
+	8	71001	1	392 -- Exorcism Scroll
+	9	71014	3	234 -- Potion of Attack +10 (b)
+	10	71110	1	270 -- Horse Sugar
+	11	71014	5	390 -- Potion of Attack +10 (b)
+	12	38100	1	519 -- Power Snack (7d)
+	13	71005	1	236 -- Language Ring
+	14	71151	1	644 -- Green Magic
+	15	76019	1	137 -- Passage Ticket
+	16	76024	1	1067 -- Green Strength
+	17	72320	1	294 -- Inventory Expansion
+	18	30630	1	26 -- Dragon Wings
+	19	55001	1	229 -- Protein Snack
+	20	76005	1	167 -- Moon Elixir (M)
+	21	71113	1	16 -- Glass of Insight
+	22	76004	1	237 -- Sun Elixir (M)
+	23	85001	1	1067 -- Lord Sash (basic)
+	24	90000	1	139 -- Certificate of Reversal
+	25	72322	1	132 -- Reset Ticket
+	26	76011	1	464 -- Book of the Leader (b)
+}
+
+# All the items available on the second row of the shop.
+Group ShopItemRow2
+{
+	ROW	2
+	1	76041	200	14 -- Sky Blue Potion
+	2	71221	1	129 -- Kashmir Bundle
+	3	30630	1	26 -- Dragon Wings
+	4	76019	1	137 -- Passage Ticket
+	5	71113	1	16 -- Glass of Insight
+	6	22010	1	34 -- Scroll of the Location
+	7	76005	1	167 -- Moon Elixir (M)
+	8	76004	1	237 -- Sun Elixir (M)
+	9	60005	1	657 -- Trading Glass
+	10	90000	1	139 -- Certificate of Reversal
+	11	76011	1	464 -- Book of the Leader (b)
+	12	55008	1	749 -- Pet Name Scroll
+	13	70058	1	817 -- Teleportation Ring
+	14	70056	3	445 -- Pomegranate Juice+
+	15	71094	1	346 -- Concentrated Reading
+	16	71001	1	392 -- Exorcism Scroll
+	17	71083	1	475 -- Stone Handbook
+	18	100300	1	291 -- Green Dragon Bean
+	19	71103	1	574 -- Redistribution VIT
+	20	71104	1	539 -- Redistribution INT
+	21	71105	1	574 -- Redistribution STR
+	22	71106	1	604 -- Redistribution DEX
+	23	71003	1	804 -- Skill Reset Document
+	24	71033	1	410 -- Emotion Mask (15d)
+	25	85001	1	1067 -- Lord Sash (basic)
+	26	38100	1	519 -- Power Snack (7d)
+	27	76025	1	999 -- Wind Shoes
+	28	76011	1	171 -- Blood Stone (b)
+	29	72323	1	648 -- Reshuffle Ticket
+	30	72325	1	280 -- Transmutation Reversal
+	31	76014	1	1263 -- Enchant Item (b)
+	32	76013	1	1263 -- Reinforce Item (b)
+	33	76047	1	1000 -- Power Lolly (3d)
+	34	76012	5	305 -- Potion of Speed (b)
+	35	71014	5	390 -- Potion of Attack +10 (b)
+	36	38060	1	109 -- Bag of Emotions
+}
+
+# All the items available on the third row of the shop.
+Group ShopItemRow3
+{
+	ROW	3
+	1	76041	200	14 -- Sky Blue Potion
+	2	76019	1	137 -- Passage Ticket
+	3	76005	1	167 -- Moon Elixir (M)
+	4	76004	1	237 -- Sun Elixir (M)
+	5	71113	1	16 -- Glass of Insight
+	6	22010	1	34 -- Scroll of the Location
+	7	71001	1	392 -- Exorcism Scroll
+	8	71083	1	475 -- Stone Handbook
+	9	71107	1	520 -- Fruit of Life
+	10	76044	1	2167 -- Pet Book Chest
+	11	55002	1	1297 -- Transport Box
+	12	76001	1	1154 -- Status Reset Document (b)
+	13	71048	1	715 -- Modification Charm
+	14	76047	1	1000 -- Power Lolly (3d)
+	15	76030	1	2186 -- Power Lolly (7d)
+	16	71011	1	787 -- Emotion Mask (30d)
+	17	38102	1	1893 -- Power Snack (30d)
+	18	76006	1	347 -- Compass for Metin Stones (b)
+	19	76015	1	996 -- Blessing Marble (b)
+	20	71151	1	644 -- Green Magic
+	21	76024	1	1067 -- Green Strength
+	22	76014	1	1263 -- Enchant Item (b)
+	23	76013	1	1263 -- Reinforce Item (b)
+	24	55008	1	749 -- Pet Name Scroll
+	25	72320	1	294 -- Inventory Expansion
+	26	85001	1	1097 -- Lord Sash (basic)
+	27	100300	1	291 -- Green Dragon Bean
+	28	71108	10	890 -- Pomegranate Juice
+	29	76011	1	171 -- Blood Stone (b)
+	30	76012	5	305 -- Potion of Speed (b)
+	31	71014	5	390 -- Potion of Attack +10 (b)
+	32	55033	1	2000 -- Enchant Pet
+}

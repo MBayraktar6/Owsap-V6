@@ -1,0 +1,4 @@
+if item . get_vnum ( ) == 27003 or item . get_vnum ( ) == 27203 then 
+pc . setqf ( "count" , pc . getqf ( "count" ) + item . get_count ( ) ) 
+daily_quest_consume_5 . update ( ) 
+end 

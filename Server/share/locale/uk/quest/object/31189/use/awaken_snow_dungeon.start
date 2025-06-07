@@ -1,0 +1,15 @@
+if awaken_snow_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 2 and d . getf ( "level2_key_use" ) ~= 1 then local setting = awaken_snow_dungeon . setting ( ) 
+if pc . get_job ( ) ~= SHAMAN then 
+say ( c_locale ( 8190 ) ) 
+return 
+end 
+item . remove ( ) 
+if number ( 1 , 100 ) <= setting . level2_key_use_pct then 
+d . setf ( "level2_key_use" , 1 ) 
+awaken_snow_dungeon . clear_level ( d . get_map_index ( ) ) 
+d . notice ( c_locale ( 11451 ) ) 
+server_timer ( "awaken_snow_dungeon_floor3_timer" , setting . floor_jump_time , d . get_map_index ( ) ) 
+else 
+say ( c_locale ( 8192 ) ) 
+end 
+ return end 

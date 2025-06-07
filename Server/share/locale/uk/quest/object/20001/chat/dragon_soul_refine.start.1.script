@@ -1,0 +1,5 @@
+say_title ( c_mob_name ( 20001 ) ) 
+say ( c_locale ( 10861 ) ) 
+if select ( c_locale ( 1475 ) , c_locale ( 1476 ) ) == 1 then 
+ds . open_changeattr_window ( ) 
+else return end 

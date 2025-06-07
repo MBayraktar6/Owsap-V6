@@ -1,0 +1,969 @@
+quest crack_dawnmist_dungeon_access begin
+	state start begin
+	end
+
+	state investigation1a begin
+		when letter begin
+			local v = find_npc_by_vnum(20519)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20519))
+			end
+
+			-- Preliminary Time Rift Investigations
+			send_letter(c_locale(11518))
+		end
+
+		when button or info begin
+			-- Preliminary Time Rift Investigations
+			say_title(c_locale(11518))
+
+			-- The TR: Guardian of the Forest has been looking everywhere for you.
+			-- Go and find him and listen to what he has to say.
+			say(c_locale(11519))
+		end
+
+		-- Preliminary Time Rift Investigations
+		when __TARGET__.target.click or 20519.chat.c_locale(11518) begin
+			-- Preliminary Time Rift Investigations
+			say_title(c_locale(11518))
+
+			if pc.getqf("complete") == 1 then
+				-- You look very familiar... have we met somewhere before? Whatever.
+				-- As you've no doubt heard, the Enchanted Forest is changing rapidly.
+				-- We can't combat these new developments on our own. Will you help us?
+				-- It would be fantastic if you could lend us your support!
+				say(c_locale(11524))
+			else
+				-- I'm back! I hope you didn't run into any difficulties while I was away?
+				-- Well, I've examined everything that was written in the Spirit of the Earth.
+				-- The Enchanted Forest of Dawn is not what it used to be, and the changes are far more alarming than I first realized.
+				-- If we don't act soon, this place will be destroyed!
+				say(c_locale(11520))
+
+				-- I'd like you to help in the investigation. Please... will you join us?
+				say(c_locale(11521))
+			end
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			-- Preliminary Time Rift Investigations
+			say_title(c_locale(11518))
+
+			-- Excellent! Here's the situation. I have an Aid Kit here for my brothers.
+			-- They're out exploring the region and have run into some trouble.
+			-- In fact, some of them have recently gone missing.
+			-- I've searched high and low for them, but they've disappeared without a trace.
+			-- I can only assume they've been taken by a band of En-Tai Warriors.
+			-- I've seen a number of them roaming around this area, acting very... strangely.
+			-- Please, find out if they're responsible for the disappearance.
+			say(c_locale(11523))
+
+			set_state("investigation1b")
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation1b begin
+		when enter begin
+			pc.setqf("kill_count", 0)
+		end
+
+		when letter begin
+			-- Kill Time Rift En-Tai Warriors.
+			send_letter(c_locale(11525))
+			q.set_counter(c_locale(11595), 20 - pc.getqf("kill_count"))
+		end
+
+		when button or info begin
+			-- Kill Time Rift En-Tai Warriors.
+			say_title(c_locale(11525))
+
+			-- Kill the Time Rift En-Tai Warriors in the Enchanted Forest and return to the Guardian of the Forest.
+			say(c_locale(11526))
+		end
+
+		-- Kill Time Rift En-Tai Warriors.
+		when 20519.chat.c_locale(11525) begin
+			-- Kill Time Rift En-Tai Warriors.
+			say_title(c_locale(11525))
+
+			-- You haven't found them anywhere? Hmm... Keep trying.
+			-- You have to find the Time Rift En-Tai Warriors! Then come back and let me know what happened.
+			say(c_locale(11528))
+		end
+
+		when 4260.party_kill begin
+			pc.setqf("kill_count", pc.getqf("kill_count") + 1)
+			q.set_counter(c_locale(11595), 20 - pc.getqf("kill_count"))
+
+			if pc.getqf("kill_count") >= 20 then
+
+				-- You've killed the Time Rift En-Tai Warriors.
+				-- Return to the Time Rift Guardian of the Forest.
+				notice_multiline(c_locale(11527), notice)
+
+				set_state("investigation1_reward")
+			end
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation1_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20519)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20519))
+			end
+
+			-- Preliminary Time Rift Investigations
+			send_letter(c_locale(11518))
+		end
+
+		when button or info begin
+			-- Preliminary Time Rift Investigations
+			say_title(c_locale(11518))
+
+			-- Find and talk to the TR: Guardian of the Forest.
+			say(c_locale(11529))
+		end
+
+		-- Preliminary Time Rift Investigations
+		when __TARGET__.target.click or 20519.chat.c_locale(11518) begin
+			target.delete("__TARGET__")
+
+			pc.give_exp2(776600)
+
+			-- Preliminary Time Rift Investigations
+			say_title(c_locale(11518))
+
+			-- You're back! Did you get anything from the Time Rift En-Tai Warriors?
+			say(c_locale(11530))
+
+			-- I've looked into everything, but didn't find anything of importance.
+			say(c_locale(11531))
+
+			-- Very strange. I was pretty certain my hunch was correct... Very well.
+			-- I'll go over it in my mind once more and then call on you. Please wait until then.
+			say(c_locale(11532))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(776600)))
+
+			set_state("investigation2a")
+		end
+	end
+
+	state investigation2a begin
+		when letter begin
+			local v = find_npc_by_vnum(20519)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20519))
+			end
+
+			-- Find the Time Rift Aid Kit
+			send_letter(c_locale(11533))
+		end
+
+		when button or info begin
+			-- Find the Time Rift Aid Kit
+			say_title(c_locale(11533))
+
+			-- The TR: Guardian of the Forest has been looking for you.
+			-- Find him and listen to what he has to say.
+			say(c_locale(11534))
+		end
+
+		-- Find the Time Rift Aid Kit
+		when __TARGET__.target.click or 20519.chat.c_locale(11533) begin
+			-- TR: Guard. of the Forest
+			say_title(c_mob_name(20519))
+
+			-- Welcome back, brave warrior! I was clearly barking up the wrong tree! Now I'm sure of it.
+			-- This strange creature is responsible for everything.
+			-- I assume it has used some kind of magic.
+			-- As soon as it left, the Aid Kit disappeared as well.
+			-- This magician, this warlock, this shaman or whatever the devil it is, he must be around here somewhere.
+			-- Please, find him!
+			say(c_locale(11535))
+
+			-- Very well, I'll find him.
+			select(c_locale(4526))
+			target.delete("__TARGET__")
+
+			-- TR: Guard. of the Forest
+			say_title(c_mob_name(20519))
+
+			-- Excellent. I'll wait for you here! Just be careful.
+			say(c_locale(11536))
+
+			set_state("investigation2b")
+		end
+	end
+
+	state investigation2b begin
+		when letter begin
+			-- Find the Time Rift Aid Kit
+			send_letter(c_locale(11537))
+		end
+
+		when button or info begin
+			-- Find the Time Rift Aid Kit
+			say_title(c_locale(11537))
+
+			-- Kill the TR: En-Tai Druid and retrieve the Aid Kit (TR).
+			say(c_locale(11538))
+		end
+
+		-- Find the Time Rift Aid Kit
+		when 20519.chat.c_locale(11537) begin
+			-- TR: Guard. of the Forest
+			say_title(c_mob_name(20519))
+
+			-- Do you need more time? They must be around here somewhere.
+			-- I'm certain they're using some kind of powerful magic.
+			-- Please, find them and bring me the Aid Kit.
+			say(c_locale(11540))
+		end
+
+		when 4262.party_kill begin
+			if number(1, 25) == 1 and pc.enough_inventory(31166) then
+				pc.give_item2(31166, 1)
+
+				-- You've got the Aid Kit (TR) from the TR: En-Tai Druid.
+				-- Take it to the TR: Guardian of the Forest.
+				notice_multiline(c_locale(11539), notice)
+
+				set_state("investigation2_reward")
+			end
+		end
+	end
+
+	state investigation2_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20519)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20519))
+			end
+
+			-- Find the Time Rift Aid Kit
+			send_letter(c_locale(11537))
+		end
+
+		when button or info begin
+			-- Find the Time Rift Aid Kit
+			say_title(c_locale(11537))
+
+			-- Find and talk to the TR: Guardian of the Forest.
+			say(c_locale(11541))
+		end
+
+		-- Find the Time Rift Aid Kit
+		when __TARGET__.target.click or 20519.chat.c_locale(11537) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(31166, 1)
+			pc.give_exp2(776600)
+
+			-- TR: Guard. of the Forest
+			say_title(c_mob_name(20519))
+
+			-- Let's see now. Yes, this is it! Now I can send the Aid Kit to my brothers.
+			-- I owe you my deepest thanks. I'll never forget what great service you've done for me.
+			say(c_locale(11542))
+
+			-- We've been out here for quite some time already, and the supplies are gradually coming to an end.
+			-- I'd better send this immediately. Let's see if anything else is missing.
+			-- I'll call on you afterwards. In the meantime, take a load off your feet!
+			say(c_locale(11543))
+
+			-- Yes, of course.
+			say_reward(c_locale(11522))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(776600)))
+
+			set_state("investigation3")
+		end
+	end
+
+	state investigation3 begin
+		when letter begin
+			local v = find_npc_by_vnum(20519)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20519))
+			end
+
+			-- Deliver the Aid Kit (TR)
+			send_letter(c_locale(11544))
+		end
+
+		when button or info begin
+			-- Deliver the Aid Kit (TR)
+			say_title(c_locale(11544))
+
+			-- The TR: Guardian of the Forest has been looking for you.
+			-- Find him and listen to what he has to say.
+			say(c_locale(11545))
+		end
+
+		-- Deliver the Aid Kit (TR)
+		when __TARGET__.target.click or 20519.chat.c_locale(11544) begin
+			-- TR: Guard. of the Forest
+			say_title(c_mob_name(20519))
+
+			-- Did you get chance to rest? Good. I've checked over the Aid Kit, there's nothing missing.
+			-- Now it's high time we delivered the kit to my brothers.
+			-- Please ensure you don't lose anything on the way!
+			say(c_locale(11546))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+
+			if not pc.enough_inventory(31166) then
+				-- TR: Guard. of the Forest
+				say_title(c_mob_name(20519))
+
+				-- Too bad. You don't have any space in your inventory.
+				-- Come back once you have cleared up.
+				say(c_locale(11597))
+				return
+			end
+
+			pc.give_item2(31166, 1)
+			target.delete("__TARGET__")
+
+			-- TR: Guard. of the Forest
+			say_title(c_mob_name(20519))
+
+			-- Very good. Be on your guard!
+			say(c_locale(11547))
+
+			set_state("investigation3_reward")
+		end
+	end
+
+	state investigation3_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20520)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20520))
+			end
+
+			-- Deliver the Aid Kit (TR)
+			send_letter(c_locale(11544))
+		end
+
+		when button or info begin
+			-- Deliver the Aid Kit (TR)
+			say_title(c_locale(11544))
+
+			-- Deliver the Time Rift Aid Kit to the Scout of the Forest.
+			say(c_locale(11548))
+		end
+
+		-- Deliver the Aid Kit (TR)
+		when 20519.chat.c_locale(11544) begin
+			-- TR: Guard. of the Forest
+			say_title(c_mob_name(20519))
+
+			-- What are you still doing here? There are important medicines in that Aid Kit!
+			-- Please, get a move on! It's required urgently!
+			say(c_locale(11549))
+		end
+
+		-- Deliver the Aid Kit (TR)
+		when __TARGET__.target.click or 20520.chat.c_locale(11544) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(31166, 1)
+			pc.give_exp2(5825000)
+
+			-- TR: Scout of the Forest
+			say_title(c_mob_name(20520))
+
+			-- Who's there?! What do you think you're doing here?
+			say(c_locale(11550))
+
+			-- The TR: Guardian of the Forest sent me. He wanted me to give you this.
+			say_reward(c_locale(11551))
+
+			-- Oh! I do apologise. Please forgive my behaviour.
+			-- Thanks for coming all this way and delivering this Aid Kit.
+			-- These medicines are urgently needed! Before we do anything else, let me put this kit in a safe place.
+			-- Just wait here for me a moment, will you?
+			say(c_locale(11552))
+
+			-- Sure, I'll wait.
+			say_reward(c_locale(11553))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(5825000)))
+
+			set_state("investigation4a")
+		end
+	end
+
+	state investigation4a begin
+		when letter begin
+			local v = find_npc_by_vnum(20520)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20520))
+			end
+
+			-- Secondary Time Rift Investigations
+			send_letter(c_locale(11554))
+		end
+
+		when button or info begin
+			-- Secondary Time Rift Investigations
+			say_title(c_locale(11554))
+
+			-- The TR: Scout of the Forest has been looking for you. Go and talk to him.
+			say(c_locale(11555))
+		end
+
+		-- Secondary Time Rift Investigations
+		when __TARGET__.target.click or 20520.chat.c_locale(11554) begin
+			-- TR: Scout of the Forest
+			say_title(c_mob_name(20520))
+
+			-- I've sorry I made you wait for so long.
+			-- How did you manage to find your way over here anyway?
+			say(c_locale(11556))
+
+			-- The TR: Temple Guardian asked me to help out in investigating the Enchanted Forest.
+			-- Can you tell me what needs doing?
+			say_reward(c_locale(11557))
+
+			-- I admire your bravery.
+			say(c_locale(11558))
+
+			-- Many of the trees in this forest have turned to stone.
+			-- These stones radiate a powerful and mystical energy which makes a tremendous noise.
+			-- Please help me to destroy these stones.
+			say(c_locale(11559))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation4b")
+		end
+	end
+
+	state investigation4b begin
+		when enter begin
+			pc.setqf("kill_count", 0)
+		end
+
+		when letter begin
+			-- Destroy the Time Rift Stones
+			send_letter(c_locale(11560))
+			q.set_counter(c_locale(11598), 2 - pc.getqf("kill_count"))
+		end
+
+		when button or info begin
+			-- Destroy the Time Rift Stones
+			say_title(c_locale(11560))
+
+			-- Destroy the Metins of the Tree Beings and return to the Scout of the Forest.
+			say(c_locale(4555))
+		end
+
+		-- Secondary Time Rift Investigations
+		when 20520.chat.c_locale(11554) begin
+			-- TR: Scout of the Forest
+			say_title(c_mob_name(20520))
+
+			-- What are you waiting for? If you don't set out immediately, there'll only be ever more Metin stones!
+			-- Quickly, destroy the Time Rift Metins of the Tree Beings or we're all doomed!
+			say(c_locale(11562))
+		end
+
+		when 8126.party_kill begin
+			pc.setqf("kill_count", pc.getqf("kill_count") + 1)
+			q.set_counter(c_locale(11598), 2 - pc.getqf("kill_count"))
+
+			if pc.getqf("kill_count") >= 2 then
+
+				-- You've destroyed all the TR: Metins of the Tree Beings.
+				-- Report back to the TR: Scout of the Forest.
+				notice_multiline(c_locale(11561), notice)
+
+				set_state("investigation4_reward")
+			end
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation4_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20520)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20520))
+			end
+
+			-- Secondary Time Rift Investigations
+			send_letter(c_locale(11554))
+		end
+
+		when button or info begin
+			-- Secondary Time Rift Investigations
+			say_title(c_locale(11554))
+
+			-- Find and talk to the TR: Scout of the Forest.
+			say(c_locale(11563))
+		end
+
+		-- Secondary Time Rift Investigations
+		when __TARGET__.target.click or 20520.chat.c_locale(11554) begin
+			target.delete("__TARGET__")
+
+			pc.give_exp2(7766000)
+
+			-- TR: Scout of the Forest
+			say_title(c_mob_name(20520))
+
+			-- You did it! Fantastic! While you were destroying the Time Rift Metin stones of the Tree Beings,
+			-- I've managed to obtain some spores from the mushrooms. We'll have to see what use they are.
+			-- But first we have another job to deal with.
+			say(c_locale(11564))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(7766000)))
+
+			set_state("investigation5a")
+		end
+	end
+
+	state investigation5a begin
+		when letter begin
+			local v = find_npc_by_vnum(20520)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20520))
+			end
+
+			-- TR: En-Tai Dew
+			send_letter(c_locale(11565))
+		end
+
+		when button or info begin
+			-- TR: En-Tai Dew
+			say_title(c_locale(11565))
+
+			-- Find and talk to the TR: Scout of the Forest.
+			say(c_locale(11566))
+		end
+
+		-- TR: En-Tai Dew
+		when __TARGET__.target.click or 20520.chat.c_locale(11565) begin
+
+			-- TR: Scout of the Forest
+			say_title(c_mob_name(20520))
+
+			-- Hmm... I wonder if this really is the legendary Time Rift En-Tai Dew I've heard about?
+			-- Legend has it that the people use this dew to drive out demons.
+			-- Presumably it would be best if we obtained this chimeric liquid from the Time Rift En-Tai Destroyers themselves.
+			say(c_locale(11567))
+
+			-- Could you get this dew for me? I'm sure you'll manage!
+			say(c_locale(11568))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation5b")
+		end
+	end
+
+	state investigation5b begin
+		when enter begin
+			pc.setqf("kill_count", 0)
+		end
+
+		when letter begin
+			-- Obtain TR: En-Tai Dew
+			send_letter(c_locale(11569))
+			q.set_counter(c_locale(11595), 5 - pc.getqf("kill_count"))
+		end
+
+		when button or info begin
+			-- Obtain TR: En-Tai Dew
+			say_title(c_locale(11569))
+
+			-- Kill the TR: En-Tai Destroyers and obtain 5 lots of TR: En-Tai Dew.
+			say(c_locale(11570))
+		end
+
+		-- Obtain TR: En-Tai Dew
+		when 20520.chat.c_locale(11569) begin
+			-- TR: Scout of the Forest
+			say_title(c_mob_name(20520))
+
+			-- Did you manage to get the Time Rift En-Tai Dew? Not yet?
+			-- We're running out of time!
+			say(c_locale(11572))
+		end
+
+		when 4264.party_kill  begin
+			if pc.enough_inventory(31163) then
+				pc.give_item2(31163, 1)
+
+				pc.setqf("kill_count", pc.getqf("kill_count") + 1)
+				q.set_counter(c_locale(11595), 5 - pc.getqf("kill_count"))
+
+				if pc.getqf("kill_count") >= 5 then
+
+					-- You've obtained the TR: En-Tai Dew from the TR: En-Tai Destroyers.
+					-- Deliver it to the TR: Scout of the Forest.
+					notice_multiline(c_locale(11571), notice)
+
+					set_state("investigation5_reward")
+				end
+			end
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation5_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20520)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20520))
+			end
+
+			-- TR: En-Tai Dew
+			send_letter(c_locale(11565))
+		end
+
+		when button or info begin
+			-- TR: En-Tai Dew
+			say_title(c_locale(11565))
+
+			-- Find and talk to the TR: Scout of the Forest.
+			say(c_locale(11573))
+		end
+
+		-- TR: En-Tai Dew
+		when __TARGET__.target.click or 20520.chat.c_locale(11565) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(31163, 5)
+			pc.give_exp2(7766000)
+
+			-- TR: Scout of the Forest
+			say_title(c_mob_name(20520))
+
+			-- Did you find the Time Rift En-Tai Destroyers and get their En-Tai Dew?
+			-- So I was right! Thanks to your help we now have the Time Rift En-Tai Dew.
+			-- I'll be able to use that to stop the noise. Here, take this.
+			-- It's not much, just a token of appreciation for your services.
+			-- Now look for the Time Rift Outrider of the Forest.
+			say(c_locale(11574))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(7766000)))
+
+			set_state("investigation6a")
+		end
+	end
+
+	state investigation6a begin
+		when letter begin
+			local v = find_npc_by_vnum(20521)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20521))
+			end
+
+			-- Kill the Time Rift En-Tai Sovereign
+			send_letter(c_locale(11575))
+		end
+
+		when button or info begin
+			-- Kill the Time Rift En-Tai Sovereign
+			say_title(c_locale(11575))
+
+			-- The TR: Outrider of the Forest is looking for you.
+			-- Go and find him and listen to the job he has for you.
+			say(c_locale(11576))
+		end
+
+		-- Kill the Time Rift En-Tai Sovereign
+		when __TARGET__.target.click or 20521.chat.c_locale(11575) begin
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- You must be the brave warrior the Scout of the Forest told me about.
+			-- Ever since he mentioned your feats I've been waiting for you to appear!
+			-- Well now, listen to me very carefully.
+			say(c_locale(11577))
+			wait()
+
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- My duty is to patrol the forest.
+			-- Lately I've observed how the En-Tai have become increasingly dangerous.
+			-- They are a threat to each and every one of us. You need to kill their ruler!
+			say(c_locale(11578))
+
+			-- I would kill him myself, but after so many battles my sword is no longer sharp enough.
+			-- Find the En-Tai Sovereign (TR) and bring me the Fine Timber from him.
+			say(c_locale(11579))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation6b")
+		end
+	end
+
+	state investigation6b begin
+		when letter begin
+			target.pos("__TARGET__", 590, 75, FOREST_MAP_INDEX, "")
+			-- Kill the Time Rift En-Tai Sovereign
+			send_letter(c_locale(11575))
+		end
+
+		when button or info begin
+			-- Kill the Time Rift En-Tai Sovereign
+			say_title(c_locale(11575))
+
+			-- Kill the Time Rift En-Tai Sovereign and collect some Fine Timber.
+			say(c_locale(11580))
+		end
+
+		-- Kill the Time Rift En-Tai Sovereign
+		when 20521.chat.c_locale(11575) begin
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- What do you mean, you haven't found him?
+			-- I even marked his location for you on the map!
+			say(c_locale(11582))
+		end
+
+		when 4265.party_kill begin
+			if pc.enough_inventory(31162) then
+				pc.give_item2(31162, 1)
+
+				-- You have received Fine Timber from the Time Rift En-Tai Sovereign.
+				-- Return to the Outrider of the Forest and report.
+				notice_multiline(c_locale(11581), notice)
+
+				set_state("investigation6_reward")
+			end
+		end
+	end
+
+	state investigation6_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20521)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20521))
+			end
+
+			-- Kill the Time Rift En-Tai Sovereign
+			send_letter(c_locale(11575))
+		end
+
+		when button or info begin
+			-- Kill the Time Rift En-Tai Sovereign
+			say_title(c_locale(11575))
+
+			-- Talk to the Outrider of the Forest.
+			say(c_locale(11583))
+		end
+
+		-- Kill the Time Rift En-Tai Sovereign
+		when __TARGET__.target.click or 20521.chat.c_locale(11575) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(31162, 1)
+			pc.give_exp2(11650000)
+
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- Unbelievable! You actually managed it!
+			-- First of all I should busy myself with investigating the %s.
+			-- Will you wait until I'm finished?
+			say(c_locale(11584, c_item_name(31161)))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(11650000)))
+
+			set_state("investigation7a")
+		end
+	end
+
+	state investigation7a begin
+		when letter begin
+			local v = find_npc_by_vnum(20521)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20521))
+			end
+
+			-- Obtain a Time Rift Tree Emerald
+			send_letter(c_locale(11585))
+		end
+
+		when button or info begin
+			-- Obtain a Time Rift Tree Emerald
+			say_title(c_locale(11585))
+
+			-- The TR: Outrider of the Forest is looking for you.
+			-- Go and find him and listen to the job he has for you.
+			say(c_locale(11586))
+		end
+
+		-- Obtain a Time Rift Tree Emerald
+		when __TARGET__.target.click or 20521.chat.c_locale(11585) begin
+
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- You're back! I've been studying the En-Tai Sovereigns for some time, and was pretty sure it was Fine Timber that we needed.
+			-- But I've taken a closer look at it and... well, unfortunately it isn't the stuff we need.
+			-- Please return to the En-Tai Sovereigns once more.
+			say(c_locale(11587))
+
+			-- Is that really necessary?
+			say_reward(c_locale(11588))
+
+			wait()
+
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- We need to find out where the king of the En-Tai Sovereigns (TR) is hiding.
+			-- But they certainly won't reveal that information to us so easily.
+			say(c_locale(11589))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation7b")
+		end
+	end
+
+	state investigation7b begin
+		when letter begin
+			-- Obtain a Time Rift Tree Emerald
+			send_letter(c_locale(11585))
+		end
+
+		when button or info begin
+			-- Obtain a Time Rift Tree Emerald
+			say_title(c_locale(11585))
+
+			-- Kill the En-Tai Sovereign (TR) and obtain a Time Rift Tree Emerald.
+			say(c_locale(11590))
+		end
+
+		-- Obtain a Time Rift Tree Emerald
+		when 20521.chat.c_locale(11585) begin
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- You can't be back already! Come on, get the Tree Emerald.
+			-- And hurry up about it!
+			say(c_locale(4589))
+		end
+
+		when 4265.party_kill begin
+			if pc.enough_inventory(31165) then
+				pc.give_item2(31165, 1)
+
+				-- You received a Tree Emerald from the En-Tai Sovereign.
+				-- Take it to the TR: Outrider of the Forest.
+				notice_multiline(c_locale(11581), notice)
+
+				set_state("investigation7_reward")
+			end
+		end
+	end
+
+	state investigation7_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20521)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(20521))
+			end
+
+			-- Obtain a Time Rift Tree Emerald
+			send_letter(c_locale(11585))
+		end
+
+		when button or info begin
+			-- Obtain a Time Rift Tree Emerald
+			say_title(c_locale(11585))
+
+			-- Talk to the TR: Outrider of the Forest.
+			say(c_locale(11592))
+		end
+
+		-- Obtain a Time Rift Tree Emerald
+		when __TARGET__.target.click or 20521.chat.c_locale(11585) begin
+
+			if not pc.enough_inventory(31161) then
+				-- TR: Outrider of the For.
+				say_title(c_mob_name(20521))
+
+				-- Too bad. You don't have any space in your inventory.
+				-- Come back once you have cleared up.
+				say(c_locale(11597))
+				return
+			end
+
+			target.delete("__TARGET__")
+
+			pc.remove_item(31165, 1)
+			pc.give_exp2(11650000)
+			pc.change_money(200000)
+			pc.give_item2(31161, 1)
+			pc.setqf("complete", 1)
+
+			-- TR: Outrider of the For.
+			say_title(c_mob_name(20521))
+
+			-- You did it! How fortunate I am to be able to see this with my own eyes!
+			-- Well, time for me to try to tempt out a dryad and capture it in the Time Rift Tree Emerald.
+			say(c_locale(11593))
+
+			-- We did it! Brave warrior, take this. It's the Stone of the Dryads.
+			-- The En-Tai Sovereigns protect the true King of the En-Tai with powerful spells.
+			-- You'll only be able to confront Jotun Thrym if you're carrying this stone with you.
+			-- Quickly now, find the leader of the Forest Guardians!
+			say(c_locale(11594))
+
+			-- You have received %s.
+			say_reward(c_locale(11599, c_item_name(31161)))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(5825000)))
+
+			-- You have received %s.
+			say_reward(c_locale(11599, number_to_money_string(200000, c_locale(3415))))
+
+			set_state("investigation1a")
+		end
+	end
+end

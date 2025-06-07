@@ -1,0 +1,51 @@
+quest main_quest_lv9 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 9 begin
+			set_state(gototeacher)
+		end
+	end
+
+	state gototeacher begin
+		when letter begin
+			send_letter(c_locale(5612))
+			local v = find_npc_by_vnum(20354)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5611))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5612))
+			say(c_locale(5613))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4940))
+			say(c_locale(5614))
+			wait()
+
+			say_title(c_locale(4940))
+			say(c_locale(5615))
+
+			say_title(c_locale(205))
+			say_reward(c_locale(4944))
+
+			pc.give_exp2(9500)
+			pc.change_money(2000)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv10", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

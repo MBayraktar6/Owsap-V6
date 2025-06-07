@@ -1,0 +1,73 @@
+define GOLDEN_TUNA_VNUM 27797
+define WHITE_PEARL_VNUM 27992
+define BLUE_PEARL_VNUM 27993
+define KELPIE_CHEST_VNUM 83032
+define CARBON_ROD_VNUM 27591
+define CLAM_VNUM 27987
+define BONUS_DURATION_LONG 3600
+define BONUS_DURATION_SHORT 300
+define APPEAR_DELAY_LONG 86400
+define APPEAR_DELAY_SHORT 10800
+
+quest golden_tuna begin
+	state start begin
+		when GOLDEN_TUNA_VNUM.fish or GOLDEN_TUNA_VNUM.use begin
+			say_title(c_locale(10862))
+			say(c_locale(10863))
+
+			local s = select(c_locale(10864), c_locale(10865), c_locale(10866))
+
+			if s == 1 then
+
+				local pct = number(1, 100)
+				if pct <= 30 then
+					say(c_locale(10867))
+					say_reward(c_locale(10868))
+
+					affect.add_buff(AFFECT_FISHING_GOLD_TUNA, { { POINT_NONE, 0 } }, 0, BONUS_DURATION_LONG, true)
+				else
+					say(c_locale(10869))
+					say(c_locale(10870))
+
+					affect.add_buff(AFFECT_FISHING_MOVE_SPEED_DOWN, { { POINT_MOV_SPEED, -50 } }, 5, BONUS_DURATION_SHORT, true)
+				end
+				pc.remove_item(GOLDEN_TUNA_VNUM, 1)
+
+			elseif s == 2 then
+
+				local pct = number(1, 100)
+				if pct <= 1 then
+					pc.give_item2(CARBON_ROD_VNUM, 1)
+				elseif pct <= 17 then
+					pc.give_item2(BLUE_PEARL_VNUM, 1)
+				elseif pct <= 29 then
+					pc.give_item2(WHITE_PEARL_VNUM, 1)
+				elseif pct <= 44 then
+					pc.give_item2(KELPIE_CHEST_VNUM, 1)
+				elseif pct <= 64 then
+					pc.give_item2(CLAM_VNUM, 1)
+				else
+					syschat(c_locale_string(1432))
+				end
+
+				pc.remove_item(GOLDEN_TUNA_VNUM, 1)
+				if is_test_server() then
+					pc.setqf("appear_delay", get_time() + 300)
+				else
+					pc.setqf("appear_delay", get_time() + APPEAR_DELAY_LONG)
+				end
+
+			elseif s == 3 then
+
+				affect.add_buff(AFFECT_FISHING_GOLD_TUNA, { { POINT_NONE, 0 } }, 0, BONUS_DURATION_SHORT, true)
+				pc.remove_item(GOLDEN_TUNA_VNUM, 1)
+
+				if is_test_server() then
+					pc.setqf("appear_delay", get_time() + 60)
+				else
+					pc.setqf("appear_delay", get_time() + APPEAR_DELAY_SHORT)
+				end
+			end
+		end
+	end
+end

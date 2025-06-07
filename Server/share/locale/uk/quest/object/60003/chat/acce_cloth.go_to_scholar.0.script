@@ -1,0 +1,17 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_mob_name ( 60003 ) ) 
+say ( c_locale ( 13 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 60003 ) ) 
+say ( c_locale ( 14 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 60003 ) ) 
+say ( c_locale ( 15 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 60003 ) ) 
+say ( c_locale ( 16 ) ) 
+say_item_vnum ( 80019 ) 
+if select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) == 1 then 
+notice_multiline ( c_locale ( 17 ) , notice ) 
+set_state ( "go_to_captain" ) 
+end 

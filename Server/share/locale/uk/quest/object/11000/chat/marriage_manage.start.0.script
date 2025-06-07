@@ -1,0 +1,82 @@
+if not marriage_manage . check_divorce_time ( ) then 
+return 
+end 
+local u_vid = marriage . find_married_vid ( ) 
+if u_vid == 0 or not npc . is_near_vid ( u_vid , 10 ) then 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6563 ) ) 
+return 
+end 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6565 ) ) 
+local MONEY_NEED_FOR_ONE = 500000 
+local s = select ( c_locale ( 2263 ) , c_locale ( 6566 ) ) 
+if s == 1 then 
+local m_enough_money = pc . gold > MONEY_NEED_FOR_ONE 
+local m_have_ring = pc . countitem ( 70302 ) > 0 
+local old = pc . select ( u_vid ) 
+local u_enough_money = pc . get_gold ( ) > MONEY_NEED_FOR_ONE 
+local u_have_ring = pc . countitem ( 70302 ) > 0 
+pc . select ( old ) 
+if not m_have_ring then 
+say ( c_locale ( 6567 ) ) 
+return 
+end 
+if not u_have_ring then 
+say ( c_locale ( 6568 ) ) 
+return 
+end 
+if not m_enough_money then 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6569 ) ) 
+say_reward ( c_locale ( 6570 , MONEY_NEED_FOR_ONE ) ) 
+return 
+end 
+if not u_enough_money then 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6569 ) ) 
+say_reward ( c_locale ( 6571 ) ) 
+return 
+end 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6572 ) ) 
+local c = select ( c_locale ( 2263 ) , c_locale ( 6573 ) ) 
+if 2 == c then 
+say_pc_name ( ) 
+say ( c_locale ( 6574 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6576 ) ) 
+say_reward ( c_locale ( 6577 ) ) 
+return 
+end 
+local ok_sign = confirm ( u_vid , c_locale ( 6578 ) , 30 ) 
+if ok_sign == CONFIRM_OK then 
+local m_enough_money = pc . get_gold ( ) > MONEY_NEED_FOR_ONE 
+local m_have_ring = pc . countitem ( 70302 ) > 0 
+local old = pc . select ( u_vid ) 
+local u_enough_money = pc . get_gold ( ) > MONEY_NEED_FOR_ONE 
+local u_have_ring = pc . countitem ( 70302 ) > 0 
+pc . select ( old ) 
+if m_have_ring and m_enough_money and u_have_ring and u_enough_money then 
+pc . removeitem ( 70302 , 1 ) 
+pc . change_money ( - MONEY_NEED_FOR_ONE ) 
+local old = pc . select ( u_vid ) 
+pc . removeitem ( 70302 , 1 ) 
+pc . change_money ( - MONEY_NEED_FOR_ONE ) 
+pc . select ( old ) 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6579 ) ) 
+say_reward ( c_locale ( 6577 ) ) 
+marriage . remove ( ) 
+else 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6580 ) ) 
+say_reward ( c_locale ( 6581 ) ) 
+end 
+else 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6582 ) ) 
+say_reward ( c_locale ( 6581 ) ) 
+end 
+end 

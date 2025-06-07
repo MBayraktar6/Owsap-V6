@@ -1,0 +1,77 @@
+quest gem_system begin
+	state start begin
+		function RefinePctByMapIndex(map_index)
+			if map_index == 359 then
+				return 70
+			end
+			return 30
+		end
+
+		when 20433.chat.c_locale(10148) with pc.get_map_index() == 359 begin -- Harbour Gaya Market
+			setskin(NOWINDOW)
+			game.open_gem_shop(true)
+		end
+
+		when 20504.chat.c_locale(1458) begin -- What is the Gaya Market?
+			say(c_locale(1459)) -- Have you heard about the Gaya Market?
+			say(c_locale(1460)) -- No? Ah, it's well worth a visit. You can purchase[ENTER]really fine goods there.
+			say(c_locale(1461)) -- Sometimes you can even come across extremely[ENTER]valuable commodities.
+			say(c_locale(1462)) -- Do you want to open the Gaya Market now?
+			if select(c_locale(1475), c_locale(1476)) == 1 then -- Yes, No
+				setskin(NOWINDOW)
+				game.open_gem_shop()
+			end
+		end
+
+		when 20503.chat.c_locale(1463) or 20433.chat.c_locale(1463) begin -- Cut Glimmerstones
+			say(c_locale(1464)) -- Do you want to cut your Glimmerstones into 3 Gaya[ENTER]now?
+			say(c_locale(1465, 30)) -- Please give me this amount of Glimmerstones: %d
+		end
+
+		when 20503.take or 20433.take with item.get_vnum() == 50926 begin
+			say(c_locale(1466, 30)) -- I need %d Glimmerstones, 15,000 Yang plus
+			say(c_locale(1467)) -- a level +0, +1, +2 or +3 Spirit Stone
+			say(c_locale(1468)) -- in order to craft 3 valuable Gaya.
+			say(c_locale(1469, gem_system.RefinePctByMapIndex(pc.get_map_index()), 15000)) -- My success rate is %d%%... oh, and it'll cost you[ENTER]%s Yang.
+			say(c_locale(1470)) -- Shall I continue?
+			if select(c_locale(1475), c_locale(1476)) == 1 then
+				if pc.get_gold() < 15000 then
+					return say(c_locale(1471)) -- You don't have enough Yang.
+				end
+
+				if pc.get_gem() >= (999999 - 3) then
+					return say(c_locale(1472)) -- Your Gaya balance is already full to bursting.[ENTER]You can't accept any more.
+				end
+
+				local has_stone = false
+				for stone = 28000, 28345 do -- all +0 to +3 stones
+					if pc.count_item(stone) > 0 then
+						has_stone = true
+						break
+					end
+				end
+
+				if not has_stone then
+					return say(c_locale(1473)) -- The refinement could not be carried out.
+				end
+
+				if pc.count_item(50926) < 30 then
+					return say(c_locale(1474, 30)) -- Please gather some more Glimmerstones. You need[ENTER]%d.
+				end
+
+				pc.select_item_ex()
+			end
+		end
+
+		when 70608.use begin
+			local value = 9999
+			if pc.get_gem() + value >= 999999 then
+				syschat(c_locale(14215))
+				return
+			end
+
+			item.remove()
+			pc.give_gem(value)
+		end
+	end
+end

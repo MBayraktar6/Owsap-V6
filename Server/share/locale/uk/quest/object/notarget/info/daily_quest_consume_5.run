@@ -1,0 +1,4 @@
+say_title ( special . daily_quest . table [ "consume" ] [ 3 ] [ "title" ] ) 
+say ( special . daily_quest . table [ "consume" ] [ 3 ] [ "desc" ] ) 
+say_reward ( special . daily_quest . table [ "consume" ] [ 3 ] [ "reward" ] ) 
+daily_quest_consume_5 . update ( ) 

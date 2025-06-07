@@ -1,0 +1,101 @@
+awaken_snow_dungeon={["start"]=0,setting= function ()return { 
+[ "entry_map_index" ] = 363 , 
+[ "entry_start_pos" ] = { 3197 , 18045 } , 
+[ "dungeon_map_index" ] = 370 , 
+[ "dungeon_man" ] = 20536 , 
+[ "dungeon_man_dir" ] = 0 , 
+[ "dungeon_man_pos" ] = { 172 , 261 } , 
+[ "dungeon_man_last_pos" ] = { 849 , 641 } , 
+[ "dungeon_exit_time" ] = 60 , 
+[ "dungeon_rejoin_time" ] = 60 , 
+[ "regen_file_path" ] = "data/dungeon/awaken_snow_dungeon/" , 
+[ "floor_pos" ] = { 
+{ 2475 , 19990 } , 
+{ 2724 , 19973 } , 
+{ 3066 , 19976 } , 
+{ 2477 , 20247 } , 
+{ 2724 , 20250 } , 
+{ 3050 , 20252 } , 
+{ 2607 , 20420 } , 
+{ 2873 , 20413 } , 
+{ 3153 , 20405 } , 
+{ 3231 , 20100 } , 
+} , 
+[ "floor_check_time" ] = 6 , 
+[ "floor_jump_time" ] = 5 , 
+[ "level2_key" ] = 31189 , 
+[ "level2_key_drop_pct" ] = 30 , 
+[ "level2_key_use_pct" ] = 30 , 
+[ "level4_boss" ] = 4329 , 
+[ "level4_boss_pos" ] = { 
+{ 160 , 490 } , 
+{ 215 , 440 } , 
+{ 140 , 425 } 
+} , 
+[ "level5_cube" ] = 20537 , 
+[ "level5_cube_pos" ] = { 
+{ 449 , 488 } , 
+{ 455 , 445 } , 
+{ 419 , 422 } , 
+{ 382 , 444 } , 
+{ 389 , 488 } 
+} , 
+[ "level5_key" ] = 31190 , 
+[ "level5_key_drop_pct" ] = 30 , 
+[ "level5_gen_limit" ] = 100 , 
+[ "level6_stone" ] = 8135 , 
+[ "level6_stone_pos" ] = { 747 , 494 } , 
+[ "level7_boss" ] = 4329 , 
+[ "level7_boss_pos" ] = { 
+{ 302 , 678 } , 
+{ 281 , 657 } , 
+{ 303 , 635 } , 
+{ 324 , 656 } 
+} , 
+[ "level8_key" ] = 31191 , 
+[ "level8_key_drop_pct" ] = 3 , 
+[ "level9_stone" ] = 20538 , 
+[ "level9_stone_pos" ] = { 849 , 660 } , 
+[ "final_boss" ] = 4412 , 
+[ "final_boss_pos" ] = { 927 , 333 } , 
+} 
+end ,in_dungeon= function (idx)return idx >= 370 * 10000 and idx < ( 370 + 1 ) * 10000 
+end ,warp_out= function ()local setting = awaken_snow_dungeon . setting ( ) 
+pc . warp ( setting . entry_start_pos [ 1 ] * 100 , setting . entry_start_pos [ 2 ] * 100 , setting . entry_map_index ) 
+end ,create= function (idx)local setting = awaken_snow_dungeon . setting ( ) 
+party . setf ( "dungeon_index" , idx ) 
+d . setf ( "created" , 1 ) 
+d . setf ( "started" , 0 ) 
+d . setf ( "finished" , 0 ) 
+d . setf ( "party_leader_pid" , party . get_leader_pid ( ) ) 
+d . regen_file ( setting . regen_file_path .. "npc.txt" ) 
+d . notice ( c_locale ( 11501 , 60 ) ) 
+d . notice ( c_locale ( 11502 ) ) 
+server_timer ( "awaken_snow_dungeon_45m_left_timer" , 60 * 15 , idx ) 
+end ,clear_and_exit= function (idx)local setting = awaken_snow_dungeon . setting ( ) 
+awaken_snow_dungeon . clear_level ( idx ) 
+d . set_warp_location ( setting . entry_map_index , setting . entry_start_pos [ 1 ] , setting . entry_start_pos [ 2 ] ) 
+d . exit_all ( ) 
+end ,clear_level= function (idx)awaken_snow_dungeon . clear_server_loop_timer ( idx ) 
+d . clear_regen ( ) 
+d . purge_area ( 238400 , 1.9726e+06 , 330400 , 2.0462e+06 ) 
+end ,clear_server_loop_timer= function (idx)clear_server_timer ( "awaken_snow_dungeon_check_timer" , idx ) 
+end ,clear_server_timers= function (idx)clear_server_timer ( "awaken_snow_dungeon_floor2_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor3_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor4_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor5_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor6_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor7_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor8_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor9_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_floor10_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_check_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_45m_left_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_30m_left_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_15m_left_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_5m_left_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_1m_left_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_0m_left_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_end_timer" , idx ) 
+clear_server_timer ( "awaken_snow_dungeon_quit_timer" , idx ) 
+end }

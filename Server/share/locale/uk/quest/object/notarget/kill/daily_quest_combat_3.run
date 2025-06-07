@@ -1,0 +1,10 @@
+if not npc . is_stone ( ) then 
+return 
+end 
+local level_difference = 15 
+local min_limit = npc . get_level ( ) - level_difference 
+local max_limit = npc . get_level ( ) + level_difference 
+if pc . get_level ( ) >= min_limit and pc . get_level ( ) <= max_limit then 
+pc . setqf ( "count" , pc . getqf ( "count" ) + 1 ) 
+daily_quest_combat_3 . update ( ) 
+end 

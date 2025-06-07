@@ -1,0 +1,220 @@
+#
+# Elemental Realm
+#
+
+Group	Á¤·ÉÀÇ¶¥_°©¿Ê_ºÒ
+{
+	mob	3980
+	1	39091	1	10 -- Holy Armour Shard I
+	2	39092	1	10 -- Glorious Armour Shard I
+	3	39093	1	10 -- Chiv. Armour Shard I
+	4	39111	1	10 -- Armour Set Design
+	5	39114	1	20 -- Primal Force Ring
+	6	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Çï¸ä_Àü±â
+{
+	mob	3981
+	1	39085	1	10 -- Holy Helmet Shard I
+	2	39086	1	10 -- Glorious Helmet Shard I
+	3	39087	1	10 -- Chiv. Helmet Shard I
+	4	39110	1	10 -- Helmet Set Design
+	5	39114	1	20 -- Primal Force Ring
+	6	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Çï¸ä_³Ã±â
+{
+	mob	3982
+	1	39085	1	10 -- Holy Helmet Shard I
+	2	39086	1	10 -- Glorious Helmet Shard I
+	3	39087	1	10 -- Chiv. Helmet Shard I
+	4	39110	1	10 -- Helmet Set Design
+	5	39114	1	20 -- Primal Force Ring
+	6	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_°©¿Ê_¹Ù¶÷
+{
+	mob	3983
+	1	39091	1	10 -- Holy Armour Shard I
+	2	39092	1	10 -- Glorious Armour Shard I
+	3	39093	1	10 -- Chiv. Armour Shard I
+	4	39111	1	10 -- Armour Set Design
+	5	39114	1	20 -- Primal Force Ring
+	6	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_¹«±â_´ëÁö
+{
+	mob	3984
+	1	39097	1	10 -- Holy Weapon Shard I
+	2	39098	1	10 -- Glorious Weapon Shard I
+	3	39099	1	10 -- Chiv. Weapon Shard I
+	4	39112	1	10 -- Weapon Set Design
+	5	39114	1	20 -- Primal Force Ring
+	6	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_¹«±â_¾îµÒ
+{
+	mob	3985
+	1	39097	1	10 -- Holy Weapon Shard I
+	2	39098	1	10 -- Glorious Weapon Shard I
+	3	39099	1	10 -- Chiv. Weapon Shard I
+	4	39112	1	10 -- Weapon Set Design
+	5	39114	1	20 -- Primal Force Ring
+	6	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Á¹°³_ºÒ
+{
+	mob	3986
+	1	39091	1	10 -- Holy Armour Shard I
+	2	39113	1	5 -- Medal of Primal Force
+	3	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Á¹°³_³Ã±â
+{
+	mob	3987
+	1	39085	1	10 -- Holy Helmet Shard I
+	2	39113	1	5 -- Medal of Primal Force
+	3	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Á¹°³_Àü±â
+{
+	mob	3988
+	1	39085	1	10 -- Holy Helmet Shard I
+	2	39113	1	5 -- Medal of Primal Force
+	3	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Á¹°³_¹Ù¶÷
+{
+	mob	3989
+	1	39091	1	10 -- Holy Armour Shard I
+	2	39113	1	5 -- Medal of Primal Force
+	3	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Á¹°³_´ëÁö
+{
+	mob	3990
+	1	39097	1	10 -- Holy Weapon Shard I
+	2	39113	1	5 -- Medal of Primal Force
+	3	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Á¹°³_¾îµÒ
+{
+	mob	3991
+	1	39097	1	10 -- Holy Weapon Shard I
+	2	39113	1	5 -- Medal of Primal Force
+	3	27007	1	30 -- Red Potion (XXL)
+}
+Group	Á¤·ÉÀÇ¶¥_Æ¯¼ö°ø°£_ºÒ
+{
+	mob	3992
+	1	39088	1	10 -- Holy Helmet Shard II
+	2	39089	1	10 -- Glorious Helmet Shard II
+	3	39090	1	10 -- Chiv. Helmet Shard II
+	4	39094	1	10 -- Holy Armour Shard II
+	5	39095	1	10 -- Glorious Armour Shard II
+	6	39096	1	10 -- Chiv. Armour Shard II
+	7	39100	1	10 -- Holy Weapon Shard II
+	8	39101	1	10 -- Glorious Weapon Shard II
+	9	39102	1	10 -- Chiv. Weapon Shard II
+	10	39112	1	20 -- Weapon Set Design
+	11	39111	1	20 -- Armour Set Design
+	12	39110	1	20 -- Helmet Set Design
+	13	27007	1	30 -- Red Potion (XXL)
+	14	50338	1	5 -- Charisma of a Rookie
+	15	50341	1	5 -- Inspiration of a Rookie
+}
+Group	Á¤·ÉÀÇ¶¥_Æ¯¼ö°ø°£_³Ã±â
+{
+	mob	3993
+	1	39088	1	10 -- Holy Helmet Shard II
+	2	39089	1	10 -- Glorious Helmet Shard II
+	3	39090	1	10 -- Chiv. Helmet Shard II
+	4	39094	1	10 -- Holy Armour Shard II
+	5	39095	1	10 -- Glorious Armour Shard II
+	6	39096	1	10 -- Chiv. Armour Shard II
+	7	39100	1	10 -- Holy Weapon Shard II
+	8	39101	1	10 -- Glorious Weapon Shard II
+	9	39102	1	10 -- Chiv. Weapon Shard II
+	10	39112	1	20 -- Weapon Set Design
+	11	39111	1	20 -- Armour Set Design
+	12	39110	1	20 -- Helmet Set Design
+	13	27007	1	30 -- Red Potion (XXL)
+	14	50338	1	5 -- Charisma of a Rookie
+	15	50341	1	5 -- Inspiration of a Rookie
+}
+Group	Á¤·ÉÀÇ¶¥_Æ¯¼ö°ø°£_Àü±â
+{
+	mob	3994
+	1	39088	1	10 -- Holy Helmet Shard II
+	2	39089	1	10 -- Glorious Helmet Shard II
+	3	39090	1	10 -- Chiv. Helmet Shard II
+	4	39094	1	10 -- Holy Armour Shard II
+	5	39095	1	10 -- Glorious Armour Shard II
+	6	39096	1	10 -- Chiv. Armour Shard II
+	7	39100	1	10 -- Holy Weapon Shard II
+	8	39101	1	10 -- Glorious Weapon Shard II
+	9	39102	1	10 -- Chiv. Weapon Shard II
+	10	39112	1	20 -- Weapon Set Design
+	11	39111	1	20 -- Armour Set Design
+	12	39110	1	20 -- Helmet Set Design
+	13	27007	1	30 -- Red Potion (XXL)
+	14	50338	1	5 -- Charisma of a Rookie
+	15	50341	1	5 -- Inspiration of a Rookie
+}
+Group	Á¤·ÉÀÇ¶¥_Æ¯¼ö°ø°£_¹Ù¶÷
+{
+	mob	3995
+	1	39088	1	10 -- Holy Helmet Shard II
+	2	39089	1	10 -- Glorious Helmet Shard II
+	3	39090	1	10 -- Chiv. Helmet Shard II
+	4	39094	1	10 -- Holy Armour Shard II
+	5	39095	1	10 -- Glorious Armour Shard II
+	6	39096	1	10 -- Chiv. Armour Shard II
+	7	39100	1	10 -- Holy Weapon Shard II
+	8	39101	1	10 -- Glorious Weapon Shard II
+	9	39102	1	10 -- Chiv. Weapon Shard II
+	10	39112	1	20 -- Weapon Set Design
+	11	39111	1	20 -- Armour Set Design
+	12	39110	1	20 -- Helmet Set Design
+	13	27007	1	30 -- Red Potion (XXL)
+	14	50338	1	5 -- Charisma of a Rookie
+	15	50341	1	5 -- Inspiration of a Rookie
+}
+Group	Á¤·ÉÀÇ¶¥_Æ¯¼ö°ø°£_´ëÁö
+{
+	mob	3996
+	1	39088	1	10 -- Holy Helmet Shard II
+	2	39089	1	10 -- Glorious Helmet Shard II
+	3	39090	1	10 -- Chiv. Helmet Shard II
+	4	39094	1	10 -- Holy Armour Shard II
+	5	39095	1	10 -- Glorious Armour Shard II
+	6	39096	1	10 -- Chiv. Armour Shard II
+	7	39100	1	10 -- Holy Weapon Shard II
+	8	39101	1	10 -- Glorious Weapon Shard II
+	9	39102	1	10 -- Chiv. Weapon Shard II
+	10	39112	1	20 -- Weapon Set Design
+	11	39111	1	20 -- Armour Set Design
+	12	39110	1	20 -- Helmet Set Design
+	13	27007	1	30 -- Red Potion (XXL)
+	14	50338	1	5 -- Charisma of a Rookie
+	15	50341	1	5 -- Inspiration of a Rookie
+}
+Group	Á¤·ÉÀÇ¶¥_Æ¯¼ö°ø°£_¾îµÒ
+{
+	mob	3997
+	1	39088	1	10 -- Holy Helmet Shard II
+	2	39089	1	10 -- Glorious Helmet Shard II
+	3	39090	1	10 -- Chiv. Helmet Shard II
+	4	39094	1	10 -- Holy Armour Shard II
+	5	39095	1	10 -- Glorious Armour Shard II
+	6	39096	1	10 -- Chiv. Armour Shard II
+	7	39100	1	10 -- Holy Weapon Shard II
+	8	39101	1	10 -- Glorious Weapon Shard II
+	9	39102	1	10 -- Chiv. Weapon Shard II
+	10	39112	1	20 -- Weapon Set Design
+	11	39111	1	20 -- Armour Set Design
+	12	39110	1	20 -- Helmet Set Design
+	13	27007	1	30 -- Red Potion (XXL)
+	14	50338	1	5 -- Charisma of a Rookie
+	15	50341	1	5 -- Inspiration of a Rookie
+}

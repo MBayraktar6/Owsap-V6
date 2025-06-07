@@ -1,0 +1,4 @@
+target . delete ( "__TARGET__" ) 
+say_title ( pc . getname ( ) ) 
+say ( c_locale ( 8281 ) ) 
+set_state ( "step3" ) 

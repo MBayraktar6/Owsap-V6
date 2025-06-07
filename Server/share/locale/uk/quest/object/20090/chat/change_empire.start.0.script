@@ -1,0 +1,11 @@
+local count = pc . get_change_empire_count ( ) 
+if count >= 1 then 
+say ( c_locale ( 136 ) ) 
+return 
+end 
+say_title ( c_locale ( 125 ) ) 
+say ( c_locale ( 146 ) ) 
+local s = select ( c_locale ( 4473 ) , c_locale ( 2426 ) ) 
+if s == 1 then 
+change_empire . move_pc ( ) 
+end 

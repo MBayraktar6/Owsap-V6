@@ -1,0 +1,4 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 4956 ) ) 
+say ( c_locale ( 5019 ) ) 
+set_state ( "killrobber" ) 

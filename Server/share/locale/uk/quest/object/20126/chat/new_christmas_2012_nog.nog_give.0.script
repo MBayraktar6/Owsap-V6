@@ -1,0 +1,12 @@
+say_title ( c_mob_name ( 20126 ) ) 
+say ( c_locale ( 6701 ) ) 
+wait ( ) 
+if get_global_time ( ) - pc . getqf ( "last_nog_give_time" ) >= 86400 then 
+say_title ( c_mob_name ( 20126 ) ) 
+say ( c_locale ( 6702 ) ) 
+pc . setqf ( "last_nog_give_time" , get_global_time ( ) ) 
+pc . give_item2 ( 50216 , 6 ) 
+else 
+say_title ( c_mob_name ( 20126 ) ) 
+say ( c_locale ( 6703 ) ) 
+end 

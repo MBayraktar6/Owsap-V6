@@ -1,0 +1,149 @@
+quest source_of_the_devil begin
+	state start begin
+	end
+
+	state run begin
+		when letter begin
+			send_letter(c_locale(6370))
+			local v = find_npc_by_vnum(20400)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6370))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6370))
+			say(c_locale(6385))
+		end
+
+		when __TARGET__.target.click or 20400.chat.c_locale(6370) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_item2(27001, 10)
+
+			say_title(c_mob_name(20400))
+			say(c_locale(6371))
+			wait()
+
+			say_title(c_mob_name(20400))
+			say(c_locale(6372))
+			say_reward(c_locale(5043, c_item_name(27001), 10))
+
+			set_state("goto_portal_guard")
+		end
+	end
+
+	state goto_portal_guard begin
+		when letter begin
+			send_letter(c_locale(6373))
+			local v = find_npc_by_vnum(20402)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6370))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6373))
+			say(c_locale(6410))
+		end
+
+		when __TARGET__.target.click or 20402.chat.c_locale(6373) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(300)
+
+			say_title(c_mob_name(20402))
+			say(c_locale(6374))
+			say_reward(c_locale(6882, 300))
+
+			set_state("bear_hunt")
+		end
+	end
+
+	-- The whole state can be way easier to create if we stick to the official way (one bear)
+	-- But it won't allow for any flexibility in the code.
+	-- So let's do it the "maintainable" way.
+	state bear_hunt begin
+		function update_counter()
+			local count = 0
+			local remaining_count = 1 - pc.getqf("hunted_bears")
+
+			if remaining_count < 0 then
+				remaining_count = 0
+			end
+
+			count = count + remaining_count
+			q.set_counter_value(count)
+			if count == 0 then
+				notice(c_locale(6378))
+				set_state("goto_portal_guard2")
+			end
+		end
+
+		when enter begin
+			pc.setqf("hunted_bears", 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(6411))
+			q.set_counter_name(c_locale(6412))
+			source_of_the_devil.update_counter()
+		end
+
+		when button or info begin
+			say_title(c_locale(6411))
+			say(c_locale(6376))
+		end
+
+		when 5204.kill begin
+			local count = pc.getqf("hunted_bears")
+			pc.setqf("hunted_bears", count + 1)
+			source_of_the_devil.update_counter()
+		end
+
+		when leave begin
+			pc.setqf("hunted_bears", 0)
+			q.done()
+		end
+	end
+
+	state goto_portal_guard2 begin
+		when letter begin
+			send_letter(c_locale(6379))
+			local v = find_npc_by_vnum(20402)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6379))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6379))
+			say(c_locale(6378))
+		end
+
+		when __TARGET__.target.click or 20402.chat.c_locale(6379) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(450)
+			pc.give_item2(27001, 10)
+
+			say_title(c_mob_name(20402))
+			say(c_locale(6375))
+			say_reward(c_locale(5043, c_item_name(27001), 10))
+			say_reward(c_locale(6882, 450))
+			wait()
+
+			say_title(c_mob_name(20402))
+			say(c_locale(6380, 1))
+
+			set_state("__COMPLETE__")
+			set_quest_state("meteorite_hunt", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

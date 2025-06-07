@@ -1,0 +1,6 @@
+if number ( 1 , 10 ) == 1 then 
+say_title ( c_locale ( 5021 ) ) 
+say ( c_locale ( 5023 ) ) 
+pc . give_item2 ( 30001 , 1 ) 
+set_state ( "gotoboss2" ) 
+end 

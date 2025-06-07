@@ -1,0 +1,34 @@
+local setting = awaken_snow_dungeon . setting ( ) 
+if not party . is_party ( ) then 
+say ( c_locale ( 11414 ) ) 
+return 
+end 
+if not party . is_leader ( ) then 
+say ( c_locale ( 11292 ) ) 
+return 
+end 
+local pids = { party . get_member_pids ( ) } 
+local assassin_check = false 
+local shaman_check = false 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if pc . get_job ( ) == ASSASSIN then 
+assassin_check = true 
+end 
+if pc . get_job ( ) == SHAMAN then 
+shaman_check = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not assassin_check and not shaman_check then 
+say ( c_locale ( 11683 ) ) 
+return 
+end 
+if d . getf ( "started" ) == 0 then 
+say ( c_locale ( 11479 ) ) 
+d . setf ( "started" , 1 ) 
+d . setf ( "level" , 1 ) 
+d . notice ( c_locale ( 11441 ) ) 
+d . regen_file ( setting . regen_file_path .. "sd_1.txt" ) 
+server_loop_timer ( "awaken_snow_dungeon_check_timer" , setting . floor_check_time , d . get_map_index ( ) ) 
+end 

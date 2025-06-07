@@ -1,0 +1,28 @@
+minigame_roulette={["start"]=0,get_random_week_item= function ()local week_item_table = { 
+[ 1 ] = { { 30090 , 10 } , { 30048 , 10 } , { 30089 , 10 } , { 30625 , 10 } } , 
+[ 2 ] = { { 30005 , 10 } , { 30019 , 10 } , { 30010 , 10 } , { 30626 , 10 } } , 
+[ 3 ] = { { 30022 , 10 } , { 27987 , 10 } , { 30040 , 10 } , { 30627 , 10 } } , 
+[ 4 ] = { { 30030 , 10 } , { 30021 , 10 } , { 30051 , 10 } , { 30628 , 10 } } , 
+[ 5 ] = { { 30052 , 10 } , { 30520 , 10 } , { 30056 , 10 } , { 30629 , 10 } } , 
+[ 6 ] = { { 30015 , 10 } , { 30199 , 10 } , { 30078 , 10 } , { 30076 , 10 } } , 
+} 
+local day_of_week = tonumber ( os . date ( "%w" ) ) 
+local today_item_table = { } 
+if day_of_week == 0 then 
+for _ , day_items in ipairs ( week_item_table ) begin 
+for _ , item in ipairs ( day_items ) begin 
+table . insert ( today_item_table , item ) 
+end 
+end 
+else 
+today_item_table = week_item_table [ day_of_week ] 
+end 
+local random_index = math . random ( 1 , table . getn ( today_item_table ) ) 
+local selected_item = today_item_table [ random_index ] 
+return selected_item [ 1 ] , selected_item [ 2 ] 
+end ,has_sacrifice= function ()if affect . find ( AFFECT_LATE_SUMMER_EVENT_BUFF ) or affect . find ( AFFECT_LATE_SUMMER_EVENT_PRIMIUM_BUFF ) then 
+return true 
+end 
+return false 
+end ,is_running= function ()return ( game . get_event_flag ( "e_late_summer" ) > 0 ) 
+end }

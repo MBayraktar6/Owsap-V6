@@ -1,0 +1,5 @@
+if pc . enough_inventory ( 31185 ) then 
+pc . give_item2 ( 31185 , 1 ) 
+notice_multiline ( c_locale ( 11673 ) , notice ) 
+set_state ( "investigation7_reward" ) 
+end 

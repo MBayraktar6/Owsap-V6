@@ -1,0 +1,15 @@
+forked.setdeadcount
+forked.getdeadcount
+forked.initkillcount
+forked.initforked
+forked.get_sungzi_start_pos
+forked.get_pass_start_pos
+forked.getsungzimapindex
+forked.getpassmapindexbyempire
+forked.getpasspathbyempire
+forked.isforkedmapindex
+forked.issungzimapindex
+forked.warp_all_in_map
+forked.is_registered_user
+forked.register_user
+forked.purge_all_monsters

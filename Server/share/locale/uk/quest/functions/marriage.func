@@ -1,0 +1,15 @@
+marriage.engage_to
+marriage.remove
+marriage.find_married_vid
+marriage.get_wedding_list
+marriage.join_wedding
+marriage.set_to_marriage
+marriage.end_wedding
+marriage.wedding_dark
+marriage.wedding_snow
+marriage.wedding_music
+marriage.wedding_is_playing_music
+marriage.wedding_client_command
+marriage.in_my_wedding
+marriage.warp_to_my_marriage_map
+marriage.get_married_time

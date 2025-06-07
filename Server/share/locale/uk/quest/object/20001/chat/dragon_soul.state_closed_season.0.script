@@ -1,0 +1,10 @@
+say_title ( c_mob_name ( 20001 ) ) 
+local today = math . floor ( get_global_time ( ) / 86400 ) 
+if today == pc . getf ( "dragon_soul" , "eye_timestamp" ) then 
+say ( c_locale ( 943 ) ) 
+else 
+say ( c_locale ( 944 ) ) 
+pc . setf ( "dragon_soul" , "eye_timestamp" , today ) 
+pc . setf ( "dragon_soul" , "eye_left" , 10 ) 
+set_state ( "state_farming" ) 
+end 

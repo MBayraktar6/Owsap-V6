@@ -1,0 +1,760 @@
+quest guild_dragon_lair begin
+	state start begin
+
+		-- "Sung Mahi's Dragons?"
+		when 20419.chat.c_locale(1761) with pc.get_map_index() == 62 begin
+			-- "I fear that many will not live to see the breaking dawn."
+			-- "Sung Mahi, the god of all demons, has reawakened..."
+			-- "and his three dragons with him."
+			say(c_locale(1762))
+
+			-- "They feed on the souls of men!"
+			-- "Once they have devoured enough, they strengthen Sung Mahi's power."
+			-- "And that... would mean the end. For all of us."
+			say(c_locale(1763))
+
+			-- "We cannot allow that to happen!"
+			-- "But it will take more than a single brave warrior."
+			-- "Only the united power of a guild can stand up to these scaly beasts of terror."
+			say(c_locale(1765))
+
+			-- "Can you help? Do you know any other adventurers who are as valiant as yourself?"
+			-- "Though be warned! We've heard disturbing tales about those who confronted the dragons."
+			say(c_locale(1766))
+
+			-- "They never returned..."
+			say(c_locale(1767))
+		end
+
+		-- <GM setting>
+		when 20419.chat.c_locale(1805) with pc.is_gm() begin
+			local s_name = {
+				c_locale(1806), -- Check current setting.
+				c_locale(1764), -- Change Level
+				c_locale(1776), -- Change Ladder Point
+				c_locale(1776), -- Change waiting time
+				c_locale(1798), -- Change maximum member
+				c_locale(1809), -- Forced termination
+				c_locale(1807), -- Metin stone Vnum
+				c_locale(1808), -- 1st phase HP
+				c_locale(1810), -- 2nd phase HP
+				c_locale(1811), -- 3rd phase HP
+			}
+			table.insert(s_name, c_locale(1845)) -- "Cancel"
+			local s = select_table(s_name)
+			if s == table.getn(s_name) then
+				return
+			end
+
+			if s == 1 then
+				say(c_locale(1820, GuildDragonLairSetting.Guild.GuildLevel)) -- "Level limit : %d"
+				say(c_locale(1831, GuildDragonLairSetting.Guild.LadderPoint)) -- "Ladder point limit: %d"
+				say(c_locale(1842, GuildDragonLairSetting.Guild.WaitTime)) -- "Waiting time(sec.) : %d"
+				say(c_locale(1812, GuildDragonLairSetting.Guild.StoneVnum)) -- "Metin stone number : %d"
+				say(c_locale(1813, GuildDragonLairSetting.Guild.Stage[1].StoneHealthPct)) -- "1st phase HP : %d"
+				say(c_locale(1814, GuildDragonLairSetting.Guild.Stage[2].StoneHealthPct)) -- "2nd phase HP : %d"
+				say(c_locale(1815, GuildDragonLairSetting.Guild.Stage[3].StoneHealthPct)) -- "3rd phase HP : %d"
+
+			elseif s == 2 then
+				say(c_locale(1755)) -- "Please input level."
+				say_reward(c_locale(1754, 20)) -- "Maximum number: %d"
+				local level = tonumber(input())
+				if level == nil or level <= 0 then level = 3 end
+				if level > 20 then level = 20 end
+				GuildDragonLairSetting.Guild.GuildLevel = level
+
+			elseif s == 3 then
+				say(c_locale(1756)) -- "Please input ladder point."
+				ladder_point = tonumber(input())
+				if ladder_point == nil or ladder_point <= 0 then ladder_point = 600 end
+				GuildDragonLairSetting.Guild.LadderPoint = ladder_point
+
+			elseif s == 4 then
+				say(c_locale(1757)) -- "Please input waiting time(sec.)."
+				waiting_time = tonumber(input())
+				if waiting_time == nil or waiting_time <= 0 then waiting_time = 10800 end
+				GuildDragonLairSetting.Guild.WaitTime = waiting_time
+
+			elseif s == 5 then
+				say(c_locale(1758)) -- "Please input max. member."
+				say_reward(c_locale(1754, 16)) -- "Maximum number: %d"
+				max_member = tonumber(input())
+				if max_member == nil or max_member <= 0 then max_member = 16 end
+				if max_member > 16 then max_member = 16 end
+				GuildDragonLairSetting.Guild.MaxMember = MaxMember
+
+			elseif s == 6 then
+				say(c_locale(1760)) -- "Input guild name that you want to close."
+				guild_name = input()
+				say(c_locale(1759)) -- "Do you want to close the dungeon forcibly?"
+				if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+					guild_dragonlair.cancel_guild(guild_name)
+				end
+
+			elseif s == 7 then
+				say(c_locale(1816)) -- "Input Metin Stone number."
+				metin_stone_vnum = tonumber(input())
+				if metin_stone_vnum == nil or metin_stone_vnum <= 0 then metin_stone_vnum = 6118 end
+				GuildDragonLairSetting.Guild.StoneVnum = metin_stone_vnum
+
+			elseif s == 8 then
+				say(c_locale(1817)) -- "Please input the HP to end 1st phase."
+				hp_pct = tonumber(input())
+				if hp_pct == nil or hp_pct <= 0 then hp_pct = 0 end
+				GuildDragonLairSetting.Guild.Stage[1].StoneHealthPct = hp_pct
+
+			elseif s == 9 then
+				say(c_locale(1818)) -- "Please input the HP to end 2nd phase."
+				hp_pct = tonumber(input())
+				if hp_pct == nil or hp_pct <= 0 then hp_pct = 0 end
+				GuildDragonLairSetting.Guild.Stage[2].StoneHealthPct = hp_pct
+
+			elseif s == 10 then
+				say(c_locale(1819)) -- "Please input the HP to end 3rd phase."
+				hp_pct = tonumber(input())
+				if hp_pct == nil or hp_pct <= 0 then hp_pct = 0 end
+				GuildDragonLairSetting.Guild.Stage[3].StoneHealthPct = hp_pct
+			end
+		end
+
+		-- "Registration"
+		when 20419.chat.c_locale(1768) with pc.get_map_index() == 62 and (pc.is_guild_master() or pc.is_guild_general()) begin
+			local use_ticket = 0
+			if pc.has_item_from_special_item_group(GuildDragonLairSetting.Guild.TicketGroup) then
+				-- "Do you want to use the Passage Ticket (Meley)?"
+				say(c_locale(1835))
+				use_ticket = select(c_locale(1847), c_locale(1846)) -- "Yes" / "No"
+			end
+
+			-- "Whose lair do you want to enter?"
+			say(c_locale(1769))
+
+			local lair_name_list = {
+				c_locale(1770), -- "Meley's Lair"
+				c_locale(1771), -- "Alastor's Lair"
+				c_locale(1772), -- "Teriel's Lair"
+			}
+			table.insert(lair_name_list, c_locale(1845)) -- "Cancel"
+			local lair_choice = select_table(lair_name_list)
+			if lair_choice >= table.getn(lair_name_list) then
+				return
+			end
+
+			local lair_type = math.max(lair_choice - 1, 0)
+			if lair_type == 0 then
+				if game.get_event_flag("red_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+				if use_ticket ~= 1 then
+					say(c_locale(1773, GuildDragonLairSetting.Guild.LadderPoint)) -- "%d guild rank points will be deducted for registering."
+					say(c_locale(1774, GuildDragonLairSetting.Guild.LadderPoint / 2)) -- "%d guild rank points will be credited to you for successfully completing the dungeon."
+					say(c_locale(1775, GuildDragonLairSetting.Guild.LadderPoint / 2)) -- "You will only get %d guild rank points back if you fail."
+					say(c_locale(1777)) -- "Do you want to register your combatants for this lair?"
+
+					if select(c_locale(1847), c_locale(1846)) == 2 then -- "Yes" / "No"
+						return
+					end
+				else
+					say(c_locale(1837)) -- "When you use the Passage Ticket (Meley),"
+					say(c_locale(1838)) -- "you don't need any guild rank points and the cooldown for re-entering is cancelled."
+					--say(c_locale(1839)) -- ""
+					say(c_locale(1840)) -- "Do you want to use the ticket?"
+
+					use_ticket = select(c_locale(1847), c_locale(1846)) -- "Yes" / "No"
+					if use_ticket ~= 1 then
+						return
+					end
+				end
+
+				local channel = guild.get_event_flag("dragonlair_channel")
+				local wait_time = guild.get_event_flag("dragonlair_wait_time")
+				local create_time = guild.get_event_flag("create_time")
+
+				if channel ~= 0 then
+					-- "You are already registered."
+					say(c_locale(1780))
+					return
+				end
+
+				if use_ticket ~= 1 then
+					if channel == 0 and get_global_time() - wait_time < GuildDragonLairSetting.Guild.WaitTime then
+						-- "You were recently in the dragon cave."
+						-- "You must wait a while until you can enter it again."
+						say(c_locale(1783))
+						return
+					end
+				end
+
+				if get_global_time() - create_time < 86400 then
+					-- "Your guild is too inexperienced to enter this dungeon."
+					say(c_locale(1843))
+					return
+				end
+
+				if guild.level(pc.get_guild()) < GuildDragonLairSetting.Guild.GuildLevel then
+					-- "Your guild level is too low."
+					say(c_locale(1782))
+					return
+				end
+
+				if guild.get_near_count() < GuildDragonLairSetting.Guild.MinMember and not pc.is_gm() then
+					-- "At least 4 guild members must be online on the same map and in the same channel."
+					say(c_locale(13817))
+					return
+				end
+
+				if use_ticket ~= 1 then
+					if guild.get_ladder_point() < GuildDragonLairSetting.Guild.LadderPoint then
+						-- "You do not have enough guild rank points."
+						say(c_locale(1781))
+						return
+					end
+				end
+
+				if guild.get_any_war() ~= 0 then
+					-- "You cannot do this whilst your guild is at war."
+					say(c_locale(1784))
+					return
+				end
+
+				if use_ticket == 1 then
+					if not pc.has_item_from_special_item_group(GuildDragonLairSetting.Guild.TicketGroup) then
+						-- "Unfortunately you don't have a Passage Ticket (Meley)."
+						say(c_locale(1836))
+						return
+					end
+				end
+
+				if guild_dragonlair.register_guild(lair_type, use_ticket) then
+					-- "Registration complete."
+					say(c_locale(1779))
+				else
+					-- "Failed..."
+					say(c_locale(1789))
+				end
+
+			elseif lair_type == 1 then
+				if game.get_event_flag("blue_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+			elseif lair_type == 2 then
+				if game.get_event_flag("green_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+			end
+		end
+
+		-- "Enter Lair"
+		when 20419.chat.c_locale(1785) with pc.get_map_index() == 62 and pc.has_guild() begin
+			local lair_name_list = {
+				c_locale(1770), -- "Meley's Lair"
+				c_locale(1771), -- "Alastor's Lair"
+				c_locale(1772), -- "Teriel's Lair"
+			}
+			table.insert(lair_name_list, c_locale(1845)) -- "Cancel"
+			local lair_choice = select_table(lair_name_list)
+			if lair_choice >= table.getn(lair_name_list) then
+				return
+			end
+
+			local lair_type = math.max(lair_choice - 1, 0)
+			if lair_type == 0 then
+				if game.get_event_flag("red_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+				-- "Do you want to enter the lair?"
+				say(c_locale(1786))
+				local s = select(c_locale(1847), c_locale(1846)) -- "Yes" / "No"
+				if s == 1 then
+
+					local channel = guild.get_event_flag("dragonlair_channel")
+					local wait_time = guild.get_event_flag("dragonlair_wait_time")
+
+					if channel ~= 0 and pc.get_channel_id() ~= channel then
+						-- "The dungeon is already being played on another channel."
+						say(c_locale(1833))
+						-- "Channel number: %d"
+						say(c_locale(1834, channel))
+						return
+					end
+
+					if channel == 0 and not guild_dragonlair.find_guild(pc.get_guild()) then
+						-- "No registration found."
+						-- "Please register your guild to fight in the dragon cave."
+						say(c_locale(1792))
+						return
+					end
+
+					if guild_dragonlair.get_guild_stage(pc.get_guild()) > 0 then
+						-- "The battle in the dragon cave is already in progress."
+						say(c_locale(1822))
+						return
+					end
+
+					if pc.get_level() < GuildDragonLairSetting.Guild.PlayerLevel then
+						-- "Your level is too low to enter (level: %d)."
+						say(c_locale(11831, GuildDragonLairSetting.Guild.PlayerLevel))
+						return
+					end
+
+					if pc.is_mount() then
+						-- "Mounts are not permitted in this dungeon."
+						-- "Dismount before you enter.
+						say(c_locale(11304))
+						return
+					end
+
+					if not pc.is_guild_general() then
+						-- "Only selected combatants can enter the lair."
+						say(c_locale(1791))
+						return
+					end
+
+					if guild_dragonlair.get_guild_member_count(pc.get_guild()) >= GuildDragonLairSetting.Guild.MaxMember then
+						-- "The maximum number of combatants has been reached."
+						-- "You cannot enter any more."
+						say(c_locale(1790))
+						return
+					end
+
+					if guild_dragonlair.is_exit() then
+						-- "You have voluntarily left the lair. Returning to the fight is not possible."
+						say(c_locale(1788))
+						return
+					end
+
+					if not guild_dragonlair.enter_guild(lair_type) then
+						-- "Failed..."
+						say(c_locale(1789))
+						return
+					end
+				end
+
+			elseif lair_type == 1 then
+				if game.get_event_flag("blue_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+			elseif lair_type == 2 then
+				if game.get_event_flag("green_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+			end
+		end
+
+		-- "Enter Group Dungeon"
+		when 20419.chat.c_locale(1849) with pc.get_map_index() == 62 begin
+			-- "Whose lair do you want to enter?"
+			say(c_locale(1769))
+
+			local lair_name_list = {
+				c_locale(1770), -- "Meley's Lair"
+				c_locale(1771), -- "Alastor's Lair"
+				c_locale(1772), -- "Teriel's Lair"
+			}
+			table.insert(lair_name_list, c_locale(1845)) -- "Cancel"
+			local lair_choice = select_table(lair_name_list)
+			if lair_choice >= table.getn(lair_name_list) then
+				return
+			end
+
+			local lair_type = math.max(lair_choice - 1, 0)
+			if lair_type == 0 then
+				if game.get_event_flag("red_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+				-- "You need to have reached at least level 75 to enter the dungeon."
+				say(c_locale(1850))
+				-- "You require the following item to enter:"
+				say(c_locale(1851))
+				say_item_vnum(71095)
+				-- "Do you want to enter now?"
+				say(c_locale(1852))
+				say("")
+
+				if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+					if not party.is_party() then
+						-- "You are not member of a group."
+						say(c_locale(1855))
+						return
+					end
+
+					if get_global_time() - pc.getqf("red_dragonlair_wait_time") < GuildDragonLairSetting.Party.WaitTime then
+						-- "You were recently in the dragon cave."
+						-- "You must wait a while until you can enter it again."
+						say(c_locale(1783))
+						return
+					end
+
+					if not guild_dragonlair.find_party(party.get_leader_pid()) then
+						if not party.is_leader() then
+							-- "You can only enter after the group leader."
+							say(c_locale(1858))
+							return
+						end
+
+						if party.get_near_count() < GuildDragonLairSetting.Party.MinMember then
+							-- "Groups entering this dungeon must have at least four members."
+							-- "Find some allies for this challenge!"
+							say(c_locale(1867))
+							return
+						end
+					end
+
+					if pc.get_level() < GuildDragonLairSetting.Party.PlayerLevel then
+						-- "Go get some more practice!"
+						-- "You need to be at least level 75 if you want to avoid being torn to shreds in this dungeon."
+						say(c_locale(1860))
+						return
+					end
+
+					if pc.is_mount() then
+						-- "Mounts are not permitted in this dungeon."
+						-- "Dismount before you enter.
+						say(c_locale(11304))
+						return
+					end
+
+					if guild_dragonlair.get_party_stage(party.get_leader_pid()) > 0 then
+						-- "You cannot enter while the battle is raging."
+						say(c_locale(1857))
+						return
+					end
+
+					if guild_dragonlair.get_party_member_count(party.get_leader_pid()) >= GuildDragonLairSetting.Party.MaxMember then
+						-- "The maximum number of combatants has been reached."
+						-- "You cannot enter any more."
+						say(c_locale(1790))
+						return
+					end
+
+					if not guild_dragonlair.enter_party(lair_type) then
+						-- "Something went wrong. Please try again."
+						say(c_locale(1854))
+					end
+				end
+
+			elseif lair_type == 1 then
+				if game.get_event_flag("blue_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+			elseif lair_type == 2 then
+				if game.get_event_flag("green_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+			end
+		end
+
+		-- "Start Fight"
+		when 20419.chat.c_locale(1821) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			say(c_locale(1823)) -- "Do you want to start the fight now?"
+			if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+				if guild_dragonlair.get_stage() > 0 then
+					-- "The battle in the dragon cave is already in progress."
+					say(c_locale(1822))
+					return
+				end
+
+				-- "The battle begins!"
+				say(c_locale(1824))
+
+				guild_dragonlair.start()
+			end
+		end
+
+		-- "End Fight"
+		when 20419.chat.c_locale(1825) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			say(c_locale(1826)) -- "Do you really want to end the fight?"
+			if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+				if guild_dragonlair.get_stage() == 0 then
+					-- "You must start the fight before you can end it."
+					say(c_locale(1827))
+					return
+				end
+
+				guild_dragonlair.cancel()
+			end
+		end
+
+		-- "Exit Lair"
+		when 20419.chat.c_locale(1828) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			if guild_dragonlair.get_stage() > 0 then
+				say(c_locale(1829)) -- "Warning! If you leave the lair now,"
+				say(c_locale(1830)) -- "you won't be able to enter it again!"
+			end
+			say(c_locale(1832)) -- "Do you really want to leave the fight?"
+			if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+				guild_dragonlair.exit()
+			end
+		end
+
+		-- "Select Reward"
+		when 20420.chat.c_locale(1795) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			if guild_dragonlair.get_reward() then
+				say(c_locale(1796)) -- "You have already received a reward."
+				return
+			end
+
+			if not npc.lock() then
+				-- "Another player is currently using this NPC."
+				say(c_locale(1841))
+				return
+			end
+
+			-- "You have defeated Meley the Dragon Queen."
+			-- "Select a reward."
+			say(c_locale(1797))
+			local reward_name_list = {
+				c_locale(1799), -- Queen Meley's Chest
+				c_locale(1800), -- Dragon Watcher Chest
+			}
+			table.insert(reward_name_list, c_locale(1845)) -- "Cancel"
+			local reward_choice = select_table(reward_name_list)
+			if reward_choice == 1 then
+				say(c_locale(1801)) -- "Do you want to receive Queen Meley's Chest?"
+				if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+					if not pc.enough_inventory(50270) then
+						say(c_locale(1804)) -- "You do not have enough space in your inventory to accept the reward."
+						return
+					end
+					say(c_locale(1803)) -- "Here is your reward!"
+					guild_dragonlair.give_reward(50270)
+				end
+			elseif reward_choice == 2 then
+				say(c_locale(1802)) -- "Do you want to receive the Dragon Watcher Chest?"
+				if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+					if not pc.enough_inventory(50271) then
+						say(c_locale(1804)) -- "You do not have enough space in your inventory to accept the reward."
+						return
+					end
+					say(c_locale(1803)) -- "Here is your reward!"
+					guild_dragonlair.give_reward(50271)
+				end
+			end
+			npc.unlock()
+		end
+
+		-- "Select Reward"
+		when 20501.chat.c_locale(1795) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			if guild_dragonlair.get_reward() then
+				say(c_locale(1796)) -- "You have already received a reward."
+				return
+			end
+
+			if not npc.lock() then
+				-- "Another player is currently using this NPC."
+				say(c_locale(1841))
+				return
+			end
+
+			-- "You have defeated Meley the Dragon Queen."
+			-- "Select a reward."
+			say(c_locale(1797))
+			local reward_name_list = {
+				c_locale(1886), -- Collect your reward.
+			}
+			table.insert(reward_name_list, c_locale(1845)) -- "Cancel"
+			local reward_choice = select_table(reward_name_list)
+			if reward_choice == 1 then
+				say(c_locale(1801)) -- "Do you want to receive Queen Meley's Chest?"
+				if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+					if not pc.enough_inventory(50294) then
+						say(c_locale(1804)) -- "You do not have enough space in your inventory to accept the reward."
+						return
+					end
+					-- "Here is your reward!"
+					say(c_locale(1803))
+					guild_dragonlair.give_reward(50294)
+				end
+			end
+			npc.unlock()
+		end
+
+		-- "Refinement"
+		when 20421.chat.c_locale(11832) with not guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			setskin(NOWINDOW)
+			game.open_cube(npc.get_race())
+		end
+
+		-- "Ranking"
+		when 20421.chat.c_locale(1793) with not guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			local lair_name_list = {
+				c_locale(1770), -- "Meley's Lair"
+				c_locale(1771), -- "Alastor's Lair"
+				c_locale(1772), -- "Teriel's Lair"
+			}
+			table.insert(lair_name_list, c_locale(1845)) -- "Cancel"
+			local lair_choice = select_table(lair_name_list)
+			if lair_choice >= table.getn(lair_name_list) then
+				return
+			end
+
+			local lair_type = math.max(lair_choice - 1, 0)
+			if lair_type == 0 then
+				if game.get_event_flag("red_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+				local s = select(c_locale(1848), c_locale(1859), c_locale(1845)) -- "Guild" / "Group" / "Cancel"
+				if s == 1 then
+					setskin(NOWINDOW)
+					game.open_guild_dragonlair_ranking(0, GuildDragonLairSetting.Guild.RankingShowLimit)
+
+				elseif s == 2 then
+					local r = select(c_locale(1869), c_locale(1880), c_locale(1845)) -- "Weekly Rankings" / "Overall Rankings" /  "Cancel"
+					if r == 1 then
+						setskin(NOWINDOW)
+						game.open_ranking(1, 1) -- PARTY_RK_CATEGORY_GUILD_DRAGONLAIR_RED_NOW_WEEK
+					elseif r == 2 then
+						setskin(NOWINDOW)
+						game.open_ranking(1, 0) -- PARTY_RK_CATEGORY_GUILD_DRAGONLAIR_RED_ALL
+					end
+				end
+
+			elseif lair_type == 1 then
+				if game.get_event_flag("blue_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+				setskin(NOWINDOW)
+				game.open_guild_dragonlair_ranking(1, GuildDragonLairSetting.Guild.RankingShowLimit)
+
+			elseif lair_type == 2 then
+				if game.get_event_flag("green_guild_dragonlair") == 0 then
+					-- "The room is being prepared and cannot be entered."
+					say(c_locale(1778))
+					return
+				end
+
+				setskin(NOWINDOW)
+				game.open_guild_dragonlair_ranking(2, GuildDragonLairSetting.Guild.RankingShowLimit)
+			end
+		end
+
+		-- <PARTY> "Start Fight"
+		when 20421.chat.c_locale(1821) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) and party.is_leader() begin
+			-- "Do you want to start the fight now?"
+			say(c_locale(1823))
+			if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+				if not party.is_leader() then
+					-- "You are not the group leader."
+					say(c_locale(1856))
+					return
+				end
+
+				if guild_dragonlair.get_stage() > 0 then
+					-- "The battle in the dragon cave is already in progress."
+					say(c_locale(1822))
+					return
+				end
+
+				if party.get_near_count() < GuildDragonLairSetting.Party.MinMember then
+					-- "A member of the group has already run too far ahead."
+					say(c_locale(1861))
+					return
+				end
+
+				local pids = { party.get_member_pids() }
+				local no_ticket_members = {}
+				local ticket_check = true
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					if not pc.has_item_from_special_item_group(GuildDragonLairSetting.Party.TicketGroup) then
+						table.insert(no_ticket_members, pc.get_name())
+						ticket_check = false
+					end
+
+					q.end_other_pc_block()
+				end
+
+				if not ticket_check then
+					-- "A member of the group does not have a Passage Ticket."
+					say(c_locale(1862))
+					for i, name in next, no_ticket_members, nil do
+						say(color(1, 1, 0), c_locale(796) .. "    " .. name)
+					end
+					return
+				end
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					pc.remove_item_from_special_item_group(GuildDragonLairSetting.Party.TicketGroup)
+
+					q.end_other_pc_block()
+				end
+
+				-- "The battle begins!"
+				say(c_locale(1824))
+
+				guild_dragonlair.start()
+			end
+		end
+
+		-- <PARTY> "End Fight"
+		when 20421.chat.c_locale(1825) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) and party.is_leader() begin
+			-- "Do you really want to end the fight?"
+			say(c_locale(1826))
+			if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+				if not party.is_leader() then
+					-- "You are not the group leader."
+					say(c_locale(1856))
+					return
+				end
+
+				if guild_dragonlair.get_stage() == 0 then
+					-- "You must start the fight before you can end it."
+					say(c_locale(1827))
+					return
+				end
+
+				guild_dragonlair.cancel()
+			end
+		end
+
+		-- <PARTY> "Exit Lair"
+		when 20421.chat.c_locale(1828) with guild_dragonlair.is_red_dragonlair(pc.get_map_index()) begin
+			if guild_dragonlair.get_stage() > 0 then
+				-- "Warning! If you leave the lair now,"
+				-- "you won't be able to enter it again!"
+				say(c_locale(1829))
+				say(c_locale(1830))
+			end
+
+			-- "Do you really want to leave the fight?"
+			say(c_locale(1832))
+			if select(c_locale(1847), c_locale(1846)) == 1 then -- "Yes" / "No"
+				guild_dragonlair.exit()
+			end
+		end
+	end
+end

@@ -1,0 +1,102 @@
+Group	TigerMysteryBox
+{
+	Vnum	38050 -- Power Chest
+	1	38051	1	1 -- Royal Tiger Crystal
+	2	71085	1	2 -- Reinforce Item
+	3	70039	1	2 -- Blacksmith Handbook
+	4	71032	1	3 -- Dragon Scroll
+	5	70024	1	3 -- Blessing Marble
+	6	25040	1	5 -- Blessing Scroll
+	7	71094	1	5 -- Concentrated Reading
+	8	27992	1	7 -- White Pearl
+	9	27993	1	8 -- Blue Pearl
+	10	27994	1	8 -- Blood-Red Pearl
+	11	72724	1	9 -- Sun Elixir (M)
+	12	72728	1	9 -- Moon Elixir (M)
+	13	71027	2	11 -- Dragon God Life
+	14	71113	40	11 -- Glass of Insight
+}
+Group	TigerRewardBox
+{
+	Vnum	38051 -- Royal Tiger Crystal
+	1	71137	1	25 -- Royal Tiger (blue)
+	2	71138	1	20 -- Royal Tiger (red)
+	3	71139	1	10 -- Royal Tiger (gold)
+	4	71140	1	15 -- Royal Tiger (green)
+	5	71141	1	25 -- Royal Tiger (grey)
+	6	71142	1	5 -- Royal Tiger (white)
+}
+Group	WhiteLionBox
+{
+	Vnum	38052 -- The Chest of Kings
+	1	71085	1	3 -- Reinforce Item
+	2	70039	1	3 -- Blacksmith Handbook
+	3	71032	1	5 -- Dragon Scroll
+	4	70024	1	5 -- Blessing Marble
+	5	25040	1	8 -- Blessing Scroll
+	6	71012	1	14 -- Book of the Leader
+	7	71130	3	16 -- Passage Ticket
+	8	71083	1	16 -- Stone Handbook
+	9	71004	10	14 -- Medal of the Dragon
+	10	71018	2	14 -- Blessing of Life
+	11	25041	1	1 -- Magic Stone
+	12	71124	1	1 -- White Lion
+}
+Group	WhitePhoenixBox
+{
+	Vnum	38053 -- Eternal Winter Chest
+	1	53503	1	2 -- Ice Phoenix Cage
+	2	72702	1	1 -- Wind Shoes+ (tradeable)
+	3	71085	1	2 -- Reinforce Item
+	4	70039	1	2 -- Blacksmith Handbook
+	5	71032	1	3 -- Dragon Scroll
+	6	70024	1	3 -- Blessing Marble
+	7	30195	1	4 -- Quartz Sand
+	8	71094	1	5 -- Concentrated Reading
+	9	50513	1	6 -- Soul Stone
+	10	27992	1	6 -- White Pearl
+	11	27993	1	7 -- Blue Pearl
+	12	27994	1	8 -- Blood-Red Pearl
+	13	72725	1	8 -- Sun Elixir (L)
+	14	72729	1	8 -- Moon Elixir (L)
+	15	71027	2	10 -- Dragon God Life
+	16	71044	4	10 -- Critical Strike
+	17	71045	4	10 -- Piercing Strike
+}
+Group	X_Mas_Pet
+{
+	Vnum	38055 -- Whelp Box
+	1	71085	1	1 -- Reinforce Item
+	2	70039	1	2 -- Blacksmith Handbook
+	3	71032	1	5 -- Dragon Scroll
+	4	70024	1	5 -- Blessing Marble
+	5	25040	1	11 -- Blessing Scroll
+	6	71012	1	12 -- Book of the Leader
+	7	71130	3	12 -- Passage Ticket
+	8	71083	1	12 -- Stone Handbook
+	9	71004	10	12 -- Medal of the Dragon
+	10	71018	2	12 -- Blessing of Life
+	11	30319	3	10 -- Shrunken Head
+	12	25041	1	1 -- Magic Stone
+	13	53011	1	3 -- Khan
+	14	53012	1	3 -- Porky
+}
+Group	°¡ºê¸®¿¤ÀÇÃàº¹»óÀÚ
+{
+	Vnum	50182 -- Blessing Chest
+	1	27992	1	5 -- White Pearl
+	2	27993	1	5 -- Blue Pearl
+	3	27994	1	5 -- Blood-Red Pearl
+	4	70039	1	7 -- Blacksmith Handbook
+	5	71001	5	7 -- Exorcism Scroll
+	6	71094	1	7 -- Concentrated Reading
+	7	70057	1	9 -- Bravery Cape
+	8	70003	1	12 -- Book of the Leader
+	9	70024	1	12 -- Blessing Marble
+	10	71085	1	12 -- Reinforce Item
+	11	71084	1	15 -- Enchant Item
+	12	70056	5	20 -- Pomegranate Juice+
+	13	70064	3	5 -- Enchant Costume
+	14	70063	3	5 -- Transform Costume
+	15	71035	5	5 -- Researcher's Elixir
+}

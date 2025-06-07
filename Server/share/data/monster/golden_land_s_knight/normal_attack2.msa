@@ -1,0 +1,32 @@
+ScriptType               MotionData
+
+MotionFileName           "D:/Ymir Work/monster2/golden_land_s_knight/normal_attack2.GR2"
+MotionDuration           1.000000
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      6
+        StartingTime         0.462409
+        
+        AttachingEnable      1
+        AttachingBoneName    "Bone002"
+        FlyFileName       "d:/ymir work/effect/monster2/golden_land_s_knight_n2_beam.msf"
+        FlyPosition       0.000000 0.000000 -30.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.452555
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "dinosaur Head"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/golden_land_s_knight_n1_making.mse"
+        EffectPosition       0.000000 -90.000000 10.000000
+    }
+}

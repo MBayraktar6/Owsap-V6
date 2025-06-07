@@ -1,0 +1,68 @@
+Group	SpiritStoneBundle
+{
+	Vnum	72058 -- Spirit Stone Bundle
+	1	28012	1	100 -- Stone against Lycans+0
+	2	28030	1	100 -- Stone of Penetration+0
+	3	28031	1	100 -- Stone of Deathblow+0
+	4	28032	1	100 -- Stone of Cooldown+0
+	5	28033	1	100 -- Stone against Warriors+0
+	6	28034	1	100 -- Stone against Ninjas+0
+	7	28035	1	100 -- Stone against Suras+0
+	8	28036	1	100 -- Stone against Shamans+0
+	9	28037	1	100 -- Stone of Monsters+0
+	10	28038	1	100 -- Stone of Evasion+0
+	11	28039	1	100 -- Stone of Ducking+0
+	12	28040	1	100 -- Stone of Magic+0
+	13	28041	1	100 -- Stone of Vitality+0
+	14	28042	1	100 -- Stone of Defence+0
+	15	28043	1	100 -- Stone of Haste+0
+	16	28044	1	100 -- Anti-Magic Stone+0
+	17	28112	1	100 -- Stone against Lycans+1
+	18	28130	1	100 -- Stone of Penetration+1
+	19	28131	1	100 -- Stone of Deathblow+1
+	20	28132	1	100 -- Stone of Cooldown+1
+	21	28133	1	100 -- Stone against Warriors+1
+	22	28134	1	100 -- Stone against Ninjas+1
+	23	28135	1	100 -- Stone against Suras+1
+	24	28136	1	100 -- Stone against Shamans+1
+	25	28137	1	100 -- Stone of Monsters+1
+	26	28138	1	100 -- Stone of Evasion+1
+	27	28139	1	100 -- Stone of Ducking+1
+	28	28140	1	100 -- Stone of Magic+1
+	29	28141	1	100 -- Stone of Vitality+1
+	30	28142	1	100 -- Stone of Defence+1
+	31	28143	1	100 -- Stone of Haste+1
+	32	28144	1	100 -- Anti-Magic Stone+1
+	33	28212	1	100 -- Stone against Lycans+2
+	34	28230	1	100 -- Stone of Penetration+2
+	35	28231	1	100 -- Stone of Deathblow+2
+	36	28232	1	100 -- Stone of Cooldown+2
+	37	28233	1	100 -- Stone against Warriors+2
+	38	28234	1	100 -- Stone against Ninjas+2
+	39	28235	1	100 -- Stone against Suras+2
+	40	28236	1	100 -- Stone against Shamans+2
+	41	28237	1	100 -- Stone of Monsters+2
+	42	28238	1	100 -- Stone of Evasion+2
+	43	28239	1	100 -- Stone of Ducking+2
+	44	28240	1	100 -- Stone of Magic+2
+	45	28241	1	100 -- Stone of Vitality+2
+	46	28242	1	100 -- Stone of Defence+2
+	47	28243	1	100 -- Stone of Haste+2
+	48	28244	1	100 -- Anti-Magic Stone+2
+	49	28312	1	100 -- Stone against Lycans+3
+	50	28330	1	100 -- Stone of Penetration+3
+	51	28331	1	100 -- Stone of Deathblow+3
+	52	28332	1	100 -- Stone of Cooldown+3
+	53	28333	1	100 -- Stone against Warriors+3
+	54	28334	1	100 -- Stone against Ninjas+3
+	55	28335	1	100 -- Stone against Suras+3
+	56	28336	1	100 -- Stone against Shamans+3
+	57	28337	1	100 -- Stone of Monsters+3
+	58	28338	1	100 -- Stone of Evasion+3
+	59	28339	1	100 -- Stone of Ducking+3
+	60	28340	1	100 -- Stone of Magic+3
+	61	28341	1	100 -- Stone of Vitality+3
+	62	28342	1	100 -- Stone of Defence+3
+	63	28343	1	100 -- Stone of Haste+3
+	64	28344	1	100 -- Anti-Magic Stone+3
+}

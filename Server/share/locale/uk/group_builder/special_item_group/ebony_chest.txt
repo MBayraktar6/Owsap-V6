@@ -1,0 +1,85 @@
+Group	빨간색흑단상자
+{
+	Vnum	50109 -- Red Ebony Box
+	1	50300	1	15 -- Skill Book
+	2	70102	1	10 -- Zen Bean
+	3	25040	1	5 -- Blessing Scroll
+	4	71044	5	35 -- Critical Strike
+	5	71045	5	30 -- Piercing Strike
+	6	72003	1	5 -- Experience Ring (3h)
+	7	72006	1	5 -- Thief's Gloves
+}
+Group	주황색흑단상자
+{
+	Vnum	50110 -- Pomp Ebony Box
+	1	50300	1	25 -- Skill Book
+	2	25040	1	10 -- Blessing Scroll
+	3	71032	1	5 -- Dragon Scroll
+	4	70003	1	20 -- Book of the Leader
+	5	72003	1	20 -- Experience Ring (3h)
+	6	72006	1	20 -- Thief's Gloves
+}
+Group	노랑색흑단상자
+{
+	Vnum	50111 -- Yellow Ebony Box
+	1	70048	1	5 -- Cloak of Secrecy
+	2	70049	1	5 -- Lucy's Ring
+	3	70050	1	5 -- Sage King's Symbol
+	4	70051	1	5 -- Sage King's Glove
+	5	70052	1	5 -- Charm of Karma1
+	6	50513	1	10 -- Soul Stone
+	7	50300	1	10 -- Skill Book
+	8	70102	1	10 -- Zen Bean
+	9	25040	1	5 -- Blessing Scroll
+	10	71032	1	5 -- Dragon Scroll
+	11	72003	1	15 -- Experience Ring (3h)
+	12	72006	1	15 -- Thief's Gloves
+}
+Group	연두색흑단상자
+{
+	Vnum	50112 -- Lightgreen Ebony Box
+	1	71085	1	5 -- Reinforce Item
+	2	71084	1	5 -- Enchant Item
+	3	50513	1	10 -- Soul Stone
+	4	70102	1	10 -- Zen Bean
+	5	25040	1	5 -- Blessing Scroll
+	6	71032	1	5 -- Dragon Scroll
+	7	72003	1	30 -- Experience Ring (3h)
+	8	72006	1	30 -- Thief's Gloves
+}
+Group	녹색흑단상자
+{
+	Vnum	50113 -- Green Ebony Box
+	1	71085	1	5 -- Reinforce Item
+	2	71084	1	5 -- Enchant Item
+	3	50513	1	10 -- Soul Stone
+	4	70102	1	10 -- Zen Bean
+	5	25040	1	5 -- Blessing Scroll
+	6	71032	1	5 -- Dragon Scroll
+	7	71044	5	30 -- Critical Strike
+	8	71045	5	30 -- Piercing Strike
+}
+Group	파란색흑단상자
+{
+	Vnum	50114 -- Blue Ebony Box
+	1	71085	1	5 -- Reinforce Item
+	2	71084	1	5 -- Enchant Item
+	3	50513	1	10 -- Soul Stone
+	4	70102	1	10 -- Zen Bean
+	5	25040	1	5 -- Blessing Scroll
+	6	71032	1	5 -- Dragon Scroll
+	7	71044	5	30 -- Critical Strike
+	8	71045	5	30 -- Piercing Strike
+}
+Group	보라색흑단상자
+{
+	Vnum	50115 -- Crimson Ebony Box
+	1	71085	1	5 -- Reinforce Item
+	2	71084	1	5 -- Enchant Item
+	3	50513	1	10 -- Soul Stone
+	4	70102	1	10 -- Zen Bean
+	5	25040	1	5 -- Blessing Scroll
+	6	71032	1	5 -- Dragon Scroll
+	7	71044	5	30 -- Critical Strike
+	8	71045	5	30 -- Piercing Strike
+}

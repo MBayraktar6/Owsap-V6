@@ -1,0 +1,78 @@
+Group	2012올림픽선물상자_1
+{
+	Vnum	71159 -- Milon's Chest
+	1	70035	1	1 -- Magic Copper Ore
+	2	71085	1	6 -- Reinforce Item
+	3	70024	1	6 -- Blessing Marble
+	4	71026	1	1 -- Magic Iron Ore
+	5	71084	1	6 -- Enchant Item
+	6	71108	15	10 -- Pomegranate Juice
+	7	70003	1	5 -- Book of the Leader
+	8	72723	1	5 -- Sun Elixir (S)
+	9	72727	1	5 -- Moon Elixir (S)
+	10	71004	5	5 -- Medal of the Dragon
+	11	71094	1	5 -- Concentrated Reading
+	12	70102	1	10 -- Zen Bean
+	13	27992	1	5 -- White Pearl
+	14	27993	1	5 -- Blue Pearl
+	15	27994	1	9 -- Blood-Red Pearl
+	16	41005	1	6 -- Fencing Outfit (m)
+	17	41013	1	6 -- Football Outfit (m)
+	18	41021	1	6 -- Boxing Outfit (m)
+}
+Group	2012올림픽선물상자_1_여성용
+{
+	Vnum	71160 -- Athena's Chest
+	1	70035	1	1 -- Magic Copper Ore
+	2	71085	1	6 -- Reinforce Item
+	3	70024	1	6 -- Blessing Marble
+	4	71026	1	1 -- Magic Iron Ore
+	5	71084	1	6 -- Enchant Item
+	6	71108	15	10 -- Pomegranate Juice
+	7	70003	1	5 -- Book of the Leader
+	8	72723	1	5 -- Sun Elixir (S)
+	9	72727	1	5 -- Moon Elixir (S)
+	10	71004	5	5 -- Medal of the Dragon
+	11	71094	1	5 -- Concentrated Reading
+	12	70102	1	10 -- Zen Bean
+	13	27992	1	5 -- White Pearl
+	14	27993	1	5 -- Blue Pearl
+	15	27994	1	9 -- Blood-Red Pearl
+	16	41006	1	6 -- Fencing Outfit (f)
+	17	41014	1	6 -- Football Outfit (f)
+	18	41022	1	6 -- Boxing Outfit (f)
+}
+Group	2012올림픽선물상자_2
+{
+	Vnum	50249
+	1	27001	100	100 -- Red Potion (S)
+	2	27002	50	70 -- Red Potion (M)
+	3	27003	10	50 -- Red Potion (L)
+	4	27004	100	75 -- Blue Potion (S)
+	5	27005	50	55 -- Blue Potion (M)
+	6	27006	10	35 -- Blue Potion (L)
+	7	경험치	30000	70 -- Experience
+	8	경험치	50000	40 -- Experience
+	9	경험치	70000	20 -- Experience
+	10	경험치	100000	10 -- Experience
+	11	70048	1	20 -- Cloak of Secrecy
+	12	70102	1	9 -- Zen Bean
+	13	70051	1	20 -- Sage King's Glove
+	14	70049	1	35 -- Lucy's Ring
+	15	25040	1	1 -- Blessing Scroll
+	16	30045	1	26 -- Scorpion Needle
+	17	30051	1	26 -- Unknown Talisman
+	18	30038	1	26 -- Tiger Hide
+	19	30070	1	26 -- Wolf Fur+
+	20	30023	1	26 -- White Tiger Hide
+	21	30033	1	26 -- Broken Porcelain
+	22	30011	1	26 -- Ball
+	23	30027	1	26 -- Wolf Fur
+	24	30082	1	26 -- Snake Tail+
+	25	30035	1	26 -- Face Cream
+	26	30010	1	26 -- Bear Gall
+	27	30055	1	26 -- Scorpion Claw
+	28	30006	1	26 -- Orc Tooth
+	29	30003	1	26 -- Pig Nose
+	30	30017	1	26 -- Ornamental Hairpin
+}

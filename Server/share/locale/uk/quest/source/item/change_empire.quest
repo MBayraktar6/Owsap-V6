@@ -1,0 +1,119 @@
+quest change_empire begin
+	state start begin
+		when 20090.chat.c_locale(125) with game.get_event_flag("c_e") > 0 begin
+			local count = pc.get_change_empire_count()
+			if count >= 1 then
+				say(c_locale(136))
+				return
+			end
+
+			say_title(c_locale(125))
+			say(c_locale(146))
+			local s = select(c_locale(4473), c_locale(2426))
+			if s == 1 then
+				change_empire.move_pc()
+			end
+		end
+
+		when 71054.use begin
+			say_title(c_locale(125))
+			say(c_locale(147))
+			if get_time() < pc.getqf("next_use_time") then
+				say_title(c_locale(148))
+				say_reward(c_locale(149))
+
+				if pc.is_gm() then
+					say(c_locale(150))
+					local s = select(c_locale(4473), c_locale(3418))
+					if s == 1 then
+						say(c_locale(151))
+						pc.setqf("next_use_time", 0)
+					end
+				end
+
+				return
+			end
+
+			if change_empire.move_pc() == true then
+				pc.setqf("next_use_time", get_time() + 86400 * 7)
+			end
+		end
+
+		function move_pc()
+			if pc.is_engaged() then
+				say_title(c_locale(148))
+				say_reward(c_locale(152))
+				say(c_locale(126))
+				return false
+			end
+
+			if pc.is_married() then
+				say_title(c_locale(148))
+				say_reward(c_locale(152))
+				say(c_locale(127))
+				return false
+			end
+
+			if pc.is_polymorphed() then
+				say_title(c_locale(148))
+				say_reward(c_locale(128))
+				say(c_locale(129))
+				return false
+			end
+
+			if pc.has_guild() then
+				say_title(c_locale(148))
+				say_reward(c_locale(130))
+				say(c_locale(131))
+				return false
+			end
+
+			if pc.get_money() < 500000 then
+				say_title(c_locale(148))
+				say_reward(c_locale(132))
+				say(c_locale(133))
+				return false
+			end
+
+			say(c_locale(134))
+			local s = select(c_locale(135), c_locale(137), c_locale(138), c_locale(2426))
+
+			if 4 == s then
+				return false
+			end
+
+			say_reward(c_locale(139))
+
+			local a = select(c_locale(4473), c_locale(2426))
+			if 2 == a then
+				return false
+			end
+
+			local ret = pc.change_empire(s)
+			local oldempire = pc.get_empire()
+
+			if ret == 999 then
+				say_title(c_locale(140))
+				say_reward(c_locale(141))
+				pc.change_gold(-500000)
+				pc.remove_item(71054)
+
+				char_log(0, "CHANGE_EMPIRE", c_locale(142, oldempire, s))
+
+				return true
+			else
+				if ret == 1 then
+					say(c_locale(143))
+				elseif ret == 2 then
+					say(c_locale(144))
+				elseif ret == 3 then
+					say(c_locale(145))
+				else
+					say(c_locale(153))
+				end
+			end
+
+			return false
+		end
+	end
+end

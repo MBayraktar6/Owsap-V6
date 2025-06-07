@@ -1,0 +1,71 @@
+local maindialog = 0 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1508 ) ) 
+repeat 
+if pc . getqf ( "know_warrior" ) == 1 then 
+maindialog = select ( c_locale ( 1511 ) , c_locale ( 1513 ) , c_locale ( 1515 ) , c_locale ( 1519 ) , c_locale ( 1524 ) ) 
+if maindialog == 1 then 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1512 ) ) 
+wait ( ) 
+elseif maindialog == 2 then 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1514 ) ) 
+wait ( ) 
+elseif maindialog == 3 then 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1516 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1517 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1518 ) ) 
+wait ( ) 
+elseif maindialog == 4 then 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1520 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1521 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1522 ) ) 
+wait ( ) 
+else 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1525 ) ) 
+end 
+else 
+maindialog = select ( c_locale ( 1511 ) , c_locale ( 1480 ) ) 
+if maindialog == 1 then 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1512 ) ) 
+wait ( ) 
+local subdialog1 = select ( c_locale ( 1513 ) ) 
+if subdialog1 == 1 then 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1514 ) ) 
+pc . setqf ( "know_warrior" , 1 ) 
+wait ( ) 
+end 
+else 
+say_title ( c_locale ( 1506 ) ) 
+say ( c_locale ( 1481 ) ) 
+maindialog = 5 
+end 
+end 
+until maindialog == 5 
+return 

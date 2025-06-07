@@ -1,0 +1,89 @@
+if not party . is_party ( ) then 
+say ( c_locale ( 8184 ) ) 
+return 
+end 
+local setting = snow_dungeon . setting ( ) 
+local dungeon = d . find ( party . getf ( "dungeon_index" ) ) 
+local party_check = ( d . getf_from_map_index ( "party_leader_pid" , party . getf ( "dungeon_index" ) ) == party . get_leader_pid ( ) ) 
+if dungeon and party_check then 
+if get_global_time ( ) - pc . getf ( "snow_dungeon" , "exit_time" ) < 300 then 
+local level = d . getf_from_map_index ( "level" , party . getf ( "dungeon_index" ) ) 
+pc . warp ( setting . floor_pos [ level ] [ 1 ] * 100 , setting . floor_pos [ level ] [ 2 ] * 100 , party . getf ( "dungeon_index" ) ) 
+else 
+say_title ( c_mob_name ( 20395 ) ) 
+say ( c_locale ( 8176 ) ) 
+end 
+else 
+if not party . is_leader ( ) then 
+say ( c_locale ( 8183 ) ) 
+return 
+end 
+local cannot_pass_level = { } 
+local can_pass_level = true 
+local can_pass_assassin = false 
+local can_pass_shaman = false 
+local can_pass_riding = true 
+local pids = { party . get_member_pids ( ) } 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if pc . get_level ( ) < setting . need_level then 
+table . insert ( cannot_pass_level , pc . get_name ( ) ) 
+can_pass_level = false 
+end 
+if setting . need_assassin == 1 then 
+if pc . get_job ( ) == ASSASSIN then 
+can_pass_assassin = true 
+end 
+end 
+if setting . need_shaman == 1 then 
+if pc . get_job ( ) == SHAMAN then 
+can_pass_shaman = true 
+end 
+end 
+if setting . check_mount == 1 then 
+if pc . is_mount ( ) then 
+can_pass_riding = false 
+end 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not can_pass_level then 
+say_title ( c_mob_name ( 20395 ) ) 
+say ( c_locale ( 8180 ) ) 
+for i , name in next , cannot_pass_level , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return 
+end 
+if setting . need_assassin == 1 then 
+if not can_pass_assassin then 
+say_title ( c_mob_name ( 20395 ) ) 
+say ( c_locale ( 8177 ) ) 
+return 
+end 
+end 
+if setting . need_shaman == 1 then 
+if not can_pass_shaman then 
+say_title ( c_mob_name ( 20395 ) ) 
+say ( c_locale ( 8177 ) ) 
+return 
+end 
+end 
+if setting . check_mount == 1 then 
+if not can_pass_riding then 
+say_title ( c_mob_name ( 20395 ) ) 
+say ( c_locale ( 8174 ) ) 
+return 
+end 
+end 
+say_title ( c_mob_name ( 20395 ) ) 
+say ( c_locale ( 8177 ) ) 
+say ( c_locale ( 8178 ) ) 
+if select ( c_locale ( 8179 ) , c_locale ( 8181 ) ) == 1 then 
+if party . is_map_member_flag_lt ( "exit_time" , get_global_time ( ) - 14400 ) then 
+snow_dungeon . make ( ) 
+else 
+say ( c_locale ( 8182 ) ) 
+end 
+end 
+end 

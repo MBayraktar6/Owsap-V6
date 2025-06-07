@@ -1,0 +1,106 @@
+#
+# Conqueror's of Yohara
+# Mysterious Dungeon
+#
+# metin2_map_anglar_dungeon_01
+#
+
+Group	anglar_dungeon_dark_01
+{
+	Vnum	6829
+	Leader	"Archer Gong"	6863
+	1	"Sword Fighter Jin"	6860
+	2	"Sword Fighter Jin"	6860
+	3	"Sword Fighter Jin"	6860
+	4	"Sword Fighter Jin"	6860
+	5	"Sword Fighter Jin"	6860
+}
+Group	anglar_dungeon_dark_02
+{
+	Vnum	6830
+	Leader	"Archer Gong"	6863
+	1	"Spearmaster Ki"	6861
+	2	"Spearmaster Ki"	6861
+	3	"Spearmaster Ki"	6861
+	4	"Spearmaster Ki"	6861
+	5	"Spearmaster Ki"	6861
+}
+Group	anglar_dungeon_dark_03
+{
+	Vnum	6831
+	Leader	"Archer Gong"	6863
+	1	"Sword Fighter Kao"	6864
+	2	"Sword Fighter Kao"	6864
+	3	"Sword Fighter Kao"	6864
+	4	"Spearmaster Mao"	6862
+	5	"Spearmaster Ki"	6861
+	6	"Sword Fighter Jin"	6860
+}
+Group	anglar_dungeon_dark_04
+{
+	Vnum	6832
+	Leader	"Spearmaster Ki"	6861
+	1	"Spearmaster Ki"	6861
+	2	"Spearmaster Ki"	6861
+	3	"Spearmaster Ki"	6861
+	4	"Spearmaster Ki"	6861
+}
+Group	anglar_dungeon_dark_05
+{
+	Vnum	6833
+	Leader	"Spearmaster Mao"	6862
+	1	"Spearmaster Mao"	6862
+	2	"Spearmaster Mao"	6862
+	3	"Spearmaster Mao"	6862
+	4	"Spearmaster Mao"	6862
+}
+
+Group	anglar_dungeon_ice_01
+{
+	Vnum	6834
+	Leader	"Archer Gong"	6868
+	1	"Sword Fighter Jin"	6865
+	2	"Sword Fighter Jin"	6865
+	3	"Sword Fighter Jin"	6865
+	4	"Sword Fighter Jin"	6865
+	5	"Sword Fighter Jin"	6865
+}
+Group	anglar_dungeon_ice_02
+{
+	Vnum	6835
+	Leader	"Archer Gong"	6868
+	1	"Spearmaster Ki"	6866
+	2	"Spearmaster Ki"	6866
+	3	"Spearmaster Ki"	6866
+	4	"Spearmaster Ki"	6866
+	5	"Spearmaster Ki"	6866
+}
+Group	anglar_dungeon_ice_03
+{
+	Vnum	6836
+	Leader	"Archer Gong"	6868
+	1	"Sword Fighter Kao"	6869
+	2	"Sword Fighter Kao"	6869
+	3	"Sword Fighter Kao"	6869
+	4	"Spearmaster Mao"	6867
+	5	"Spearmaster Ki"	6866
+	6	"Sword Fighter Jin"	6865
+}
+Group	anglar_dungeon_ice_04
+{
+	Vnum	6837
+	Leader	"Spearmaster Ki"	6866
+	1	"Spearmaster Ki"	6866
+	2	"Spearmaster Ki"	6866
+	3	"Spearmaster Ki"	6866
+	4	"Spearmaster Ki"	6866
+}
+Group	anglar_dungeon_ice_05
+{
+	Vnum	6838
+	Leader	"Spearmaster Mao"	6867
+	1	"Spearmaster Mao"	6867
+	2	"Spearmaster Mao"	6867
+	3	"Spearmaster Mao"	6867
+	4	"Spearmaster Mao"	6867
+}

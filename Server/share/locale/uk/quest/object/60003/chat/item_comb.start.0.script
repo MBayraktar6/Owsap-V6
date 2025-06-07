@@ -1,0 +1,5 @@
+say ( c_locale ( 2334 ) ) 
+if select ( c_locale ( 878 ) , c_locale ( 879 ) ) == 1 then 
+setskin ( NOWINDOW ) 
+game . open_item_comb ( ) 
+end 

@@ -1,0 +1,25 @@
+target . delete ( "__TARGET__" ) 
+if pc . count_item ( 30228 ) > 0 then 
+say_title ( c_locale ( 646 ) ) 
+say ( c_locale ( 676 ) ) 
+local result = BuildApplyCollectRewardList ( 94 ) 
+local apply_data_list = result [ 1 ] 
+local apply_name_list = result [ 2 ] 
+if table . getn ( apply_data_list ) == 0 then 
+return 
+end 
+local s = select_table ( apply_name_list ) 
+local apply_vnum , apply_value , apply_duration = unpack ( apply_data_list [ s ] ) 
+affect . add_collect ( apply_vnum , apply_value , apply_duration ) 
+pc . setqf ( "reward" , s ) 
+pc . remove_item ( 30228 , 1 ) 
+pc . setqf ( "collect_count" , 0 ) 
+pc . setqf ( "duration" , 0 ) 
+clear_letter ( ) 
+set_state ( "__COMPLETE__" ) 
+return 
+else 
+say_title ( c_locale ( 646 ) ) 
+say ( c_locale ( 677 ) ) 
+return 
+end 

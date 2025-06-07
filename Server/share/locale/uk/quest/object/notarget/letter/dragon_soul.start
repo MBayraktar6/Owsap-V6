@@ -1,0 +1,6 @@
+if pc . get_level ( ) >= 30 then send_letter ( c_locale ( 930 ) ) 
+local v = find_npc_by_vnum ( 20001 ) 
+if 0 ~= v then 
+target . vid ( "__TARGET__" , v , c_mob_name ( 20001 ) ) 
+end 
+ return end 

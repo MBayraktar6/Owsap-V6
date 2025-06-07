@@ -1,0 +1,70 @@
+local lair_name_list = { 
+c_locale ( 1770 ) , 
+c_locale ( 1771 ) , 
+c_locale ( 1772 ) , 
+} 
+table . insert ( lair_name_list , c_locale ( 1845 ) ) 
+local lair_choice = select_table ( lair_name_list ) 
+if lair_choice >= table . getn ( lair_name_list ) then 
+return 
+end 
+local lair_type = math . max ( lair_choice - 1 , 0 ) 
+if lair_type == 0 then 
+if game . get_event_flag ( "red_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+say ( c_locale ( 1786 ) ) 
+local s = select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) 
+if s == 1 then 
+local channel = guild . get_event_flag ( "dragonlair_channel" ) 
+local wait_time = guild . get_event_flag ( "dragonlair_wait_time" ) 
+if channel ~= 0 and pc . get_channel_id ( ) ~= channel then 
+say ( c_locale ( 1833 ) ) 
+say ( c_locale ( 1834 , channel ) ) 
+return 
+end 
+if channel == 0 and not guild_dragonlair . find_guild ( pc . get_guild ( ) ) then 
+say ( c_locale ( 1792 ) ) 
+return 
+end 
+if guild_dragonlair . get_guild_stage ( pc . get_guild ( ) ) > 0 then 
+say ( c_locale ( 1822 ) ) 
+return 
+end 
+if pc . get_level ( ) < GuildDragonLairSetting . Guild . PlayerLevel then 
+say ( c_locale ( 11831 , GuildDragonLairSetting . Guild . PlayerLevel ) ) 
+return 
+end 
+if pc . is_mount ( ) then 
+say ( c_locale ( 11304 ) ) 
+return 
+end 
+if not pc . is_guild_general ( ) then 
+say ( c_locale ( 1791 ) ) 
+return 
+end 
+if guild_dragonlair . get_guild_member_count ( pc . get_guild ( ) ) >= GuildDragonLairSetting . Guild . MaxMember then 
+say ( c_locale ( 1790 ) ) 
+return 
+end 
+if guild_dragonlair . is_exit ( ) then 
+say ( c_locale ( 1788 ) ) 
+return 
+end 
+if not guild_dragonlair . enter_guild ( lair_type ) then 
+say ( c_locale ( 1789 ) ) 
+return 
+end 
+end 
+elseif lair_type == 1 then 
+if game . get_event_flag ( "blue_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+elseif lair_type == 2 then 
+if game . get_event_flag ( "green_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+end 

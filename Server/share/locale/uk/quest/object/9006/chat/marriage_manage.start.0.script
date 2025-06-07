@@ -1,0 +1,172 @@
+if not npc . lock ( ) then 
+say_title ( c_locale ( 1408 ) ) 
+say ( c_locale ( 6508 ) ) 
+return 
+end 
+if pc . get_level ( ) < 25 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6519 ) ) 
+say_title ( c_locale ( 6531 ) ) 
+say_reward ( c_locale ( 6542 ) ) 
+npc . unlock ( ) 
+return 
+end 
+local m_ring_num = pc . countitem ( 70301 ) 
+local m_has_ring = m_ring_num > 0 
+if not m_has_ring then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6553 ) ) 
+say_item ( c_locale ( 6564 ) , 70301 , "" ) 
+say ( c_locale ( 6575 ) ) 
+npc . unlock ( ) 
+return 
+end 
+local m_sex = pc . get_sex ( ) 
+local m_nationality = pc . get_empire ( ) 
+if not marriage_manage . is_equip_wedding_dress ( ) then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6587 ) ) 
+if m_sex == 0 then 
+say_item ( c_locale ( 6492 ) , marriage_manage . get_wedding_dress ( m_sex ) , "" ) 
+say_reward ( c_locale ( 6499 ) ) 
+else 
+say_item ( c_locale ( 6500 ) , marriage_manage . get_wedding_dress ( m_sex ) , "" ) 
+say_reward ( c_locale ( 6501 ) ) 
+end 
+npc . unlock ( ) 
+return 
+end 
+local NEED_MONEY = 1e+06 
+if pc . get_money ( ) < NEED_MONEY then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6502 ) ) 
+say_reward ( c_locale ( 6503 ) ) 
+npc . unlock ( ) 
+return 
+end 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6504 ) ) 
+say_reward ( c_locale ( 6505 ) ) 
+local sname = input ( ) 
+if sname == "" then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6506 ) ) 
+npc . unlock ( ) 
+return 
+end 
+local u_vid = find_pc_by_name ( sname ) 
+local m_vid = pc . get_vid ( ) 
+if u_vid == 0 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6507 ) ) 
+say_reward ( c_locale ( 6509 , sname ) ) 
+npc . unlock ( ) 
+return 
+end 
+if not npc . is_near_vid ( u_vid , 10 ) then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6510 ) ) 
+say_reward ( c_locale ( 6511 , sname ) ) 
+npc . unlock ( ) 
+return 
+end 
+local old = pc . select ( u_vid ) 
+local u_level = pc . get_level ( ) 
+local u_job = pc . get_job ( ) 
+local u_sex = pc . get_sex ( ) 
+local u_nationality = pc . get_empire ( ) 
+local u_name = pc . get_name ( ) 
+local u_gold = pc . get_money ( ) 
+local u_married = pc . is_married ( ) 
+local u_has_ring = pc . countitem ( 70301 ) > 0 
+local u_wear = marriage_manage . is_equip_wedding_dress ( ) 
+pc . select ( old ) 
+local m_level = pc . get_level ( ) 
+if u_vid == m_vid then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6512 ) ) 
+say_reward ( c_locale ( 6513 ) ) 
+npc . unlock ( ) 
+return 
+end 
+if u_sex == m_sex then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6514 ) ) 
+npc . unlock ( ) 
+return 
+end 
+if u_nationality ~= m_nationality then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6515 ) ) 
+npc . unlock ( ) 
+return 
+end 
+if u_married then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6516 ) ) 
+say_reward ( c_locale ( 6517 , sname ) ) 
+npc . unlock ( ) 
+return 
+end 
+if u_level < 25 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6518 ) ) 
+npc . unlock ( ) 
+return 
+end 
+if m_level - u_level > 15 or u_level - m_level > 15 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6520 ) ) 
+npc . unlock ( ) 
+return 
+end 
+if not u_has_ring then 
+if m_ring_num >= 2 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6521 ) ) 
+else 
+say ( c_locale ( 6522 ) ) 
+end 
+say_item ( c_locale ( 6564 ) , 70301 , "" ) 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6523 ) ) 
+npc . unlock ( ) 
+return 
+end 
+if not u_wear then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6524 ) ) 
+if u_sex == 0 then 
+say_title ( c_locale ( 689 ) ) 
+say_item ( c_locale ( 6492 ) , marriage_manage . get_wedding_dress ( u_sex ) , "" ) 
+say ( c_locale ( 6525 ) ) 
+else 
+say_title ( c_locale ( 689 ) ) 
+say_item ( c_locale ( 6500 ) , marriage_manage . get_wedding_dress ( u_sex ) , "" ) 
+say ( c_locale ( 6526 ) ) 
+end 
+npc . unlock ( ) 
+return 
+end 
+local ok_sign = confirm ( u_vid , c_locale ( 6527 , pc . get_name ( ) ) , 30 ) 
+if ok_sign == CONFIRM_OK then 
+local m_name = pc . get_name ( ) 
+if pc . get_gold ( ) >= NEED_MONEY then 
+pc . change_gold ( - NEED_MONEY ) 
+pc . removeitem ( 70301 , 1 ) 
+pc . give_item2 ( 70302 , 1 ) 
+local old = pc . select ( u_vid ) 
+pc . removeitem ( 70301 , 1 ) 
+pc . give_item2 ( 70302 , 1 ) 
+pc . select ( old ) 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6528 ) ) 
+wait ( ) 
+setskin ( NOWINDOW ) 
+marriage . engage_to ( u_vid ) 
+end 
+else 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6529 ) ) 
+end 
+npc . unlock ( ) 

@@ -1,0 +1,11 @@
+event_easter . spawn_metin_at_login ( ) 
+if event_easter . get_number_of_eggs ( ) > 0 then 
+local settings = event_easter . get_settings ( ) 
+if ( remove_item_range ( 1 , settings . eggvnums . first , settings . eggvnums . last ) ) then 
+pc . remove_item ( settings . baskets . empty ) 
+pc . give_item2 ( settings . baskets . full , 1 ) 
+end 
+else 
+say_title ( c_locale ( 1052 ) ) 
+say ( c_locale ( 1053 ) ) 
+end 

@@ -1,0 +1,8 @@
+if crack_skipia_dungeon . in_dungeon ( pc . get_map_index ( ) ) then d . setf ( "finished" , 1 ) 
+d . setqf2_all_near ( "crack_skipia_dungeon" , "bluedragon_boss" , 1 , 800 ) 
+d . notice ( c_locale ( 11500 ) ) 
+d . notice ( c_locale ( 11679 ) ) 
+crack_skipia_dungeon . clear ( false ) 
+crack_skipia_dungeon . clear_server_timers ( d . get_map_index ( ) ) 
+server_timer ( "crack_skipia_dungeon_end_timer" , 180 , d . get_map_index ( ) ) 
+ return end 

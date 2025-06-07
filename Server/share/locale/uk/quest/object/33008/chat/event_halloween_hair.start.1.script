@@ -1,0 +1,39 @@
+local setting = event_halloween_hair . setting ( ) 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1087 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1088 ) ) 
+wait ( ) 
+if pc . count_item ( setting . coupon ) == 0 then 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1089 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1076 ) ) 
+wait ( ) 
+else 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1077 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1078 ) ) 
+wait ( ) 
+say ( c_locale ( 1079 ) ) 
+local s = select ( c_locale ( 1080 ) , c_locale ( 1081 ) ) 
+if s == 2 then 
+return 
+end 
+pc . remove_item ( setting . coupon , 1 ) 
+local race = pc . get_race ( ) + 1 
+local index = event_halloween_hair . get_random_hair_option_index ( ) 
+local option = event_halloween_hair . get_hair_option ( index ) 
+local hair_info = event_halloween_hair . get_hair_info_by_race ( race ) 
+local vnum , shape = hair_info [ 1 ] , hair_info [ 2 ] 
+pc . give_item2_select ( vnum ) 
+item . set_socket ( 0 , option . duration ) 
+item . set_value ( 0 , option . apply , option . value ) 
+end 
+if not event_halloween_hair . is_running ( ) then 
+npc . purge ( ) 
+end 

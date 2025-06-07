@@ -1,0 +1,77 @@
+say_title ( c_locale ( 6444 ) ) 
+say ( c_locale ( 6458 ) ) 
+say ( c_locale ( 6476 ) ) 
+if select ( c_locale ( 6555 ) , c_locale ( 6556 ) ) == 2 then 
+return 
+end 
+local map_index = pc . get_map_index ( ) 
+local empire = pc . get_empire ( ) 
+local level = pc . get_level ( ) 
+local warp_table = { } 
+if map_index == 1 or map_index == 3 or map_index == 21 or map_index == 23 or map_index == 41 or map_index == 43 then 
+warp_table = { 
+special . warp_table [ "guild" ] , 
+special . warp_table [ "n_threeway" ] , 
+special . warp_table [ "n_desert_01" ] , 
+special . warp_table [ "n_snowm_01" ] , 
+special . warp_table [ "n_flame_01" ] , 
+special . warp_table [ "deviltower1" ] , 
+special . warp_table [ "nusluck01" ] , 
+special . warp_table [ "wl_01" ] , 
+special . warp_table [ "trent" ] , 
+special . warp_table [ "trent02" ] , 
+special . warp_table [ "e4" ] , 
+special . warp_table [ "12zi_stage" ] , 
+} 
+else 
+warp_table = { 
+special . warp_table [ "e1" ] , 
+special . warp_table [ "e3" ] , 
+} 
+end 
+local map_name_table = { } 
+for k , v in ipairs ( warp_table ) begin 
+local map_name = v [ 1 ] [ empire ] [ 1 ] 
+local map_index = v [ 1 ] [ empire ] [ 2 ] 
+local min_level = v [ 4 ] [ 1 ] 
+local max_level = v [ 4 ] [ 2 ] 
+if min_level > 0 and max_level > 0 then 
+table . insert ( map_name_table , string . format ( "%s (Lv.%d~%d)" , map_name , min_level , max_level ) ) 
+else 
+table . insert ( map_name_table , map_name ) 
+end 
+end 
+table . insert ( map_name_table , c_locale ( 2426 ) ) 
+local s = select_table ( map_name_table ) 
+if table . getn ( map_name_table ) == s then 
+return 
+end 
+local map_name = warp_table [ s ] [ 1 ] [ empire ] [ 1 ] 
+local warp_cost = warp_table [ s ] [ 2 ] 
+local warp_level = warp_table [ s ] [ 3 ] 
+local cost = math . floor ( level / 5 ) * warp_cost 
+if cost < warp_cost then 
+cost = warp_cost 
+end 
+say_title ( c_locale ( 6444 ) ) 
+say ( c_locale ( 6476 ) ) 
+say ( "" ) 
+say ( c_locale ( 6457 ) ) 
+say_reward ( c_locale ( 6459 , map_name , warp_level , number_to_money_string ( cost ) ) ) 
+say ( c_locale ( 6464 ) ) 
+if select ( c_locale ( 6555 ) , c_locale ( 6556 ) ) == 1 then 
+if pc . get_level ( ) < warp_level then 
+say_title ( c_locale ( 6444 ) ) 
+say ( c_locale ( 6466 ) ) 
+return 
+end 
+if pc . get_gold ( ) < cost then 
+say_title ( c_locale ( 6444 ) ) 
+say ( c_locale ( 6435 ) ) 
+return 
+end 
+if not pc . warp ( warp_table [ s ] [ 1 ] [ empire ] [ 3 ] [ 1 ] , warp_table [ s ] [ 1 ] [ empire ] [ 3 ] [ 2 ] ) then 
+return 
+end 
+pc . change_gold ( - cost ) 
+end 

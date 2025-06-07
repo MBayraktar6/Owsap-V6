@@ -1,0 +1,28 @@
+if item . get_vnum ( ) == 50926 then say ( c_locale ( 1466 , 30 ) ) 
+say ( c_locale ( 1467 ) ) 
+say ( c_locale ( 1468 ) ) 
+say ( c_locale ( 1469 , gem_system . RefinePctByMapIndex ( pc . get_map_index ( ) ) , 15000 ) ) 
+say ( c_locale ( 1470 ) ) 
+if select ( c_locale ( 1475 ) , c_locale ( 1476 ) ) == 1 then 
+if pc . get_gold ( ) < 15000 then 
+return say ( c_locale ( 1471 ) ) 
+end 
+if pc . get_gem ( ) >= ( 999999 - 3 ) then 
+return say ( c_locale ( 1472 ) ) 
+end 
+local has_stone = false 
+for stone = 28000 , 28345 begin 
+if pc . count_item ( stone ) > 0 then 
+has_stone = true 
+break 
+end 
+end 
+if not has_stone then 
+return say ( c_locale ( 1473 ) ) 
+end 
+if pc . count_item ( 50926 ) < 30 then 
+return say ( c_locale ( 1474 , 30 ) ) 
+end 
+pc . select_item_ex ( ) 
+end 
+ return end 

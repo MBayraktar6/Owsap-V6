@@ -1,0 +1,26 @@
+say_title ( c_locale ( 14132 ) ) 
+say ( c_locale ( 14133 ) ) 
+if select ( c_locale ( 14134 ) , c_locale ( 14135 ) ) == 1 then 
+if pc . getqf ( "board_count" ) == 0 and pc . count_item ( 79508 ) == 0 then 
+say ( c_locale ( 14136 ) ) 
+return 
+end 
+if pc . get_gold ( ) < 50000 then 
+say ( c_locale ( 14138 ) ) 
+return 
+end 
+if not pc . enough_inventory ( 27128 ) then 
+say ( c_locale ( 14137 ) ) 
+return 
+end 
+pc . change_gold ( - 50000 ) 
+if pc . count_item ( 79508 ) > 0 then 
+pc . remove_item ( 79508 , 1 ) 
+else 
+pc . setqf ( "board_count" , pc . getqf ( "board_count" ) - 1 ) 
+end 
+pc . give_item2 ( 27128 , 1 ) 
+say_title ( c_locale ( 14132 ) ) 
+say ( c_locale ( 14139 ) ) 
+say_item_vnum ( 27128 ) 
+end 

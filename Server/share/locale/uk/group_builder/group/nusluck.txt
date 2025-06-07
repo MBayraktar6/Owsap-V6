@@ -1,0 +1,45 @@
+Group	투귀병
+{
+	Vnum	1401
+	Leader	"투귀병"	1401
+}
+Group	투기척후병
+{
+	Vnum	1402
+	Leader	"투귀척후병"	1402
+}
+Group	투귀천장수
+{
+	Vnum	1403
+	Leader	"투귀천장수"	1403
+}
+Group	석인
+{
+	Vnum	1501
+	Leader	"석인"	1501
+}
+Group	투석인
+{
+	Vnum	1502
+	Leader	"투석인"	1502
+}
+Group	거대투석인
+{
+	Vnum	1503
+	Leader	"거대투석인"	1503
+}
+Group	투귀일꾼
+{
+	Vnum	1601
+	Leader	"투귀일꾼"	1601
+}
+Group	투귀감찰병
+{
+	Vnum	1602
+	Leader	"투귀감찰병"	1602
+}
+Group	투귀백장수
+{
+	Vnum	1603
+	Leader	"투귀백장수"	1603
+}

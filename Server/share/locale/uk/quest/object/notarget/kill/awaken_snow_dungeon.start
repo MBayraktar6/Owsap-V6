@@ -1,0 +1,18 @@
+if awaken_snow_dungeon . in_dungeon ( pc . get_map_index ( ) ) then local setting = awaken_snow_dungeon . setting ( ) 
+if d . getf ( "level" ) == 2 then 
+if number ( 1 , 100 ) <= setting . level2_key_drop_pct then 
+game . drop_item ( setting . level2_key , 1 ) 
+end 
+elseif d . getf ( "level" ) == 5 then 
+if number ( 1 , 100 ) <= setting . level5_key_drop_pct then 
+game . drop_item ( setting . level5_key , 1 ) 
+end 
+elseif d . getf ( "level" ) == 8 then 
+if pc . get_job ( ) ~= ASSASSIN then 
+return 
+end 
+if number ( 1 , 100 ) <= setting . level8_key_drop_pct then 
+game . drop_item ( setting . level8_key , 1 ) 
+end 
+end 
+ return end 

@@ -1,0 +1,390 @@
+quest labyrinth_dungeon begin
+	state start begin
+		function setting()
+			return {
+				["boss_crack_skipia"] = {
+					["option_index"] = 1,
+					["map_index"] = 364,
+					["base_position"] = { 0, 18176 },
+					["start_position"] = { 877, 722 },
+					["quest_name"] = "crack_skipia_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+				["boss_crack_flame"] = {
+					["option_index"] = 2,
+					["map_index"] = 365,
+					["base_position"] = { 1536, 18176 },
+					["start_position"] = { 340, 590 },
+					["quest_name"] = "crack_flame_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+				["boss_crack_snow"] = {
+					["option_index"] = 3,
+					["map_index"] = 366,
+					["base_position"] = { 2304, 18176 },
+					["start_position"] = { 171, 278 },
+					["quest_name"] = "crack_snow_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+				["boss_crack_dawnmist"] = {
+					["option_index"] = 4,
+					["map_index"] = 367,
+					["base_position"] = { 3328, 18176 },
+					["start_position"] = { 478, 970 },
+					["quest_name"] = "crack_dawnmist_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+				["boss_awaken_skipia"] = {
+					["option_index"] = 1,
+					["map_index"] = 368,
+					["base_position"] = { 0, 19712 },
+					["start_position"] = { 877, 722 },
+					["quest_name"] = "awaken_skipia_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+				["boss_awaken_flame"] = {
+					["option_index"] = 2,
+					["map_index"] = 369,
+					["base_position"] = { 1536, 19712 },
+					["start_position"] = { 340, 590 },
+					["quest_name"] = "awaken_flame_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+				["boss_awaken_snow"] = {
+					["option_index"] = 3,
+					["map_index"] = 370,
+					["base_position"] = { 2304, 19712 },
+					["start_position"] = { 171, 278 },
+					["quest_name"] = "awaken_snow_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+				["boss_awaken_dawnmist"] = {
+					["option_index"] = 4,
+					["map_index"] = 371,
+					["base_position"] = { 3328, 19712 },
+					["start_position"] = { 478, 970 },
+					["quest_name"] = "awaken_dawnmist_dungeon",
+					["quest_flag_exit"] = "exit_time",
+					["quest_flag_complete"] = "complete",
+				},
+			}
+		end
+
+		when login with pc.get_map_index() == 363 begin
+			if pc.get_level() < 110 then
+				warp_to_village()
+			end
+		end
+
+		-- Refinement
+		when 20470.chat.c_locale(11832) or
+			20473.chat.c_locale(11832) or
+			20474.chat.c_locale(11832)
+		begin
+			setskin(NOWINDOW)
+			game.open_cube(npc.get_race())
+		end
+
+		-- Teleport to the Plateau of Illusions
+		when 20470.chat.c_locale(11335) begin
+			if pc.get_level() < 110 then
+				-- Min. level for Plateau of Illusions: 110
+				say(c_locale(11336, 110))
+				return
+			end
+
+			pc.warp(3197 * 100, 18045 * 100, 363)
+		end
+
+		when 9013.click begin
+			npc.open_shop(9013)
+		end
+
+		-- Enter Time Rift Dungeon
+		when 20472.chat.c_locale(11343) with pc.get_map_index() == 363 begin
+			local setting = labyrinth_dungeon.setting()
+
+			say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+			say(c_mob_name(20472)) -- Time Rift Statue
+			say("")
+			say(c_locale(11289)) -- Enter?
+			if select(c_locale(11290), c_locale(11286)) ~= 1 then -- Enter / Close
+				return
+			end
+
+			if pc.get_map_index() ~= 363 then
+				say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+				say(c_locale(11300)) -- You can only enter from the Plateau of Illusions.
+				return
+			end
+
+			say(c_locale(11327)) -- Select Dungeon
+			local s_name = {
+				c_locale(11306), -- Grotto of Exile
+				c_locale(11307), -- Red Dragon Fortress
+				c_locale(11308), -- Nemere's Watchtower
+				c_locale(11309), -- Enchanted Forest
+			}
+			table.insert(s_name, c_locale(11330)) -- Close
+
+			local s = select_table(s_name)
+			if s ~= table.getn(s_name) then
+				if pc.get_level() < 110 then
+					say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+					say(c_locale(11302)) -- You cannot enter at this level.
+					return
+				end
+
+				if not party.is_party() then
+					say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+					say(c_locale(11291)) -- Only groups may enter.
+					return
+				end
+
+				if not party.is_leader() then
+					say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+					say(c_locale(11292)) -- Only the group leader can proceed.
+					return
+				end
+
+				local pids = { party.get_member_pids() }
+				local ticket_check = true
+				local no_ticket_members = {}
+				local mount_check = true
+				local no_mount_members = {}
+				local assassin_check = false
+				local shaman_check = false
+
+				if party.get_near_count() < table.getn(pids) then
+					say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+					say(c_locale(11301)) -- A group member has run on too far ahead.
+					return
+				end
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					if pc.count_item(31147) < 1 then
+						table.insert(no_ticket_members, pc.get_name())
+						ticket_check = false
+					end
+
+					if pc.is_mount() then
+						table.insert(no_mount_members, pc.get_name())
+						mount_check = false
+					end
+
+					if pc.get_job() == ASSASSIN then
+						assassin_check = true
+					end
+
+					if pc.get_job() == SHAMAN then
+						shaman_check = false
+					end
+
+					q.end_other_pc_block()
+				end
+
+				if s == setting.boss_crack_snow.option_index then
+					if not mount_check then
+						say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+						say(c_locale(11304)) -- Mounts are not permitted in this dungeon. Dismount before you enter.
+						for i, name in next, no_mount_members, nil do
+							say(color(1, 1, 0), " " .. name)
+						end
+						return
+					end
+
+					if not assassin_check and not shaman_check then
+						say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+						say(c_locale(11328)) -- Ninjas and Shamans need to be in the group to complete Nemere's Watchtower (TR) successfully.
+						return
+					end
+				end
+
+				if not ticket_check then
+					say_title(c_locale(11343)) -- Enter Time Rift Dungeon
+					say(c_locale(11305)) -- A member of the group does not have the item required to enter.
+					say_item_vnum(31147)
+					for i, name in next, no_ticket_members, nil do
+						say(color(1, 1, 0), " " .. name)
+					end
+					return
+				end
+
+				local dungeon
+				if s == setting.boss_crack_skipia.option_index then
+					dungeon = setting.boss_crack_skipia
+				elseif s == setting.boss_crack_flame.option_index then
+					dungeon = setting.boss_crack_flame
+				elseif s == setting.boss_crack_snow.option_index then
+					dungeon = setting.boss_crack_snow
+				elseif s == setting.boss_crack_dawnmist.option_index then
+					dungeon = setting.boss_crack_dawnmist
+				else
+					return
+				end
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					pc.remove_item(31147, 1)
+					pc.setf(dungeon.quest_name, dungeon.quest_flag_exit, get_global_time())
+
+					q.end_other_pc_block()
+				end
+
+				d.new_jump_party(dungeon.map_index,
+					dungeon.base_position[1] + dungeon.start_position[1],
+					dungeon.base_position[2] + dungeon.start_position[2])
+			end
+		end
+
+		-- Enter the Redux Dungeon
+		when 20471.chat.c_locale(11344) with pc.get_map_index() == 363 begin
+			local setting = labyrinth_dungeon.setting()
+
+			say_title(c_locale(11344)) -- Enter the Redux Dungeon
+			say(c_mob_name(20471)) -- Redux Statue
+			say("")
+			say(c_locale(11289)) -- Enter?
+			if select(c_locale(11290), c_locale(11286)) ~= 1 then -- Enter / Close
+				return
+			end
+
+			if pc.get_map_index() ~= 363 then
+				say_title(c_locale(11344)) -- Enter the Redux Dungeon
+				say(c_locale(11300)) -- You can only enter from the Plateau of Illusions.
+				return
+			end
+
+			say(c_locale(11327)) -- Select Dungeon
+			local s_name = {
+				c_locale(11306), -- Grotto of Exile
+				c_locale(11307), -- Red Dragon Fortress
+				c_locale(11308), -- Nemere's Watchtower
+				c_locale(11309), -- Enchanted Forest
+			}
+			table.insert(s_name, c_locale(11330)) -- Close
+
+			local s = select_table(s_name)
+			if s ~= table.getn(s_name) then
+				if pc.get_level() < 110 then
+					say_title(c_locale(11344)) -- Enter the Redux Dungeon
+					say(c_locale(11302)) -- You cannot enter at this level.
+					return
+				end
+
+				if not party.is_party() then
+					say_title(c_locale(11344)) -- Enter the Redux Dungeon
+					say(c_locale(11291)) -- Only groups may enter.
+					return
+				end
+
+				if not party.is_leader() then
+					say_title(c_locale(11344)) -- Enter the Redux Dungeon
+					say(c_locale(11292)) -- Only the group leader can proceed.
+					return
+				end
+
+				local pids = { party.get_member_pids() }
+				local ticket_check = true
+				local no_ticket_members = {}
+				local mount_check = true
+				local no_mount_members = {}
+				local assassin_check = false
+				local shaman_check = false
+
+				if party.get_near_count() < table.getn(pids) then
+					say_title(c_locale(11344)) -- Enter the Redux Dungeon
+					say(c_locale(11301)) -- A group member has run on too far ahead.
+					return
+				end
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					if pc.count_item(31146) < 1 then
+						table.insert(no_ticket_members, pc.get_name())
+						ticket_check = false
+					end
+
+					if pc.is_mount() then
+						table.insert(no_mount_members, pc.get_name())
+						mount_check = false
+					end
+
+					if pc.get_job() == ASSASSIN then
+						assassin_check = true
+					end
+
+					if pc.get_job() == SHAMAN then
+						shaman_check = false
+					end
+
+					q.end_other_pc_block()
+				end
+
+				if s == setting.boss_awaken_snow.option_index then
+					if not mount_check then
+						say_title(c_locale(11344)) -- Enter the Redux Dungeon
+						say(c_locale(11304)) -- Mounts are not permitted in this dungeon. Dismount before you enter.
+						for i, name in next, no_mount_members, nil do
+							say(color(1, 1, 0), " " .. name)
+						end
+						return
+					end
+
+					if not assassin_check and not shaman_check then
+						say_title(c_locale(11344)) -- Enter the Redux Dungeon
+						say(c_locale(11328)) -- Ninjas and Shamans need to be in the group to complete Nemere's Watchtower (TR) successfully.
+						return
+					end
+				end
+
+				if not ticket_check then
+					say_title(c_locale(11344)) -- Enter the Redux Dungeon
+					say(c_locale(11305)) -- A member of the group does not have the item required to enter.
+					say_item_vnum(31146)
+					for i, name in next, no_ticket_members, nil do
+						say(color(1, 1, 0), " " .. name)
+					end
+					return
+				end
+
+				local dungeon
+				if s == setting.boss_awaken_skipia.option_index then
+					dungeon = setting.boss_awaken_skipia
+				elseif s == setting.boss_awaken_flame.option_index then
+					dungeon = setting.boss_awaken_flame
+				elseif s == setting.boss_awaken_snow.option_index then
+					dungeon = setting.boss_awaken_snow
+				elseif s == setting.boss_awaken_dawnmist.option_index then
+					dungeon = setting.boss_awaken_dawnmist
+				else
+					return
+				end
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					pc.remove_item(31146, 1)
+					pc.setf(dungeon.quest_name, dungeon.quest_flag_exit, get_global_time())
+
+					q.end_other_pc_block()
+				end
+
+				d.new_jump_party(dungeon.map_index,
+					dungeon.base_position[1] + dungeon.start_position[1],
+					dungeon.base_position[2] + dungeon.start_position[2])
+			end
+		end
+	end
+end

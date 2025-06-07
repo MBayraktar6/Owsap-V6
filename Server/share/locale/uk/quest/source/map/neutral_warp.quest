@@ -1,0 +1,106 @@
+quest neutral_warp begin
+	state start begin
+		when 20009.chat.c_locale(6684) begin
+			say_title(c_locale(6685))
+			say(c_locale(6686))
+			local s = select(c_locale(3412), c_locale(3416))
+			if 2 == s then
+				return
+			end
+
+			local cost = 1000
+			say_title(c_locale(6685))
+			say(c_locale(6687, number_to_money_string(cost)))
+			if pc.get_gold() < cost then
+				say(c_locale(3477))
+				return
+			end
+
+			local m = pc.get_map_index()
+			local e = pc.get_empire()
+
+			if m == 1 or m == 3 then
+				e = 1
+			elseif m == 21 or m == 23 then
+				e = 2
+			elseif m == 41 or m == 43 then
+				e = 3
+			end
+
+			if m == 1 or m == 21 or m == 41 then
+				if pc.count_item(30180) == 0 then
+					s = select(c_locale(4026), c_locale(6688), c_locale(2426))
+					if 3 == s then
+						return
+					end
+				else
+					s = select(c_locale(4026), c_locale(6688), c_locale(6489), c_locale(2426))
+					if 4 == s then
+						return
+					end
+				end
+
+				local warp = {
+					{
+						{ 402100, 673900 },
+						{ 270400, 739900 },
+						{ 321300, 808000 },
+					},
+					{
+						{ 434200, 290600 },
+						{ 375200, 174900 },
+						{ 491800, 173600 },
+					},
+					{
+						{ 287800, 799700 },
+						{ 275500, 800000 },
+						{ 277000, 788000 },
+					},
+				}
+
+				test_chat(warp[s][e][1] .. ", " .. warp[s][e][2])
+
+				pc.warp(warp[s][e][1], warp[s][e][2])
+				pc.change_gold(-cost)
+
+			elseif m == 3 or m == 23 or m == 43 then
+				if pc.count_item(30180) == 0 then
+					s = select(c_locale(4027), c_locale(6689), c_locale(2426))
+					if 3 == s then
+						return
+					end
+				else
+					s = select(c_locale(4027), c_locale(6689), c_locale(6489), c_locale(2426))
+					if 4 == s then
+						return
+					end
+				end
+
+				local warp = {
+					{
+						{ 217800, 627200 },
+						{ 221900, 502700 },
+						{ 344000, 502500 },
+					},
+					{
+						{ 599400, 756300 },
+						{ 597800, 622200 },
+						{ 730700, 689800 },
+					},
+					{
+						{ 287800, 799700 },
+						{ 275500, 800000 },
+						{ 277000, 788000 },
+					},
+				}
+
+				test_chat(warp[s][e][1] .. ", " .. warp[s][e][2])
+
+				pc.warp(warp[s][e][1], warp[s][e][2])
+				pc.change_gold(-cost)
+			else
+				return -- not neutral map
+			end
+		end -- end_of_when
+	end -- end_of_state
+end -- end_of_quest

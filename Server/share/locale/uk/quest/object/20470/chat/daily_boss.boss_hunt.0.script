@@ -1,0 +1,6 @@
+local b1 , b2 , b3 = daily_boss . get_completed ( ) 
+say_title ( c_locale ( 11316 ) ) 
+say ( c_mob_name ( 20470 ) ) 
+say ( "" ) 
+say ( c_locale ( 11320 ) ) 
+say ( c_locale ( 11321 , b1 , b2 , b3 ) ) 

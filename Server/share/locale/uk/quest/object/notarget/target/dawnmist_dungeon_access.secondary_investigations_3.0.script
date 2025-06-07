@@ -1,0 +1,5 @@
+say_title ( c_mob_name ( 20410 ) ) 
+say ( c_locale ( 4547 ) ) 
+pc . give_exp2 ( 7.766e+06 ) 
+say_reward ( c_locale ( 5413 , 7.766e+06 ) ) 
+set_state ( "secondary_investigations_4" ) 

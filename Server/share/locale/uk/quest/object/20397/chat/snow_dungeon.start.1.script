@@ -1,0 +1,16 @@
+if not party . is_leader ( ) then 
+say ( c_locale ( 8209 ) ) 
+return 
+end 
+if d . getf ( "started" ) == 0 then 
+say ( c_locale ( 8168 ) ) 
+d . setf ( "entered" , 1 ) 
+d . setf ( "started" , 1 ) 
+d . setf ( "level" , 1 ) 
+d . setf ( "party_leader_pid" , party . get_leader_pid ( ) ) 
+party . setf ( "dungeon_index" , d . get_map_index ( ) ) 
+server_timer ( "snow_dungeon_45m_left_timer" , 15 * 60 , d . get_map_index ( ) ) 
+d . notice ( c_locale ( 8169 ) ) 
+d . regen_file ( "data/dungeon/snow_dungeon/" .. "sd_1.txt" ) 
+server_loop_timer ( "snow_dungeon_check_timer" , 5 , d . get_map_index ( ) ) 
+end 

@@ -1,0 +1,11 @@
+if crack_snow_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 8 and d . getf ( "level8_key_use" ) ~= 1 then local setting = crack_snow_dungeon . setting ( ) 
+if pc . get_job ( ) ~= ASSASSIN and pc . get_job ( ) ~= SHAMAN then 
+say ( c_locale ( 11464 ) ) 
+return 
+end 
+item . remove ( ) 
+d . setf ( "level8_key_use" , 1 ) 
+crack_snow_dungeon . clear_level ( d . get_map_index ( ) ) 
+d . notice ( c_locale ( 8171 ) ) 
+server_timer ( "crack_snow_dungeon_floor9_timer" , setting . floor_jump_time , d . get_map_index ( ) ) 
+ return end 

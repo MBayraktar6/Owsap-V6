@@ -1,0 +1,10 @@
+say_title ( c_locale ( 7463 ) ) 
+say ( c_locale ( 7467 ) ) 
+if math . random ( 2 ) == 1 then 
+wait ( ) 
+say ( pc . get_name ( ) .. ":" ) 
+say ( c_locale ( 7468 ) ) 
+wait ( ) 
+say_title ( c_locale ( 7463 ) ) 
+say ( c_locale ( 7469 ) ) 
+end 

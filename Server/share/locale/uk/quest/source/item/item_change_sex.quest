@@ -1,0 +1,83 @@
+quest item_change_sex begin
+	state start begin
+		when 71048.use begin
+			if pc.get_wear(19) or pc.get_wear(20) then
+				say_title(c_locale(148))
+				say(c_locale(2324))
+				return
+			end
+
+			if pc.get_level() < 50 then
+				say_title(c_locale(148))
+				say(c_locale(2316))
+				say(c_locale(2325))
+				return
+			end
+
+			if pc.is_engaged() then
+				say_title(c_locale(148))
+				say(c_locale(2326))
+				return
+			end
+
+			if pc.is_married() then
+				say_title(c_locale(148))
+				say(c_locale(2327))
+				say(c_locale(2328))
+				return
+			end
+
+			if pc.is_polymorphed() then
+				say_title(c_locale(148))
+				say(c_locale(2329))
+				return
+			end
+
+			if get_time() < pc.getqf("next_time") then
+				say_title(c_locale(148))
+				say(c_locale(2331))
+				say(c_locale(2332))
+				say_reward(c_locale(2317, time_to_str(pc.getqf("next_time"))))
+				if pc.is_gm() then
+					say(c_locale(2318))
+					local s = select(c_locale(4473), c_locale(3418))
+					if s == 1 then
+						pc.setqf("next_time", 0)
+					end
+				end
+				return
+			end
+
+			say_title(c_locale(2319))
+			say(c_locale(2320))
+			wait()
+			say_title(c_locale(2319))
+			say(c_locale(2321))
+			local s = select(c_locale(4473), c_locale(3418))
+
+			if 1 == s then
+				say_title(c_locale(2319))
+				say(c_locale(2322))
+				say_reward(c_locale(141))
+
+				pc.remove_item(71048, 1)
+				pc.setqf("next_time", get_time() + 86400 * 3)
+
+				pc.change_sex()
+
+				local m_sex = pc.get_sex()
+
+				if m_sex == 0 then
+					char_log(0, "CHANGE_SEX", "F -> M")
+				else
+					char_log(0, "CHANGE_SEX", "M -> F")
+				end
+
+				--warp_to_village()
+
+			elseif 2 == s then
+				say(c_locale(2323))
+			end
+		end
+	end
+end

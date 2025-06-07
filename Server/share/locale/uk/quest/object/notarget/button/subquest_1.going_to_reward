@@ -1,0 +1,3 @@
+say_title ( c_locale ( 8301 ) ) 
+say_reward ( c_locale ( 8302 ) ) 
+say_item_vnum ( 30130 ) 

@@ -1,0 +1,25 @@
+local idx = pc . get_map_index ( ) 
+if idx == 353 and pc . get_x ( ) < 7880 and pc . get_y ( ) > 14880 then 
+dawnmist_dungeon . warp_out ( ) 
+elseif dawnmist_dungeon . in_dungeon ( idx ) then 
+if not party . is_party ( ) then 
+dawnmist_dungeon . warp_out ( ) 
+elseif d . getf ( "finished" ) == 1 then 
+dawnmist_dungeon . warp_out ( ) 
+else 
+if pc . getqf ( "dawnmist_dungeon" , "ticket_delete" ) == 0 then 
+if pc . count_item ( 30613 ) >= 1 then 
+pc . remove_item ( 30613 , 1 ) 
+pc . setf ( "dawnmist_dungeon" , "ticket_delete" , 1 ) 
+else 
+dawnmist_dungeon . warp_out ( ) 
+end 
+end 
+if pc . get_player_id ( ) == d . getf ( "party_leader_pid" ) then 
+clear_server_timer ( "dawnmist_dungeon_quit_timer" , idx ) 
+end 
+end 
+pc . unmount ( ) 
+else 
+pc . setf ( "dawnmist_dungeon" , "ticket_delete" , 0 ) 
+end 

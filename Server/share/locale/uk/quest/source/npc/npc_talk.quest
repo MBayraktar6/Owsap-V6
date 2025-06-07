@@ -1,0 +1,187 @@
+quest npc_talk begin
+	state start begin
+		when 20354.click begin
+			say_title(c_mob_name(20354))
+			say(c_locale(7443))
+		end
+
+		when 20002.chat.c_locale(7501) begin
+			say_title(c_locale(7502))
+			say(c_locale(7503))
+		end
+
+		when 20003.chat.c_locale(7495) begin
+			say_title(c_locale(7496))
+			say(c_locale(7497))
+		end
+
+		when 20003.chat.c_locale(7499) begin
+			say_title(c_locale(7496))
+			say(c_locale(7500))
+		end
+
+		when 20005.chat.c_locale(7498) begin
+			say_title(c_locale(7509))
+			say(c_locale(7520))
+		end
+
+		when 20005.chat.c_locale(7527) begin
+			say_title(c_locale(7509))
+			say(c_locale(7444))
+		end
+
+		when 20006.chat.c_locale(7481) begin
+			say_title(c_mob_name(20006))
+			say(c_locale(7482))
+		end
+
+		when 20006.chat.c_locale(7483) begin
+			say_title(c_mob_name(20006))
+			say(c_locale(7484))
+		end
+
+		when 20008.chat.c_locale(7454) begin
+			say_title(c_locale(7465))
+			say(c_locale(7476))
+			if math.random(2) == 1 then
+				wait()
+				say(pc.get_name() .. ":")
+				say(c_locale(7487))
+			end
+		end
+
+		when 20010.chat.c_locale(7504) begin
+			say_title(c_mob_name(20010))
+			say(c_locale(7505))
+		end
+
+		when 20011.chat.c_locale(7470) begin
+			say_title(c_locale(7471))
+			say(c_locale(7472))
+		end
+
+		when 20012.chat.c_locale(7485) begin
+			say_title(c_locale(7486))
+			say(c_locale(7488))
+		end
+
+		when 20012.chat.c_locale(7489) begin
+			say_title(c_locale(7486))
+			say(c_locale(7490))
+		end
+
+		when 20014.chat.c_locale(7506) begin
+			say_title(c_locale(7507))
+			say(c_locale(7508))
+			if math.random(2) == 1 then
+				wait()
+				say(pc.get_name() .. ":")
+				say(c_locale(7510))
+			end
+		end
+
+		when 20015.chat.c_locale(7445) begin
+			say_title(c_mob_name(20015))
+			say(c_locale(7446))
+		end
+
+		when 20017.chat.c_locale(7447) begin
+			say_title(c_locale(7448))
+			say(c_locale(7449))
+		end
+
+		when 20018.chat.c_locale(7473) begin
+			say_title(c_mob_name(20018))
+			say(c_locale(7474))
+		end
+
+		when 20019.chat.c_locale(7475) begin
+			say_title(c_locale(7477))
+			say(c_locale(7478))
+		end
+
+		when 20019.chat.c_locale(7479) begin
+			say_title(c_locale(7477))
+			say(c_locale(7480))
+		end
+
+		when 20020.chat.c_locale(7462) begin
+			say_title(c_locale(7463))
+			say(c_locale(7464))
+		end
+
+		when 20020.chat.c_locale(7466) begin
+			say_title(c_locale(7463))
+			say(c_locale(7467))
+			if math.random(2) == 1 then
+				wait()
+				say(pc.get_name() .. ":")
+				say(c_locale(7468))
+				wait()
+				say_title(c_locale(7463))
+				say(c_locale(7469))
+			end
+		end
+
+		when 20021.chat.c_locale(7491) begin
+			say_title(c_mob_name(20021))
+			say(c_locale(7492))
+		end
+
+		when 20021.chat.c_locale(7493) begin
+			say_title(c_mob_name(20021))
+			say(c_locale(7494))
+		end
+
+		when 20023.chat.c_locale(7450) begin
+			say_title(c_locale(7451))
+			say(c_locale(7452))
+		end
+
+		when 20023.chat.c_locale(7453) begin
+			say_title(c_locale(7451))
+			say(c_locale(7455))
+		end
+
+		when 20024.chat.c_locale(7511) begin
+			say_title(c_locale(7512))
+			say(c_locale(7513))
+		end
+
+		when 20024.chat.c_locale(7514) begin
+			say_title(c_locale(7512))
+			say(c_locale(7515))
+		end
+
+		when 20086.chat.c_locale(7456) begin
+			say_title(c_locale(7457))
+			say(c_locale(7458))
+		end
+
+		when 20087.chat.c_locale(7459) begin
+			say_title(c_locale(7460))
+			say(c_locale(7461))
+		end
+
+		when 20091.chat.c_locale(7516) begin
+			say_title(c_locale(7517))
+			say(c_locale(7518))
+		end
+
+		when 20091.chat.c_locale(7519) begin
+			say_title(c_locale(7517))
+			say(c_locale(7521))
+		end
+
+		when 20091.chat.c_locale(7522) begin
+			say_title(c_locale(7517))
+			say(c_locale(7523))
+			say(c_locale(7524))
+		end
+
+		when 20091.chat.c_locale(7525) begin
+			say_title(c_locale(7517))
+			say(c_locale(7526))
+		end
+	end
+end

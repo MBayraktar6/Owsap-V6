@@ -1,0 +1,61 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\icecrystal_valley_knight02\normal_attack1.GR2"
+MotionDuration           1.000000
+
+Group LoopData
+{
+    MotionLoopCount          2
+    LoopCancelEnable         0
+    LoopStartTime            0.428224
+    LoopEndTime              0.712895
+}
+
+Group MotionEventData
+{
+    MotionEventDataCount     3
+    Group Event00
+    {
+        MotionEventType      6
+        StartingTime         0.608272
+        
+        AttachingEnable      0
+        AttachingBoneName    "b_Jaw"
+        FlyFileName       "d:/ymir work/effect/monster2/defense_soul_s1_throw.msf"
+        FlyPosition       0.000000 -250.000000 250.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.574209
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "b_Jaw"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/defense_pwan_n1_blow1.mse"
+        EffectPosition       0.000000 -250.000000 230.000000
+    }
+    Group Event02
+    {
+        MotionEventType      4
+        StartingTime         0.620438
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        1.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           5.000000
+            Position         0.000000 0.000000 0.000000
+        }
+    }
+}

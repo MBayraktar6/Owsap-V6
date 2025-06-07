@@ -1,0 +1,6 @@
+if npc . is_pc ( ) == false then if number ( 0 , 3 ) ~= 3 then 
+return 
+end 
+pc . give_item2 ( 31093 ) 
+set_state ( "goto_colony_guard" ) 
+ return end 

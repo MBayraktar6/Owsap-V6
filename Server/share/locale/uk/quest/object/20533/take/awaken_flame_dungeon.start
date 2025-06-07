@@ -1,0 +1,100 @@
+if awaken_flame_dungeon . in_dungeon ( pc . get_map_index ( ) ) and item . get_vnum ( ) == 31187 and d . getf ( "level" ) == 12 then if number ( 1 , 100 ) <= 30 then 
+npc . purge ( ) 
+item . remove ( ) 
+d . notice ( c_locale ( 1360 ) ) 
+d . notice ( c_locale ( 11418 ) ) 
+awaken_flame_dungeon . clear_level ( ) 
+else 
+item . remove ( ) 
+say ( c_locale ( 11393 ) ) 
+end 
+ return end if awaken_flame_dungeon . in_dungeon ( d . get_map_index ( ) ) and item . get_vnum ( ) == 31188 and d . getf ( "level" ) == 15 then local setting = awaken_flame_dungeon . setting ( ) 
+if npc . get_vid ( ) == d . get_unique_vid ( "stone5_1" ) then 
+npc . purge ( ) 
+item . remove ( ) 
+say ( c_locale ( 11402 ) ) 
+d . setf ( "stonekill" , 2 ) 
+if d . count_monster ( ) < 100 then 
+d . regen_file ( "data/dungeon/awaken_flame_dungeon/" .. "fd_e.txt" ) 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "stone5_2" ) then 
+if d . getf ( "stonekill" ) == 2 then 
+npc . purge ( ) 
+item . remove ( ) 
+say ( c_locale ( 11402 ) ) 
+d . setf ( "stonekill" , 3 ) 
+if d . count_monster ( ) < 100 then 
+d . regen_file ( "data/dungeon/awaken_flame_dungeon/" .. "fd_e.txt" ) 
+end 
+else 
+item . remove ( ) 
+say ( c_locale ( 1365 ) ) 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "stone5_3" ) then 
+if d . getf ( "stonekill" ) == 3 then 
+npc . purge ( ) 
+item . remove ( ) 
+say ( c_locale ( 11402 ) ) 
+d . setf ( "stonekill" , 4 ) 
+if d . count_monster ( ) < 100 then 
+d . regen_file ( "data/dungeon/awaken_flame_dungeon/" .. "fd_e.txt" ) 
+end 
+else 
+item . remove ( ) 
+say ( c_locale ( 1365 ) ) 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "stone5_4" ) then 
+if d . getf ( "stonekill" ) == 4 then 
+npc . purge ( ) 
+item . remove ( ) 
+say ( c_locale ( 11402 ) ) 
+d . setf ( "stonekill" , 5 ) 
+if d . count_monster ( ) < 100 then 
+d . regen_file ( "data/dungeon/awaken_flame_dungeon/" .. "fd_e.txt" ) 
+end 
+else 
+item . remove ( ) 
+say ( c_locale ( 1365 ) ) 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "stone5_5" ) then 
+if d . getf ( "stonekill" ) == 5 then 
+npc . purge ( ) 
+item . remove ( ) 
+say ( c_locale ( 11402 ) ) 
+d . setf ( "stonekill" , 6 ) 
+if d . count_monster ( ) < 100 then 
+d . regen_file ( "data/dungeon/awaken_flame_dungeon/" .. "fd_e.txt" ) 
+end 
+else 
+item . remove ( ) 
+say ( c_locale ( 1365 ) ) 
+if is_test_server ( ) then 
+say ( "5th" ) 
+end 
+end 
+elseif npc . get_vid ( ) == d . get_unique_vid ( "stone5_6" ) then 
+if d . getf ( "stonekill" ) == 6 then 
+npc . purge ( ) 
+item . remove ( ) 
+say ( c_locale ( 11403 ) ) 
+d . setf ( "stonekill" , 7 ) 
+if d . count_monster ( ) < 100 then 
+d . regen_file ( "data/dungeon/awaken_flame_dungeon/" .. "fd_e.txt" ) 
+end 
+else 
+item . remove ( ) 
+say ( c_locale ( 1365 ) ) 
+end 
+else 
+if d . getf ( "stonekill" ) == 7 then 
+npc . purge ( ) 
+item . remove ( ) 
+d . notice ( c_locale ( 1360 ) ) 
+d . notice ( c_locale ( 11418 ) ) 
+awaken_flame_dungeon . clear_level ( ) 
+else 
+item . remove ( ) 
+say ( c_locale ( 1365 ) ) 
+end 
+end 
+ return end 

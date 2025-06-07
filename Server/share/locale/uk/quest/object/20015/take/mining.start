@@ -1,0 +1,29 @@
+if item . get_vnum ( ) >= 29101 and item . get_vnum ( ) < 29110 and item . get_socket ( 0 ) ~= item . get_value ( 2 ) then say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6672 ) ) 
+ return end if item . get_vnum ( ) >= 29101 and item . get_vnum ( ) < 29110 and item . get_socket ( 0 ) == item . get_value ( 2 ) then say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6673 , item . get_level ( ) ) ) 
+if item . get_value ( 3 ) == 100 then 
+say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6674 ) ) 
+else 
+say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6675 , ( 100 - item . get_value ( 3 ) ) ) ) 
+end 
+local s = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if s == 2 then 
+say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6676 ) ) 
+return 
+end 
+local f = __refine_pick ( item . get_cell ( ) ) 
+if f == 2 then 
+say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6677 ) ) 
+elseif f == 1 then 
+say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6678 ) ) 
+else 
+say_title ( c_locale ( 6671 ) ) 
+say ( c_locale ( 6679 ) ) 
+end 
+ return end 

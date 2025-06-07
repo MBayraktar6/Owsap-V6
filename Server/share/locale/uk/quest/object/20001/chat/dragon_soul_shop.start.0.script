@@ -1,0 +1,2 @@
+say ( c_locale ( 939 ) ) 
+npc . open_shop ( 12 ) 

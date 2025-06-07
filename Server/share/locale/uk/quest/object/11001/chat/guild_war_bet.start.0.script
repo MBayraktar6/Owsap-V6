@@ -1,0 +1,58 @@
+local info_counter = pc . getqf ( "info" ) 
+if info_counter < 3 then 
+say_title ( c_locale ( 1901 ) ) 
+say ( c_locale ( 1902 ) ) 
+wait ( ) 
+end 
+local g = guild . get_reserve_war_table ( ) 
+local gname_table = { } 
+table . foreachi ( g , 
+function ( n , p ) 
+gname_table [ n ] = guild . get_name ( p [ 2 ] ) .. c_locale ( 1903 ) .. guild . get_name ( p [ 3 ] ) 
+end 
+) 
+if table . getn ( g ) == 0 then 
+say_title ( c_locale ( 1904 ) ) 
+say ( c_locale ( 2612 ) ) 
+else 
+gname_table [ table . getn ( g ) + 1 ] = c_locale ( 2426 ) 
+say_title ( c_locale ( 1904 ) ) 
+say ( c_locale ( 1907 ) ) 
+local s = select_table ( gname_table ) 
+if s ~= table . getn ( gname_table ) then 
+if guild . is_bet ( g [ s ] [ 1 ] ) then 
+say_title ( c_locale ( 1904 ) ) 
+say ( c_locale ( 1908 ) ) 
+else 
+local name1 = guild . get_name ( g [ s ] [ 2 ] ) 
+local name2 = guild . get_name ( g [ s ] [ 3 ] ) 
+say_title ( c_locale ( 1904 ) ) 
+say ( c_locale ( 1909 , name1 .. " " .. name2 .. c_locale ( 1905 ) .. g [ s ] [ 4 ] ) ) 
+local guild_s = select ( name1 , name1 ) 
+if guild_s ~= 3 then 
+local bet_guild = g [ s ] [ guild_s + 1 ] 
+say_title ( c_locale ( 1910 ) ) 
+say ( c_locale ( 2614 ) ) 
+local price_button_table = { } 
+table . foreachi ( guild_war_bet_price_table , 
+function ( n , p ) 
+price_button_table [ n ] = p .. c_locale ( 2585 ) 
+end 
+) 
+price_button_table [ table . getn ( price_button_table ) + 1 ] = c_locale ( 2426 ) 
+local price_idx = select_table ( price_button_table ) 
+if price_idx ~= table . getn ( price_button_table ) then 
+if pc . get_gold ( ) < guild_war_bet_price_table [ price_idx ] then 
+say_title ( c_locale ( 1904 ) ) 
+say ( c_locale ( 1899 ) ) 
+else 
+say_title ( c_locale ( 1904 ) ) 
+pc . changegold ( - guild_war_bet_price_table [ price_idx ] ) 
+guild . war_bet ( g [ s ] [ 1 ] , bet_guild , guild_war_bet_price_table [ price_idx ] ) 
+say ( c_locale ( 1900 ) ) 
+end 
+end 
+end 
+end 
+end 
+end 

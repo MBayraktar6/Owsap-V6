@@ -1,0 +1,13 @@
+say_title ( c_mob_name ( 20539 ) ) 
+say ( c_locale ( 11628 ) ) 
+select ( c_locale ( 11522 ) ) 
+if not pc . enough_inventory ( 31186 ) then 
+say_title ( c_mob_name ( 20539 ) ) 
+say ( c_locale ( 11597 ) ) 
+return 
+end 
+pc . give_item2 ( 31186 , 1 ) 
+target . delete ( "__TARGET__" ) 
+say_title ( c_mob_name ( 20539 ) ) 
+say ( c_locale ( 11629 ) ) 
+set_state ( "investigation3_reward" ) 

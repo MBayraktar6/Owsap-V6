@@ -1,0 +1,35 @@
+define PORT_MAP_INDEX 359 -- metin2_map_defensewave_port
+define ELEMENTAL_04_MAP_INDEX 381 -- metin2_map_elemental_04
+define group ENTER_POSITION [0, 9216]
+define group EXIT_POSITION [1280, 5632]
+define ENTER_PORTAL 3998 -- Elemental Realm
+define EXIT_PORTAL 3999 -- Exit
+define WARP_LEVEL 90
+define WARP_COST 5000000
+
+quest elemental_realm begin
+	state start begin
+		when ENTER_PORTAL.chat.c_locale(12083) with pc.get_map_index(PORT_MAP_INDEX) begin
+			say(c_locale(12084))
+			if select(c_locale(12085), c_locale(12086)) == 1 then
+				if pc.get_level() < WARP_LEVEL then
+					say(c_locale(12087))
+					return
+				elseif pc.get_gold() < WARP_COST then
+					say(c_locale(12088))
+					return
+				end
+
+				pc.change_gold(-WARP_COST)
+				pc.warp(ENTER_POSITION[1], ENTER_POSITION[2] * 100)
+			end
+		end
+
+		when EXIT_PORTAL.chat.c_locale(12089) begin
+			say(c_locale(12090))
+			if select(c_locale(12085), c_locale(12086)) == 1 then
+				pc.warp(EXIT_POSITION[1] * 100, EXIT_POSITION[2] * 100)
+			end
+		end
+	end
+end

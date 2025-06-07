@@ -1,0 +1,11 @@
+if guild_building_melt . GetMyRefineNum ( npc . get_race ( ) ) == item . get_vnum ( ) then if item . get_vnum ( ) == 50601 then 
+guild_building_melt . DoRefineDiamond ( guild_building_melt . GetOreRefineGoodPct ( ) ) 
+else 
+guild_building_melt . DoRefine ( guild_building_melt . GetOreRefineGoodPct ( ) ) 
+end 
+ return end if guild_building_melt . IsRefinableRawOre ( item . get_vnum ( ) ) and guild_building_melt . GetMyRefineNum ( npc . get_race ( ) ) ~= item . get_vnum ( ) then if item . get_vnum ( ) == 50601 then 
+guild_building_melt . DoRefineDiamond ( guild_building_melt . GetOreRefineBadPct ( ) ) 
+else 
+guild_building_melt . DoRefine ( guild_building_melt . GetOreRefineBadPct ( ) ) 
+end 
+ return end 

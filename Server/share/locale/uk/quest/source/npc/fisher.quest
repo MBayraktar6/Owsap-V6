@@ -1,0 +1,54 @@
+quest fisher begin
+	state start begin
+		when 9009.chat.c_locale(1301) begin
+			npc.open_shop()
+			setskin(NOWINDOW)
+		end
+
+		when 9009.chat.c_locale(1309) begin
+			say_title(c_locale(1310))
+			say(c_locale(1311))
+		end
+
+		when 9009.take with item.get_vnum() < 27400 or item.get_vnum() > 27590 begin
+			say_title(c_locale(1310))
+			say(c_locale(1312))
+		end
+
+		when 9009.take with item.get_vnum() == 27590 begin
+			say_title(c_locale(1310))
+			say(c_locale(1313))
+		end
+
+		when 9009.take with item.get_vnum() >= 27400 and item.get_vnum() < 27590 and item.get_socket(0) != item.get_value(2) begin
+			say_title(c_locale(1310))
+			say(c_locale(1314))
+		end
+
+		when 9009.take with item.get_vnum() >= 27400 and item.get_vnum() < 27590 and item.get_socket(0) == item.get_value(2) begin
+			say_title(c_locale(1310))
+			say(c_locale(1315))
+			say(c_locale(1316, item.get_value(0) / 10))
+			say(c_locale(1302))
+			say(c_locale(1303, 100 - item.get_value(3)))
+			say(c_locale(1304))
+
+			local s = select(c_locale(1475), c_locale(1476))
+			if s == 1 then
+				local f = __fish_real_refine_rod(item.get_cell())
+				if f == 2 then
+					say_title(c_locale(1310))
+					say(c_locale(1305))
+				elseif f == 1 then
+					say_title(c_locale(1310))
+					say(c_locale(1306))
+				else
+					say(c_locale(1307))
+				end
+			else
+				say_title(c_locale(1310))
+				say(c_locale(1308))
+			end
+		end
+	end
+end

@@ -1,0 +1,11 @@
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 697 ) ) 
+local s = select ( c_locale ( 698 ) , c_locale ( 699 ) ) 
+if s == 1 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 700 ) ) 
+set_state ( "kill" ) 
+elseif s == 2 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 701 ) ) 
+end 

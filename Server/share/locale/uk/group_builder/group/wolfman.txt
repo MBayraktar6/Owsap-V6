@@ -1,0 +1,74 @@
+#
+# map_e1 (Wolfman)
+#
+
+Group	map_e1_01
+{
+	Vnum	5101
+	Leader	"Wild Boar"	5202
+	1	"Wild Dog"	5201
+	2	"Wild Dog"	5201
+	3	"Red Wild Boar"	5203
+	4	"Red Wild Boar"	5203
+}
+Group	map_e1_02
+{
+	Vnum	5102
+	Leader	"Bear"	5204
+	1	"Wild Boar"	5202
+	2	"Wild Boar"	5202
+	3	"Bear"	5204
+	4	"Brown Bear"	5205
+}
+Group	map_e1_03
+{
+	Vnum	5103
+	Leader	"Black Bear"	5206
+	1	"Brown Bear"	5205
+	2	"Brown Bear"	5205
+	3	"Bear"	5204
+	4	"Wild Boar"	5202
+}
+Group	map_e1_04
+{
+	Vnum	5104
+	Leader	"Hungry Brown Bear"	5207
+	1	"Hungry Brown Bear"	5207
+	2	"Hungry Brown Bear"	5207
+	3	"Brown Bear"	5205
+	4	"Brown Bear"	5205
+}
+Group	map_e1_05
+{
+	Vnum	5105
+	Leader	"Tiger"	5208
+	1	"Tiger"	5208
+	2	"Brown Bear"	5205
+	3	"Brown Bear"	5205
+	4	"Red Wild Boar"	5203
+}
+Group	map_e1_06
+{
+	Vnum	5106
+	Leader	"Bear"	5204
+	1	"Bear"	5204
+	2	"Bear"	5204
+	3	"Red Wild Boar"	5203
+	4	"Black Bear"	5206
+}
+Group	map_e1_stone_01
+{
+	Vnum	5201
+	Leader	"Wild Boar"	5202
+	1	"Wild Dog"	5201
+	2	"Wild Dog"	5201
+	3	"Wild Dog"	5201
+}
+Group	map_e1_stone_02
+{
+	Vnum	5202
+	Leader	"Wild Boar"	5202
+	1	"Wild Boar"	5201
+	2	"Wild Boar"	5201
+	3	"Wild Boar"	5201
+}

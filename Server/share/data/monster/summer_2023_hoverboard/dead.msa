@@ -1,0 +1,20 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\npc_mount\summer_2023_hoverboard\dead.GR2"
+MotionDuration           0.500000
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      8
+        StartingTime         0.397810
+    }
+    Group Event01
+    {
+        MotionEventType      7
+        StartingTime         0.000000
+    }
+}

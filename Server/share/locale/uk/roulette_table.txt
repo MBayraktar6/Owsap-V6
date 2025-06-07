@@ -1,0 +1,259 @@
+Group RouletteMapper
+{
+	#--#	GroupName	Type	Price	SoulCount
+	1	Default1	0	250000	50
+	2	Default2	0	250000	50
+	3	Default3	0	250000	50
+	4	Default4	0	250000	50
+	5	Default5	0	250000	50
+	6	Special1	1	250000	50
+	7	Special2	1	250000	50
+	8	Special3	1	250000	50
+	9	Special4	1	250000	50
+	10	Special5	1	250000	50
+}
+
+Group RouletteItem
+{
+	Group	Default1
+	{
+		#--#	Vnum	Count	Weight
+		1	79509	1	1 -- Scroll of Forgetfulness
+		2	72351	1	1 -- Small Orison
+		3	83009	1	1 -- Pet Chest
+		4	71156	1	1 -- Potion of Spirit
+		5	86031	1	1 -- Wu Sash (basic)
+		6	39074	1	1 -- Blue Powershard
+		7	39076	1	1 -- Red Powershard
+		8	72347	1	1 -- Time Spiral (10%)
+		9	72725	1	1 -- Sun Elixir (L)
+		10	79605	1	1 -- 1* Belt Catalyst
+		11	51503	1	1 -- Cor Draconis (Normal)
+		12	76012	1	1 -- Potion of Speed
+		13	39024	1	1 -- Critical Strike
+		14	39025	1	1 -- Piercing Strike
+		15	72051	1	1 -- Scroll - M. Ice Witch
+		16	83038	1	1 -- Potion Chest
+		17	71010	1	1 -- Third Hand
+		18	71017	1	1 -- Lucky Medal
+		19	76008	1	1 -- Medal of the Dragon
+		20	76031	1	1 -- Protein Snack
+	}
+	Group	Default2
+	{
+		#--#	Vnum	Count	Weight
+		1	39074	1	1 -- Blue Powershard
+		2	39076	1	1 -- Red Powershard
+		3	72347	1	1 -- Time Spiral (10%)
+		4	72725	1	1 -- Sun Elixir (L)
+		5	60005	1	1 -- Trading Glass
+		6	50255	1	1 -- Cor Draconis (Rough)
+		7	76003	1	1 -- Potion of Haste
+		8	72323	1	1 -- Reshuffle Ticket
+		9	72015	1	1 -- Fishing Book
+		10	76004	1	1 -- Moon Elixir (S)
+		11	38060	1	1 -- Bag of Emotions
+		12	72303	1	1 -- Experience Ring
+		13	70069	1	1 -- Peach Flower Wine XL
+		14	72351	5	1 -- Small Orison
+		15	76025	1	1 -- Wind Shoes
+		16	76006	1	1 -- Compass for Metin Stones
+		17	72327	1	1 -- Sphere Parchment (Trade)
+		18	72037	1	1 -- Dragon God Life
+		19	72051	1	1 -- Scroll - M. Ice Witch
+		20	71017	1	1 -- Lucky Medal
+	}
+	Group	Default3
+	{
+		#--#	Vnum	Count	Weight
+		1	71181	1	1 -- Potion of Wisdom
+		2	76030	1	1 -- Power Lolly
+		3	71108	1	1 -- Pomegranate Juice
+		4	70058	1	1 -- Teleportation Ring
+		5	38059	1	1 -- Emotion Mask
+		6	38060	5	1 -- Bag of Emotions
+		7	60005	1	1 -- Trading Glass
+		8	72320	1	1 -- Inventory Expansion
+		9	76019	1	1 -- Passage Ticket
+		10	50926	50	1 -- Glimmerstone
+		11	86055	1	1 -- Hai Sash (basic)
+		12	79605	1	1 -- 1* Belt Catalyst
+		13	76004	1	1 -- Moon Elixir (S)
+		14	76012	1	1 -- Potion of Speed
+		15	76007	1	1 -- Bravery Cape
+		16	39018	1	1 -- Dragon God Attack
+		17	83038	1	1 -- Potion Chest
+		18	76008	1	1 -- Medal of the Dragon
+		19	72018	1	1 -- Third Hand
+		20	71009	1	1 -- Storage Chest
+	}
+	Group	Default4
+	{
+		#--#	Vnum	Count	Weight
+		1	100101	1	1 -- Dragon Tongs+
+		2	71181	1	1 -- Potion of Wisdom
+		3	72015	1	1 -- Fishing Book
+		4	72018	1	1 -- Third Hand
+		5	71009	1	1 -- Storage Chest
+		6	71017	1	1 -- Lucky Medal
+		7	71045	1	1 -- Piercing Strike
+		8	72059	1	1 -- Book of the Leader+
+		9	50926	50	1 -- Glimmerstone
+		10	72323	1	1 -- Reshuffle Ticket
+		11	72327	1	1 -- Sphere Parchment (Trade)
+		12	72348	1	1 -- Time Spiral (20%)
+		13	72351	1	1 -- Small Orison
+		14	76025	1	1 -- Wind Shoes
+		15	76006	1	1 -- Compass for Metin Stones
+		16	51501	1	1 -- Cor Draconis (Rough)
+		17	76019	1	1 -- Passage Ticket
+		18	76008	1	1 -- Medal of the Dragon
+		19	49992	1	1 -- Aura Fire Rune (50)
+		20	55001	1	1 -- Protein Snack
+	}
+	Group	Default5
+	{
+		#--#	Vnum	Count	Weight
+		1	79605	1	1 -- 1* Belt Catalyst
+		2	76004	1	1 -- Moon Elixir (S)
+		3	76021	1	1 -- Sun Elixir (S)
+		4	72303	1	1 -- Experience Ring
+		5	76012	1	1 -- Potion of Speed
+		6	76037	1	1 -- Thief's Gloves
+		7	76007	1	1 -- Bravery Cape
+		8	72348	1	1 -- Time Spiral (20%)
+		9	85015	1	1 -- Royal Sash (basic)
+		10	49992	1	1 -- Aura Fire Rune (50)
+		11	70069	1	1 -- Peach Flower Wine XL
+		12	38059	1	1 -- Emotion Mask
+		13	72037	1	1 -- Dragon God Life
+		14	39018	1	1 -- Dragon God Attack
+		15	55001	1	1 -- Protein Snack
+		16	55033	1	1 -- Enchant Pet
+		17	50320	1	1 -- Mission Book (Hard)
+		18	71113	1	1 -- Glass of Insight
+		19	76019	1	1 -- Passage Ticket
+		20	76029	1	1 -- Green Dragon Bean
+	}
+
+	Group	Special1
+	{
+		#--#	Vnum	Count	Weight
+		1	79509	1	1 -- Scroll of Forgetfulness
+		2	72351	5	1 -- Small Orison
+		3	83009	1	1 -- Pet Chest
+		4	38058	1	1 -- Potion of Wisdom (3h)
+		5	86031	1	1 -- Wu Sash (basic)
+		6	39074	3	1 -- Blue Powershard
+		7	39076	3	1 -- Red Powershard
+		8	72348	1	1 -- Time Spiral (20%)
+		9	72725	1	1 -- Sun Elixir (L)
+		10	79605	2	1 -- 1* Belt Catalyst
+		11	51503	3	1 -- Cor Draconis (Normal)
+		12	72703	1	1 -- Tiger Bone Earring
+		13	39024	5	1 -- Critical Strike
+		14	39025	5	1 -- Piercing Strike
+		15	72051	1	1 -- Scroll - M. Ice Witch
+		16	83038	1	1 -- Potion Chest
+		17	76037	1	1 -- Thief's Gloves (7d)
+		18	76008	5	1 -- Medal of the Dragon
+		19	49994	1	1 -- Aura Fire Rune (250)
+		20	76031	1	1 -- Protein Snack
+	}
+	Group	Special2
+	{
+		#--#	Vnum	Count	Weight
+		1	79509	1	1 -- Scroll of Forgetfulness
+		2	72351	5	1 -- Small Orison
+		3	83009	1	1 -- Pet Chest
+		4	72734	1	1 -- Blue Fortune Chest
+		5	86031	1	1 -- Wu Sash (basic)
+		6	39074	3	1 -- Blue Powershard
+		7	39076	3	1 -- Red Powershard
+		8	72348	1	1 -- Time Spiral (20%)
+		9	72725	1	1 -- Sun Elixir (L)
+		10	79605	2	1 -- 1* Belt Catalyst
+		11	51503	1	1 -- Cor Draconis (Normal)
+		12	72703	1	1 -- Tiger Bone Earring
+		13	39024	5	1 -- Critical Strike
+		14	39025	5	1 -- Piercing Strike
+		15	27992	1	1 -- White Pearl
+		16	83038	1	1 -- Potion Chest
+		17	76037	1	1 -- Thief's Gloves (7d)
+		18	76008	5	1 -- Medal of the Dragon
+		19	49994	1	1 -- Aura Fire Rune (250)
+		20	76031	1	1 -- Protein Snack
+	}
+	Group	Special3
+	{
+		#--#	Vnum	Count	Weight
+		1	31146	1	1 -- Redux Tome
+		2	71148	1	1 -- Ring of Will Power
+		3	83009	1	1 -- Pet Chest
+		4	53288	1	1 -- Red Baby Huashin
+		5	86031	1	1 -- Wu Sash (basic)
+		6	39074	3	1 -- Blue Powershard
+		7	39076	3	1 -- Red Powershard
+		8	72348	1	1 -- Time Spiral (20%)
+		9	49994	1	1 -- Aura Fire Rune (250)
+		10	72320	2	1 -- Inventory Expansion
+		11	51503	1	1 -- Cor Draconis (Normal)
+		12	79509	1	1 -- Scroll of Forgetfulness
+		13	70058	1	1 -- Teleportation Ring
+		14	72351	5	1 -- Small Orison
+		15	72051	1	1 -- Scroll - M. Ice Witch
+		16	83038	1	1 -- Potion Chest
+		17	76037	1	1 -- Thief's Gloves (7d)
+		18	76008	5	1 -- Medal of the Dragon
+		19	100101	1	1 -- Dragon Tongs+
+		20	50926	200	1 -- Glimmerstone
+	}
+	Group	Special4
+	{
+		#--#	Vnum	Count	Weight
+		1	76030	1	1 -- Power Lolly
+		2	60005	1	1 -- Trading Glass
+		3	86055	1	1 -- Hai Sash (basic)
+		4	51503	1	1 -- Cor Draconis (Normal)
+		5	50926	200	1 -- Glimmerstone
+		6	49994	1	1 -- Aura Fire Rune (250)
+		7	72064	2	1 -- Small Additive
+		8	72326	1	1 -- Transmutation Ticket
+		9	72346	1	1 -- Orison
+		10	72703	1	1 -- Tiger Bone Earring
+		11	90000	1	1 -- Certificate of Reversal
+		12	100700	1	1 -- Flame of the Dragon (B)
+		13	71008	1	1 -- Fishing Book
+		14	72059	1	1 -- Book of the Leader+
+		15	76025	1	1 -- Wind Shoes
+		16	38060	5	1 -- Bag of Emotions
+		17	76019	1	1 -- Passage Ticket
+		18	71201	1	1 -- Passage Ticket (Meley)
+		19	71113	5	1 -- Glass of Insight
+		20	71028	5	1 -- Dragon God Attack
+	}
+	Group	Special5
+	{
+		#--#	Vnum	Count	Weight
+		1	76030	1	1 -- Power Lolly
+		2	60005	1	1 -- Trading Glass
+		3	85015	1	1 -- Royal Sash (basic)
+		4	53288	1	1 -- Red Baby Huashin
+		5	50926	200	1 -- Glimmerstone
+		6	49994	1	1 -- Aura Fire Rune (250)
+		7	72064	2	1 -- Small Additive
+		8	72326	1	1 -- Transmutation Ticket
+		9	71149	1	1 -- Ring of Deadly Power
+		10	72703	1	1 -- Tiger Bone Earring
+		11	90000	1	1 -- Certificate of Reversal
+		12	100700	1	1 -- Flame of the Dragon (B)
+		13	70102	1	1 -- Zen Bean
+		14	72059	5	1 -- Book of the Leader+
+		15	76025	1	1 -- Wind Shoes
+		16	38060	5	1 -- Bag of Emotions
+		17	71201	1	1 -- Passage Ticket (Meley)
+		18	49994	1	1 -- Aura Fire Rune (250)
+		19	71113	5	1 -- Glass of Insight
+		20	71028	5	1 -- Dragon God Attack
+	}
+}

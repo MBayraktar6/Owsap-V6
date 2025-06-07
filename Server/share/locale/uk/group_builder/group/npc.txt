@@ -1,0 +1,91 @@
+#
+# 기준 (NPC)
+#
+
+Group	기준NPC-아라녀
+{
+	Vnum	11001
+	Leader	.	20025
+	1	"아라녀"	20002
+}
+Group	기준NPC-아유
+{
+	Vnum	11002
+	Leader	.	20025
+	1	"아유"	20003
+}
+Group	기준NPC-거지
+{
+	Vnum	11003
+	Leader	.	20025
+	1	"거지"	20004
+}
+Group	기준NPC-연나환
+{
+	Vnum	11004
+	Leader	.	20025
+	1	"연나환"	20005
+}
+Group	기준NPC-미리내
+{
+	Vnum	11005
+	Leader	.	20025
+	1	"미리내"	20006
+}
+Group	기준NPC-을두지
+{
+	Vnum	11006
+	Leader	.	20025
+	1	"을두지"	20011
+}
+Group	기준NPC-백고
+{
+	Vnum	11007
+	Leader	.	20025
+	1	"백고"	20018
+}
+Group	기준NPC-유랑
+{
+	Vnum	12001
+	Leader	.	20025
+	1	"유랑"	20012
+}
+Group	기준NPC-태우랑
+{
+	Vnum	12002
+	Leader	.	20025
+	1	"태우랑"	20014
+}
+Group	기준NPC-유환
+{
+	Vnum	12003
+	Leader	.	20025
+	1	"유환"	20017
+}
+Group	기준NPC-양신
+{
+	Vnum	12004
+	Leader	.	20025
+	1	"양신"	20019
+}
+Group	늙은해적-아리영
+{
+	Vnum	12005
+	Leader	.	20025
+	1	"아리영"	20021
+}
+Group	늙은해적-유화랑
+{
+	Vnum	12006
+	Leader	.	20025
+	1	"유화랑"	20024
+}
+Group	말-조랑말
+{
+	Vnum	12007
+	Leader	.	20025
+	1	"조랑말"	20029
+	2	"조랑말"	20029
+	3	"말"	20030
+	4	"말"	20030
+}

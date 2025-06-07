@@ -1,0 +1,8 @@
+say_title ( c_mob_name ( 20410 ) ) 
+say ( c_locale ( 4549 ) ) 
+say_reward ( c_locale ( 4550 ) ) 
+say ( c_locale ( 4551 ) ) 
+say ( c_locale ( 4552 ) ) 
+select ( c_locale ( 4553 ) ) 
+target . delete ( "__TARGET__" ) 
+set_state ( "secondary_investigations_2" ) 

@@ -1,0 +1,2 @@
+send_letter ( special . daily_quest . table [ "collect" ] [ 2 ] [ "title" ] ) 
+daily_quest_collect_4 . update ( ) 

@@ -1,0 +1,17 @@
+local idx = pc . get_map_index ( ) 
+if idx == 352 then 
+pc . warp ( 4322 * 100 , 1655 * 100 , 61 ) 
+elseif snow_dungeon . inside ( idx ) then 
+pc . set_warp_location ( 61 , 4322 , 1655 ) 
+if d . getf ( "entered" ) == 0 then 
+if get_global_time ( ) - pc . getf ( "snow_dungeon" , "exit_time" ) < 14400 then 
+d . notice ( c_locale ( 1321 ) ) 
+say ( c_locale ( 8175 ) ) 
+timer ( "snow_dungeon_warp_timer" , 5 ) 
+elseif pc . get_level ( ) < 100 then 
+d . notice ( c_locale ( 8184 ) ) 
+say ( c_locale ( 8184 ) ) 
+timer ( "snow_dungeon_warp_timer" , 5 ) 
+end 
+end 
+end 

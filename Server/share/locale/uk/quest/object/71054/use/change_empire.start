@@ -1,0 +1,18 @@
+say_title ( c_locale ( 125 ) ) 
+say ( c_locale ( 147 ) ) 
+if get_time ( ) < pc . getqf ( "next_use_time" ) then 
+say_title ( c_locale ( 148 ) ) 
+say_reward ( c_locale ( 149 ) ) 
+if pc . is_gm ( ) then 
+say ( c_locale ( 150 ) ) 
+local s = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if s == 1 then 
+say ( c_locale ( 151 ) ) 
+pc . setqf ( "next_use_time" , 0 ) 
+end 
+end 
+return 
+end 
+if change_empire . move_pc ( ) == true then 
+pc . setqf ( "next_use_time" , get_time ( ) + 86400 * 7 ) 
+end 

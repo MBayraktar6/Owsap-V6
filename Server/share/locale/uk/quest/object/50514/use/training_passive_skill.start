@@ -1,0 +1,30 @@
+if training_passive_skill . HasPassiveSkill ( 2 , 1 ) then 
+return 
+end 
+if pc . get_skill_group ( ) == 0 then 
+say_title ( c_item_name ( 50514 ) ) 
+say ( c_locale ( 7428 ) ) 
+return 
+end 
+if not training_passive_skill . HasPassiveSkill ( 1 , 40 ) then 
+say_title ( c_item_name ( 50514 ) ) 
+say ( c_locale ( 7439 ) ) 
+return 
+end 
+local job = pc . get_job ( ) 
+local group = pc . get_skill_group ( ) 
+local skill_vnum = special . passive_skill_list [ 3 ] [ job ] [ group ] [ 1 ] 
+local real_skill_vnum = special . passive_skill_list [ 3 ] [ job ] [ group ] [ 2 ] 
+say_title ( c_item_name ( 50514 ) ) 
+say ( c_locale ( 7441 , c_skill_name ( real_skill_vnum ) ) ) 
+if select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) == 2 then 
+return 
+end 
+if pc . count_item ( 50514 ) > 0 then 
+say_reward ( c_locale ( 7430 , c_skill_name ( real_skill_vnum ) ) ) 
+say_reward ( c_locale ( 7431 , c_skill_name ( real_skill_vnum ) ) ) 
+pc . remove_item ( 50514 ) 
+pc . set_skill_level ( skill_vnum , 1 ) 
+else 
+char_log ( 0 , "HACK 50514" , pc . get_name ( ) ) 
+end 

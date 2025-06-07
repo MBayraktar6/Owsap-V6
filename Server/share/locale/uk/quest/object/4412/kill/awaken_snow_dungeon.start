@@ -1,0 +1,10 @@
+if awaken_snow_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 10 then local setting = awaken_snow_dungeon . setting ( ) 
+d . setf ( "finished" , 1 ) 
+d . setqf2_all_near ( "awaken_snow_dungeon" , "complete" , 1 , 800 ) 
+awaken_snow_dungeon . clear_level ( d . get_map_index ( ) ) 
+d . notice ( c_locale ( 8214 ) ) 
+d . notice ( c_locale ( 11471 ) ) 
+awaken_snow_dungeon . clear_server_timers ( d . get_map_index ( ) ) 
+awaken_snow_dungeon . clear_level ( d . get_map_index ( ) ) 
+server_timer ( "awaken_snow_dungeon_end_timer" , setting . dungeon_exit_time , d . get_map_index ( ) ) 
+ return end 

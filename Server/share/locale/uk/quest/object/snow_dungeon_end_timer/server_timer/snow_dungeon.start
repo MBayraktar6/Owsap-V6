@@ -1,0 +1,6 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+snow_dungeon . clear_timer ( d . get_map_index ( ) ) 
+d . setf ( "party_leader_pid" , 0 ) 
+d . set_warp_location ( 61 , 4322 , 1655 ) 
+d . exit_all ( ) 
+end 

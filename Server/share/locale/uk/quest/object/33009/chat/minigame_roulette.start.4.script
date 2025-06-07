@@ -1,0 +1,9 @@
+say_title ( c_locale ( 11748 ) ) 
+say ( "" ) 
+local score_table = game . get_minigame_roulette_score ( ) 
+for i = 1 , table . getn ( score_table ) begin 
+say ( c_locale ( 11762 + ( i - 1 ) , score_table [ i ] [ 1 ] , score_table [ i ] [ 2 ] ) ) 
+end 
+say ( "" ) 
+say ( c_locale ( 11772 , game . get_minigame_roulette_my_score ( ) ) ) 
+say ( "" ) 

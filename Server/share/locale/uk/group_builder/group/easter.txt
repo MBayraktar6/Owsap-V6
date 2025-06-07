@@ -1,0 +1,373 @@
+Group	Easter-Metin10_1
+{
+	Leader	"페넥여우"	2101
+	Vnum	9611
+	1	"페넥여우"	2101
+	2	"페넥여우"	2101
+}
+Group	Easter-Metin10_2
+{
+	Leader	"회색 두목늑대 무랑"	152
+	Vnum	9612
+	1	"회색 두목늑대 무랑"	152
+	2	"회색 두목늑대 무랑"	152
+}
+Group	Easter-Metin10_3
+{
+	Vnum	9613
+	Leader	"사막의무법자"	8507
+	1	"사막의무법자"	8507
+	2	"사막의무법자"	8507
+}
+Group	Easter-Metin10_4
+{
+	Vnum	9614
+	Leader	"백결궁병"	302
+	1	"백결궁병"	302
+	2	"백결궁병"	302
+}
+Group	Easter-Metin10_5
+{
+	Vnum	9615
+	Leader	"저주받은 회색곰"	140
+	1	"저주받은 회색곰"	140
+	2	"저주받은 회색곰"	140
+}
+Group	Easter-Metin20_1
+{
+	Vnum	9621
+	Leader	"태화무인"	8510
+	1	"태화무인"	8510
+	2	"태화무인"	8510
+}
+Group	Easter-Metin20_2
+{
+	Vnum	9622
+	Leader	"대호 일안"	155
+	1	"대호 일안"	155
+	2	"대호 일안"	155
+}
+Group	Easter-Metin20_3
+{
+	Vnum	9623
+	Leader	"하선동 투마원병"	5102
+	1	"하선동 투마원병"	5102
+	2	"하선동 투마원병"	5102
+}
+Group	Easter-Metin20_4
+{
+	Vnum	9624
+	Leader	"비열한 흑풍장수 작도"	454
+	1	"비열한 흑풍장수 작도"	454
+	2	"비열한 흑풍장수 작도"	454
+}
+Group	Easter-Metin20_5
+{
+	Vnum	9625
+	Leader	"산견신"	191
+	1	"산견신"	191
+	2	"산견신"	191
+}
+Group	Easter-Metin30_1
+{
+	Vnum	9631
+	Leader	"대왕전갈"	2103
+	1	"대왕전갈"	2103
+	2	"대왕전갈"	2103
+}
+Group	Easter-Metin30_2
+{
+	Vnum	9632
+	Leader	"건방진 중선동 투마원병"	5142
+	1	"건방진 중선동 투마원병"	5142
+	2	"건방진 중선동 투마원병"	5142
+}
+Group	Easter-Metin30_3
+{
+	Vnum	9633
+	Leader	"난폭한 비마귀안"	2152
+	1	"난폭한 비마귀안"	2152
+	2	"난폭한 비마귀안"	2152
+}
+Group	Easter-Metin30_4
+{
+	Vnum	9634
+	Leader	"난폭한 대왕전갈"	2153
+	1	"난폭한 대왕전갈"	2153
+	2	"난폭한 대왕전갈"	2153
+}
+Group	Easter-Metin30_5
+{
+	Vnum	9635
+	Leader	"음흉한 오랑캐장수"	554
+	1	"음흉한 오랑캐장수"	554
+	2	"음흉한 오랑캐장수"	554
+}
+Group	Easter-Metin40_1
+{
+	Vnum	9641
+	Leader	"포악한 상선동 투마원병"	5152
+	1	"포악한 상선동 투마원병"	5152
+	2	"포악한 상선동 투마원병"	5152
+	3	"포악한 상선동 투마원병"	5152
+}
+Group	Easter-Metin40_2
+{
+	Vnum	9642
+	Leader	"붉은독거미"	2003
+	1	"붉은독거미"	2003
+	2	"붉은독거미"	2003
+}
+Group	Easter-Metin40_3
+{
+	Vnum	9643
+	Leader	"멍청한 거대 흑웅귀"	657
+	1	"멍청한 거대 흑웅귀"	657
+	2	"멍청한 거대 흑웅귀"	657
+}
+Group	Easter-Metin40_4
+{
+	Vnum	9644
+	Leader	"상선동 원병"	5121
+	1	"상선동 원병"	5121
+	2	"상선동 원병"	5121
+}
+Group	Easter-Metin40_5
+{
+	Vnum	9645
+	Leader	"전갈인간"	2104
+	1	"전갈인간"	2104
+	2	"전갈인간"	2104
+}
+Group	Easter-Metin50_1
+{
+	Vnum	9651
+	Leader	"투지범"	7021
+	1	"투지범"	7021
+	2	"투지범"	7021
+}
+Group	Easter-Metin50_2
+{
+	Vnum	9652
+	Leader	"화령"	7020
+	1	"화령"	7020
+	2	"화령"	7020
+}
+Group	Easter-Metin50_3
+{
+	Vnum	9653
+	Leader	"투지범졸개"	7019
+	1	"투지범졸개"	7019
+	2	"투지범졸개"	7019
+}
+Group	Easter-Metin50_4
+{
+	Vnum	9654
+	Leader	"투귀백장수"	7010
+	1	"투귀백장수"	7010
+	2	"투귀백장수"	7010
+}
+Group	Easter-Metin50_5
+{
+	Vnum	9655
+	Leader	"전갈궁수"	7015
+	1	"전갈궁수"	7015
+	2	"전갈궁수"	7015
+}
+Group	Easter-Metin60_1
+{
+	Vnum	9661
+	Leader	"부활한 전귀궁병"	1062
+	1	"부활한 전귀궁병"	1062
+	2	"부활한 전귀궁병"	1062
+}
+Group	Easter-Metin60_2
+{
+	Vnum	9662
+	Leader	"태화무인"	7023
+	1	"태화무인"	7023
+	2	"태화무인"	7023
+}
+Group	Easter-Metin60_3
+{
+	Vnum	9663
+	Leader	"참마인"	7022
+	1	"참마인"	7022
+	2	"참마인"	7022
+}
+Group	Easter-Metin60_4
+{
+	Vnum	9664
+	Leader	"수구대장군"	1305
+	1	"수구대장군"	1305
+	2	"수구대장군"	1305
+}
+Group	Easter-Metin60_5
+{
+	Vnum	9665
+	Leader	"병정독거미"	2065
+	1	"병정독거미"	2065
+	2	"병정독거미"	2065
+}
+Group	Easter-Metin70_1
+{
+	Vnum	9671
+	Leader	"부활한 재활괴물"	1071
+	1	"부활한 재활괴물"	1071
+	2	"부활한 재활괴물"	1071
+}
+Group	Easter-Metin70_2
+{
+	Vnum	9672
+	Leader	"흑적귀목"	7028
+	1	"흑적귀목"	7028
+	2	"흑적귀목"	7028
+}
+Group	Easter-Metin70_3
+{
+	Vnum	9673
+	Leader	"부활한 지마장"	1068
+	1	"부활한 지마장"	1068
+	2	"부활한 지마장"	1068
+}
+Group	Easter-Metin70_4
+{
+	Vnum	9674
+	Leader	"재활괴물"	1041
+	1	"재활괴물"	1041
+	2	"재활괴물"	1041
+}
+Group	Easter-Metin70_5
+{
+	Vnum	9675
+	Leader	"지마장"	1038
+	1	"지마장"	1038
+	2	"지마장"	1038
+}
+Group	Easter-Metin80_1
+{
+	Vnum	9681
+	Leader	"흑적귀목"	2315
+	1	"흑적귀목"	2315
+	2	"흑적귀목"	2315
+}
+Group	Easter-Metin80_2
+{
+	Vnum	9682
+	Leader	"천의설거인"	1136
+	1	"천의설거인"	1136
+	2	"천의설거인"	1136
+}
+Group	Easter-Metin80_3
+{
+	Vnum	9683
+	Leader	"천의병사"	2401
+	1	"천의병사"	2401
+	2	"천의병사"	2401
+}
+Group	Easter-Metin80_4
+{
+	Vnum	9684
+	Leader	"천의법사"	2403
+	1	"천의법사"	2403
+	2	"천의법사"	2403
+}
+Group	Easter-Metin80_5
+{
+	Vnum	9685
+	Leader	"천의빙충"	1133
+	1	"천의빙충"	1133
+	2	"천의빙충"	1133
+}
+Group	Easter-Metin90_1
+{
+	Vnum	9691
+	Leader	"진천의법사"	2413
+	1	"진천의법사"	2413
+	2	"진천의법사"	2413
+}
+Group	Easter-Metin90_2
+{
+	Vnum	9692
+	Leader	"해태"	5002
+	1	"터프한 화령"	2232
+	2	"터프한 화령"	2232
+}
+Group	Easter-Metin90_3
+{
+	Vnum	9693
+	Leader	"진천의궁병"	2412
+	1	"진천의궁병"	2412
+	2	"진천의궁병"	2412
+}
+Group	Easter-Metin90_4
+{
+	Vnum	9694
+	Leader	"들개"	101
+	1	"들개"	101
+	2	"들개"	101
+	3	"들개"	101
+	4	"들개"	101
+	5	"들개"	101
+	6	"들개"	101
+	7	"들개"	101
+	8	"들개"	101
+	9	"들개"	101
+	10	"들개"	101
+}
+Group	Easter-Metin90_5
+{
+	Vnum	9695
+	Leader	"진천의병사"	2411
+	1	"진천의병사"	2411
+	2	"진천의병사"	2411
+}
+Group	Easter-Metin95_1
+{
+	Vnum	9696
+	Leader	"진천의법사"	2413
+	1	"진천의법사"	2413
+	2	"진천의법사"	2413
+}
+Group	Easter-Metin95_2
+{
+	Vnum	9697
+	Leader	"설마녀"	1191
+	1	"진천의법사"	2413
+	2	"진천의법사"	2413
+}
+Group	Easter-Metin100_1
+{
+	Vnum	9698
+	Leader	"들개"	101
+	1	"들개"	101
+	2	"들개"	101
+	3	"들개"	101
+	4	"들개"	101
+	5	"들개"	101
+	6	"들개"	101
+	7	"들개"	101
+	8	"들개"	101
+	9	"들개"	101
+	10	"들개"	101
+}
+Group	Easter-Metin105_1
+{
+	Vnum	9699
+	Leader	"외안투귀족장"	3191
+}
+Group	Easter-Metin105_2
+{
+	Vnum	9700
+	Leader	"망량족장"	6392
+}
+Group	Easter-Metin105_3
+{
+	Vnum	9701
+	Leader	"망량족장"	6394
+}
+Group	Easter-Metin120
+{
+	Vnum	9702
+	Leader	"녹림장수"	6414
+}

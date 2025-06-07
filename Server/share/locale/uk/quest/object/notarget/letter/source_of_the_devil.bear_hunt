@@ -1,0 +1,3 @@
+send_letter ( c_locale ( 6411 ) ) 
+q . set_counter_name ( c_locale ( 6412 ) ) 
+source_of_the_devil . update_counter ( ) 

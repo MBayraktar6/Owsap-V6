@@ -1,0 +1,2 @@
+say_title ( c_locale ( 4567 ) ) 
+say ( c_locale ( 4582 ) ) 

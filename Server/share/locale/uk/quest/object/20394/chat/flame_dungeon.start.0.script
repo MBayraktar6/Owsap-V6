@@ -1,0 +1,82 @@
+local setting = flame_dungeon . setting ( ) 
+if party . is_party ( ) then 
+local party_check = 0 
+if d . find ( party . getf ( "dungeon_index" ) ) then 
+party_check = ( d . getf_from_map_index ( "party_leader_pid" , party . getf ( "dungeon_index" ) ) == party . get_leader_pid ( ) ) 
+end 
+if d . find ( party . getf ( "dungeon_index" ) ) and party_check then 
+if get_global_time ( ) - pc . getf ( "flame_dungeon" , "exit_time" ) < 5 * 60 then 
+local dungeon_level = d . getf_from_map_index ( "level" , party . getf ( "dungeon_index" ) ) 
+if dungeon_level == 17 then 
+pc . warp ( setting . bossroom_entry_pos [ 1 ] * 100 , setting . bossroom_entry_pos [ 2 ] * 100 , party . getf ( "dungeon_index" ) ) 
+else 
+pc . warp ( setting . dungeon_entry_pos [ 1 ] * 100 , setting . dungeon_entry_pos [ 2 ] * 100 , party . getf ( "dungeon_index" ) ) 
+end 
+else 
+say_title ( c_mob_name ( 20394 ) ) 
+say ( c_locale ( 1375 ) ) 
+end 
+else 
+local pids = { party . get_member_pids ( ) } 
+local noTicketMembers = { } 
+local notEnoughLevelMembers = { } 
+local ticketCheck = true 
+local levelCheck = true 
+local ticketGroup = { get_special_item_group ( 10034 ) } 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+local canPass = false 
+for idx = 1 , table . getn ( ticketGroup ) , 2 begin 
+if pc . count_item ( ticketGroup [ idx ] ) >= ticketGroup [ idx + 1 ] then 
+canPass = true 
+break 
+end 
+end 
+if not canPass then 
+table . insert ( noTicketMembers , pc . get_name ( ) ) 
+ticketCheck = false 
+end 
+if pc . get_level ( ) < 100 then 
+table . insert ( notEnoughLevelMembers , pc . get_name ( ) ) 
+levelCheck = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not ticketCheck then 
+say_title ( c_mob_name ( 20394 ) ) 
+say ( c_locale ( 1377 ) ) 
+for i , name in next , noTicketMembers , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+if levelCheck then 
+return 
+else 
+wait ( ) 
+end 
+end 
+if not levelCheck then 
+say_title ( c_mob_name ( 20394 ) ) 
+say ( c_locale ( 1379 ) ) 
+for i , name in next , notEnoughLevelMembers , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return 
+end 
+if party . is_leader ( ) then 
+say ( c_locale ( 1328 ) ) 
+local warp = select ( c_locale ( 1329 ) , c_locale ( 1330 ) ) 
+if warp == 1 then 
+if party . is_map_member_flag_lt ( "exit_time" , get_global_time ( ) - 30 * 60 ) then 
+flame_dungeon . make_dungeon ( ) 
+else 
+say ( c_locale ( 1376 ) ) 
+end 
+end 
+party . setf ( "flame_dungeon_boss_kill_count" , 0 ) 
+else 
+say ( c_locale ( 1331 ) ) 
+end 
+end 
+else 
+say ( c_locale ( 1332 ) ) 
+end 

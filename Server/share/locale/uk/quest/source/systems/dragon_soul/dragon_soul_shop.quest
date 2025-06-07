@@ -1,0 +1,11 @@
+define alchemist 20001
+define dragon_soul_shop_vnum 12
+
+quest dragon_soul_shop begin
+	state start begin
+		when alchemist.chat.c_locale(929) with ds.is_qualified() begin
+			say(c_locale(939))
+			npc.open_shop(dragon_soul_shop_vnum)
+		end
+	end
+end

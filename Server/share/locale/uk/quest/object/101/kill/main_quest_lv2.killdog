@@ -1,0 +1,10 @@
+local count = pc . getqf ( "state" ) + 1 
+if count <= 9 then 
+pc . setqf ( "state" , count ) 
+q . set_counter ( c_locale ( 5031 ) , 9 - count ) 
+if count == 9 then 
+say_title ( c_locale ( 5032 ) ) 
+say ( c_locale ( 5033 ) ) 
+set_state ( "gototeacher2" ) 
+end 
+end 

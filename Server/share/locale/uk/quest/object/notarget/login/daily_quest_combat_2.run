@@ -1,0 +1,2 @@
+send_letter ( special . daily_quest . table [ "combat" ] [ 2 ] [ "title" ] ) 
+daily_quest_combat_2 . update ( ) 

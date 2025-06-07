@@ -1,0 +1,20 @@
+Group	이동반지
+{
+	Vnum	10031
+	Type	Quest
+	1	70058	1	1 -- Teleportation Ring
+	2	76042	1	1 -- Teleportation Ring
+}
+Group	탈것교환권
+{
+	Vnum	10032
+	Type	Quest
+	1	52701	1	1 -- Lion Certificate
+	2	52702	1	1 -- Tiger Certificate
+	3	52703	1	1 -- Wild Boar Certificate
+	4	52704	1	1 -- Wolf Certificate
+	5	52705	1	1 -- Reindeer Certificate (m)
+	6	52706	1	1 -- Reindeer Certificate (f)
+	7	52707	1	1 -- Dragor Certificate
+	8	52708	1	1 -- Moa Certificate
+}

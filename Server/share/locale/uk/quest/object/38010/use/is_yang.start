@@ -1,0 +1,27 @@
+if get_time ( ) > pc . getqf ( "next_time" ) or pc . getqf ( "next_time" ) == 0 then 
+pc . setqf ( "next_time" , get_time ( ) + 20 ) 
+local yang_amount_1 = item . get_socket ( 0 ) 
+say_title ( c_locale ( 2311 ) ) 
+say ( c_locale ( 2312 , number_to_money_string ( yang_amount_1 ) ) ) 
+local choice = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if choice == 2 then 
+return 
+end 
+say_title ( c_locale ( 2311 ) ) 
+local current_gold = pc . get_gold ( ) 
+if current_gold + yang_amount_1 >= 1e+10 then 
+say ( c_locale ( 2314 ) ) 
+else 
+local yang_amount_2 = item . get_socket ( 0 ) 
+if yang_amount_1 == yang_amount_2 then 
+say ( c_locale ( 2313 ) ) 
+pc . changegold ( yang_amount_1 ) 
+item . remove ( ) 
+pc . setqf ( "next_time" , get_time ( ) + 20 ) 
+else 
+char_log ( pc . get_player_id ( ) , "IS_YANG_HACK" , yang_amount_1 .. " not match: " .. yang_amount_2 ) 
+end 
+end 
+else 
+syschat ( c_locale ( 2315 , pc . getqf ( "next_time" ) - get_time ( ) ) ) 
+end 

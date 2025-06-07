@@ -1,0 +1,8 @@
+say ( c_locale ( 1826 ) ) 
+if select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) == 1 then 
+if guild_dragonlair . get_stage ( ) == 0 then 
+say ( c_locale ( 1827 ) ) 
+return 
+end 
+guild_dragonlair . cancel ( ) 
+end 

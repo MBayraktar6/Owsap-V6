@@ -1,0 +1,121 @@
+say_title ( c_locale ( 114 ) ) 
+say ( c_locale ( 115 ) ) 
+if pc . count_item ( 27833 ) >= 5 then 
+pc . remove_item ( 27833 , 5 ) 
+say ( c_locale ( 116 ) ) 
+if pc . get_job ( ) == 0 then 
+local r = number ( 1 , 10 ) 
+if r == 1 then 
+pc . give_item2 ( 13 , 1 ) 
+elseif r == 2 then 
+pc . give_item2 ( 23 , 1 ) 
+elseif r == 3 then 
+pc . give_item2 ( 33 , 1 ) 
+elseif r == 4 then 
+pc . give_item2 ( 43 , 1 ) 
+elseif r == 5 then 
+pc . give_item2 ( 53 , 1 ) 
+elseif r == 6 then 
+pc . give_item2 ( 3003 , 1 ) 
+elseif r == 7 then 
+pc . give_item2 ( 3013 , 1 ) 
+elseif r == 8 then 
+pc . give_item2 ( 3023 , 1 ) 
+elseif r == 9 then 
+pc . give_item2 ( 3033 , 1 ) 
+elseif r == 10 then 
+pc . give_item2 ( 3043 , 1 ) 
+end 
+elseif pc . get_job ( ) == 1 then 
+local r = number ( 1 , 15 ) 
+if r == 1 then 
+pc . give_item2 ( 13 , 1 ) 
+elseif r == 2 then 
+pc . give_item2 ( 23 , 1 ) 
+elseif r == 3 then 
+pc . give_item2 ( 33 , 1 ) 
+elseif r == 4 then 
+pc . give_item2 ( 43 , 1 ) 
+elseif r == 5 then 
+pc . give_item2 ( 53 , 1 ) 
+elseif r == 6 then 
+pc . give_item2 ( 1003 , 1 ) 
+elseif r == 7 then 
+pc . give_item2 ( 4003 , 1 ) 
+elseif r == 8 then 
+pc . give_item2 ( 1013 , 1 ) 
+elseif r == 9 then 
+pc . give_item2 ( 4013 , 1 ) 
+elseif r == 10 then 
+pc . give_item2 ( 1023 , 1 ) 
+elseif r == 11 then 
+pc . give_item2 ( 2003 , 1 ) 
+elseif r == 12 then 
+pc . give_item2 ( 2013 , 1 ) 
+elseif r == 13 then 
+pc . give_item2 ( 2023 , 1 ) 
+elseif r == 14 then 
+pc . give_item2 ( 2033 , 1 ) 
+elseif r == 15 then 
+pc . give_item2 ( 2043 , 1 ) 
+end 
+elseif pc . get_job ( ) == 2 then 
+local r = number ( 1 , 6 ) 
+if r == 1 then 
+pc . give_item2 ( 13 , 1 ) 
+elseif r == 2 then 
+pc . give_item2 ( 23 , 1 ) 
+elseif r == 3 then 
+pc . give_item2 ( 33 , 1 ) 
+elseif r == 4 then 
+pc . give_item2 ( 43 , 1 ) 
+elseif r == 5 then 
+pc . give_item2 ( 53 , 1 ) 
+elseif r == 6 then 
+pc . give_item2 ( 53 , 1 ) 
+end 
+elseif pc . get_job ( ) == 3 then 
+local r = number ( 1 , 8 ) 
+if r == 1 then 
+pc . give_item2 ( 5003 , 1 ) 
+elseif r == 2 then 
+pc . give_item2 ( 5013 , 1 ) 
+elseif r == 3 then 
+pc . give_item2 ( 5023 , 1 ) 
+elseif r == 4 then 
+pc . give_item2 ( 7003 , 1 ) 
+elseif r == 5 then 
+pc . give_item2 ( 7013 , 1 ) 
+elseif r == 6 then 
+pc . give_item2 ( 7023 , 1 ) 
+elseif r == 7 then 
+pc . give_item2 ( 7033 , 1 ) 
+elseif r == 8 then 
+pc . give_item2 ( 7043 , 1 ) 
+end 
+elseif pc . get_job ( ) == 4 then 
+local r = number ( 1 , 8 ) 
+if r == 1 then 
+pc . give_item2 ( 6003 , 1 ) 
+elseif r == 2 then 
+pc . give_item2 ( 6013 , 1 ) 
+elseif r == 3 then 
+pc . give_item2 ( 6023 , 1 ) 
+elseif r == 4 then 
+pc . give_item2 ( 6033 , 1 ) 
+elseif r == 5 then 
+pc . give_item2 ( 6043 , 1 ) 
+elseif r == 6 then 
+pc . give_item2 ( 6053 , 1 ) 
+elseif r == 7 then 
+pc . give_item2 ( 6063 , 1 ) 
+elseif r == 8 then 
+pc . give_item2 ( 6073 , 1 ) 
+end 
+end 
+else 
+say_title ( c_locale ( 112 ) ) 
+say ( c_locale ( 117 ) ) 
+end 
+setstate ( "__COMPLETE__" ) 
+q . done ( ) 

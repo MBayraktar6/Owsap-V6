@@ -1,0 +1,217 @@
+quest entry_event_map begin
+	state start begin
+		function enter_level(vnum1, vnum2)
+			lv_range = {}
+			lv_range[1] = { 15, 39 }
+			lv_range[2] = { 40, 64 }
+			lv_range[3] = { 65, 84 }
+			lv_range[4] = { 85, 99 }
+			lv_range[5] = { 100, 120 }
+			return lv_range[vnum1][vnum2]
+		end
+
+		function warp_to_map(modu)
+			if modu == 1 then
+				pc.warp(903 * 100, 83 * 100, 200)
+			elseif modu == 2 then
+				pc.warp(1025 * 100, 95 * 100, 200)
+			else
+				pc.warp(959 * 100, 176 * 100, 200)
+			end
+		end
+
+		function check_limit()
+			if game.get_event_flag("event_map_login_counter") == game.get_event_flag("event_map_player_max") then
+				return 0
+			else
+				return 1
+			end
+		end
+
+		function player_dialog()
+			if pc.get_map_index() == 200 then
+				say_title(c_locale(992))
+				say(c_locale(993))
+
+				local sub_sel = select(c_locale(4473), c_locale(3418))
+				if sub_sel == 2 then
+					return
+				end
+
+				warp_to_village()
+
+				local counter = game.get_event_flag("event_map_login_counter")
+				game.set_event_flag("event_map_login_counter", counter - 1)
+			end
+
+			if game.get_event_flag("event_map_active") == 0 then
+				say(c_locale(2494))
+			else
+				say_title(c_locale(992))
+				say(c_locale(994))
+
+				local s = select(c_locale(2490), c_locale(2495))
+				local min = game.get_event_flag("event_map_level_min")
+				local max = game.get_event_flag("event_map_level_max")
+				local empire = game.get_event_flag("event_map_empire")
+
+				if s == 1 then
+					if pc.get_level() < min or pc.get_level() > max then
+						say_title(c_locale(992))
+						say_reward(c_locale(995, min, max))
+						return
+					end
+					
+					if pc.get_empire() != empire and empire != 0 then
+						say_title(c_locale(992))
+						say(c_locale(996))
+						return
+					end
+
+					if entry_event_map.check_limit() == 0 then
+						say_title(c_locale(992))
+						say(c_locale(997))
+						return
+					end
+
+					say_title(c_locale(992))
+					say(c_locale(998))
+
+					if empire == 0 then
+						entry_event_map.warp_to_map(pc.get_empire())
+					else
+						local modu = math.mod(pc.get_player_id(), 2)
+						entry_event_map.warp_to_map(modu)
+					end
+				end
+			end
+		end
+
+		function gm_exit_check()
+			if pc.get_map_index() == 200 and pc.get_gm_level() == 5 then
+				return 1
+			else
+				return 0
+			end
+		end
+
+		when login or enter begin
+			if pc.get_map_index() == 200 and not pc.get_gm_level() == 5 then
+				if game.get_event_flag("event_map_active") == 0 then
+					warp_to_village()
+				end
+
+				local counter = game.get_event_flag("event_map_login_counter")
+				game.set_event_flag("event_map_login_counter", counter + 1)
+			end
+		end
+
+		when 11001.chat.c_locale(999) or 11003.chat.c_locale(999) or 11005.chat.c_locale(999) with game.get_event_flag("event_map_active") == 1 begin
+			entry_event_map.player_dialog()
+		end
+
+		when 11001.chat.c_locale(1000) or 11003.chat.c_locale(1000) or 11005.chat.c_locale(1000) with pc.get_gm_level() == 5 begin
+			local s = select(c_locale(1001), c_locale(1002), c_locale(1003), c_locale(2426))
+			if s == 3 then
+				if entry_event_map.gm_exit_check() == 1 then
+					say_title("GM: " .. c_locale(992))
+					say(c_locale(1004))
+
+					-- reset all setting for this event and nobody can enter it
+					game.set_event_flag("event_map_active", 0)
+					game.set_event_flag("event_map_choice", 0)
+					game.set_event_flag("event_map_level_min", 0)
+					game.set_event_flag("event_map_level_max", 0)
+					game.set_event_flag("event_map_player_max",0)
+					game.set_event_flag("event_map_empire", 0)
+					game.set_event_flag("event_map_login_counter",0)
+
+					-- teleport all out from the map
+					warp_all_to_village(200, 30)
+				else
+					say_title("GM: " .. c_locale(992))
+					say(c_locale(1005))
+					return
+				end
+			end
+
+			if s == 1 then
+				say_title("GM: " .. c_locale(992))
+				say(c_locale(1006))
+
+				local choice = select(
+					"1> min " .. entry_event_map.enter_level(1, 1) .. " max " .. entry_event_map.enter_level(1, 2),
+					"2> min " .. entry_event_map.enter_level(2, 1) .. " max " .. entry_event_map.enter_level(2, 2),
+					"3> min " .. entry_event_map.enter_level(3, 1) .. " max " .. entry_event_map.enter_level(3, 2),
+					"4> min " .. entry_event_map.enter_level(4, 1) .. " max " .. entry_event_map.enter_level(4, 2),
+					"5> min " .. entry_event_map.enter_level(5, 1) .. " max " .. entry_event_map.enter_level(5, 2),
+					c_locale(2426)
+				)
+				if choice == 6 then
+					return
+				end
+
+				say_title("GM: " .. c_locale(992))
+				say(c_locale(1007))
+				local amount_choice = input_number(c_locale(1015))
+
+				if amount_choice > 200 or amount_choice <= 0 then
+					say_title("GM: " .. c_locale(992))
+					say(c_locale(1016))
+					return
+				end
+
+				local empire_names = {
+					[0] = c_locale(7907),
+					[1] = c_locale(2478),
+					[2] = c_locale(2479),
+					[3] = c_locale(2480),
+				}
+
+				say_title("GM: " .. c_locale(992))
+				say(c_locale(1008))
+
+				local kingdom_sub_set = select(empire_names[1], empire_names[2], empire_names[3], empire_names[0], c_locale(2426))
+				if kingdom_sub_set == 5 then
+					return
+				end
+
+				if kingdom_sub_set == 4 then
+					kingdom_sub_set = 0
+				end
+
+				say_title("GM: " .. c_locale(992))
+				say(c_locale(1009))
+				say(c_locale(1010) .. " " .. entry_event_map.enter_level(choice, 1) .. " - " .. entry_event_map.enter_level(choice, 2))
+				say(c_locale(1011) .. " " .. amount_choice)
+				say(c_locale(1012) .. " " .. empire_names[kingdom_sub_set])
+
+				local t = select(c_locale(2625), c_locale(2600))
+				if t == 2 then
+					return
+				end
+
+				game.set_event_flag("event_map_active", 1)
+				game.set_event_flag("event_map_choice", choice)
+				game.set_event_flag("event_map_level_min", entry_event_map.enter_level(choice, 1))
+				game.set_event_flag("event_map_level_max", entry_event_map.enter_level(choice, 2))
+				game.set_event_flag("event_map_player_max", amount_choice)
+				game.set_event_flag("event_map_empire", kingdom_sub_set)
+
+				if kingdom_sub_set == 0 then
+					notice_multiline(c_locale(1013, entry_event_map.enter_level(choice, 1), entry_event_map.enter_level(choice, 2)), notice_all)
+				else
+					notice_multiline(c_locale(1014, empire_names[kingdom_sub_set], entry_event_map.enter_level(choice, 1), entry_event_map.enter_level(choice, 2)), notice_all)
+				end
+			elseif s == 2 then
+				game.set_event_flag("event_map_active", 0)
+				game.set_event_flag("event_map_choice", 0)
+				game.set_event_flag("event_map_level_min", 0)
+				game.set_event_flag("event_map_level_max", 0)
+				game.set_event_flag("event_map_player_max", 0)
+				game.set_event_flag("event_map_empire", 0)
+				game.set_event_flag("event_map_login_counter", 0)
+			end
+		end
+	end
+end

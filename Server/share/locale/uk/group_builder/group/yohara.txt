@@ -1,0 +1,185 @@
+#
+# Conqueror's of Yohara
+# Dong Gwang, Seogan, Namgan
+#
+# metin2_map_eastplain_01
+# metin2_map_eastplain_02
+# metin2_map_eastplain_03
+#
+
+Group	EastPlane_01_01
+{
+	Vnum	6145
+	Leader	"Troll Soldier"	6701
+	1	"Troll Soldier"	6701
+	2	"Troll Soldier"	6712
+	3	"Troll Soldier"	6712
+	4	"Troll Warrior"	6713
+}
+Group	EastPlane_01_02
+{
+	Vnum	6146
+	Leader	"Hell Hound"	6700
+	1	Dongan_monster1	6700
+	2	"Troll Warrior"	6713
+	3	"Troll Warrior"	6713
+	4	"Troll Soldier"	6712
+}
+Group	EastPlane_01_03
+{
+	Vnum	6147
+	Leader	"Hell Hound"	6700
+	1	"Hell Hound"	6700
+	2	"Hell Hound"	6711
+	3	"Troll Warrior"	6713
+	4	"Troll Soldier"	6712
+}
+Group	EastPlane_01_04
+{
+	Vnum	6148
+	Leader	"Hell Hound"	6711
+	1	"Hell Hound"	6711
+	2	"Troll Soldier"	6712
+	3	"Troll Soldier"	6712
+	4	"Troll Warrior"	6713
+}
+Group	EastPlane_01_05
+{
+	Vnum	6149
+	Leader	"Troll Warrior"	6702
+	1	"Troll Warrior"	6702
+	2	"Mistreated Ghost"	6710
+	3	"Troll Archer"	6703
+	4	"Troll Shaman"	6704
+}
+Group	EastPlane_01_06
+{
+	Vnum	6150
+	Leader	"Hell Hound"	6711
+	1	"Hell Hound"	6711
+	2	"Mistreated Ghost"	6710
+	3	"Troll Warrior"	6713
+	4	"Troll Shaman"	6704
+}
+Group	EastPlane_01_07
+{
+	Vnum	6151
+	Leader	"Troll Warrior"	6702
+	1	"Troll Archer"	6703
+	2	"Troll Soldier"	6712
+	3	"Troll Archer"	6703
+	4	"Troll Shaman"	6704
+}
+Group	EastPlane_01_08
+{
+	Vnum	6152
+	Leader	"Mistreated Ghost"	6710
+	1	"Mistreated Ghost"	6710
+	2	"Mistreated Ghost"	6710
+	3	"Mistreated Ghost"	6710
+	4	"Mistreated Ghost"	6710
+}
+Group	EastPlane_02_01
+{
+	Vnum	6185
+	Leader	"Quag Kovix"	6718
+	1	"Quag Kovix"	6718
+	2	"Quag Kovix"	6718
+	3	"Quag Worker"	6719
+}
+Group	EastPlane_02_02
+{
+	Vnum	6186
+	Leader	"Quag Warrior"	6721
+	1	"Quag Worker"	6719
+	2	"Quag Worker"	6719
+	3	"Quag Golem"	6720
+}
+Group	EastPlane_02_03
+{
+	Vnum	6187
+	Leader	"Quag Golem"	6720
+	1	"Quag Sorcerer"	6722
+	2	"Quag Sorcerer"	6722
+	3	"Quag Golem"	6720
+}
+Group	EastPlane_02_04
+{
+	Vnum	6188
+	Leader	"Quag Warrior"	6721
+	1	"Quag Warrior"	6721
+	2	"Quag Sorcerer"	6722
+	3	"Quag Golem"	6720
+}
+Group	EastPlane_02_05
+{
+	Vnum	6189
+	Leader	"Quag Worker"	6719
+	1	"Quag Worker"	6719
+	2	"Quag Warrior"	6721
+	3	"Quag Sorcerer"	6722
+}
+Group	EastPlane_02_06
+{
+	Vnum	6190
+	Leader	"Quag Worker"	6719
+	1	"Quag Worker"	6719
+	2	"Quag Warrior"	6721
+	3	"Quag Sorcerer"	6722
+}
+Group	EastPlane_02_07
+{
+	Vnum	6191
+	Leader	"Quag Worker"	6719
+	1	"Quag Worker"	6719
+	2	"Quag Warrior"	6721
+	3	"Quag Sorcerer"	6722
+}
+Group	EastPlane_02_08
+{
+	Vnum	6192
+	Leader	"Quag Sorcerer"	6722
+	1	"Quag Sorcerer"	6722
+	2	"Quag Sorcerer"	6722
+	3	"Quag Sorcerer"	6722
+}
+Group	EastPlane_03_01
+{
+	Vnum	6711
+	Leader	"Quag Kovix"	6725
+	1	"Quag Kovix"	6725
+	2	"Quag Kovix"	6725
+	3	"Quag Worker"	6726
+}
+Group	EastPlane_03_02
+{
+	Vnum	6712
+	Leader	"Quag Warrior"	6728
+	1	"Quag Worker"	6726
+	2	"Quag Worker"	6726
+	3	"Quag Golem"	6727
+}
+Group	EastPlane_03_03
+{
+	Vnum	6713
+	Leader	"Quag Golem"	6727
+	1	"Quag Sorcerer"	6729
+	2	"Quag Sorcerer"	6729
+	3	"Quag Golem"	6727
+}
+Group	EastPlane_03_04
+{
+	Vnum	6714
+	Leader	"Quag Warrior"	6728
+	1	"Quag Warrior"	6728
+	2	"Quag Sorcerer"	6729
+	3	"Quag Golem"	6727
+}
+Group	EastPlane_03_05
+{
+	Vnum	6715
+	Leader	"Quag Sorcerer"	6729
+	1	"Quag Sorcerer"	6729
+	2	"Quag Sorcerer"	6729
+	3	"Quag Sorcerer"	6729
+}

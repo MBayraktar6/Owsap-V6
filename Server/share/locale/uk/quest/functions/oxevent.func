@@ -1,0 +1,8 @@
+oxevent.get_status
+oxevent.open
+oxevent.close
+oxevent.quiz
+oxevent.get_attender
+oxevent.end_event
+oxevent.end_event_force
+oxevent.give_item

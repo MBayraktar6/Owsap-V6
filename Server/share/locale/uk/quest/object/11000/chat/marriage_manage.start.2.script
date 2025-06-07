@@ -1,0 +1,28 @@
+if not marriage_manage . check_divorce_time ( ) then 
+return 
+end 
+say_title ( c_locale ( 6589 ) ) 
+say ( c_locale ( 6590 ) ) 
+local s = select ( c_locale ( 2263 ) , c_locale ( 6591 ) ) 
+if s == 2 then 
+return 
+end 
+local NEED_MONEY = 1e+06 
+if pc . get_money ( ) < NEED_MONEY then 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6592 ) ) 
+return 
+end 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6593 ) ) 
+local c = select ( c_locale ( 6594 ) , c_locale ( 6595 ) ) 
+if c == 2 then 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6596 ) ) 
+return 
+end 
+pc . removeitem ( 70302 , 1 ) 
+pc . change_gold ( - NEED_MONEY ) 
+marriage . remove ( ) 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6597 ) ) 

@@ -1,0 +1,5 @@
+arena.start_duel
+arena.add_map
+arena.get_duel_list
+arena.add_observer
+arena.is_in_arena

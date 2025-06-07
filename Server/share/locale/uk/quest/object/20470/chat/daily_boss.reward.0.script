@@ -1,0 +1,24 @@
+say_title ( c_locale ( 11316 ) ) 
+say ( c_mob_name ( 20470 ) ) 
+say ( "" ) 
+say ( c_locale ( 11293 ) ) 
+if select ( c_locale ( 11294 ) , c_locale ( 11295 ) ) == 1 then 
+if not pc . enough_inventory ( 31146 ) then 
+say ( c_locale ( 11296 ) ) 
+return 
+end 
+pc . give_item2 ( 31146 , 1 ) 
+pc . setf ( "flame_dungeon" , "yamachun_boss" , 0 ) 
+pc . setf ( "snow_dungeon" , "hanma_boss" , 0 ) 
+pc . setf ( "dawnmist_dungeon" , "thunder_boss" , 0 ) 
+if is_test_server ( ) then 
+pc . setqf ( "next_time" , get_time ( ) + 180 ) 
+else 
+pc . setqf ( "next_time" , get_time ( ) + 86400 ) 
+end 
+say_title ( c_locale ( 11316 ) ) 
+say ( c_mob_name ( 20470 ) ) 
+say ( "" ) 
+say ( c_locale ( 11323 ) ) 
+set_state ( "run" ) 
+end 

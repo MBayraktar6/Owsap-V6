@@ -1,0 +1,8 @@
+say ( c_locale ( 1459 ) ) 
+say ( c_locale ( 1460 ) ) 
+say ( c_locale ( 1461 ) ) 
+say ( c_locale ( 1462 ) ) 
+if select ( c_locale ( 1475 ) , c_locale ( 1476 ) ) == 1 then 
+setskin ( NOWINDOW ) 
+game . open_gem_shop ( ) 
+end 

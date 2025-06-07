@@ -1,0 +1,74 @@
+time_spiral={["start"]=0,run= function (item_vnum,item_value)if item_vnum == nil then 
+return 
+end 
+local quest_table = { 
+{ "collect_quest_lv30" , "duration" , 10828 } , 
+{ "collect_quest_lv40" , "duration" , 10829 } , 
+{ "collect_quest_lv50" , "duration" , 10830 } , 
+{ "collect_quest_lv60" , "duration" , 10831 } , 
+{ "collect_quest_lv70" , "duration" , 10832 } , 
+{ "collect_quest_lv80" , "duration" , 10833 } , 
+{ "collect_quest_lv85" , "duration" , 10834 } , 
+{ "collect_quest_lv90" , "duration" , 10835 } , 
+{ "collect_quest_lv92" , "duration" , 10836 } , 
+{ "collect_quest_lv94" , "duration" , 10837 } , 
+{ "add_attr67" , "wait_time" , 10856 } , 
+} 
+local reserved_table = { } 
+local option_table = { } 
+local option_count = 0 
+for index , quest_file in ipairs ( quest_table ) begin 
+local quest_name = quest_file [ 1 ] 
+local flag_name = quest_file [ 2 ] 
+local locale_vnum = quest_file [ 3 ] 
+local wait_time = pc . getf ( quest_name , flag_name ) 
+if wait_time > get_global_time ( ) then 
+option_count = option_count + 1 
+table . insert ( reserved_table , index ) 
+table . insert ( option_table , c_locale ( locale_vnum , get_time_remaining ( wait_time - get_time ( ) ) ) ) 
+end 
+end 
+table . insert ( option_table , c_locale ( 10841 ) ) 
+if option_count == 0 then 
+say ( c_locale ( 10838 ) ) 
+return 
+end 
+say_title ( c_item_name ( item_vnum ) ) 
+say ( c_locale ( 10827 ) ) 
+local option_select = select_table ( option_table ) 
+if option_select <= option_count then 
+say_title ( c_item_name ( item_vnum ) ) 
+say ( option_table [ option_select ] ) 
+if item_vnum == 72347 + ( item_vnum - 72347 ) then 
+say ( c_locale ( 11331 + ( item_vnum - 72347 ) ) ) 
+end 
+say ( c_locale ( 10844 ) ) 
+if select ( c_locale ( 10842 ) , c_locale ( 10843 ) ) == 1 then 
+local quest_file = quest_table [ reserved_table [ option_select ] ] 
+local quest_name = quest_file [ 1 ] 
+local flag_name = quest_file [ 2 ] 
+local wait_time = pc . getf ( quest_name , flag_name ) 
+if wait_time > get_global_time ( ) then 
+local time_period = wait_time - get_global_time ( ) 
+local remove_pct = time_period * ( item_value / 100 ) 
+local time_result = math . floor ( math . abs ( time_period - remove_pct ) ) 
+if time_result > 0 then 
+pc . setf ( quest_name , flag_name , get_global_time ( ) + time_result ) 
+pc . remove_item ( item_vnum , 1 ) 
+say_title ( c_item_name ( item_vnum ) ) 
+say ( c_locale ( 10840 ) ) 
+say ( c_locale ( 10823 , get_time_remaining ( pc . getf ( quest_name , flag_name ) - get_time ( ) ) ) ) 
+if pc . count_item ( item_vnum ) > 0 then 
+if select ( c_locale ( 11334 ) , c_locale ( 10843 ) ) == 1 then 
+time_spiral . run ( item_vnum , item_value ) 
+else return end 
+else 
+return 
+end 
+else 
+say ( c_locale ( 10839 ) ) 
+end 
+end 
+else return end 
+else return end 
+end }

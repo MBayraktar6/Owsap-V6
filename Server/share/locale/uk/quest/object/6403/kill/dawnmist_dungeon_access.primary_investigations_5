@@ -1,0 +1,4 @@
+if number ( 1 , 25 ) == 1 or is_test_server ( ) then 
+pc . give_item2 ( 31100 , 1 ) 
+set_state ( "primary_investigations_6" ) 
+end 

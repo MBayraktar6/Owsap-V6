@@ -1,0 +1,4 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+crack_flame_dungeon . clear_server_timers ( get_server_timer_arg ( ) ) 
+crack_flame_dungeon . clear_and_exit ( ) 
+end 

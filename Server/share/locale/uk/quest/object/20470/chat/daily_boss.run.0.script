@@ -1,0 +1,15 @@
+say_title ( c_locale ( 11316 ) ) 
+say ( c_mob_name ( 20470 ) ) 
+say ( "" ) 
+if pc . getqf ( "next_time" ) > get_time ( ) then 
+say_reward ( c_locale ( 10823 , get_time_remaining ( pc . getqf ( "next_time" ) - get_time ( ) ) ) ) 
+return 
+end 
+say ( c_locale ( 11318 ) ) 
+if select ( c_locale ( 11285 ) , c_locale ( 11286 ) ) == 1 then 
+say_title ( c_locale ( 11316 ) ) 
+say ( c_mob_name ( 20470 ) ) 
+say ( "" ) 
+say ( c_locale ( 11319 ) ) 
+set_state ( "boss_hunt" ) 
+end 

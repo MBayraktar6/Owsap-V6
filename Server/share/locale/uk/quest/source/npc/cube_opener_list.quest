@@ -1,0 +1,146 @@
+quest cube_opener_list begin
+	state start begin
+		when 20378.take begin
+			-- special case
+			local vnum = item.get_vnum()
+			local upgrade_list = {
+				[11299] = { { ["material_idx"] = 1, ["vnum"] = 20000 } },
+				[11499] = { { ["material_idx"] = 1, ["vnum"] = 20250 } },
+				[11699] = { { ["material_idx"] = 1, ["vnum"] = 20500 } },
+				[11899] = { { ["material_idx"] = 1, ["vnum"] = 20750 } },
+				[21079] = { { ["material_idx"] = 1, ["vnum"] = 21090 } },
+				[20009] = { { ["material_idx"] = 2, ["vnum"] = 20860 }, { ["material_idx"] = 3, ["vnum"] = 20910} },
+				[20259] = { { ["material_idx"] = 2, ["vnum"] = 20870 }, { ["material_idx"] = 3, ["vnum"] = 20920} },
+				[20509] = { { ["material_idx"] = 2, ["vnum"] = 20880 }, { ["material_idx"] = 3, ["vnum"] = 20930} },
+				[20759] = { { ["material_idx"] = 2, ["vnum"] = 20890 }, { ["material_idx"] = 3, ["vnum"] = 20940} },
+				[21099] = { { ["material_idx"] = 2, ["vnum"] = 20900 }, { ["material_idx"] = 3, ["vnum"] = 20950} },
+			}
+
+			local material_list = {
+				[1] = {
+					{ ["vnum"] = 70031, ["count"] = 3 },
+					{ ["vnum"] = 51001, ["count"] = 100 },
+					{ ["vnum"] = 25040, ["count"] = 2 },
+					{ ["vnum"] = 1, ["count"] = 10 },
+				},
+				[2] = {
+					{ ["vnum"] = 70031, ["count"] = 5 },
+					{ ["vnum"] = 30619, ["count"] = 5 },
+					{ ["vnum"] = 30614, ["count"] = 5 },
+					{ ["vnum"] = 30609, ["count"] = 10 },
+					{ ["vnum"] = 30608, ["count"] = 10 },
+					{ ["vnum"] = 1, ["count"] = 10000000 },
+				},
+				[3] = {
+					{ ["vnum"] = 70031, ["count"] = 5 },
+					{ ["vnum"] = 30619, ["count"] = 5 },
+					{ ["vnum"] = 30615, ["count"] = 5 },
+					{ ["vnum"] = 30606, ["count"] = 10 },
+					{ ["vnum"] = 30605, ["count"] = 10 },
+					{ ["vnum"] = 1, ["count"] = 10000000 },
+				}
+			}
+
+			local can_change = true
+
+			if 11299 == vnum or 11499 == vnum or 11699 == vnum or 11899 == vnum or 21079 == vnum or
+				20009 == vnum or 20259 == vnum or 20509 == vnum or 20759 == vnum or 21099 == vnum then
+
+				say_title(c_mob_name(20378))
+				say(c_locale(711, c_item_name(vnum)))
+				say(c_locale(718))
+
+				local vnum_name_list = {}
+				local vnum_list = upgrade_list[vnum]
+				local vnum_list_count = table.getn(vnum_list)
+				for i = 1, vnum_list_count do
+					if i > 3 then
+						-- cannot handle more than 3 items!
+						break
+					elseif vnum_list_count == 1 then
+						say_item_vnum(vnum_list[i].vnum)
+						say(newline)
+					else
+						say_item_vnum_tooltip(vnum_list[i].vnum, (i - 1), vnum_list_count)
+					end
+					table.insert(vnum_name_list, c_item_name(vnum_list[i].vnum))
+				end
+				table.insert(vnum_name_list, c_locale(11749))
+
+				local s = select_table(vnum_name_list)
+				if s == table.getn(vnum_name_list) then
+					return
+				end
+
+				say_title(c_mob_name(20378))
+				say_reward(c_locale(712))
+
+				local s_vnum = vnum_list[s].vnum
+				local s_material_idx = vnum_list[s].material_idx
+
+				for i, material in ipairs(material_list[s_material_idx]) do
+					if material.vnum == 1 then
+						say(string.format("%s", number_to_money_string(material.count, c_locale(2585))))
+					else
+						say(string.format("%s %d %s", c_item_name(material.vnum), material.count, c_locale(2455)))
+					end
+					can_change = can_change and ((material.vnum == 1 and pc.get_gold() >= material.count) or (material.vnum ~= 1 and pc.count_item(material.vnum) >= material.count))
+				end
+
+				wait()
+
+				if can_change == true then
+					say_title(c_mob_name(20378))
+					say(c_locale(714, c_item_name(vnum), c_item_name(s_vnum)))
+					say_reward(c_locale(4297))
+					say_item_vnum(s_vnum)
+					say(newline)
+
+					local s = select(c_locale(4473), c_locale(3418))
+					if s == 1 then
+						item.copy_and_give_before_remove(s_vnum)
+						for i, material in ipairs(material_list[s_material_idx]) do
+							if material.vnum == 1 then
+								pc.change_gold(-material.count)
+							else
+								pc.remove_item(material.vnum, material.count)
+							end
+						end
+					end
+				else
+					say_title(c_mob_name(20378))
+					say(c_locale(715))
+				end
+			end
+		end
+
+		when
+			9009.chat.c_locale(11832) or
+			20017.chat.c_locale(11832) or
+			20018.chat.c_locale(11832) or
+			20022.chat.c_locale(11832) or
+			--20502.chat.c_locale(11832) or
+			--20470.chat.c_locale(11832) or
+			--20473.chat.c_locale(11832) or
+			--20474.chat.c_locale(11832) or
+			20650.chat.c_locale(11832) or
+			20810.chat.c_locale(11832) or
+			20433.chat.c_locale(11832) or
+			20475.chat.c_locale(11832) or
+			20476.chat.c_locale(11832) or
+			20477.chat.c_locale(11832) or
+			20478.chat.c_locale(11832) or
+			20479.chat.c_locale(11832) or
+			20823.chat.c_locale(11832) or
+			20828.chat.c_locale(11832) or
+			20807.chat.c_locale(11832) or
+			--20850.chat.c_locale(11832) or
+			--20421.chat.c_locale(11832) or
+			20413.chat.c_locale(11832) or
+			20383.chat.c_locale(11832)
+		begin
+			setskin(NOWINDOW)
+			game.open_cube(npc.get_race())
+		end
+	end
+end

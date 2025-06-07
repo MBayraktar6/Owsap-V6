@@ -1,0 +1,5 @@
+if npc . get_guild ( ) == pc . get_guild ( ) and pc . is_guild_master ( ) then say_title ( c_locale ( 1625 ) ) 
+say ( c_locale ( 1633 ) ) 
+ return end if npc . get_guild ( ) == pc . get_guild ( ) and pc . is_guild_master ( ) ~= true then say_title ( c_locale ( 1625 ) ) 
+say ( c_locale ( 1634 ) ) 
+ return end 

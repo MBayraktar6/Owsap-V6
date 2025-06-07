@@ -1,0 +1,109 @@
+Group	east_plane_01_01
+{
+	Vnum	6700
+	1	6145	1
+	2	6145	1
+	3	6146	1
+	4	6147	1
+}
+Group	east_plane_01_02
+{
+	Vnum	6701
+	1	6146	1
+	2	6146	1
+	3	6147	1
+	4	6148	1
+}
+Group	east_plane_01_03
+{
+	Vnum	6702
+	1	6146	1
+	2	6146	1
+	3	6148	1
+	4	6149	1
+}
+Group	east_plane_01_04
+{
+	Vnum	6703
+	1	6147	1
+	2	6147	1
+	3	6149	1
+	4	6152	1
+}
+Group	east_plane_01_05
+{
+	Vnum	6704
+	1	6147	1
+	2	6149	1
+	3	6152	1
+}
+Group	east_plane_01_06
+{
+	Vnum	6705
+	1	6149	1
+	2	6152	1
+}
+Group	east_plane_02_01
+{
+	Vnum	6706
+	1	6185	1
+	2	6186	1
+}
+Group	east_plane_02_02
+{
+	Vnum	6707
+	1	6185	1
+	2	6186	1
+	3	6187	1
+}
+Group	east_plane_02_03
+{
+	Vnum	6708
+	1	6189	1
+	2	6190	1
+	3	6191	1
+}
+Group	east_plane_02_04
+{
+	Vnum	6709
+	1	6192	1
+	2	6188	1
+}
+Group	east_plane_02_05
+{
+	Vnum	6710
+	1	6192	1
+	2	6187	1
+	3	6186	1
+}
+Group	east_plane_03_01
+{
+	Vnum	6715
+	1	6711	1
+	2	6712	1
+}
+Group	east_plane_03_02
+{
+	Vnum	6716
+	1	6711	1
+	2	6712	1
+	3	6713	1
+}
+Group	east_plane_03_03
+{
+	Vnum	6717
+	1	6712	1
+	2	6713	1
+}
+Group	east_plane_03_04
+{
+	Vnum	6718
+	1	6713	1
+	2	6714	1
+}
+Group	east_plane_03_05
+{
+	Vnum	6719
+	1	6714	1
+	2	6715	1
+}

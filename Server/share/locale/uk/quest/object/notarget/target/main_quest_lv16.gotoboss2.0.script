@@ -1,0 +1,13 @@
+target . delete ( "__TARGET__" ) 
+if pc . count_item ( 30001 ) >= 1 then 
+say_title ( c_locale ( 4956 ) ) 
+say ( c_locale ( 5025 ) ) 
+say_title ( c_locale ( 265 ) ) 
+say_reward ( c_locale ( 5016 ) ) 
+pc . remove_item ( 30001 ) 
+pc . give_exp2 ( 100000 ) 
+pc . change_money ( 5000 ) 
+clear_letter ( ) 
+set_state ( "__COMPLETE__" ) 
+set_quest_state ( "main_quest_lv27" , "run" ) 
+end 

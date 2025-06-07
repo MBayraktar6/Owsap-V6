@@ -1,0 +1,13 @@
+# 랜덤 성지 세팅 파일
+# 성지 추가 방법
+# 해더:   맵       신수국시작(xy) 천조국시작(xy) 진노국시작(xy)
+#sungzi: mapindex startposX startposY startposX startposY startposX startposY
+#      맵 신수국시작(xy) 맵 천조국시작(xy) 맵 진노국시작(xy)
+#pass: mapindex1 startposX startposY mapindex2 startposX startposY mapindex3 startposX startposY
+sungzi: 115 1270000 56400 1249700 22200 1283700 20800 metin2_map_sungzi_desert_01 1902
+pass: 116 1242400 142100 metin2_map_sungzi_desert_hill_01 117 1242400 244500 metin2_map_sungzi_desert_hill_02 118 1242400 346900 metin2_map_sungzi_desert_hill_03
+sungzi: 126 1188800 17500 1212400 19300 1195800 44900 metin2_map_sungzi_snow 1902
+pass: 127 1200100 167900 metin2_map_sungzi_snow_pass01 128 1200100 270300 metin2_map_sungzi_snow_pass02 129 1200100 372700 metin2_map_sungzi_snow_pass03
+sungzi: 122 1368000 66300 1342700 33900 1393100 34000 metin2_map_sungzi_milgyo 1902
+pass: 123 1295500 185700 metin2_map_sungzi_milgyo_pass_01 124 1295500 185700 metin2_map_sungzi_milgyo_pass_02 125 1295500 185700 metin2_map_sungzi_milgyo_pass_03
+pass: 119 1150400 182400 metin2_map_sungzi_flame_hill_01 120 1150400 284800 metin2_map_sungzi_flame_hill_02 121 1150400 387200 metin2_map_sungzi_flame_hill_03

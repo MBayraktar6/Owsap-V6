@@ -1,0 +1,51 @@
+quest christmas_tree begin
+	state start begin
+		when login with game.get_event_flag("xmas_tree") == 0 begin
+			if pc.getqf("put_sock_count") != 0 then
+				pc.setqf("put_sock_count", 0)
+			end
+		end
+
+		when 20032.click begin
+			say_title(c_locale(2441))
+			say(c_locale(2443))
+			local s = select(c_locale(2450), c_locale(2451), c_locale(2448))
+			if s == 1 then
+				if pc.get_level() >= 10 then
+					if pc.getqf("put_sock_count") >= 3 then
+						say_title(c_locale(2441))
+						say(c_locale(2446))
+
+						if is_test_server() or pc.is_gm() then
+							if select("<TEST> Reset Sock Count", "Cancel") == 1 then
+								pc.setqf("put_sock_count", 0)
+							end
+						end
+					else
+						if pc.countitem(50010) >= 1 then
+							say_title(c_locale(2441))
+							say(c_locale(2442))
+
+							pc.setqf("put_sock_count", pc.getqf("put_sock_count") + 1)
+							pc.remove_item(50010, 1)
+
+							pc.give_item_from_special_item_group(50010)
+						else
+							say_title(c_locale(2441))
+							say(c_locale(2447))
+						end
+					end
+				else
+					say_title(c_locale(2441))
+					say(c_locale(2452))
+				end
+			elseif s == 2 then
+				say_title(c_locale(2441))
+				say(c_locale(2444))
+			elseif s == 3 then
+				say_title(c_locale(2441))
+				say(c_locale(2445))
+			end
+		end
+	end
+end

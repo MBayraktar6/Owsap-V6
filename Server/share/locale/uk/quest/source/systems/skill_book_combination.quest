@@ -1,0 +1,12 @@
+quest skill_book_combination begin
+	state start begin
+		when 20095.chat.c_locale(1526) begin
+			say(c_locale(1527))
+		end
+
+		when 20095.chat.c_locale(1528) begin
+			setskin(NOWINDOW)
+			cmdchat("OpenSkillbookCombinationDialog")
+		end
+	end
+end

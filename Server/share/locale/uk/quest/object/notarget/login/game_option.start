@@ -1,0 +1,30 @@
+local val = 0 
+local msg = c_locale ( 1440 ) .. " " 
+if pc . getqf ( "block_exchange" ) == 1 then 
+msg = msg .. c_locale ( 1441 ) 
+val = val + 1 
+end 
+if pc . getqf ( "block_guild_invite" ) == 1 then 
+val = val + 4 
+msg = msg .. c_locale ( 1442 ) .. " " 
+end 
+if pc . getqf ( "block_messenger_invite" ) == 1 then 
+msg = msg .. c_locale ( 1443 ) .. " " 
+val = val + 16 
+end 
+if pc . getqf ( "block_party_invite" ) == 1 then 
+msg = msg .. c_locale ( 1444 ) .. " " 
+val = val + 2 
+end 
+if pc . getqf ( "block_party_request" ) == 1 then 
+msg = msg .. c_locale ( 1445 ) .. " " 
+val = val + 32 
+end 
+if pc . getqf ( "block_whisper" ) == 1 then 
+msg = msg .. c_locale ( 1446 ) .. " " 
+val = val + 8 
+end 
+if val ~= 0 then 
+syschat ( msg ) 
+end 
+pc . send_block_mode ( val ) 

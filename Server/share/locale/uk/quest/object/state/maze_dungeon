@@ -1,0 +1,16 @@
+maze_dungeon={["start"]=0,setting= function ()return { 
+[ "outside_base_pos" ] = { 11476 , 5327 , 373 } , 
+[ "inside_base_pos" ] = { 
+{ 7893 , 12142 , 382 } , 
+{ 8661 , 12142 , 383 } , 
+{ 9429 , 12142 , 384 } , 
+} , 
+} 
+end ,is_inside= function (idx)local setting = maze_dungeon . setting ( ) 
+for k , v in ipairs ( setting . inside_base_pos ) begin 
+if idx == v [ 3 ] then 
+return true 
+end 
+end 
+return false 
+end }

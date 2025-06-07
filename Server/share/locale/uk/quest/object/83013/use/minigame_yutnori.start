@@ -1,0 +1,27 @@
+local items = { 
+{ 40108 , 1 } , 
+{ 40109 , 1 } , 
+{ 40110 , 1 } , 
+{ 40111 , 1 } , 
+{ 40112 , 1 } , 
+{ 40113 , 1 } , 
+{ 40114 , 1 } , 
+} 
+if table . getn ( items ) == 0 then 
+return 
+end 
+local sname = { } 
+for i = 1 , table . getn ( items ) begin 
+local vnum = items [ s ] [ 1 ] 
+table . insert ( sname , c_item_name ( items [ i ] [ 1 ] ) ) 
+end 
+table . insert ( sname , c_locale ( 6609 ) ) 
+local s = select_table ( sname ) 
+if s == table . getn ( sname ) then 
+return 
+end 
+local vnum = items [ s ] [ 1 ] 
+local amount = items [ s ] [ 2 ] 
+char_log ( pc . get_player_id ( ) , "HALLOWEEN_WEAPON_CHEST" , "reward vnum: " .. vnum .. " reward amount: " .. amount ) 
+pc . give_item2 ( vnum , amount ) 
+item . remove ( 1 ) 

@@ -1,0 +1,13 @@
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2181 ) ) 
+wait ( ) 
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2182 ) ) 
+horse . summon ( ) 
+wait ( ) 
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2183 ) ) 
+if pc . count_item ( 50059 ) >= 1 then 
+pc . removeitem ( 50059 , 1 ) 
+horse . revive ( ) 
+end 

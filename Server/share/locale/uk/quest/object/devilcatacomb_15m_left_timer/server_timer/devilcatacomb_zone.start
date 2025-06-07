@@ -1,0 +1,4 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+d . notice ( c_locale ( 816 , 15 ) ) 
+server_timer ( "devilcatacomb_5m_left_timer" , 60 * 10 , get_server_timer_arg ( ) ) 
+end 

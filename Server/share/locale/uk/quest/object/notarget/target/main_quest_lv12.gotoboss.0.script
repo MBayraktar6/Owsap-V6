@@ -1,0 +1,7 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 4956 ) ) 
+say ( c_locale ( 4973 ) ) 
+wait ( ) 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 4974 ) ) 
+set_state ( "killgraydog" ) 

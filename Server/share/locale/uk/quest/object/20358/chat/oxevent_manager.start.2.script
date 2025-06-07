@@ -1,0 +1,6 @@
+say ( c_locale ( 7579 ) ) 
+local item_vnum = input ( ) 
+say ( c_locale ( 7580 ) ) 
+local item_count = input ( ) 
+oxevent . give_item ( item_vnum , item_count ) 
+say ( c_locale ( 7581 , oxevent . get_attender ( ) ) ) 

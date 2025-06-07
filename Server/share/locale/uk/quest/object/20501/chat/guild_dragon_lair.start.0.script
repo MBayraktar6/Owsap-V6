@@ -1,0 +1,26 @@
+if guild_dragonlair . get_reward ( ) then 
+say ( c_locale ( 1796 ) ) 
+return 
+end 
+if not npc . lock ( ) then 
+say ( c_locale ( 1841 ) ) 
+return 
+end 
+say ( c_locale ( 1797 ) ) 
+local reward_name_list = { 
+c_locale ( 1886 ) , 
+} 
+table . insert ( reward_name_list , c_locale ( 1845 ) ) 
+local reward_choice = select_table ( reward_name_list ) 
+if reward_choice == 1 then 
+say ( c_locale ( 1801 ) ) 
+if select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) == 1 then 
+if not pc . enough_inventory ( 50294 ) then 
+say ( c_locale ( 1804 ) ) 
+return 
+end 
+say ( c_locale ( 1803 ) ) 
+guild_dragonlair . give_reward ( 50294 ) 
+end 
+end 
+npc . unlock ( ) 

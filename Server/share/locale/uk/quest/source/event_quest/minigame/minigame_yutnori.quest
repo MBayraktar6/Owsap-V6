@@ -1,0 +1,311 @@
+define YUTNORI_TABLE 20502 -- Yut Nori Table
+define YUTNORI_BOARD 79508 -- Yut Nori Board
+define YUTNORI_SECRET 27128 -- Yut Nori Secret
+define YUTNORI_SHOP 20502
+define YUTNORI_EXCHANGE_COST 50000
+define YUTNORI_HIGH_REWARD = 83030 -- Golden Yut Nori Trophy
+define YUTNORI_MID_REWARD = 83031 -- Silver Yut Nori Trophy
+define YUTNORI_LOW_REWARD = 50922 -- Bronze Yut Nori Bundle
+define YUTNORI_RANK1_REWARD_COUNT 10
+define YUTNORI_RANK2_REWARD_COUNT 5
+define YUTNORI_RANK3_REWARD_COUNT 3
+define YUTNORI_RANK4_REWARD_COUNT 1
+define YUTNORI_REWARD_COOLDOWN 604800
+
+quest minigame_yutnori begin
+	state start begin
+		when login begin
+			if game.get_event_flag("mini_game_yutnori_reward") == 0 and pc.getqf("reward") ~= 0 then
+				pc.setqf("reward", 0)
+			end
+		end
+
+		-- "Collect Reward"
+		when YUTNORI_TABLE.chat.c_locale(6626) with game.get_event_flag("mini_game_yutnori_reward") > get_time() begin
+
+			-- Only the very best can stay at the top of the rankings and pick up the top prizes!
+			-- Will you be one of them?
+			say(c_locale(6628))
+			say("")
+
+			wait()
+
+			if pc.getqf("reward") > get_time() or pc.getqf("reward") ~= 0 then
+				-- You have already collected your reward.
+				say(c_locale(6665))
+				say("")
+				return
+			end
+
+			local my_name = pc.get_name()
+			local my_rank = 0
+
+			local score_table = game.get_minigame_yutnori_score(true)
+			for i, score in ipairs(score_table) do
+				if score[1] == my_name then
+					my_rank = i
+					break
+				end
+			end
+
+			if my_rank == 0 then
+				-- Sorry! You haven't made it into the rankings.
+				say(c_locale(6663))
+				say("")
+				return
+			end
+
+			local reward_vnum = YUTNORI_HIGH_REWARD
+			local reward_amount = YUTNORI_RANK4_REWARD_COUNT
+
+			if my_rank == 1 then
+				reward_amount = YUTNORI_RANK1_REWARD_COUNT
+			elseif my_rank == 2 then
+				reward_amount = YUTNORI_RANK2_REWARD_COUNT
+			elseif my_rank == 3 then
+				reward_amount = YUTNORI_RANK3_REWARD_COUNT
+			else
+				reward_amount = YUTNORI_RANK4_REWARD_COUNT
+			end
+
+			say_item_vnum(reward_vnum)
+			say("")
+
+			-- Rewards Received: %d
+			say_reward(c_locale(6664, reward_amount))
+			say("")
+
+			pc.give_item2(reward_vnum, reward_amount)
+			pc.setqf("reward", get_time() + YUTNORI_REWARD_COOLDOWN)
+		end
+
+		-- Refinement
+		when YUTNORI_TABLE.chat.c_locale(11832) begin
+			setskin(NOWINDOW)
+			game.open_cube(npc.get_race())
+		end
+
+		-- Your Reward
+		when YUTNORI_TABLE.chat.c_locale(6638) begin
+
+			local reward_table = { YUTNORI_HIGH_REWARD, YUTNORI_MID_REWARD, YUTNORI_LOW_REWARD }
+			local reward_name_table = {}
+
+			for i = 1, table.getn(reward_table) do
+				table.insert(reward_name_table, c_item_name(reward_table[i]))
+			end
+			table.insert(reward_name_table, c_locale(6609)) -- Close
+
+			local sel_reward = select_table(reward_name_table)
+			if sel_reward == table.getn(reward_name_table) then
+				return
+			end
+
+			local sig_vnum = { 50920, 50921, 50922 }
+			local sig_table = show_special_item_group(sig_vnum[sel_reward], 14)
+
+			say_item_vnum(reward_table[sel_reward])
+			say(c_locale(6643 + (sel_reward - 1)))
+			say("")
+
+			say(c_locale(6631)) -- The following items may be inside:
+			say("")
+
+			local step = 1
+			local pause = false
+			repeat
+				for i = step, table.getn(sig_table) do
+					local vnum = sig_table[i][1]
+					local count = sig_table[i][2]
+
+					if vnum == 1 then -- gold
+						say_reward(c_locale(5400, number_to_money_string(count)))
+					elseif vnum == 2 then -- exp
+						say_reward(c_locale(5399, number_to_money_string(count)))
+					else
+						say_reward(c_locale(6139, c_item_name(vnum), count))
+					end
+
+					if i == 4 and i != table.getn(sig_table) then
+						step = i + 1
+						pause = true
+						break
+					end
+
+					if sig_table[i][3] > 0 and i != table.getn(sig_table) then
+						step = sig_table[i][3] + 1
+						pause = true
+						break
+					end
+
+					pause = false
+				end
+
+				if pause then
+					say()
+					wait()
+				end
+			until pause == false
+		end
+
+		-- "Ranking"
+		when YUTNORI_TABLE.chat.c_locale(6639) begin
+			local sel_name_table = {
+				c_locale(6640), -- Reward by Rank
+				c_locale(6641), -- Overall Rankings
+				c_locale(6607) -- Highest Game Score
+			}
+
+			table.insert(sel_name_table, c_locale(6609)) -- Close
+			local sel = select_table(sel_name_table)
+			if sel == table.getn(sel_name_table) then
+				return
+			end
+
+			if sel == 1 then
+
+				say_title(sel_name_table[sel])
+
+				-- The 10 players with the highest overall score will receive additional prizes.
+				say(c_locale(6608))
+				say("")
+
+				say_reward(c_locale(6647)) -- 1st Place: 10x Golden Yut Nori Trophy
+				say("")
+
+				say_reward(c_locale(6648)) -- 2nd Place: 5x Golden Yut Nori Trophy
+				say("")
+
+				say_reward(c_locale(6649)) -- 3rd Place: 3x Golden Yut Nori Trophy
+				say("")
+
+				say_reward(c_locale(6650)) -- 4th-10th Place: 1x Golden Yut Nori Trophy
+				say("")
+
+			elseif sel == 2 then
+
+				say_title(sel_name_table[sel])
+				say("")
+
+				local score_table = game.get_minigame_yutnori_score(true)
+				for i = 1, table.getn(score_table) do
+					say(c_locale(6652 + (i - 1), score_table[i][1], score_table[i][2]))
+				end
+				say("")
+
+				say_reward(c_locale(6662, game.get_minigame_yutnori_my_score(true)))
+				say("")
+
+			elseif sel == 3 then
+
+				say_title(sel_name_table[sel])
+				say("")
+
+				local score_table = game.get_minigame_yutnori_score(false)
+				for i = 1, table.getn(score_table) do
+					say(c_locale(6652 + (i - 1), score_table[i][1], score_table[i][2]))
+				end
+				say("")
+
+				say_reward(c_locale(6662, game.get_minigame_yutnori_my_score(false)))
+				say("")
+
+			end
+		end
+
+		-- "Open Yut Nori Shop"
+		when YUTNORI_TABLE.chat.c_locale(10175) begin
+			setskin(NOWINDOW)
+			npc.open_shop(YUTNORI_SHOP)
+		end
+
+		-- "Exchange for Yut Nori Boards"
+		when YUTNORI_TABLE.chat.c_locale(14131) begin
+			-- Yut Nori
+			say_title(c_locale(14132))
+
+			-- You can exchange the Yut Nori Board for a Yut Nori Secret.
+			-- Requires 50,000 Yang.
+			say(c_locale(14133))
+
+			-- Exchange / Cancel
+			if select(c_locale(14134), c_locale(14135)) == 1 then
+				if pc.getqf("board_count") == 0 and pc.count_item(YUTNORI_BOARD) == 0 then
+					-- You don't have enough Yut Nori Boards.
+					say(c_locale(14136))
+					return
+				end
+
+				if pc.get_gold() < YUTNORI_EXCHANGE_COST then
+					-- You don't have enough Yang.
+					say(c_locale(14138))
+					return
+				end
+
+				if not pc.enough_inventory(YUTNORI_SECRET) then
+					-- Make some space in your inventory and try again.
+					say(c_locale(14137))
+					return
+				end
+
+				pc.change_gold(-YUTNORI_EXCHANGE_COST)
+				if pc.count_item(YUTNORI_BOARD) > 0 then
+					pc.remove_item(YUTNORI_BOARD, 1)
+				else
+					pc.setqf("board_count", pc.getqf("board_count") - 1)
+				end
+				pc.give_item2(YUTNORI_SECRET, 1)
+
+				say_title(c_locale(14132)) -- Yut Nori
+				say(c_locale(14139)) -- You receive a Yut Nori Secret for a Yut Nori Board.
+				say_item_vnum(YUTNORI_SECRET)
+			end
+		end
+
+		when YUTNORI_SECRET.use begin
+			if affect.add_buff(AFFECT_HALLOWEEN_EVENT, {
+				{ POINT_MALL_EXPBONUS, 20 },
+				{ POINT_MALL_ITEMBONUS, 5 },
+				{ POINT_ATTBONUS_MONSTER, 10 },
+			}, 0, item.get_duration_limit(), false) then
+				pc.remove_item(YUTNORI_SECRET, 1)
+			end
+		end
+
+		-- Riptooth Chest+
+		when 83013.use begin
+			local items = {
+				{ 40108, 1 }, -- Riptooth Blade+
+				{ 40109, 1 }, -- Riptooth Dagger+
+				{ 40110, 1 }, -- Riptooth Bow+
+				{ 40111, 1 }, -- Riptooth Glaive+
+				{ 40112, 1 }, -- Riptooth Bell+
+				{ 40113, 1 }, -- Riptooth Fan+
+				{ 40114, 1 }, -- Riptooth Claws+
+			}
+
+			if table.getn(items) == 0 then
+				return
+			end
+
+			local sname = {}
+			for i = 1, table.getn(items) do
+				local vnum = items[s][1]
+				table.insert(sname, c_item_name(items[i][1]))
+			end
+			table.insert(sname, c_locale(6609))
+			local s = select_table(sname)
+			if s == table.getn(sname) then
+				return
+			end
+
+			local vnum = items[s][1]
+			local amount = items[s][2]
+
+			char_log(pc.get_player_id(), "HALLOWEEN_WEAPON_CHEST", "reward vnum: " .. vnum .. " reward amount: " .. amount)
+
+			pc.give_item2(vnum, amount)
+			item.remove(1)
+		end
+	end
+end

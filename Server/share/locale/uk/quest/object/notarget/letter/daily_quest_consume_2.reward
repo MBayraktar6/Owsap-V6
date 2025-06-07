@@ -1,0 +1,1 @@
+send_letter ( string . format ( c_locale ( 11692 , special . daily_quest . table [ "consume" ] [ 1 ] [ "title" ] ) ) ) 

@@ -1,0 +1,2 @@
+send_letter ( special . daily_quest . table [ "consume" ] [ 1 ] [ "title" ] ) 
+daily_quest_consume_2 . update ( ) 

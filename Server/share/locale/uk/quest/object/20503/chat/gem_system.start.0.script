@@ -1,0 +1,2 @@
+say ( c_locale ( 1464 ) ) 
+say ( c_locale ( 1465 , 30 ) ) 

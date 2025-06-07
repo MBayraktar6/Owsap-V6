@@ -1,0 +1,93 @@
+if pc . is_engaged ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say ( "Married players cannot change their name. This[ENTER]option is only open to unmarried players." ) 
+return 
+end 
+if pc . is_married ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say ( "If you marry now, you will not be able to change[ENTER]your name. Only unmarried players can change their[ENTER]name." ) 
+say ( "If you want to change your name, you have to get a[ENTER]divorce." ) 
+return 
+end 
+if pc . is_polymorphed ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say ( "You cannot change your name while you are[ENTER]transformed." ) 
+return 
+end 
+if pc . has_guild ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say_reward ( "You cannot change your name while you are a member[ENTER]of a guild." ) 
+say ( "You can only use this item when you have left the[ENTER]guild." ) 
+return 
+end 
+if get_time ( ) < pc . getqf ( "next_time" ) then 
+say_title ( c_locale ( 148 ) ) 
+say ( "You can only change your name once every three[ENTER]days." ) 
+say ( "You can only change again in: " ) 
+say_reward ( c_locale ( 2317 , time_to_str ( pc . getqf ( "next_time" ) ) ) ) 
+if pc . is_gm ( ) then 
+say ( c_locale ( 2318 ) ) 
+local s = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if s == 1 then 
+pc . setqf ( "next_time" , 0 ) 
+end 
+end 
+return 
+end 
+say_title ( "Name change:" ) 
+say ( "This item changes the name of your character. You[ENTER]can change it every 3 days." ) 
+wait ( ) 
+say_title ( "Name change:" ) 
+say ( "Have you really considered this carefully?[ENTER]Do you really want to change your name?[ENTER]Afterwards you will be automatically disconnected." ) 
+local s = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if 1 == s then 
+say_title ( "Name change:" ) 
+say ( "Into which name would you like to change?" ) 
+local name = pc . get_name ( ) 
+local newName = input ( ) 
+if string . len ( newName ) < 2 then 
+say_title ( "Name change:" ) 
+say ( "The new name is too short." ) 
+return 
+end 
+if string . len ( newName ) > 16 then 
+say_title ( "Name change:" ) 
+say ( "The new name is too long." ) 
+return 
+end 
+local ret = pc . change_name ( newName ) 
+if ret == 0 then 
+say_title ( "Name change:" ) 
+say ( "You have already changed your name." ) 
+say_reward ( c_locale ( 141 ) ) 
+char_log ( 0 , "CHANGE_NAME" , "NO_RE-LOGIN" ) 
+elseif ret == 1 then 
+say_title ( "Name change:" ) 
+say ( "As a result of an error, you can try again." ) 
+char_log ( 0 , "CHANGE_NAME" , "ERROR" ) 
+elseif ret == 2 then 
+say_title ( "Name change:" ) 
+say ( "This name cannot be used." ) 
+char_log ( 0 , "CHANGE_NAME" , "CANNOT_USE" ) 
+elseif ret == 3 then 
+say_title ( "Name change:" ) 
+say ( "This name has already been taken." ) 
+char_log ( 0 , "CHANGE_NAME" , "ALREADY_TAKEN" ) 
+elseif ret == 4 then 
+say_title ( "Name change:" ) 
+say ( "Your name was changed." ) 
+say_reward ( c_locale ( 141 ) ) 
+say_yellow ( "[DELAY value;1300]3[/DELAY] [DELAY value;1300]2[/DELAY] [DELAY value;1300]1[/DELAY]" ) 
+pc . remove_item ( 71055 , 1 ) 
+pc . setqf ( "next_time" , get_time ( ) + 86400 * 3 ) 
+command ( "quit" ) 
+char_log ( 0 , "CHANGE_NAME" , "SUCCESS: from " .. name .. " to " .. newName ) 
+else 
+say_title ( "Name change:" ) 
+say ( "As a result of an error, you can try again." ) 
+char_log ( 0 , "CHANGE_NAME" , "UNKNOWN_ERROR" ) 
+end 
+elseif 2 == s then 
+say_title ( "Name change:" ) 
+say ( "The name change was cancelled." ) 
+end 

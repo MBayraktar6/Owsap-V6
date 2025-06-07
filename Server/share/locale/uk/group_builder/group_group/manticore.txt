@@ -1,0 +1,21 @@
+Group	manticore_1
+{
+	Vnum	3007
+	1	3021	1
+	2	3022	1
+	3	3023	1
+}
+Group	manticore_2
+{
+	Vnum	3008
+	1	3023	1
+	2	3024	1
+	3	3025	1
+}
+Group	manticore_3
+{
+	Vnum	3009
+	1	3025	1
+	2	3026	1
+	3	3027	1
+}

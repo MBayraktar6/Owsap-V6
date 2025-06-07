@@ -1,0 +1,15 @@
+quest gm_status begin
+	state start begin
+		when letter with pc.is_gm() begin
+			send_letter("<GM> Status")
+		end
+
+		when info or button with pc.is_gm() begin
+			affect.add_collect_point(POINT_ST, 9999, (60 * 60 * 24 * 365 * 60)) -- 60 years
+			affect.add_collect_point(POINT_HT, 9999, (60 * 60 * 24 * 365 * 60)) -- 60 years
+			affect.add_collect_point(POINT_DX, 9999, (60 * 60 * 24 * 365 * 60)) -- 60 years
+			affect.add_collect_point(POINT_IQ, 9999, (60 * 60 * 24 * 365 * 60)) -- 60 years
+			say("Done")
+		end
+	end
+end

@@ -1,0 +1,127 @@
+define SPIDER_DUNGEON_MIN_LEVEL 40
+define GROTTO_OF_EXILE_MIN_LEVEL 75
+define DEFAULT_TICKET_GROUP 10034
+define GROTTO_OF_EXILE_TICKET_GROUP 10035
+define PASSAGE_TICKET 71095
+define BLOOD_STONE 30190
+
+quest check_trans_ticket begin
+	state start begin
+		when login or levelup with pc.get_level() > 0 begin
+			set_state(zone_enter)
+		end
+	end
+
+	state zone_enter begin
+		-- Entrance to "Spiders Dungeon"
+		when 20088.chat.c_locale(174) begin -- To the secret caves
+			say_title(c_locale(181)) -- Chuk-Sal:
+			-- Greetings, wanderer! I am the guard of the secret Spider Dungeon.
+			-- Let's see if you are worthy enough to enter the secret caves.
+			say(c_locale(184))
+			wait()
+
+			if pc.get_level() < SPIDER_DUNGEON_MIN_LEVEL then
+				-- Something feels peculiar about your fragments.
+				-- Don't expect too much.
+				say_reward(c_locale(12043))
+				return
+			end
+
+			if not pc.has_item_from_special_item_group(DEFAULT_TICKET_GROUP) then
+				say_title(c_locale(181)) -- Chuk-Sal:
+				-- I'm afraid I cannot let you through.
+				-- Come again when you have a Passage Ticket.
+				say(c_locale(186))
+				say_item_vnum(PASSAGE_TICKET)
+				return
+			end
+
+			say_title(c_locale(181)) -- Chuk-Sal:
+			-- You are really brave. Since you have a Passage Ticket,
+			-- I will allow you to pass... Follow me...
+			say(c_locale(185))
+			wait()
+
+			if false == pc.can_warp() then
+				-- You cannot teleport at the moment.
+				say(c_locale(183))
+				return
+			end
+
+			if pc.remove_item_from_special_item_group(DEFAULT_TICKET_GROUP) then
+				pc.warp(704100, 464100)
+			else
+				-- This can only happen as a result of cheating
+				char_log(0, "CHECK_TRANS_TICKET", string.format("FAILED TO REMOVE TICKET GROUP %d", DEFAULT_TICKET_GROUP))
+			end
+		end
+
+		-- Entrance to "Grotto of Exile"
+		when 20093.chat.c_locale(187) begin -- Request entry
+			say_title(c_locale(188)) -- Koe-Pung:
+			-- Stop! I am Koe-Pung from the Dragon Order, guardian of the portal.
+			-- You can only pass if you can show me a Blood Stone and have the Order's permission!
+			say(c_locale(189))
+
+			if pc.get_level() < GROTTO_OF_EXILE_MIN_LEVEL then
+				-- Something feels peculiar about your fragments.
+				-- Don't expect too much.
+				say_reward(c_locale(190))
+				return
+			end
+
+			if pc.has_item_from_special_item_group(GROTTO_OF_EXILE_TICKET_GROUP) then
+				-- Give Blood Stone / Step aside or you will die!
+				if select(c_locale(178), c_locale(179)) == 1 then
+					say_pc_name()
+					-- My name is %s and I am here at the Dragon Order's behest!
+					-- Here is a holy Blood Stone to prove it. And now step aside!
+					say(c_locale(180, pc.get_name()))
+					wait()
+
+					if false == pc.can_warp() then
+						-- You cannot teleport at the moment.
+						say(c_locale(183))
+						return
+					end
+
+					if pc.remove_item_from_special_item_group(GROTTO_OF_EXILE_TICKET_GROUP) then
+						say_title(c_locale(188)) -- Koe-Pung:
+						-- The Dragon God has chosen you. May he always watch over you!
+						say(c_locale(182))
+						wait()
+						pc.warp(900, 1207800)
+					else
+						-- This can only happen as a result of cheating
+						char_log(0, "CHECK_TRANS_TICKET", string.format("FAILED TO REMOVE TICKET GROUP %d", GROTTO_OF_EXILE_TICKET_GROUP))
+					end
+				end
+			else
+				-- How can I get hold of one of these stones? / Step aside or you will die!
+				if select(c_locale(191), c_locale(192)) == 1 then
+					say_title(c_locale(188)) -- Koe-Pung:
+					-- Only those who belong to the Dragon Order and have been proved worthy by the Dragon God will receive these holy stones.
+					-- Not many of these stones exist.
+					say(c_locale(193))
+					-- Speak to a priest or a wise man in your homeland.
+					say(c_locale(194))
+					-- When you are ready to devote your life to the Dragon God,
+					-- you might be accepted into the Order.
+					say_reward(c_locale(175))
+					say_item_vnum(BLOOD_STONE)
+				else
+					say_title(c_locale(188)) -- Koe-Pung:
+					-- You dare to counter the Dragon God? You may be able to defeat me,
+					-- but you will never escape the wrath of a god!
+					say(c_locale(176))
+					-- Speak to a priest or a wise man in your homeland.
+					say(c_locale(194))
+					-- You will find the right path once you are ready to dedicate your life to the Dragon God.
+					-- Now go forth in peace!
+					say_reward(c_locale(177))
+				end
+			end
+		end
+	end -- state
+end -- quest

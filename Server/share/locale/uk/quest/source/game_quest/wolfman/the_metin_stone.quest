@@ -1,0 +1,91 @@
+define HUNTED_METIN_STONE_AMOUNT_FLAG "hunted_metin_stone" -- Quest flag name for the hunted metin stones amount
+define METIN_STONE_VNUM 8115 -- Metin Stone VNUM
+define METIN_STONE_HUNT_AMOUNT 1 -- Amount of Metin Stone to hunt (one)
+define MYONGHORANG_VNUM 20400 -- Myonghorang (Lycan NPC) VNUM
+define EXP_AMOUNT_REWARD 450 -- Amount of received exp upon quest completion
+
+quest the_metin_stone begin
+	state start begin
+	end
+
+	state run begin
+		function update_counter()
+			local count = 0
+			local remaining_count = METIN_STONE_HUNT_AMOUNT - pc.getqf(HUNTED_METIN_STONE_AMOUNT_FLAG)
+
+			if remaining_count < 0 then
+				remaining_count = 0
+			end
+
+			count = count + remaining_count
+			q.set_counter_value(count)
+			if count == 0 then
+				notice_multiline(c_locale(6394), notice)
+				set_state("goto_myonghorang")
+			end
+		end
+
+		when enter begin
+			pc.setqf(HUNTED_METIN_STONE_AMOUNT_FLAG, 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(6389))
+			q.set_counter_name(c_locale(6413))
+			the_metin_stone.update_counter()
+		end
+
+		when button or info begin
+			say_title(c_locale(6389))
+			say(c_locale(6392))
+		end
+
+		when METIN_STONE_VNUM.kill begin
+			local count = pc.getqf(HUNTED_METIN_STONE_AMOUNT_FLAG)
+			pc.setqf(HUNTED_METIN_STONE_AMOUNT_FLAG, count + 1)
+			the_metin_stone.update_counter()
+		end
+
+		when MYONGHORANG_VNUM.chat.c_locale(6389) begin
+			say_title(c_mob_name(MYONGHORANG_VNUM))
+			say(c_locale(6393, METIN_STONE_HUNT_AMOUNT))
+		end
+
+		when leave begin
+			pc.setqf(HUNTED_METIN_STONE_AMOUNT_FLAG, 0)
+			q.done()
+		end
+	end
+
+	state goto_myonghorang begin
+		when letter begin
+			send_letter(c_locale(6408))
+			local v = find_npc_by_vnum(MYONGHORANG_VNUM)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6408))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6408))
+			say(c_locale(6394))
+		end
+
+		when __TARGET__.target.click or MYONGHORANG_VNUM.chat.c_locale(6390) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(EXP_AMOUNT_REWARD)
+
+			say_title(c_mob_name(MYONGHORANG_VNUM))
+			say(c_locale(6396))
+			say_reward(c_locale(6882, EXP_AMOUNT_REWARD))
+
+			set_state("__COMPLETE__")
+			set_quest_state("sung_mahi", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

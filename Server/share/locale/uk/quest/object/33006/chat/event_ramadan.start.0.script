@@ -1,0 +1,25 @@
+local setting = event_ramadan . setting ( ) 
+if pc . count_item ( setting . iftar ) == 0 then 
+say_title ( c_locale ( 1156 ) ) 
+say ( "" ) 
+say ( c_locale ( 1157 ) ) 
+elseif pc . count_item ( setting . iftar ) > 0 then 
+say_title ( c_locale ( 1156 ) ) 
+say ( "" ) 
+say ( c_locale ( 1158 ) ) 
+local s = select ( c_locale ( 1159 ) , c_locale ( 1160 ) ) 
+if 2 == s then 
+say_title ( c_locale ( 1156 ) ) 
+say ( "" ) 
+say ( c_locale ( 1161 ) ) 
+return 
+end 
+say_title ( c_locale ( 1156 ) ) 
+say ( "" ) 
+say ( c_locale ( 1162 ) ) 
+pc . give_item2 ( setting . box , 1 ) 
+pc . remove_item ( setting . iftar , 1 ) 
+end 
+if not event_ramadan . is_running ( ) then 
+npc . purge ( ) 
+end 

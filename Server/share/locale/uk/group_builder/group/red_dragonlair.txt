@@ -1,0 +1,27 @@
+#
+# Guild Dragon Lair
+#
+# Flame Dragon (Red Dragon Lair)
+# metin2_map_n_flame_dragon
+#
+
+Group	red_dragonlair_1
+{
+	Vnum	6337
+	Leader	"È­¿°°ñ·½+"	6111
+	1	"È­Á¤+"	6110
+	2	"È­¸¶+"	6114
+}
+Group	red_dragonlair_2
+{
+	Vnum	6338
+	Leader	"ÃÊ¿­±«"	6009
+	1	"¿°¸¶"	6006
+	2	"È­±«"	6007
+}
+Group	red_dragonlair_3
+{
+	Vnum	6339
+	Leader	"»õ³¢Àû·æ"	6115
+	1	"Ç÷È­Á¤+"	6113
+}

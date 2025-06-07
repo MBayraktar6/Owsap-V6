@@ -1,0 +1,6 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_mob_name ( 20408 ) ) 
+say ( c_locale ( 4497 ) ) 
+select ( c_locale ( 4498 ) ) 
+pc . give_item2 ( 31098 , 1 ) 
+set_state ( "go_to_disciple" ) 

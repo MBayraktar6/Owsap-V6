@@ -1,0 +1,3 @@
+if maze_dungeon . is_inside ( pc . get_map_index ( ) ) then local setting = maze_dungeon . setting ( ) 
+pc . set_warp_location ( setting . outside_base_pos [ 3 ] , setting . outside_base_pos [ 1 ] , setting . outside_base_pos [ 2 ] ) 
+ return end 

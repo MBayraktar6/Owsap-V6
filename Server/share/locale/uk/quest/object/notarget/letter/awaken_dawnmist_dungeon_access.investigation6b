@@ -1,0 +1,2 @@
+target . pos ( "__TARGET__" , 590 , 75 , FOREST_MAP_INDEX , "" ) 
+send_letter ( c_locale ( 11657 ) ) 

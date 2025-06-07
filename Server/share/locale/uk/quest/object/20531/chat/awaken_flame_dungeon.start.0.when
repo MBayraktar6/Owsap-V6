@@ -1,0 +1,1 @@
+return awaken_flame_dungeon . in_dungeon ( pc . get_map_index ( ) ) and npc . lock ( )

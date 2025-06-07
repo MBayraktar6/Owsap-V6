@@ -1,0 +1,838 @@
+Group	웅귀족장의상자
+{
+	Vnum	50070 -- Chief Orc's Box
+	1	3140	1	30	30 -- Electromagnetic Blade+0
+	2	3141	1	16	30 -- Electromagnetic Blade+1
+	3	1110	1	30	30 -- Lightning Knife+0
+	4	1111	1	16	30 -- Lightning Knife+1
+	5	2130	1	30	30 -- Divine Apricot Bow+0
+	6	2131	1	16	30 -- Divine Apricot Bow+1
+	7	7140	1	30	30 -- Salvation Fan+0
+	8	7141	1	16	30 -- Salvation Fan+1
+	9	5100	1	30	30 -- Heaven and Earth Bell+0
+	10	5101	1	16	30 -- Heaven and Earth Bell+1
+	11	160	1	30	30 -- Nymph Sword+0
+	12	161	1	16	30 -- Nymph Sword+1
+	13	240	1	30	30 -- Exorcism Sword+0
+	14	241	1	16	30 -- Exorcism Sword+1
+	15	6040	1	33	30 -- Griffon Claw+0
+	16	6041	1	15	30 -- Griffon Claw+1
+	17	11671	1	30	30 -- Ghost Mask Armour+1
+	18	11672	1	5	30 -- Ghost Mask Armour+2
+	19	11271	1	30	30 -- Gold Plate Armour+1
+	20	11272	1	5	30 -- Gold Plate Armour+2
+	21	11471	1	30	30 -- Killer Wind Suit+1
+	22	11472	1	5	30 -- Killer Wind Suit+2
+	23	11871	1	30	30 -- Orange Cat Dress+1
+	24	11872	1	5	30 -- Orange Cat Dress+2
+	25	21051	1	30	30 -- Hobgoblin Plate Armour+1
+	26	21052	1	5	30 -- Hobgoblin Plate Armour+2
+	27	16161	1	30	30 -- Crystal Necklace+1
+	28	16162	1	16	30 -- Crystal Necklace+2
+	29	16163	1	7	30 -- Crystal Necklace+3
+	30	17161	1	30	30 -- Crystal Earrings+1
+	31	17162	1	16	30 -- Crystal Earrings+2
+	32	17163	1	7	30 -- Crystal Earrings+3
+	33	14161	1	30	30 -- Crystal Bracelet+1
+	34	14162	1	16	30 -- Crystal Bracelet+2
+	35	14163	1	7	30 -- Crystal Bracelet+3
+	36	70012	1	25 -- Goddess Tear
+	37	70038	1	25 -- Bravery Cape
+	38	25040	1	30 -- Blessing Scroll
+	39	70048	1	25 -- Cloak of Secrecy
+	40	70037	1	30 -- Book of Forgetfulness
+	41	70014	1	30 -- Blood Pill
+	42	70043	1	25 -- Thief's Gloves
+	43	70005	1	25 -- Experience Ring (1h)
+	44	70006	1	25 -- Language Ring
+	45	돈꾸러미	50000	20 -- Yang
+	46	돈꾸러미	100000	70 -- Yang
+	47	돈꾸러미	200000	9 -- Yang
+	48	27112	10	30 -- Green Potion (L)
+	49	경험치	100000	10 -- Exp.
+	50	60004	1	3	15 -- Looking Glass
+	51	80019	1	3	15 -- Fine Cloth
+	52	38060	1	3	15 -- Bag of Emotions
+}
+Group	밀교교주의상자
+{
+	Vnum	50071 -- Esoteric Leader's Box
+	1	3141	1	33	30 -- Electromagnetic Blade+1
+	2	3142	1	15	30 -- Electromagnetic Blade+2
+	3	1111	1	33	30 -- Lightning Knife+1
+	4	1112	1	15	30 -- Lightning Knife+2
+	5	2131	1	33	30 -- Divine Apricot Bow+1
+	6	2132	1	15	30 -- Divine Apricot Bow+2
+	7	7141	1	33	30 -- Salvation Fan+1
+	8	7142	1	15	30 -- Salvation Fan+2
+	9	5101	1	33	30 -- Heaven and Earth Bell+1
+	10	5102	1	15	30 -- Heaven and Earth Bell+2
+	11	161	1	33	30 -- Nymph Sword+1
+	12	162	1	15	30 -- Nymph Sword+2
+	13	241	1	33	30 -- Exorcism Sword+1
+	14	242	1	15	30 -- Exorcism Sword+2
+	15	6041	1	33	30 -- Griffon Claw+1
+	16	6042	1	15	30 -- Griffon Claw+2
+	17	11672	1	27	30 -- Ghost Mask Armour+2
+	18	11673	1	14	30 -- Ghost Mask Armour+3
+	19	11674	1	5	30 -- Ghost Mask Armour+4
+	20	11272	1	27	30 -- Gold Plate Armour+2
+	21	11273	1	14	30 -- Gold Plate Armour+3
+	22	11274	1	5	30 -- Gold Plate Armour+4
+	23	11472	1	27	30 -- Killer Wind Suit+2
+	24	11473	1	14	30 -- Killer Wind Suit+3
+	25	11474	1	5	30 -- Killer Wind Suit+4
+	26	11872	1	27	30 -- Orange Cat Dress+2
+	27	11873	1	14	30 -- Orange Cat Dress+3
+	28	11874	1	5	30 -- Orange Cat Dress+4
+	29	21052	1	27	30 -- Hobgoblin Plate Armour+2
+	30	21053	1	14	30 -- Hobgoblin Plate Armour+3
+	31	21054	1	5	30 -- Hobgoblin Plate Armour+4
+	32	16181	1	30	30 -- Amethyst Necklace+1
+	33	16182	1	20	30 -- Amethyst Necklace+2
+	34	16183	1	5	30 -- Amethyst Necklace+3
+	35	17181	1	30	30 -- Amethyst Earrings+1
+	36	17182	1	20	30 -- Amethyst Earrings+2
+	37	17183	1	5	30 -- Amethyst Earrings+3
+	38	14181	1	30	30 -- Amethyst Bracelet+1
+	39	14182	1	20	30 -- Amethyst Bracelet+2
+	40	14183	1	5	30 -- Amethyst Bracelet+3
+	41	70012	1	25 -- Goddess Tear
+	42	70038	1	25 -- Bravery Cape
+	43	25040	1	30 -- Blessing Scroll
+	44	70048	1	25 -- Cloak of Secrecy
+	45	70037	1	30 -- Book of Forgetfulness
+	46	70014	1	30 -- Blood Pill
+	47	70043	1	25 -- Thief's Gloves
+	48	70005	1	25 -- Experience Ring (1h)
+	49	돈꾸러미	50000	30 -- Yang
+	50	돈꾸러미	100000	10 -- Yang
+	51	돈꾸러미	200000	20 -- Yang
+	52	경험치	150000	7 -- Exp.
+	53	경험치	200000	8 -- Exp.
+	54	27112	15	25 -- Green Potion (L)
+	55	60004	1	3	15 -- Looking Glass
+	56	80019	1	3	15 -- Fine Cloth
+	57	38060	1	3	15 -- Bag of Emotions
+}
+Group	여왕거미의상자
+{
+	Vnum	50073 -- Queen Spider Box
+	1	3142	1	30	30 -- Electromagnetic Blade+2
+	2	3143	1	16	30 -- Electromagnetic Blade+3
+	3	1112	1	30	30 -- Lightning Knife+2
+	4	1113	1	16	30 -- Lightning Knife+3
+	5	2132	1	30	30 -- Divine Apricot Bow+2
+	6	2133	1	16	30 -- Divine Apricot Bow+3
+	7	7142	1	30	30 -- Salvation Fan+2
+	8	7143	1	16	30 -- Salvation Fan+3
+	9	5102	1	30	30 -- Heaven and Earth Bell+2
+	10	5103	1	16	30 -- Heaven and Earth Bell+3
+	11	162	1	30	30 -- Nymph Sword+2
+	12	163	1	16	30 -- Nymph Sword+3
+	13	242	1	30	30 -- Exorcism Sword+2
+	14	243	1	16	30 -- Exorcism Sword+3
+	15	6042	1	30	30 -- Griffon Claw+2
+	16	6043	1	16	30 -- Griffon Claw+3
+	17	6052	1	30	30 -- Scarab Claw+2
+	18	6053	1	16	30 -- Scarab Claw+3
+	19	11680	1	30	30 -- Spirit Plate Armour+0
+	20	11681	1	6	30 -- Spirit Plate Armour+1
+	21	11880	1	30	30 -- Baroness Dress+0
+	22	11881	1	6	30 -- Baroness Dress+1
+	23	11480	1	30	30 -- Fuchsia Suit+0
+	24	11481	1	6	30 -- Fuchsia Suit+1
+	25	11280	1	30	30 -- Dragon God Armour+0
+	26	11281	1	6	30 -- Dragon God Armour+1
+	27	21060	1	30	30 -- Firellium Plate Armour+0
+	28	21061	1	6	30 -- Firellium Plate Armour+1
+	29	16201	1	30	30 -- Heaven's Tear Necklace+1
+	30	16202	1	16	30 -- Heaven's Tear Necklace+2
+	31	16203	1	7	30 -- Heaven's Tear Necklace+3
+	32	17201	1	30	30 -- Heaven's Tear Earrings+1
+	33	17202	1	16	30 -- Heaven's Tear Earrings+2
+	34	17203	1	7	30 -- Heaven's Tear Earrings+3
+	35	14201	1	30	30 -- Heaven's Tear Bracelet+1
+	36	14202	1	16	30 -- Heaven's Tear Bracelet+2
+	37	14203	1	7	30 -- Heaven's Tear Bracelet+3
+	38	70012	1	25 -- Goddess Tear
+	39	70038	1	25 -- Bravery Cape
+	40	25040	1	30 -- Blessing Scroll
+	41	70048	1	25 -- Cloak of Secrecy
+	42	70037	1	30 -- Book of Forgetfulness
+	43	70014	1	30 -- Blood Pill
+	44	70043	1	25 -- Thief's Gloves
+	45	70005	1	25 -- Experience Ring (1h)
+	46	돈꾸러미	50000	10 -- Yang
+	47	돈꾸러미	100000	30 -- Yang
+	48	돈꾸러미	150000	40 -- Yang
+	49	돈꾸러미	200000	30 -- Yang
+	50	경험치	150000	10 -- Exp.
+	51	경험치	200000	20 -- Exp.
+	52	27112	15	20 -- Green Potion (L)
+	53	60004	1	3	15 -- Looking Glass
+	54	80019	1	3	15 -- Fine Cloth
+	55	38060	1	3	15 -- Bag of Emotions
+}
+Group	대왕거미의상자
+{
+	Vnum	50074 -- Giant Spider Box
+	1	150	1	25	30 -- Ghost Fang Blade+0
+	2	151	1	13	30 -- Ghost Fang Blade+1
+	3	5090	1	25	30 -- Thunder Bird Bell+0
+	4	5091	1	13	30 -- Thunder Bird Bell+1
+	5	140	1	25	30 -- Battle Sword+0
+	6	141	1	13	30 -- Battle Sword+1
+	7	3130	1	25	30 -- Partisan+0
+	8	3131	1	13	30 -- Partisan+1
+	9	1100	1	25	30 -- Dragon Knife+0
+	10	1101	1	13	30 -- Dragon Knife+1
+	11	7130	1	25	30 -- Heavenly Bird Fan+0
+	12	7131	1	13	30 -- Heavenly Bird Fan+1
+	13	2140	1	25	30 -- Yellow Dragon Bow+0
+	14	2141	1	13	30 -- Yellow Dragon Bow+1
+	15	6040	1	25	30 -- Griffon Claw+0
+	16	6041	1	13	30 -- Griffon Claw+1
+	17	6050	1	25	30 -- Scarab Claw+0
+	18	6051	1	13	30 -- Scarab Claw+1
+	19	11681	1	17	30 -- Spirit Plate Armour+1
+	20	11682	1	27	30 -- Spirit Plate Armour+2
+	21	11683	1	11	30 -- Spirit Plate Armour+3
+	22	11881	1	17	30 -- Baroness Dress+1
+	23	11882	1	27	30 -- Baroness Dress+2
+	24	11883	1	11	30 -- Baroness Dress+3
+	25	11481	1	17	30 -- Fuchsia Suit+1
+	26	11482	1	27	30 -- Fuchsia Suit+2
+	27	11483	1	11	30 -- Fuchsia Suit+3
+	28	11281	1	17	30 -- Dragon God Armour+1
+	29	11282	1	27	30 -- Dragon God Armour+2
+	30	11283	1	11	30 -- Dragon God Armour+3
+	31	21061	1	17	30 -- Firellium Plate Armour+1
+	32	21062	1	27	30 -- Firellium Plate Armour+2
+	33	21063	1	11	30 -- Firellium Plate Armour+3
+	34	14163	1	23	30 -- Crystal Bracelet+3
+	35	14164	1	10	30 -- Crystal Bracelet+4
+	36	17163	1	23	30 -- Crystal Earrings+3
+	37	17164	1	10	30 -- Crystal Earrings+4
+	38	16163	1	23	30 -- Crystal Necklace+3
+	39	16164	1	10	30 -- Crystal Necklace+4
+	40	70012	1	25 -- Goddess Tear
+	41	70038	1	25 -- Bravery Cape
+	42	25040	1	30 -- Blessing Scroll
+	43	70048	1	25 -- Cloak of Secrecy
+	44	70037	1	30 -- Book of Forgetfulness
+	45	70014	1	30 -- Blood Pill
+	46	70043	1	25 -- Thief's Gloves
+	47	70005	1	25 -- Experience Ring (1h)
+	48	돈꾸러미	100000	20 -- Yang
+	49	돈꾸러미	150000	30 -- Yang
+	50	돈꾸러미	200000	30 -- Yang
+	51	돈꾸러미	250000	20 -- Yang
+	52	27112	20	20 -- Green Potion (L)
+	53	경험치	150000	30 -- Exp.
+	54	경험치	200000	30 -- Exp.
+	55	경험치	250000	20 -- Exp.
+	56	60004	1	3	15 -- Looking Glass
+	57	80019	1	3	15 -- Fine Cloth
+	58	38060	1	3	15 -- Bag of Emotions
+}
+Group	거대사막거북의상자
+{
+	Vnum	50076 -- Desert Tortoise Chest
+	1	3142	1	24	30 -- Electromagnetic Blade+2
+	2	3143	1	16	30 -- Electromagnetic Blade+3
+	3	1112	1	24	30 -- Lightning Knife+2
+	4	1113	1	16	30 -- Lightning Knife+3
+	5	2132	1	24	30 -- Divine Apricot Bow+2
+	6	2133	1	16	30 -- Divine Apricot Bow+3
+	7	7142	1	24	30 -- Salvation Fan+2
+	8	7143	1	16	30 -- Salvation Fan+3
+	9	5102	1	24	30 -- Heaven and Earth Bell+2
+	10	5103	1	16	30 -- Heaven and Earth Bell+3
+	11	162	1	24	30 -- Nymph Sword+2
+	12	163	1	16	30 -- Nymph Sword+3
+	13	242	1	24	30 -- Exorcism Sword+2
+	14	243	1	16	30 -- Exorcism Sword+3
+	15	6042	1	24	30 -- Griffon Claw+2
+	16	6043	1	16	30 -- Griffon Claw+3
+	17	6052	1	24	30 -- Scarab Claw+2
+	18	6053	1	16	30 -- Scarab Claw+3
+	19	11681	1	24	30 -- Spirit Plate Armour+1
+	20	11682	1	16	30 -- Spirit Plate Armour+2
+	21	11881	1	24	30 -- Baroness Dress+1
+	22	11882	1	16	30 -- Baroness Dress+2
+	23	11481	1	24	30 -- Fuchsia Suit+1
+	24	11482	1	16	30 -- Fuchsia Suit+2
+	25	11281	1	24	30 -- Dragon God Armour+1
+	26	11282	1	16	30 -- Dragon God Armour+2
+	27	21061	1	24	30 -- Firellium Plate Armour+1
+	28	21062	1	16	30 -- Firellium Plate Armour+2
+	29	17184	1	30	30 -- Amethyst Earrings+4
+	30	17185	1	18	30 -- Amethyst Earrings+5
+	31	17186	1	12	30 -- Amethyst Earrings+6
+	32	16184	1	30	30 -- Amethyst Necklace+4
+	33	16185	1	18	30 -- Amethyst Necklace+5
+	34	16186	1	12	30 -- Amethyst Necklace+6
+	35	14184	1	30	30 -- Amethyst Bracelet+4
+	36	14185	1	18	30 -- Amethyst Bracelet+5
+	37	14186	1	12	30 -- Amethyst Bracelet+6
+	38	70012	1	20 -- Goddess Tear
+	39	70038	1	20 -- Bravery Cape
+	40	25040	1	30 -- Blessing Scroll
+	41	70048	1	20 -- Cloak of Secrecy
+	42	70037	1	30 -- Book of Forgetfulness
+	43	70014	1	30 -- Blood Pill
+	44	70043	1	20 -- Thief's Gloves
+	45	70005	1	20 -- Experience Ring (1h)
+	46	경험치	100000	10 -- Exp.
+	47	경험치	150000	20 -- Exp.
+	48	경험치	200000	25 -- Exp.
+	49	경험치	250000	30 -- Exp.
+	50	돈꾸러미	100000	10 -- Yang
+	51	돈꾸러미	150000	20 -- Yang
+	52	돈꾸러미	200000	25 -- Yang
+	53	돈꾸러미	250000	30 -- Yang
+	54	27112	20	20 -- Green Potion (L)
+	55	60004	1	3	15 -- Looking Glass
+	56	80019	1	3	15 -- Fine Cloth
+	57	38060	1	3	15 -- Bag of Emotions
+}
+Group	구미호의상자
+{
+	Vnum	50077 -- Nine Tails' Chest
+	1	151	1	24	30 -- Ghost Fang Blade+1
+	2	152	1	16	30 -- Ghost Fang Blade+2
+	3	5091	1	24	30 -- Thunder Bird Bell+1
+	4	5092	1	16	30 -- Thunder Bird Bell+2
+	5	141	1	24	30 -- Battle Sword+1
+	6	142	1	16	30 -- Battle Sword+2
+	7	3131	1	24	30 -- Partisan+1
+	8	3132	1	16	30 -- Partisan+2
+	9	1101	1	24	30 -- Dragon Knife+1
+	10	1102	1	16	30 -- Dragon Knife+2
+	11	7131	1	24	30 -- Heavenly Bird Fan+1
+	12	7132	1	16	30 -- Heavenly Bird Fan+2
+	13	2141	1	24	30 -- Yellow Dragon Bow+1
+	14	2142	1	16	30 -- Yellow Dragon Bow+2
+	15	6041	1	24	30 -- Griffon Claw+1
+	16	6042	1	16	30 -- Griffon Claw+2
+	17	11682	1	24	30 -- Spirit Plate Armour+2
+	18	11683	1	16	30 -- Spirit Plate Armour+3
+	19	11882	1	24	30 -- Baroness Dress+2
+	20	11883	1	16	30 -- Baroness Dress+3
+	21	11482	1	24	30 -- Fuchsia Suit+2
+	22	11483	1	16	30 -- Fuchsia Suit+3
+	23	11282	1	24	30 -- Dragon God Armour+2
+	24	11283	1	16	30 -- Dragon God Armour+3
+	25	21062	1	16	30 -- Firellium Plate Armour+2
+	26	21063	1	24	30 -- Firellium Plate Armour+3
+	27	17204	1	30	30 -- Heaven's Tear Earrings+4
+	28	17205	1	18	30 -- Heaven's Tear Earrings+5
+	29	17206	1	12	30 -- Heaven's Tear Earrings+6
+	30	16204	1	30	30 -- Heaven's Tear Necklace+4
+	31	16205	1	18	30 -- Heaven's Tear Necklace+5
+	32	16206	1	12	30 -- Heaven's Tear Necklace+6
+	33	14204	1	30	30 -- Heaven's Tear Bracelet+4
+	34	14205	1	18	30 -- Heaven's Tear Bracelet+5
+	35	14206	1	12	30 -- Heaven's Tear Bracelet+6
+	36	70012	1	25 -- Goddess Tear
+	37	70038	1	25 -- Bravery Cape
+	38	25040	1	30 -- Blessing Scroll
+	39	70048	1	25 -- Cloak of Secrecy
+	40	70037	1	30 -- Book of Forgetfulness
+	41	70014	1	30 -- Blood Pill
+	42	70043	1	25 -- Thief's Gloves
+	43	70005	1	25 -- Experience Ring (1h)
+	44	경험치	150000	20 -- Exp.
+	45	경험치	200000	30 -- Exp.
+	46	경험치	250000	20 -- Exp.
+	47	돈꾸러미	150000	20 -- Yang
+	48	돈꾸러미	200000	30 -- Yang
+	49	돈꾸러미	250000	20 -- Yang
+	50	27112	20	25 -- Green Potion (L)
+	51	60004	1	3	15 -- Looking Glass
+	52	80019	1	3	15 -- Fine Cloth
+	53	38060	1	3	15 -- Bag of Emotions
+}
+Group	누렁범귀의상자
+{
+	Vnum	50078 -- Yellow Tiger's Chest
+	1	152	1	22	30 -- Ghost Fang Blade+2
+	2	153	1	16	30 -- Ghost Fang Blade+3
+	3	5092	1	22	30 -- Thunder Bird Bell+2
+	4	5093	1	16	30 -- Thunder Bird Bell+3
+	5	142	1	22	30 -- Battle Sword+2
+	6	143	1	16	30 -- Battle Sword+3
+	7	3132	1	22	30 -- Partisan+2
+	8	3133	1	16	30 -- Partisan+3
+	9	1102	1	22	30 -- Dragon Knife+2
+	10	1103	1	16	30 -- Dragon Knife+3
+	11	7132	1	22	30 -- Heavenly Bird Fan+2
+	12	7133	1	16	30 -- Heavenly Bird Fan+3
+	13	2142	1	22	30 -- Yellow Dragon Bow+2
+	14	2143	1	16	30 -- Yellow Dragon Bow+3
+	15	6052	1	22	30 -- Scarab Claw+2
+	16	6053	1	16	30 -- Scarab Claw+3
+	17	6062	1	22	30 -- Hawk Claw+2
+	18	6063	1	16	30 -- Hawk Claw+3
+	19	11682	1	19	30 -- Spirit Plate Armour+2
+	20	11683	1	28	30 -- Spirit Plate Armour+3
+	21	11684	1	10	30 -- Spirit Plate Armour+4
+	22	11882	1	19	30 -- Baroness Dress+2
+	23	11883	1	28	30 -- Baroness Dress+3
+	24	11884	1	10	30 -- Baroness Dress+4
+	25	11482	1	19	30 -- Fuchsia Suit+2
+	26	11483	1	28	30 -- Fuchsia Suit+3
+	27	11484	1	10	30 -- Fuchsia Suit+4
+	28	11282	1	19	30 -- Dragon God Armour+2
+	29	11283	1	28	30 -- Dragon God Armour+3
+	30	11284	1	10	30 -- Dragon God Armour+4
+	31	21062	1	19	30 -- Firellium Plate Armour+2
+	32	21063	1	28	30 -- Firellium Plate Armour+3
+	33	21064	1	10	30 -- Firellium Plate Armour+4
+	34	17184	1	19	30 -- Amethyst Earrings+4
+	35	17185	1	28	30 -- Amethyst Earrings+5
+	36	17186	1	10	30 -- Amethyst Earrings+6
+	37	16184	1	19	30 -- Amethyst Necklace+4
+	38	16185	1	28	30 -- Amethyst Necklace+5
+	39	16186	1	10	30 -- Amethyst Necklace+6
+	40	14184	1	19	30 -- Amethyst Bracelet+4
+	41	14185	1	28	30 -- Amethyst Bracelet+5
+	42	14186	1	10	30 -- Amethyst Bracelet+6
+	43	70012	1	20 -- Goddess Tear
+	44	70038	1	20 -- Bravery Cape
+	45	25040	1	25 -- Blessing Scroll
+	46	70048	1	20 -- Cloak of Secrecy
+	47	70037	1	25 -- Book of Forgetfulness
+	48	70014	1	25 -- Blood Pill
+	49	70043	1	20 -- Thief's Gloves
+	50	70005	1	20 -- Experience Ring (1h)
+	51	경험치	200000	20 -- Exp.
+	52	경험치	250000	30 -- Exp.
+	53	경험치	300000	20 -- Exp.
+	54	돈꾸러미	200000	20 -- Yang
+	55	돈꾸러미	250000	30 -- Yang
+	56	돈꾸러미	300000	20 -- Yang
+	57	27112	30	20 -- Green Potion (L)
+	58	60004	1	3	15 -- Looking Glass
+	59	80019	1	3	15 -- Fine Cloth
+	60	38060	1	3	15 -- Bag of Emotions
+}
+Group	화염왕의상자
+{
+	Vnum	50079 -- Flame King's Chest
+	1	151	1	10	30 -- Ghost Fang Blade+1
+	2	152	1	25	30 -- Ghost Fang Blade+2
+	3	153	1	15	30 -- Ghost Fang Blade+3
+	4	5091	1	10	30 -- Thunder Bird Bell+1
+	5	5092	1	25	30 -- Thunder Bird Bell+2
+	6	5093	1	15	30 -- Thunder Bird Bell+3
+	7	141	1	10	30 -- Battle Sword+1
+	8	142	1	25	30 -- Battle Sword+2
+	9	143	1	15	30 -- Battle Sword+3
+	10	3131	1	10	30 -- Partisan+1
+	11	3132	1	25	30 -- Partisan+2
+	12	3133	1	15	30 -- Partisan+3
+	13	1101	1	10	30 -- Dragon Knife+1
+	14	1102	1	25	30 -- Dragon Knife+2
+	15	1103	1	15	30 -- Dragon Knife+3
+	16	7131	1	10	30 -- Heavenly Bird Fan+1
+	17	7132	1	25	30 -- Heavenly Bird Fan+2
+	18	7133	1	15	30 -- Heavenly Bird Fan+3
+	19	2141	1	10	30 -- Yellow Dragon Bow+1
+	20	2142	1	25	30 -- Yellow Dragon Bow+2
+	21	2143	1	15	30 -- Yellow Dragon Bow+3
+	22	6051	1	10	30 -- Scarab Claw+1
+	23	6052	1	25	30 -- Scarab Claw+2
+	24	6053	1	10	30 -- Scarab Claw+3
+	25	6061	1	10	30 -- Hawk Claw+1
+	26	6062	1	25	30 -- Hawk Claw+2
+	27	6063	1	15	30 -- Hawk Claw+3
+	28	11681	1	9	30 -- Spirit Plate Armour+1
+	29	11682	1	24	30 -- Spirit Plate Armour+2
+	30	11683	1	14	30 -- Spirit Plate Armour+3
+	31	11881	1	9	30 -- Baroness Dress+1
+	32	11882	1	24	30 -- Baroness Dress+2
+	33	11883	1	14	30 -- Baroness Dress+3
+	34	11481	1	9	30 -- Fuchsia Suit+1
+	35	11482	1	24	30 -- Fuchsia Suit+2
+	36	11483	1	14	30 -- Fuchsia Suit+3
+	37	11281	1	9	30 -- Dragon God Armour+1
+	38	11282	1	24	30 -- Dragon God Armour+2
+	39	11283	1	14	30 -- Dragon God Armour+3
+	40	21061	1	9	30 -- Firellium Plate Armour+1
+	41	21062	1	24	30 -- Firellium Plate Armour+2
+	42	21063	1	14	30 -- Firellium Plate Armour+3
+	43	17164	1	9	30 -- Crystal Earrings+4
+	44	17165	1	24	30 -- Crystal Earrings+5
+	45	17166	1	14	30 -- Crystal Earrings+6
+	46	16164	1	9	30 -- Crystal Necklace+4
+	47	16165	1	24	30 -- Crystal Necklace+5
+	48	16166	1	14	30 -- Crystal Necklace+6
+	49	14164	1	9	30 -- Crystal Bracelet+4
+	50	14165	1	24	30 -- Crystal Bracelet+5
+	51	14166	1	14	30 -- Crystal Bracelet+6
+	52	70012	1	15 -- Goddess Tear
+	53	70038	1	15 -- Bravery Cape
+	54	25040	1	21 -- Blessing Scroll
+	55	70048	1	20 -- Cloak of Secrecy
+	56	70037	1	25 -- Book of Forgetfulness
+	57	70014	1	25 -- Blood Pill
+	58	70043	1	20 -- Thief's Gloves
+	59	70005	1	20 -- Experience Ring (1h)
+	60	경험치	150000	5 -- Exp.
+	61	경험치	200000	10 -- Exp.
+	62	경험치	250000	10 -- Exp.
+	63	경험치	300000	15 -- Exp.
+	64	돈꾸러미	150000	20 -- Yang
+	65	돈꾸러미	200000	25 -- Yang
+	66	돈꾸러미	250000	30 -- Yang
+	67	돈꾸러미	300000	25 -- Yang
+	68	27112	25	20 -- Green Potion (L)
+	69	60004	1	3	15 -- Looking Glass
+	70	80019	1	3	15 -- Fine Cloth
+	71	38060	1	3	15 -- Bag of Emotions
+}
+Group	사귀왕의상자
+{
+	Vnum	50080 -- Red Dragon's Chest
+	1	50513	1	100 -- Soul Stone
+}
+Group	사귀왕의상자
+{
+	Vnum	50081 -- Demon King's Chest
+	1	152	1	22	30 -- Ghost Fang Blade+2
+	2	153	1	16	30 -- Ghost Fang Blade+3
+	3	5092	1	22	30 -- Thunder Bird Bell+2
+	4	5093	1	16	30 -- Thunder Bird Bell+3
+	5	142	1	22	30 -- Battle Sword+2
+	6	143	1	16	30 -- Battle Sword+3
+	7	3132	1	22	30 -- Partisan+2
+	8	3133	1	16	30 -- Partisan+3
+	9	1102	1	22	30 -- Dragon Knife+2
+	10	1103	1	16	30 -- Dragon Knife+3
+	11	7132	1	22	30 -- Heavenly Bird Fan+2
+	12	7133	1	16	30 -- Heavenly Bird Fan+3
+	13	2142	1	22	30 -- Yellow Dragon Bow+2
+	14	2143	1	16	30 -- Yellow Dragon Bow+3
+	15	6052	1	22	30 -- Scarab Claw+2
+	16	6053	1	16	30 -- Scarab Claw+3
+	17	6042	1	22	30 -- Griffon Claw+2
+	18	6043	1	16	30 -- Griffon Claw+3
+	19	11682	1	19	30 -- Spirit Plate Armour+2
+	20	11683	1	28	30 -- Spirit Plate Armour+3
+	21	11684	1	10	30 -- Spirit Plate Armour+4
+	22	11882	1	19	30 -- Baroness Dress+2
+	23	11883	1	28	30 -- Baroness Dress+3
+	24	11884	1	10	30 -- Baroness Dress+4
+	25	11482	1	19	30 -- Fuchsia Suit+2
+	26	11483	1	28	30 -- Fuchsia Suit+3
+	27	11484	1	10	30 -- Fuchsia Suit+4
+	28	11282	1	19	30 -- Dragon God Armour+2
+	29	11283	1	28	30 -- Dragon God Armour+3
+	30	11284	1	10	30 -- Dragon God Armour+4
+	31	21062	1	19	30 -- Firellium Plate Armour+2
+	32	21063	1	28	30 -- Firellium Plate Armour+3
+	33	21064	1	10	30 -- Firellium Plate Armour+4
+	34	17184	1	19	30 -- Amethyst Earrings+4
+	35	17185	1	28	30 -- Amethyst Earrings+5
+	36	17186	1	10	30 -- Amethyst Earrings+6
+	37	16184	1	19	30 -- Amethyst Necklace+4
+	38	16185	1	28	30 -- Amethyst Necklace+5
+	39	16186	1	10	30 -- Amethyst Necklace+6
+	40	14184	1	19	30 -- Amethyst Bracelet+4
+	41	14185	1	28	30 -- Amethyst Bracelet+5
+	42	14186	1	10	30 -- Amethyst Bracelet+6
+	43	70012	1	20 -- Goddess Tear
+	44	70038	1	20 -- Bravery Cape
+	45	25040	1	25 -- Blessing Scroll
+	46	70048	1	20 -- Cloak of Secrecy
+	47	70037	1	25 -- Book of Forgetfulness
+	48	70014	1	25 -- Blood Pill
+	49	70043	1	20 -- Thief's Gloves
+	50	70005	1	20 -- Experience Ring (1h)
+	51	경험치	200000	20 -- Exp.
+	52	경험치	250000	30 -- Exp.
+	53	경험치	300000	20 -- Exp.
+	54	돈꾸러미	200000	20 -- Yang
+	55	돈꾸러미	250000	30 -- Yang
+	56	돈꾸러미	300000	20 -- Yang
+	57	27112	30	20 -- Green Potion (L)
+	58	60004	1	3	15 -- Looking Glass
+	59	80019	1	3	15 -- Fine Cloth
+	60	38060	1	3	15 -- Bag of Emotions
+}
+Group	사신의상자
+{
+	Vnum	50082 -- Grim Reaper's Chest
+	1	170	1	16	30 -- Sting Sword+0
+	2	250	1	16	30 -- Demon Blade+0
+	3	1120	1	16	30 -- Siamese Knife+0
+	4	2180	1	16	30 -- Blue Dragon Bow+0
+	5	3150	1	16	30 -- Soul Stealing Blade+0
+	6	7150	1	16	30 -- Ecstasy Fan+0
+	7	6060	1	16	30 -- Hawk Claw+0
+	8	11290	1	31	30 -- Black Steel Armour+0
+	9	11291	1	15	30 -- Black Steel Armour+1
+	10	11490	1	31	30 -- Black Wind Suit+0
+	11	11491	1	15	30 -- Black Wind Suit+1
+	12	11690	1	31	30 -- Magic Plate Armour+0
+	13	11691	1	15	30 -- Magic Plate Armour+1
+	14	11890	1	31	30 -- Black Clothing+0
+	15	11891	1	15	30 -- Black Clothing+1
+	16	21070	1	31	30 -- Nightshade Armour+0
+	17	21071	1	15	30 -- Nightshade Armour+1
+	18	152	1	22	30 -- Ghost Fang Blade+2
+	19	153	1	16	30 -- Ghost Fang Blade+3
+	20	5092	1	22	30 -- Thunder Bird Bell+2
+	21	5093	1	16	30 -- Thunder Bird Bell+3
+	22	142	1	22	30 -- Battle Sword+2
+	23	143	1	16	30 -- Battle Sword+3
+	24	3132	1	22	30 -- Partisan+2
+	25	3133	1	16	30 -- Partisan+3
+	26	1102	1	22	30 -- Dragon Knife+2
+	27	1103	1	16	30 -- Dragon Knife+3
+	28	7132	1	22	30 -- Heavenly Bird Fan+2
+	29	7133	1	16	30 -- Heavenly Bird Fan+3
+	30	2142	1	22	30 -- Yellow Dragon Bow+2
+	31	2143	1	16	30 -- Yellow Dragon Bow+3
+	32	6041	1	22	30 -- Griffon Claw+1
+	33	6042	1	16	30 -- Griffon Claw+2
+	34	6051	1	22	30 -- Scarab Claw+1
+	35	6052	1	16	30 -- Scarab Claw+2
+	36	11682	1	19	30 -- Spirit Plate Armour+2
+	37	11683	1	28	30 -- Spirit Plate Armour+3
+	38	11684	1	10	30 -- Spirit Plate Armour+4
+	39	11882	1	19	30 -- Baroness Dress+2
+	40	11883	1	28	30 -- Baroness Dress+3
+	41	11884	1	10	30 -- Baroness Dress+4
+	42	11482	1	19	30 -- Fuchsia Suit+2
+	43	11483	1	28	30 -- Fuchsia Suit+3
+	44	11484	1	10	30 -- Fuchsia Suit+4
+	45	11282	1	19	30 -- Dragon God Armour+2
+	46	11283	1	28	30 -- Dragon God Armour+3
+	47	11284	1	10	30 -- Dragon God Armour+4
+	48	21061	1	19	30 -- Firellium Plate Armour+1
+	49	21062	1	28	30 -- Firellium Plate Armour+2
+	50	21063	1	10	30 -- Firellium Plate Armour+3
+	51	180	1	4	30 -- Poison Sword+0
+	52	190	1	4	30 -- Lion Sword+0
+	53	1130	1	10	30 -- Devil Wing Chakram+0
+	54	2170	1	10	30 -- Crow Steel Bow+0
+	55	3160	1	10	30 -- Grudge Sword+0
+	56	5120	1	10	30 -- Bamboo Bell+0
+	57	6070	1	10	30 -- Thorned Claw+0
+	58	60004	1	3	15 -- Looking Glass
+	59	80019	1	3	15 -- Fine Cloth
+	60	38060	1	3	15 -- Bag of Emotions
+}
+Group	진구미호의상자
+{
+	Vnum	50090 -- Box of Fox nine o' Tails
+	1	170	1	16	20 -- Sting Sword+0
+	2	250	1	16	20 -- Demon Blade+0
+	3	1120	1	16	20 -- Siamese Knife+0
+	4	2180	1	16	20 -- Blue Dragon Bow+0
+	5	3150	1	16	20 -- Soul Stealing Blade+0
+	6	7150	1	16	20 -- Ecstasy Fan+0
+	7	6060	1	16	20 -- Hawk Claw+0
+	8	11290	1	31	20 -- Black Steel Armour+0
+	9	11291	1	15	20 -- Black Steel Armour+1
+	10	11490	1	31	20 -- Black Wind Suit+0
+	11	11491	1	15	20 -- Black Wind Suit+1
+	12	11690	1	31	20 -- Magic Plate Armour+0
+	13	11691	1	15	20 -- Magic Plate Armour+1
+	14	11890	1	31	20 -- Black Clothing+0
+	15	11891	1	15	20 -- Black Clothing+1
+	16	21070	1	31	20 -- Nightshade Armour+0
+	17	21071	1	15	20 -- Nightshade Armour+1
+	18	17204	1	60	20 -- Heaven's Tear Earrings+4
+	19	17205	1	40	20 -- Heaven's Tear Earrings+5
+	20	17206	1	20	20 -- Heaven's Tear Earrings+6
+	21	16204	1	60	20 -- Heaven's Tear Necklace+4
+	22	16205	1	40	20 -- Heaven's Tear Necklace+5
+	23	16206	1	20	20 -- Heaven's Tear Necklace+6
+	24	14204	1	60	20 -- Heaven's Tear Bracelet+4
+	25	14205	1	40	20 -- Heaven's Tear Bracelet+5
+	26	14206	1	20	20 -- Heaven's Tear Bracelet+6
+	27	경험치	500000	100 -- Exp.
+	28	경험치	700000	60 -- Exp.
+	29	경험치	1000000	20 -- Exp.
+	30	돈꾸러미	300000	100 -- Yang
+	31	돈꾸러미	500000	60 -- Yang
+	32	돈꾸러미	1000000	20 -- Yang
+	33	38060	1	5 -- Bag of Emotions
+}
+Group	아귀대제의상자
+{
+	Vnum	50186 -- Azrael's Chest
+	1	172	1	25 -- Sting Sword+2
+	2	252	1	25 -- Demon Blade+2
+	3	1122	1	25 -- Siamese Knife+2
+	4	2182	1	25 -- Blue Dragon Bow+2
+	5	3152	1	25 -- Soul Stealing Blade+2
+	6	7152	1	25 -- Ecstasy Fan+2
+	7	6062	1	25 -- Hawk Claw+2
+	8	11291	1	30 -- Black Steel Armour+1
+	9	11292	1	20 -- Black Steel Armour+2
+	10	11491	1	30 -- Black Wind Suit+1
+	11	11492	1	20 -- Black Wind Suit+2
+	12	11691	1	30 -- Magic Plate Armour+1
+	13	11692	1	20 -- Magic Plate Armour+2
+	14	11891	1	30 -- Black Clothing+1
+	15	11892	1	20 -- Black Clothing+2
+	16	21071	1	20 -- Nightshade Armour+1
+	17	21072	1	20 -- Nightshade Armour+2
+	18	17204	1	30 -- Heaven's Tear Earrings+4
+	19	17205	1	20 -- Heaven's Tear Earrings+5
+	20	17206	1	10 -- Heaven's Tear Earrings+6
+	21	16204	1	30 -- Heaven's Tear Necklace+4
+	22	16205	1	20 -- Heaven's Tear Necklace+5
+	23	16206	1	10 -- Heaven's Tear Necklace+6
+	24	14204	1	30 -- Heaven's Tear Bracelet+4
+	25	14205	1	20 -- Heaven's Tear Bracelet+5
+	26	14206	1	10 -- Heaven's Tear Bracelet+6
+	27	12260	1	7 -- Fear Mask +0
+	28	12280	1	5 -- War Master Helmet +0
+	29	12390	1	7 -- Orc Hood +0
+	30	12400	1	5 -- Spider Hood +0
+	31	12530	1	7 -- Horned Helmet +0
+	32	12540	1	5 -- Magic Helmet +0
+	33	12670	1	7 -- Cardinal's Hat +0
+	34	12680	1	5 -- Soul Shard Hat +0
+	35	21530	1	7 -- Godsend Helmet+0
+	36	21540	1	5 -- Viridian Wood Helmet+0
+	37	13140	1	5 -- Titan Shield+0
+	38	14220	1	5 -- Soul Crystal Bracelet+0
+	39	16220	1	5 -- Soul Crystal Necklace+0
+	40	17220	1	5 -- Soul Crystal Earrings+0
+	41	돈꾸러미	500000	40 -- Yang
+	42	27002	200	100 -- Red Potion (M)
+	43	27003	100	100 -- Red Potion (L)
+	44	27005	200	100 -- Blue Potion (M)
+	45	27006	100	100 -- Blue Potion (L)
+	46	80019	1	5 -- Fine Cloth
+	47	60004	1	5 -- Looking Glass
+}
+Group	w20보스상�
+{
+	Vnum	50254
+	1	174	1	25 -- Sting Sword+4
+	2	254	1	25 -- Demon Blade+4
+	3	1124	1	25 -- Siamese Knife+4
+	4	2184	1	25 -- Blue Dragon Bow+4
+	5	3154	1	25 -- Soul Stealing Blade+4
+	6	7154	1	25 -- Ecstasy Fan+4
+	7	6064	1	25 -- Hawk Claw+4
+	8	11293	1	30 -- Black Steel Armour+3
+	9	11294	1	20 -- Black Steel Armour+4
+	10	11493	1	30 -- Black Wind Suit+3
+	11	11494	1	20 -- Black Wind Suit+4
+	12	11693	1	30 -- Magic Plate Armour+3
+	13	11694	1	20 -- Magic Plate Armour+4
+	14	11893	1	30 -- Black Clothing+3
+	15	11894	1	20 -- Black Clothing+4
+	16	21073	1	30 -- Nightshade Armour+3
+	17	21074	1	20 -- Nightshade Armour+4
+	18	17205	1	30 -- Heaven's Tear Earrings+5
+	19	17206	1	20 -- Heaven's Tear Earrings+6
+	20	17207	1	10 -- Heaven's Tear Earrings+7
+	21	16205	1	30 -- Heaven's Tear Necklace+5
+	22	16206	1	20 -- Heaven's Tear Necklace+6
+	23	16207	1	10 -- Heaven's Tear Necklace+7
+	24	14205	1	30 -- Heaven's Tear Bracelet+5
+	25	14206	1	20 -- Heaven's Tear Bracelet+6
+	26	14207	1	10 -- Heaven's Tear Bracelet+7
+	27	12260	1	7 -- Fear Mask +0
+	28	12280	1	5 -- War Master Helmet +0
+	29	12390	1	7 -- Orc Hood +0
+	30	12400	1	5 -- Spider Hood +0
+	31	12530	1	7 -- Horned Helmet +0
+	32	12540	1	5 -- Magic Helmet +0
+	33	12670	1	7 -- Cardinal's Hat +0
+	34	12680	1	5 -- Soul Shard Hat +0
+	35	21530	1	7 -- Godsend Helmet+0
+	36	21540	1	5 -- Viridian Wood Helmet+0
+	37	13140	1	5 -- Titan Shield+0
+	38	14220	1	5 -- Soul Crystal Bracelet+0
+	39	16220	1	5 -- Soul Crystal Necklace+0
+	40	17220	1	5 -- Soul Crystal Earrings+0
+	41	155	1	7 -- Ghost Fang Blade+5
+	42	156	1	6 -- Ghost Fang Blade+6
+	43	157	1	5 -- Ghost Fang Blade+7
+	44	1105	1	7 -- Dragon Knife+5
+	45	1106	1	6 -- Dragon Knife+6
+	46	1107	1	5 -- Dragon Knife+7
+	47	2145	1	7 -- Yellow Dragon Bow+5
+	48	2146	1	6 -- Yellow Dragon Bow+6
+	49	2147	1	5 -- Yellow Dragon Bow+7
+	50	3145	1	7 -- Electromagnetic Blade+5
+	51	3146	1	6 -- Electromagnetic Blade+6
+	52	3147	1	5 -- Electromagnetic Blade+7
+	53	5105	1	7 -- Heaven and Earth Bell+5
+	54	5106	1	6 -- Heaven and Earth Bell+6
+	55	5107	1	5 -- Heaven and Earth Bell+7
+	56	7145	1	7 -- Salvation Fan+5
+	57	7146	1	6 -- Salvation Fan+6
+	58	7147	1	5 -- Salvation Fan+7
+	59	6045	1	7 -- Griffon Claw+5
+	60	6046	1	6 -- Griffon Claw+6
+	61	6047	1	5 -- Griffon Claw+7
+	62	11295	1	7 -- Black Steel Armour+5
+	63	11296	1	6 -- Black Steel Armour+6
+	64	11297	1	5 -- Black Steel Armour+7
+	65	11495	1	7 -- Black Wind Suit+5
+	66	11496	1	6 -- Black Wind Suit+6
+	67	11497	1	5 -- Black Wind Suit+7
+	68	11695	1	7 -- Magic Plate Armour+5
+	69	11696	1	6 -- Magic Plate Armour+6
+	70	11697	1	5 -- Magic Plate Armour+7
+	71	11895	1	7 -- Black Clothing+5
+	72	11896	1	6 -- Black Clothing+6
+	73	11897	1	5 -- Black Clothing+7
+	74	21075	1	30 -- Nightshade Armour+5
+	75	21076	1	30 -- Nightshade Armour+6
+	76	21077	1	20 -- Nightshade Armour+7
+	77	460	1	1 -- Rune Sword +0
+	78	470	1	1 -- Dragon Tooth Blade +0
+	79	1340	1	1 -- Five Element Blade +0
+	80	2370	1	1 -- Phoenix Bow +0
+	81	3190	1	1 -- Solar Blade +0
+	82	5340	1	1 -- Dragon Ghost Bell +0
+	83	7370	1	1 -- Lying Dragon Fan+0
+	84	20000	1	1 -- Devil's Horn Armour+0
+	85	20250	1	1 -- Dragon Rider Suit+0
+	86	20500	1	1 -- Bone Plated Armour+0
+	87	20750	1	1 -- Golden Clothing+0
+	88	21090	1	1 -- Warlord Armour+0
+	89	14500	1	3 -- Ruby Bracelet+0
+	90	14520	1	3 -- Garnet Bracelet+0
+	91	14540	1	3 -- Emerald Bracelet+0
+	92	14560	1	3 -- Sapphire Bracelet+0
+	93	14570	1	3 -- Tourmaline Bracelet+0
+	94	16500	1	3 -- Ruby Necklace+0
+	95	16520	1	3 -- Garnet Necklace+0
+	96	16540	1	3 -- Emerald Necklace+0
+	97	16560	1	3 -- Sapphire Necklace+0
+	98	16570	1	3 -- Tourmaline Necklace+0
+	99	17500	1	3 -- Ruby Earrings+0
+	100	17520	1	3 -- Garnet Earrings+0
+	101	17540	1	3 -- Emerald Earrings+0
+	102	17560	1	3 -- Sapphire Earrings+0
+	103	gold	50000	70 -- Yang
+	104	gold	100000	60 -- Yang
+	105	gold	200000	50 -- Yang
+	106	gold	300000	40 -- Yang
+	107	gold	400000	30 -- Yang
+	108	gold	500000	20 -- Yang
+	109	exp	500000	40 -- Exp.
+	110	27002	200	100 -- Red Potion (M)
+	111	27003	100	100 -- Red Potion (L)
+	112	27005	200	100 -- Blue Potion (M)
+	113	27006	100	100 -- Blue Potion (L)
+	114	39004	1	5 -- Blessing Marble
+	115	71130	1	5 -- Passage Ticket
+	116	70024	1	5 -- Blessing Marble
+	117	80019	1	5 -- Fine Cloth
+	118	60004	1	5 -- Looking Glass
+}

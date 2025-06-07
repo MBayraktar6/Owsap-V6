@@ -1,0 +1,12 @@
+say_title ( c_locale ( 12780 ) ) 
+say ( c_locale ( 12783 ) ) 
+say ( c_locale ( 13174 ) ) 
+if select ( c_locale ( 12784 ) , c_locale ( 12785 ) ) == 1 then 
+if pc . get_gold ( ) < 5000 then 
+say_title ( c_locale ( 12780 ) ) 
+say ( c_locale ( 13179 ) ) 
+return 
+end 
+pc . changegold ( - 5000 ) 
+pc . warp ( 0 , 358400 ) 
+else return end 

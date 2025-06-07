@@ -1,0 +1,59 @@
+# ShopEX File Structure
+
+Group ShopNPC
+{
+	#--# NPC	Group
+	1	20502	YutnoriShop
+	2	9013	IllusionsMerchant
+}
+
+Group YutnoriShop
+{
+	Vnum	20502
+	Name	NoName
+	Sort	Vnum
+	Group	Items
+	{
+		#--#	vnum	count	price	price_type	price_vnum	socket0	socket1	socket2	socket3	socket4	socket5
+		1	30640	1	30000	0	0	0	0	0	0	0	0
+		2	30641	1	30000	0	0	0	0	0	0	0	0
+		3	30642	1	30000	0	0	0	0	0	0	0	0
+		4	30643	1	30000	0	0	0	0	0	0	0	0
+		5	30644	1	30000	0	0	0	0	0	0	0	0
+		6	30645	1	30000	0	0	0	0	0	0	0	0
+		7	30646	1	30000	0	0	0	0	0	0	0	0
+		8	30647	1	30000	0	0	0	0	0	0	0	0
+		9	30648	1	30000	0	0	0	0	0	0	0	0
+		10	30649	1	30000	0	0	0	0	0	0	0	0
+		11	30650	1	30000	0	0	0	0	0	0	0	0
+		12	30651	1	30000	0	0	0	0	0	0	0	0
+		13	30652	1	30000	0	0	0	0	0	0	0	0
+		14	30653	1	30000	0	0	0	0	0	0	0	0
+		15	30654	1	30000	0	0	0	0	0	0	0	0
+		16	30655	1	30000	0	0	0	0	0	0	0	0
+	}
+}
+
+Group IllusionsMerchant
+{
+	Vnum	9013
+	Name	NoName
+	Sort	Vnum
+	Group	Items
+	{
+		#--#	vnum	count	price	price_type	price_vnum	socket0	socket1	socket2	socket3	socket4	socket5
+		1	27007	20	0	0	0	0	0	0	0	0	0
+		2	27007	200	0	0	0	0	0	0	0	0	0
+		3	27008	20	0	0	0	0	0	0	0	0	0
+		4	27008	200	0	0	0	0	0	0	0	0	0
+		5	31147	1	25000	0	0	0	0	0	0	0	0
+		6	31147	10	250000	0	0	0	0	0	0	0	0
+		7	31147	100	2300000	0	0	0	0	0	0	0	0
+		8	79501	1	0	0	0	0	0	0	0	0	0
+		9	79502	1	0	0	0	0	0	0	0	0	0
+		10	50263	1	0	0	0	0	0	0	0	0	0
+		11	50264	1	0	0	0	0	0	0	0	0	0
+		12	70063	1	0	0	0	0	0	0	0	0	0
+		13	70064	1	0	0	0	0	0	0	0	0	0
+	}
+}

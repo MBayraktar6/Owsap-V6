@@ -1,0 +1,5 @@
+if crack_snow_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 6 then local setting = crack_snow_dungeon . setting ( ) 
+crack_snow_dungeon . clear_level ( d . get_map_index ( ) ) 
+d . notice ( c_locale ( 11459 ) ) 
+server_timer ( "crack_snow_dungeon_floor7_timer" , setting . floor_jump_time , d . get_map_index ( ) ) 
+ return end 

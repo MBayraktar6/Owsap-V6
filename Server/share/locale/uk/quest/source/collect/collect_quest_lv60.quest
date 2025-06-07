@@ -1,0 +1,228 @@
+quest collect_quest_lv60 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup with pc.get_level() >= 60 begin
+			set_state(information)
+		end
+	end
+
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(20084)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_locale(345))
+			end
+			send_letter(c_locale(403))
+		end
+
+		when button or info begin
+			say_title(c_locale(415))
+			say(c_locale(427))
+		end
+
+		when __TARGET__.target.click or 20084.chat.c_locale(437) begin
+			target.delete("__TARGET__")
+			say_title(c_locale(438))
+			say(c_locale(439))
+			wait()
+			say_title(c_locale(438))
+			say(c_locale(440))
+			wait()
+			say_title(c_locale(438))
+			say(c_locale(441))
+			set_state(go_to_disciple)
+			pc.setqf("duration", 0)
+			pc.setqf("collect_count", 0)
+			--pc.setqf("drink_drug", 0)
+		end
+	end
+
+	state go_to_disciple begin
+		when letter begin
+			send_letter(c_locale(442))
+		end
+
+		when button or info begin
+			say_title(c_locale(404))
+			say(c_locale(405))
+			say_item_vnum(30050)
+			say_reward(c_locale(406, pc.getqf("collect_count")))
+		end
+
+		--[[
+		when 71035.use begin
+			if get_time() < pc.getqf("duration") then
+				say(c_locale(407))
+				return
+			end
+
+			if pc.getqf("drink_drug") == 1 then
+				say(c_locale(408))
+				return
+			end
+
+			if pc.count_item(30050) == 0 then
+				say_title(c_locale(409))
+				say(c_locale(410))
+				return
+			end
+
+			pc.remove_item(71035, 1)
+			pc.setqf("drink_drug", 1)
+		end
+		]]
+
+		when 20084.chat.c_locale(411) with pc.count_item(30050) > 0 begin
+			if get_time() > pc.getqf("duration") or is_test_server() then
+				if pc.count_item(30050) > 0 then
+					say_title(c_locale(409))
+					say(c_locale(412))
+					pc.remove_item(30050, 1)
+					pc.setqf("duration", (get_time() + (60 * 60 * 4))) -- 4 hours
+					wait()
+
+					local pass_percent
+					--if pc.getqf("drink_drug") == 0 then
+					if affect.find(AFFECT_RESEARCHER_ELIXIR) then
+						pass_percent = 90
+					else
+						if true == pet.is_summon(34003) or true == pet.is_summon(34001) then
+							pass_percent = 92
+						else
+							pass_percent = 60
+						end
+					end
+
+					test_chat(string.format("pass percent %d", pass_percent))
+
+					local s = number(1, 100)
+					if s <= pass_percent then
+						if pc.getqf("collect_count") < 19 then
+							local index = pc.getqf("collect_count") + 1
+							pc.setqf("collect_count", index)
+							say_title(c_locale(409))
+							say(c_locale(413, (20 - pc.getqf("collect_count"))))
+							--pc.setqf("drink_drug", 0)
+							affect.remove(AFFECT_RESEARCHER_ELIXIR)
+							return
+						end
+
+						say_title(c_locale(409))
+						say(c_locale(414))
+						pc.setqf("duration", 0)
+						pc.setqf("collect_count", 0)
+						--pc.setqf("drink_drug", 0)
+						affect.remove(AFFECT_RESEARCHER_ELIXIR)
+						set_state(key_item)
+						return
+					else
+						say_title(c_locale(409))
+						say(c_locale(416))
+						--pc.setqf("drink_drug", 0)
+						affect.remove(AFFECT_RESEARCHER_ELIXIR)
+						return
+					end
+				else
+					say_title(c_locale(409))
+					--say(c_locale(342, c_item_name(30050)))
+					say(c_locale(417))
+					return
+				end
+			else
+				say_title(c_locale(409))
+				say(c_locale(418))
+				return
+			end
+		end
+	end
+
+	state key_item begin
+		when letter begin
+			if pc.count_item(30223) > 0 then
+				local v = find_npc_by_vnum(20084)
+				if v != 0 then
+					target.vid("__TARGET__", v, c_locale(345))
+				end
+			end
+			send_letter(c_locale(415))
+		end
+
+		when button or info begin
+			if pc.count_item(30223) > 0 then
+				say_title(c_locale(420))
+				say(c_locale(421))
+				return
+			end
+
+			say_title(c_locale(419))
+			say(c_locale(423))
+			say_item_vnum(30223)
+			say(c_locale(424))
+		end
+
+		when 1101.kill or 1102.kill or 1103.kill or 1104.kill or 1105.kill or 1106.kill or 1107.kill begin
+			local s = number(1, 400)
+			if s == 1 and pc.count_item(30223) == 0 then
+				pc.give_item2(30223, 1)
+				send_letter(c_locale(425))
+			end
+		end
+
+		when __TARGET__.target.click or 20084.chat.c_locale(426) with pc.count_item(30223) > 0 begin
+			target.delete("__TARGET__")
+			if pc.count_item(30223) > 0 then
+				say_title(c_locale(438))
+				say(c_locale(428))
+				pc.remove_item(30223, 1)
+				set_state(__reward)
+			else
+				say_title(c_locale(211))
+				--say(c_locale(315, c_item_name(30223)))
+				say(c_locale(329))
+				return
+			end
+		end
+	end
+
+	state __reward begin
+		when letter begin
+			local v = find_npc_by_vnum(20018)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_locale(318))
+			end
+			send_letter(c_locale(430))
+		end
+
+		when button or info begin
+			say_title(c_locale(356))
+			say(c_locale(431))
+		end
+
+		when __TARGET__.target.click or 20018.chat.c_locale(432) begin
+			target.delete("__TARGET__")
+			say_title(c_locale(321))
+			say(c_locale(433))
+			wait()
+			say_pc_name()
+			say(c_locale(434))
+			wait()
+			say_title(c_locale(321))
+			say(c_locale(435))
+			say_reward(c_locale(436))
+
+			affect.add_collect(apply.ATT_GRADE_BONUS, 50, (60 * 60 * 24 * 365 * 60)) -- 60 years
+			pc.give_item2(50112)
+			clear_letter()
+			set_quest_state("collect_quest_lv70", "run")
+			set_state(__COMPLETE__)
+		end
+	end
+
+	state __GIVEUP__ begin
+	end
+
+	state __COMPLETE__ begin
+	end
+end

@@ -1,0 +1,6 @@
+say_title ( c_mob_name ( 20520 ) ) 
+say ( c_locale ( 11567 ) ) 
+say ( c_locale ( 11568 ) ) 
+select ( c_locale ( 11522 ) ) 
+target . delete ( "__TARGET__" ) 
+set_state ( "investigation5b" ) 

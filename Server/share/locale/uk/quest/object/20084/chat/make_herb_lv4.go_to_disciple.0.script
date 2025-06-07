@@ -1,0 +1,44 @@
+say_title ( c_locale ( 201 ) ) 
+say ( c_locale ( 202 ) ) 
+pc . remove_item ( 50701 , 1 ) 
+wait ( ) 
+local pass_percent 
+if affect . find ( AFFECT_RESEARCHER_ELIXIR ) then 
+pass_percent = 90 
+else 
+pass_percent = 100 
+end 
+local s = number ( 1 , 100 ) 
+if s <= pass_percent then 
+if pc . getqf ( "collect_count" ) < 4 then 
+local index = pc . getqf ( "collect_count" ) + 1 
+pc . setqf ( "collect_count" , index ) 
+say_title ( c_locale ( 211 ) ) 
+say ( c_locale ( 263 , 5 - pc . getqf ( "collect_count" ) ) ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+return 
+end 
+say_title ( c_locale ( 211 ) ) 
+say ( c_locale ( 264 ) ) 
+say_title ( c_locale ( 265 ) ) 
+say_reward ( c_locale ( 266 ) ) 
+pc . setqf ( "collect_count" , 0 ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+clear_letter ( ) 
+set_state ( "__COMPLETE__" ) 
+if pc . get_job ( ) == 3 then 
+pc . give_item2 ( 7004 ) 
+say_reward ( c_locale ( 267 ) ) 
+return 
+else 
+pc . give_item2 ( 14 ) 
+say_reward ( c_locale ( 268 ) ) 
+end 
+pc . change_money ( 1000 ) 
+pc . give_exp2 ( 500 ) 
+else 
+say_title ( c_locale ( 211 ) ) 
+say ( c_locale ( 269 ) ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+return 
+end 

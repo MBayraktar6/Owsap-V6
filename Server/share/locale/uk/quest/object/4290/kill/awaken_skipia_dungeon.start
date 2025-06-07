@@ -1,0 +1,2 @@
+if awaken_skipia_dungeon . in_dungeon ( pc . get_map_index ( ) ) then game . drop_item ( 31180 , 1 ) 
+ return end 

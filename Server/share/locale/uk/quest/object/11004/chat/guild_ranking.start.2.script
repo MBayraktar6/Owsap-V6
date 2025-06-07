@@ -1,0 +1,3 @@
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 1751 , guild . get_rank ( ) ) ) 
+say ( c_locale ( 1752 , guild . get_ladder_point ( ) ) ) 

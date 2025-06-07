@@ -1,0 +1,22 @@
+ScriptType               MotionData
+
+MotionFileName           "D:/Ymir Work/npc_pet/halloween_2022_coffin/wait1.GR2"
+MotionDuration           2.000000
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     1
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         1.552311
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 Xtra0104"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/pet/halloween_2022_coffin.mse"
+        EffectPosition       12.700000 -11.000000 104.500000
+    }
+}

@@ -1,0 +1,4 @@
+local count = pc . getqf ( "hunted_meteorites" ) 
+pc . setqf ( "hunted_meteorites" , count + 1 ) 
+pc . give_item2 ( 31094 ) 
+meteorite_hunt . update_counter ( ) 

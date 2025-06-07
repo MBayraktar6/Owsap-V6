@@ -1,0 +1,9 @@
+if pc . enough_inventory ( 31183 ) then 
+pc . give_item2 ( 31183 , 1 ) 
+pc . setqf ( "kill_count" , pc . getqf ( "kill_count" ) + 1 ) 
+q . set_counter ( c_locale ( 11598 ) , 5 - pc . getqf ( "kill_count" ) ) 
+if pc . getqf ( "kill_count" ) >= 5 then 
+notice_multiline ( c_locale ( 11653 ) , notice ) 
+set_state ( "investigation5_reward" ) 
+end 
+end 

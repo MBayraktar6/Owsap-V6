@@ -1,0 +1,39 @@
+new_easter_gift_box={["start"]=0,give_item_with_log= function (vnum,amount,item_id)if vnum == 1 then 
+pc . change_gold ( amount ) 
+else 
+pc . give_item2 ( vnum , amount ) 
+end 
+char_log ( tonumber ( item_id ) , "EASTER_BOX" , "reward vnum: " .. vnum .. " reward amount: " .. amount ) 
+end ,gift= function (item_id)local n = number ( 1 , 100 ) 
+if n <= 2 then 
+new_easter_gift_box . give_item_with_log ( 27994 , 1 , item_id ) 
+elseif n <= 9 then 
+new_easter_gift_box . give_item_with_log ( 50818 , 5 , item_id ) 
+elseif n <= 16 then 
+new_easter_gift_box . give_item_with_log ( 1 , 100000 , item_id ) 
+elseif n <= 18 then 
+new_easter_gift_box . give_item_with_log ( 27993 , 1 , item_id ) 
+elseif n <= 25 then 
+new_easter_gift_box . give_item_with_log ( 50817 , 5 , item_id ) 
+elseif n <= 36 then 
+new_easter_gift_box . give_item_with_log ( 1 , 10000 , item_id ) 
+elseif n <= 42 then 
+new_easter_gift_box . give_item_with_log ( 70102 , 1 , item_id ) 
+elseif n <= 48 then 
+new_easter_gift_box . give_item_with_log ( 71108 , 5 , item_id ) 
+elseif n <= 54 then 
+new_easter_gift_box . give_item_with_log ( 71026 , 1 , item_id ) 
+elseif n <= 60 then 
+new_easter_gift_box . give_item_with_log ( 50814 , 5 , item_id ) 
+elseif n <= 66 then 
+new_easter_gift_box . give_item_with_log ( 50813 , 5 , item_id ) 
+elseif n <= 77 then 
+new_easter_gift_box . give_item_with_log ( 1 , 20000 , item_id ) 
+elseif n <= 86 then 
+new_easter_gift_box . give_item_with_log ( 1 , 30000 , item_id ) 
+elseif n <= 94 then 
+new_easter_gift_box . give_item_with_log ( 1 , 50000 , item_id ) 
+else 
+new_easter_gift_box . give_item_with_log ( 71094 , 1 , item_id ) 
+end 
+end }

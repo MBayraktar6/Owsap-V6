@@ -1,0 +1,8 @@
+local kill_count = pc . getqf ( "kill_count" ) + 1 
+pc . setqf ( "kill_count" , kill_count ) 
+q . set_counter ( c_locale ( 702 ) , couple_ring . get_rest_count ( ) ) 
+if couple_ring . is_completed ( ) then 
+say_title ( c_locale ( 703 ) ) 
+say ( c_locale ( 704 ) ) 
+set_state ( "report" ) 
+end 

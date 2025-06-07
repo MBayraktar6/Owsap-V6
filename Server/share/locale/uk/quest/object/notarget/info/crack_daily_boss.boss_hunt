@@ -1,0 +1,8 @@
+local a , b , c , d = crack_daily_boss . get_completed ( ) 
+local count = pc . getqf ( "count" ) 
+say_title ( c_locale ( 11282 ) ) 
+say ( "" ) 
+say ( c_locale ( 11320 ) ) 
+say ( c_locale ( 11325 , a , b , c , d ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 11375 , count , 10 ) ) 

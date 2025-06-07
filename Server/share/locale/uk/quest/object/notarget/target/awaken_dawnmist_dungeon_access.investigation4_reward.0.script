@@ -1,0 +1,6 @@
+target . delete ( "__TARGET__" ) 
+pc . give_exp2 ( 7.766e+06 ) 
+say_title ( c_mob_name ( 20540 ) ) 
+say ( c_locale ( 11564 ) ) 
+say_reward ( c_locale ( 11596 , number_to_money_string ( 7.766e+06 ) ) ) 
+set_state ( "investigation5a" ) 

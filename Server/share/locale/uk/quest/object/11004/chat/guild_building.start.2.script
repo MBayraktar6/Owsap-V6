@@ -1,0 +1,9 @@
+say_title ( c_locale ( 1278 ) ) 
+say ( c_locale ( 1695 ) ) 
+local s = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if s == 1 then 
+say_title ( c_locale ( 1278 ) ) 
+say ( c_locale ( 1696 ) ) 
+pc . remove_from_guild ( ) 
+pc . setqf ( "new_withdraw_time" , get_global_time ( ) ) 
+end 

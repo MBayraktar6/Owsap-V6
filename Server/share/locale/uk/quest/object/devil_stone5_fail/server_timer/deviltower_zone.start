@@ -1,0 +1,4 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+d . notice ( c_locale ( 865 ) ) 
+d . exit_all ( ) 
+end 

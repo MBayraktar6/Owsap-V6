@@ -1,0 +1,17 @@
+if pc . get_level ( ) >= 1 and pc . get_level ( ) < 10 then 
+set_state ( "novice_weapon_lv1" ) 
+elseif pc . get_level ( ) >= 10 and pc . get_level ( ) < 20 then 
+set_state ( "novice_weapon_lv10" ) 
+elseif pc . get_level ( ) >= 20 and pc . get_level ( ) < 30 then 
+set_state ( "novice_weapon_lv20" ) 
+elseif pc . get_level ( ) >= 30 and pc . get_level ( ) < 40 then 
+set_state ( "novice_weapon_lv30" ) 
+elseif pc . get_level ( ) >= 40 and pc . get_level ( ) < 50 then 
+set_state ( "novice_weapon_lv40" ) 
+elseif pc . get_level ( ) >= 50 and pc . get_level ( ) < 60 then 
+set_state ( "novice_weapon_lv50" ) 
+elseif pc . get_level ( ) >= 60 and pc . get_level ( ) < 70 then 
+set_state ( "novice_weapon_lv60" ) 
+elseif pc . get_level ( ) >= 70 then 
+set_state ( "novice_weapon_lv70" ) 
+end 

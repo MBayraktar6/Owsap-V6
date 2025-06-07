@@ -1,0 +1,8 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 1282 ) ) 
+say ( c_locale ( 5068 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1282 ) ) 
+say ( c_locale ( 5069 ) ) 
+say_item ( c_locale ( 5070 ) , 69000 , "" ) 
+set_state ( "gotodefend" ) 

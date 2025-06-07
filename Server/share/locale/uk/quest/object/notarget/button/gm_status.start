@@ -1,0 +1,6 @@
+if pc . is_gm ( ) then affect . add_collect_point ( POINT_ST , 9999 , ( 60 * 60 * 24 * 365 * 60 ) ) 
+affect . add_collect_point ( POINT_HT , 9999 , ( 60 * 60 * 24 * 365 * 60 ) ) 
+affect . add_collect_point ( POINT_DX , 9999 , ( 60 * 60 * 24 * 365 * 60 ) ) 
+affect . add_collect_point ( POINT_IQ , 9999 , ( 60 * 60 * 24 * 365 * 60 ) ) 
+say ( "Done" ) 
+ return end 

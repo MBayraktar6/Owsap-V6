@@ -1,0 +1,3 @@
+target . delete ( "__TARGET__" ) 
+pc . give_item2 ( 31096 , 1 ) 
+set_state ( "secondary_investigations_9" ) 

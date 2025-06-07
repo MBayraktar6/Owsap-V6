@@ -1,0 +1,65 @@
+if not party . is_party ( ) then 
+say ( c_locale ( 790 ) ) 
+return 
+end 
+if not party . is_leader ( ) then 
+say ( c_locale ( 792 ) ) 
+return 
+end 
+if party . get_near_count ( ) < 2 then 
+say ( c_locale ( 793 , 2 - 1 ) ) 
+return 
+end 
+say ( c_locale ( 794 ) ) 
+if select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) == 1 then 
+local pids = { party . get_member_pids ( ) } 
+local no_ticket_members = { } 
+local ticket_check = true 
+local no_level_members = { } 
+local level_check = true 
+local mounted_members = { } 
+local mount_check = true 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if pc . count_item ( 30613 ) < 1 then 
+table . insert ( no_ticket_members , pc . get_name ( ) ) 
+ticket_check = false 
+end 
+if pc . get_level ( ) < 95 then 
+table . insert ( no_level_members , pc . get_name ( ) ) 
+level_check = false 
+end 
+if pc . is_riding ( ) then 
+table . insert ( mounted_members , pc . get_name ( ) ) 
+mount_check = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not level_check then 
+say ( c_locale ( 797 ) ) 
+for i , name in next , no_level_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , c_locale ( 796 ) .. "    " .. name ) 
+end 
+return 
+end 
+if not ticket_check then 
+say ( c_locale ( 795 ) ) 
+say_item_vnum ( 30613 ) 
+for i , name in next , no_ticket_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , c_locale ( 796 ) .. "    " .. name ) 
+end 
+return 
+end 
+if not mount_check then 
+say ( c_locale ( 791 ) ) 
+for i , name in next , mounted_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , c_locale ( 796 ) .. "    " .. name ) 
+end 
+return 
+end 
+if party . is_map_member_flag_lt ( "exit_time" , get_global_time ( ) - 7200 ) then 
+dawnmist_dungeon . create ( ) 
+else 
+say ( c_locale ( 798 ) ) 
+end 
+end 

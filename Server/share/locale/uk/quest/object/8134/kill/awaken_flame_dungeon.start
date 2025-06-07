@@ -1,0 +1,4 @@
+if awaken_flame_dungeon . in_dungeon ( d . get_map_index ( ) ) and d . getf ( "level" ) == 16 then d . notice ( c_locale ( 11435 ) ) 
+d . notice ( c_locale ( 11418 ) ) 
+awaken_flame_dungeon . clear_level ( ) 
+ return end 

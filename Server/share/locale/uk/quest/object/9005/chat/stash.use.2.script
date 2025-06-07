@@ -1,0 +1,3 @@
+npc . open_shop ( ) 
+say_title ( c_locale ( 9130 ) ) 
+say ( c_locale ( 10020 ) ) 

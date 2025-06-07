@@ -1,0 +1,48 @@
+say_title ( c_mob_name ( 20417 ) ) 
+say ( c_locale ( 6628 ) ) 
+say ( "" ) 
+wait ( ) 
+if pc . getqf ( "reward" ) > get_time ( ) or pc . getqf ( "reward" ) ~= 0 then 
+say_title ( c_mob_name ( 20417 ) ) 
+say ( c_locale ( 6630 ) ) 
+say ( "" ) 
+return 
+end 
+local my_name = pc . get_name ( ) 
+local my_rank = 0 
+local score_table = game . get_minigame_rumi_score ( true ) 
+for i , score in ipairs ( score_table ) begin 
+if score [ 1 ] == my_name then 
+my_rank = i 
+break 
+end 
+end 
+if my_rank == 0 then 
+say_title ( c_mob_name ( 20417 ) ) 
+say ( c_locale ( 6627 ) ) 
+say ( "" ) 
+return 
+end 
+local reward_vnum = 50275 
+local reward_amount = 1 
+if game . get_event_flag ( "mini_game_okey_normal" ) ~= 0 then 
+reward_vnum = 50275 
+else 
+reward_vnum = 50267 
+end 
+if my_rank == 1 then 
+reward_amount = 10 
+elseif my_rank == 2 then 
+reward_amount = 5 
+elseif my_rank == 3 then 
+reward_amount = 3 
+else 
+reward_amount = 1 
+end 
+say_title ( c_mob_name ( 20417 ) ) 
+say_item_vnum ( reward_vnum ) 
+say ( "" ) 
+say_reward ( c_locale ( 6629 , reward_amount ) ) 
+say ( "" ) 
+pc . give_item2 ( reward_vnum , reward_amount ) 
+pc . setqf ( "reward" , get_time ( ) + 604800 ) 

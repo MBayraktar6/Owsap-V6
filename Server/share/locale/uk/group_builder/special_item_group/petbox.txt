@@ -1,0 +1,96 @@
+Group	녹각보관함_불사조
+{
+	Vnum	53501 -- Fire Phoenix Cage
+	Type	pct
+	1	53001	1	100 -- Fire Phoenix
+}
+Group	녹각보관함_아기순록
+{
+	Vnum	53502 -- Reindeer Calf Chest
+	Type	pct
+	1	53002	1	100 -- Reindeer Calf
+}
+Group	녹각보관함_빙염불사조
+{
+	Vnum	53503 -- Ice Phoenix Cage
+	Type	pct
+	1	53003	1	100 -- Ice Phoenix
+}
+Group	녹각보관함_아기파황
+{
+	Vnum	53505 -- Baby Azrael Chest
+	Type	pct
+	1	53005	1	100 -- Baby Azrael
+}
+Group	녹각보관함_아기파황_special
+{
+	Vnum	53506 -- Baby Azrael Chest (Gold)
+	Type	pct
+	1	53006	1	100 -- Baby Azrael (gold)
+}
+Group	녹각보관함_아기순록_2012
+{
+	Vnum	53507 -- Bambi Chest
+	Type	pct
+	1	53007	1	100 -- Bambi
+}
+Group	녹각보관함_아기백곰
+{
+	Vnum	53508 -- Knuud Chest
+	Type	pct
+	1	53008	1	100 -- Knuud
+}
+Group	녹각보관함_아기펜더
+{
+	Vnum	53509 -- Bao Bao Chest
+	Type	pct
+	1	53009	1	100 -- Bao Bao
+}
+Group	녹각보관함_아기사자
+{
+	Vnum	53510 -- Leonidas Chest
+	Type	pct
+	1	53010	1	100 -- Leonidas
+}
+Group	녹각보관함_아기호랑이
+{
+	Vnum	53511 -- Khan Chest
+	Type	pct
+	1	53011	1	100 -- Khan
+}
+Group	녹각보관함_아기멧돼지
+{
+	Vnum	53512 -- Porky Chest
+	Type	pct
+	1	53012	1	100 -- Porky
+}
+Group	녹각보관함_아기늑대
+{
+	Vnum	53513 -- Rufus Chest
+	Type	pct
+	1	53013	1	100 -- Rufus
+}
+Group	녹각보관함_붉은도적단장수
+{
+	Vnum	53514 -- Mini-Executor Chest
+	Type	pct
+	1	53014	1	100 -- Chubby Mini-Executor
+}
+Group	녹각보관함_붉은도적단장수_특
+{
+	Vnum	53515 -- Mini-ExecutorChest(Gold)
+	Type	pct
+	1	53015	1	100 -- Chubby Mini-Executor (g)
+}
+Group	녹각보관함_할로윈뼈강아지
+{
+	Vnum	53516 -- Bone Chest
+	Type	pct
+	1	53016	1	100 -- Boney
+}
+Group	녹각보관함_녹염불사조
+{
+	Vnum	53517 -- Jade Cage
+	Type	pct
+	1	53017	1	100 -- Jade Phoenix
+}

@@ -1,0 +1,22 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 1282 ) ) 
+say ( c_locale ( 8304 ) ) 
+say_item_vnum ( 30130 ) 
+say ( c_locale ( 8315 ) ) 
+local s = select ( c_locale ( 8319 ) , c_locale ( 8320 ) ) 
+if 2 == s then 
+say ( c_locale ( 8321 ) ) 
+local a = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if 2 == a then 
+say_title ( c_locale ( 1282 ) ) 
+say ( c_locale ( 8322 ) ) 
+return 
+end 
+say_title ( c_locale ( 1282 ) ) 
+say ( c_locale ( 8323 ) ) 
+set_state ( "__GIVEUP__" ) 
+return 
+end 
+say_title ( c_locale ( 8283 ) ) 
+say ( c_locale ( 8284 ) ) 
+set_state ( "to_yeonnahwan" ) 

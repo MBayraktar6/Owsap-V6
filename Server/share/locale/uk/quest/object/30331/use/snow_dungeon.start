@@ -1,0 +1,20 @@
+if snow_dungeon . inside ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 2 then if d . getf ( "level2_use_key" ) > 0 then 
+test_chat ( "TEST : Key already used!" ) 
+return 
+end 
+if 1 == 1 then 
+if pc . get_job ( ) ~= SHAMAN then 
+say ( c_locale ( 8190 ) ) 
+return 
+end 
+end 
+item . remove ( ) 
+if number ( 1 , 100 ) <= 30 or is_test_server ( ) then 
+snow_dungeon . clear_timer ( ) 
+d . setf ( "level2_use_key" , 1 ) 
+d . notice ( c_locale ( 8191 ) ) 
+server_timer ( "snow_dungeon_floor3_timer" , 5 , get_server_timer_arg ( ) ) 
+else 
+say ( c_locale ( 8192 ) ) 
+end 
+ return end 

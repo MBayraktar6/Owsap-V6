@@ -1,0 +1,63 @@
+quest guild_building begin
+	state start begin
+		when 20040.click begin
+			say_title(c_locale(1613))
+			say(c_locale(1617))
+
+			local s = select(c_locale(4473), c_locale(3418))
+
+			if s == 1 then
+				if not pc.is_guild_master() then
+					say_title(c_locale(1613))
+					say(c_locale(1618))
+				elseif building.has_land(pc.get_guild()) then
+					say_title(c_locale(1613))
+					say(c_locale(1619))
+				else
+					local land_id = building.get_land_id(pc.get_map_index(), pc.get_x() * 100, pc.get_y() * 100)
+
+					if land_id == 0 then
+						say_title(c_locale(1613))
+						say(c_locale(1620))
+					else
+						local price, owner, guild_level_limit = building.get_land_info(land_id)
+						say_title(c_locale(1613))
+						say(c_locale(1621, guild_level_limit, number_to_money_string(price) .. " " .. c_locale(2585)))
+
+						if guild.level(pc.get_guild()) < guild_level_limit then
+							say_title(c_locale(1613))
+							say(c_locale(1622))
+						else
+							say_title(c_locale(1613))
+							say(c_locale(1623))
+
+							s = select(c_locale(4473), c_locale(3418))
+
+							if s == 1 then
+								local price, owner, guild_level_limit = building.get_land_info(land_id)
+
+								if owner != 0 then
+									say_title(c_locale(1613))
+									say(c_locale(1624))
+								elseif pc.get_gold() < price then
+									say_title(c_locale(1613))
+									say(c_locale(1614))
+								else
+									pc.changegold(-price)
+									building.set_land_owner(land_id, pc.get_guild())
+									say(c_locale(1615))
+								end
+							else
+								say_title(c_locale(1613))
+								say(c_locale(1616))
+							end
+						end
+					end
+				end
+			else
+				say_title(c_locale(1613))
+				say(c_locale(1616))
+			end
+		end
+	end
+end

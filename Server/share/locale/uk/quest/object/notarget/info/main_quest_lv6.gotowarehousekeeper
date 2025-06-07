@@ -1,0 +1,3 @@
+say_title ( c_locale ( 5381 ) ) 
+say ( c_locale ( 5382 ) ) 
+say_item_vnum ( 30003 ) 

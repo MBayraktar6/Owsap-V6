@@ -1,0 +1,280 @@
+Group	크리스마스이벤트(양말)
+{
+	Vnum	50010 -- Stocking
+	1	80003	1	8 -- Silver Bar (50,000 Yang)
+	2	돈꾸러미	5000	1 -- Yang
+	3	돈꾸러미	10000	1 -- Yang
+	4	돈꾸러미	15000	1 -- Yang
+	5	돈꾸러미	20000	1 -- Yang
+	6	돈꾸러미	25000	1 -- Yang
+	7	돈꾸러미	30000	1 -- Yang
+	8	돈꾸러미	35000	1 -- Yang
+	9	돈꾸러미	40000	1 -- Yang
+	10	50300	1	8 -- Skill Book
+	11	70201	1	8 -- Bleach
+	12	70206	1	8 -- Black Hair Dye
+	13	70203	1	8 -- Blonde Hair Dye
+	14	70202	1	8 -- White Hair Dye
+	15	70204	1	8 -- Red Hair Dye
+	16	70205	1	8 -- Brown Hair Dye
+	17	70048	1	8 -- Cloak of Secrecy
+	18	70049	1	8 -- Lucy's Ring
+	19	70050	1	8 -- Sage King's Symbol
+	20	70051	1	8 -- Sage King's Glove
+	21	70102	1	8 -- Zen Bean
+	22	71006	1	8 -- Language Ring
+	23	70008	1	8 -- White Flag
+	24	70012	1	8 -- Goddess Tear
+	25	70038	1	8 -- Bravery Cape
+	26	27006	15	8 -- Blue Potion (L)
+	27	27003	15	8 -- Red Potion (L)
+	28	27005	30	8 -- Blue Potion (M)
+	29	27002	30	8 -- Red Potion (M)
+}
+Group	월광보합
+{
+	Vnum	50011 -- Moonlight Treasure Chest
+	1	50311	1	1 -- Shinsoo Linguistics
+	2	50312	1	1 -- Chunjo Linguistics
+	3	50313	1	1 -- Jinno Linguistics
+	4	70048	1	1 -- Cloak of Secrecy
+	5	70102	1	1 -- Zen Bean
+	6	70051	1	1 -- Sage King's Glove
+	7	70049	1	1 -- Lucy's Ring
+	8	70006	1	1 -- Language Ring
+	9	71045	5	1 -- Piercing Strike
+	10	71018	5	1 -- Blessing of Life
+	11	71020	5	1 -- Blessing of the Dragon
+	12	71044	5	1 -- Critical Strike
+	13	25040	1	1 -- Blessing Scroll
+	14	71032	1	1 -- Dragon Scroll
+	15	71004	10	1 -- Medal of the Dragon
+	16	70035	1	1 -- Magic Copper Ore
+	17	70024	1	1 -- Blessing Marble
+	18	group	426	1
+	19	group	8501	1
+	20	group	2209	1
+}
+Group	세뱃돈주머니
+{
+	Vnum	50023 -- Money Pouch
+	1	돈꾸러미	50000	5 -- Yang
+	2	돈꾸러미	40000	10 -- Yang
+	3	돈꾸러미	30000	15 -- Yang
+	4	돈꾸러미	20000	20 -- Yang
+	5	돈꾸러미	10000	50 -- Yang
+}
+Group	장미
+{
+	Vnum	50024 -- Rose
+	1	50300	1	3 -- Skill Book
+	2	70102	1	1 -- Zen Bean
+	3	25040	1	1 -- Blessing Scroll
+	4	80003	1	5 -- Silver Bar (50,000 Yang)
+	5	27003	5	10 -- Red Potion (L)
+	6	27006	5	15 -- Blue Potion (L)
+	7	27002	5	25 -- Red Potion (M)
+	8	27005	5	40 -- Blue Potion (M)
+}
+Group	초콜릿
+{
+	Vnum	50025 -- Chocolate
+	1	50300	1	3 -- Skill Book
+	2	70102	1	1 -- Zen Bean
+	3	25040	1	1 -- Blessing Scroll
+	4	80003	1	5 -- Silver Bar (50,000 Yang)
+	5	27003	5	10 -- Red Potion (L)
+	6	27006	5	15 -- Blue Potion (L)
+	7	27002	5	25 -- Red Potion (M)
+	8	27005	5	40 -- Blue Potion (M)
+}
+Group	장미
+{
+	Vnum	50031 -- Rose
+	1	50300	1	3 -- Skill Book
+	2	70102	1	1 -- Zen Bean
+	3	25040	1	1 -- Blessing Scroll
+	4	80003	1	5 -- Silver Bar (50,000 Yang)
+	5	27003	5	10 -- Red Potion (L)
+	6	27006	5	15 -- Blue Potion (L)
+	7	27002	5	25 -- Red Potion (M)
+	8	27005	5	40 -- Blue Potion (M)
+}
+Group	사탕
+{
+	Vnum	50032 -- Candy
+	1	50300	1	3 -- Skill Book
+	2	70102	1	1 -- Zen Bean
+	3	25040	1	1 -- Blessing Scroll
+	4	80003	1	5 -- Silver Bar (50,000 Yang)
+	5	27003	5	10 -- Red Potion (L)
+	6	27006	5	15 -- Blue Potion (L)
+	7	27002	5	25 -- Red Potion (M)
+	8	27005	5	40 -- Blue Potion (M)
+}
+Group	알수없는상자
+{
+	Vnum	50033 -- Mysterious Chest
+	1	경험치	10000	80 -- Exp.
+	2	경험치	20000	70 -- Exp.
+	3	경험치	30000	60 -- Exp.
+	4	경험치	40000	50 -- Exp.
+	5	경험치	50000	40 -- Exp.
+	6	돈꾸러미	10000	80 -- Yang
+	7	돈꾸러미	20000	70 -- Yang
+	8	돈꾸러미	30000	65 -- Yang
+	9	돈꾸러미	40000	55 -- Yang
+	10	돈꾸러미	50000	49 -- Yang
+	11	50300	1	10 -- Skill Book
+	12	70102	1	20 -- Zen Bean
+	13	25040	1	1 -- Blessing Scroll
+	14	group	8501	30
+	15	group	8502	30
+	16	group	8503	30
+	17	group	8504	30
+	18	group	8505	30
+	19	group	8506	40
+	20	group	8507	40
+	21	group	8508	30
+	22	group	8509	30
+	23	group	8510	30
+	24	group	8511	30
+}
+Group	어린이날선물상자_3
+{
+	Vnum	50035 -- Gift (yellow)
+	1	경험치	30000	100 -- Exp.
+	2	경험치	50000	120 -- Exp.
+	3	경험치	70000	100 -- Exp.
+	4	경험치	100000	80 -- Exp.
+	5	돈꾸러미	30000	160 -- Yang
+	6	돈꾸러미	50000	140 -- Yang
+	7	80004	1	60 -- Silver Bar(100,000 Yang)
+	8	80005	1	5 -- Gold Bar (500,000 Yang)
+	9	50300	1	15 -- Skill Book
+	10	25040	1	10 -- Blessing Scroll
+	11	71032	1	5 -- Dragon Scroll
+	12	71004	10	30 -- Medal of the Dragon
+	13	70003	1	15 -- Book of the Leader
+	14	71018	10	40 -- Blessing of Life
+	15	71019	10	40 -- Blessing of Magic
+	16	71020	10	20 -- Blessing of the Dragon
+	17	50008	1	20 -- Gold Key
+	18	50108	10	30 -- Fireworks Top
+	19	50100	50	50 -- Fire Crackers
+	20	50101	50	50 -- Fire Crackers
+	21	50102	50	50 -- Fire Crackers
+	22	50103	50	50 -- Fire Crackers
+	23	50104	50	51 -- Fire Crackers
+	24	50105	50	51 -- Fire Crackers
+	25	11280	1	3	30 -- Dragon God Armour+0
+	26	11260	1	4	30 -- Scale Plate Armour+0
+	27	11270	1	5	30 -- Gold Plate Armour+0
+	28	11880	1	3	30 -- Baroness Dress+0
+	29	11870	1	4	30 -- Orange Cat Dress+0
+	30	11860	1	5	30 -- Clothing of Morality+0
+	31	11480	1	3	30 -- Fuchsia Suit+0
+	32	11470	1	4	30 -- Killer Wind Suit+0
+	33	11460	1	5	30 -- Young Dragon Suit+0
+	34	11680	1	3	30 -- Spirit Plate Armour+0
+	35	11670	1	4	30 -- Ghost Mask Armour+0
+	36	11660	1	5	30 -- Fog Plate Armour+0
+	37	21060	1	3	30 -- Firellium Plate Armour+0
+	38	21050	1	4	30 -- Hobgoblin Plate Armour+0
+	39	21040	1	5	30 -- Bronze Plate Armour+0
+	40	90010	2	20 -- Foundation Stone
+	41	90011	2	20 -- Trunk
+	42	90012	2	20 -- Plywood
+}
+Group	어린이날선물상자_5
+{
+	Vnum	50036 -- Gift (violet)
+	1	경험치	30000	30 -- Exp.
+	2	경험치	50000	60 -- Exp.
+	3	경험치	70000	50 -- Exp.
+	4	경험치	100000	60 -- Exp.
+	5	돈꾸러미	30000	50 -- Yang
+	6	돈꾸러미	50000	70 -- Yang
+	7	80004	1	70 -- Silver Bar(100,000 Yang)
+	8	80005	1	10 -- Gold Bar (500,000 Yang)
+	9	80006	1	5 -- Gold Bar (1Million Yang)
+	10	50300	1	20 -- Skill Book
+	11	25040	1	20 -- Blessing Scroll
+	12	71032	1	10 -- Dragon Scroll
+	13	71004	10	30 -- Medal of the Dragon
+	14	70003	1	20 -- Book of the Leader
+	15	71018	10	50 -- Blessing of Life
+	16	71019	10	50 -- Blessing of Magic
+	17	71020	10	30 -- Blessing of the Dragon
+	18	50008	1	20 -- Gold Key
+	19	50108	10	20 -- Fireworks Top
+	20	50100	50	15 -- Fire Crackers
+	21	50101	50	15 -- Fire Crackers
+	22	50102	50	15 -- Fire Crackers
+	23	50103	50	15 -- Fire Crackers
+	24	50104	50	15 -- Fire Crackers
+	25	50105	50	15 -- Fire Crackers
+	26	11280	1	3	30 -- Dragon God Armour+0
+	27	11260	1	5	30 -- Scale Plate Armour+0
+	28	11270	1	7	30 -- Gold Plate Armour+0
+	29	11880	1	3	30 -- Baroness Dress+0
+	30	11870	1	5	30 -- Orange Cat Dress+0
+	31	11860	1	7	30 -- Clothing of Morality+0
+	32	11480	1	3	30 -- Fuchsia Suit+0
+	33	11470	1	5	30 -- Killer Wind Suit+0
+	34	11460	1	7	30 -- Young Dragon Suit+0
+	35	11680	1	3	30 -- Spirit Plate Armour+0
+	36	11670	1	5	30 -- Ghost Mask Armour+0
+	37	11660	1	7	30 -- Fog Plate Armour+0
+	38	21060	1	3	30 -- Firellium Plate Armour+0
+	39	21050	1	5	30 -- Hobgoblin Plate Armour+0
+	40	21040	1	7	30 -- Bronze Plate Armour+0
+	41	90010	2	25 -- Foundation Stone
+	42	90011	2	25 -- Trunk
+	43	90012	2	25 -- Plywood
+}
+Group	육각보합
+{
+	Vnum	50037 -- Hexagonal Treasure Chest
+	1	27001	100	100 -- Red Potion (S)
+	2	27002	50	70 -- Red Potion (M)
+	3	27003	10	50 -- Red Potion (L)
+	4	27004	100	75 -- Blue Potion (S)
+	5	27005	50	55 -- Blue Potion (M)
+	6	27006	10	35 -- Blue Potion (L)
+	7	경험치	30000	70 -- Exp.
+	8	경험치	50000	40 -- Exp.
+	9	경험치	70000	20 -- Exp.
+	10	경험치	100000	10 -- Exp.
+	11	70048	1	20 -- Cloak of Secrecy
+	12	70102	1	9 -- Zen Bean
+	13	70051	1	20 -- Sage King's Glove
+	14	70049	1	35 -- Lucy's Ring
+	15	25040	1	1 -- Blessing Scroll
+	16	30045	1	26 -- Scorpion Needle
+	17	30051	1	26 -- Unknown Talisman
+	18	30038	1	26 -- Tiger Hide
+	19	30070	1	26 -- Wolf Fur+
+	20	30023	1	26 -- White Tiger Hide
+	21	30033	1	26 -- Broken Porcelain
+	22	30011	1	26 -- Ball
+	23	30082	1	26 -- Snake Tail+
+	24	30035	1	26 -- Face Cream
+	25	30010	1	26 -- Bear Gall
+	26	30055	1	26 -- Scorpion Claw
+	27	30006	1	26 -- Orc Tooth
+	28	30003	1	26 -- Pig Nose
+	29	30017	1	26 -- Ornamental Hairpin
+}
+Group	football
+{
+	Vnum	50096 -- Football
+	1	50300	1	1 -- Skill Book
+	2	70102	1	1 -- Zen Bean
+	3	25040	1	2 -- Blessing Scroll
+	4	80003	1	6 -- Silver Bar (50,000 Yang)
+	5	27003	5	10 -- Red Potion (L)
+	6	27006	5	15 -- Blue Potion (L)
+	7	27002	5	25 -- Red Potion (M)
+	8	27005	5	25 -- Blue Potion (M)
+}

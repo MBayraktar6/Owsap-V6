@@ -1,0 +1,4 @@
+if item . get_vnum ( ) == 30304 then npc . purge ( ) 
+item . remove ( ) 
+timer ( "devil_jump_9" , 6 ) 
+ return end 

@@ -1,0 +1,4 @@
+if pc . getqf ( "done" ) ~= 1 then 
+send_letter ( c_locale ( 11688 ) ) 
+end 
+daily_quest_mgr . update ( ) 

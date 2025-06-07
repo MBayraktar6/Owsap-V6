@@ -1,0 +1,131 @@
+quest daily_boss begin
+	state start begin
+		when login or levelup with pc.get_level() >= 110 begin
+			set_state("run")
+		end
+	end
+
+	state run begin
+		when letter begin
+			send_letter(c_locale(11316)) -- Daily Quest: World of Illusions
+		end
+
+		when button or info begin
+			say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+			if pc.getqf("next_time") > get_time() then
+				say_reward(c_locale(10823, get_time_remaining(pc.getqf("next_time") - get_time()))) -- Waiting period: %s
+				return
+			else
+				say(c_locale(11317)) -- Find the Illusion Statue in the village.
+			end
+		end
+
+		-- Daily Quest: World of Illusions
+		when 20470.chat.c_locale(11316) begin
+			say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+			say(c_mob_name(20470)) -- Illusion Statue
+			say("")
+
+			if pc.getqf("next_time") > get_time() then
+				say_reward(c_locale(10823, get_time_remaining(pc.getqf("next_time") - get_time()))) -- Waiting period: %s
+				return
+			end
+
+			say(c_locale(11318)) -- If you defeat Razador, Nemere and Jotun Thrym, I'll give you a Redux Tome.
+			if select(c_locale(11285), c_locale(11286)) == 1 then -- Accept / Close
+				say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+				say(c_mob_name(20470)) -- Illusion Statue
+				say("")
+				say(c_locale(11319)) -- Accept daily quest
+
+				set_state("boss_hunt")
+			end
+		end
+	end
+
+	state boss_hunt begin
+		function check_progress()
+			local b1 = pc.getqf("flame_dungeon", "yamachun_boss")
+			local b2 = pc.getqf("snow_dungeon", "hanma_boss")
+			local b3 = pc.getqf("dawnmist_dungeon", "thunder_boss")
+			if b1 == 1 and b2 == 1 and b3 == 1 then
+				set_state("reward")
+			end
+		end
+
+		function get_completed()
+			local b1 = pc.getqf("flame_dungeon", "yamachun_boss") == 1 and "O" or "X"
+			local b2 = pc.getqf("snow_dungeon", "hanma_boss") == 1 and "O" or "X"
+			local b3 = pc.getqf("dawnmist_dungeon", "thunder_boss") == 1 and "O" or "X"
+			return b1, b2, b3
+		end
+
+		when letter begin
+			send_letter(c_locale(11316)) -- Daily Quest: World of Illusions
+		end
+
+		when button or info begin
+			local b1, b2, b3 = daily_boss.get_completed()
+
+			say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+			say("")
+			say(c_locale(11320)) -- Progress (O: Complete, X: Incomplete)
+			say(c_locale(11321, b1, b2, b3)) -- Razador: %s Nemere: %s Jotun Thrym: %s
+		end
+
+		-- Daily Quest: World of Illusions
+		when 20470.chat.c_locale(11316) begin
+			local b1, b2, b3 = daily_boss.get_completed()
+
+			say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+			say(c_mob_name(20470)) -- Illusion Statue
+			say("")
+			say(c_locale(11320)) -- Progress (O: Complete, X: Incomplete)
+			say(c_locale(11321, b1, b2, b3)) -- Razador: %s Nemere: %s Jotun Thrym: %s
+		end
+	end
+
+	state reward begin
+		when letter begin
+			send_letter(c_locale(11316)) -- Daily Quest: World of Illusions
+		end
+
+		when button or info begin
+			say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+			say(c_locale(11322)) -- Find the Illusion Statue in the village and collect your reward.
+		end
+
+		-- Daily Quest: World of Illusions
+		when 20470.chat.c_locale(11316) begin
+			say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+			say(c_mob_name(20470)) -- Illusion Statue
+			say("")
+			say(c_locale(11293)) -- Receive reward?
+			if select(c_locale(11294), c_locale(11295)) == 1 then -- Yes / No
+				if not pc.enough_inventory(31146) then
+					say(c_locale(11296)) -- Insufficient space in your inventory.
+					return
+				end
+
+				pc.give_item2(31146, 1)
+
+				pc.setf("flame_dungeon", "yamachun_boss", 0)
+				pc.setf("snow_dungeon", "hanma_boss", 0)
+				pc.setf("dawnmist_dungeon", "thunder_boss", 0)
+
+				if is_test_server() then
+					pc.setqf("next_time", get_time() + 180)
+				else
+					pc.setqf("next_time", get_time() + 86400)
+				end
+
+				say_title(c_locale(11316)) -- Daily Quest: World of Illusions
+				say(c_mob_name(20470)) -- Illusion Statue
+				say("")
+				say(c_locale(11323)) -- See you in 24 hours!
+
+				set_state("run")
+			end
+		end
+	end
+end

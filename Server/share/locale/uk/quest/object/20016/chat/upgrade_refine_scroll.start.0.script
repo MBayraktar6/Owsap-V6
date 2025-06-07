@@ -1,0 +1,35 @@
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 10000 ) ) 
+wait ( ) 
+if pc . count_item ( 70035 ) == 0 then 
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 10009 ) ) 
+say_item ( c_locale ( 10010 ) , 70035 , "" ) 
+wait ( ) 
+end 
+if pc . count_item ( 25040 ) == 0 then 
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 10011 ) ) 
+say_item ( c_locale ( 10012 ) , 25040 , "" ) 
+wait ( ) 
+end 
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 10013 ) ) 
+local s = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if 1 == s then 
+if pc . get_gold ( ) < 200000 then 
+say_title ( c_locale ( 99 ) ) 
+say_reward ( c_locale ( 2219 ) ) 
+elseif pc . count_item ( 70035 ) > 0 and pc . count_item ( 25040 ) > 0 then 
+pc . remove_item ( 70035 ) 
+pc . remove_item ( 25040 ) 
+pc . changegold ( - 200000 ) 
+pc . give_item2 ( 71021 ) 
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 10014 ) ) 
+say_item ( c_locale ( 10015 ) , 71021 , "" ) 
+else 
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 9998 ) ) 
+end 
+end 

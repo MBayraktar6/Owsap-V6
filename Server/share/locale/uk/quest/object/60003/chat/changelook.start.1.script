@@ -1,0 +1,6 @@
+setskin ( NOWINDOW ) 
+if pc . get_horse ( ) or pc . is_riding ( ) == true then 
+syschat ( c_locale ( 11775 ) ) 
+return 
+end 
+game . open_changelook ( 1 ) 

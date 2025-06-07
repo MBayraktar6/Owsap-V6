@@ -1,0 +1,5 @@
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 6532 ) ) 
+wait ( ) 
+setskin ( NOWINDOW ) 
+marriage . warp_to_my_marriage_map ( ) 

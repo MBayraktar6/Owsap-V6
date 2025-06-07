@@ -1,0 +1,29 @@
+quest acce_system begin
+	state start begin
+		-- "What is a Shoulder Sash?"
+		when 60003.chat.c_locale(20) begin
+			say_title(c_mob_name(60003))
+			say(c_locale(21))
+		end
+
+		-- "Combination"
+		when 60003.chat.c_locale(22) begin
+			say_title(c_mob_name(60003))
+			say(c_locale(23))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_acce_refine(0)
+			end
+		end
+
+		-- "Absorption of bonuses"
+		when 60003.chat.c_locale(24) begin
+			say_title(c_mob_name(60003))
+			say(c_locale(25))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_acce_refine(1)
+			end
+		end
+	end
+end

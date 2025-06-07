@@ -1,0 +1,6 @@
+if snow_dungeon . inside ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 10 then snow_dungeon . clear_level ( ) 
+d . setqf2_all_near ( "snow_dungeon" , "hanma_boss" , 1 , 800 ) 
+d . notice ( c_locale ( 8214 ) ) 
+d . notice ( c_locale ( 8215 ) ) 
+server_timer ( "snow_dungeon_end_timer" , 60 , d . get_map_index ( ) ) 
+ return end 

@@ -1,0 +1,2 @@
+if crack_skipia_dungeon . in_dungeon ( pc . get_map_index ( ) ) then game . drop_item ( 31160 , 1 ) 
+ return end 

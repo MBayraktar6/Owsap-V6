@@ -1,0 +1,11 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 8223 ) ) 
+say ( c_locale ( 8224 ) ) 
+say ( c_locale ( 8225 ) ) 
+say ( c_locale ( 8226 ) ) 
+if select ( c_locale ( 8227 ) , c_locale ( 8228 ) ) == 1 then 
+say ( c_locale ( 8230 ) ) 
+set_state ( "hunt_wolves" ) 
+else 
+say ( c_locale ( 8229 ) ) 
+end 

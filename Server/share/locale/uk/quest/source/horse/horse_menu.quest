@@ -1,0 +1,98 @@
+quest horse_menu begin
+	state start begin
+		function horse_menu()
+			if horse.is_mine() then
+				say(c_locale(2634))
+				say("")
+
+				local s = 6
+
+				if horse.is_dead() then
+					s = select(c_locale(2635), c_locale(2638), c_locale(2632))
+
+					if s == 1 then s = 0
+					elseif s == 2 then s = 3
+					elseif s == 3 then return
+					end
+				else
+					s = select(c_locale(2633), c_locale(2636), c_locale(2638), c_locale(2159), c_locale(2164), c_locale(2632))
+				end
+
+				if s == 0 then
+					horse.revive()
+				elseif s == 1 then
+					local food = horse.get_grade() + 50054 - 1
+
+					if pc.count_item(food) > 0 then
+						pc.removeitem(food, 1)
+						horse.feed()
+					else
+						say(c_locale(2165))
+						say_reward(c_item_name(food))
+						say("")
+					end
+				elseif (s == 2 and false == pc.is_riding()) then
+					horse.ride()
+				elseif s == 3 then
+					horse.unsummon()
+				elseif s == 4 then
+					say(c_locale(2166) .. horse.get_health_pct() .. "%")
+					say(c_locale(2167) .. horse.get_stamina_pct() .. "%")
+					say("")
+				elseif s == 5 then
+					if pc.count_item(71110) <= 0 then
+						say(c_locale(2165))
+						say_reward(c_item_name(71110))
+						say("")
+						return
+					end
+
+					local old_horse_name = horse.get_name()
+					if string.len(old_horse_name) == 0 then
+						say(c_locale(2168))
+					else
+						say(c_locale(2169) .. old_horse_name)
+					end
+
+					say(c_locale(2170))
+					say("")
+
+					local horse_name = input()
+
+					if string.len(horse_name) < 2 then
+						say(c_locale(2171))
+						say("")
+						return
+					elseif string.len(horse_name) > 12 then
+						say(c_locale(2160))
+						say("")
+						return
+					end
+
+					local ret = horse.set_name(horse_name)
+					if ret == 0 then
+						say(c_locale(2161))
+						say("")
+					elseif ret == 1 then
+						say()
+						say(c_locale(2162))
+					elseif ret == 2 then
+						pc.remove_item(71110)
+						say(c_locale(2163))
+						say("")
+					end
+				end
+			end
+		end
+
+		when 20101.click begin horse_menu.horse_menu() end
+		when 20102.click begin horse_menu.horse_menu() end
+		when 20103.click begin horse_menu.horse_menu() end
+		when 20104.click begin horse_menu.horse_menu() end
+		when 20105.click begin horse_menu.horse_menu() end
+		when 20106.click begin horse_menu.horse_menu() end
+		when 20107.click begin horse_menu.horse_menu() end
+		when 20108.click begin horse_menu.horse_menu() end
+		when 20109.click begin horse_menu.horse_menu() end
+	end
+end

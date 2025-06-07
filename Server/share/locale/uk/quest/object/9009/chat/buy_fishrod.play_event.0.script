@@ -1,0 +1,3 @@
+say_title ( c_locale ( 112 ) ) 
+say ( c_locale ( 110 ) ) 
+setstate ( "reward" ) 

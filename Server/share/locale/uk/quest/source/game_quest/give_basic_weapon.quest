@@ -1,0 +1,39 @@
+quest give_basic_weapon begin
+	state start begin
+		when login begin
+			if pc.getqf("basic_weapon") != 0 then -- old version support
+				return
+			end
+
+			local item_vnum = 10
+			if pc.get_job() == 3 then -- shaman
+				item_vnum = 7000
+			elseif pc.get_job() == 1 then -- assassin
+				item_vnum = 1000
+			elseif pc.get_job() == 4 then -- wolfman
+				item_vnum = 6000
+			end
+
+			local item_count = pc.count_item(item_vnum)
+			local equip_weapon = pc.get_weapon()
+			if item_count == 0 and equip_weapon != item_vnum then
+				if game.get_config("start_with_full_set") > 0 then
+					pc.give_full_set() -- give full set
+					pc.give_item2(72702, 1) -- Wind Shoes+ (tradeable)
+					pc.give_item2(39039, 1) -- Sun Elixir (L)
+					pc.give_item2(39042, 1) -- Moon Elixir (L)
+				else
+					pc.give_item2(item_vnum) -- jobtype weapon
+					pc.give_item2(27001, 5) -- red potions
+
+					pc.equip_slot(0) -- equip weapon
+				end
+
+				set_state(__COMPLETE__)
+			end
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

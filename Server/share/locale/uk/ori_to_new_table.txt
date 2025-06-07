@@ -1,0 +1,10 @@
+# Item Vnum Mask Table
+#
+# This file is responsible for item masking, allowing you to transform items into specific items.
+# This is particularly useful when dealing with items that share repetitive data.
+#
+# MaskItemVnum	ItemVnum
+#
+
+100700	100701
+71113	39035

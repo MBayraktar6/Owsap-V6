@@ -1,0 +1,4 @@
+if game . get_event_flag ( "xmas_tree" ) == 0 then if pc . getqf ( "put_sock_count" ) ~= 0 then 
+pc . setqf ( "put_sock_count" , 0 ) 
+end 
+ return end 

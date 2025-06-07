@@ -1,0 +1,4 @@
+setskin ( NOWINDOW ) 
+makequestbutton ( c_locale ( 107 ) ) 
+q . set_title ( c_locale ( 107 ) ) 
+q . start ( ) 

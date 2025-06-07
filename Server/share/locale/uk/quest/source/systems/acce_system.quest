@@ -1,0 +1,33 @@
+define SCHOLAR 60003 -- Theowahdan
+define ACCE_REFINE_TYPE_COMBINE 0
+define ACCE_REFINE_TYPE_ABSORB 1
+
+quest acce_system begin
+	state start begin
+		-- "What is a Shoulder Sash?"
+		when SCHOLAR.chat.c_locale(20) begin
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(21))
+		end
+
+		-- "Combination"
+		when SCHOLAR.chat.c_locale(22) begin
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(23))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_acce_refine(ACCE_REFINE_TYPE_COMBINE)
+			end
+		end
+
+		-- "Absorption of bonuses"
+		when SCHOLAR.chat.c_locale(24) begin
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(25))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_acce_refine(ACCE_REFINE_TYPE_ABSORB)
+			end
+		end
+	end
+end

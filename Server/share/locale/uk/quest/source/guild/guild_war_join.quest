@@ -1,0 +1,53 @@
+quest guild_war_join begin
+	state start begin
+		function in_dungeon(idx)
+			local dungeon_idx = {
+				71, -- °Å¹Ì ´øÀü 2Ãþ
+				72, -- ÃµÀÇ µ¿±¼
+				73, -- ÃµÀÇ µ¿±¼ 2Ãþ
+				104, -- °Å¹Ì ´øÀü
+				208, -- ÃµÀÇ µ¿±¼ (¿ë¹æ)
+				215, -- ¾Æ±Íµ¿±¼
+				217, -- °Å¹Ì ´øÀü 3Ãþ
+			}
+			for _, value in ipairs(dungeon_idx) do
+				if value == idx then
+					return true
+				end
+			end
+
+			-- ¸ðµç private ¸ÊÀ¸·Ð ¿öÇÁ ºÒ°¡´É
+			if idx > 10000 then
+				return true
+			end
+
+			return false
+		end
+
+		when letter with not guild_war_join.in_dungeon(pc.get_map_index()) begin
+			local e = guild.get_any_war()
+			if e != 0 and pc.get_war_map() == 0 then
+				setskin(NOWINDOW)
+				send_letter(c_locale(2617))
+				--makequestbutton(c_locale(2617))
+			end
+		end
+
+		when button or info with not guild_war_join.in_dungeon(pc.get_map_index()) begin
+			local e = guild.get_any_war()
+			if e == 0 then
+				say(c_locale(2621))
+			else
+				say(c_locale(1911, pc.get_name()))
+				local s = select(c_locale(2625), c_locale(2600))
+				if s == 1 then
+					guild.war_enter(e)
+				else
+					setskin(NOWINDOW)
+					send_letter(c_locale(2617))
+					--makequestbutton(c_locale(2617))
+				end
+			end
+		end
+	end
+end

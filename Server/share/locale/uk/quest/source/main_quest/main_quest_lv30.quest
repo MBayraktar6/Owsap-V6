@@ -1,0 +1,161 @@
+quest main_quest_lv30 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter begin
+			if pc.get_level() >= 30 then
+				set_state(gotoeUriel)
+			end
+		end
+	end
+
+	state gotoeUriel begin
+		when letter begin
+			send_letter(c_locale(5095))
+			local v = find_npc_by_vnum(20011)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5087))
+			end
+		end
+
+		when info or button begin
+			say_title(c_locale(5095))
+			say(c_locale(5096))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(5097))
+			say(c_locale(5098))
+			wait()
+
+			say_title(c_locale(5097))
+			say(c_locale(5099))
+
+			clear_letter()
+			set_state(clickstone)
+		end
+	end
+
+	state clickstone begin
+		when letter begin
+			send_letter(c_locale(5095))
+			local v = find_npc_by_vnum(20352)
+			if 0 == v then
+			else
+				target.vid("__TARGET1__", v, c_locale(5101))
+			end
+		end
+
+		when info or button begin
+			say_title(c_locale(5095))
+			say(c_locale(5102))
+		end
+
+		when __TARGET1__.target.click begin
+			target.delete("__TARGET1__")
+
+			say_title(c_locale(5095))
+			say(c_locale(5088))
+
+			clear_letter()
+			set_state(gotoeUriel2)
+		end
+	end
+
+	state gotoeUriel2 begin
+		when letter begin
+			send_letter(c_locale(5095))
+			local v = find_npc_by_vnum(20011)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5087))
+			end
+		end
+
+		when info or button begin
+			say_title(c_locale(5095))
+			say(c_locale(5089))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(5097))
+			say(c_locale(5090))
+			wait()
+
+			say_title(c_locale(5097))
+			say(c_locale(5091))
+
+			clear_letter()
+			set_state(clickplace)
+		end
+	end
+
+	state clickplace begin
+		when letter begin
+			send_letter(c_locale(5095))
+			local v = find_npc_by_vnum(20353)
+			if 0 == v then
+			else
+				target.vid("__TARGET2__", v, c_locale(5092))
+			end
+		end
+
+		when info or button begin
+			say_title(c_locale(5095))
+			say(c_locale(5093))
+		end
+
+		when __TARGET2__.target.click begin
+			target.delete("__TARGET2__")
+
+			say_title(c_locale(5095))
+			say(c_locale(5088))
+
+			clear_letter()
+			set_state(gotoeUriel3)
+		end
+	end
+
+	state gotoeUriel3 begin
+		when letter begin
+			send_letter(c_locale(5095))
+			local v = find_npc_by_vnum(20011)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5087))
+			end
+		end
+
+		when info or button begin
+			say_title(c_locale(5095))
+			say(c_locale(5089))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(5097))
+			say(c_locale(5094))
+
+			say_title(c_locale(4297))
+			say_reward(c_locale(5100))
+
+			pc.give_exp2(1500000)
+			pc.change_money(20000)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv32", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

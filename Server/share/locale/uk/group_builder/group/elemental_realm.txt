@@ -1,0 +1,52 @@
+#
+# Elemental Realm
+#
+
+Group	ElementalRealm_Elect
+{
+	Vnum	6156
+	Leader	"Electric Spirit"	3988
+	1	"Electric Spirit"	3988
+	2	"Lightning Elemental"	3982
+	3	"Lightning Elemental"	3982
+}
+Group	ElementalRealm_Ice
+{
+	Vnum	6157
+	Leader	"Frost Spirit"	3987
+	1	"Frost Spirit"	3987
+	2	"Ice Elemental"	3981
+	3	"Ice Elemental"	3981
+}
+Group	ElementalRealm_Fire
+{
+	Vnum	6158
+	Leader	"Flame Spirit"	3986
+	1	"Flame Spirit"	3986
+	2	"Fire Elemental"	3980
+	3	"Fire Elemental"	3980
+}
+Group	ElementalRealm_Wind
+{
+	Vnum	6159
+	Leader	"Wind Elemental"	3983
+	1	"Wind Elemental"	3983
+	2	"Air Spirit"	3989
+	3	"Air Spirit"	3989
+}
+Group	ElementalRealm_Dark
+{
+	Vnum	6160
+	Leader	"Darkness Elemental"	3985
+	1	"Darkness Elemental"	3985
+	2	"Shadow Spirit"	3991
+	3	"Shadow Spirit"	3991
+}
+Group	ElementalRealm_Earth
+{
+	Vnum	6161
+	Leader	"Earth Elemental"	3984
+	1	"Earth Elemental"	3984
+	2	"Stone Spirit"	3990
+	3	"Stone Spirit"	3990
+}

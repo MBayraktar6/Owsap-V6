@@ -1,0 +1,9 @@
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2175 ) ) 
+if pc . count_item ( 50059 ) >= 1 then 
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2185 ) ) 
+elseif pc . count_item ( 50058 ) >= 1 then 
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2176 ) ) 
+end 

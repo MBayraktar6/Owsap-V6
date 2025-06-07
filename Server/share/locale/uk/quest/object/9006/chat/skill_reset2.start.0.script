@@ -1,0 +1,46 @@
+if pc . get_level ( ) < 5 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 8159 ) ) 
+return 
+end 
+if pc . get_level ( ) > 30 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 8160 , pc . get_level ( ) ) ) 
+return 
+end 
+if pc . get_skill_group ( ) == 0 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 8161 ) ) 
+return 
+end 
+local cost = 10000 + pc . get_level ( ) * 2000 
+local s = 0 
+if not pc . has_master_skill ( ) then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 8162 , cost ) ) 
+s = select ( c_locale ( 8153 ) , c_locale ( 8163 ) ) 
+else 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 8164 ) ) 
+wait ( ) 
+say ( c_locale ( 8165 , cost ) ) 
+s = select ( c_locale ( 8166 ) , c_locale ( 2426 ) ) 
+end 
+if 2 == s then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 8154 ) ) 
+return 
+end 
+if pc . get_gold ( ) < cost then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 8155 ) ) 
+return 
+end 
+pc . change_gold ( - cost ) 
+pc . clear_skill ( ) 
+if pc . get_job ( ) == WOLFMAN then 
+pc . set_skill_group ( 1 ) 
+else 
+pc . set_skill_group ( 0 ) 
+end 
+set_quest_state ( "skill_group" , "run" ) 

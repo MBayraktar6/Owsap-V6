@@ -1,0 +1,45 @@
+training_passive_skill={["start"]=0,ResetPassiveSkills= function ()local skill_list = special . passive_skill_list for group = 1 , table . getn ( skill_list ) - 1 begin 
+for _ , skill_vnum in ipairs ( skill_list [ group ] ) begin 
+pc . clear_one_skill ( skill_vnum ) 
+end 
+end 
+end ,HasPassiveSkill= function (group,level)local skill_list = special . passive_skill_list [ group ] 
+for _ , skill_vnum in ipairs ( skill_list ) begin 
+local skill_level = pc . get_skill_level ( skill_vnum ) 
+if skill_level >= level then 
+return true 
+end 
+end 
+return false 
+end ,BuildPassiveSkillList= function (group)local skill_list = special . passive_skill_list [ group ] 
+local ret_vnum_list = { } 
+local ret_name_list = { } 
+table . foreach ( skill_list , 
+function ( i , skill_vnum ) 
+table . insert ( ret_vnum_list , skill_vnum ) 
+local name = c_skill_name ( skill_vnum ) 
+if name == nil then name = skill_vnum end 
+table . insert ( ret_name_list , name ) 
+end 
+) 
+return { ret_vnum_list , ret_name_list } 
+end ,BuildGrandMasterPassiveSkillList= function ()GRAND_MASTER_SKILL_LEVEL = 30 
+PERFECT_MASTER_SKILL_LEVEL = 40 
+local ret_vnum_list = { } 
+local ret_name_list = { } 
+for group = 1 , 2 begin 
+local skill_list = special . passive_skill_list [ group ] 
+table . foreach ( skill_list , 
+function ( i , skill_vnum ) 
+local skill_level = pc . get_skill_level ( skill_vnum ) 
+if skill_level >= GRAND_MASTER_SKILL_LEVEL and skill_level < PERFECT_MASTER_SKILL_LEVEL then 
+table . insert ( ret_vnum_list , skill_vnum ) 
+local name = c_skill_name ( skill_vnum ) 
+if name == nil then name = skill_vnum end 
+table . insert ( ret_name_list , name ) 
+end 
+end 
+) 
+end 
+return { ret_vnum_list , ret_name_list } 
+end }

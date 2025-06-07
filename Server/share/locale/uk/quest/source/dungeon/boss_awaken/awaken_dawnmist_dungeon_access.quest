@@ -1,0 +1,1010 @@
+define DUNGEON_MAP_INDEX 371
+
+define FOREST_GUARDIAN 20539 -- RX: Guard. of the Forest
+define FOREST_SCOUT 20540 -- RX: Scout of the Forest
+define FOREST_OUTRIDER 20541 -- RX: Outrider of the For.
+define FOREST_LEADER 20542 -- RX: Forest Guard. Leader
+define EARTH_SPIRIT 31184 -- Spirit of the Earth (RX)
+define ENTAI_WARRIOR 4340 -- RX: En-Tai Warrior
+define ENTAI_WARRIOR_COUNT 20
+define ENTAI_DRUID 4342 -- RX: En-Tai Druid
+define AID_KIT 31186 -- Aid Kit (RX)
+define TREE_BEINGS_STONE 8136 -- RX: Metin of Tree Beings
+define TREE_BEINGS_STONE_COUNT 2
+define ENTAI_DESTROYER 4344 -- RX: En-Tai Destroyer
+define ENTAI_DESTROYER_COUNT 5
+define ENTAI_DEW 31183 -- En-Tai Dew (RX)
+define ENTAI_SOVEREIGN 4345 -- RX: En-Tai Sovereign
+define FINE_TIMBER 31182 -- Fine Timber (RX)
+define TREE_EMERALD 31185 -- Tree Emerald (RX)
+define DRYAD_STONE 31181 -- Stone of the Dryads (RX)
+
+define INVESTIGATION1_REWARD_EXP 776600
+define INVESTIGATION2_REWARD_EXP 776600
+define INVESTIGATION3_REWARD_EXP 5825000
+define INVESTIGATION4_REWARD_EXP 7766000
+define INVESTIGATION5_REWARD_EXP 7766000
+define INVESTIGATION6_REWARD_EXP 11650000
+define INVESTIGATION7_REWARD_EXP 11650000
+define INVESTIGATION7_REWARD_GOLD 200000
+
+--[[
+	Investigations
+	1. Kill RX: En-Tai Warriors.
+	2. Find the RX: Aid Kit
+	3. Deliver the Aid Kit (RX)
+	4. Destroy the Redux Stones
+	5. Collect RX: En-Tai Dew
+	6. Kill the Redux En-Tai Sovereign to receive Fine Timber.
+	7. Obtain a Tree Emerald (RX) from the RX: En-Tai Sovereign.
+]]
+
+quest awaken_dawnmist_dungeon_access begin
+	state start begin
+	end
+
+	state investigation1a begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+
+			-- Preliminary Redux Investigations
+			send_letter(c_locale(11601))
+		end
+
+		when button or info begin
+			-- Preliminary Redux Investigations
+			say_title(c_locale(11601))
+
+			-- The RX: Guardian of the Forest has been looking everywhere for you.
+			-- Go and find him and listen to what he has to say.
+			say(c_locale(11602))
+		end
+
+		-- Preliminary Redux Investigations
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(11601) begin
+			-- Preliminary Redux Investigations
+			say_title(c_locale(11601))
+
+			if pc.getqf("complete") == 1 then
+				-- You look very familiar... have we met somewhere before? Whatever.
+				-- As you've no doubt heard, the Enchanted Forest is changing rapidly.
+				-- We can't combat these new developments on our own. Will you help us?
+				-- It would be fantastic if you could lend us your support!
+				say(c_locale(11606))
+			else
+				-- I'm back! I hope you didn't run into any difficulties while I was away?
+				-- Well, I've examined everything that was written in the Spirit of the Earth.
+				-- The Enchanted Forest of Dawn is not what it used to be, and the changes are far more alarming than I first realized.
+				-- If we don't act soon, this place will be destroyed!
+				say(c_locale(11603))
+
+				-- I'd like you to help in the investigation. Please... will you join us?
+				say(c_locale(11604))
+			end
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			-- Preliminary Redux Investigations
+			say_title(c_locale(11601))
+
+			-- Excellent! Here's the situation. I have an Aid Kit here for my brothers.
+			-- They're out exploring the region and have run into some trouble.
+			-- In fact, some of them have recently gone missing.
+			-- I've searched high and low for them, but they've disappeared without a trace.
+			-- I can only assume they've been taken by a band of En-Tai Warriors.
+			-- I've seen a number of them roaming around this area, acting very... strangely.
+			-- Please, find out if they're responsible for the disappearance.
+			say(c_locale(11605))
+
+			set_state("investigation1b")
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation1b begin
+		when enter begin
+			pc.setqf("kill_count", 0)
+		end
+
+		when letter begin
+			-- Kill RX: En-Tai Warriors.
+			send_letter(c_locale(11607))
+			q.set_counter(c_locale(11598), ENTAI_WARRIOR_COUNT - pc.getqf("kill_count"))
+		end
+
+		when button or info begin
+			-- Kill RX: En-Tai Warriors.
+			say_title(c_locale(11607))
+
+			-- Kill the RX: En-Tai Warriors in the Enchanted Forest and return to the RX: Guardian of the Forest.
+			say(c_locale(11608))
+		end
+
+		-- Kill RX: En-Tai Warriors.
+		when FOREST_GUARDIAN.chat.c_locale(11607) begin
+			-- Kill RX: En-Tai Warriors.
+			say_title(c_locale(11607))
+
+			-- You haven't found them anywhere? Hmm... Keep trying.
+			-- You have to find the Redux En-Tai Warriors! Then come back and let me know what happened.
+			say(c_locale(11610))
+		end
+
+		when ENTAI_WARRIOR.party_kill begin
+			pc.setqf("kill_count", pc.getqf("kill_count") + 1)
+			q.set_counter(c_locale(11598), ENTAI_WARRIOR_COUNT - pc.getqf("kill_count"))
+
+			if pc.getqf("kill_count") >= ENTAI_WARRIOR_COUNT then
+
+				-- You've killed the RX: En-Tai Warriors.
+				-- Return to the RX: Guardian of the Forest.
+				notice_multiline(c_locale(11609), notice)
+
+				set_state("investigation1_reward")
+			end
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation1_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+
+			-- Preliminary Redux Investigations
+			send_letter(c_locale(11601))
+		end
+
+		when button or info begin
+			-- Preliminary Redux Investigations
+			say_title(c_locale(11601))
+
+			-- Find and talk to the RX: Guardian of the Forest.
+			say(c_locale(11611))
+		end
+
+		-- Preliminary Redux Investigations
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(11601) begin
+			target.delete("__TARGET__")
+
+			pc.give_exp2(INVESTIGATION1_REWARD_EXP)
+
+			-- Preliminary Redux Investigations
+			say_title(c_locale(11601))
+
+			-- You're back! Did you get anything from the Redux En-Tai Warriors?
+			say(c_locale(11612))
+
+			-- I've looked into everything, but didn't find anything of importance.
+			say(c_locale(11613))
+
+			-- Very strange. I was pretty certain my hunch was correct... Very well.
+			-- I'll go over it in my mind once more and then call on you. Please wait until then.
+			say(c_locale(11614))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(INVESTIGATION1_REWARD_EXP)))
+
+			set_state("investigation2a")
+		end
+	end
+
+	state investigation2a begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+
+			-- Find the RX: Aid Kit
+			send_letter(c_locale(11615))
+		end
+
+		when button or info begin
+			-- Find the RX: Aid Kit
+			say_title(c_locale(11615))
+
+			-- The RX: Guardian of the Forest has been looking for you.
+			-- Find him and listen to what he has to say.
+			say(c_locale(11616))
+		end
+
+		-- Find the RX: Aid Kit
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(11615) begin
+			-- RX: Guard. of the Forest
+			say_title(c_mob_name(FOREST_GUARDIAN))
+
+			-- Welcome back, brave warrior! I was clearly barking up the wrong tree! Now I'm sure of it.
+			-- This strange creature is responsible for everything.
+			-- I assume it has used some kind of magic.
+			-- As soon as it left, the Aid Kit disappeared as well.
+			-- This magician, this warlock, this shaman or whatever the devil it is, he must be around here somewhere.
+			-- Please, find him!
+			say(c_locale(11617))
+
+			-- Very well, I'll find him.
+			select(c_locale(4526))
+			target.delete("__TARGET__")
+
+			-- RX: Guard. of the Forest
+			say_title(c_mob_name(FOREST_GUARDIAN))
+
+			-- Very good. I'll wait for you here! Just be careful.
+			say(c_locale(11618))
+
+			set_state("investigation2b")
+		end
+	end
+
+	state investigation2b begin
+		when letter begin
+			-- Find the RX: Aid Kit
+			send_letter(c_locale(11619))
+		end
+
+		when button or info begin
+			-- Find the RX: Aid Kit
+			say_title(c_locale(11619))
+
+			-- Kill the RX: En-Tai Druid and retrieve the RX: Aid Kit.
+			say(c_locale(11620))
+		end
+
+		-- Find the RX: Aid Kit
+		when FOREST_GUARDIAN.chat.c_locale(11619) begin
+			-- RX: Guard. of the Forest
+			say_title(c_mob_name(FOREST_GUARDIAN))
+
+			-- Do you need more time? They must be around here somewhere.
+			-- I'm certain they're using some kind of powerful magic.
+			-- Please, find them and bring me the Aid Kit.
+			say(c_locale(11622))
+		end
+
+		when ENTAI_DRUID.party_kill begin
+			if number(1, 25) == 1 and pc.enough_inventory(AID_KIT) then
+				pc.give_item2(AID_KIT, 1)
+
+				-- You've got the RX: Aid Kit from the RX: En-Tai Druid.
+				-- Take it to the RX: Guardian of the Forest.
+				notice_multiline(c_locale(11621), notice)
+
+				set_state("investigation2_reward")
+			end
+		end
+	end
+
+	state investigation2_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+
+			-- Find the RX: Aid Kit
+			send_letter(c_locale(11619))
+		end
+
+		when button or info begin
+			-- Find the RX: Aid Kit
+			say_title(c_locale(11619))
+
+			-- Find and talk to the RX: Guardian of the Forest.
+			say(c_locale(11623))
+		end
+
+		-- Find the RX: Aid Kit
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(11619) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(AID_KIT, 1)
+			pc.give_exp2(INVESTIGATION2_REWARD_EXP)
+
+			-- RX: Guard. of the Forest
+			say_title(c_mob_name(FOREST_GUARDIAN))
+
+			-- Let's see now. Yes, this is it! Now I can send the Aid Kit to my brothers.
+			-- I owe you my deepest thanks. I'll never forget what great service you've done for me.
+			say(c_locale(11624))
+
+			-- We've been out here for quite some time already, and the supplies are gradually coming to an end.
+			-- I'd better send this immediately. Let's see if anything else is missing.
+			-- I'll call on you afterwards. In the meantime, take a load off your feet!
+			say(c_locale(11625))
+
+			-- Yes, of course.
+			say_reward(c_locale(11522))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(INVESTIGATION2_REWARD_EXP)))
+
+			set_state("investigation3")
+		end
+	end
+
+	state investigation3 begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_GUARDIAN)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_GUARDIAN))
+			end
+
+			-- Deliver the RX: Aid Kit
+			send_letter(c_locale(11626))
+		end
+
+		when button or info begin
+			-- Deliver the RX: Aid Kit
+			say_title(c_locale(11626))
+
+			-- The RX: Scout of the Forest has been looking for you.
+			-- Go and talk to him.
+			say(c_locale(11627))
+		end
+
+		-- Deliver the RX: Aid Kit
+		when __TARGET__.target.click or FOREST_GUARDIAN.chat.c_locale(11626) begin
+			-- RX: Guard. of the Forest
+			say_title(c_mob_name(FOREST_GUARDIAN))
+
+			-- Did you get chance to rest? Good. I've checked over the Aid Kit, there's nothing missing.
+			-- Now it's high time we delivered the kit to my brothers.
+			-- Please ensure you don't lose anything on the way!
+			say(c_locale(11628))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+
+			if not pc.enough_inventory(AID_KIT) then
+				-- RX: Guard. of the Forest
+				say_title(c_mob_name(FOREST_GUARDIAN))
+
+				-- Too bad. You don't have any space in your inventory.
+				-- Come back once you have cleared up.
+				say(c_locale(11597))
+				return
+			end
+
+			pc.give_item2(AID_KIT, 1)
+			target.delete("__TARGET__")
+
+			-- RX: Guard. of the Forest
+			say_title(c_mob_name(FOREST_GUARDIAN))
+
+			-- Very good. Be on your guard!
+			say(c_locale(11629))
+
+			set_state("investigation3_reward")
+		end
+	end
+
+	state investigation3_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SCOUT)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SCOUT))
+			end
+
+			-- Deliver the RX: Aid Kit
+			send_letter(c_locale(11626))
+		end
+
+		when button or info begin
+			-- Deliver the RX: Aid Kit
+			say_title(c_locale(11626))
+
+			-- Deliver the RX: Aid Kit to the RX: Scout of the Forest.
+			say(c_locale(11630))
+		end
+
+		-- Deliver the RX: Aid Kit
+		when FOREST_GUARDIAN.chat.c_locale(11626) begin
+			-- RX: Guard. of the Forest
+			say_title(c_mob_name(FOREST_GUARDIAN))
+
+			-- What are you still doing here? There are important medicines in that Aid Kit!
+			-- Please, get a move on! It's required urgently!
+			say(c_locale(11631))
+		end
+
+		-- Deliver the RX: Aid Kit
+		when __TARGET__.target.click or FOREST_SCOUT.chat.c_locale(11626) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(AID_KIT, 1)
+			pc.give_exp2(INVESTIGATION3_REWARD_EXP)
+
+			-- RX: Scout of the Forest
+			say_title(c_mob_name(FOREST_SCOUT))
+
+			-- Who's there?! What do you think you're doing here?
+			say(c_locale(11632))
+
+			-- TThe Redux Guardian of the Forest sent me. He wanted me to give you this.
+			say_reward(c_locale(11633))
+
+			-- Oh! I do apologise. Please forgive my behaviour.
+			-- Thanks for coming all this way and delivering this Aid Kit.
+			-- These medicines are urgently needed! Before we do anything else, let me put this kit in a safe place.
+			-- Just wait here for me a moment, will you?
+			say(c_locale(11634))
+
+			-- Sure, I'll wait.
+			say_reward(c_locale(11635))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(INVESTIGATION3_REWARD_EXP)))
+
+			set_state("investigation4a")
+		end
+	end
+
+	state investigation4a begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SCOUT)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SCOUT))
+			end
+
+			-- Secondary Redux Investigations
+			send_letter(c_locale(11636))
+		end
+
+		when button or info begin
+			-- Secondary Redux Investigations
+			say_title(c_locale(11636))
+
+			-- The RX: Scout of the Forest has been looking for you. Go and talk to him.
+			say(c_locale(11637))
+		end
+
+		-- Secondary Redux Investigations
+		when __TARGET__.target.click or FOREST_SCOUT.chat.c_locale(11636) begin
+			-- RX: Scout of the Forest
+			say_title(c_mob_name(FOREST_SCOUT))
+
+			-- I've sorry I made you wait for so long.
+			-- How did you manage to find your way over here anyway?
+			say(c_locale(11638))
+
+			-- The Redux Temple Guardian asked me to help out in investigating the Enchanted Forest.
+			-- Can you tell me what needs doing?
+			say_reward(c_locale(11639))
+
+			-- I admire your bravery.
+			say(c_locale(11640))
+
+			-- Many of the trees in this forest have turned to stone.
+			-- These stones radiate a powerful and mystical energy which makes a tremendous noise.
+			-- Please help me to destroy these stones.
+			say(c_locale(11641))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation4b")
+		end
+	end
+
+	state investigation4b begin
+		when enter begin
+			pc.setqf("kill_count", 0)
+		end
+
+		when letter begin
+			-- Destroy the Redux Stones
+			send_letter(c_locale(11642))
+			q.set_counter(c_locale(11598), TREE_BEINGS_STONE_COUNT - pc.getqf("kill_count"))
+		end
+
+		when button or info begin
+			-- Destroy the Redux Stones
+			say_title(c_locale(11642))
+
+			-- Destroy all RX: Metin of Tree Beings. Then report back to the RX: Scout of the Forest.
+			say(c_locale(11643))
+		end
+
+		-- Secondary Redux Investigations
+		when FOREST_SCOUT.chat.c_locale(11636) begin
+			-- RX: Scout of the Forest
+			say_title(c_mob_name(FOREST_SCOUT))
+
+			-- What are you waiting for? If you don't set out immediately, there'll only be ever more Metin stones!
+			-- Quickly, destroy the Redux Metins of the Tree Beings or we're all doomed!
+			say(c_locale(11644))
+		end
+
+		when TREE_BEINGS_STONE.party_kill begin
+			pc.setqf("kill_count", pc.getqf("kill_count") + 1)
+			q.set_counter(c_locale(11598), TREE_BEINGS_STONE_COUNT - pc.getqf("kill_count"))
+
+			if pc.getqf("kill_count") >= TREE_BEINGS_STONE_COUNT then
+
+				-- You've destroyed all the Metins of the Tree Beings.
+				-- Report back to the Scout of the Forest.
+				notice_multiline(c_locale(4544), notice)
+
+				set_state("investigation4_reward")
+			end
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation4_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SCOUT)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SCOUT))
+			end
+
+			-- Secondary Redux Investigations
+			send_letter(c_locale(11636))
+		end
+
+		when button or info begin
+			-- Secondary Redux Investigations
+			say_title(c_locale(11636))
+
+			-- Find and talk to the RX: Scout of the Forest.
+			say(c_locale(11645))
+		end
+
+		-- Secondary Redux Investigations
+		when __TARGET__.target.click or FOREST_SCOUT.chat.c_locale(11636) begin
+			target.delete("__TARGET__")
+
+			pc.give_exp2(INVESTIGATION4_REWARD_EXP)
+
+			-- RX: Scout of the Forest
+			say_title(c_mob_name(FOREST_SCOUT))
+
+			-- You did it! Fantastic! While you were destroying the Redux Metins of the Tree Beings,
+			-- I've managed to obtain some spores from the mushrooms. We'll have to see what use they are.
+			-- But first we have another job to deal with.
+			say(c_locale(11564))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(INVESTIGATION4_REWARD_EXP)))
+
+			set_state("investigation5a")
+		end
+	end
+
+	state investigation5a begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SCOUT)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SCOUT))
+			end
+
+			-- En-Tai Dew (RX)
+			send_letter(c_locale(11647))
+		end
+
+		when button or info begin
+			-- En-Tai Dew (RX)
+			say_title(c_locale(11647))
+
+			-- Find and talk to the RX: Scout of the Forest.
+			say(c_locale(11648))
+		end
+
+		-- RX: En-Tai Dew
+		when __TARGET__.target.click or FOREST_SCOUT.chat.c_locale(11647) begin
+
+			-- RX: Scout of the Forest
+			say_title(c_mob_name(FOREST_SCOUT))
+
+			-- Hmm... I wonder if this really is the legendary En-Tai Dew (RX) I've heard about?
+			-- Legend has it that the people use this dew to drive out demons.
+			-- Presumably it would be best if we obtained this chimeric liquid from the En-Tai Destroyers themselves.
+			say(c_locale(11649))
+
+			-- Could you get this dew for me? I'm sure you'll manage!
+			say(c_locale(11650))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation5b")
+		end
+	end
+
+	state investigation5b begin
+		when enter begin
+			pc.setqf("kill_count", 0)
+		end
+
+		when letter begin
+			-- Obtain En-Tai Dew (RX)
+			send_letter(c_locale(11651))
+			q.set_counter(c_locale(11598), ENTAI_DESTROYER_COUNT - pc.getqf("kill_count"))
+		end
+
+		when button or info begin
+			-- Obtain En-Tai Dew (RX)
+			say_title(c_locale(11651))
+
+			-- Kill the En-Tai Destroyers and obtain 5 lots of RX: En-Tai Dew.
+			say(c_locale(11652))
+		end
+
+		-- Obtain En-Tai Dew (RX)
+		when FOREST_SCOUT.chat.c_locale(11651) begin
+			-- RX: Scout of the Forest
+			say_title(c_mob_name(FOREST_SCOUT))
+
+			-- Did you manage to get the En-Tai Dew (RX)? Not yet?
+			-- We're running out of time!
+			say(c_locale(11654))
+		end
+
+		when ENTAI_DESTROYER.party_kill begin
+			if pc.enough_inventory(ENTAI_DEW) then
+				pc.give_item2(ENTAI_DEW, 1)
+
+				pc.setqf("kill_count", pc.getqf("kill_count") + 1)
+				q.set_counter(c_locale(11598), ENTAI_DESTROYER_COUNT - pc.getqf("kill_count"))
+
+				if pc.getqf("kill_count") >= ENTAI_DESTROYER_COUNT then
+
+					-- You've obtained the RX: En-Tai Dew from the En-Tai Destroyers.
+					-- Deliver it to the RX: Scout of the Forest.
+					notice_multiline(c_locale(11653), notice)
+
+					set_state("investigation5_reward")
+				end
+			end
+		end
+
+		when leave begin
+			q.done()
+		end
+	end
+
+	state investigation5_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_SCOUT)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_SCOUT))
+			end
+
+			-- En-Tai Dew (RX)
+			send_letter(c_locale(11647))
+		end
+
+		when button or info begin
+			-- En-Tai Dew (RX)
+			say_title(c_locale(11647))
+
+			-- Find and talk to the RX: Scout of the Forest.
+			say(c_locale(11655))
+		end
+
+		-- RX: En-Tai Dew
+		when __TARGET__.target.click or FOREST_SCOUT.chat.c_locale(11647) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(ENTAI_DEW, ENTAI_DESTROYER_COUNT)
+			pc.give_exp2(INVESTIGATION5_REWARD_EXP)
+
+			-- RX: Scout of the Forest
+			say_title(c_mob_name(FOREST_SCOUT))
+
+			-- Did you find the En-Tai Destroyers and get the En-Tai Dew?
+			-- So I was right! Thanks to your help we now have the En-Tai Dew.
+			-- I'll be able to use[ENTER]that to stop the noise.
+			-- Here, take this. It's not much, just a token of appreciation for your services.
+			-- Now look for the Outrider of the Forest.
+			say(c_locale(11656))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(INVESTIGATION5_REWARD_EXP)))
+
+			set_state("investigation6a")
+		end
+	end
+
+	state investigation6a begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+
+			-- Kill the Redux En-Tai Sovereign
+			send_letter(c_locale(11657))
+		end
+
+		when button or info begin
+			-- Kill the Redux En-Tai Sovereign
+			say_title(c_locale(11657))
+
+			-- The RX: Outrider of the Forest is looking for you.
+			-- Go and find him and listen to the job he has for you.
+			say(c_locale(11658))
+		end
+
+		-- Kill the Redux En-Tai Sovereign
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(11657) begin
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- You must be the brave warrior the Scout of the Forest told me about.
+			-- Ever since he mentioned your feats I've been waiting for you to appear!
+			-- Well now, listen to me very carefully.
+			say(c_locale(11659))
+			wait()
+
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- My duty is to patrol the forest.
+			-- Lately I've observed how the En-Tai have become increasingly dangerous.
+			-- They are a threat to each and every one of us. You need to kill their ruler!
+			say(c_locale(11660))
+
+			-- I would kill him myself, but after so many battles my sword is no longer sharp enough.
+			-- Find the Redux En-Tai Sovereign and bring me the Fine Timber from him.
+			say(c_locale(11661))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation6b")
+		end
+	end
+
+	state investigation6b begin
+		when letter begin
+			target.pos("__TARGET__", 590, 75, FOREST_MAP_INDEX, "")
+			-- Kill the Redux En-Tai Sovereign
+			send_letter(c_locale(11657))
+		end
+
+		when button or info begin
+			-- Kill the Redux En-Tai Sovereign
+			say_title(c_locale(11657))
+
+			-- Kill the Redux En-Tai Sovereign and collect some Fine Timber.
+			say(c_locale(11580))
+		end
+
+		-- Kill the Redux En-Tai Sovereign
+		when FOREST_OUTRIDER.chat.c_locale(11657) begin
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- What do you mean, you haven't found him?
+			-- I even marked his location for you on the map!
+			say(c_locale(11664))
+		end
+
+		when ENTAI_SOVEREIGN.party_kill begin
+			if pc.enough_inventory(FINE_TIMBER) then
+				pc.give_item2(FINE_TIMBER, 1)
+
+				-- You have received Fine Timber (RX) from the RX: En-Tai Sovereign.
+				-- Return to the RX: Outrider of the Forest and report.
+				notice_multiline(c_locale(11663), notice)
+
+				set_state("investigation6_reward")
+			end
+		end
+	end
+
+	state investigation6_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+
+			-- Kill the Redux En-Tai Sovereign
+			send_letter(c_locale(11657))
+		end
+
+		when button or info begin
+			-- Kill the Redux En-Tai Sovereign
+			say_title(c_locale(11657))
+
+			-- Talk to the Outrider of the Forest.
+			say(c_locale(11665))
+		end
+
+		-- Kill the Redux En-Tai Sovereign
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(11657) begin
+			target.delete("__TARGET__")
+
+			pc.remove_item(FINE_TIMBER, 1)
+			pc.give_exp2(INVESTIGATION6_REWARD_EXP)
+
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- Unbelievable! You actually managed it!
+			-- First of all I should busy myself with investigating the %s.
+			-- Will you wait until I'm finished?
+			say(c_locale(11666, c_item_name(DRYAD_STONE)))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(INVESTIGATION6_REWARD_EXP)))
+
+			set_state("investigation7a")
+		end
+	end
+
+	state investigation7a begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+
+			-- Obtain a Tree Emerald (RX)
+			send_letter(c_locale(11667))
+		end
+
+		when button or info begin
+			-- Obtain a Tree Emerald (RX)
+			say_title(c_locale(11667))
+
+			-- The RX: Outrider of the Forest is looking for you.
+			-- Go and find him and listen to the job he has for you.
+			say(c_locale(11668))
+		end
+
+		-- Obtain a Tree Emerald (RX)
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(11667) begin
+
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- You're back! I've been studying the En-Tai Sovereigns for some time, and was pretty sure it was Fine Timber that we needed.
+			-- But I've taken a closer look at it and... well, unfortunately it isn't the stuff we need.
+			-- Please return to the En-Tai Sovereigns once more.
+			say(c_locale(11669))
+
+			-- Is that really necessary?
+			say_reward(c_locale(11670))
+
+			wait()
+
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- We need to find out where the king of the Redux En-Tai Sovereigns is hiding.
+			-- But they certainly won't reveal that information to us so easily.
+			say(c_locale(11671))
+
+			-- Yes, of course.
+			select(c_locale(11522))
+			target.delete("__TARGET__")
+
+			set_state("investigation7b")
+		end
+	end
+
+	state investigation7b begin
+		when letter begin
+			-- Obtain a Tree Emerald (RX)
+			send_letter(c_locale(11667))
+		end
+
+		when button or info begin
+			-- Obtain a Tree Emerald (RX)
+			say_title(c_locale(11667))
+
+			-- Kill the RX: En-Tai Sovereign and obtain a Tree Emerald (RX).
+			say(c_locale(11672))
+		end
+
+		-- Obtain a Tree Emerald (RX)
+		when FOREST_OUTRIDER.chat.c_locale(11667) begin
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- You can't be back already! Come on, get the Tree Emerald.
+			-- And hurry up about it!
+			say(c_locale(4589))
+		end
+
+		when ENTAI_SOVEREIGN.party_kill begin
+			if pc.enough_inventory(TREE_EMERALD) then
+				pc.give_item2(TREE_EMERALD, 1)
+
+				-- You received a Tree Emerald from the En-Tai Sovereign.
+				-- Take it to the RX: Outrider of the Forest.
+				notice_multiline(c_locale(11673), notice)
+
+				set_state("investigation7_reward")
+			end
+		end
+	end
+
+	state investigation7_reward begin
+		when letter begin
+			local v = find_npc_by_vnum(FOREST_OUTRIDER)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_mob_name(FOREST_OUTRIDER))
+			end
+
+			-- Obtain a Tree Emerald (RX)
+			send_letter(c_locale(11667))
+		end
+
+		when button or info begin
+			-- Obtain a Tree Emerald (RX)
+			say_title(c_locale(11667))
+
+			-- Talk to the RX: Outrider of the Forest.
+			say(c_locale(11674))
+		end
+
+		-- Obtain a Tree Emerald (RX)
+		when __TARGET__.target.click or FOREST_OUTRIDER.chat.c_locale(11667) begin
+
+			if not pc.enough_inventory(DRYAD_STONE) then
+				-- RX: Outrider of the For.
+				say_title(c_mob_name(FOREST_OUTRIDER))
+
+				-- Too bad. You don't have any space in your inventory.
+				-- Come back once you have cleared up.
+				say(c_locale(11597))
+				return
+			end
+
+			target.delete("__TARGET__")
+
+			pc.remove_item(TREE_EMERALD, 1)
+			pc.give_exp2(INVESTIGATION7_REWARD_EXP)
+			pc.change_money(INVESTIGATION7_REWARD_GOLD)
+			pc.give_item2(DRYAD_STONE, 1)
+			pc.setqf("complete", 1)
+
+			-- RX: Outrider of the For.
+			say_title(c_mob_name(FOREST_OUTRIDER))
+
+			-- You did it! How fortunate I am to be able to see this with my own eyes!
+			-- Well, time for me to try to tempt out a dryad and capture it in the Redux Tree Emerald.
+			say(c_locale(11675))
+
+			-- We did it! Brave warrior, take this. It's the Stone of the Dryads.
+			-- The En-Tai Sovereigns protect the true King of the En-Tai with powerful spells.
+			-- You'll only be able to confront Jotun Thrym if you're carrying this stone with you.
+			-- Quickly now, find the leader of the Forest Guardians!
+			say(c_locale(11676))
+
+			-- You have received %s.
+			say_reward(c_locale(11599, c_item_name(DRYAD_STONE)))
+
+			-- You have received %s experience points.
+			say_reward(c_locale(11596, number_to_money_string(INVESTIGATION3_REWARD_EXP)))
+
+			-- You have received %s.
+			say_reward(c_locale(11599, number_to_money_string(INVESTIGATION7_REWARD_GOLD, c_locale(3415))))
+
+			set_state("investigation1a")
+		end
+	end
+end

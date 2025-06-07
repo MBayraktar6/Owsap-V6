@@ -1,0 +1,261 @@
+quest guild_building_melt begin
+	state start begin
+		function GetOreRefineCost(cost)
+			if pc.get_empire() != npc.get_empire() then
+				return 3 * cost
+			end
+
+			if pc.get_guild() == npc.get_guild() then
+				return cost * 0.9
+			end
+
+			return cost
+		end
+
+		function GetOreRefineGoodPct()
+			return 60
+		end
+
+		function GetOreRefineBadPct()
+			return 30
+		end
+
+		function GetMyRefineNum(race)
+			return race - 20060 + 50601
+		end
+
+		function IsRefinableRawOre(vnum)
+			return vnum >= 50601 and vnum <= 50619
+		end
+
+		function DoRefineDiamond(pct)
+			local from_postfix
+			local from_name = c_item_name(item.get_vnum())
+			local to_vnum = item.get_vnum() + 20
+			local to_name = c_item_name(to_vnum)
+			local to_postfix
+
+			say(c_locale(1643))
+
+			if item.count >= 100 then
+				say(c_locale(1653, pct, guild_building_melt.GetOreRefineCost(10000)))
+
+				local s = select(c_locale(2625), c_locale(2600))
+
+				if s == 1 then
+					if pc.get_gold() < guild_building_melt.GetOreRefineCost(10000) then
+						say(c_locale(1664))
+						return
+					end
+
+					if pc.diamond_refine(10000, pct) then
+						say(c_locale(1645))
+						say_item(to_name, to_vnum, "")
+					else
+						say(c_locale(1672))
+					end
+				end
+			else
+				say(c_locale(1673, from_name))
+			end
+		end
+
+		function DoRefine(pct)
+			local from_postfix
+			local from_name = c_item_name(item.get_vnum())
+			local to_vnum = item.get_vnum() + 20
+			local to_name = c_item_name(to_vnum)
+			local to_postfix
+
+			say(c_locale(1674, from_name, to_name))
+
+			if item.get_count() >= 100 then
+				say(c_locale(1653, pct, guild_building_melt.GetOreRefineCost(3000)))
+
+				local s = select(c_locale(2625), c_locale(2600))
+
+				if s == 1 then
+					if pc.get_gold() < guild_building_melt.GetOreRefineCost(3000) then
+						say(c_locale(1664))
+						return
+					end
+
+					local selected_item_cell = select_item()
+
+					if selected_item_cell == 0 then
+						say(c_locale(1675))
+						return
+					end
+
+					local old_item = item.get_id()
+
+					if (not item.select_cell(selected_item_cell)) or item.get_vnum() < 28000 or item.get_vnum() >= 28300 then
+						say(c_locale(1644))
+						return
+					end
+
+					item.select(old_item, old_item)
+
+					if pc.ore_refine(3000, pct, selected_item_cell) then
+						say(c_locale(1671))
+						say_item(to_name, to_vnum, "")
+					else
+						say(c_locale(1672))
+					end
+				end
+			else
+				say(c_locale(1673, from_name))
+			end
+		end
+
+		when
+			20060.take or
+			20061.take or
+			20062.take or
+			20063.take or
+			20064.take or
+			20065.take or
+			20066.take or
+			20067.take or
+			20068.take or
+			20069.take or
+			20070.take or
+			20071.take or
+			20072.take or
+			20423.take or
+			20424.take or
+			20425.take or
+			20426.take or
+			20427.take or
+			20428.take
+			with guild_building_melt.GetMyRefineNum(npc.get_race()) == item.get_vnum()
+		begin
+			if item.get_vnum() == 50601 then
+				guild_building_melt.DoRefineDiamond(guild_building_melt.GetOreRefineGoodPct())
+			else
+				guild_building_melt.DoRefine(guild_building_melt.GetOreRefineGoodPct())
+			end
+		end
+
+		when
+			20060.take or
+			20061.take or
+			20062.take or
+			20063.take or
+			20064.take or
+			20065.take or
+			20066.take or
+			20067.take or
+			20068.take or
+			20069.take or
+			20070.take or
+			20071.take or
+			20072.take or
+			20423.take or
+			20424.take or
+			20425.take or
+			20426.take or
+			20427.take or
+			20428.take
+			with guild_building_melt.IsRefinableRawOre(item.get_vnum()) and guild_building_melt.GetMyRefineNum(npc.get_race()) != item.get_vnum()
+		begin
+			if item.get_vnum() == 50601 then
+				guild_building_melt.DoRefineDiamond(guild_building_melt.GetOreRefineBadPct())
+			else
+				guild_building_melt.DoRefine(guild_building_melt.GetOreRefineBadPct())
+			end
+		end
+
+		when
+			20060.click or
+			20061.click or
+			20062.click or
+			20063.click or
+			20064.click or
+			20065.click or
+			20066.click or
+			20067.click or
+			20068.click or
+			20069.click or
+			20070.click or
+			20071.click or
+			20072.click or
+			20423.click or
+			20424.click or
+			20425.click or
+			20426.click or
+			20427.click or
+			20428.click
+			with npc.get_guild() == pc.get_guild() and pc.isguildmaster()
+		begin
+			say(c_locale(1646))
+
+			if pc.get_gold() < 3000000 then
+				say(c_locale(1647))
+			else
+				say(c_locale(1648))
+
+				local sel = 0
+
+				local timetable1 = {
+					c_locale(1651),
+					c_locale(1652),
+					c_locale(1654),
+					c_locale(1655),
+					c_locale(1656),
+					c_locale(1657),
+					c_locale(2669),
+					c_locale(1650)
+				}
+				local valuetable1 = { 14043, 14045, 14046, 14047, 14048, 14049, 0, -1 }
+
+				local timetable2 = {
+					c_locale(1658),
+					c_locale(1659),
+					c_locale(1660),
+					c_locale(1661),
+					c_locale(1662),
+					c_locale(1663),
+					c_locale(2669),
+					c_locale(1650)
+				}
+				local valuetable2 = { 14050, 14051, 14052, 14053, 14054, 14055, 0, -1 }
+
+				local timetable3 = {
+					c_locale(1665),
+					c_locale(1666),
+					c_locale(1667),
+					c_locale(1668),
+					c_locale(1669),
+					c_locale(1670),
+					c_locale(2669),
+					c_locale(1650)
+				}
+				local valuetable3 = { 14074, 14075, 14076, 14077, 14078, 14079, 0, -1 }
+
+				repeat
+					local s = select_table(timetable1)
+					sel = valuetable1[s]
+					if sel == 0 then
+						local s = select_table(timetable2)
+						sel = valuetable2[s]
+						if sel == 0 then
+							local s = select_table(timetable3)
+							sel = valuetable3[s]
+						end
+					end
+				until sel != 0
+
+				if sel != -1 then
+					npc_num = sel + 20060 - 14043
+					if npc_num == npc.get_race() then
+						say(c_locale(1649))
+					else
+						pc.changegold(-3000000)
+						building.reconstruct(sel)
+					end
+				end
+			end
+		end
+	end
+end

@@ -1,0 +1,45 @@
+local lair_name_list = { 
+c_locale ( 1770 ) , 
+c_locale ( 1771 ) , 
+c_locale ( 1772 ) , 
+} 
+table . insert ( lair_name_list , c_locale ( 1845 ) ) 
+local lair_choice = select_table ( lair_name_list ) 
+if lair_choice >= table . getn ( lair_name_list ) then 
+return 
+end 
+local lair_type = math . max ( lair_choice - 1 , 0 ) 
+if lair_type == 0 then 
+if game . get_event_flag ( "red_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+local s = select ( c_locale ( 1848 ) , c_locale ( 1859 ) , c_locale ( 1845 ) ) 
+if s == 1 then 
+setskin ( NOWINDOW ) 
+game . open_guild_dragonlair_ranking ( 0 , GuildDragonLairSetting . Guild . RankingShowLimit ) 
+elseif s == 2 then 
+local r = select ( c_locale ( 1869 ) , c_locale ( 1880 ) , c_locale ( 1845 ) ) 
+if r == 1 then 
+setskin ( NOWINDOW ) 
+game . open_ranking ( 1 , 1 ) 
+elseif r == 2 then 
+setskin ( NOWINDOW ) 
+game . open_ranking ( 1 , 0 ) 
+end 
+end 
+elseif lair_type == 1 then 
+if game . get_event_flag ( "blue_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+setskin ( NOWINDOW ) 
+game . open_guild_dragonlair_ranking ( 1 , GuildDragonLairSetting . Guild . RankingShowLimit ) 
+elseif lair_type == 2 then 
+if game . get_event_flag ( "green_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+setskin ( NOWINDOW ) 
+game . open_guild_dragonlair_ranking ( 2 , GuildDragonLairSetting . Guild . RankingShowLimit ) 
+end 

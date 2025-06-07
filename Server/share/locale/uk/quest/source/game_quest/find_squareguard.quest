@@ -1,0 +1,165 @@
+quest find_squareguard begin
+	state start begin
+	end
+
+	state run begin
+		when login with pc.get_level() <= 5 begin
+			set_state(find)
+		end
+	end
+
+	state find begin
+		when letter begin
+			send_letter(c_locale(1278))
+
+			local find_npc_vnum = 0
+			if pc.get_empire() == 1 then
+				find_npc_vnum = 11000
+			elseif pc.get_empire() == 2 then
+				find_npc_vnum = 11002
+			elseif pc.get_empire() == 3 then
+				find_npc_vnum = 11004
+			end
+
+			local v = find_npc_by_vnum(find_npc_vnum)
+			if 0 == v then
+			else
+				target.vid("__TARGET__1", v, c_locale(1280))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(114))
+			say(c_locale(1290))
+		end
+
+		when __TARGET__1.target.click begin
+			target.delete("__TARGET__1")
+
+			say_title(c_locale(1294))
+			say(c_locale(1295))
+			local s = select(c_locale(1296))
+			if 1 == s then
+				say_title(c_locale(114))
+				say_reward(c_locale(1297))
+				pc.change_money(200)
+				set_state(buy)
+			elseif 2 == s then
+			else
+				say(c_locale(1298, s))
+			end
+		end
+	end
+
+	state buy begin
+		when letter begin
+			send_letter(c_locale(1299))
+
+			local v = find_npc_by_vnum(9003)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(1283))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(114))
+			say(c_locale(1300))
+		end
+
+		when 11000.chat.c_locale(1279) or
+			11002.chat.c_locale(1279) or
+			11004.chat.c_locale(1279) begin
+
+			say_title(c_locale(1280))
+			say(c_locale(1281))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(1282))
+			say(c_locale(1284))
+			wait()
+
+			say_title(c_locale(1282))
+			say(c_locale(1285))
+			wait()
+
+			say_title(c_locale(114))
+			say_reward(c_locale(1286))
+			say_reward(c_locale(1287))
+
+			pc.give_item2(27001, 5)
+			setstate(deliver)
+		end
+	end
+
+	state deliver begin
+		when letter begin
+			send_letter(c_locale(1288))
+
+			local find_npc_vnum = 0
+			if pc.get_empire() == 1 then
+				find_npc_vnum = 11000
+			elseif pc.get_empire() == 2 then
+				find_npc_vnum = 11002
+			elseif pc.get_empire() == 3 then
+				find_npc_vnum = 11004
+			end
+
+			local v = find_npc_by_vnum(find_npc_vnum)
+			if 0 == v then
+			else
+				target.vid("__TARGET__1", v, c_locale(1278))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(114))
+			say(c_locale(1289))
+		end
+
+		when __TARGET__1.target.click with pc.count_item(27001) < 1 begin
+			target.delete("__TARGET__1")
+
+			say_title(c_locale(1294))
+			say(c_locale(1291))
+
+			clear_letter()
+			set_state(__COMPLETE__)
+		end
+
+		when __TARGET__1.target.click with pc.count_item(27001) >= 1 begin
+			target.delete("__TARGET__1")
+
+			say_title(c_locale(1294))
+			say(c_locale(1292))
+			wait()
+
+			say_title(c_locale(1294))
+			say(c_locale(1293))
+
+			if pc.count_item(27001) >= 1 then
+				pc.remove_item(27001, 1)
+				local r = number(1, 3)
+				if r == 1 then
+					pc.give_item2(14000, 1)
+				elseif r == 2 then
+					pc.give_item2(16000, 1)
+				elseif r == 3 then
+					pc.give_item2(17000, 1)
+				end
+
+				pc.give_exp2(300)
+				pc.give_item2(27001, 8)
+			end
+
+			clear_letter()
+			set_state(__COMPLETE__)
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

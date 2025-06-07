@@ -1,0 +1,8 @@
+if dw . is_started ( ) then 
+say ( c_locale ( 10108 ) ) 
+else 
+say ( c_locale ( 10115 ) ) 
+end 
+if select ( c_locale ( 10065 ) , c_locale ( 10066 ) ) == 1 then 
+dw . exit ( 301 ) 
+end 

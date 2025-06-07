@@ -1,0 +1,50 @@
+if not npc . lock ( ) then 
+say_title ( c_locale ( 6534 ) ) 
+say ( c_locale ( 6535 ) ) 
+return 
+end 
+say_title ( c_locale ( 6534 ) ) 
+say ( c_locale ( 6536 ) ) 
+local sname = input ( ) 
+local u_vid = find_pc_by_name ( sname ) 
+local m_vid = pc . get_vid ( ) 
+local old = pc . select ( u_vid ) 
+pc . select ( old ) 
+if u_vid == 0 then 
+say_title ( c_locale ( 6534 ) ) 
+say ( c_locale ( 6537 ) ) 
+say_reward ( c_locale ( 6509 , sname ) ) 
+npc . unlock ( ) 
+return 
+end 
+if not npc . is_near_vid ( u_vid , 10 ) then 
+say_title ( c_locale ( 6534 ) ) 
+say ( c_locale ( 6538 ) ) 
+say_reward ( c_locale ( 6539 , sname ) ) 
+npc . unlock ( ) 
+return 
+end 
+if u_vid == m_vid then 
+say_title ( c_locale ( 6534 ) ) 
+say ( c_locale ( 6540 ) ) 
+npc . unlock ( ) 
+return 
+end 
+if u_vid ~= marriage . find_married_vid ( ) then 
+say_title ( c_locale ( 6541 ) ) 
+say ( c_locale ( 6543 ) ) 
+npc . unlock ( ) 
+return 
+end 
+local ok_sign = confirm ( u_vid , c_locale ( 6527 , pc . get_name ( ) ) , 30 ) 
+if ok_sign ~= CONFIRM_OK then 
+say_title ( c_locale ( 6541 ) ) 
+say ( c_locale ( 6544 ) ) 
+npc . unlock ( ) 
+return 
+end 
+say_title ( c_locale ( 6534 ) ) 
+say ( c_locale ( 6545 ) ) 
+marriage . set_to_marriage ( ) 
+say ( c_locale ( 6546 ) ) 
+npc . unlock ( ) 

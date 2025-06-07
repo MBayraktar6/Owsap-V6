@@ -1,0 +1,7 @@
+if pc . getqf ( "used_souls" ) < 4000 and get_global_time ( ) > pc . getqf ( "ritual_expire_time" ) then 
+say_title ( c_locale ( 11747 ) ) 
+say ( c_locale ( 11773 ) ) 
+return 
+end 
+setskin ( NOWINDOW ) 
+game . open_minigame_roulette ( 1 ) 

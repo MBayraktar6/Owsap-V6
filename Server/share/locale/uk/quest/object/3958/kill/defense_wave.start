@@ -1,0 +1,2 @@
+if defense_wave . in_dungeon ( d . get_map_index ( ) ) then mob . spawn ( 20437 , npc . get_local_x ( ) , npc . get_local_y ( ) , 0 , 0 ) 
+ return end 

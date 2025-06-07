@@ -1,0 +1,39 @@
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9951 ) ) 
+say ( "" ) 
+wait ( ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9952 ) ) 
+say ( "" ) 
+wait ( ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9953 ) ) 
+local s = select ( c_locale ( 9954 ) , c_locale ( 9955 ) ) 
+if 2 == s then 
+return 
+end 
+if pc . count_item ( 50067 ) >= 1 or pc . count_item ( 50068 ) >= 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9956 ) ) 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9944 ) ) 
+return 
+end 
+local s = select ( c_locale ( 9958 ) , c_locale ( 9957 ) , c_locale ( 9959 ) ) 
+if 1 == s then 
+if training_mount . check_list ( 50067 , 25 , 11 ) == 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9960 ) ) 
+end 
+elseif 2 == s then 
+if training_mount . check_list ( 50068 , 35 , 20 ) == 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9961 ) ) 
+end 
+elseif 3 == s then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9962 ) ) 
+say ( "" ) 
+return 
+end 

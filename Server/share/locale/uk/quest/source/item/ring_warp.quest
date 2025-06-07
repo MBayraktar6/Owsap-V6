@@ -1,0 +1,108 @@
+-- Filename: ring_warp.quest
+-- Author: Owsap
+-- Description: Warp player using an item.
+
+quest ring_warp begin
+	state start begin
+		when 10031.sig_use begin
+			local max_use = item.get_value(0)
+			local n = item.get_socket(0)
+
+			if n >= max_use then
+				say(c_locale(8074))
+				return
+			end
+
+			local t = item.get_socket(1)
+			if t > get_global_time() then
+				say(c_locale(8070, string.format("%d", (t - get_global_time()) / 60)))
+				if pc.is_gm() then
+					wait()
+				else
+					return
+				end
+			end
+			say(c_locale(8071, max_use -n))
+
+			local map_index = pc.get_map_index()
+			local empire = pc.get_empire()
+			local warp_table = {
+				special.warp_table["e1"],
+				special.warp_table["e3"],
+				special.warp_table["n_threeway"],
+				special.warp_table["n_desert_01"],
+				special.warp_table["n_snowm_01"],
+				special.warp_table["n_flame_01"],
+				special.warp_table["spiderdungeon_01"],
+				special.warp_table["trent02"],
+				special.warp_table["skipia_dungeon_01"],
+				special.warp_table["capedragonhead"],
+				special.warp_table["bayblacksand"],
+				special.warp_table["dawnmistwood"],
+				special.warp_table["mt_thunder"],
+				special.warp_table["mt_th_dungeon_01"],
+				special.warp_table["n_flame_dungeon_01"],
+				special.warp_table["n_snow_dungeon_01"],
+				special.warp_table["spiderdungeon_02"],
+				special.warp_table["skipia_dungeon_02"],
+				special.warp_table["privateshop"],
+			}
+
+			local map_name_table = {}
+			for k, v in ipairs(warp_table) do
+				local map_name = v[1][empire][1]
+				local map_index = v[1][empire][2]
+				local min_level = v[4][1]
+				local max_level = v[4][2]
+				if min_level > 0 and max_level > 0 then
+					table.insert(map_name_table, string.format("%s (Lv.%d~%d)", map_name, min_level, max_level))
+				else
+					table.insert(map_name_table, map_name)
+				end
+			end
+			table.insert(map_name_table, c_locale(2426))
+
+			local s = select_table(map_name_table)
+			if table.getn(map_name_table) == s then
+				return
+			end
+
+			local map_name = warp_table[s][1][empire][1]
+			local warp_cost = warp_table[s][2]
+			local warp_level = warp_table[s][3]
+
+			if pc.get_level() < warp_level then
+				say(c_locale(6466))
+				return
+			end
+
+			--if pc.get_gold() < warp_cost then
+			--	say(c_locale(6435))
+			--	return
+			--end
+
+			-- map can only be accessed from specific map_index
+			local parent_map = warp_table[s][5]
+			local parent_map_index = parent_map[1]
+			local parent_map_key = parent_map[2]
+			if parent_map_index ~= 0 and parent_map_key ~= "" then
+				local parent_map_name = special.warp_table[parent_map_key][1][empire][1]
+				if map_index ~= parent_map_index then
+					say(c_locale(8075, parent_map_name))
+					return
+				end
+			end
+
+			if not pc.warp(warp_table[s][1][empire][4][1], warp_table[s][1][empire][4][2]) then
+				return
+			end
+
+			item.set_socket(1, get_global_time() + item.get_value(1))
+			if n == max_use - 1 then
+				item.remove()
+			else
+				item.set_socket(0, n + 1)
+			end
+		end
+	end
+end

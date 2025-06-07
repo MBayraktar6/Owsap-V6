@@ -1,0 +1,17 @@
+say_title ( c_locale ( 8004 ) ) 
+say ( c_locale ( 8015 ) ) 
+local s = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if 2 == s then 
+return 
+end 
+say_title ( c_locale ( 8024 ) ) 
+say ( c_locale ( 8025 ) ) 
+local c = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if 2 == c then 
+return 
+end 
+char_log ( 0 , "RESET_ALL" , "USE_ITEM(71002 or 76001)" ) 
+item . remove ( ) 
+char_log ( 0 , "RESET_ALL" , "RESET_STAT_POINTS" ) 
+pc . reset_point ( ) 
+char_log ( 0 , "RESET_ALL" , "RESET_END" ) 

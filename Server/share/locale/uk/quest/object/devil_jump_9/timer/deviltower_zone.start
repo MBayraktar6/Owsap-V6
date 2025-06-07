@@ -1,0 +1,4 @@
+d . setf ( "level" , 9 ) 
+d . notice ( c_locale ( 857 ) ) 
+d . jump_all ( special . devil_tower [ 8 ] [ 1 ] , special . devil_tower [ 8 ] [ 2 ] ) 
+d . regen_file ( "data/dungeon/deviltower9_regen.txt" ) 

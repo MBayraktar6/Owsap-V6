@@ -1,0 +1,33 @@
+local name = { 
+c_locale ( 8031 ) , 
+c_locale ( 8036 ) , 
+c_locale ( 8037 ) , 
+c_locale ( 8038 ) 
+} 
+local idx = item . get_vnum ( ) - 71103 
+local func = { 
+pc . get_ht , 
+pc . get_iq , 
+pc . get_st , 
+pc . get_dx } 
+if func [ idx + 1 ] ( ) == 1 then 
+say_title ( c_locale ( 8004 ) ) 
+say ( name [ idx + 1 ] .. c_locale ( 8039 ) ) 
+say ( name [ idx + 1 ] .. c_locale ( 8040 ) ) 
+return 
+end 
+say_title ( c_locale ( 8004 ) ) 
+say ( name [ idx + 1 ] .. c_locale ( 8041 ) ) 
+say ( c_locale ( 8042 ) ) 
+say ( c_locale ( 8043 ) ) 
+local s = select ( c_locale ( 8032 ) , c_locale ( 8033 ) ) 
+if s == 1 then 
+if pc . reset_status ( idx ) == true then 
+say_title ( c_locale ( 8004 ) ) 
+say ( c_locale ( 8034 ) ) 
+pc . remove_item ( item . get_vnum ( ) ) 
+else 
+say_title ( c_locale ( 8004 ) ) 
+say ( c_locale ( 8035 ) ) 
+end 
+end 

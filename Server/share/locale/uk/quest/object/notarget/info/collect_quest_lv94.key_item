@@ -1,0 +1,9 @@
+if pc . count_item ( 30228 ) > 0 then 
+say_title ( c_locale ( 669 ) ) 
+say ( c_locale ( 670 ) ) 
+return 
+end 
+say_title ( c_locale ( 671 ) ) 
+say ( c_locale ( 672 ) ) 
+say_item_vnum ( 30228 ) 
+say ( c_locale ( 673 ) ) 

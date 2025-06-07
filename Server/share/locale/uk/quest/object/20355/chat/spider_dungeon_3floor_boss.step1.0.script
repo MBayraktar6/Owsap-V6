@@ -1,0 +1,4 @@
+say_title ( c_mob_name ( 20355 ) ) 
+say ( c_locale ( 8278 ) ) 
+set_state ( "step2" ) 
+pc . give_item2 ( 76019 ) 

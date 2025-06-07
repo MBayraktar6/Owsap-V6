@@ -1,0 +1,34 @@
+Group	ochao_temple_1
+{
+	Vnum	6301
+	1	6301	1
+	2	6302	1
+}
+Group	ochao_temple_2
+{
+	Vnum	6302
+	1	6302	1
+	2	6303	1
+	3	6304	1
+	4	6305	1
+}
+Group	ochao_temple_3
+{
+	Vnum	6303
+	1	6301	1
+	2	6303	1
+	3	6304	1
+}
+Group	ochao_temple_4
+{
+	Vnum	6304
+	1	6303	1
+	2	6304	1
+	3	6305	1
+}
+Group	ochao_temple_5
+{
+	Vnum	6305
+	1	6304	1
+	2	6305	1
+}

@@ -1,0 +1,4 @@
+event_easter . spawn_metin_at_login ( ) 
+local settings = event_easter . get_settings ( ) 
+pc . remove_item ( settings . baskets . full ) 
+pc . give_item2 ( event_easter . get_reward_for_basket ( ) , 1 ) 

@@ -1,0 +1,47 @@
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 8055 ) ) 
+wait ( ) 
+local items = { pc . get_sig_items ( 10032 ) } 
+local ticket = nil 
+if table . getn ( items ) > 1 then 
+for i , v in ipairs ( items ) begin 
+item . select ( v ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 8056 ) ) 
+say_item_vnum ( item . get_vnum ( ) ) 
+say ( c_locale ( 8057 ) ) 
+local s = select ( c_locale ( 4473 ) , c_locale ( 3418 ) , c_locale ( 2426 ) ) 
+if s == 3 then 
+return 
+end 
+if s == 1 then 
+ticket = v 
+break 
+end 
+end 
+else 
+ticket = items [ 1 ] 
+end 
+if ticket == nil then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 8058 ) ) 
+return 
+end 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 8059 ) ) 
+item . select ( ticket ) 
+local s = select ( c_locale ( 8060 ) , c_locale ( 8061 ) , c_locale ( 8062 ) , c_locale ( 8063 ) , c_locale ( 8064 ) , c_locale ( 8065 ) ) 
+if s == 6 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 8066 ) ) 
+return 
+end 
+local summon_item = item . get_value ( s - 1 ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 8067 ) ) 
+if pc . give_item2 ( summon_item ) == 0 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 8068 ) ) 
+return 
+end 
+item . remove ( ) 

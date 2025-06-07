@@ -1,0 +1,3 @@
+send_letter ( c_locale ( 6381 ) ) 
+q . set_counter_name ( c_locale ( 6413 ) ) 
+meteorite_hunt . update_counter ( ) 

@@ -1,0 +1,20 @@
+if snow_dungeon . inside ( pc . get_map_index ( ) ) then local level = d . getf ( "level" ) 
+if level == 2 then 
+if number ( 1 , 100 ) <= 3 or is_test_server ( ) then 
+game . drop_item ( 30331 , 1 ) 
+end 
+elseif level == 5 then 
+if number ( 1 , 100 ) <= 3 or is_test_server ( ) then 
+game . drop_item ( 30332 , 1 ) 
+end 
+elseif level == 8 then 
+if 1 == 1 then 
+if pc . get_job ( ) ~= ASSASSIN then 
+return 
+end 
+end 
+if number ( 1 , 100 ) <= 3 or is_test_server ( ) then 
+game . drop_item ( 30333 , 1 ) 
+end 
+end 
+ return end 

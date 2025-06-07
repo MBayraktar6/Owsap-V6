@@ -1,0 +1,11 @@
+say_title ( c_locale ( 102 ) ) 
+say ( c_locale ( 103 ) ) 
+local b = select ( c_locale ( 104 ) , c_locale ( 105 ) ) 
+if 1 == b then 
+setstate ( "play_event" ) 
+elseif 2 == b then 
+setstate ( "__COMPLETE__" ) 
+q . done ( ) 
+else 
+say ( c_locale ( 123 , b ) ) 
+end 

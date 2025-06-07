@@ -1,0 +1,7 @@
+if minigame_roulette . is_running ( ) then local reset_time = pc . getqf ( "material_reset_time" ) 
+if reset_time == 0 or ( get_global_time ( ) - reset_time ) > 86400 then 
+pc . setqf ( "material_vnum" , 0 ) 
+pc . setqf ( "material_count" , 0 ) 
+pc . setqf ( "material_reset_time" , get_global_time ( ) ) 
+end 
+ return end 

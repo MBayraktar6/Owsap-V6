@@ -1,0 +1,76 @@
+define WEAPON_SHOP 1
+define FISH_SHOP 2
+define GENERAL_SHOP 3
+define ARMOR_SHOP 4
+define WEAPON_SHOP2 5
+define ARMOR_SHOP2 6
+define DRAGONSOUL_SHOP 12
+define GOLD_BAR_SHOP 7
+define FIREWORK_SHOP 8
+define PEDDLER_SHOP 9
+define PICK_SHOP 10
+define STABLE_SHOP 11
+
+quest npc_shop begin
+	state start begin
+		when 9001.click or 9001.chat.c_locale(929) begin
+			npc.open_shop(WEAPON_SHOP)
+			setskin(NOWINDOW)
+		end
+
+--		when 9009.click or 9009.chat.c_locale(1301) begin
+--			npc.open_shop(FISH_SHOP)
+--			setskin(NOWINDOW)
+--		end
+
+		when 9003.click or 9003.chat.c_locale(929) begin
+			npc.open_shop(GENERAL_SHOP)
+			setskin(NOWINDOW)
+		end
+
+		when 9002.click or 9002.chat.c_locale(929) begin
+			npc.open_shop(ARMOR_SHOP)
+			setskin(NOWINDOW)
+		end
+
+		when 9007.click or 9007.chat.c_locale(929) begin
+			npc.open_shop(WEAPON_SHOP2)
+			setskin(NOWINDOW)
+		end
+
+		when 9008.click or 9008.chat.c_locale(929) begin
+			npc.open_shop(ARMOR_SHOP2)
+			setskin(NOWINDOW)
+		end
+
+--		when 20001.click or 20001.chat.c_locale(929) begin
+--			npc.open_shop(DRAGONSOUL_SHOP)
+--			setskin(NOWINDOW)
+--		end
+
+--		when 9005.click or 9005.chat.c_locale(929) begin
+--			npc.open_shop(GOLD_BAR_SHOP)
+--			setskin(NOWINDOW)
+--		end
+
+		when 9004.click or 9004.chat.c_locale(929) begin
+			npc.open_shop(FIREWORK_SHOP)
+			setskin(NOWINDOW)
+		end
+
+		when 20042.click or 20042.chat.c_locale(929) begin
+			npc.open_shop(PEDDLER_SHOP)
+			setskin(NOWINDOW)
+		end
+
+--		when 20015.click or 20015.chat.c_locale(1301) begin
+--			npc.open_shop(PICK_SHOP)
+--			setskin(NOWINDOW)
+--		end
+
+--		when 20349.click or 20349.chat.c_locale(7387) begin
+--			npc.open_shop(STABLE_SHOP)
+--			setskin(NOWINDOW)
+--		end
+	end
+end

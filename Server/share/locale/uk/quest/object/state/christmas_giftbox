@@ -1,0 +1,35 @@
+christmas_giftbox={["start"]=0,give_item_with_log= function (vnum,amount,item_id)if vnum == 1 then 
+pc . change_gold ( amount ) 
+else 
+pc . give_item2 ( vnum , amount ) 
+end 
+char_log ( tonumber ( item_id ) , "XMAS_BOX" , "reward vnum: " .. vnum .. " reward amount: " .. amount ) 
+end ,gift= function (item_id)local n = number ( 1 , 100 ) 
+if n <= 4 then 
+christmas_giftbox . give_item_with_log ( 25100 , 1 , item_id ) 
+elseif n <= 8 then 
+christmas_giftbox . give_item_with_log ( 71084 , 1 , item_id ) 
+elseif n <= 12 then 
+christmas_giftbox . give_item_with_log ( 71085 , 1 , item_id ) 
+elseif n <= 16 then 
+christmas_giftbox . give_item_with_log ( 71109 , 1 , item_id ) 
+elseif n <= 21 then 
+christmas_giftbox . give_item_with_log ( 25040 , 1 , item_id ) 
+elseif n <= 26 then 
+christmas_giftbox . give_item_with_log ( 71101 , 3 , item_id ) 
+elseif n <= 31 then 
+christmas_giftbox . give_item_with_log ( 71107 , 1 , item_id ) 
+elseif n <= 40 then 
+christmas_giftbox . give_item_with_log ( 50513 , 1 , item_id ) 
+elseif n <= 50 then 
+christmas_giftbox . give_item_with_log ( 1 , 100000 , item_id ) 
+elseif n <= 61 then 
+christmas_giftbox . give_item_with_log ( 1 , 50000 , item_id ) 
+elseif n <= 73 then 
+christmas_giftbox . give_item_with_log ( 1 , 30000 , item_id ) 
+elseif n <= 86 then 
+christmas_giftbox . give_item_with_log ( 1 , 20000 , item_id ) 
+else 
+christmas_giftbox . give_item_with_log ( 1 , 10000 , item_id ) 
+end 
+end }

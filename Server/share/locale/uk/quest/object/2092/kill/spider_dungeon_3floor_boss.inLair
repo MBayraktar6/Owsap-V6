@@ -1,0 +1,4 @@
+server_timer ( "spider_dead_timer" , 180 ) 
+game . set_event_flag ( "spider_dead" .. get_channel_id ( ) , 1 ) 
+game . set_event_flag ( "spider_key_dropped" .. get_channel_id ( ) , 0 ) 
+notice_in_map ( c_locale ( 8274 ) , false ) 

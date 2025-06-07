@@ -1,0 +1,2 @@
+send_letter ( c_locale ( 11569 ) ) 
+q . set_counter ( c_locale ( 11595 ) , 5 - pc . getqf ( "kill_count" ) ) 

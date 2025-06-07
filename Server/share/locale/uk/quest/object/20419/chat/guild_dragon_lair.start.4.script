@@ -1,0 +1,72 @@
+say ( c_locale ( 1769 ) ) 
+local lair_name_list = { 
+c_locale ( 1770 ) , 
+c_locale ( 1771 ) , 
+c_locale ( 1772 ) , 
+} 
+table . insert ( lair_name_list , c_locale ( 1845 ) ) 
+local lair_choice = select_table ( lair_name_list ) 
+if lair_choice >= table . getn ( lair_name_list ) then 
+return 
+end 
+local lair_type = math . max ( lair_choice - 1 , 0 ) 
+if lair_type == 0 then 
+if game . get_event_flag ( "red_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+say ( c_locale ( 1850 ) ) 
+say ( c_locale ( 1851 ) ) 
+say_item_vnum ( 71095 ) 
+say ( c_locale ( 1852 ) ) 
+say ( "" ) 
+if select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) == 1 then 
+if not party . is_party ( ) then 
+say ( c_locale ( 1855 ) ) 
+return 
+end 
+if get_global_time ( ) - pc . getqf ( "red_dragonlair_wait_time" ) < GuildDragonLairSetting . Party . WaitTime then 
+say ( c_locale ( 1783 ) ) 
+return 
+end 
+if not guild_dragonlair . find_party ( party . get_leader_pid ( ) ) then 
+if not party . is_leader ( ) then 
+say ( c_locale ( 1858 ) ) 
+return 
+end 
+if party . get_near_count ( ) < GuildDragonLairSetting . Party . MinMember then 
+say ( c_locale ( 1867 ) ) 
+return 
+end 
+end 
+if pc . get_level ( ) < GuildDragonLairSetting . Party . PlayerLevel then 
+say ( c_locale ( 1860 ) ) 
+return 
+end 
+if pc . is_mount ( ) then 
+say ( c_locale ( 11304 ) ) 
+return 
+end 
+if guild_dragonlair . get_party_stage ( party . get_leader_pid ( ) ) > 0 then 
+say ( c_locale ( 1857 ) ) 
+return 
+end 
+if guild_dragonlair . get_party_member_count ( party . get_leader_pid ( ) ) >= GuildDragonLairSetting . Party . MaxMember then 
+say ( c_locale ( 1790 ) ) 
+return 
+end 
+if not guild_dragonlair . enter_party ( lair_type ) then 
+say ( c_locale ( 1854 ) ) 
+end 
+end 
+elseif lair_type == 1 then 
+if game . get_event_flag ( "blue_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+elseif lair_type == 2 then 
+if game . get_event_flag ( "green_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+end 

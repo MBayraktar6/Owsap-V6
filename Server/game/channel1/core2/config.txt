@@ -1,0 +1,34 @@
+HOSTNAME: ch1_game2
+CHANNEL: 1
+PORT: 12102
+P2P_PORT: 12120
+DB_PORT: 11000
+DB_ADDR: localhost
+
+MAP_ALLOW: 61 62 67 68 72 73 208 351 352 356
+
+#	61	map_n_snowm_01
+#	62	metin2_map_n_flame_01
+#	67	metin2_map_trent
+#	68	metin2_map_trent02
+#	72	metin2_map_skipia_dungeon_01
+#	73	metin2_map_skipia_dungeon_02
+#	208	metin2_map_skipia_dungeon_boss
+#	351	metin2_map_n_flame_dungeon_01
+#	352	metin2_map_n_snow_dungeon_01
+#	356	metin2_map_n_flame_dragon
+
+TABLE_POSTFIX:
+ITEM_ID_RANGE: 200000001 300000000
+PASSES_PER_SEC: 25
+SAVE_EVENT_SECOND_CYCLE: 180
+PING_EVENT_SECOND_CYCLE: 180
+PLAYER_SQL: localhost mt2 mt2!@# player
+COMMON_SQL: localhost mt2 mt2!@# common
+LOG_SQL: localhost mt2 mt2!@# log
+LOCALE_SERVICE: uk
+TEST_SERVER: 1
+VIEW_RANGE: 8000
+MAX_LEVEL: 120
+
+POPUP_NOTICE_URL: http://62.171.146.112/docs/

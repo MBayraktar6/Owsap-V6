@@ -1,0 +1,1 @@
+return guild_dragonlair . is_red_dragonlair ( pc . get_map_index ( ) )

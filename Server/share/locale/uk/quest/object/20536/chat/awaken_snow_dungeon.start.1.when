@@ -1,0 +1,1 @@
+return awaken_snow_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 9

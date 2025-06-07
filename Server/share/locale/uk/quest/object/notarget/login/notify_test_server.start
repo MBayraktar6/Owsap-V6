@@ -1,0 +1,2 @@
+if is_test_server ( ) then notice ( c_locale ( 7442 ) ) 
+ return end 

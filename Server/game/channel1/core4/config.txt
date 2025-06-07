@@ -1,0 +1,36 @@
+HOSTNAME: ch1_game4
+CHANNEL: 1
+PORT: 12104
+P2P_PORT: 12140
+DB_PORT: 11000
+DB_ADDR: localhost
+
+MAP_ALLOW: 301 302 303 304 353 354 358 359 378 379 380 381
+
+#	301	metin2_map_capedragonhead
+#	302	metin2_map_dawnmistwood
+#	303	metin2_map_bayblacksand
+#	304	metin2_map_mt_thunder
+#	353	metin2_map_dawnmist_dungeon_01
+#	354	metin2_map_mt_th_dungeon_01
+#	358	metin2_map_defensewave
+#	359	metin2_map_defensewave_port
+#	378	metin2_map_elemental_01
+#	379	metin2_map_elemental_02
+#	380	metin2_map_elemental_03
+#	381	metin2_map_elemental_04
+
+TABLE_POSTFIX:
+ITEM_ID_RANGE: 400000001 500000000
+PASSES_PER_SEC: 25
+SAVE_EVENT_SECOND_CYCLE: 180
+PING_EVENT_SECOND_CYCLE: 180
+PLAYER_SQL: localhost mt2 mt2!@# player
+COMMON_SQL: localhost mt2 mt2!@# common
+LOG_SQL: localhost mt2 mt2!@# log
+LOCALE_SERVICE: uk
+TEST_SERVER: 1
+VIEW_RANGE: 8000
+MAX_LEVEL: 120
+
+POPUP_NOTICE_URL: http://62.171.146.112/docs/

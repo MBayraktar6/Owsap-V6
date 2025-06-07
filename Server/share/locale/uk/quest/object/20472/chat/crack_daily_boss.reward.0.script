@@ -1,0 +1,31 @@
+say_title ( c_locale ( 11324 ) ) 
+say ( c_mob_name ( 20472 ) ) 
+say ( "" ) 
+say ( c_locale ( 11299 ) ) 
+say ( c_locale ( 11293 ) ) 
+if select ( c_locale ( 11294 ) , c_locale ( 11295 ) ) ~= 1 then 
+return 
+end 
+say_title ( c_locale ( 11324 ) ) 
+say ( c_mob_name ( 20472 ) ) 
+say ( "" ) 
+if not pc . enough_inventory ( 31146 ) then 
+say ( c_locale ( 11296 ) ) 
+return 
+end 
+pc . setf ( "crack_skipia_dungeon" , "bluedragon_boss" , 0 ) 
+pc . setf ( "crack_snow_dungeon" , "hanma_boss" , 0 ) 
+pc . setf ( "crack_flame_dungeon" , "yamachun_boss" , 0 ) 
+pc . setf ( "crack_dawnmist_dungeon" , "thunder_boss" , 0 ) 
+if pc . getqf ( "count" ) >= 10 then 
+pc . give_item2 ( 31146 , 1 ) 
+pc . setqf ( "count" , 0 ) 
+say ( c_locale ( 11298 ) ) 
+say_reward ( c_locale ( 11297 ) ) 
+else 
+if number ( 1 , 100 ) <= 10 then 
+pc . give_item2 ( 31146 , 1 ) 
+say_reward ( c_locale ( 11297 ) ) 
+end 
+end 
+set_state ( "run" ) 

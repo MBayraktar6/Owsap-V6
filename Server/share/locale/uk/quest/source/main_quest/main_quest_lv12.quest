@@ -1,0 +1,125 @@
+quest main_quest_lv12 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 12 begin
+			set_state(gotoboss)
+		end
+	end
+
+	state gotoboss begin
+		when letter begin
+			send_letter(c_locale(4943))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4943))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(4943))
+			say(c_locale(4963))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4956))
+			say(c_locale(4973))
+			wait()
+
+			say_title(c_locale(114))
+			say_reward(c_locale(4974))
+
+			set_state(killgraydog)
+		end
+	end
+
+	state killgraydog begin
+		when letter begin
+			send_letter(c_locale(4975))
+		end
+
+		when button or info begin
+			say_title(c_locale(4975))
+			say(c_locale(4976))
+			say_reward(c_locale(4977, pc.getqf("state")))
+		end
+
+		when 107.kill begin
+			local count = pc.getqf("state") + 1
+			if count <= 10 then
+				pc.setqf("state", count)
+				q.set_counter(c_locale(4978), 10 - count)
+
+				if count == 10 then 
+					say_title(c_locale(114))
+					say_reward(c_locale(4979))
+					set_state(gotoboss2)
+				end
+			end
+		end
+
+		when 20355.chat.c_locale(4980) with pc.getqf("state") < 10 begin
+			say_title(c_locale(4956))
+			say(c_locale(4981))
+
+			if pc.is_gm() then
+				wait()
+				say_title(c_locale(4964))
+				say(c_locale(4965))
+				local s = select(c_locale(2625), c_locale(2600))
+				if s == 1 then
+					set_state(gotoboss2)
+				end
+			end
+		end
+
+		when 20355.chat.c_locale(4980) with pc.getqf("state") >= 10 begin
+			say_title(c_locale(4956))
+			say(c_locale(4966))
+			set_state(gotoboss2)
+		end
+	end
+
+	state gotoboss2 begin
+		when letter begin
+			send_letter(c_locale(4968))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4967))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(4969))
+			say(c_locale(4970))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4956))
+			say(c_locale(4971))
+			wait()
+
+			say_title(c_locale(205))
+			say_reward(c_locale(4972))
+
+			pc.give_exp2(24000)
+			pc.change_money(35000)
+			pc.setqf("state", 0)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv14","run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

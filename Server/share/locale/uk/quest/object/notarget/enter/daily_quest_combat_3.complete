@@ -1,0 +1,2 @@
+pc . setqf ( "count" , 0 ) 
+q . done ( ) 

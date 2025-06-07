@@ -1,0 +1,99 @@
+quest minigame_catchking begin
+	state start begin
+		when 20506.chat.c_locale(10118) begin
+			local reward = { 50928, 50929, 50930 }
+
+			local opt = {}
+			for i = 1, table.getn(reward) do
+				table.insert(opt, c_item_name(reward[i]))
+			end
+			table.insert(opt, c_locale(11749))
+
+			local sel = select_table(opt)
+			if sel == table.getn(opt) then
+				return
+			end
+
+			local group = show_special_item_group(reward[sel], 14)
+
+			say_item_vnum(reward[sel])
+			say_reward(c_locale(10123 + (sel - 1)))
+
+			local step = 1
+			local pause = false
+			repeat
+				for i = step, table.getn(group) do
+					local vnum = group[i][1]
+					local count = group[i][2]
+
+					if vnum == 1 then -- gold
+						say_reward(c_locale(5400, number_to_money_string(count)))
+					elseif vnum == 2 then -- exp
+						say_reward(c_locale(5399, number_to_money_string(count)))
+					else
+						say_reward(c_locale(6139, c_item_name(vnum), count))
+					end
+
+					if i == 4 and i != table.getn(group) then
+						step = i + 1
+						pause = true
+						break
+					end
+
+					if group[i][3] > 0 and i != table.getn(group) then
+						step = group[i][3] + 1
+						pause = true
+						break
+					end
+
+					pause = false
+				end
+
+				if pause then
+					say()
+					wait()
+				end
+			until pause == false
+		end
+
+		when 20506.chat.c_locale(10119) begin
+			local opt = {
+				c_locale(10120),
+				c_locale(10121),
+				c_locale(10146)
+			}
+			table.insert(opt, c_locale(11749))
+
+			local sel = select_table(opt)
+			if sel == table.getn(opt) then
+				return
+			end
+
+			if sel == 1 then
+				say_title(c_locale(10126))
+				say(c_locale(10127))
+				say(c_locale(10128))
+				say(c_locale(10129))
+				say(c_locale(10130))
+			end
+
+			if sel == 2 then
+				say_title(c_locale(10131))
+				local total_score = game.get_catchking_score(true)
+				for i = 1, table.getn(total_score) do
+					say(c_locale(10132 + (i - 1), total_score[i][1], total_score[i][3]))
+				end
+				say_reward(c_locale(10142, game.get_catchking_myscore(true)))
+			end
+
+			if sel == 3 then
+				say_title(c_locale(10147))
+				local best_score = game.get_catchking_score(false)
+				for i = 1, table.getn(best_score) do
+					say(c_locale(10132 + (i - 1), best_score[i][1], best_score[i][3]))
+				end
+				say_reward(c_locale(10142, game.get_catchking_myscore(false)))
+			end
+		end
+	end
+end

@@ -1,0 +1,96 @@
+local use_ticket = 0 
+if pc . has_item_from_special_item_group ( GuildDragonLairSetting . Guild . TicketGroup ) then 
+say ( c_locale ( 1835 ) ) 
+use_ticket = select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) 
+end 
+say ( c_locale ( 1769 ) ) 
+local lair_name_list = { 
+c_locale ( 1770 ) , 
+c_locale ( 1771 ) , 
+c_locale ( 1772 ) , 
+} 
+table . insert ( lair_name_list , c_locale ( 1845 ) ) 
+local lair_choice = select_table ( lair_name_list ) 
+if lair_choice >= table . getn ( lair_name_list ) then 
+return 
+end 
+local lair_type = math . max ( lair_choice - 1 , 0 ) 
+if lair_type == 0 then 
+if game . get_event_flag ( "red_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+if use_ticket ~= 1 then 
+say ( c_locale ( 1773 , GuildDragonLairSetting . Guild . LadderPoint ) ) 
+say ( c_locale ( 1774 , GuildDragonLairSetting . Guild . LadderPoint / 2 ) ) 
+say ( c_locale ( 1775 , GuildDragonLairSetting . Guild . LadderPoint / 2 ) ) 
+say ( c_locale ( 1777 ) ) 
+if select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) == 2 then 
+return 
+end 
+else 
+say ( c_locale ( 1837 ) ) 
+say ( c_locale ( 1838 ) ) 
+say ( c_locale ( 1840 ) ) 
+use_ticket = select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) 
+if use_ticket ~= 1 then 
+return 
+end 
+end 
+local channel = guild . get_event_flag ( "dragonlair_channel" ) 
+local wait_time = guild . get_event_flag ( "dragonlair_wait_time" ) 
+local create_time = guild . get_event_flag ( "create_time" ) 
+if channel ~= 0 then 
+say ( c_locale ( 1780 ) ) 
+return 
+end 
+if use_ticket ~= 1 then 
+if channel == 0 and get_global_time ( ) - wait_time < GuildDragonLairSetting . Guild . WaitTime then 
+say ( c_locale ( 1783 ) ) 
+return 
+end 
+end 
+if get_global_time ( ) - create_time < 86400 then 
+say ( c_locale ( 1843 ) ) 
+return 
+end 
+if guild . level ( pc . get_guild ( ) ) < GuildDragonLairSetting . Guild . GuildLevel then 
+say ( c_locale ( 1782 ) ) 
+return 
+end 
+if guild . get_near_count ( ) < GuildDragonLairSetting . Guild . MinMember and not pc . is_gm ( ) then 
+say ( c_locale ( 13817 ) ) 
+return 
+end 
+if use_ticket ~= 1 then 
+if guild . get_ladder_point ( ) < GuildDragonLairSetting . Guild . LadderPoint then 
+say ( c_locale ( 1781 ) ) 
+return 
+end 
+end 
+if guild . get_any_war ( ) ~= 0 then 
+say ( c_locale ( 1784 ) ) 
+return 
+end 
+if use_ticket == 1 then 
+if not pc . has_item_from_special_item_group ( GuildDragonLairSetting . Guild . TicketGroup ) then 
+say ( c_locale ( 1836 ) ) 
+return 
+end 
+end 
+if guild_dragonlair . register_guild ( lair_type , use_ticket ) then 
+say ( c_locale ( 1779 ) ) 
+else 
+say ( c_locale ( 1789 ) ) 
+end 
+elseif lair_type == 1 then 
+if game . get_event_flag ( "blue_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+elseif lair_type == 2 then 
+if game . get_event_flag ( "green_guild_dragonlair" ) == 0 then 
+say ( c_locale ( 1778 ) ) 
+return 
+end 
+end 

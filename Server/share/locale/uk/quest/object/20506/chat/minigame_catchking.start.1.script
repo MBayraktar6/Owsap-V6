@@ -1,0 +1,33 @@
+local opt = { 
+c_locale ( 10120 ) , 
+c_locale ( 10121 ) , 
+c_locale ( 10146 ) 
+} 
+table . insert ( opt , c_locale ( 11749 ) ) 
+local sel = select_table ( opt ) 
+if sel == table . getn ( opt ) then 
+return 
+end 
+if sel == 1 then 
+say_title ( c_locale ( 10126 ) ) 
+say ( c_locale ( 10127 ) ) 
+say ( c_locale ( 10128 ) ) 
+say ( c_locale ( 10129 ) ) 
+say ( c_locale ( 10130 ) ) 
+end 
+if sel == 2 then 
+say_title ( c_locale ( 10131 ) ) 
+local total_score = game . get_catchking_score ( true ) 
+for i = 1 , table . getn ( total_score ) begin 
+say ( c_locale ( 10132 + ( i - 1 ) , total_score [ i ] [ 1 ] , total_score [ i ] [ 3 ] ) ) 
+end 
+say_reward ( c_locale ( 10142 , game . get_catchking_myscore ( true ) ) ) 
+end 
+if sel == 3 then 
+say_title ( c_locale ( 10147 ) ) 
+local best_score = game . get_catchking_score ( false ) 
+for i = 1 , table . getn ( best_score ) begin 
+say ( c_locale ( 10132 + ( i - 1 ) , best_score [ i ] [ 1 ] , best_score [ i ] [ 3 ] ) ) 
+end 
+say_reward ( c_locale ( 10142 , game . get_catchking_myscore ( false ) ) ) 
+end 

@@ -1,0 +1,25 @@
+Group	golem_1
+{
+	Vnum	1501
+	1	1501	6
+	2	1502	4
+}
+Group	golem_2
+{
+	Vnum	1502
+	1	1501	4
+	2	1502	6
+}
+Group	golem_3
+{
+	Vnum	1503
+	1	1501	2
+	2	1502	5
+	3	1503	3
+}
+Group	golem_4
+{
+	Vnum	1504
+	1	1502	6
+	2	1503	4
+}

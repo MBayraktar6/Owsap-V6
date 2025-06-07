@@ -1,0 +1,24 @@
+#
+# ¼ö·æ¼®
+#
+
+Group	¼ö·æ¼®A
+{
+	Vnum	8031
+	Leader	"¼ö·æ¼®"	8031
+}
+Group	¼ö·æ¼®B
+{
+	Vnum	8032
+	Leader	"¼ö·æ¼®"	8032
+}
+Group	¼ö·æ¼®C
+{
+	Vnum	8033
+	Leader	"¼ö·æ¼®"	8033
+}
+Group	¼ö·æ¼®D
+{
+	Vnum	8034
+	Leader	"¼ö·æ¼®"	8034
+}

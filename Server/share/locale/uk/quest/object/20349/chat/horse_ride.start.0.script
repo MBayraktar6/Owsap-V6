@@ -1,0 +1,20 @@
+if get_global_time ( ) - pc . getqf ( "ride_time" ) < 3600 then 
+say ( c_locale ( 2187 ) ) 
+else 
+local horse_ticket_vnum = 50005 
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2188 ) ) 
+local s = select ( c_locale ( 4136 ) , c_locale ( 2189 ) ) 
+if s == 1 then 
+if pc . count_item ( horse_ticket_vnum ) > 0 then 
+if true == horse . is_summon ( ) then 
+horse . unsummon ( ) 
+end 
+pc . remove_item ( horse_ticket_vnum , 1 ) 
+pc . mount ( 20030 , 600 ) 
+pc . setqf ( "ride_time" , get_global_time ( ) ) 
+else 
+say ( c_locale ( 2190 ) ) 
+end 
+end 
+end 

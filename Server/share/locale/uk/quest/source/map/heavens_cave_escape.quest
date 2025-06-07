@@ -1,0 +1,25 @@
+quest heavens_cave_escape begin
+	state start begin
+		when login or levelup with pc.get_level() >= 75 begin
+			set_state(heavens_cave_escape)
+		end
+	end
+
+	state heavens_cave_escape begin
+		when 20090.chat.c_locale(2026) with pc.get_map_index() == 72 begin
+			say_title(c_locale(2027))
+			say(c_locale(2028))
+			local a = select(c_locale(2625), c_locale(2600))
+			if a == 1 then
+				say_title(c_locale(2027))
+				say(c_locale(2029))
+				wait()
+				pc.warp(284460, 810495)
+				return
+			end
+
+			say_title(c_locale(2027))
+			say(c_locale(2030))
+		end
+	end
+end

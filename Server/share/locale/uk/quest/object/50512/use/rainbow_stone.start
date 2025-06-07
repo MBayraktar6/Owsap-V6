@@ -1,0 +1,73 @@
+if not pc . is_gm ( ) then 
+say ( "Only the game masters can reveal all skills." ) 
+return 
+end 
+if pc . get_skill_group ( ) == 0 then 
+if select ( "Skill Group 1" , "Skill Group 2" ) == 1 then 
+pc . set_skill_group ( 1 ) 
+else 
+pc . set_skill_group ( 2 ) 
+end 
+else 
+if select ( "Change Skill Group" , "Cancel" ) == 1 then 
+if pc . get_skill_group ( ) == 1 then 
+pc . set_skill_group ( 2 ) 
+elseif pc . get_skill_group ( ) == 2 then 
+pc . set_skill_group ( 1 ) 
+end 
+end 
+end 
+if pc . get_job ( ) == 0 then 
+if pc . get_skill_group ( ) == 1 then 
+test_chat ( "JOB 0, SKILL GROUP 1" ) 
+rainbow_stone . train ( 0 , 1 ) 
+elseif pc . get_skill_group ( ) == 2 then 
+test_chat ( "JOB 0, SKILL GROUP 2" ) 
+rainbow_stone . train ( 0 , 2 ) 
+else 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "FAIL_NO_SKILL_GROUP" ) 
+end 
+elseif pc . get_job ( ) == 1 then 
+if pc . get_skill_group ( ) == 1 then 
+test_chat ( "JOB 1, SKILL GROUP 1" ) 
+rainbow_stone . train ( 1 , 1 ) 
+elseif pc . get_skill_group ( ) == 2 then 
+test_chat ( "JOB 1, SKILL GROUP 2" ) 
+rainbow_stone . train ( 1 , 2 ) 
+else 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "FAIL_NO_SKILL_GROUP" ) 
+end 
+elseif pc . get_job ( ) == 2 then 
+if pc . get_skill_group ( ) == 1 then 
+test_chat ( "JOB 2, SKILL GROUP 1" ) 
+rainbow_stone . train ( 2 , 1 ) 
+elseif pc . get_skill_group ( ) == 2 then 
+test_chat ( "JOB 2, SKILL GROUP 2" ) 
+rainbow_stone . train ( 2 , 2 ) 
+else 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "FAIL_NO_SKILL_GROUP" ) 
+end 
+elseif pc . get_job ( ) == 3 then 
+if pc . get_skill_group ( ) == 1 then 
+test_chat ( "JOB 3, SKILL GROUP 1" ) 
+rainbow_stone . train ( 3 , 1 ) 
+elseif pc . get_skill_group ( ) == 2 then 
+test_chat ( "JOB 3, SKILL GROUP 2" ) 
+rainbow_stone . train ( 3 , 2 ) 
+else 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "FAIL_NO_SKILL_GROUP" ) 
+end 
+elseif pc . get_job ( ) == 4 then 
+if pc . get_skill_group ( ) == 1 then 
+test_chat ( "JOB 4, SKILL GROUP 1" ) 
+rainbow_stone . train ( 4 , 1 ) 
+elseif pc . get_skill_group ( ) == 2 then 
+test_chat ( "JOB 4, SKILL GROUP 2" ) 
+else 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "FAIL_NO_SKILL_GROUP" ) 
+end 
+else 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "FAIL_UNIDENTIFIED_JOB" ) 
+end 
+rainbow_stone . train_horse ( ) 
+setskin ( NOWINDOW ) 

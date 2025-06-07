@@ -1,0 +1,85 @@
+quest the_metin_stone begin
+	state start begin
+	end
+
+	state run begin
+		function update_counter()
+			local count = 0
+			local remaining_count = 1 - pc.getqf("hunted_metin_stone")
+
+			if remaining_count < 0 then
+				remaining_count = 0
+			end
+
+			count = count + remaining_count
+			q.set_counter_value(count)
+			if count == 0 then
+				notice_multiline(c_locale(6394), notice)
+				set_state("goto_myonghorang")
+			end
+		end
+
+		when enter begin
+			pc.setqf("hunted_metin_stone", 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(6389))
+			q.set_counter_name(c_locale(6413))
+			the_metin_stone.update_counter()
+		end
+
+		when button or info begin
+			say_title(c_locale(6389))
+			say(c_locale(6392))
+		end
+
+		when 8115.kill begin
+			local count = pc.getqf("hunted_metin_stone")
+			pc.setqf("hunted_metin_stone", count + 1)
+			the_metin_stone.update_counter()
+		end
+
+		when 20400.chat.c_locale(6389) begin
+			say_title(c_mob_name(20400))
+			say(c_locale(6393, 1))
+		end
+
+		when leave begin
+			pc.setqf("hunted_metin_stone", 0)
+			q.done()
+		end
+	end
+
+	state goto_myonghorang begin
+		when letter begin
+			send_letter(c_locale(6408))
+			local v = find_npc_by_vnum(20400)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6408))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6408))
+			say(c_locale(6394))
+		end
+
+		when __TARGET__.target.click or 20400.chat.c_locale(6390) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(450)
+
+			say_title(c_mob_name(20400))
+			say(c_locale(6396))
+			say_reward(c_locale(6882, 450))
+
+			set_state("__COMPLETE__")
+			set_quest_state("sung_mahi", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

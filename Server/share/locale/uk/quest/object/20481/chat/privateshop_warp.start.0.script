@@ -1,0 +1,5 @@
+say_title ( c_locale ( 12780 ) ) 
+say ( c_locale ( 12787 ) ) 
+if select ( c_locale ( 12784 ) , c_locale ( 12785 ) ) == 1 then 
+warp_to_village ( ) 
+else return end 

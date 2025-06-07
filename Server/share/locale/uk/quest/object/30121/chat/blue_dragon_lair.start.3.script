@@ -1,0 +1,48 @@
+if get_time ( ) > pc . getqf ( "charge_cooldown" ) then 
+pc . setqf ( "charge_cooldown" , 0 ) 
+end 
+local setting = blue_dragon_lair . setting ( ) 
+local lair_reset_time = pc . getqf ( "lair_reset_time" ) 
+if pc . getqf ( "entries" ) >= setting . access_limit and lair_reset_time > get_time ( ) then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 901 , get_time_remaining ( lair_reset_time - get_time ( ) ) ) ) 
+return 
+end 
+if pc . getqf ( "charged" ) > 0 then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 897 ) ) 
+return 
+end 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 899 ) ) 
+local charge_cooldown = pc . getqf ( "charge_cooldown" ) 
+if charge_cooldown > get_time ( ) then 
+say_reward ( c_locale ( 902 , get_time_remaining ( charge_cooldown - get_time ( ) ) ) ) 
+end 
+local charge_name_table = { 
+c_locale ( 870 , setting . access_item [ 1 ] [ 2 ] ) , 
+c_locale ( 871 , setting . access_item [ 1 ] [ 2 ] ) , 
+} 
+table . insert ( charge_name_table , c_locale ( 877 ) ) 
+local charge_type = select_table ( charge_name_table ) 
+if charge_type < table . getn ( charge_name_table ) then 
+local charge_item_vnum = setting . access_item [ charge_type ] [ 1 ] 
+local charge_item_count = setting . access_item [ charge_type ] [ 2 ] 
+if charge_type == 1 and charge_cooldown > get_time ( ) then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 903 ) ) 
+return 
+end 
+if pc . count_item ( charge_item_vnum ) >= charge_item_count then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 898 ) ) 
+pc . setqf ( "charged" , 1 ) 
+if charge_type == 1 then 
+pc . setqf ( "charge_cooldown" , get_time ( ) + setting . charge_cooldown ) 
+end 
+pc . remove_item ( charge_item_vnum , charge_item_count ) 
+else 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 900 ) ) 
+end 
+end 

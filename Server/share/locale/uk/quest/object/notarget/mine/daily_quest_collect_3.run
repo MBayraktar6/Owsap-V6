@@ -1,0 +1,2 @@
+pc . setqf ( "count" , pc . getqf ( "count" ) + 1 ) 
+daily_quest_collect_3 . update ( ) 

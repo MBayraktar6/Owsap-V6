@@ -1,0 +1,61 @@
+# Main Quests (0)
+0	main_quest_lv1
+0	main_quest_lv2
+0	main_quest_lv3
+0	main_quest_lv6
+0	main_quest_lv7
+0	main_quest_lv9
+0	main_quest_lv10
+0	main_quest_lv12
+0	main_quest_lv14
+0	main_quest_lv15
+0	main_quest_lv16
+0	main_quest_lv27
+0	main_quest_lv30
+0	a_life_reborn
+0	frenzied_beasts
+0	meteorite_hunt
+0	source_of_the_devil
+0	sung_mahi
+0	the_metin_stone
+0	unknown_stone
+
+# Side Quests (1)
+1	find_squareguard
+
+# Hunting Missions (2)
+2	subquest_01
+2	subquest_02
+2	subquest_03
+
+# Event Quests (3)
+3	minigame_roulette
+
+# Biologist Quests (4)
+4	make_herb_lv4
+4	collect_quest_lv30
+4	collect_quest_lv40
+4	collect_quest_lv50
+4	collect_quest_lv60
+4	collect_quest_lv70
+4	collect_quest_lv80
+4	collect_quest_lv85
+4	collect_quest_lv90
+4	collect_quest_lv92
+4	collect_quest_lv94
+
+# Game Missions (5)
+5	acce_cloth
+
+# Mission Book Quests (6)
+
+# Daily Quest (7)
+7	daily_quest_mgr
+7	daily_quest_collect_3
+7	daily_quest_collect_4
+7	daily_quest_combat_1
+7	daily_quest_combat_2
+7	daily_quest_combat_3
+7	daily_quest_consume_2
+7	daily_quest_consume_3
+7	daily_quest_consume_5

@@ -1,0 +1,41 @@
+target . delete ( "teacher1" ) 
+local pc_job = pc . get_job ( ) 
+if pc_job ~= 0 then 
+say_title ( c_locale ( 8087 ) ) 
+say ( c_locale ( 8089 ) ) 
+if pc_job == 0 then 
+say_reward ( c_locale ( 8090 ) ) 
+elseif pc_job == 1 then 
+say_reward ( c_locale ( 8091 ) ) 
+elseif pc_job == 2 then 
+say_reward ( c_locale ( 8092 ) ) 
+elseif pc_job == 3 then 
+say_reward ( c_locale ( 8093 ) ) 
+end 
+return 
+end 
+say_title ( c_locale ( 8094 ) ) 
+say ( c_locale ( 8095 ) ) 
+say_reward ( c_locale ( 8096 ) ) 
+local s = select ( c_locale ( 8097 ) , c_locale ( 8098 ) ) 
+if 2 == s then 
+return 
+end 
+if pc . get_job ( ) ~= 0 or pc . get_skill_group ( ) ~= 0 then 
+test_chat ( c_locale ( 8100 , bool_to_str ( npc_is_same_job ( ) ) .. "pc.get_skill_group:" .. pc . get_skill_group ( ) .. "pc_job:" .. pc . get_job ( ) ) ) 
+return 
+end 
+set_state ( "start" ) 
+pc . set_skill_group ( 1 ) 
+pc . clear_skill ( ) 
+char_log ( 0 , "CLEAR_SKILL" , "Cleared skill by teacher" ) 
+say_title ( c_locale ( 8101 ) ) 
+say ( c_locale ( 8102 ) ) 
+if not pc . is_clear_skill_group ( ) then 
+say ( c_locale ( 8103 ) ) 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 8104 ) ) 
+else 
+say_reward ( c_locale ( 8105 ) ) 
+end 
+clear_letter ( ) 

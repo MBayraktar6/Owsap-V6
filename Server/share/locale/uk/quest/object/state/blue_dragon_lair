@@ -1,0 +1,49 @@
+blue_dragon_lair={["start"]=0,setting= function ()local setting = { } 
+setting . entry_level = 75 
+setting . entry_man = { } 
+setting . entry_man . vnum = 30121 
+setting . entry_man . x = 246 
+setting . entry_man . y = 173 
+setting . entry_map = { } 
+setting . entry_map . index = 73 
+setting . entry_map . x = 1811 
+setting . entry_map . y = 12207 
+setting . lair_map = { } 
+setting . lair_map . index = 208 
+setting . lair_map . x = 8429 
+setting . lair_map . y = 10668 
+setting . access_limit = 6 
+setting . access_item = { 
+{ 30179 , 5 } , 
+{ 71122 , 70 } , 
+} 
+setting . charge_cooldown = 60 * 60 * 24 * 1 
+if is_test_server ( ) then 
+setting . entry_wait_time = 15 
+else 
+setting . entry_wait_time = 60 * 2 
+end 
+setting . lair_duration = 60 * 60 * 1 
+setting . lair_reset_time = 60 * 60 * 24 * 1 
+setting . lair_exit_time = 60 * 3 
+return setting 
+end ,inside= function (map_index)local setting = blue_dragon_lair . setting ( ) 
+return map_index >= setting . lair_map . index * 10000 and map_index < ( setting . lair_map . index + 1 ) * 10000 
+end ,clear_server_timers= function (dungeon_map_index)clear_server_timer ( "blue_dragon_lair_45m_left_timer" , dungeon_map_index ) 
+clear_server_timer ( "blue_dragon_lair_30m_left_timer" , dungeon_map_index ) 
+clear_server_timer ( "blue_dragon_lair_15m_left_timer" , dungeon_map_index ) 
+clear_server_timer ( "blue_dragon_lair_5m_left_timer" , dungeon_map_index ) 
+clear_server_timer ( "blue_dragon_lair_1m_left_timer" , dungeon_map_index ) 
+clear_server_timer ( "blue_dragon_lair_0m_left_timer" , dungeon_map_index ) 
+clear_server_timer ( "blue_dragon_lair_end_timer" , dungeon_map_index ) 
+end ,clear_dungeon= function (dungeon_map_index)local setting = blue_dragon_lair . setting ( ) 
+d . clear_regen ( ) 
+d . purge ( ) 
+d . setqf ( "charged" , 0 ) 
+d . setf ( "access_lair" , 0 ) 
+d . setf ( "blue_dragon_alive" , 0 ) 
+d . setf ( "party_leader_pid" , 0 ) 
+d . set_warp_location ( setting . entry_map . index , setting . entry_map . x , setting . entry_map . y ) 
+d . exit_all ( ) 
+d . destroy ( dungeon_map_index ) 
+end }

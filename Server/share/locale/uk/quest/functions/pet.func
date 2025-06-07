@@ -1,0 +1,7 @@
+pet.summon
+pet.unsummon
+pet.is_summon
+pet.count_summoned
+pet.spawn_effect
+pet.can_spawn
+pet.is_summoned_looter

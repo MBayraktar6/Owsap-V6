@@ -1,0 +1,46 @@
+event_easter_2012 . spawn_metin_at_login ( ) 
+local settings = event_easter_2012 . get_settings ( ) 
+local reward_table = event_easter_2012 . get_reward_table_for_item ( ) 
+local amount_to_remove = 0 
+local amount_to_give = 0 
+local vnum_to_give = 0 
+local number_of_eggs = event_easter_2012 . get_number_of_eggs ( ) 
+local wants_items = 2 
+while wants_items == 2 begin 
+vnum_to_give = event_easter_2012 . get_random_reward_vnum ( reward_table ) 
+local amount_needed = event_easter_2012 . get_reward_amount_for_vnum ( reward_table , vnum_to_give ) 
+if amount_needed == 20 then 
+amount_to_remove = 20 
+amount_to_give = 1 
+say_title ( c_locale ( 1041 ) ) 
+say ( c_locale ( 1045 , amount_to_give ) ) 
+say ( c_locale ( 1048 , amount_to_remove ) ) 
+say_item_vnum ( vnum_to_give ) 
+else 
+if number_of_eggs > 20 then 
+amount_to_remove = 20 
+else 
+amount_to_remove = number_of_eggs 
+end 
+if vnum_to_give < 27200 then 
+amount_to_give = amount_to_remove * 3 
+else 
+amount_to_give = amount_to_remove * 5 
+end 
+say_title ( c_locale ( 1041 ) ) 
+say ( c_locale ( 1047 ) ) 
+say ( c_locale ( 1046 , amount_to_remove ) ) 
+say ( c_locale ( 1045 , amount_to_give ) ) 
+say_item_vnum ( vnum_to_give ) 
+end 
+wants_items = 1 
+end 
+if ( remove_item_range ( amount_to_remove , settings . eggvnums . first , settings . eggvnums . last ) ) then 
+pc . give_item2 ( vnum_to_give , amount_to_give ) 
+end 
+wait ( ) 
+say_title ( c_locale ( 1041 ) ) 
+say ( c_locale ( 1051 ) ) 
+if not event_easter_2012 . has_rabbit ( ) then 
+npc . purge ( ) 
+end 

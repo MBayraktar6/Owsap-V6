@@ -1,0 +1,193 @@
+#
+# Maze Dungeon
+#
+# metin2_map_maze_dungeon1
+# metin2_map_maze_dungeon2
+# metin2_map_maze_dungeon3
+#
+
+Group	MazeDungeon_01_01
+{
+	Vnum	6801
+	Leader	"Gnoll Warrior"	6800
+	1	"Gnoll Warrior"	6800
+	2	"Gnoll Warrior"	6800
+}
+Group	MazeDungeon_01_02
+{
+	Vnum	6802
+	Leader	"Gnoll Warrior"	6800
+	1	"Gnoll Warrior"	6800
+	2	"Gnoll Scout"	6801
+}
+Group	MazeDungeon_01_03
+{
+	Vnum	6803
+	Leader	"Gnoll Sorcerer"	6802
+	1	"Gnoll Sorcerer"	6802
+	2	"Gnoll Warrior"	6800
+	3	"Gnoll Warrior"	6800
+}
+Group	MazeDungeon_01_04
+{
+	Vnum	6804
+	Leader	"Gnoll Sorcerer"	6802
+	1	"Gnoll Sorcerer"	6802
+	2	"Gnoll Warrior"	6800
+	3	"Gnoll Warrior"	6800
+}
+Group	MazeDungeon_01_05
+{
+	Vnum	6805
+	Leader	"Gnoll Sorcerer"	6802
+	1	"Gnoll Sorcerer"	6802
+	2	"Gnoll Scout"	6801
+	3	"Gnoll Warrior"	6800
+}
+Group	MazeDungeon_01_06
+{
+	Vnum	6806
+	Leader	"Gnoll Sorcerer"	6802
+	1	"Gnoll Sorcerer"	6802
+	2	"Gnoll Scout"	6801
+	3	"Gnoll Marshal"	6803
+}
+Group	MazeDungeon_01_07
+{
+	Vnum	6807
+	Leader	"Gnoll Sorcerer"	6802
+	1	"Gnoll Sorcerer"	6802
+	2	"Gnoll Marshal"	6803
+	3	"Gnoll Scout"	6801
+}
+Group	MazeDungeon_02_01
+{
+	Vnum	6808
+	Leader	"Gnoll Soldier"	6806
+	1	"Gnoll Soldier"	6806
+	2	"Gnoll Soldier"	6806
+}
+Group	MazeDungeon_02_02
+{
+	Vnum	6809
+	Leader	"Gnoll Spy"	6807
+	1	"Gnoll Soldier"	6806
+	2	"Gnoll Soldier"	6806
+}
+Group	MazeDungeon_02_03
+{
+	Vnum	6810
+	Leader	"Gnoll Spy"	6807
+	1	"Gnoll Spy"	6807
+	2	"Gnoll Soldier"	6806
+	3	"Gnoll Soldier"	6806
+}
+Group	MazeDungeon_02_04
+{
+	Vnum	6811
+	Leader	"Gnoll Spy"	6807
+	1	"Gnoll Soldier"	6806
+	2	"Gnoll Soldier"	6806
+	3	"Gnoll Soldier"	6806
+}
+Group	MazeDungeon_02_05
+{
+	Vnum	6812
+	Leader	"Gnoll Spy"	6807
+	1	"Gnoll Spy"	6807
+	2	"Gnoll Spy"	6807
+}
+Group	MazeDungeon_02_06
+{
+	Vnum	6813
+	Leader	"Gnoll Magician"	6808
+	1	"Gnoll Spy"	6807
+	2	"Gnoll Soldier"	6806
+	3	"Gnoll Soldier"	6806
+}
+Group	MazeDungeon_02_07
+{
+	Vnum	6814
+	Leader	"Gnoll Magician"	6808
+	1	"Gnoll Magician"	6808
+	2	"Gnoll Spy"	6807
+	3	"Gnoll Soldier"	6806
+}
+Group	MazeDungeon_02_08
+{
+	Vnum	6815
+	Leader	maze_dungeon2	6809
+	1	"Gnoll Magician"	6808
+	2	"Gnoll Magician"	6808
+}
+Group	MazeDungeon_03_01
+{
+	Vnum	6816
+	Leader	"Ahtrin Warrior"	6810
+	1	"Ahtrin Warrior"	6810
+	2	"Ahtrin Warrior"	6810
+}
+Group	MazeDungeon_03_02
+{
+	Vnum	6817
+	Leader	"Ahtrin Scout"	6811
+	1	"Ahtrin Warrior"	6810
+	2	"Ahtrin Warrior"	6810
+}
+Group	MazeDungeon_03_03
+{
+	Vnum	6818
+	Leader	"Ahtrin Scout"	6811
+	1	"Ahtrin Scout"	6811
+	2	"Ahtrin Warrior"	6810
+	3	"Ahtrin Warrior"	6810
+}
+Group	MazeDungeon_03_04
+{
+	Vnum	6819
+	Leader	"Ahtrin Scout"	6811
+	1	"Ahtrin Scout"	6811
+	2	"Ahtrin Warrior"	6810
+	3	"Ahtrin Warrior"	6810
+}
+Group	MazeDungeon_03_05
+{
+	Vnum	6820
+	Leader	"Ahtrin Scout"	6811
+	1	"Ahtrin Scout"	6811
+	2	"Ahtrin Scout"	6811
+}
+Group	MazeDungeon_03_06
+{
+	Vnum	6821
+	Leader	"Ahtrin Commander"	6813
+	1	"Ahtrin Scout"	6811
+	2	"Ahtrin Warrior"	6810
+	3	"Ahtrin Warrior"	6810
+}
+Group	MazeDungeon_03_07
+{
+	Vnum	6822
+	Leader	"Ahtrin Commander"	6813
+	1	"Ahtrin Commander"	6813
+	2	"Ahtrin Scout"	6811
+	3	"Ahtrin Warrior"	6810
+}
+Group	MazeDungeon_03_08
+{
+	Vnum	6823
+	Leader	"Ahtrin Sorcerer"	6812
+	1	"Ahtrin Commander"	6813
+	2	"Ahtrin Scout"	6811
+	3	"Ahtrin Warrior"	6810
+	4	"Ahtrin Warrior"	6810
+}
+Group	MazeDungeon_03_09
+{
+	Vnum	6824
+	Leader	"Ahtrin Warrior"	6810
+	1	"Ahtrin Sorcerer"	6812
+	2	"Ahtrin Commander"	6813
+	3	"Ahtrin Scout"	6811
+	4	"Ahtrin Scout"	6811
+}

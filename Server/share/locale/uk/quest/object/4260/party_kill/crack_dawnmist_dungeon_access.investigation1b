@@ -1,0 +1,6 @@
+pc . setqf ( "kill_count" , pc . getqf ( "kill_count" ) + 1 ) 
+q . set_counter ( c_locale ( 11595 ) , 20 - pc . getqf ( "kill_count" ) ) 
+if pc . getqf ( "kill_count" ) >= 20 then 
+notice_multiline ( c_locale ( 11527 ) , notice ) 
+set_state ( "investigation1_reward" ) 
+end 

@@ -1,0 +1,48 @@
+define santa 20126
+define nog_pocket 50216
+define nog_pocket_qty 6
+define nog_give_time 86400 -- 24h
+
+quest new_christmas_2012_nog begin
+	state start begin
+	end
+
+	state nog_first_give begin
+		when santa.chat.c_locale(6696) begin
+			say_title(c_mob_name(santa))
+			say(c_locale(6697))
+			wait()
+
+			say_title(c_mob_name(santa))
+			say(c_locale(6698))
+			wait()
+
+			say_title(c_mob_name(santa))
+			say(c_locale(6699))
+
+			pc.give_item2(nog_pocket, nog_pocket_qty)
+			pc.setqf("last_nog_give_time", get_global_time())
+
+			set_state(nog_give)
+		end
+	end
+
+	state nog_give begin
+		when santa.chat.c_locale(6700) begin
+			say_title(c_mob_name(santa))
+			say(c_locale(6701))
+			wait()
+
+			if get_global_time() - pc.getqf("last_nog_give_time") >= nog_give_time then
+				say_title(c_mob_name(santa))
+				say(c_locale(6702))
+
+				pc.setqf("last_nog_give_time", get_global_time())
+				pc.give_item2(nog_pocket, nog_pocket_qty)
+			else
+				say_title(c_mob_name(20126))
+				say(c_locale(6703))
+			end
+		end
+	end
+end

@@ -1,0 +1,24 @@
+local setting = devilcatacomb_zone . setting ( ) 
+if d . getf ( "devilcatacomb_floor2_stone_clicked" ) == 0 or is_test_server ( ) then 
+if not devilcatacomb_zone . is_dc2_doors_clear ( ) and not is_test_server ( ) then 
+say ( c_locale ( 819 ) ) 
+wait ( ) 
+return 
+end 
+say ( c_locale ( 820 ) ) 
+wait ( ) 
+say ( c_locale ( 821 ) ) 
+wait ( ) 
+local s = select ( c_locale ( 811 ) , c_locale ( 812 ) ) 
+if s == 1 then 
+if d . getf ( "devilcatacomb_floor2_stone_clicked" ) == 0 or is_test_server ( ) then 
+d . setf ( "devilcatacomb_floor2_stone_clicked" , 1 ) 
+d . setqf2 ( "devilcatacomb_zone" , "last_exit_time" , get_global_time ( ) ) 
+d . set_item_group ( "reapers_credit" , 3 , setting . reapers_credit3 , 1 , setting . reapers_credit2 , 1 , setting . reapers_credit1 , 1 ) 
+d . say_diff_by_item_group ( "reapers_credit" , c_locale ( 822 ) , c_locale ( 823 ) ) 
+timer ( "devilcatacomb_floor3_enter_timer" , 7 ) 
+end 
+end 
+else 
+say ( c_locale ( 824 ) ) 
+end 

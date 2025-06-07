@@ -1,0 +1,8 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+if d . getf ( "blue_dragon_alive" ) ~= 1 then 
+d . party_notice ( c_locale_string ( 1820 ) ) 
+end 
+d . syschat ( c_locale_string ( 1821 ) ) 
+blue_dragon_lair . clear_server_timers ( ) 
+blue_dragon_lair . clear_dungeon ( d . get_map_index ( ) ) 
+end 

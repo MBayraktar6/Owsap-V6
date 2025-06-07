@@ -1,0 +1,8 @@
+if pc . is_gm ( ) then say ( c_locale ( 11684 ) ) 
+say ( c_locale ( 11685 ) ) 
+if select ( c_locale ( 11686 ) , c_locale ( 11687 ) ) == 1 then 
+setskin ( NOWINDOW ) 
+daily_quest_mgr . clear ( ) 
+set_state ( "reset" ) 
+end 
+ return end 

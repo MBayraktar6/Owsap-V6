@@ -1,0 +1,2 @@
+if event_easter . is_running ( ) then event_easter . metin_killed ( 8045 ) 
+ return end 

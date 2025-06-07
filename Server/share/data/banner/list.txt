@@ -1,0 +1,13 @@
+VNUM	NAME
+20127	bday1
+20128	bday2
+20129	bday3
+20130	bday4
+20131	bday5
+20132	bday6
+20133	bday7
+20134	solar
+20135	xmas
+20138	ramadan
+20142	halloween
+20143	easter

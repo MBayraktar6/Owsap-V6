@@ -1,0 +1,23 @@
+say ( c_locale ( 10107 ) ) 
+if select ( c_locale ( 10065 ) , c_locale ( 10066 ) ) == 1 then 
+if dw . is_started ( ) then 
+say ( c_locale ( 10111 ) ) 
+return 
+end 
+if not party . is_party ( ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 10099 ) ) 
+return 
+end 
+local pids = { party . get_member_pids ( ) } 
+if defense_wave . check_party ( pids ) then 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+pc . remove_item_from_special_item_group ( 10034 ) 
+pc . setf ( "defense_wave" , "cooldown" , get_time ( ) + 1800 ) 
+q . end_other_pc_block ( ) 
+end 
+say ( c_locale ( 10098 ) ) 
+dw . start ( ) 
+end 
+end 

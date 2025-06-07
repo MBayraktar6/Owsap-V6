@@ -1,0 +1,3 @@
+if not pc . is_engaged ( ) and not pc . is_married ( ) then say_title ( c_locale ( 6534 ) ) 
+say ( c_locale ( 6496 ) ) 
+ return end 

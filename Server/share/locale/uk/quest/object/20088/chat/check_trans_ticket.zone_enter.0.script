@@ -1,0 +1,25 @@
+say_title ( c_locale ( 181 ) ) 
+say ( c_locale ( 184 ) ) 
+wait ( ) 
+if pc . get_level ( ) < 40 then 
+say_reward ( c_locale ( 12043 ) ) 
+return 
+end 
+if not pc . has_item_from_special_item_group ( 10034 ) then 
+say_title ( c_locale ( 181 ) ) 
+say ( c_locale ( 186 ) ) 
+say_item_vnum ( 71095 ) 
+return 
+end 
+say_title ( c_locale ( 181 ) ) 
+say ( c_locale ( 185 ) ) 
+wait ( ) 
+if false == pc . can_warp ( ) then 
+say ( c_locale ( 183 ) ) 
+return 
+end 
+if pc . remove_item_from_special_item_group ( 10034 ) then 
+pc . warp ( 704100 , 464100 ) 
+else 
+char_log ( 0 , "CHECK_TRANS_TICKET" , string . format ( "FAILED TO REMOVE TICKET GROUP %d" , 10034 ) ) 
+end 

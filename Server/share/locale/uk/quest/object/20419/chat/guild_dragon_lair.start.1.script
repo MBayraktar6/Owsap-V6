@@ -1,0 +1,77 @@
+local s_name = { 
+c_locale ( 1806 ) , 
+c_locale ( 1764 ) , 
+c_locale ( 1776 ) , 
+c_locale ( 1776 ) , 
+c_locale ( 1798 ) , 
+c_locale ( 1809 ) , 
+c_locale ( 1807 ) , 
+c_locale ( 1808 ) , 
+c_locale ( 1810 ) , 
+c_locale ( 1811 ) , 
+} 
+table . insert ( s_name , c_locale ( 1845 ) ) 
+local s = select_table ( s_name ) 
+if s == table . getn ( s_name ) then 
+return 
+end 
+if s == 1 then 
+say ( c_locale ( 1820 , GuildDragonLairSetting . Guild . GuildLevel ) ) 
+say ( c_locale ( 1831 , GuildDragonLairSetting . Guild . LadderPoint ) ) 
+say ( c_locale ( 1842 , GuildDragonLairSetting . Guild . WaitTime ) ) 
+say ( c_locale ( 1812 , GuildDragonLairSetting . Guild . StoneVnum ) ) 
+say ( c_locale ( 1813 , GuildDragonLairSetting . Guild . Stage [ 1 ] . StoneHealthPct ) ) 
+say ( c_locale ( 1814 , GuildDragonLairSetting . Guild . Stage [ 2 ] . StoneHealthPct ) ) 
+say ( c_locale ( 1815 , GuildDragonLairSetting . Guild . Stage [ 3 ] . StoneHealthPct ) ) 
+elseif s == 2 then 
+say ( c_locale ( 1755 ) ) 
+say_reward ( c_locale ( 1754 , 20 ) ) 
+local level = tonumber ( input ( ) ) 
+if level == nil or level <= 0 then level = 3 end 
+if level > 20 then level = 20 end 
+GuildDragonLairSetting . Guild . GuildLevel = level 
+elseif s == 3 then 
+say ( c_locale ( 1756 ) ) 
+ladder_point = tonumber ( input ( ) ) 
+if ladder_point == nil or ladder_point <= 0 then ladder_point = 600 end 
+GuildDragonLairSetting . Guild . LadderPoint = ladder_point 
+elseif s == 4 then 
+say ( c_locale ( 1757 ) ) 
+waiting_time = tonumber ( input ( ) ) 
+if waiting_time == nil or waiting_time <= 0 then waiting_time = 10800 end 
+GuildDragonLairSetting . Guild . WaitTime = waiting_time 
+elseif s == 5 then 
+say ( c_locale ( 1758 ) ) 
+say_reward ( c_locale ( 1754 , 16 ) ) 
+max_member = tonumber ( input ( ) ) 
+if max_member == nil or max_member <= 0 then max_member = 16 end 
+if max_member > 16 then max_member = 16 end 
+GuildDragonLairSetting . Guild . MaxMember = MaxMember 
+elseif s == 6 then 
+say ( c_locale ( 1760 ) ) 
+guild_name = input ( ) 
+say ( c_locale ( 1759 ) ) 
+if select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) == 1 then 
+guild_dragonlair . cancel_guild ( guild_name ) 
+end 
+elseif s == 7 then 
+say ( c_locale ( 1816 ) ) 
+metin_stone_vnum = tonumber ( input ( ) ) 
+if metin_stone_vnum == nil or metin_stone_vnum <= 0 then metin_stone_vnum = 6118 end 
+GuildDragonLairSetting . Guild . StoneVnum = metin_stone_vnum 
+elseif s == 8 then 
+say ( c_locale ( 1817 ) ) 
+hp_pct = tonumber ( input ( ) ) 
+if hp_pct == nil or hp_pct <= 0 then hp_pct = 0 end 
+GuildDragonLairSetting . Guild . Stage [ 1 ] . StoneHealthPct = hp_pct 
+elseif s == 9 then 
+say ( c_locale ( 1818 ) ) 
+hp_pct = tonumber ( input ( ) ) 
+if hp_pct == nil or hp_pct <= 0 then hp_pct = 0 end 
+GuildDragonLairSetting . Guild . Stage [ 2 ] . StoneHealthPct = hp_pct 
+elseif s == 10 then 
+say ( c_locale ( 1819 ) ) 
+hp_pct = tonumber ( input ( ) ) 
+if hp_pct == nil or hp_pct <= 0 then hp_pct = 0 end 
+GuildDragonLairSetting . Guild . Stage [ 3 ] . StoneHealthPct = hp_pct 
+end 

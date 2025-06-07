@@ -1,0 +1,41 @@
+local setting = blue_dragon_lair . setting ( ) 
+local my_level = pc . get_level ( ) 
+if my_level < setting . entry_level then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 894 , tostring ( setting . entry_level - my_level ) ) ) 
+return 
+end 
+if get_time ( ) > pc . getqf ( "lair_reset_time" ) then 
+pc . setqf ( "entries" , 0 ) 
+end 
+local entries = pc . getqf ( "entries" ) 
+local remaining_entries = setting . access_limit - entries 
+local remaining_reset_time = pc . getqf ( "lair_reset_time" ) - get_time ( ) 
+if remaining_reset_time <= 0 then 
+remaining_reset_time = setting . lair_reset_time end 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 888 , remaining_entries , setting . access_limit , get_time_remaining ( remaining_reset_time ) ) ) 
+if select ( c_locale ( 878 ) , c_locale ( 879 ) ) == 1 then 
+if pc . getqf ( "charged" ) ~= 1 then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 896 ) ) 
+return 
+end 
+if not party . is_party ( ) then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 885 ) ) 
+return 
+end 
+local party_dungeon_index = party . getf ( "dungeon_index" ) 
+if d . find ( party_dungeon_index ) and d . getf_from_map_index ( "access_lair" , party_dungeon_index ) == 1 then 
+if d . getf_from_map_index ( "blue_dragon_alive" , party_dungeon_index ) == 1 then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 890 ) ) 
+return 
+end 
+pc . warp ( setting . lair_map . x * 100 , setting . lair_map . y * 100 , party_dungeon_index ) 
+else 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 889 ) ) 
+end 
+end 

@@ -1,0 +1,785 @@
+quest awaken_snow_dungeon begin
+	state start begin
+		function setting()
+			return {
+				["entry_map_index"] = 363,
+				["entry_start_pos"] = { 3197, 18045 },
+				["dungeon_map_index"] = 370,
+				["dungeon_man"] = 20536,
+				["dungeon_man_dir"] = 0,
+				["dungeon_man_pos"] = { 172, 261 },
+				["dungeon_man_last_pos"] = { 849, 641 },
+				["dungeon_exit_time"] = 60,
+				["dungeon_rejoin_time"] = 60,
+				["regen_file_path"] = "data/dungeon/awaken_snow_dungeon/",
+				["floor_pos"] = {
+					{ 2475, 19990 }, -- 171, 278
+					{ 2724, 19973 }, -- 420, 261
+					{ 3066, 19976 }, -- 762, 264
+					{ 2477, 20247 }, -- 173, 535
+					{ 2724, 20250 }, -- 420, 538
+					{ 3050, 20252 }, -- 746, 540
+					{ 2607, 20420 }, -- 303, 708
+					{ 2873, 20413 }, -- 569, 701
+					{ 3153, 20405 }, -- 849, 693
+					{ 3231, 20100 }, -- 927, 388
+				},
+				["floor_check_time"] = 6,
+				["floor_jump_time"] = 5,
+				["level2_key"] = 31189,
+				["level2_key_drop_pct"] = 30,
+				["level2_key_use_pct"] = 30,
+				["level4_boss"] = 4329,
+				["level4_boss_pos"] = {
+					{ 160, 490 },
+					{ 215, 440 },
+					{ 140, 425 }
+				},
+				["level5_cube"] = 20537,
+				["level5_cube_pos"] = {
+					{ 449, 488 },
+					{ 455, 445 },
+					{ 419, 422 },
+					{ 382, 444 },
+					{ 389, 488 }
+				},
+				["level5_key"] = 31190,
+				["level5_key_drop_pct"] = 30,
+				["level5_gen_limit"] = 100,
+				["level6_stone"] = 8135,
+				["level6_stone_pos"] = { 747, 494 },
+				["level7_boss"] = 4329,
+				["level7_boss_pos"] = {
+					{ 302, 678 },
+					{ 281, 657 },
+					{ 303, 635 },
+					{ 324, 656 }
+				},
+				["level8_key"] = 31191,
+				["level8_key_drop_pct"] = 3,
+				["level9_stone"] = 20538,
+				["level9_stone_pos"] = { 849, 660 },
+				["final_boss"] = 4412,
+				["final_boss_pos"] = { 927, 333 },
+			}
+		end
+
+		function in_dungeon(idx)
+			return idx >= 370 * 10000 and idx < (370 + 1) * 10000
+		end
+
+		function warp_out()
+			local setting = awaken_snow_dungeon.setting()
+			pc.warp(setting.entry_start_pos[1] * 100, setting.entry_start_pos[2] * 100, setting.entry_map_index)
+		end
+
+		function create(idx)
+			local setting = awaken_snow_dungeon.setting()
+
+			party.setf("dungeon_index", idx)
+
+			d.setf("created", 1)
+			d.setf("started", 0)
+			d.setf("finished", 0)
+			d.setf("party_leader_pid", party.get_leader_pid())
+
+			d.regen_file(setting.regen_file_path .. "npc.txt")
+
+			d.notice(c_locale(11501, 60)) -- Time remaining: 60 min.
+			d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+
+			server_timer("awaken_snow_dungeon_45m_left_timer", 60 * 15, idx)
+		end
+
+		function clear_and_exit(idx)
+			local setting = awaken_snow_dungeon.setting()
+
+			awaken_snow_dungeon.clear_level(idx)
+
+			d.set_warp_location(setting.entry_map_index, setting.entry_start_pos[1], setting.entry_start_pos[2])
+			d.exit_all()
+		end
+
+		function clear_level(idx)
+			awaken_snow_dungeon.clear_server_loop_timer(idx)
+
+			d.clear_regen()
+			d.purge_area(238400, 1972600, 330400, 2046200)
+		end
+
+		function clear_server_loop_timer(idx)
+			clear_server_timer("awaken_snow_dungeon_check_timer", idx)
+		end
+
+		function clear_server_timers(idx)
+			clear_server_timer("awaken_snow_dungeon_floor2_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor3_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor4_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor5_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor6_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor7_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor8_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor9_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_floor10_timer", idx)
+
+			clear_server_timer("awaken_snow_dungeon_check_timer", idx)
+
+			clear_server_timer("awaken_snow_dungeon_45m_left_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_30m_left_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_15m_left_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_5m_left_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_1m_left_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_0m_left_timer", idx)
+			clear_server_timer("awaken_snow_dungeon_end_timer", idx)
+
+			clear_server_timer("awaken_snow_dungeon_quit_timer", idx)
+		end
+
+		when login begin
+			local setting = awaken_snow_dungeon.setting()
+			local idx = pc.get_map_index()
+
+			if idx == setting.dungeon_map_index then
+				awaken_snow_dungeon.warp_out()
+
+			elseif awaken_snow_dungeon.in_dungeon(idx) then
+
+				if not party.is_party() then
+					notice(c_locale(11345)) -- Cannot proceed, group doesn't exist. You will be teleported to the city.
+					awaken_snow_dungeon.warp_out()
+
+				elseif d.getf("created") == 1  and party.is_party() and table.getn({ party.get_member_pids() }) < 2 then
+					notice(c_locale(11345)) -- Cannot proceed, group doesn't exist. You will be teleported to the city.
+					awaken_snow_dungeon.warp_out()
+
+				elseif get_global_time() - pc.getf("awaken_snow_dungeon", "exit_time") > setting.dungeon_rejoin_time then
+					notice(c_locale(11346)) -- Cannot proceed, time expired. You will be teleported to the city.
+					awaken_snow_dungeon.warp_out()
+
+				elseif d.getf("finished") ~= 0 then
+					notice(c_locale(11347)) -- Cannot proceed, dungeon finished. You will be teleported to the city.
+					awaken_snow_dungeon.warp_out()
+
+				else
+					if d.getf("created") ~= 1 then
+						awaken_snow_dungeon.create(idx)
+					end
+
+					if pc.get_player_id() == d.getf("party_leader_pid") then
+						-- If the leader joins back, clear the quit timer.
+						clear_server_timer("awaken_snow_dungeon_quit_timer", idx)
+					end
+
+					-- Jump to current level.
+					local dungeon_level = d.getf("level")
+					if dungeon_level ~= 0 and dungeon_level <= table.getn(setting.floor_pos) then
+						pc.jump(setting.floor_pos[dungeon_level][1] * 100, setting.floor_pos[dungeon_level][2] * 100, idx)
+					end
+				end
+			end
+		end
+
+		when logout with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) begin
+			local setting = awaken_snow_dungeon.setting()
+			if d.getf("created") == 1 then
+				pc.setf("awaken_snow_dungeon", "exit_time", get_global_time())
+
+				if pc.get_player_id() == d.getf("party_leader_pid") then
+					d.notice(c_locale(11348)) -- Cannot proceed, the group leader has disappeared.
+					server_timer("awaken_snow_dungeon_quit_timer", setting.dungeon_rejoin_time, d.get_map_index())
+				end
+			end
+		end
+
+		--Nemere's Watchtower (RX)
+		when 20536.chat.c_locale(11478) with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 0 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			if not party.is_party() then
+				-- Only groups may enter.
+				say(c_locale(11414))
+				return
+			end
+
+			if not party.is_leader() then
+				-- Only the group leader can proceed.
+				say(c_locale(11292))
+				return
+			end
+
+			local pids = { party.get_member_pids() }
+			local assassin_check = false
+			local shaman_check = false
+
+			for i, pid in next, pids, nil do
+				q.begin_other_pc_block(pid)
+
+				if pc.get_job() == ASSASSIN then
+					assassin_check = true
+				end
+
+				if pc.get_job() == SHAMAN then
+					shaman_check = false
+				end
+
+				q.end_other_pc_block()
+			end
+
+			if not assassin_check and not shaman_check then
+				-- You will not survive Nemere's Watchtower alone.
+				-- You need at least one fellow combatant to be able to enter.
+				-- There must be at least one Ninja AND one Dragon Shaman in the group!
+				say(c_locale(11683))
+				return
+			end
+
+			if d.getf("started") == 0 then
+				-- Nemere's Watchtower (RX) has a time limit of 1 hour.
+				say(c_locale(11479))
+
+				d.setf("started", 1)
+				d.setf("level", 1)
+
+				-- Defeat all enemies! Blessing will fill you with power for the second wave.
+				d.notice(c_locale(11441))
+
+				d.regen_file(setting.regen_file_path .. "sd_1.txt")
+				server_loop_timer("awaken_snow_dungeon_check_timer", setting.floor_check_time, d.get_map_index())
+			end
+		end
+
+		-- Nemere's Throne Room
+		when 20536.chat.c_locale(8208) with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 9 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			if not party.is_leader() then
+				-- Only the group leader can proceed.
+				say(c_locale(11292))
+				return
+			end
+
+			-- Are you ready to face the Frost King Nemere (RX)?
+			say(c_locale(11485))
+			if select(c_locale(11468), c_locale(11469)) == 1 then -- Enter / Don't enter
+				npc.purge()
+
+				awaken_snow_dungeon.clear_level(d.get_map_index())
+
+				-- In a few seconds you will be teleported to Time Rift Nemere's Throne Room.
+				d.notice(c_locale(11444))
+
+				server_timer("awaken_snow_dungeon_floor10_timer", setting.floor_jump_time, d.get_map_index())
+			end
+		end
+
+		when kill with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) begin
+			local setting = awaken_snow_dungeon.setting()
+
+			if d.getf("level") == 2 then
+				if number(1, 100) <= setting.level2_key_drop_pct then
+					game.drop_item(setting.level2_key, 1)
+				end
+
+			elseif d.getf("level") == 5 then
+				if number(1, 100) <= setting.level5_key_drop_pct then
+					game.drop_item(setting.level5_key, 1)
+				end
+
+			elseif d.getf("level") == 8 then
+				if pc.get_job() ~= ASSASSIN then
+					return
+				end
+
+				if number(1, 100) <= setting.level8_key_drop_pct then
+					game.drop_item(setting.level8_key, 1)
+				end
+			end
+		end
+
+		when 31189.use with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 2 and d.getf("level2_key_use") ~= 1 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			if pc.get_job() ~= SHAMAN then
+				-- Only Shamans can use the Frost Key.
+				say(c_locale(8190))
+				return
+			end
+
+			item.remove()
+			if number(1, 100) <= setting.level2_key_use_pct then
+				d.setf("level2_key_use", 1)
+
+				awaken_snow_dungeon.clear_level(d.get_map_index())
+
+				-- In a few seconds you will be teleported to the third floor.
+				d.notice(c_locale(11451))
+
+				server_timer("awaken_snow_dungeon_floor3_timer", setting.floor_jump_time, d.get_map_index())
+			else
+				-- That was the wrong key. Find the right one!
+				say(c_locale(8192))
+			end
+		end
+
+		when 20537.take with awaken_snow_dungeon.in_dungeon(d.get_map_index()) and item.get_vnum() == 31190 and d.getf("level") == 5 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			item.remove()
+
+			if npc.get_vid() == d.get_unique_vid("cube_1") then
+				npc.purge()
+
+				-- Done! Now open the second seal.
+				say(c_locale(11454))
+
+				d.setf("cubekill", 2)
+				if d.count_monster() < setting.level5_gen_limit then
+					d.regen_file(setting.regen_file_path .. "sd_5.txt")
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("cube_2") then
+				if d.getf("cubekill") == 2 then
+					npc.purge()
+
+					-- Done! Now open the third seal.
+					say(c_locale(11455))
+
+					d.setf("cubekill", 3)
+					if d.count_monster() < setting.level5_gen_limit then
+						d.regen_file(setting.regen_file_path .. "sd_5.txt")
+					end
+				else
+					-- Pay attention to the correct sequence! Try a different cube.
+					say(c_locale(8198))
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("cube_3") then
+				if d.getf("cubekill") == 3 then
+					npc.purge()
+
+					-- Done! Now open the fourth seal.
+					say(c_locale(11456))
+
+					d.setf("cubekill", 4)
+					if d.count_monster() < setting.level5_gen_limit then
+						d.regen_file(setting.regen_file_path .. "sd_5.txt")
+					end
+				else
+					-- Pay attention to the correct sequence! Try a different cube.
+					say(c_locale(8198))
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("cube_4") then
+				if d.getf("cubekill") == 4 then
+					npc.purge()
+
+					-- Done! Now open the fifth seal.
+					say(c_locale(11457))
+
+					d.setf("cubekill", 5)
+					if d.count_monster() < setting.level5_gen_limit then
+						d.regen_file(setting.regen_file_path .. "sd_5.txt")
+					end
+				else
+					-- Pay attention to the correct sequence! Try a different cube.
+					say(c_locale(8198))
+				end
+			else
+				if d.getf("cubekill") == 5 then
+					npc.purge()
+
+					awaken_snow_dungeon.clear_level(d.get_map_index())
+
+					-- In a few seconds you will be teleported to the sixth floor.
+					d.notice(c_locale(11442))
+					server_timer("awaken_snow_dungeon_floor6_timer", setting.floor_jump_time, d.get_map_index())
+				else
+					-- Pay attention to the correct sequence! Try a different cube.
+					say(c_locale(8198))
+				end
+			end
+		end
+
+		when 8135.kill with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 6 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			awaken_snow_dungeon.clear_level(d.get_map_index())
+
+			-- In a few seconds you will be teleported to the seventh floor.
+			d.notice(c_locale(11459))
+			server_timer("awaken_snow_dungeon_floor7_timer", setting.floor_jump_time, d.get_map_index())
+		end
+
+		when 31191.use with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 8 and d.getf("level8_key_use") ~= 1 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			if pc.get_job() ~= ASSASSIN and pc.get_job() ~= SHAMAN then
+				-- This item is not suitable for your class.
+				say(c_locale(11464))
+				return
+			end
+
+			item.remove()
+
+			d.setf("level8_key_use", 1)
+			awaken_snow_dungeon.clear_level(d.get_map_index())
+
+			-- In a few seconds you will be teleported to the ninth floor.
+			d.notice(c_locale(8171))
+			server_timer("awaken_snow_dungeon_floor9_timer", setting.floor_jump_time, d.get_map_index())
+		end
+
+		when 20538.kill with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 9 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			awaken_snow_dungeon.clear_level()
+
+			d.spawn_mob_ac_dir(setting.dungeon_man, setting.dungeon_man_last_pos[1], setting.dungeon_man_last_pos[2], setting.dungeon_man_dir)
+		end
+
+		when 4412.kill with awaken_snow_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 10 begin
+			local setting = awaken_snow_dungeon.setting()
+
+			d.setf("finished", 1)
+			d.setqf2_all_near("awaken_snow_dungeon", "complete", 1, 800)
+
+			awaken_snow_dungeon.clear_level(d.get_map_index())
+
+			d.notice(c_locale(8214)) -- Nemere has been defeated!
+			d.notice(c_locale(11471)) -- All warriors will be teleported out in one minute.
+
+			awaken_snow_dungeon.clear_server_timers(d.get_map_index())
+			awaken_snow_dungeon.clear_level(d.get_map_index())
+
+			server_timer("awaken_snow_dungeon_end_timer", setting.dungeon_exit_time, d.get_map_index())
+		end
+
+		when awaken_snow_dungeon_floor2_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 2
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.set_regen_file(setting.regen_file_path .. "sd_2.txt")
+
+				-- Some frost monsters carry Frost Keys (RX).
+				-- Take the keys from them and find the right one! Only Shamans, however, can use the key.
+				d.notice(c_locale(11480))
+			end
+		end
+
+		when awaken_snow_dungeon_floor3_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 3
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.regen_file(setting.regen_file_path .. "sd_3.txt")
+
+				-- Defeat all enemies! Blessing will fill you with power for the second wave.
+				d.notice(c_locale(11441))
+
+				server_loop_timer("awaken_snow_dungeon_check_timer", setting.floor_check_time, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_floor4_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 4
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.regen_file(setting.regen_file_path .. "sd_4.txt")
+
+				-- Defeat all enemies! Blessing will fill you with power for the second wave.
+				d.notice(c_locale(11441))
+
+				server_loop_timer("awaken_snow_dungeon_check_timer", setting.floor_check_time, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_floor5_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 5
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.regen_file(setting.regen_file_path .. "sd_5.txt")
+
+				local vis = { 0, 0, 0, 0, 0 }
+				for i = 1, 5 do
+					vis[i] = 0
+				end
+				for i = 1, 5 do
+					local r = number(1, 5)
+					local st = 0
+					for j = 1, 50 do
+						st = st + 1
+						if st > 5 then
+							st = 1
+						end
+						if vis[st] == 0 then
+							r = r - 1
+							if r == 0 then
+								vis[st] = 1
+								d.set_unique("cube_" .. st, d.spawn_mob(setting.level5_cube, setting.level5_cube_pos[i][1], setting.level5_cube_pos[i][2]))
+								break
+							end
+						end
+					end
+				end
+
+				-- Open the seals on the Arctic Cube in the correct order to get to the next floor.
+				d.notice(c_locale(11452))
+				-- Defeat the frost monsters and take their North Stars to open the seals!
+				d.notice(c_locale(11453))
+			end
+		end
+
+		when awaken_snow_dungeon_floor6_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 6
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.regen_file(setting.regen_file_path .. "sd_6.txt")
+
+				-- Defeat all of the frost monsters and then destroy the Metin of Cold (RX).
+				-- Only Shamans can damage it.
+				d.notice(c_locale(11481))
+				server_loop_timer("awaken_snow_dungeon_check_timer", setting.floor_check_time, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_floor7_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 7
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.regen_file(setting.regen_file_path .. "sd_7.txt")
+
+				local vis = { 0, 0, 0, 0 }
+				for i = 1, 3 do
+					vis[i] = 0
+				end
+				for i = 1, 4 do
+					local r = number(1, 4)
+					local st = 0
+					for j = 1, 50 do
+						st = st + 1
+						if st > 4 then
+							st = 1
+						end
+						if vis[st] == 0 then
+							r = r - 1
+							if r == 0 then
+								vis[st] = 1
+								d.set_unique("boss_" .. st, d.spawn_mob(setting.level7_boss, setting.level7_boss_pos[i][1], setting.level7_boss_pos[i][2]))
+								break
+							end
+						end
+					end
+				end
+
+				-- Find and defeat Szel (RX), the Lord of Ice and Cold.
+				-- Only those who fight with the Dragon's Aid will be victorious.
+				d.notice(c_locale(11482))
+				server_loop_timer("awaken_snow_dungeon_check_timer", setting.floor_check_time, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_floor8_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 8
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.set_regen_file(setting.regen_file_path .. "sd_8.txt")
+
+				-- Defeat all of the frost monsters and find the Frostflower Key (RX).
+				-- Only Ninjas can drop it. Shamans and Ninjas can use it.
+				d.notice(c_locale(11483))
+			end
+		end
+
+		when awaken_snow_dungeon_floor9_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 9
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.regen_file(setting.regen_file_path .. "sd_9.txt")
+				d.spawn_mob(setting.level9_stone, setting.level9_stone_pos[1], setting.level9_stone_pos[2])
+
+				-- Destroy the North Dragon Pillar (RX). Only Ninjas and Shamans can damage it.
+				d.notice(c_locale(11484))
+			end
+		end
+
+		when awaken_snow_dungeon_floor10_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+				local set_level = 10
+
+				awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+				d.setf("level", set_level)
+				d.jump_all(setting.floor_pos[set_level][1], setting.floor_pos[set_level][2])
+				d.regen_file(setting.regen_file_path .. "sd_10.txt")
+
+				-- Defeat Nemere, King of Frost and Ice.
+				d.notice(c_locale(8213))
+			end
+		end
+
+		when awaken_snow_dungeon_check_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = awaken_snow_dungeon.setting()
+
+				if d.getf("level") == 1 and d.count_monster() <= 0 then
+
+					-- In a few seconds you will be teleported to the second floor.
+					d.notice(c_locale(11445))
+					server_timer("awaken_snow_dungeon_floor2_timer", setting.floor_jump_time, get_server_timer_arg())
+
+				elseif d.getf("level") == 3 and d.count_monster() <= 0 then
+
+					-- In a few seconds you will be teleported to the fourth floor.
+					d.notice(c_locale(11446))
+					server_timer("awaken_snow_dungeon_floor4_timer", setting.floor_jump_time, get_server_timer_arg())
+
+				elseif d.getf("level") == 4 and d.count_monster() <= 0 then
+
+					if d.getf("level4_boss_spawn") == 1 then
+
+						awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+						-- In a few seconds you will be teleported to the fifth floor.
+						d.notice(c_locale(11447))
+						server_timer("awaken_snow_dungeon_floor5_timer", setting.floor_jump_time, get_server_timer_arg())
+
+					else
+						d.setf("level4_boss_spawn", 1)
+						d.regen_file(setting.regen_file_path .. "sd_4.txt")
+
+						local r = number(1, table.getn(setting.level4_boss_pos))
+						d.spawn_mob(setting.level4_boss, setting.level4_boss_pos[r][1], setting.level4_boss_pos[r][2])
+					end
+
+				elseif d.getf("level") == 6 and d.count_monster() <= 0 then
+
+					-- The Metin of Cold has appeared!
+					d.notice(c_locale(11448))
+					d.spawn_mob(setting.level6_stone, setting.level6_stone_pos[1], setting.level6_stone_pos[2])
+
+				elseif d.getf("level") == 7 then
+					for i = 1, 3 do
+						if not d.is_unique_dead("boss_" .. i) then
+							if d.unique_get_hp_perc("boss_" .. i) < 50 then
+								d.purge_unique("boss_" .. i)
+
+								-- His doubles disappear.
+								d.notice(c_locale(11461))
+							end
+						end
+					end
+
+					if d.is_unique_dead("boss_4") then
+						awaken_snow_dungeon.clear_level(get_server_timer_arg())
+
+						-- In a few seconds you will be teleported to the eighth floor.
+						d.notice(c_locale(11462))
+						server_timer("awaken_snow_dungeon_floor8_timer", setting.floor_jump_time, d.get_map_index())
+					end
+				end
+			end
+		end
+
+		when awaken_snow_dungeon_45m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 45)) -- Time remaining: 45 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_snow_dungeon_30m_left_timer", 60 * 15, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_30m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 30)) -- Time remaining: 30 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_snow_dungeon_15m_left_timer", 60 * 15, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_15m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 15)) -- Time remaining: 15 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_snow_dungeon_5m_left_timer", 10 * 60, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_5m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 5)) -- Time remaining: 5 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_snow_dungeon_1m_left_timer", 60 * 10, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_1m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 1)) -- Time remaining: 1 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_snow_dungeon_0m_left_timer", 60, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_0m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11503)) -- Your time is up.
+				d.notice(c_locale(11504)) -- In a few seconds you will be teleported outside.
+				server_timer("awaken_snow_dungeon_end_timer", 10, get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_end_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				awaken_snow_dungeon.clear_server_timers(get_server_timer_arg())
+				awaken_snow_dungeon.clear_and_exit(get_server_timer_arg())
+			end
+		end
+
+		when awaken_snow_dungeon_quit_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				awaken_snow_dungeon.clear_server_timers(get_server_timer_arg())
+				awaken_snow_dungeon.clear_and_exit(get_server_timer_arg())
+			end
+		end
+	end
+end

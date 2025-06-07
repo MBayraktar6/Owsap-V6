@@ -1,0 +1,3 @@
+if game . get_event_flag ( "mini_game_yutnori_reward" ) == 0 and pc . getqf ( "reward" ) ~= 0 then 
+pc . setqf ( "reward" , 0 ) 
+end 

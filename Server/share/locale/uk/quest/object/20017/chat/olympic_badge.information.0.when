@@ -1,0 +1,1 @@
+return game . get_event_flag ( "medal_part_drop" ) >= 1 and pc . get_level ( ) >= 30

@@ -1,0 +1,146 @@
+quest main_quest_lv7 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 7 begin
+			set_state(gotosmith)
+		end
+	end
+
+	state gotosmith begin
+		when letter begin
+			send_letter(c_locale(5506))
+			local v = find_npc_by_vnum(20016)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5506))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5506))
+			say(c_locale(5517))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(97))
+			say(c_locale(5523))
+			wait()
+
+			say_title(c_locale(97))
+			say(c_locale(5524))
+			say_item(c_locale(5525), 27490, "")
+			wait()
+
+			say_title(c_locale(97))
+			say(c_locale(5526))
+
+			set_state(gotofisher)
+			q.done()
+		end
+	end
+
+	state gotofisher begin
+		when letter begin
+			send_letter(c_locale(5527))
+		end
+
+		when button or info begin
+			say_title(c_locale(5527))
+			say(c_locale(5528))
+			say_item(c_locale(5525), 27490, "")
+		end
+
+		when 20016.chat.c_locale(5529) begin
+			say_title(c_locale(97))
+			say(c_locale(5507))
+		end
+
+		when 9009.chat.c_locale(5508) begin
+			say_title(c_locale(1310))
+			say(c_locale(5509))
+			wait()
+
+			say_title(c_locale(1310))
+			say(c_locale(5510))
+			wait()
+
+			say_title(c_locale(1310))
+			say(c_locale(5511))
+			say_item(c_locale(5512), 30001, "")
+
+			set_state(gotosmith2)
+		end
+	end
+
+	state gotosmith2 begin
+		when letter begin
+			send_letter(c_locale(5388))
+			local v = find_npc_by_vnum(20016)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5388))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5388))
+			say(c_locale(5513))
+			say_item(c_locale(5512), 30001, "")
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			pc.setqf("refine_chance", 0)
+
+			say_title(c_locale(97))
+			say(c_locale(5514))
+
+			pc.give_exp2(1500)
+			pc.change_money(5000)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv9", "run")
+		end
+	end
+
+	state refine begin
+		when login with pc.getqf("refine_chance") == 0 begin
+			clear_letter()
+			set_state(__COMPLETE__)
+		end
+
+		when letter begin
+			send_letter(c_locale(5515))
+		end
+
+		when button or info begin
+			if pc.getqf("refine_chance") > 0 then
+				say_title(c_locale(114))
+				say_reward(c_locale(5516))
+				say_item(c_locale(5518), 30001, "")
+				wait()
+
+				say_title(c_locale(5519))
+				say_reward(c_locale(5520))
+			else
+				say_title(c_locale(5521))
+				say_reward(c_locale(5522))
+
+				clear_letter()
+				set_state(__COMPLETE__)
+
+				set_quest_state("main_quest_lv9", "run")
+			end
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

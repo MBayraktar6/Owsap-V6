@@ -1,0 +1,9 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+if d . count_monster ( ) <= 0 then 
+d . notice ( c_locale ( 11314 ) ) 
+d . notice ( c_locale ( 11315 ) ) 
+d . setf ( "level" , 0 ) 
+else 
+server_timer ( "crack_flame_dungeon_killed_a" , 6 , get_server_timer_arg ( ) ) 
+end 
+end 

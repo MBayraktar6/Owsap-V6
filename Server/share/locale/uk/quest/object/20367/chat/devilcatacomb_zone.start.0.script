@@ -1,0 +1,21 @@
+local setting = devilcatacomb_zone . setting ( ) 
+if pc . get_level ( ) < 75 then 
+say ( c_locale ( 807 ) ) 
+elseif pc . getf ( "deviltower_zone" , "9_done" ) == 0 and not is_test_server ( ) then 
+say ( c_locale ( 808 ) ) 
+elseif ( ( get_global_time ( ) - pc . getf ( "devilcatacomb_zone" , "last_exit_time" ) ) < 1800 ) then 
+if pc . is_gm ( ) then 
+if select ( "< GM > Reset time" , "Cancel" ) == 1 then 
+pc . setqf ( "last_exit_time" , 0 ) 
+say ( "Done" ) 
+end 
+return 
+end 
+say ( c_locale ( 809 ) ) 
+else 
+say ( c_locale ( 810 ) ) 
+local s = select ( c_locale ( 811 ) , c_locale ( 812 ) ) 
+if s == 1 then 
+pc . warp ( ( setting . floor1_entry . x + setting . base . x ) * 100 , ( setting . floor1_entry . y + setting . base . y ) * 100 ) 
+end 
+end 

@@ -1,0 +1,47 @@
+if get_time ( ) > pc . getqf ( "duration" ) or is_test_server ( ) then 
+say_title ( c_locale ( 529 ) ) 
+say ( c_locale ( 530 ) ) 
+pc . remove_item ( 30167 , 1 ) 
+pc . setqf ( "duration" , ( get_time ( ) + ( 60 * 60 * 7 ) ) ) 
+wait ( ) 
+local pass_percent 
+if affect . find ( AFFECT_RESEARCHER_ELIXIR ) then 
+pass_percent = 90 
+else 
+if true == pet . is_summon ( 34003 ) or true == pet . is_summon ( 34001 ) then 
+pass_percent = 92 
+else 
+pass_percent = 60 
+end 
+end 
+test_chat ( string . format ( "pass percent %d" , pass_percent ) ) 
+local s = number ( 1 , 100 ) 
+if s <= pass_percent then 
+if pc . getqf ( "collect_count" ) < 39 then 
+local index = pc . getqf ( "collect_count" ) + 1 
+pc . setqf ( "collect_count" , index ) 
+say_title ( c_locale ( 531 ) ) 
+say ( c_locale ( 532 ) ) 
+say ( c_locale ( 533 , ( 40 - pc . getqf ( "collect_count" ) ) ) ) 
+say ( c_locale ( 535 ) ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+return 
+end 
+say_title ( c_locale ( 536 ) ) 
+say ( c_locale ( 537 ) ) 
+pc . setqf ( "duration" , 0 ) 
+pc . setqf ( "collect_count" , 0 ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+set_state ( "key_item" ) 
+return 
+else 
+say_title ( c_locale ( 538 ) ) 
+say ( c_locale ( 539 ) ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+return 
+end 
+else 
+say_title ( c_locale ( 540 ) ) 
+say ( c_locale ( 541 ) ) 
+return 
+end 

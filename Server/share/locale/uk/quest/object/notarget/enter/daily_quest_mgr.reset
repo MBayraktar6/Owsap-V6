@@ -1,0 +1,2 @@
+if pc . get_level ( ) >= special . daily_quest . level_limit then timer ( "daily_quest_reset" , special . daily_quest . reset_delay ) 
+ return end 

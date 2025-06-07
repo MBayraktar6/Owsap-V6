@@ -1,0 +1,28 @@
+quest guild_ranking begin
+	state start begin
+		when 11000.chat.c_locale(4299) or
+			11002.chat.c_locale(4299) or
+			11004.chat.c_locale(4299) with pc.hasguild()
+		begin
+			say_title(c_locale(1294))
+			say(c_locale(1749, guild.around_ranking_string()))
+		end
+
+		when 11000.chat.c_locale(4300) or
+			11002.chat.c_locale(4300) or
+			11004.chat.c_locale(4300) with pc.hasguild()
+		begin
+			say_title(c_locale(1294))
+			say(c_locale(1750, guild.high_ranking_string()))
+		end
+
+		when 11000.chat.c_locale(4298) or
+			11002.chat.c_locale(4298) or
+			11004.chat.c_locale(4298) with pc.hasguild()
+		begin
+			say_title(c_locale(1294))
+			say(c_locale(1751, guild.get_rank()))
+			say(c_locale(1752, guild.get_ladder_point()))
+		end
+	end
+end

@@ -1,0 +1,2 @@
+if pc . get_level ( ) >= special . daily_quest . level_limit then set_state ( "run" ) 
+ return end 

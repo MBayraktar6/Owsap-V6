@@ -1,0 +1,17 @@
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2202 ) ) 
+local b = select ( c_locale ( 10928 ) , c_locale ( 10929 ) ) 
+if 1 == b then 
+if pc . get_money ( ) >= 400000 then 
+pc . changemoney ( - 400000 ) 
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2213 ) ) 
+pc . give_item2 ( 50051 , 1 ) 
+else 
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2215 ) ) 
+end 
+elseif 2 == b then return 
+else 
+say ( c_locale ( 1298 , b ) ) 
+end 

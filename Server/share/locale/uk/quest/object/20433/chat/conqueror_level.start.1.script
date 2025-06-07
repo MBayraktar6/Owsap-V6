@@ -1,0 +1,7 @@
+say_title ( c_locale ( 12649 ) ) 
+say ( c_locale ( 12650 ) ) 
+if select ( c_locale ( 12651 ) , c_locale ( 12652 ) ) == 1 then 
+pc . set_conqueror ( ) 
+else 
+return 
+end 

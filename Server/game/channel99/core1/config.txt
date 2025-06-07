@@ -1,0 +1,51 @@
+HOSTNAME: ch99_game1
+CHANNEL: 99
+PORT: 19900
+P2P_PORT: 19910
+DB_PORT: 11000
+DB_ADDR: localhost
+
+MAP_ALLOW: 81 103 105 110 111 113 114 118 119 120 121 122 123 124 125 126 127 128 130 131 132 133 181 182 183 200 392
+
+#	81	metin2_map_wedding_01
+#	103	metin2_map_t1
+#	105	metin2_map_t2
+#	110	metin2_map_t3
+#	111	metin2_map_t4
+#	113	metin2_map_oxevent
+#	114	metin2_map_sungzi
+#	118	metin2_map_sungzi_flame_hill_01
+#	119	metin2_map_sungzi_flame_hill_02
+#	120	metin2_map_sungzi_flame_hill_03
+#	121	metin2_map_sungzi_snow
+#	122	metin2_map_sungzi_snow_pass01
+#	123	metin2_map_sungzi_snow_pass02
+#	124	metin2_map_sungzi_snow_pass03
+#	125	metin2_map_sungzi_desert_01
+#	126	metin2_map_sungzi_desert_hill_01
+#	127	metin2_map_sungzi_desert_hill_02
+#	128	metin2_map_sungzi_desert_hill_03
+#	130	metin2_guild_war1
+#	131	metin2_guild_war2
+#	132	metin2_guild_war3
+#	133	metin2_guild_war4
+#	181	metin2_map_empirewar01
+#	182	metin2_map_empirewar02
+#	183	metin2_map_empirewar03
+#	200	gm_guild_build
+#	392	metin2_map_privatesh
+
+TABLE_POSTFIX:
+ITEM_ID_RANGE: 900000001 1000000000
+PASSES_PER_SEC: 25
+SAVE_EVENT_SECOND_CYCLE: 180
+PING_EVENT_SECOND_CYCLE: 180
+PLAYER_SQL: localhost mt2 mt2!@# player
+COMMON_SQL: localhost mt2 mt2!@# common
+LOG_SQL: localhost mt2 mt2!@# log
+LOCALE_SERVICE: uk
+TEST_SERVER: 1
+VIEW_RANGE: 8000
+MAX_LEVEL: 120
+
+POPUP_NOTICE_URL: http://62.171.146.112/docs/

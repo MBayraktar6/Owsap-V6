@@ -1,0 +1,120 @@
+quest subquest_2 begin
+	state start begin
+		when login or levelup with pc.get_level() >= 7 and pc.get_level() <= 12 begin
+			set_state(information)
+		end
+	end
+
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(9003)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8324))
+			end
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(1282))
+			say(c_locale(8339))
+			set_state(ask_dinner)
+		end
+	end
+
+	state ask_dinner begin
+		when letter begin
+			local v = find_npc_by_vnum(9002)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5071))
+			end
+		end
+
+		when letter begin
+			send_letter(c_locale(5071))
+		end
+
+		when button or info begin
+			say_title(c_locale(114))
+			say_reward(c_locale(8346))
+			say_reward(c_locale(8342))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(5074))
+			say(c_locale(8343))
+			wait()
+
+			say_title(c_locale(5074))
+			say(c_locale(8344))
+
+			set_state(report)
+		end
+	end
+
+	state report begin
+		when letter begin
+			local v = find_npc_by_vnum(9003)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8345))
+			end
+		end
+
+		when letter begin
+			send_letter(c_locale(8324))
+		end
+
+		when button or info begin
+			say_title(c_locale(8324))
+			say_reward(c_locale(8346))
+			say_reward(c_locale(8347))
+		end
+
+		when 9002.chat.c_locale(8345) begin
+			say_title(c_locale(8325))
+			say(c_locale(8326))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(1282))
+			say(c_locale(8327))
+
+			local s = select(
+				c_locale(8328),
+				c_locale(8329),
+				c_locale(8330)
+			)
+
+			if s == 3 then
+				say_title(c_locale(1282))
+				say(c_locale(8332))
+
+				say_title(c_locale(265))
+				say_reward(c_locale(8333))
+
+				pc.give_exp2(1000)
+				pc.change_money(1500)
+				set_quest_state("levelup", "run")
+
+				clear_letter()
+				set_state(__COMPLETE__)
+			elseif s == 4 then
+				say(c_locale(8334))
+				set_state(ask_dinner)
+			else
+				say(c_locale(8335))
+				set_state(ask_dinner)
+			end
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

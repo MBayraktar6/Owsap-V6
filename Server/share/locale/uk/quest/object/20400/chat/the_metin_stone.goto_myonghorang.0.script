@@ -1,0 +1,8 @@
+target . delete ( "__TARGET__" ) 
+clear_letter ( ) 
+pc . give_exp2 ( 450 ) 
+say_title ( c_mob_name ( 20400 ) ) 
+say ( c_locale ( 6396 ) ) 
+say_reward ( c_locale ( 6882 , 450 ) ) 
+set_state ( "__COMPLETE__" ) 
+set_quest_state ( "sung_mahi" , "run" ) 

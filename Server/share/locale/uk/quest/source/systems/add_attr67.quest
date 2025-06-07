@@ -1,0 +1,60 @@
+-- Filename: add_attr67add.quest
+-- Author: Owsap
+-- Description: Add 6th and 7th Bonus.
+
+quest item_attr67add begin
+	state start begin
+		when login or levelup with pc.get_level() >= 30 begin
+			send_letter(c_locale(10845))
+		end
+
+		when button or info begin
+			say(c_locale(10846))
+
+			clear_letter()
+			set_state(run)
+		end
+	end
+
+	state run begin
+		-- "Add 6th and 7th Bonus"
+		when 20095.chat.c_locale(10848) begin
+			if attr67add.holding() then
+				if pc.getf("add_attr67", "wait_time") > get_global_time() then
+					say_title(c_locale(10849))
+					say(c_locale(10850))
+					say("[INSERT_ITEM_TOOLTIP_BY_CELL window_type;" .. attr67add.window_type() .. "|cell;" .. attr67add.window_cell() .. "]")
+					say_reward(c_locale(10851, get_time_remaining(pc.getf("add_attr67", "wait_time") - get_time())))
+					say(color(255, 0, 0) .. c_locale(10852) .. color(196, 196, 196))
+
+					if pc.is_gm() then
+						say("GM - Should the time be set to zero?")
+						local s = select("Yes", "No")
+						if s == 1 then
+							pc.setf("add_attr67", "wait_time", 0)
+						end
+					end
+				else
+					say_title(c_locale(10849))
+					say_reward(c_locale(10853))
+					if attr67add.success() then
+						say(c_locale(10854))
+					else
+						say(c_locale(10855))
+					end
+					say("[INSERT_ITEM_TOOLTIP_BY_CELL window_type;" .. attr67add.window_type() .. "|cell;" .. attr67add.window_cell() .. "]")
+					if select(c_locale(13977)) == 1 then
+						if pc.enough_inventory(attr67add.item_vnum()) then
+							attr67add.collect()
+						else
+							say(c_locale(10857))
+						end
+					else return end
+				end
+			else
+				setskin(NOWINDOW)
+				cmdchat("__OpenAttr67AddDlg")
+			end
+		end
+	end
+end

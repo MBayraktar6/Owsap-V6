@@ -1,0 +1,4 @@
+target . delete ( "__TARGET__" ) 
+clear_letter ( ) 
+warp_to_village ( ) 
+set_state ( "find_uriel" ) 

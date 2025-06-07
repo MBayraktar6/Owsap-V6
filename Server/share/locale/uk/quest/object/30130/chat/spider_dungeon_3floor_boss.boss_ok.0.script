@@ -1,0 +1,5 @@
+pc . setqf ( "retry_limit_time" , 0 ) 
+game . set_event_flag ( "spider_lair_ongoing_" .. get_channel_id ( ) , 0 ) 
+game . set_event_flag ( "spider_lair_leader_" .. get_channel_id ( ) , 0 ) 
+game . set_event_flag ( "spider_dead" .. get_channel_id ( ) , 0 ) 
+say ( "Done" ) 

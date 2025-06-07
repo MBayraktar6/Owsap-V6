@@ -1,0 +1,11 @@
+target . delete ( "__TARGET__" ) 
+if pc . count_item ( 30220 ) > 0 then 
+say_title ( c_locale ( 201 ) ) 
+say ( c_locale ( 314 ) ) 
+pc . remove_item ( 30220 , 1 ) 
+set_state ( "__reward" ) 
+else 
+say_title ( c_locale ( 201 ) ) 
+say ( c_locale ( 315 ) ) 
+return 
+end 

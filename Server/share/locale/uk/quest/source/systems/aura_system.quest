@@ -1,0 +1,44 @@
+define SCHOLAR 60003 -- Theowahdan
+define AURA_REFINE_TYPE_ABSORB 0
+define AURA_REFINE_TYPE_EVOLUTION 1
+define AURA_REFINE_TYPE_GROWTH 2
+
+quest aura_system begin
+	state start begin
+		-- "What is the Aura Outfit?"
+		when SCHOLAR.chat.c_locale(11823) begin
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(11824))
+		end
+
+		-- "Aura Outfit: Transmit values"
+		when SCHOLAR.chat.c_locale(11825) begin
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(11826))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_aura_refine(AURA_REFINE_TYPE_ABSORB)
+			end
+		end
+
+		-- "Aura Outfit: Improvement"
+		when SCHOLAR.chat.c_locale(11827) begin
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(11828))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_aura_refine(AURA_REFINE_TYPE_EVOLUTION)
+			end
+		end
+
+		-- "Aura Outfit: Evolution"
+		when SCHOLAR.chat.c_locale(11829) begin
+			say_title(c_mob_name(SCHOLAR))
+			say(c_locale(11830))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_aura_refine(AURA_REFINE_TYPE_GROWTH)
+			end
+		end
+	end
+end

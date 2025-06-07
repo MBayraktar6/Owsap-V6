@@ -1,0 +1,9 @@
+say ( c_locale ( 1823 ) ) 
+if select ( c_locale ( 1847 ) , c_locale ( 1846 ) ) == 1 then 
+if guild_dragonlair . get_stage ( ) > 0 then 
+say ( c_locale ( 1822 ) ) 
+return 
+end 
+say ( c_locale ( 1824 ) ) 
+guild_dragonlair . start ( ) 
+end 

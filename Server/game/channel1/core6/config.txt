@@ -1,0 +1,33 @@
+HOSTNAME: ch1_game6
+CHANNEL: 1
+PORT: 12106
+P2P_PORT: 12160
+DB_PORT: 11000
+DB_ADDR: localhost
+
+MAP_ALLOW: 355 357 360 361 362 372 375 396 399
+
+#	355	metin2_12zi_stage
+#	357	metin2_map_battlefied
+#	360	metin2_map_mists_of_island
+#	361	metin2_map_miniboss_01
+#	362	metin2_map_miniboss_02
+#	372	metin2_guild_pve
+#	375	metin2_map_battleroyale
+#	396	metin2_map_anglar_dungeon_01
+#	399	metin2_map_secretdungeon_01
+
+TABLE_POSTFIX:
+ITEM_ID_RANGE: 600000001 700000000
+PASSES_PER_SEC: 25
+SAVE_EVENT_SECOND_CYCLE: 180
+PING_EVENT_SECOND_CYCLE: 180
+PLAYER_SQL: localhost mt2 mt2!@# player
+COMMON_SQL: localhost mt2 mt2!@# common
+LOG_SQL: localhost mt2 mt2!@# log
+LOCALE_SERVICE: uk
+TEST_SERVER: 1
+VIEW_RANGE: 8000
+MAX_LEVEL: 120
+
+POPUP_NOTICE_URL: http://62.171.146.112/docs/

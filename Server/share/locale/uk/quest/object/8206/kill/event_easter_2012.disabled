@@ -1,0 +1,2 @@
+if event_easter_2012 . is_running ( ) then event_easter_2012 . metin_killed ( 8206 ) 
+ return end 

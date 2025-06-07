@@ -1,0 +1,11 @@
+if pc . count_item ( 30227 ) > 0 then 
+say_title ( c_locale ( 595 ) ) 
+say ( c_locale ( 596 ) ) 
+return 
+end 
+say_title ( c_locale ( 597 ) ) 
+say ( c_locale ( 598 ) ) 
+say_item_vnum ( 30227 ) 
+say ( c_locale ( 599 ) ) 
+say ( string . format ( "%s, %s, %s," , c_mob_name ( 1304 ) , c_mob_name ( 1093 ) , c_mob_name ( 1901 ) ) ) 
+say ( string . format ( "%s, %s, %s" , c_mob_name ( 3090 ) , c_mob_name ( 3290 ) , c_mob_name ( 3590 ) ) ) 

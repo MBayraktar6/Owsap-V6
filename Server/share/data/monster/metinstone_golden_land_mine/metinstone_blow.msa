@@ -1,0 +1,22 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\metinstone_golden_land_mine\metinstone_blow.GR2"
+MotionDuration           3.000000
+
+Group MotionEventData
+{
+    MotionEventDataCount     1
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.016221
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "root"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/metinstone_golden_land_mine_making.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+
+}

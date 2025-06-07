@@ -1,0 +1,313 @@
+quest pet_system begin
+	state start begin
+		function get_pet_info(itemVnum)
+			pet_info_map = {
+				-- [(number)item_vnum] = { (number)mob_vnum, (number)effect_idx, (boolean)loot },
+				[38200] = { 34006, 1, false }, -- Rufus
+				[38201] = { 34006, 1, false }, -- Rufus
+				[53001] = { 34001, 1, false }, -- Fire Phoenix
+				[53002] = { 34002, 1, false }, -- Reindeer Calf
+				[53003] = { 34003, 1, false }, -- Ice Phoenix
+				[53005] = { 34004, 1, false }, -- Baby Azrael
+				[53006] = { 34009, 1, false }, -- Baby Azrael (gold)
+				[53007] = { 34010, 1, false }, -- Bambi
+				[53008] = { 34011, 1, false }, -- Knuud
+				[53009] = { 34012, 1, false }, -- Bao Bao
+				[53010] = { 34008, 1, false }, -- Leonidas
+				[53011] = { 34007, 1, false }, -- Khan
+				[53012] = { 34005, 1, false }, -- Porky
+				[53013] = { 34006, 1, false }, -- Rufus
+				[53014] = { 34013, 1, false }, -- Chubby Mini-Executor
+				[53015] = { 34014, 1, false }, -- Chubby Mini-Executor (g)
+				[53016] = { 34015, 1, false }, -- Boney
+				[53017] = { 34016, 1, false }, -- Jade Phoenix
+				[53018] = { 34020, 1, false }, -- Snow Leonidas
+				[53019] = { 34019, 1, false }, -- Arctis Khan
+				[53020] = { 34017, 1, false }, -- Polar Porkie
+				[53021] = { 34018, 1, false }, -- Frost Rufus
+				[53022] = { 34021, 1, false }, -- Sheldon
+				[53023] = { 34022, 1, false }, -- Cooper
+				[53024] = { 34023, 1, false }, -- Panther Cub (7 Days)
+				[53025] = { 34024, 1, false }, -- Leopard Cub (7 Days)
+				[53026] = { 34001, 1, false }, -- Pepita
+				[53218] = { 34023, 1, false }, -- Panther Cub
+				[53219] = { 34023, 1, false }, -- Panther Cub (120 Days)
+				[53220] = { 34024, 1, false }, -- Leopard Cub
+				[53221] = { 34024, 1, false }, -- Leopard Cub (120 Days)
+				[53222] = { 34026, 1, false }, -- Pumpkin Head
+				[53223] = { 34027, 1, false }, -- Little Broomstick
+				[53224] = { 34028, 1, false }, -- Snowflake
+				[53225] = { 34029, 1, false }, -- Snowbell
+				[53226] = { 34030, 1, false }, -- Cupido
+				[53227] = { 34031, 1, false }, -- Raging Heart
+				[53228] = { 34033, 1, false }, -- Crescent Moon
+				[53229] = { 34032, 1, false }, -- Crescent Moon
+				[53230] = { 34034, 1, false }, -- Eweriel
+				[53231] = { 34035, 1, false }, -- Ramblue
+				[53232] = { 34039, 1, false }, -- Baby Huashin
+				[53233] = { 34055, 1, true }, -- Bruce (Loot)
+				[53234] = { 34056, 1, true }, -- Wayne (Loot)
+				[53235] = { 34057, 1, true }, -- Robin (Loot)
+				[53236] = { 34058, 1, false }, -- Valentino+
+				[53237] = { 34059, 1, false }, -- Valentinia+
+				[53238] = { 34058, 1, false }, -- Valentino
+				[53239] = { 34059, 1, false }, -- Valentinia
+				[53240] = { 34063, 1, false }, -- Lantern Moon (Blue)
+				[53241] = { 34062, 1, false }, -- Lantern Moon (Orange)
+				[53242] = { 34066, 1, true }, -- Bonsai (Loot)
+				[53243] = { 34066, 1, false }, -- Bonsai
+				[53244] = { 34067, 1, false }, -- Ms Jiangshi+
+				[53245] = { 34068, 1, false }, -- Mr Jiangshi+
+				[53246] = { 34069, 1, false }, -- Jiangshi Jnr
+				[53247] = { 34070, 1, false }, -- Red Elf
+				[53248] = { 34071, 1, false }, -- Green Elf
+				[53249] = { 34072, 1, false }, -- Helpful Elf
+				[53250] = { 34084, 1, false }, -- Donnie
+				[53251] = { 34085, 1, false }, -- Frank
+				[53253] = { 34086, 1, false }, -- Shiver
+				[53254] = { 34087, 1, false }, -- Snivel
+				[53255] = { 34088, 1, false }, -- Cruella
+				[53256] = { 34066, 1, false }, -- Mini Bonsai
+				[53257] = { 34089, 1, false }, -- Minidall
+				[53258] = { 34090, 1, false }, -- Colourful Lantern
+				[53259] = { 34091, 1, false }, -- Green Lantern
+				[53260] = { 34092, 1, false }, -- Sir Oswald
+				[53261] = { 34093, 1, false }, -- Sir Cobblepot
+				[53262] = { 34094, 1, false }, -- Sir Chesterfield
+				[53263] = { 34095, 1, false }, -- Gryph
+				[53264] = { 34096, 1, false }, -- Nogai
+				[53265] = { 34097, 1, false }, -- Astrabell
+				[53266] = { 34098, 1, false }, -- Helexna
+				[53267] = { 34099, 1, false }, -- Chaotika
+				[53268] = { 34100, 1, false }, -- Gary Lycaner
+				[53269] = { 34101, 1, false }, -- Lycaninho
+				[53270] = { 34102, 1, false }, -- Little Catenaccio
+				[53271] = { 34103, 1, false }, -- Royal Blue Peacock
+				[53272] = { 34104, 1, false }, -- Pink Peacock
+				[53273] = { 34105, 1, false }, -- Indigo Peacock
+				[53274] = { 34106, 1, false }, -- Harry Hazelnut
+				[53275] = { 34107, 1, false }, -- Willy Walnut
+				[53276] = { 34108, 1, false }, -- Corporal Crack
+				[53277] = { 34109, 1, false }, -- Humpitzer
+				[53278] = { 34110, 1, false }, -- Caboomel
+				[53279] = { 34111, 1, false }, -- Camelry
+				[53280] = { 34112, 1, false }, -- Frost Beetle+
+				[53281] = { 34113, 1, false }, -- Frost Beetle
+				[53282] = { 34114, 1, false }, -- All-Seeing Flamecat
+				[53283] = { 34115, 1, false }, -- All-Seeing Frostcat
+				[53284] = { 34116, 1, false }, -- Three-Eyed Firecat
+				[53285] = { 34117, 1, false }, -- Gnome Tomte+ (Red)
+				[53286] = { 34118, 1, false }, -- Gnome Tomte+ (Green)
+				[53287] = { 34119, 1, false }, -- Gnome Tomte
+				[53288] = { 34120, 1, false }, -- Red Baby Huashin
+				[53289] = { 34121, 1, false }, -- White Baby Huashin
+				[53290] = { 34124, 1, false }, -- Sm. Fire Elemental
+				[53291] = { 34125, 1, false }, -- Sm. Ice Elemental
+				[53292] = { 34126, 1, false }, -- Sm. Lightning Elemental
+				[53293] = { 34127, 1, false }, -- Sm. Wind Elemental
+				[53294] = { 34128, 1, false }, -- Sm. Earth Elemental
+				[53295] = { 34129, 1, false }, -- Sm. Darkness Elemental
+				[53296] = { 34130, 1, false }, -- Playful Loverador
+				[53297] = { 34131, 1, false }, -- Clumsy Loverador
+				[53298] = { 34132, 1, false }, -- Little Loverador
+				[53299] = { 34133, 1, false }, -- Mini Crab Warrior
+				[53300] = { 34134, 1, false }, -- Mini Crab
+				[53301] = { 34135, 1, false }, -- Tremor Mummy
+				[53302] = { 34136, 1, false }, -- Wobble Mummy
+				[53303] = { 34137, 1, false }, -- Shaky Mummy
+				[53304] = { 34138, 1, false }, -- Green Christmas Ent
+				[53305] = { 34139, 1, false }, -- Gnarled Christmas Ent
+				[53306] = { 34140, 1, false }, -- Small Christmas Ent
+				[53307] = { 34141, 1, false }, -- Midnight Blue Anubis
+				[53308] = { 34142, 1, false }, -- Blood Red Anubis
+				[53309] = { 34143, 1, false }, -- Little Anubis
+				[53311] = { 34145, 1, false }, -- Mighty Ice Killer Whale
+				[53312] = { 34146, 1, false }, -- Tame Ice Killer Whale
+				[53313] = { 34147, 1, true }, -- Snow Leonidas (Loot)
+				[53314] = { 34148, 1, true }, -- Astrabell (Loot)
+				[53315] = { 34149, 1, true }, -- Fire Phoenix (Loot)
+				[53316] = { 34150, 1, false }, -- Ice-cold Menace
+				[53317] = { 34151, 1, false }, -- Poisonous Menace
+				[53318] = { 34152, 1, false }, -- Little Menace
+				[53319] = { 34038, 1, false }, -- Phoenix of Redemption
+				[53320] = { 34153, 1, false }, -- Snowdrop
+				[53321] = { 34154, 1, false }, -- Snowball
+				[53322] = { 34155, 1, false }, -- Snowdon
+				[53323] = { 34156, 1, false }, -- Frozen Sarcophagus
+				[53324] = { 34157, 1, false }, -- Crimson Sarcophagus
+				[53325] = { 34158, 1, false }, -- Small Sarcophagus
+				[53326] = { 34159, 1, false }, -- Gingerbread Dasher
+				[53327] = { 34160, 1, false }, -- Gingerbread Rudolph
+				[53328] = { 34161, 1, false }, -- Baby Gingerbread Dasher
+				[53329] = { 34162, 1, false }, -- Cute Dragon Darling
+				[53330] = { 34163, 1, false }, -- Playful Dragon Darling
+				[53331] = { 34164, 1, false }, -- Little Dragon Darling
+				[53332] = { 34167, 1, true }, -- Mini Fire Boss (Loot)
+				[53333] = { 34168, 1, true }, -- Mini Ice Boss (Loot)
+				[53334] = { 34169, 1, true }, -- Mini Light. Boss (Loot)
+				[53335] = { 34170, 1, true }, -- Mini Wind Boss (Loot)
+				[53336] = { 34171, 1, true }, -- Mini Earth Boss (Loot)
+				[53337] = { 34172, 1, true }, -- Mini Dark. Boss (Loot)
+				[53338] = { 34173, 1, false }, -- Mini Boss
+				[53339] = { 34174, 1, false }, -- White Angora Cat
+				[53340] = { 34175, 1, false }, -- Brown Angora Cat
+				[53341] = { 34176, 1, false }, -- Angora Kitten
+				[53342] = { 34177, 1, false }, -- Champion Football (Rew.)
+				[53343] = { 34177, 1, false }, -- Champion Football
+				[53345] = { 34180, 1, false }, -- Whistle
+				[53346] = { 34181, 1, false }, -- Wrench
+				[53347] = { 34182, 1, false }, -- Mini-Whistle
+				[53348] = { 34183, 1, false }, -- Loyal Ice Killer Whale
+				[53349] = { 34184, 1, false }, -- Mini Ice Killer Whale
+				[53350] = { 34185, 1, false }, -- Temerous Tiki Terror
+				[53351] = { 34186, 1, false }, -- Audacious Tiki Terror
+				[53352] = { 34187, 1, false }, -- Tiny Tiki Terror
+				[53353] = { 34188, 1, false }, -- Snow Krampus
+				[53354] = { 34189, 1, false }, -- Coal Krampus
+				[53355] = { 34190, 1, false }, -- Tiny Krampus
+				[53356] = { 34191, 1, false }, -- Black Bull
+				[53357] = { 34192, 1, false }, -- Brown Bull
+				[53358] = { 34193, 1, false }, -- Tame Bull
+				[53359] = { 34194, 1, false }, -- Pincher
+				[53360] = { 34195, 1, false }, -- Snapper
+
+				[70615] = { 34178, pc.get_name() .. " - ", 1, false }, -- Snowflake Bambi
+			}
+
+			itemVnum = tonumber(itemVnum)
+			return pet_info_map[itemVnum]
+		end
+
+		function get_spawn_effect_file(idx)
+			effect_table = {
+				[0] = nil,
+				[1] = "d:\\\\ymir work\\\\effect\\\\etc\\\\appear_die\\\\monster_appear.mse",
+			}
+			return effect_table[idx]
+		end
+
+		when login or restart_here with game.get_event_flag("spawn_pet_login") begin
+			local use_item = pc.getqf("use_item")
+			if use_item != 0 and pet.can_spawn() then
+				if not item.select(use_item) then
+					return
+				end
+
+				local pet_info = pet_system.get_pet_info(item.get_vnum())
+				if nil != pet_info then
+					local vnum = pet_info[1]
+					local spawn_effect_file_name = pet_system.get_spawn_effect_file(pet_info[2])
+					local loot = pet_info[3]
+					local spawn_far_away = false
+					local name = c_mob_name(vnum)
+
+					if not pet.is_summon(vnum) and pet.count_summoned() < 1 then
+						pet.summon(vnum, name, spawn_far_away, loot)
+					end
+				end
+			end
+		end
+
+		when
+			38200.use or 38201.use or
+			53001.use or
+			53002.use or 53003.use or
+			53005.use or 53006.use or
+			53007.use or
+			53008.use or 53009.use or
+			53010.use or 53011.use or 53012.use or 53013.use or
+			53014.use or 53015.use or
+			53016.use or 53017.use or
+			53018.use or 53019.use or 53020.use or 53021.use or
+			53022.use or 53023.use or
+			53024.use or 53025.use or
+			53026.use or
+			53218.use or 53219.use or
+			53220.use or 53221.use or
+			53222.use or 53223.use or
+			53224.use or 53225.use or
+			53226.use or 53227.use or
+			53228.use or 53229.use or
+			53230.use or 53231.use or 53232.use or
+			53233.use or 53234.use or 53235.use or
+			53236.use or 53237.use or 53238.use or 53239.use or
+			53240.use or 53241.use or 53242.use or
+			53243.use or
+			53244.use or 53245.use or 53246.use or
+			53247.use or 53248.use or 53249.use or
+			53250.use or 53251.use or
+			53253.use or 53254.use or 53255.use or
+			53256.use or
+			53257.use or
+			53258.use or 53259.use or
+			53260.use or 53261.use or 53262.use or
+			53263.use or 53264.use or
+			53265.use or 53266.use or 53267.use or
+			53268.use or 53269.use or 53270.use or
+			53271.use or 53272.use or 53273.use or
+			53274.use or 53275.use or 53276.use or
+			53277.use or 53278.use or 53279.use or
+			53280.use or 53281.use or
+			53282.use or 53283.use or 53284.use or
+			53285.use or 53286.use or 53287.use or
+			53288.use or 53289.use or
+			53290.use or 53291.use or 53292.use or 53293.use or 53294.use or 53295.use or
+			53296.use or 53297.use or 53298.use or
+			53299.use or 53300.use or
+			53301.use or 53302.use or 53303.use or
+			53304.use or 53305.use or 53306.use or
+			53307.use or 53308.use or 53309.use or
+			53311.use or 53312.use or
+			53313.use or 53314.use or 53315.use or
+			53316.use or 53317.use or 53318.use or
+			53319.use or
+			53320.use or 53321.use or 53322.use or
+			53323.use or 53324.use or 53325.use or
+			53326.use or 53327.use or 53328.use or
+			53329.use or 53330.use or 53331.use or
+			53332.use or 53333.use or 53334.use or 53335.use or 53336.use or 53337.use or 53338.use or
+			53339.use or 53340.use or 53341.use or
+			53342.use or 53343.use or
+			53345.use or 53346.use or 53347.use or
+			53348.use or 53349.use or
+			53350.use or 53351.use or 53352.use or
+			53353.use or 53354.use or 53355.use or
+			53356.use or 53357.use or 53358.use or
+			53359.use or 53360.use or
+			70615.use
+		begin
+			local pet_info = pet_system.get_pet_info(item.get_vnum())
+			if nil != pet_info then
+				local vnum = pet_info[1]
+				local spawn_effect_file_name = pet_system.get_spawn_effect_file(pet_info[2])
+				local loot = pet_info[3]
+				local spawn_far_away = false
+				local name = c_mob_name(vnum)
+
+				if true == pet.is_summon(vnum) then
+					if spawn_effect_file_name != nil then
+						pet.spawn_effect(vnum, "d:\\\\ymir work\\\\effect\\\\etc\\\\appear_die\\\\monster_die.mse")
+					end
+
+					pet.unsummon(vnum)
+					if game.get_event_flag("spawn_pet_login") then
+						pc.setqf("use_item", 0)
+					end
+				else
+					if pet.count_summoned() < 1 then
+						pet.summon(vnum, name, spawn_far_away, loot)
+						if game.get_event_flag("spawn_pet_login") then
+							pc.setqf("use_item", item.get_id())
+						end
+					else
+						syschat(c_locale(7638))
+					end
+
+					if spawn_effect_file_name != nil then
+						pet.spawn_effect(vnum, spawn_effect_file_name)
+					end
+				end
+			end
+		end
+	end
+end

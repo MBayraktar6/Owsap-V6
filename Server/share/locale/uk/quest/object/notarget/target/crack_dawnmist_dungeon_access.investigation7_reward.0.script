@@ -1,0 +1,18 @@
+if not pc . enough_inventory ( 31161 ) then 
+say_title ( c_mob_name ( 20521 ) ) 
+say ( c_locale ( 11597 ) ) 
+return 
+end 
+target . delete ( "__TARGET__" ) 
+pc . remove_item ( 31165 , 1 ) 
+pc . give_exp2 ( 1.165e+07 ) 
+pc . change_money ( 200000 ) 
+pc . give_item2 ( 31161 , 1 ) 
+pc . setqf ( "complete" , 1 ) 
+say_title ( c_mob_name ( 20521 ) ) 
+say ( c_locale ( 11593 ) ) 
+say ( c_locale ( 11594 ) ) 
+say_reward ( c_locale ( 11599 , c_item_name ( 31161 ) ) ) 
+say_reward ( c_locale ( 11596 , number_to_money_string ( 5.825e+06 ) ) ) 
+say_reward ( c_locale ( 11599 , number_to_money_string ( 200000 , c_locale ( 3415 ) ) ) ) 
+set_state ( "investigation1a" ) 

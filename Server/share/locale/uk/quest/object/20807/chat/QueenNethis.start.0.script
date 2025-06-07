@@ -1,0 +1,14 @@
+say_title ( mob_name ( 20807 ) ) 
+say ( "Do you Want destroy the Queen Nethis?" ) 
+local answer = select ( "Yes" , "No" ) 
+if answer == 2 then return end 
+say_title ( mob_name ( 20807 ) ) 
+if not party . is_party ( ) then 
+say ( "Debes ser líder de un grupo." ) 
+return 
+end 
+if not party . is_leader ( ) then 
+say ( "Debes ser líder de un grupo." ) 
+return 
+end 
+SnakeLair . Access ( ) 

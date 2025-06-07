@@ -1,0 +1,12 @@
+say_title ( c_locale ( 11518 ) ) 
+if pc . getqf ( "complete" ) == 1 then 
+say ( c_locale ( 11524 ) ) 
+else 
+say ( c_locale ( 11520 ) ) 
+say ( c_locale ( 11521 ) ) 
+end 
+select ( c_locale ( 11522 ) ) 
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 11518 ) ) 
+say ( c_locale ( 11523 ) ) 
+set_state ( "investigation1b" ) 

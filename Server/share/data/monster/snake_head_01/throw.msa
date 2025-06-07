@@ -1,0 +1,33 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\npc2\snake_head_01\throw.GR2"
+MotionDuration           1.000000
+
+Group MotionEventData
+{
+    MotionEventDataCount     2
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.026764
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "eff_attack"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/snake_laser01.mse"
+        EffectPosition       0.000000 -80.000000 0.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.503650
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "eff_attack"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/snake_laser_boom_01.mse"
+        EffectPosition       0.000000 -3500.000000 500.000000
+    }
+}

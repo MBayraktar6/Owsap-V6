@@ -1,0 +1,65 @@
+rainbow_stone={["start"]=0,train_horse= function ()local horse_skill_table = { 
+137 , 
+138 , 
+139 , 
+140 , 
+} 
+pc . set_skill_level ( 130 , 30 ) 
+pc . set_skill_level ( 131 , 10 ) 
+for skill , skill_vnum in ipairs ( horse_skill_table ) begin 
+if pc . get_skill_level ( skill_vnum ) < 40 then 
+pc . set_skill_level ( skill_vnum , 40 ) 
+end 
+end 
+end ,train= function (job,group)local skill_level = 40 
+local skill_table = { } 
+local next_use_interval = 60 * 1 
+local mastered = true 
+if job == 0 and group == 1 then skill_table = { 1 , 2 , 3 , 4 , 5 , 6 , 176 } 
+elseif job == 0 and group == 2 then skill_table = { 16 , 17 , 18 , 19 , 20 , 21 , 176 } 
+elseif job == 1 and group == 1 then skill_table = { 31 , 32 , 33 , 34 , 35 , 36 , 177 } 
+elseif job == 1 and group == 2 then skill_table = { 46 , 47 , 48 , 49 , 50 , 51 , 178 } 
+elseif job == 2 and group == 1 then skill_table = { 61 , 62 , 63 , 64 , 65 , 66 , 179 } 
+elseif job == 2 and group == 2 then skill_table = { 76 , 77 , 78 , 79 , 80 , 81 , 180 } 
+elseif job == 3 and group == 1 then skill_table = { 91 , 92 , 93 , 94 , 95 , 96 , 181 } 
+elseif job == 3 and group == 2 then skill_table = { 106 , 107 , 108 , 109 , 110 , 111 , 182 } 
+elseif job == 4 and group == 1 then skill_table = { 170 , 171 , 172 , 173 , 174 , 175 , 183 } 
+elseif job == 4 and group == 2 then skill_table = { 0 } 
+elseif job == nil or group == nil then 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "FAIL_UNIDENTIFIED_JOB_OR_SKILL_GROUP" ) 
+return 
+end 
+if pc . is_gm ( ) and pc . get_level ( ) == 5 or is_test_server ( ) then 
+local passive_skill_table = { 
+121 , 
+122 , 
+123 , 
+124 , 
+126 , 
+127 , 
+128 , 
+129 , 
+141 , 
+142 , 
+133 , 
+134 , 
+246 , 
+} 
+for skill , skill_vnum in ipairs ( passive_skill_table ) begin 
+table . insert ( skill_table , skill_vnum ) 
+end 
+end 
+for skill , skill_vnum in ipairs ( skill_table ) begin 
+test_chat ( string . format ( "%d - %d" , skill , skill_vnum ) ) 
+if pc . get_skill_level ( skill_vnum ) < skill_level then 
+mastered = false 
+pc . set_skill_level ( skill_vnum , skill_level ) 
+end 
+end 
+if mastered == true then 
+test_chat ( string . format ( "Skills are already equal or above level %d" , skill_level ) ) 
+else 
+char_log ( item . get_id ( ) , "PERFECT_SKILLS" , "ITEM_REMOVE_SUCCESS" ) 
+item . remove ( ) 
+end 
+end }

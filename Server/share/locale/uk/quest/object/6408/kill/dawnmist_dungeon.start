@@ -1,0 +1,2 @@
+if dawnmist_dungeon . in_dungeon ( pc . get_map_index ( ) ) then server_timer ( "dawnmist_dungeon_spawn_timer" , 60 , d . get_map_index ( ) ) 
+ return end 

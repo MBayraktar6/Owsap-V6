@@ -1,0 +1,28 @@
+local setting = blue_dragon_lair . setting ( ) 
+if not party . is_party ( ) then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 885 ) ) 
+return 
+end 
+if not party . is_leader ( ) then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 880 ) ) 
+return 
+end 
+if party . get_near_count ( ) < party . get_member_count ( ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 881 ) ) 
+return 
+end 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 893 ) ) 
+if select ( c_locale ( 878 ) , c_locale ( 879 ) ) == 1 then 
+npc . purge ( ) 
+d . setqf ( "charged" , 0 ) 
+d . setf ( "blue_dragon_alive" , 1 ) 
+d . setct ( setting . lair_duration ) 
+d . set_regen_file ( "data/dungeon/dragon_lair.txt" ) 
+d . party_notice ( c_locale_string ( 1824 ) ) 
+clear_server_timer ( "blue_dragon_lair_1m_left_timer" , d . get_map_index ( ) ) 
+server_timer ( "blue_dragon_lair_45m_left_timer" , 60 * 15 , d . get_map_index ( ) ) 
+end 

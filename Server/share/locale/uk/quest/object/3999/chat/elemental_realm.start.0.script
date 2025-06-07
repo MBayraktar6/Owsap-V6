@@ -1,0 +1,4 @@
+say ( c_locale ( 12090 ) ) 
+if select ( c_locale ( 12085 ) , c_locale ( 12086 ) ) == 1 then 
+pc . warp ( 1280 * 100 , 5632 * 100 ) 
+end 

@@ -1,0 +1,2 @@
+q . set_counter ( c_locale ( 702 ) , couple_ring . get_rest_count ( ) ) 
+send_letter ( c_locale ( 679 ) ) 

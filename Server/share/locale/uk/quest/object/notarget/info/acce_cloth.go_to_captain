@@ -1,0 +1,3 @@
+say_title ( c_locale ( 3 ) ) 
+say ( c_locale ( 4 ) ) 
+say_reward ( c_locale ( 5643 ) ) 

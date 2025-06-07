@@ -1,0 +1,1 @@
+return pc . get_map_index ( ) == 73 and not blue_dragon_lair . inside ( pc . get_map_index ( ) )

@@ -1,0 +1,2 @@
+if pc . get_level ( ) >= 30 then say ( c_locale ( 7546 ) ) 
+ return end 

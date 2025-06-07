@@ -1,0 +1,13 @@
+crack_daily_boss={["start"]=0,["boss_hunt"]=2006737923,["reward"]=1322349139,["run"]=1349952704,check_progress= function ()local b1 = pc . getf ( "crack_skipia_dungeon" , "bluedragon_boss" ) 
+local b2 = pc . getf ( "crack_snow_dungeon" , "hanma_boss" ) 
+local b3 = pc . getf ( "crack_flame_dungeon" , "yamachun_boss" ) 
+local b4 = pc . getf ( "crack_dawnmist_dungeon" , "thunder_boss" ) 
+if b1 == 1 and b2 == 1 and b3 == 1 and b4 == 1 then 
+set_state ( "reward" ) 
+end 
+end ,get_completed= function ()local b1 = pc . getf ( "crack_skipia_dungeon" , "bluedragon_boss" ) == 1 and "O" or "X" 
+local b2 = pc . getf ( "crack_snow_dungeon" , "hanma_boss" ) == 1 and "O" or "X" 
+local b3 = pc . getf ( "crack_flame_dungeon" , "yamachun_boss" ) == 1 and "O" or "X" 
+local b4 = pc . getf ( "crack_dawnmist_dungeon" , "thunder_boss" ) == 1 and "O" or "X" 
+return b1 , b2 , b3 , b4 
+end }

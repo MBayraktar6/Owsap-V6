@@ -1,0 +1,110 @@
+local setting = labyrinth_dungeon . setting ( ) 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_mob_name ( 20471 ) ) 
+say ( "" ) 
+say ( c_locale ( 11289 ) ) 
+if select ( c_locale ( 11290 ) , c_locale ( 11286 ) ) ~= 1 then 
+return 
+end 
+if pc . get_map_index ( ) ~= 363 then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11300 ) ) 
+return 
+end 
+say ( c_locale ( 11327 ) ) 
+local s_name = { 
+c_locale ( 11306 ) , 
+c_locale ( 11307 ) , 
+c_locale ( 11308 ) , 
+c_locale ( 11309 ) , 
+} 
+table . insert ( s_name , c_locale ( 11330 ) ) 
+local s = select_table ( s_name ) 
+if s ~= table . getn ( s_name ) then 
+if pc . get_level ( ) < 110 then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11302 ) ) 
+return 
+end 
+if not party . is_party ( ) then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11291 ) ) 
+return 
+end 
+if not party . is_leader ( ) then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11292 ) ) 
+return 
+end 
+local pids = { party . get_member_pids ( ) } 
+local ticket_check = true 
+local no_ticket_members = { } 
+local mount_check = true 
+local no_mount_members = { } 
+local assassin_check = false 
+local shaman_check = false 
+if party . get_near_count ( ) < table . getn ( pids ) then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11301 ) ) 
+return 
+end 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if pc . count_item ( 31146 ) < 1 then 
+table . insert ( no_ticket_members , pc . get_name ( ) ) 
+ticket_check = false 
+end 
+if pc . is_mount ( ) then 
+table . insert ( no_mount_members , pc . get_name ( ) ) 
+mount_check = false 
+end 
+if pc . get_job ( ) == ASSASSIN then 
+assassin_check = true 
+end 
+if pc . get_job ( ) == SHAMAN then 
+shaman_check = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if s == setting . boss_awaken_snow . option_index then 
+if not mount_check then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11304 ) ) 
+for i , name in next , no_mount_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return 
+end 
+if not assassin_check and not shaman_check then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11328 ) ) 
+return 
+end 
+end 
+if not ticket_check then 
+say_title ( c_locale ( 11344 ) ) 
+say ( c_locale ( 11305 ) ) 
+say_item_vnum ( 31146 ) 
+for i , name in next , no_ticket_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return 
+end 
+local dungeon 
+if s == setting . boss_awaken_skipia . option_index then 
+dungeon = setting . boss_awaken_skipia elseif s == setting . boss_awaken_flame . option_index then 
+dungeon = setting . boss_awaken_flame elseif s == setting . boss_awaken_snow . option_index then 
+dungeon = setting . boss_awaken_snow elseif s == setting . boss_awaken_dawnmist . option_index then 
+dungeon = setting . boss_awaken_dawnmist else 
+return 
+end 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+pc . remove_item ( 31146 , 1 ) 
+pc . setf ( dungeon . quest_name , dungeon . quest_flag_exit , get_global_time ( ) ) 
+q . end_other_pc_block ( ) 
+end 
+d . new_jump_party ( dungeon . map_index , 
+dungeon . base_position [ 1 ] + dungeon . start_position [ 1 ] , 
+dungeon . base_position [ 2 ] + dungeon . start_position [ 2 ] ) 
+end 

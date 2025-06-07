@@ -1,0 +1,89 @@
+quest frenzied_beasts begin
+	state start begin
+	end
+
+	state run begin
+		when letter begin
+			send_letter(c_locale(6357))
+			local v = find_npc_by_vnum(20401)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6357))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6357))
+			say(c_locale(6358))
+		end
+
+		when __TARGET__.target.click or 20401.chat.c_locale(6357) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			say_title(c_mob_name(20401))
+			say(c_locale(6359))
+
+			set_state("animal_hunt")
+		end
+	end
+
+	state animal_hunt begin
+		when letter begin
+			send_letter(c_locale(6360))
+		end
+
+		when button or info begin
+			say_title(c_locale(6360))
+			say(c_locale(6361))
+		end
+
+		when 20401.chat.c_locale(6360) begin
+			say_title(c_mob_name(20401))
+			say(c_locale(6362))
+		end
+
+		when kill with npc.is_pc() == false begin
+			if number(0, 3) ~= 3 then
+				return
+			end
+
+			pc.give_item2(31093)
+			set_state("goto_colony_guard")
+		end
+	end
+
+	state goto_colony_guard begin
+		when letter begin
+			send_letter(c_locale(6363))
+			local v = find_npc_by_vnum(20401)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6363))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6363))
+			say(c_locale(6407))
+		end
+
+		when __TARGET__.target.click or 20401.chat.c_locale(6363) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(250)
+			pc.give_item2(27001, 10)
+			pc.remove_item(31093, pc.count_item(31093))
+
+			say_title(c_mob_name(20401))
+			say(c_locale(6364))
+			say_reward(c_locale(5043, c_item_name(27001), 10))
+			say_reward(c_locale(6882, 250))
+
+			set_state("__COMPLETE__")
+			set_quest_state("unknown_stone", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

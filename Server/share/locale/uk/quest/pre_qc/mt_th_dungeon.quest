@@ -1,0 +1,26 @@
+quest mt_th_dungeon begin
+	state start begin
+		-- "Enter the Temple of the Ochao"
+		when 20408.chat.c_locale(800) begin
+			-- "Do you want to move directly to the Temple of the Ochao?"
+			say(c_locale(801))
+			if select(c_locale(4473), c_locale(3418)) == 1 then -- "Yes" / "No"
+				if pc.get_level() >= 95 then
+					pc.warp(854800, 1416500)
+				else
+					-- "Your level is not high enough to enter the dungeon."
+					say(c_locale(802))
+				end
+			end
+		end
+
+		-- "Enter the Enchanted Forest"
+		when 20415.chat.c_locale(804) with pc.get_map_index() == 354 begin
+			-- "Do you wish to travel to the Enchanted Forest?"
+			say(c_locale(803))
+			if select(c_locale(4473), c_locale(3418)) == 1 then -- "Yes" / "No"
+				pc.warp(817900, 1505000)
+			end
+		end
+	end
+end

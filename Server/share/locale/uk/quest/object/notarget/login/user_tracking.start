@@ -1,0 +1,1 @@
+char_log ( pc . getcurrentmapindex ( ) , "MAP_CHANGE" , pc . get_level ( ) ) 

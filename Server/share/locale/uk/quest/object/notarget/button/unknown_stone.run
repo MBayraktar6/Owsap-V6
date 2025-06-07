@@ -1,0 +1,2 @@
+say_title ( c_locale ( 6363 ) ) 
+say ( c_locale ( 6367 , pc . getqf ( "unknown_stone_count" ) ) ) 

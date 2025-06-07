@@ -1,0 +1,58 @@
+quest exchange_bureau begin
+	state start begin
+
+		-- "Exchange Bureau"
+		when 9005.chat.c_locale(10043) begin
+
+			local exchange_list = { c_locale(10045), c_locale(10046), c_locale(10044) }
+			local exchange_sel = select_table(exchange_list)
+
+			if exchange_sel == 1 then -- Won to Yang
+				say_title(c_locale(10047))
+				say(c_locale(10048))
+				say(c_locale(10049))
+
+				local cheque_str = input()
+				local cheque = tonumber(cheque_str)
+
+				if cheque ~= nil and cheque > 0 and cheque < 20 and math.floor(cheque) == cheque then
+
+					local gold = cheque * 100000000
+
+					say_title(c_locale(10050))
+					say(c_locale(10033, cheque, number_to_money_string(gold)))
+
+					if select(c_locale(10034), c_locale(10035)) == 1 then
+						pc.exchange_cheque(cheque, 100000000)
+					end
+				else
+					say(c_locale(10032))
+				end
+
+			elseif exchange_sel == 2 then -- Yang to Won
+				say_title(c_locale(10036))
+				say(c_locale(10037))
+				say(c_locale(10038))
+
+				local cheque_str = input()
+				local cheque = tonumber(cheque_str)
+
+				if cheque ~= nil and cheque > 0 and cheque < 20 and math.floor(cheque) == cheque then
+
+					local tax = math.floor((cheque * 100000000 * 3) / 100)
+					local need_gold = cheque * 100000000 + tax
+
+					say(c_locale(10039))
+					say(c_locale(10040, 3))
+					say(c_locale(10041, number_to_money_string(need_gold), cheque))
+
+					if select(c_locale(10034), c_locale(10035)) == 1 then
+						pc.exchange_gold(cheque, 100000000, 3)
+					end
+				else
+					say(c_locale(10032))
+				end
+			end
+		end
+	end
+end

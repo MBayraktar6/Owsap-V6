@@ -1,0 +1,8 @@
+say_title ( c_locale ( 4504 ) ) 
+say ( c_locale ( 4508 ) ) 
+say_reward ( c_locale ( 4509 ) ) 
+say ( c_locale ( 4510 ) ) 
+say_reward ( c_locale ( 4511 ) ) 
+pc . give_exp2 ( 776600 ) 
+say_reward ( c_locale ( 5413 , 776600 ) ) 
+set_state ( "primary_investigations_4" ) 

@@ -1,0 +1,75 @@
+quest goto_empire_castle begin
+	state start begin
+		when 20097.chat.c_locale(1576) begin
+			local empire = pc.get_empire()
+			if empire == 1 then
+				a = select(c_locale(1580), c_locale(1581), c_locale(1582), c_locale(2426))
+				if 1 == a then
+					say(c_locale(1583))
+					wait()
+					pc.warp(975200, 133000)
+				elseif 2 == a then
+					say(c_locale(1584))
+					wait()
+					pc.warp(978000, 199500)
+				elseif 3 == a then
+					say(c_locale(1585))
+					wait()
+					pc.warp(967900, 199400)
+				else
+					return
+				end
+			else
+				say(c_locale(1586))
+			end
+		end
+
+		when 20098.chat.c_locale(1587) begin
+			local empire = pc.get_empire()
+			if empire == 2 then
+				a = select(c_locale(1580), c_locale(1581), c_locale(1582), c_locale(2426))
+				if 1 == a then
+					say(c_locale(1588))
+					wait()
+					pc.warp(977400, 150100)
+				elseif 2 == a then
+					say(c_locale(1577))
+					wait()
+					pc.warp(977200, 185000)
+				elseif 3 == a then
+					say(c_locale(1585))
+					wait()
+					pc.warp(925600, 201200)
+				else
+					return
+				end
+			else
+				say(c_locale(1578))
+			end
+		end
+
+		when 20099.chat.c_locale(1576) begin
+			local empire = pc.get_empire()
+			if empire == 3 then
+				a = select(c_locale(1580), c_locale(1581), c_locale(1582), c_locale(2426))
+				if 1 == a then
+					say(c_locale(1588))
+					wait()
+					pc.warp(1018900, 148400)
+				elseif 2 == a then
+					say(c_locale(1577))
+					wait()
+					pc.warp(1019000, 200200)
+				elseif 3 == a then
+					say(c_locale(1585))
+					wait()
+					pc.warp(923900, 183600)
+				else
+					return
+				end
+			else
+				say(c_locale(1579))
+			end
+		end
+	end
+end

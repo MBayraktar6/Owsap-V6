@@ -1,0 +1,3 @@
+say_title ( c_locale ( 4975 ) ) 
+say ( c_locale ( 4976 ) ) 
+say_reward ( c_locale ( 4977 , pc . getqf ( "state" ) ) ) 

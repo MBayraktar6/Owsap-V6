@@ -1,0 +1,163 @@
+quest main_quest_lv6 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 6 begin
+			set_state(gototeacher)
+		end
+	end
+
+	state gototeacher begin
+		when letter begin
+			send_letter(c_locale(5376))
+			local v = find_npc_by_vnum(20354)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5376))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5376))
+			say(c_locale(5387))
+			say_item_vnum(30070)
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4940))
+			say(c_locale(5396))
+			wait()
+
+			say_title(c_locale(4940))
+			say(c_locale(5397))
+			wait()
+
+			say_title(c_locale(114))
+			say_reward(c_locale(5398))
+			say_reward(c_locale(5399, 1300))
+			say_reward(c_locale(5400, 1500))
+			say_reward(c_locale(5058, c_item_name(30070)))
+			say_item_vnum(30070)
+
+			set_state(gotosmith)
+		end
+	end
+
+	state gotosmith begin
+		when letter begin
+			send_letter(c_locale(5402))
+			local v = find_npc_by_vnum(20016)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5401))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5402))
+			say(c_locale(5377))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(97))
+			say(c_locale(5378))
+			wait()
+
+			say_title(c_locale(97))
+			say(c_locale(5379))
+
+			say_item_vnum(30003)
+
+			set_state(gotowarehousekeeper)
+		end
+	end
+
+	state gotowarehousekeeper begin
+		when letter begin
+			send_letter(c_locale(5381))
+			local v = find_npc_by_vnum(9005)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5380))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5381))
+			say(c_locale(5382))
+			say_item_vnum(30003)
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(5383))
+			say(c_locale(5384))
+			wait()
+
+			say_title(c_locale(5383))
+			say(c_locale(5385))
+
+			say_item_vnum(30003)
+			say(c_locale(5386))
+
+			set_state(gotosmith2)
+		end
+	end
+
+	state gotosmith2 begin
+		when letter begin
+			send_letter(c_locale(5388))
+			local v = find_npc_by_vnum(20016)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5401))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5388))
+			say(c_locale(5389))
+			say_item_vnum(30003)
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(97))
+			say(c_locale(5390))
+			wait()
+
+			say_title(c_locale(97))
+			say(c_locale(5391))
+			wait()
+
+			say_title(c_locale(97))
+			say(c_locale(5392))
+			wait()
+
+			say_title(c_locale(4297))
+			say_reward(c_locale(5399, 5000))
+			say_reward(c_locale(5400, 1500))
+			say_reward(c_locale(5058, c_item_name(30070)))
+			say_item_vnum(30070)
+
+			pc.give_exp2(5000)
+			pc.change_money(1500)
+			pc.give_item2(30070, 1)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv7", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

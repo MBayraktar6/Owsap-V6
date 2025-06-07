@@ -1,0 +1,15 @@
+if pc . get_job ( ) == 0 then 
+say_title ( c_locale ( 8078 ) ) 
+say ( c_locale ( 8079 ) ) 
+elseif pc . get_job ( ) == 1 then 
+say_title ( c_locale ( 8080 ) ) 
+say ( c_locale ( 8081 ) ) 
+elseif pc . get_job ( ) == 2 then 
+say_title ( c_locale ( 8082 ) ) 
+say ( c_locale ( 8083 ) ) 
+elseif pc . get_job ( ) == 3 then 
+say_title ( c_locale ( 8084 ) ) 
+say ( c_locale ( 8085 ) ) 
+end 
+select ( c_locale ( 2454 ) ) 
+setskin ( NOWINDOW ) 

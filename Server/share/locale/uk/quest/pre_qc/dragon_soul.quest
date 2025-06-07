@@ -1,0 +1,170 @@
+quest dragon_soul begin
+	state start begin
+		when levelup or letter with pc.get_level() >= 30 begin
+			send_letter(c_locale(930))
+
+			local v = find_npc_by_vnum(20001)
+			if 0 != v then
+				target.vid("__TARGET__", v, c_mob_name(20001))
+			end
+		end
+
+		when info or button begin
+			say(c_locale(931))
+		end
+
+		when 20001.chat.c_locale(932) with pc.get_level() >= 30 begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(20001))
+			say(c_locale(933))
+			set_state(state_learning)
+		end
+	end
+
+	state state_learning begin
+		when letter begin
+			send_letter(c_locale(934))
+		end
+
+		when info or button begin
+			say(c_locale(935))
+		end
+
+		when kill begin
+			if npc.is_pc() then
+				return
+			end
+
+			if pc.count_item(30270) < 10 then
+				if drop_gamble_with_flag("ds_drop") then
+					game.drop_item_with_ownership(30270, 1, 300)
+				end
+			end
+		end
+
+		when 20001.chat.c_locale(934) begin
+			say_title(c_mob_name(20001))
+			if pc.count_item(30270) >= 10 then
+				say(c_locale(936, 10 - 1))
+				pc.remove_item(30270, 10)
+				ds.give_qualification()
+				char_log(pc.get_player_id(), "DS_QUALIFICATION", "SUCCESS")
+				pc.give_item2(50255)
+				local today = math.floor(get_global_time() / 86400)
+				pc.setf("dragon_soul", "eye_timestamp", today)
+				pc.setf("dragon_soul", "eye_left", 9)
+				set_state(state_farming)
+			else
+				say(c_locale(937))
+			end
+		end
+	end
+
+	state state_farming begin
+		function get_eye_count()
+			local eye_left = pc.getf("dragon_soul", "eye_left")
+			if eye_left <= 0 then
+				return
+			end
+
+			if pc.count_item(30270) >= 10 then
+				pc.setf("dragon_soul", "eye_left", eye_left - 1)
+				pc.remove_item(30270, 10)
+				pc.give_item2(50255)
+				if 1 == eye_left then
+					notice_multiline(c_locale(941), notice)
+					set_state(state_closed_season)
+				end
+			end
+		end
+
+		when letter begin
+			send_letter(c_locale(938))
+		end
+
+		when info or button begin
+			say(c_locale(940, pc.getf("dragon_soul", "eye_left")))
+		end
+
+		when kill begin
+			if npc.is_pc() then
+				return
+			end
+
+			if drop_gamble_with_flag("ds_drop") then
+				local eye_left = pc.getf("dragon_soul", "eye_left")
+				local haved_gemstone_number = pc.count_item(30270)
+
+				if eye_left > haved_gemstone_number / 10 then
+					game.drop_item_with_ownership(30270, 1, 300)
+					dragon_soul.get_eye_count()
+				end
+			end
+		end
+
+		when 30270.pick begin
+			dragon_soul.get_eye_count()
+		end
+
+		when 20001.chat.c_locale(942) begin
+			say_title(c_mob_name(20001))
+			local today = math.floor(get_global_time() / 86400)
+			if today == pc.getf("dragon_soul", "eye_timestamp") then
+				say(c_locale(943))
+			else
+				say(c_locale(944))
+				pc.setf("dragon_soul", "eye_timestamp", today)
+				pc.setf("dragon_soul", "eye_left", 10)
+			end
+		end
+	end
+
+	state state_closed_season begin
+		when letter begin
+			send_letter(c_locale(945))
+		end
+
+		when info or button begin
+			say(c_locale(946))
+			local today = math.floor(get_global_time() / 86400)
+			if today == pc.getf("dragon_soul", "eye_timestamp") then
+				say(c_locale(947))
+			else
+				say(c_locale(948))
+			end
+		end
+
+		when 20001.chat.c_locale(938) begin
+			say_title(c_mob_name(20001))
+			local today = math.floor(get_global_time() / 86400)
+			if today == pc.getf("dragon_soul", "eye_timestamp") then
+				say(c_locale(943))
+			else
+				say(c_locale(944))
+				pc.setf("dragon_soul", "eye_timestamp", today)
+				pc.setf("dragon_soul", "eye_left", 10)
+				set_state(state_farming)
+			end
+		end
+	end
+
+	-- deprecated states. so, jump to new state.
+	state state_1 begin
+		when login begin
+			set_state(state_learning)
+		end
+	end
+
+	state state_2 begin
+		when login begin
+			set_state(state_learning)
+		end
+	end
+
+	state state_3 begin
+		when login begin
+			set_state(state_closed_season)
+		end
+	end
+end

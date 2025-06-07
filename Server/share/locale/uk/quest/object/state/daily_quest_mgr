@@ -1,0 +1,39 @@
+daily_quest_mgr={["start"]=0,["reset"]=1352515405,["run"]=1349952704,["trigger"]=443223901,clear= function ()pc . setqf ( "start_time" , 0 ) 
+pc . setqf ( "count" , 0 ) 
+pc . setqf ( "done" , 0 ) 
+cleartimer ( "daily_quest_over" ) 
+for _ , t in pairs ( special . daily_quest . table ) begin 
+for _ , st in pairs ( t ) begin 
+set_quest_state ( st [ "name" ] , "clear" ) 
+end 
+end 
+q . done ( ) 
+end ,update= function ()if pc . getqf ( "done" ) ~= 1 then 
+daily_quest_mgr . update_counter ( ) 
+end 
+daily_quest_mgr . update_clock ( ) 
+end ,update_counter= function ()local remain = pc . getqf ( "count" ) 
+local remain_count = table_length ( special . daily_quest . table ) - remain 
+q . set_counter_name ( c_locale ( 11689 ) ) 
+q . set_counter_value ( remain_count ) 
+if remain_count <= 0 then 
+pc . setqf ( "done" , 1 ) 
+pc . give_item2 ( special . daily_quest . item_reward [ 1 ] , special . daily_quest . item_reward [ 2 ] ) 
+q . done ( ) 
+end 
+end ,update_clock= function ()local left_time = special . daily_quest . limit_time - ( get_time ( ) - pc . getqf ( "start_time" ) ) 
+if left_time > 0 then 
+q . set_clock ( c_locale ( 11875 ) , left_time ) 
+timer ( "daily_quest_over" , left_time ) 
+else 
+daily_quest_mgr . clear ( ) 
+set_state ( "reset" ) 
+end 
+end ,reset= function ()pc . setqf ( "start_time" , get_time ( ) ) 
+pc . setqf ( "count" , 0 ) 
+cleartimer ( "daily_quest_reset" ) 
+for k , _ in pairs ( special . daily_quest . table ) begin 
+local st = select_random_subtable ( special . daily_quest . table , k ) 
+set_quest_state ( st [ "name" ] , "run" ) 
+end 
+end }

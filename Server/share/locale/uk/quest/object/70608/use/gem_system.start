@@ -1,0 +1,7 @@
+local value = 9999 
+if pc . get_gem ( ) + value >= 999999 then 
+syschat ( c_locale ( 14215 ) ) 
+return 
+end 
+item . remove ( ) 
+pc . give_gem ( value ) 

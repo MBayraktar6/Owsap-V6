@@ -1,0 +1,15 @@
+affect.add
+affect.remove
+affect.remove_bad
+affect.remove_good
+affect.add_hair
+affect.remove_hair
+affect.add_collect
+affect.add_collect_point
+affect.remove_collect
+affect.remove_all_collect
+affect.get_apply_on
+affect.get_apply_value
+affect.find
+affect.add_buff
+affect.remove_buff

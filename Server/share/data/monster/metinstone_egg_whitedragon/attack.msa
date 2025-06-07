@@ -1,0 +1,22 @@
+ScriptType               MotionData
+
+MotionFileName           "D:/Ymir Work/monster2/metinstone_egg_whitedragon/attack.GR2"
+MotionDuration           0.200000
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     1
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.004444
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "root"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/background/metinstone_splash_blue.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+}

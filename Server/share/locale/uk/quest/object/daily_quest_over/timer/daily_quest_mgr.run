@@ -1,0 +1,2 @@
+daily_quest_mgr . clear ( ) 
+set_state ( "reset" ) 

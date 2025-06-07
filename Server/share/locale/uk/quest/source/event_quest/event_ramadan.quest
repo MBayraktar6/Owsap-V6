@@ -1,0 +1,354 @@
+quest event_ramadan begin
+	state start begin
+		function is_running()
+			return (game.get_event_flag("ramadan_drop") > 0) -- npc spawn
+		end
+
+		function reward_period()
+			return (game.get_event_flag("ramadan_reward") > 0) -- reward menu appear
+		end
+
+		function setting()
+			return {
+				["bread"] = 30315,
+				["candy"] = 50183,
+				["plate"] = 30316,
+				["iftar"] = 30317,
+				["fruit"] = 30318,
+				["box"] = 50182,
+				["horse1"] = 71131,
+				["horse2"] = 71132,
+				["horse3"] = 71133,
+				["horse4"] = 71134,
+				["historian"] = 33002,
+				["beggar1"] = 33003,
+				["beggar2"] = 33004,
+				["beggar3"] = 33005,
+				["beggar4"] = 33006,
+				["beggar5"] = 33007
+			}
+		end
+
+		when login or enter with event_ramadan.is_running() begin
+			local setting = event_ramadan.setting()
+			local mapIndex = pc.get_map_index()
+			if mapIndex == 1 or mapIndex == 21 or mapIndex == 41 then
+				if find_npc_by_vnum(setting.historian) == 0 then
+					if mapIndex == 1 then
+						mob.spawn(setting.historian, 608, 617, 1, 1, 1)
+					elseif mapIndex == 21 then
+						mob.spawn(setting.historian, 596, 610, 1, 1, 1)
+					elseif mapIndex == 41 then
+						mob.spawn(setting.historian, 357, 743, 1, 1, 1)
+					end
+				end
+
+				if find_npc_by_vnum(setting.beggar1) == 0 then
+					if mapIndex == 1 then
+						mob.spawn(setting.beggar1, 619, 701, 1, 1, 1)
+					elseif mapIndex == 21 then
+						mob.spawn(setting.beggar1, 564, 613, 1, 1, 1)
+					elseif mapIndex == 41 then
+						mob.spawn(setting.beggar1, 344, 723, 1, 1, 1)
+					end
+				end
+
+				if find_npc_by_vnum(setting.beggar2) == 0 then
+					if mapIndex == 1 then
+						mob.spawn(setting.beggar2, 697, 580, 1, 1, 1)
+					elseif mapIndex == 21 then
+						mob.spawn(setting.beggar2, 699, 658, 1, 1, 1)
+					elseif mapIndex == 41 then
+						mob.spawn(setting.beggar2, 443, 733, 1, 1, 1)
+					end
+				end
+
+				if find_npc_by_vnum(setting.beggar3) == 0 then
+					if mapIndex == 1 then
+						mob.spawn(setting.beggar3, 646, 515, 1, 1, 1)
+					elseif mapIndex == 21 then
+						mob.spawn(setting.beggar3, 613, 715, 1, 1, 1)
+					elseif mapIndex == 41 then
+						mob.spawn(setting.beggar3, 428, 651, 1, 1, 1)
+					end
+				end
+
+				if find_npc_by_vnum(setting.beggar4) == 0 then
+					if mapIndex == 1 then
+						mob.spawn(setting.beggar4, 554, 550, 1, 1, 1)
+					elseif mapIndex == 21 then
+						mob.spawn(setting.beggar4, 635, 539, 1, 1, 1)
+					elseif mapIndex == 41 then
+						mob.spawn(setting.beggar4, 303, 587, 1, 1, 1)
+					end
+				end
+
+				if find_npc_by_vnum(setting.beggar5) == 0 then
+					if mapIndex == 1 then
+						mob.spawn(setting.beggar5, 702, 629, 1, 1, 1)
+					elseif mapIndex == 21 then
+						mob.spawn(setting.beggar5, 529, 547, 1, 1, 1)
+					elseif mapIndex == 41 then
+						mob.spawn(setting.beggar5, 456, 673, 1, 1, 1)
+					end
+				end
+			end -- if
+		end -- when
+
+		-- "Historian?"
+		when 33002.chat.c_locale(1134) with pc.getf("event_ramadan", "first_notice") == 0 begin
+			local setting = event_ramadan.setting()
+			-- "Historian:"
+			say_title(c_locale(1135))
+			-- "Learn from the past and be open to the future!"
+			-- "How can I be of assistance?"
+			say("")
+			say(c_locale(1136))
+			wait()
+
+			say_pc_name()
+			-- "I am sorry, do we know one another?"
+			say(c_locale(1137))
+			wait()
+
+			-- "Historian:"
+			say_title(c_locale(1135))
+			-- "Pardon my manners, I forgot to introduce myself."
+			-- "I am the much travelled Historian."
+			-- "If you have any questions regarding history, don't shy away from asking me!"
+			say(c_locale(1138))
+			wait()
+
+			say_pc_name()
+			-- "It is my honour to get to know you. I should visit you more often."
+			say(c_locale(1139))
+
+			pc.setqf("first_notice", 1)
+		end
+
+		-- "Something Sweet"
+		when 33002.chat.c_locale(1140) with pc.getf("event_ramadan", "first_notice")==1 begin
+			local setting = event_ramadan.setting()
+			if pc.count_item(setting.bread) == 0 then
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "Do you know much about sweets? These ones are[ENTER]called Baklava."
+				say(c_locale(1177))
+				-- "Yes, I have heard of them."
+				-- "No, I'm sorry."
+				local s = select(c_locale(1178), c_locale(1179))
+				if 2 == s then
+					-- "Historian:"
+					say_title(c_locale(1135))
+					-- "A shame. Till next time."
+					say(c_locale(1141))
+					return
+				end
+
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "Then you understand what I mean. If you want these Sweets, please bring me a piece of Bread."
+				say(c_locale(1142))
+				wait()
+
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "I will give you one Sweet for 10 Bread. Do you agree?"
+				say(c_locale(1143))
+				-- "Absolutely"
+				-- "No time"
+				local s = select(c_locale(1144), c_locale(1145))
+				if 2 == s then
+					-- "Historian:"
+					say_title(c_locale(1135))
+					-- "A shame. Till next time."
+					say(c_locale(1141))
+					return
+				end
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "Every time you bring me 10 Bread, I will give you a Sweet."
+				say(c_locale(1146))
+
+			elseif pc.count_item(setting.bread) > 0 and pc.count_item(setting.bread) < 10 then
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "That isn't enough Bread, I can't do much with that."
+				say(c_locale(1147))
+
+			elseif pc.count_item(setting.bread) >= 10 then
+
+				pc.give_item2(setting.candy, 1)
+				pc.remove_item(setting.bread, 10)
+
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "That is enough Bread, here's some Sweets."
+				say(c_locale(1148))
+				wait()
+
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "Gather more and I will give you more in return."
+				say(c_locale(1149))
+			end -- if
+
+			if not event_ramadan.is_running() then
+				npc.purge()
+			end
+		end -- when
+
+		-- "Tasty Bread"
+		when 33002.chat.c_locale(1150) with pc.getqf("first_notice") == 1 begin
+			local setting = event_ramadan.setting()
+
+			-- "Historian:"
+			say_title(c_locale(1135))
+			-- "I am full to the brim with all this bread you have given me."
+			say(c_locale(1151))
+			-- "There are a lot of citizens here who are fasting. It would be nice if you could bring them something to break fast with."
+			say(c_locale(1152))
+			-- "To show your thoughtfulness, perhaps you could bring them the bread on a Donation Plate."
+			say(c_locale(1153))
+			say_item_vnum(setting.plate)
+			wait()
+
+			-- "Historian:"
+			say_title(c_locale(1135))
+			-- "Thank you for the amazing bread! You are a wise and merciful person. You will be rewarded."
+			say(c_locale(1154))
+		end
+
+		-- "I'm hungry..."
+		when 33003.chat.c_locale(1155) or 33004.chat.c_locale(1155) or 33005.chat.c_locale(1155) or 33006.chat.c_locale(1155) or 33007.chat.c_locale(1155) begin
+			local setting = event_ramadan.setting()
+
+			if pc.count_item(setting.iftar) == 0 then
+
+				-- "Fasting Citizen:"
+				say_title(c_locale(1156))
+				say("")
+				-- "I am really hungry. Show some compassion and break fast with me. Please bring me a Food Donation so that I do not starve."
+				say(c_locale(1157))
+
+			elseif pc.count_item(setting.iftar) > 0 then
+
+				-- "Fasting Citizen:"
+				say_title(c_locale(1156))
+				say("")
+				-- "That bread smells so good. Would you give it to me? I'd be truly grateful."
+				say(c_locale(1158))
+				-- "Help yourself"
+				-- "No, I'm keeping it"
+				local s = select(c_locale(1159), c_locale(1160))
+				if 2 == s then
+					-- "Fasting Citizen:"
+					say_title(c_locale(1156))
+					say("")
+					-- "You are hard of heart and mean. If you change your mind, you know where to find me."
+					say(c_locale(1161))
+					return
+				end
+
+				-- reward
+
+				-- "Fasting Citizen:"
+				say_title(c_locale(1156))
+				say("")
+				-- "My thanks to you. You truly are a wise and generous person. May your good deeds be richly rewarded."
+				say(c_locale(1162))
+
+				pc.give_item2(setting.box, 1)
+				pc.remove_item(setting.iftar, 1)
+			end -- if
+
+			if not event_ramadan.is_running() then
+				npc.purge()
+			end
+		end
+
+		-- "Blessing Fruit"
+		when 33002.chat.c_locale(1163) with pc.getf("event_ramadan", "fig_exchange") == 0 begin
+			local setting = event_ramadan.setting()
+			if get_time() > pc.getqf("duration") then
+				-- "Historian:"
+				say_title(c_locale(1135))
+				say("")
+				-- "I heard of the 'Blessing Fruit' on my travels. This fruit rewards the hard worker who returns regularly in the same hour.
+				say(c_locale(1164))
+				pc.give_item2(setting.fruit)
+				pc.setqf("duration", get_time() + 60 * 60 * 24) -- 24h
+			else
+				-- "Historian:"
+				say_title(c_locale(1135))
+				-- "I have already seen you today and you have already been rewarded. Please remember: only the patient reach their goal."
+				say(c_locale(1165))
+			end
+		end
+
+		-- "The Fortune of the Bold"
+		when 33002.chat.c_locale(1166) with event_ramadan.reward_period() and pc.getf("event_ramadan", "fig_exchange") == 0 begin
+			local setting = event_ramadan.setting()
+			-- "Historian:"
+			say_title(c_locale(1135))
+			say("")
+			-- "I have been expecting you. My time here is running out and I am heading out into the world in search of more historical information."
+			say(c_locale(1167))
+			wait()
+			if pc.count_item(setting.fruit) >= 5 then -- more than 5
+				-- "Historian:"
+				say_title(c_locale(1135))
+				say("")
+				-- "You have kept %d Blessing Fruit safe for me."
+				say(c_locale(1168, pc.count_item(setting.fruit)))
+				-- "Would you give them to me for my long journey? It shouldn't put you out any."
+				say(c_locale(1169))
+				-- "Please, take them"
+				-- "No"
+				local s = select(c_locale(1170), c_locale(1171))
+				if 2 == s then
+					-- "Historian:"
+					say_title(c_locale(1135))
+					say("")
+					-- "Think about it carefully... I am here a little while longer."
+					say(c_locale(1172))
+					return
+				end
+				-- "Historian:"
+				say_title(c_locale(1135))
+				say("")
+				-- "Thank you for your generosity and your hard work!"
+				say(c_locale(1173))
+				-- "Black Horse Seal"
+				say_reward(c_locale(1174))
+				say("")
+				if pc.count_item(setting.fruit) >= 5 and pc.count_item(setting.fruit) <= 10 then
+					pc.give_item2(setting.horse1, 1)
+				elseif pc.count_item(setting.fruit) >= 11 and pc.count_item(setting.fruit) <= 19 then
+					pc.give_item2(setting.horse2, 1)
+				elseif pc.count_item(setting.fruit) >= 20 and pc.count_item(setting.fruit) <= 27 then
+					pc.give_item2(setting.horse3, 1)
+				elseif pc.count_item(setting.fruit) >= 28 then
+					pc.give_item2(setting.horse4, 1)
+				end
+				pc.remove_item(setting.fruit, pc.count_item(setting.fruit))
+				pc.setqf("fig_exchange", 1)
+			else --less than 5
+				-- "Historian:"
+				say_title(c_locale(1135))
+				say("")
+				-- "You have less than 5 Blessing Fruit? A shame, there isn't much I can do with that. Perhaps next time."
+				say(c_locale(1175))
+			end
+		end
+
+		when 30316.use begin
+			local setting = event_ramadan.setting()
+			if pc.count_item(setting.bread) >= 10 then
+				pc.remove_item(setting.bread, 10)
+				pc.remove_item(setting.plate, 1)
+				pc.give_item2(setting.iftar, 1)
+			end
+		end
+	end -- state
+end -- quest

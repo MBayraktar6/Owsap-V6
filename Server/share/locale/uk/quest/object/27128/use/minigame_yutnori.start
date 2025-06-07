@@ -1,0 +1,7 @@
+if affect . add_buff ( AFFECT_HALLOWEEN_EVENT , { 
+{ POINT_MALL_EXPBONUS , 20 } , 
+{ POINT_MALL_ITEMBONUS , 5 } , 
+{ POINT_ATTBONUS_MONSTER , 10 } , 
+} , 0 , item . get_duration_limit ( ) , false ) then 
+pc . remove_item ( 27128 , 1 ) 
+end 

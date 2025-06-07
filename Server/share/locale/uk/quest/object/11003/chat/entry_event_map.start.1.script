@@ -1,0 +1,85 @@
+local s = select ( c_locale ( 1001 ) , c_locale ( 1002 ) , c_locale ( 1003 ) , c_locale ( 2426 ) ) 
+if s == 3 then 
+if entry_event_map . gm_exit_check ( ) == 1 then 
+say_title ( "GM: " .. c_locale ( 992 ) ) 
+say ( c_locale ( 1004 ) ) 
+game . set_event_flag ( "event_map_active" , 0 ) 
+game . set_event_flag ( "event_map_choice" , 0 ) 
+game . set_event_flag ( "event_map_level_min" , 0 ) 
+game . set_event_flag ( "event_map_level_max" , 0 ) 
+game . set_event_flag ( "event_map_player_max" , 0 ) 
+game . set_event_flag ( "event_map_empire" , 0 ) 
+game . set_event_flag ( "event_map_login_counter" , 0 ) 
+warp_all_to_village ( 200 , 30 ) 
+else 
+say_title ( "GM: " .. c_locale ( 992 ) ) 
+say ( c_locale ( 1005 ) ) 
+return 
+end 
+end 
+if s == 1 then 
+say_title ( "GM: " .. c_locale ( 992 ) ) 
+say ( c_locale ( 1006 ) ) 
+local choice = select ( 
+"1> min " .. entry_event_map . enter_level ( 1 , 1 ) .. " max " .. entry_event_map . enter_level ( 1 , 2 ) , 
+"2> min " .. entry_event_map . enter_level ( 2 , 1 ) .. " max " .. entry_event_map . enter_level ( 2 , 2 ) , 
+"3> min " .. entry_event_map . enter_level ( 3 , 1 ) .. " max " .. entry_event_map . enter_level ( 3 , 2 ) , 
+"4> min " .. entry_event_map . enter_level ( 4 , 1 ) .. " max " .. entry_event_map . enter_level ( 4 , 2 ) , 
+"5> min " .. entry_event_map . enter_level ( 5 , 1 ) .. " max " .. entry_event_map . enter_level ( 5 , 2 ) , 
+c_locale ( 2426 ) 
+) 
+if choice == 6 then 
+return 
+end 
+say_title ( "GM: " .. c_locale ( 992 ) ) 
+say ( c_locale ( 1007 ) ) 
+local amount_choice = input_number ( c_locale ( 1015 ) ) 
+if amount_choice > 200 or amount_choice <= 0 then 
+say_title ( "GM: " .. c_locale ( 992 ) ) 
+say ( c_locale ( 1016 ) ) 
+return 
+end 
+local empire_names = { 
+[ 0 ] = c_locale ( 7907 ) , 
+[ 1 ] = c_locale ( 2478 ) , 
+[ 2 ] = c_locale ( 2479 ) , 
+[ 3 ] = c_locale ( 2480 ) , 
+} 
+say_title ( "GM: " .. c_locale ( 992 ) ) 
+say ( c_locale ( 1008 ) ) 
+local kingdom_sub_set = select ( empire_names [ 1 ] , empire_names [ 2 ] , empire_names [ 3 ] , empire_names [ 0 ] , c_locale ( 2426 ) ) 
+if kingdom_sub_set == 5 then 
+return 
+end 
+if kingdom_sub_set == 4 then 
+kingdom_sub_set = 0 
+end 
+say_title ( "GM: " .. c_locale ( 992 ) ) 
+say ( c_locale ( 1009 ) ) 
+say ( c_locale ( 1010 ) .. " " .. entry_event_map . enter_level ( choice , 1 ) .. " - " .. entry_event_map . enter_level ( choice , 2 ) ) 
+say ( c_locale ( 1011 ) .. " " .. amount_choice ) 
+say ( c_locale ( 1012 ) .. " " .. empire_names [ kingdom_sub_set ] ) 
+local t = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if t == 2 then 
+return 
+end 
+game . set_event_flag ( "event_map_active" , 1 ) 
+game . set_event_flag ( "event_map_choice" , choice ) 
+game . set_event_flag ( "event_map_level_min" , entry_event_map . enter_level ( choice , 1 ) ) 
+game . set_event_flag ( "event_map_level_max" , entry_event_map . enter_level ( choice , 2 ) ) 
+game . set_event_flag ( "event_map_player_max" , amount_choice ) 
+game . set_event_flag ( "event_map_empire" , kingdom_sub_set ) 
+if kingdom_sub_set == 0 then 
+notice_multiline ( c_locale ( 1013 , entry_event_map . enter_level ( choice , 1 ) , entry_event_map . enter_level ( choice , 2 ) ) , notice_all ) 
+else 
+notice_multiline ( c_locale ( 1014 , empire_names [ kingdom_sub_set ] , entry_event_map . enter_level ( choice , 1 ) , entry_event_map . enter_level ( choice , 2 ) ) , notice_all ) 
+end 
+elseif s == 2 then 
+game . set_event_flag ( "event_map_active" , 0 ) 
+game . set_event_flag ( "event_map_choice" , 0 ) 
+game . set_event_flag ( "event_map_level_min" , 0 ) 
+game . set_event_flag ( "event_map_level_max" , 0 ) 
+game . set_event_flag ( "event_map_player_max" , 0 ) 
+game . set_event_flag ( "event_map_empire" , 0 ) 
+game . set_event_flag ( "event_map_login_counter" , 0 ) 
+end 

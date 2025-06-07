@@ -1,0 +1,428 @@
+Group	할로윈호박
+{
+	Vnum	50095 -- Pumpkin
+	1	50300	1	1 -- Skill Book
+	2	70102	1	1 -- Zen Bean
+	3	25040	1	3 -- Blessing Scroll
+	4	80003	1	5 -- Silver Bar (50,000 Yang)
+	5	27003	5	10 -- Red Potion (L)
+	6	27006	5	15 -- Blue Potion (L)
+	7	27002	5	25 -- Red Potion (M)
+	8	27005	5	40 -- Blue Potion (M)
+	9	27001	5	50 -- Red Potion (S)
+	10	27004	5	50 -- Blue Potion (S)
+}
+Group	할로윈호박선물상자
+{
+	Vnum	50215 -- Halloween Chest
+	1	70035	1	1 -- Magic Copper Ore
+	2	71085	1	6 -- Reinforce Item
+	3	70024	1	6 -- Blessing Marble
+	4	71026	1	1 -- Magic Iron Ore
+	5	71084	1	6 -- Enchant Item
+	6	71108	15	10 -- Pomegranate Juice
+	7	70003	1	5 -- Book of the Leader
+	8	72723	1	5 -- Sun Elixir (S)
+	9	72727	1	5 -- Moon Elixir (S)
+	10	71004	5	5 -- Medal of the Dragon
+	11	71094	1	5 -- Concentrated Reading
+	12	70102	1	10 -- Zen Bean
+	13	27992	1	8 -- White Pearl
+	14	27993	1	7 -- Blue Pearl
+	15	27994	1	5 -- Blood-Red Pearl
+	16	30323	1	15 -- Jack O'Lantern Mask Card
+}
+
+
+Group	BronzeYutNoriBundle
+{
+	Vnum	50922 -- Bronze Yut Nori Bundle
+	1	돈꾸러미	50000	40 -- Yang
+	2	돈꾸러미	100000	50 -- Yang
+	3	경험치	100000	60 -- EXP
+	4	79508	1	40 -- Yut Nori Board
+}
+Group	GoldenYutNoriTrophy
+{
+	Vnum	83030 -- Golden Yut Nori Trophy
+	Type	pct
+	1	50920	1	100 -- Golden Yut Nori Bundle
+	2	30639	1	100 -- Mysterious Shard
+}
+Group	SilverYutNoriTrophy
+{
+	Vnum	83031 -- Silver Yut Nori Trophy
+	Type	pct
+	1	50921	1	100 -- Silver Yut Nori Bundle
+	2	30639	1	30 -- Mysterious Shard
+}
+Group	GoldenYutNoriBundle
+{
+	Vnum	50920 -- Golden Yut Nori Bundle
+	1	79508	1	10 -- Yut Nori Board
+	2	39015	1	19 -- Stone of the Blacksmith
+	3	25040	1	33 -- Blessing Scroll
+	4	39001	1	12 -- Magic Stone
+	5	76042	1	18 -- Teleportation Ring
+	6	39029	1	20 -- Reinforce Item
+	7	39028	1	80 -- Enchant Item
+	8	71189	1	32 -- Enchant Item+
+	9	39036	1	7 -- Wind Shoes
+	10	71136	1	6 -- Mighty Lolly
+	11	71228	1	8 -- Lava Cave Lizard
+	12	55403	1	9 -- Razador's Egg
+	13	55404	1	9 -- Nemere's Egg
+	14	71018	10	20 -- Blessing of Life
+	15	51506	1	19 -- Cor Draconis (Mystical)
+	16	51505	1	26 -- Cor Draconis (Precious)
+	17	30616	1	12 -- Titanium Dioxide
+	18	30617	1	9 -- Agate
+	19	30618	1	6 -- Moonstone
+	20	27992	1	23 -- White Pearl
+	21	50926	200	17 -- Glimmerstone
+	22	72058	10	29 -- Spirit Stone Bundle
+	23	53253	1	9 -- Shiver
+	24	50108	10	20 -- Fireworks Top
+	25	50107	10	20 -- Chinese Fire Cracker
+	26	72709	1	4 -- Tiger Bone Earring
+	27	72710	1	4 -- Dragon Bone Earring
+	28	71181	1	8 -- Potion of Wisdom
+	29	170	1	18	100 -- Sting Sword+0
+	30	250	1	18	100 -- Demon Blade+0
+	31	1120	1	18	100 -- Siamese Knife+0
+	32	2180	1	18	100 -- Blue Dragon Bow+0
+	33	3150	1	18	100 -- Soul Stealing Blade+0
+	34	6060	1	18	100 -- Hawk Claw+0
+	35	7150	1	18	100 -- Ecstasy Fan+0
+}
+Group	SilverYutNoriBundle
+{
+	Vnum	50921 -- Silver Yut Nori Bundle
+	1	경험치	100000	60 -- Exp.
+	2	돈꾸러미	500000	40 -- Yang
+	3	돈꾸러미	300000	50 -- Yang
+	4	돈꾸러미	100000	60 -- Yang
+	5	79508	1	10 -- Yut Nori Board
+	6	55402	1	9 -- Spider Egg
+	7	25040	1	38 -- Blessing Scroll
+	8	39001	1	8 -- Magic Stone
+	9	76042	1	16 -- Teleportation Ring
+	10	39029	1	16 -- Reinforce Item
+	11	39028	1	64 -- Enchant Item
+	12	71189	1	28 -- Enchant Item+
+	13	39036	1	7 -- Wind Shoes
+	14	50324	1	12 -- Boost Book Chest
+	15	50323	1	12 -- Ward Book Chest
+	16	55403	1	6 -- Razador's Egg
+	17	55404	1	6 -- Nemere's Egg
+	18	85001	1	26 -- Lord Sash (basic)
+	19	51503	1	36 -- Cor Draconis (Normal)
+	20	51504	1	30 -- Cor Draconis (Noble)
+	21	55401	1	9 -- Monkey Egg
+	22	71181	1	8 -- Potion of Wisdom
+	23	27993	1	18 -- Blue Pearl
+	24	27994	1	13 -- Blood-Red Pearl
+	25	50108	10	20 -- Fireworks Top
+	26	50107	10	20 -- Chinese Fire Cracker
+	27	71180	1	10 -- Potion of Ascension (3h)
+	28	72058	10	29 -- Spirit Stone Bundle
+}
+
+Group	HalloweenChest(m)
+{
+	Vnum	83004 -- Halloween Chest (m)
+	1	41135	1	1 -- Pumpkin Tuxedo (Bonus)
+	2	41516	1	1 -- Cop. Fanged Costume+ (m)
+	3	41322	1	1 -- Pumpkin Jack Suit+ (m)
+	4	41478	1	1 -- Warlock's Suit+
+	5	41596	1	1 -- Harness of Horror+(Gold)
+	6	41517	1	1 -- Sil. Fanged Costume+ (m)
+	7	41675	1	1 -- Grey Wolf Costume+ (m)
+	8	41564	1	1 -- Blood Vampire+ (Grey)
+	9	41597	1	1 -- Harness of Horror+(Blue)
+	10	41474	1	1 -- Zombie Suit+
+	11	41674	1	1 -- Brown Wolf Costume+ (m)
+	12	41565	1	1 -- Blood Vampire+ (Red)
+}
+Group	HalloweenHatChest(m)
+{
+	Vnum	83005 -- Halloween Hat Chest (m)
+	1	45073	1	1 -- Pumpkin Mask (Bonus)
+	2	45158	1	1 -- Pumpkin Jack Head+ (m)
+	3	45286	1	1 -- Horns of Horror+ (Gold)
+	4	45341	1	1 -- Grey Wolf Hat+ (m)
+	5	45287	1	1 -- Horns of Horror+ (Blue)
+	6	45340	1	1 -- Brown Wolf Hat+ (m)
+	7	45210	1	1 -- Cop. Fanged Helmet+ (m)
+	8	45173	1	1 -- Witch's Hat+
+	9	45211	1	1 -- Sil. Fanged Helmet+ (m)
+	10	45254	1	1 -- Blood Vampire Helm+ (G)
+	11	45172	1	1 -- Zombie Pumpkin Mask+
+	12	45255	1	1 -- Blood Vampire Helm+ (R)
+}
+Group	HalloweenPetChest
+{
+	Vnum	83006 -- Haunted Pet Chest
+	1	53266	1	1 -- Helexna
+	2	53016	1	1 -- Boney
+	3	53265	1	1 -- Astrabell
+	4	53245	1	1 -- Mr Jiangshi+
+	5	53223	1	1 -- Little Broomstick
+	6	53244	1	1 -- Ms Jiangshi+
+	7	53233	1	1 -- Bruce (Loot)
+	8	53017	1	1 -- Jade Phoenix
+	9	53234	1	1 -- Wayne (Loot)
+	10	53254	1	1 -- Snivel
+	11	53222	1	1 -- Pumpkin Head
+	12	53253	1	1 -- Shiver
+}
+Group	HalloweenMountChest
+{
+	Vnum	83007 -- Haunted Mount Chest
+	1	71235	1	1 -- Cerberus (Gold)
+	2	71161	1	1 -- Equus Porphyreus
+	3	71236	1	1 -- Cerberus (Silver)
+	4	71223	1	1 -- Samsara Dragon
+	5	71228	1	1 -- Lava Cave Lizard
+	6	71222	1	1 -- Nirvana Dragon
+	7	71229	1	1 -- Ice Cave Lizard
+}
+Group	HalloweenJewelleryBox
+{
+	Vnum	83008 -- Jewellery Box
+	1	71143	1	1 -- Ring of Joy
+	2	71148	1	1 -- Ring of Will Power
+	3	71158	1	1 -- Hero's Medal
+	4	76047	1	1 -- Power Lolly (3D)
+	5	71202	1	1 -- Nazar Amulet
+	6	71145	1	1 -- Amulet of Eternal Love
+	7	76030	1	1 -- Power Lolly
+	8	71199	1	1 -- Chocolate Amulet
+	9	71149	1	1 -- Ring of Deadly Power
+	10	71188	1	1 -- Magic Lolly
+	11	72054	1	1 -- Amulet of the Guardians
+	12	71180	1	5 -- Potion of Ascension (3h)
+	13	71136	1	1 -- Mighty Lolly
+	14	71135	1	1 -- Crescent Moon Ring
+	15	71181	1	5 -- Potion of Wisdom
+}
+Group	HalloweenGrowthPetChest
+{
+	Vnum	83009 -- Pet Chest
+	1	55401	1	10 -- Monkey Egg
+	2	55406	1	5 -- Red Dragon Egg
+	3	55402	1	8 -- Spider Egg
+	4	55408	1	2 -- Fat Mini Executor Egg
+	5	55403	1	3 -- Razador's Egg
+	6	55407	1	2 -- Mini Azrael's Egg
+	7	55404	1	3 -- Nemere's Egg
+	8	55405	1	1 -- Blue Dragon Egg
+	9	55410	1	1 -- Nessie Egg
+}
+Group	HalloweenSashBox
+{
+	Vnum	83010 -- Sash Box
+	1	85005	1	3 -- Master Sash (basic)
+	2	85006	1	2 -- Master Sash (fine)
+	3	85007	1	1 -- Master Sash (noble)
+	4	85001	1	3 -- Lord Sash (basic)
+	5	85002	1	2 -- Lord Sash (fine)
+	6	85003	1	1 -- Lord Sash (noble)
+	7	85011	1	3 -- Sovereign Sash (basic)
+	8	85012	1	2 -- Sovereign Sash (fine)
+	9	85013	1	1 -- Sovereign Sash (noble)
+	10	85015	1	3 -- Royal Sash (basic)
+	11	85016	1	2 -- Royal Sash (fine)
+	12	85017	1	1 -- Royal Sash (noble)
+	13	86001	1	1 -- Zi Sash (basic)
+	14	86002	1	1 -- Zi Sash (fine)
+	15	86005	1	1 -- Chou Sash (basic)
+	16	86006	1	1 -- Chou Sash (fine)
+	17	86011	1	1 -- Yin Sash (basic)
+	18	86012	1	1 -- Yin Sash (fine)
+	19	86015	1	1 -- Mao Sash (basic)
+	20	86016	1	1 -- Mao Sash (fine)
+	21	86021	1	1 -- Chen Sash (basic)
+	22	86022	1	1 -- Chen Sash (fine)
+	23	86025	1	1 -- Si Sash (basic)
+	24	86026	1	1 -- Si Sash (fine)
+	25	86031	1	1 -- Wu Sash (basic)
+	26	86032	1	1 -- Wu Sash (fine)
+	27	86035	1	1 -- Wei Sash (basic)
+	28	86036	1	1 -- Wei Sash (fine)
+	29	86041	1	1 -- Shen Sash (basic)
+	30	86042	1	1 -- Shen Sash (fine)
+	31	86045	1	1 -- You Sash (basic)
+	32	86046	1	1 -- You Sash (fine)
+	33	86051	1	1 -- Xu Sash (basic)
+	34	86052	1	1 -- Xu Sash (fine)
+	35	86055	1	1 -- Hai Sash (basic)
+	36	86056	1	1 -- Hai Sash (fine)
+}
+Group	HalloweenTalismanChest
+{
+	Vnum	83011 -- Ornament Chest
+	1	10750	1	1 -- Lightning Talisman+0
+	2	10520	1	1 -- Wind Talisman+0
+	3	10060	1	1 -- Earth Talisman+0
+	4	9600	1	1 -- Fire Talisman+0
+	5	9830	1	1 -- Ice Talisman+0
+	6	10290	1	1 -- Dark Talisman+0
+	7	33029	50	1 -- Red Zodiac Case
+	8	33030	50	1 -- Blue Zodiac Case
+	9	72328	1	1 -- Mark of the Guardian
+	10	33031	50	1 -- Elemental Bloom
+	11	72329	50	1 -- Sphere Parchment
+}
+Group	HalloweenPetBookChest
+{
+	Vnum	83012 -- Ultimate Pet Book Chest
+	1	55020	1	1 -- Vampirism Book
+	2	55021	1	1 -- Spiritualism Book
+	3	55036	1	1 -- Eagle Eyes Book
+	4	55025	1	1 -- Range Book
+	5	55015	1	1 -- Berserker Book
+	6	55035	1	1 -- Monster Hunter Book
+	7	55037	1	1 -- Life Drain Book
+	8	55024	1	1 -- Yang Drop Book
+	9	55018	1	1 -- Drill Book
+	10	55023	1	1 -- Reflection Book
+	11	55022	1	1 -- Bulwark Book
+	12	55017	1	1 -- Haste Book
+	13	55016	1	1 -- Anti-Magic Book
+	14	55034	1	1 -- Master Brewer Book
+	15	55010	1	1 -- Resistance (Warrior)
+	16	55011	1	1 -- Resistance (Sura)
+	17	55012	1	1 -- Resistance (Ninja)
+	18	55013	1	1 -- Resistance (Shaman)
+	19	55014	1	1 -- Resistance (Lycan)
+	20	55027	1	1 -- Panacea Book
+	21	55019	1	1 -- Restoration Book
+	22	55026	1	1 -- Immortal Book
+	23	55038	1	1 -- Light as a Feather Book
+	24	55030	1	1 -- Pet Revertus
+}
+#Group	HalloweenWeaponChest+
+#{
+#	Vnum	83013 -- Riptooth Chest+
+#	1	40108	1	1 -- Riptooth Blade+
+#	2	40109	1	1 -- Riptooth Dagger+
+#	3	40110	1	1 -- Riptooth Bow+
+#	4	40111	1	1 -- Riptooth Glaive+
+#	5	40112	1	1 -- Riptooth Bell+
+#	6	40113	1	1 -- Riptooth Fan+
+#	7	40114	1	1 -- Riptooth Claws+
+#
+Group	HalloweenDSChest
+{
+	Vnum	83014 -- Cor Draconis Chest
+	1	51501	1	1 -- Cor Draconis (Rough)
+	2	51503	1	1 -- Cor Draconis (Normal)
+	3	51504	1	1 -- Cor Draconis (Noble)
+	4	51505	1	1 -- Cor Draconis (Precious)
+	5	51506	1	1 -- Cor Draconis (Mystical)
+	6	76029	1	1 -- Green Dragon Bean
+	7	100400	1	1 -- Blue Dragon Bean
+	8	100500	1	1 -- Pink Dragon Bean
+}
+Group	HalloweenGemChest
+{
+	Vnum	83015 -- Gaya Chest
+	1	50926	200	50 -- Glimmerstone
+	2	39063	1	25 -- Refresh Gaya Market
+	3	39064	1	25 -- Gaya Market Expansion
+	4	72058	10	30 -- Spirit Stone Bundle
+}
+Group	HalloweenMysteryChest
+{
+	Vnum	83016 -- Chest of Mysteries
+	1	54702	1	1 -- Razador's Chest
+	2	54703	1	1 -- Nemere's Chest
+	3	54704	1	1 -- Jotun Thrym's Chest
+	4	54701	1	1 -- Bagjanamu's Chest
+	5	54700	1	1 -- Beran-Setaou's Chest
+	6	50271	1	1 -- Dragon Watcher Chest
+	7	50270	1	1 -- Queen Meley's Chest
+	8	54705	1	1 -- Hydra's Chest
+	9	30618	1	3 -- Moonstone
+	10	30617	1	3 -- Agate
+	11	30616	1	3 -- Titanium Dioxide
+	12	27992	1	3 -- White Pearl
+	13	27993	1	3 -- Blue Pearl
+	14	27994	1	3 -- Blood-Red Pearl
+	15	30619	1	3 -- Metallic Gold Dye
+	16	18900	1	3 -- Red Flame Stone
+}
+Group	HalloweenRubyChest
+{
+	Vnum	83017 -- Ruby Chest
+	1	76005	1	1 -- Moon Elixir (M)
+	2	76022	1	1 -- Sun Elixir (M)
+	3	76000	3	1 -- Peach Flower Wine
+	4	76033	3	1 -- Peach Flower Wine+
+	5	76006	1	1 -- Compass for Metin Stones
+	6	76012	3	1 -- Potion of Speed
+	7	76025	1	1 -- Wind Shoes
+	8	76042	1	1 -- Teleportation Ring
+	9	76017	3	1 -- Potion of Attack +15
+	10	76018	3	1 -- Potion of Attack +20
+	11	76003	3	1 -- Potion of Haste
+	12	76036	3	1 -- Dragon God Attack
+	13	76035	3	1 -- Dragon God Life
+	14	76019	1	1 -- Passage Ticket
+	15	76010	1	1 -- Blood Stone
+	16	76002	1	1 -- Shrunken Head
+	17	76014	1	1 -- Enchant Item (b)
+	18	76013	1	1 -- Reinforce Item (b)
+	19	76015	1	1 -- Blessing Marble
+	20	71189	1	1 -- Enchant Item+
+	21	76016	1	1 -- Blessing Scroll
+	22	76009	1	1 -- Dragon Scroll
+	23	76011	1	1 -- Book of the Leader
+	24	76008	3	1 -- Medal of the Dragon
+	25	76007	20	1 -- Bravery Cape
+	26	76051	1	1 -- Ring of Secrets (7d)
+	27	76037	1	1 -- Thief's Gloves
+	28	76038	1	1 -- Lucky Medal
+	29	71107	1	1 -- Fruit of Life
+	30	76001	1	1 -- Status Reset Document
+	31	76045	1	1 -- Pet Name Scroll
+	32	76028	1	1 -- Stone Handbook
+	33	76034	1	1 -- Concentrated Reading
+	34	76026	1	1 -- Exorcism Scroll
+	35	76020	1	1 -- Researcher's Elixir
+	36	72320	1	1 -- Inventory Expansion
+	37	76031	1	1 -- Protein Snack
+}
+Group	HalloweenChest(f)
+{
+	Vnum	83028 -- Halloween Chest (f)
+	1	41136	1	1 -- Pumpkin Dress (Bonus)
+	2	41518	1	1 -- Cop. Fanged Costume+ (f)
+	3	41323	1	1 -- Pumpkin Jack Dress+ (f)
+	4	41479	1	1 -- Witch's Dress+
+	5	41598	1	1 -- Harness of Horror+(Gold)
+	6	41519	1	1 -- Sil. Fanged Costume+ (f)
+	7	41677	1	1 -- Grey Wolf Costume+ (f)
+	8	41566	1	1 -- Blood Lamia+ (Grey)
+	9	41599	1	1 -- Harness of Horror+(Blue)
+	10	41475	1	1 -- Zombie Dress+
+	11	41676	1	1 -- Brown Wolf Costume+ (f)
+	12	41567	1	1 -- Blood Lamia+ (Red)
+}
+Group	HalloweenHatChest(f)
+{
+	Vnum	83029 -- Halloween Hat Chest (f)
+	1	45074	1	1 -- Pumpkin Mask (Bonus)
+	2	45159	1	1 -- Pumpkin Jack Head+ (f)
+	3	45288	1	1 -- Horns of Horror+ (Gold)
+	4	45343	1	1 -- Grey Wolf Hat+ (f)
+	5	45289	1	1 -- Horns of Horror+ (Blue)
+	6	45342	1	1 -- Brown Wolf Hat+ (f)
+	7	45212	1	1 -- Cop. Fanged Helmet+ (f)
+	8	45173	1	1 -- Witch's Hat+
+	9	45213	1	1 -- Sil. Fanged Helmet+ (f)
+	10	45256	1	1 -- Blood Lamia Helm+ (Grey)
+	11	45172	1	1 -- Zombie Pumpkin Mask+
+	12	45257	1	1 -- Blood Lamia Helm+ (Red)
+}

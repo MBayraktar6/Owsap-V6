@@ -1,0 +1,86 @@
+quest new_christmas_2012_sock begin
+	state start begin
+	end
+
+	state reindeer_give begin
+		when 20126.chat.c_locale(6706) begin
+			say_title(c_mob_name(20126))
+			say(c_locale(6707))
+			wait()
+
+			say_title(c_mob_name(20126))
+			say(c_locale(6708))
+			wait()
+
+			say_title(c_mob_name(20126))
+			say(c_locale(6709))
+			wait()
+
+			say_title(c_mob_name(20126))
+			say(c_locale(11788))
+
+			pc.give_item2_select(53007, 1)
+			item.set_socket(0, get_global_time() + 7200)
+
+			pc.setqf("last_reindeer_give_time", get_global_time())
+			set_state(sock_take)
+		end
+	end
+
+	state sock_take begin
+		when 20126.chat.c_locale(6713) begin
+			if get_global_time() - pc.getqf("last_reindeer_give_time") < 86400 then
+				say_title(c_mob_name(20126))
+				say(c_locale(6714))
+			else
+				say_title(c_mob_name(20126))
+				say(c_locale(6709))
+				wait()
+
+				say_title(c_mob_name(20126))
+				say(c_locale(11788))
+
+				pc.give_item2_select(53007, 1)
+				item.set_socket(0, get_global_time() + 7200)
+
+				pc.setqf("last_reindeer_give_time", get_global_time())
+			end
+		end
+
+		when 20126.chat.c_locale(6710) begin
+			if get_time() < pc.getqf("last_sock_cooldown_time") then
+				say_title(c_mob_name(20126))
+				say(c_locale(6715))
+			else
+				local n = pc.count_item(50010)
+				if n < 5 then
+					say_title(c_mob_name(20126))
+					say(c_locale(6711))
+					wait()
+				else
+					say_title(c_mob_name(20126))
+					say(c_locale(6712))
+					wait()
+
+					pc.remove_item(50010, 5)
+
+					say_title(c_locale(3482))
+					say_reward(string.format("%s : 1%s", c_item_name(71144), c_locale(2455)))
+
+					pc.give_item2(71144)
+
+					if is_test_server() then
+						pc.setqf("last_sock_cooldown_time", get_time() + 20)
+					else
+						pc.setqf("last_sock_cooldown_time", get_time() + 86400)
+					end
+				end
+			end
+		end
+
+		when 20126.chat."<TEST> Reset flags / reindeer, socks" with is_test_server() or pc.is_gm() begin
+			pc.setqf("last_reindeer_give_time", 0)
+			pc.setqf("last_sock_cooldown_time", 0)
+		end
+	end
+end

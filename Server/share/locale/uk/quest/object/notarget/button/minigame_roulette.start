@@ -1,0 +1,20 @@
+if minigame_roulette . is_running ( ) then if pc . get_level ( ) < 30 or minigame_roulette . has_sacrifice ( ) then 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11758 ) ) 
+return 
+end 
+if pc . getqf ( "material_vnum" ) ~= 0 then 
+local material_vnum = pc . getqf ( "material_vnum" ) 
+local material_count = pc . getqf ( "material_count" ) 
+if pc . count_item ( material_vnum ) >= material_count then 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11755 , c_item_name ( material_vnum ) ) ) 
+else 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11754 , c_item_name ( material_vnum ) , pc . count_item ( material_vnum ) ) ) 
+end 
+else 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11751 ) ) 
+end 
+ return end 

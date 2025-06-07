@@ -1,0 +1,5 @@
+send_letter ( c_locale ( 6408 ) ) 
+local v = find_npc_by_vnum ( 20400 ) 
+if 0 ~= v then 
+target . vid ( "__TARGET__" , v , c_locale ( 6408 ) ) 
+end 

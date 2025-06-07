@@ -1,0 +1,2 @@
+say_title ( c_mob_name ( 20021 ) ) 
+say ( c_locale ( 7492 ) ) 

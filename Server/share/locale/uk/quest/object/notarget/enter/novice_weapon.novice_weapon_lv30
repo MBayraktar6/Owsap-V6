@@ -1,0 +1,2 @@
+if pc . get_level ( ) >= 30 then send_letter ( c_locale ( 79 ) ) 
+ return end 

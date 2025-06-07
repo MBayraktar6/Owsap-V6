@@ -1,0 +1,5 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 38 ) ) 
+say ( c_locale ( 5003 ) ) 
+clear_letter ( ) 
+set_state ( "gotoboss2" ) 

@@ -1,0 +1,21 @@
+if horse . get_grade ( ) == 0 then say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 2207 ) ) 
+ return end if horse . get_grade ( ) == 1 then say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 2201 ) ) 
+ return end if horse . get_grade ( ) == 2 then say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 2208 ) ) 
+ return end if horse . get_grade ( ) == 3 then if pc . getsp ( ) >= 300 then 
+if number ( 1 , 100 ) <= horse_summon . get_horse_summon_prob_pct ( ) then 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 2209 ) ) 
+horse . summon ( ) 
+else 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 2210 ) ) 
+end 
+pc . change_sp ( - 300 ) 
+else 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 2211 ) ) 
+end 
+ return end 

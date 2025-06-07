@@ -1,0 +1,12 @@
+quest give_ds_qualification begin
+	state start begin
+		when login with game.get_event_flag("disable_ds_qual") > 0 begin
+			if not ds.is_qualified() then
+				ds.give_qualification()
+				set_state(__COMPLETE__)
+			end
+		end
+	end
+
+	state __COMPLETE__ begin end
+end

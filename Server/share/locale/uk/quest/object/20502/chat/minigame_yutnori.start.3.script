@@ -1,0 +1,43 @@
+local sel_name_table = { 
+c_locale ( 6640 ) , 
+c_locale ( 6641 ) , 
+c_locale ( 6607 ) 
+} 
+table . insert ( sel_name_table , c_locale ( 6609 ) ) 
+local sel = select_table ( sel_name_table ) 
+if sel == table . getn ( sel_name_table ) then 
+return 
+end 
+if sel == 1 then 
+say_title ( sel_name_table [ sel ] ) 
+say ( c_locale ( 6608 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6647 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6648 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6649 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6650 ) ) 
+say ( "" ) 
+elseif sel == 2 then 
+say_title ( sel_name_table [ sel ] ) 
+say ( "" ) 
+local score_table = game . get_minigame_yutnori_score ( true ) 
+for i = 1 , table . getn ( score_table ) begin 
+say ( c_locale ( 6652 + ( i - 1 ) , score_table [ i ] [ 1 ] , score_table [ i ] [ 2 ] ) ) 
+end 
+say ( "" ) 
+say_reward ( c_locale ( 6662 , game . get_minigame_yutnori_my_score ( true ) ) ) 
+say ( "" ) 
+elseif sel == 3 then 
+say_title ( sel_name_table [ sel ] ) 
+say ( "" ) 
+local score_table = game . get_minigame_yutnori_score ( false ) 
+for i = 1 , table . getn ( score_table ) begin 
+say ( c_locale ( 6652 + ( i - 1 ) , score_table [ i ] [ 1 ] , score_table [ i ] [ 2 ] ) ) 
+end 
+say ( "" ) 
+say_reward ( c_locale ( 6662 , game . get_minigame_yutnori_my_score ( false ) ) ) 
+say ( "" ) 
+end 

@@ -1,0 +1,54 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\empire_zhanglu\special_attack1.GR2"
+MotionDuration           3.166667
+Accumulation           0.00	0.00	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     3
+    Group Event00
+    {
+        MotionEventType      6
+        StartingTime         2.218978
+        
+        AttachingEnable      1
+        AttachingBoneName    "Bip01 L Hand"
+        FlyFileName       "d:/ymir work/effect/monster2/12_a05_na1_arrow.msf"
+        FlyPosition       0.000000 0.000000 0.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.616383
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "Bip01 L Hand"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/empire_zhanglu_s1_making.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event02
+    {
+        MotionEventType      4
+        StartingTime         2.249797
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        1.000000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           5.000000
+            Position         0.000000 0.000000 0.000000
+        }
+    }
+}

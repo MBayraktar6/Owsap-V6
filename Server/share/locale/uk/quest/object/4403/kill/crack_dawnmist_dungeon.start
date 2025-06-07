@@ -1,0 +1,8 @@
+if crack_dawnmist_dungeon . in_dungeon ( d . get_map_index ( ) ) then d . setf ( "finished" , 1 ) 
+d . setqf2_all_near ( "crack_dawnmist_dungeon" , "thunder_boss" , 1 , 800 ) 
+d . notice ( c_locale ( 11678 , c_mob_name ( 4403 ) ) ) 
+d . notice ( c_locale ( 11681 ) ) 
+crack_dawnmist_dungeon . clear_server_timers ( d . get_map_index ( ) ) 
+crack_dawnmist_dungeon . clear ( false ) 
+server_timer ( "crack_dawnmist_dungeon_end_timer" , 180 , d . get_map_index ( ) ) 
+ return end 

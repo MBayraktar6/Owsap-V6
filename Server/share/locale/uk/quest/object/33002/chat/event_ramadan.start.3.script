@@ -1,0 +1,11 @@
+local setting = event_ramadan . setting ( ) 
+if get_time ( ) > pc . getqf ( "duration" ) then 
+say_title ( c_locale ( 1135 ) ) 
+say ( "" ) 
+say ( c_locale ( 1164 ) ) 
+pc . give_item2 ( setting . fruit ) 
+pc . setqf ( "duration" , get_time ( ) + 60 * 60 * 24 ) 
+else 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1165 ) ) 
+end 

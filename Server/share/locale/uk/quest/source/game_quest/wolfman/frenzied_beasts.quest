@@ -1,0 +1,95 @@
+define COLONY_GUARD_VNUM 20401 -- Colony Guard (Lycan NPC) VNUM
+define UNKNOWN_STONE_VNUM 31093 -- Unknown Stone (Droppable on Monsters) VNUM
+define EXP_AMOUNT_REWARD 250 -- Amount of received exp upon quest completion
+define ITEM_ONE_REWARD 27001 -- ITEM_ONE (Red Potions (s)) received upon quest completion
+define ITEM_ONE_AMOUNT_REWARD 10 -- Amount (x10) of received ITEM_ONE upon quest completion
+
+quest frenzied_beasts begin
+	state start begin
+	end
+
+	state run begin
+		when letter begin
+			send_letter(c_locale(6357))
+			local v = find_npc_by_vnum(COLONY_GUARD_VNUM)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6357))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6357))
+			say(c_locale(6358))
+		end
+
+		when __TARGET__.target.click or COLONY_GUARD_VNUM.chat.c_locale(6357) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			say_title(c_mob_name(COLONY_GUARD_VNUM))
+			say(c_locale(6359))
+
+			set_state("animal_hunt")
+		end
+	end
+
+	state animal_hunt begin
+		when letter begin
+			send_letter(c_locale(6360))
+		end
+
+		when button or info begin
+			say_title(c_locale(6360))
+			say(c_locale(6361))
+		end
+
+		when COLONY_GUARD_VNUM.chat.c_locale(6360) begin
+			say_title(c_mob_name(COLONY_GUARD_VNUM))
+			say(c_locale(6362))
+		end
+
+		when kill with npc.is_pc() == false begin
+			if number(0, 3) ~= 3 then
+				return
+			end
+
+			pc.give_item2(UNKNOWN_STONE_VNUM)
+			set_state("goto_colony_guard")
+		end
+	end
+
+	state goto_colony_guard begin
+		when letter begin
+			send_letter(c_locale(6363))
+			local v = find_npc_by_vnum(COLONY_GUARD_VNUM)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6363))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6363))
+			say(c_locale(6407))
+		end
+
+		when __TARGET__.target.click or COLONY_GUARD_VNUM.chat.c_locale(6363) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(EXP_AMOUNT_REWARD)
+			pc.give_item2(ITEM_ONE_REWARD, ITEM_ONE_AMOUNT_REWARD)
+			pc.remove_item(UNKNOWN_STONE_VNUM, pc.count_item(UNKNOWN_STONE_VNUM))
+
+			say_title(c_mob_name(COLONY_GUARD_VNUM))
+			say(c_locale(6364))
+			say_reward(c_locale(5043, c_item_name(ITEM_ONE_REWARD), ITEM_ONE_AMOUNT_REWARD))
+			say_reward(c_locale(6882, EXP_AMOUNT_REWARD))
+
+			set_state("__COMPLETE__")
+			set_quest_state("unknown_stone", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

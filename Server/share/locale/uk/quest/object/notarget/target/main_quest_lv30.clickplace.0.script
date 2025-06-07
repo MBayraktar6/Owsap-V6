@@ -1,0 +1,5 @@
+target . delete ( "__TARGET2__" ) 
+say_title ( c_locale ( 5095 ) ) 
+say ( c_locale ( 5088 ) ) 
+clear_letter ( ) 
+set_state ( "gotoeUriel3" ) 

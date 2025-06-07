@@ -1,0 +1,33 @@
+target . delete ( "__TARGET__" ) 
+if pc . get_level ( ) < 30 or minigame_roulette . has_sacrifice ( ) then 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11758 ) ) 
+return 
+end 
+if not pc . enough_inventory ( 70311 ) then 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11756 ) ) 
+return 
+end 
+if pc . getqf ( "material_vnum" ) ~= 0 then 
+local material_vnum = pc . getqf ( "material_vnum" ) 
+local material_count = pc . getqf ( "material_count" ) 
+if pc . count_item ( material_vnum ) >= material_count then 
+pc . remove_item ( material_vnum , material_count ) 
+pc . setqf ( "material_vnum" , 0 ) 
+pc . setqf ( "material_count" , 0 ) 
+pc . setqf ( "material_reset_time" , get_global_time ( ) ) 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11757 ) ) 
+pc . give_item2 ( 70311 , 1 ) 
+else 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11753 , c_item_name ( material_vnum ) , material_count - pc . count_item ( material_vnum ) ) ) 
+end 
+else 
+local material_vnum , material_count = minigame_roulette . get_random_week_item ( ) 
+say_title ( c_locale ( 11750 ) ) 
+say ( c_locale ( 11752 , c_item_name ( material_vnum ) , material_count ) ) 
+pc . setqf ( "material_vnum" , material_vnum ) 
+pc . setqf ( "material_count" , material_count ) 
+end 

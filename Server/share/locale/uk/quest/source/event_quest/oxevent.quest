@@ -1,0 +1,211 @@
+quest oxevent_manager begin
+	state start begin
+		function cleanup_event()
+			oxevent.end_event()
+			game.set_event_flag("ox_map_login_counter", 0)
+		end
+
+		function check_limit()
+			if game.get_event_flag("ox_map_login_counter") == game.get_event_flag("ox_map_player_max") then
+				return 0
+			else
+				return 1
+			end
+		end
+
+		function enter_level(vnum1,vnum2)
+			lv_range = {}
+			lv_range[1] = { 15, 39 }
+			lv_range[2] = { 40, 64 }
+			lv_range[3] = { 65, 84 }
+			lv_range[4] = { 85, 99 }
+			lv_range[5] = { 100, 120 }
+			return lv_range [vnum1][vnum2]
+		end
+
+		when login or enter begin
+			if pc.get_map_index() == 113 then
+				local counter = game.get_event_flag("ox_map_login_counter")
+				game.set_event_flag("ox_map_login_counter", counter + 1)
+			end
+		end
+
+		when logout begin
+			if pc.get_map_index() == 113 then
+				if is_test_server() then
+					pc.setqf("ox_end_cooldown_time", get_time() + 20 * 3)
+				else
+					pc.setqf("ox_end_cooldown_time", get_time() + 60 * 15) -- 15 min
+				end
+			end
+		end
+
+		when 20011.chat.c_locale(7547) begin
+			say_title(c_locale(5097))
+			say(c_locale(7560))
+			wait()
+
+			if game.get_event_flag("oxevent_status") == 0 then
+				say_title(c_locale(5097))
+				say(c_locale(7573))
+			elseif game.get_event_flag("oxevent_status") == 1 then
+				say_title(c_locale(5097))
+				say(c_locale(7583))
+
+				local s = select(c_locale(104), c_locale(105))
+
+				if s == 1 then
+					say_title(c_locale(5097))
+					say(c_locale(7584))
+					wait()
+
+					-- read the limits that the admin set hopefully
+					local min = game.get_event_flag("ox_map_level_min")
+					local max = game.get_event_flag("ox_map_level_max")
+
+					if pc.get_level() < min or pc.get_level() > max then
+						say_title(c_locale(5097))
+						say_reward(c_locale(995, min, max))
+						return
+					end
+
+					if get_time() < pc.getqf("ox_end_cooldown_time") then
+						say_title(c_locale(5097))
+						say(c_locale(2696))
+						return
+					end
+
+					-- check again the limit before we warp the player, maybe someone have trigger the limit
+					if oxevent_manager.check_limit() == 0 then
+						say_title(c_locale(5097))
+						say(c_locale(997))
+						return
+					end
+
+					-- removed the random warp, cause the current binary checks the coordinates.
+					--pc.warp(math.random(892973, 899719), math.random(23256, 26044))
+					pc.warp(896500, 24600)
+				elseif s == 2 then
+					return
+				end
+			elseif game.get_event_flag("oxevent_status") == 2 then
+				say_title(c_locale(5097))
+				say(c_locale(7585))
+			else return end
+		end
+
+		when 20358.chat.c_locale(7586) with pc.get_gm_level()== 5 begin
+			local stat = oxevent.get_status()
+
+			if stat == 0 then
+				say(c_locale(1006))
+				local choice = select ("1> min " .. oxevent_manager.enter_level(1, 1) .. " max " .. oxevent_manager.enter_level(1, 2), "2> min " .. oxevent_manager.enter_level(2, 1) .. " max " .. oxevent_manager.enter_level(2, 2), "3> min " .. oxevent_manager.enter_level(3, 1) .. " max " .. oxevent_manager.enter_level(3, 2), "4> min " .. oxevent_manager.enter_level(4, 1) .. " max " .. oxevent_manager.enter_level(4, 2), "5> min " .. oxevent_manager.enter_level(5, 1) .. " max " .. oxevent_manager.enter_level(5, 2), c_locale(2426))
+				if choice == 6 then
+					return
+				end
+
+				say(c_locale(1007))
+				local amount_choice = input_number(c_locale(1015))
+
+				 if amount_choice > 200 or amount_choice <= 0 then
+					say(c_locale(1016))
+					return
+				end
+
+				say(c_locale(7587))
+				say(c_locale(1009))
+				say(c_locale(1010) .. " " .. oxevent_manager.enter_level(choice, 1) .. " - " .. oxevent_manager.enter_level(choice, 2))
+				say(c_locale(1011) .. " " .. amount_choice)
+
+				local s = select(c_locale(7588), c_locale(2426))
+
+				if s == 1 then
+					local v = oxevent.open()
+
+					if v == 0 then
+						say(c_locale(7548))
+						say_reward(c_locale(7549))
+					elseif v == 1 then
+						say(c_locale(7550))
+						notice_all(c_locale(7551))
+						notice_all(c_locale(7552))
+						-- set the limits we set previous asked
+						game.set_event_flag("ox_map_level_min", oxevent_manager.enter_level(choice, 1))
+						game.set_event_flag("ox_map_level_max", oxevent_manager.enter_level(choice, 2))
+						game.set_event_flag("ox_map_player_max", amount_choice)
+					else
+						say(c_locale(7548))
+					end
+				end
+			elseif stat == 1 then
+				say(c_locale(7553, oxevent.get_attender()))
+
+				local s = select(c_locale(7554), c_locale(2426))
+
+				if s == 1 then
+					oxevent.close()
+					say(c_locale(7555))
+				end
+			elseif stat == 2 then
+					say(c_locale(7556))
+
+					local s = select(
+						c_locale(7557),
+						c_locale(7558),
+						c_locale(7559),
+						c_locale(2426)
+					)
+
+					if s == 1 then
+						local v = oxevent.quiz(1, 30)
+
+						if v == 0 then
+							say(c_locale(7561))
+						elseif v == 1 then
+							say(c_locale(7562))
+						else
+							say(c_locale(7563))
+						end
+					elseif s == 2 then
+						oxevent_manager.cleanup_event()
+						say(c_locale(7564))
+						notice_all(c_locale(7565))
+						notice_all(c_locale(7566))
+					elseif s == 3 then
+						oxevent_manager.cleanup_event()
+						say(c_locale(7567))
+						notice_all(c_locale(7568))
+						notice_all(c_locale(7569))
+					end
+			elseif stat == 3 then
+				say(c_locale(7570))
+				say_reward(c_locale(7571))
+			else
+				say(c_locale(7572))
+			end
+		end
+
+		when 20358.chat.c_locale(7574) with pc.get_gm_level()== 5 begin
+			say(c_locale(7575))
+
+			local s = select(c_locale(7576), c_locale(2426))
+
+			if s == 1 then
+				oxevent.end_event_force()
+				game.set_event_flag("ox_map_login_counter",0)
+				say(c_locale(7577))
+			end
+		end
+
+		when 20358.chat.c_locale(7578) with pc.get_gm_level()== 5 begin
+			say(c_locale(7579))
+			local item_vnum = input()
+			say(c_locale(7580))
+			local item_count = input()
+
+			oxevent.give_item(item_vnum, item_count)
+
+			say(c_locale(7581, oxevent.get_attender()))
+		end
+	end
+end

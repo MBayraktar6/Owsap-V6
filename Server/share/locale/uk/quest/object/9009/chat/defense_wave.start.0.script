@@ -1,0 +1,31 @@
+say ( c_locale ( 10097 ) ) 
+if select ( c_locale ( 10065 ) , c_locale ( 10066 ) ) == 1 then 
+if pc . getqf ( "cooldown" ) > get_time ( ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 14070 , get_time_remaining ( pc . getqf ( "cooldown" ) - get_time ( ) ) ) ) 
+return 
+end 
+if not party . is_party ( ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 10099 ) ) 
+return 
+end 
+local party_check = false 
+if dw . find ( party . getf ( "dungeon_index" ) ) then 
+party_check = ( d . getf_from_map_index ( "party_leader_pid" , party . getf ( "dungeon_index" ) ) == party . get_leader_pid ( ) ) 
+end 
+if not party_check then 
+local pids = { party . get_member_pids ( ) } 
+if not defense_wave . check_party ( pids ) then 
+return 
+end 
+end 
+if pc . is_mount ( ) then 
+say ( c_locale ( 10105 ) ) 
+return 
+end 
+if not dw . enter ( 358 ) then 
+say ( c_locale ( 10104 ) ) 
+return 
+end 
+end 

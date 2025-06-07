@@ -1,0 +1,4 @@
+if pc . get_level ( ) >= 30 then if game . get_event_flag ( "soul_event" ) > 0 and get_time ( ) > pc . getqf ( "complete" ) then 
+set_state ( "information" ) 
+end 
+ return end 

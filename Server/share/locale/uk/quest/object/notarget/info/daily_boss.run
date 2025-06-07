@@ -1,0 +1,7 @@
+say_title ( c_locale ( 11316 ) ) 
+if pc . getqf ( "next_time" ) > get_time ( ) then 
+say_reward ( c_locale ( 10823 , get_time_remaining ( pc . getqf ( "next_time" ) - get_time ( ) ) ) ) 
+return 
+else 
+say ( c_locale ( 11317 ) ) 
+end 

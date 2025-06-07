@@ -1,0 +1,108 @@
+quest sung_mahi begin
+	state start begin
+	end
+
+	state run begin
+		when letter begin
+			send_letter(c_locale(6397))
+			local v = find_npc_by_vnum(20400)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6397))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6397))
+			say(c_locale(6406))
+		end
+
+		when __TARGET__.target.click or 20400.chat.c_locale(6397) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			say_title(c_mob_name(20400))
+			say(c_locale(6398))
+
+			set_state("goto_myonghorang")
+		end
+	end
+
+	state goto_myonghorang begin
+		when letter begin
+			send_letter(c_locale(6399))
+			local v = find_npc_by_vnum(20400)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6399))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6399))
+			say(c_locale(6400))
+		end
+
+		when __TARGET__.target.click or 20400.chat.c_locale(6401) begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(20400))
+			say(c_locale(6402))
+
+			set_state("goto_portal_guard")
+		end
+	end
+
+	state goto_portal_guard begin
+		when letter begin
+			send_letter(c_locale(6401))
+			local v = find_npc_by_vnum(20402)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6401))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6401))
+			say(c_locale(6410))
+		end
+
+		when __TARGET__.target.click or 20402.chat.c_locale(6401) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			warp_to_village()
+			set_state("find_uriel")
+		end
+	end
+
+	state find_uriel begin
+		when letter begin
+			send_letter(c_locale(6403))
+			local v = find_npc_by_vnum(20011)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6403))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6403))
+			say(c_locale(6404))
+		end
+
+		when __TARGET__.target.click or 20011.chat.c_locale(6403) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(300)
+
+			say_title(c_mob_name(20011))
+			say(c_locale(6405))
+			say_reward(c_locale(6882, 300))
+
+			set_state("__COMPLETE__")
+			set_quest_state("main_quest_lv3", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

@@ -1,0 +1,47 @@
+local reward_table = { 83030 , 83031 , 50922 } 
+local reward_name_table = { } 
+for i = 1 , table . getn ( reward_table ) begin 
+table . insert ( reward_name_table , c_item_name ( reward_table [ i ] ) ) 
+end 
+table . insert ( reward_name_table , c_locale ( 6609 ) ) 
+local sel_reward = select_table ( reward_name_table ) 
+if sel_reward == table . getn ( reward_name_table ) then 
+return 
+end 
+local sig_vnum = { 50920 , 50921 , 50922 } 
+local sig_table = show_special_item_group ( sig_vnum [ sel_reward ] , 14 ) 
+say_item_vnum ( reward_table [ sel_reward ] ) 
+say ( c_locale ( 6643 + ( sel_reward - 1 ) ) ) 
+say ( "" ) 
+say ( c_locale ( 6631 ) ) 
+say ( "" ) 
+local step = 1 
+local pause = false 
+repeat 
+for i = step , table . getn ( sig_table ) begin 
+local vnum = sig_table [ i ] [ 1 ] 
+local count = sig_table [ i ] [ 2 ] 
+if vnum == 1 then 
+say_reward ( c_locale ( 5400 , number_to_money_string ( count ) ) ) 
+elseif vnum == 2 then 
+say_reward ( c_locale ( 5399 , number_to_money_string ( count ) ) ) 
+else 
+say_reward ( c_locale ( 6139 , c_item_name ( vnum ) , count ) ) 
+end 
+if i == 4 and i ~= table . getn ( sig_table ) then 
+step = i + 1 
+pause = true 
+break 
+end 
+if sig_table [ i ] [ 3 ] > 0 and i ~= table . getn ( sig_table ) then 
+step = sig_table [ i ] [ 3 ] + 1 
+pause = true 
+break 
+end 
+pause = false 
+end 
+if pause then 
+say ( ) 
+wait ( ) 
+end 
+until pause == false 

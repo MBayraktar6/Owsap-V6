@@ -1,0 +1,13 @@
+ScriptType	MapSetting
+
+CellScale	200
+HeightScale	0.500000
+
+ViewRadius	128
+
+MapSize	2	2
+BasePosition	947200	614400
+TextureSet	textureset\metin2_map_smhtower_d.txt
+Environment	dark.msenv
+
+TerrainVisible 1

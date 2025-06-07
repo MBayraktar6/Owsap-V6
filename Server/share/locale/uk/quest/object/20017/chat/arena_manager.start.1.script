@@ -1,0 +1,30 @@
+local g = arena . get_duel_list ( ) 
+local arena_name = { } 
+local arena_observer = { } 
+table . foreachi ( g , 
+function ( n , p ) 
+arena_name [ n ] = c_locale ( 37 , p [ 1 ] , p [ 2 ] ) 
+arena_observer [ n ] = { p [ 3 ] , p [ 4 ] , p [ 5 ] } 
+end 
+) 
+table . insert ( arena_name , c_locale ( 39 ) ) 
+table . insert ( arena_observer , 0 ) 
+local count = table . getn ( g ) 
+if count == 0 then 
+say_title ( c_locale ( 38 ) ) 
+say ( c_locale ( 40 ) ) 
+return 
+else 
+say_title ( c_locale ( 38 ) ) 
+say ( c_locale ( 41 , count ) ) 
+wait ( ) 
+end 
+if table . getn ( g ) ~= 0 then 
+local s = select_table ( arena_name ) 
+if table . getn ( arena_observer ) == s then 
+return 
+end 
+if table . getn ( arena_observer ) >= s then 
+arena . add_observer ( arena_observer [ s ] [ 1 ] , arena_observer [ s ] [ 2 ] , arena_observer [ s ] [ 3 ] ) 
+end 
+end 

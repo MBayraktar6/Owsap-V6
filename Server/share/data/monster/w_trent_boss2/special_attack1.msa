@@ -1,0 +1,65 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\w_trent_boss2\normal_attack1.GR2"
+MotionDuration           1.500000
+Accumulation           0.00	-219.45	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     4
+    Group Event00
+    {
+        MotionEventType      4
+        StartingTime         0.708029
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           455.000000
+            Position         0.000000 -455.000000 0.000000
+        }
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.693431
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bone19"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/w_ent_elder_s3_1.mse"
+        EffectPosition       0.000000 -300.000000 0.000000
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         0.799270
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bone19"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/w_ent_elder_s3_1.mse"
+        EffectPosition       0.000000 -400.000000 0.000000
+    }
+    Group Event03
+    {
+        MotionEventType      2
+        StartingTime         0.704380
+        
+        DuringTime           0.400000
+        Power                300
+        AffectingRange       300
+    }
+}

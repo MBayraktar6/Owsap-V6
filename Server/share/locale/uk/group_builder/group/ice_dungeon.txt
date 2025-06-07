@@ -1,0 +1,315 @@
+#
+# Blazing Purgatory
+#
+# ¹é·æÁö¼º (White Dragon Fortress)
+# metin2_map_n_snow_dungeon_01
+#
+
+Group	¹é·æÁö¼º_6051_ºùÁ¤
+{
+	Vnum	6051
+	Leader	"ºùÁ¤"	6101
+	1	"ºùÁ¤"	6101
+	2	"ºùÁ¤"	6101
+}
+Group	¹é·æÁö¼º_6052_³ÃÁ¤
+{
+	Vnum	6052
+	Leader	"³ÃÁ¤"	6102
+	1	"ºùÁ¤"	6101
+	2	"ºùÁ¤"	6101
+}
+Group	¹é·æÁö¼º_6053_³ÃÁ¤
+{
+	Vnum	6053
+	Leader	"³ÃÁ¤"	6102
+	1	"³ÃÁ¤"	6102
+	2	"³ÃÁ¤"	6102
+}
+Group	¹é·æÁö¼º_6054_±ØºùÁ¤
+{
+	Vnum	6054
+	Leader	"±ØºùÁ¤"	6103
+	1	"³ÃÁ¤"	6102
+	2	"³ÃÁ¤"	6102
+}
+Group	¹é·æÁö¼º_6055_±ØºùÁ¤
+{
+	Vnum	6055
+	Leader	"±ØºùÁ¤"	6103
+	1	"±ØºùÁ¤"	6103
+	2	"±ØºùÁ¤"	6103
+}
+Group	¹é·æÁö¼º_6056_ÇÑºùÁ¤
+{
+	Vnum	6056
+	Leader	"ÇÑºùÁ¤"	6104
+	1	"±ØºùÁ¤"	6103
+	2	"³ÃÁ¤"	6102
+	3	"³ÃÁ¤"	6102
+}
+Group	¹é·æÁö¼º_6057_ºù¸¶
+{
+	Vnum	6057
+	Leader	"ºù¸¶"	6105
+	1	"ÇÑºùÁ¤"	6104
+	2	"ÇÑºùÁ¤"	6104
+	3	"³ÃÁ¤"	6102
+	4	"³ÃÁ¤"	6102
+}
+Group	¹é·æÁö¼º_6058_³Ã¸¶
+{
+	Vnum	6058
+	Leader	"³Ã¸¶"	6106
+	1	"ºù¸¶"	6105
+	2	"ÇÑºùÁ¤"	6104
+	3	"ÇÑºùÁ¤"	6104
+}
+Group	¹é·æÁö¼º_6059_ºù±«
+{
+	Vnum	6059
+	Leader	"ºù±«"	6107
+	1	"³Ã¸¶"	6106
+	2	"³Ã¸¶"	6106
+	3	"ÇÑºùÁ¤"	6104
+	4	"ÇÑºùÁ¤"	6104
+}
+Group	¹é·æÁö¼º_6060_ºù¸¶
+{
+	Vnum	6060
+	Leader	"ºù¸¶"	6105
+	1	"ÇÑºùÁ¤"	6104
+	2	"±ØºùÁ¤"	6103
+	3	"±ØºùÁ¤"	6103
+}
+Group	¹é·æÁö¼º_6061_³Ã¸¶
+{
+	Vnum	6061
+	Leader	"³Ã¸¶"	6106
+	1	"ºù¸¶"	6105
+	2	"ºù¸¶"	6105
+	3	"±ØºùÁ¤"	6103
+	4	"±ØºùÁ¤"	6103
+}
+Group	¹é·æÁö¼º_6062_ÇÑ¸¶ÀÇ
+{
+	Vnum	6062
+	Leader	"ÇÑ¸¶ÀÇ"	6191
+	1	"ÃÊ³Ã±«"	6109
+	2	"ÃÊ³Ã±«"	6109
+	3	"³Ã±«"	6108
+	4	"³Ã±«"	6108
+	5	"³Ã±«"	6108
+	6	"ºù±«"	6107
+	7	"ºù±«"	6107
+	8	"³Ã¸¶"	6106
+	9	"³Ã¸¶"	6106
+	10	"³Ã¸¶"	6106
+	11	"³Ã¸¶"	6106
+}
+
+Group	crack_ice_dungeon_1
+{
+	Vnum	6071
+	Leader	"TR: Frost Crystal"	4240
+	1	"TR: Frost Crystal"	4240
+	2	"TR: Frost Crystal"	4240
+}
+Group	crack_ice_dungeon_2
+{
+	Vnum	6072
+	Leader	"TR: Frost Bug"	4241
+	1	"TR: Frost Crystal"	4240
+	2	"TR: Frost Crystal"	4240
+}
+Group	crack_ice_dungeon_3
+{
+	Vnum	6073
+	Leader	"TR: Frost Bug"	4241
+	1	"TR: Frost Bug"	4241
+	2	"TR: Frost Bug"	4241
+}
+Group	crack_ice_dungeon_4
+{
+	Vnum	6074
+	Leader	"TR: Frost Man"	4242
+	1	"TR: Frost Bug"	4241
+	2	"TR: Frost Bug"	4241
+}
+Group	crack_ice_dungeon_5
+{
+	Vnum	6075
+	Leader	"TR: Frost Man"	4242
+	1	"TR: Frost Man"	4242
+	2	"TR: Frost Man"	4242
+}
+Group	crack_ice_dungeon_6
+{
+	Vnum	6076
+	Leader	"TR: Frost Yeti"	4243
+	1	"TR: Frost Man"	4242
+	2	"TR: Frost Bug"	4241
+	3	"TR: Frost Bug"	4241
+}
+Group	crack_ice_dungeon_7
+{
+	Vnum	6077
+	Leader	"TR: Frost Golem"	4244
+	1	"TR: Frost Yeti"	4243
+	2	"TR: Frost Yeti"	4243
+	3	"TR: Frost Bug"	4241
+	4	"TR: Frost Bug"	4241
+}
+Group	crack_ice_dungeon_8
+{
+	Vnum	6078
+	Leader	"TR: Frost Troll"	4245
+	1	"TR: Frost Golem"	4244
+	2	"TR: Frost Yeti"	4243
+	3	"TR: Frost Yeti"	4243
+}
+Group	crack_ice_dungeon_9
+{
+	Vnum	6079
+	Leader	"TR: Frost Beard"	4246
+	1	"TR: Frost Troll"	4245
+	2	"TR: Frost Troll"	4245
+	3	"TR: Frost Yeti"	4243
+	4	"TR: Frost Yeti"	4243
+}
+Group	crack_ice_dungeon_10
+{
+	Vnum	6080
+	Leader	"TR: Frost Golem"	4244
+	1	"TR: Frost Yeti"	4243
+	2	"TR: Frost Man"	4242
+	3	"TR: Frost Man"	4242
+}
+Group	crack_ice_dungeon_11
+{
+	Vnum	6081
+	Leader	"TR: Frost Troll"	4245
+	1	"TR: Frost Golem"	4244
+	2	"TR: Frost Golem"	4244
+	3	"TR: Frost Man"	4242
+	4	"TR: Frost Man"	4242
+}
+Group	crack_ice_dungeon_boss
+{
+	Vnum	6082
+	Leader	"TR: Nemere"	4402
+	1	"TR: Frost Lord"	4248
+	2	"TR: Frost Lord"	4248
+	3	"TR: Frost General"	4247
+	4	"TR: Frost General"	4247
+	5	"TR: Frost General"	4247
+	6	"TR: Frost Beard"	4246
+	7	"TR: Frost Beard"	4246
+	8	"TR: Frost Troll"	4245
+	9	"TR: Frost Troll"	4245
+	10	"TR: Frost Troll"	4245
+	11	"TR: Frost Troll"	4245
+}
+
+Group	awaken_ice_dungeon_1
+{
+	Vnum	6121
+	Leader	"RX: Frost Crystal"	4320
+	1	"RX: Frost Crystal"	4320
+	2	"RX: Frost Crystal"	4320
+}
+Group	awaken_ice_dungeon_2
+{
+	Vnum	6122
+	Leader	"RX: Frost Bug"	4321
+	1	"RX: Frost Crystal"	4320
+	2	"RX: Frost Crystal"	4320
+}
+Group	awaken_ice_dungeon_3
+{
+	Vnum	6123
+	Leader	"RX: Frost Bug"	4321
+	1	"RX: Frost Bug"	4321
+	2	"RX: Frost Bug"	4321
+}
+Group	awaken_ice_dungeon_4
+{
+	Vnum	6124
+	Leader	"RX: Frost Man"	4322
+	1	"RX: Frost Bug"	4321
+	2	"RX: Frost Bug"	4321
+}
+Group	awaken_ice_dungeon_5
+{
+	Vnum	6125
+	Leader	"RX: Frost Man"	4322
+	1	"RX: Frost Man"	4322
+	2	"RX: Frost Man"	4322
+}
+Group	awaken_ice_dungeon_6
+{
+	Vnum	6126
+	Leader	"RX: Frost Yeti"	4323
+	1	"RX: Frost Man"	4322
+	2	"RX: Frost Bug"	4321
+	3	"RX: Frost Bug"	4321
+}
+Group	awaken_ice_dungeon_7
+{
+	Vnum	6127
+	Leader	"RX: Frost Golem"	4324
+	1	"RX: Frost Yeti"	4323
+	2	"RX: Frost Yeti"	4323
+	3	"RX: Frost Bug"	4321
+	4	"RX: Frost Bug"	4321
+}
+Group	awaken_ice_dungeon_8
+{
+	Vnum	6128
+	Leader	"RX: Frost Troll"	4325
+	1	"RX: Frost Golem"	4324
+	2	"RX: Frost Yeti"	4323
+	3	"RX: Frost Yeti"	4323
+}
+Group	awaken_ice_dungeon_9
+{
+	Vnum	6129
+	Leader	"RX: Frost Beard"	4326
+	1	"RX: Frost Troll"	4325
+	2	"RX: Frost Troll"	4325
+	3	"RX: Frost Yeti"	4323
+	4	"RX: Frost Yeti"	4323
+}
+Group	awaken_ice_dungeon_10
+{
+	Vnum	6130
+	Leader	"RX: Frost Golem"	4324
+	1	"RX: Frost Yeti"	4323
+	2	"RX: Frost Man"	4322
+	3	"RX: Frost Man"	4322
+}
+Group	awaken_ice_dungeon_11
+{
+	Vnum	6131
+	Leader	"RX: Frost Troll"	4325
+	1	"RX: Frost Golem"	4324
+	2	"RX: Frost Golem"	4324
+	3	"RX: Frost Man"	4322
+	4	"RX: Frost Man"	4322
+}
+Group	awaken_ice_dungeon_boss
+{
+	Vnum	6132
+	Leader	"RX: Nemere"	4412
+	1	"RX: Frost Lord"	4328
+	2	"RX: Frost Lord"	4328
+	3	"RX: Frost General"	4327
+	4	"RX: Frost General"	4327
+	5	"RX: Frost General"	4327
+	6	"RX: Frost Beard"	4326
+	7	"RX: Frost Beard"	4326
+	8	"RX: Frost Troll"	4325
+	9	"RX: Frost Troll"	4325
+	10	"RX: Frost Troll"	4325
+	11	"RX: Frost Troll"	4325
+}

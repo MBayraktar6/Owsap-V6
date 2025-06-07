@@ -1,0 +1,209 @@
+Group	금장보물상자
+{
+	Vnum	50006 -- Gold Treasure Chest
+	1	50300	1	100 -- Skill Book
+	2	80008	1	10 -- Lump of Gold
+	3	50002	1	10 -- Gold Ring
+	4	70012	1	10 -- Goddess Tear
+	5	70008	1	10 -- White Flag
+	6	70038	1	10 -- Bravery Cape
+	7	70048	1	10 -- Cloak of Secrecy
+	8	70049	1	10 -- Lucy's Ring
+	9	70050	1	10 -- Sage King's Symbol
+	10	70051	1	10 -- Sage King's Glove
+	11	경험치	10000	30 -- Exp.
+	12	경험치	20000	30 -- Exp.
+	13	경험치	30000	30 -- Exp.
+	14	경험치	40000	30 -- Exp.
+	15	경험치	50000	30 -- Exp.
+	16	돈꾸러미	60000	15 -- Yang
+	17	돈꾸러미	70000	15 -- Yang
+	18	돈꾸러미	80000	15 -- Yang
+	19	돈꾸러미	90000	15 -- Yang
+	20	돈꾸러미	100000	15 -- Yang
+	21	25040	1	30 -- Blessing Scroll
+	22	121	1	8	40 -- Flying Wizard Sword+1
+	23	122	1	5	40 -- Flying Wizard Sword+2
+	24	1081	1	8	40 -- Rib Knife+1
+	25	1082	1	5	40 -- Rib Knife+2
+	26	3111	1	8	40 -- Salvation Blade+1
+	27	3112	1	5	40 -- Salvation Blade+2
+	28	2111	1	8	40 -- Unicorn Bow+1
+	29	2112	1	5	40 -- Unicorn Bow+2
+	30	5071	1	8	40 -- Golden Bug Bell+1
+	31	5072	1	5	40 -- Golden Bug Bell+2
+	32	7111	1	8	40 -- Eyebrow Fan+1
+	33	7112	1	5	40 -- Eyebrow Fan+2
+	34	30023	1	10 -- White Tiger Hide
+	35	30045	1	10 -- Scorpion Needle
+	36	30038	1	10 -- Tiger Hide
+	37	30051	1	10 -- Unknown Talisman
+	38	30011	1	10 -- Ball
+	39	30070	1	10 -- Wolf Fur+
+	40	30017	1	10 -- Ornamental Hairpin
+	41	30033	1	10 -- Broken Porcelain
+	42	30055	1	10 -- Scorpion Claw
+	43	30053	1	10 -- Bear Foot Skin
+	44	30007	1	10 -- Orc Amulet
+	45	30031	1	10 -- Ornament
+	46	30028	1	10 -- Wolf Claw
+	47	30047	1	10 -- Curse Book
+	48	30052	1	10 -- Flag
+	49	30027	1	10 -- Wolf Fur
+	50	30003	1	10 -- Pig Nose
+	51	30081	1	10 -- Scorpion Tail+
+	52	30022	1	10 -- Snake Tail
+	53	30010	1	10 -- Bear Gall
+	54	30025	1	10 -- Spider's Poison Sack
+	55	30004	1	10 -- Wild Boar Tooth
+	56	30050	1	10 -- Ice Marble
+	57	30075	1	40 -- Shiriken+
+}
+Group	은장보물상자
+{
+	Vnum	50007 -- Silver Treasure Chest
+	1	27001	50	43 -- Red Potion (S)
+	2	27002	30	43 -- Red Potion (M)
+	3	27003	20	43 -- Red Potion (L)
+	4	27004	50	43 -- Blue Potion (S)
+	5	27005	30	43 -- Blue Potion (M)
+	6	27006	20	43 -- Blue Potion (L)
+	7	경험치	5000	75 -- Exp.
+	8	경험치	10000	75 -- Exp.
+	9	경험치	15000	75 -- Exp.
+	10	경험치	20000	75 -- Exp.
+	11	돈꾸러미	10000	40 -- Yang
+	12	돈꾸러미	15000	40 -- Yang
+	13	돈꾸러미	20000	40 -- Yang
+	14	돈꾸러미	25000	40 -- Yang
+	15	돈꾸러미	30000	40 -- Yang
+	16	30030	1	12 -- Rusty Blade
+	17	30032	1	12 -- Black Uniform
+	18	30059	1	12 -- Spider Legs
+	19	30056	1	12 -- Spider Web
+	20	30071	1	12 -- Bear Gall+
+	21	30075	1	12 -- Shiriken+
+	22	30014	1	12 -- Yeti Fur
+	23	30061	1	12 -- Frog's Legs
+	24	30083	1	12 -- Unknown Medicine+
+	25	30074	1	12 -- Black Uniform+
+	26	30057	1	12 -- Spider Eyes
+	27	30016	1	12 -- Demon's Gem
+	28	30048	1	12 -- Piece of Ice
+	29	30009	1	12 -- Unknown Medicine
+	30	30037	1	12 -- Tiger Claw
+	31	30039	1	12 -- Piece of Fabric
+}
+Group	금장보물상자+
+{
+	Vnum	50012 -- Gold Treasure Chest+
+	1	50401	1	20 -- Three-Way Cut Manual
+	2	50402	1	20 -- Sword Spin Manual
+	3	50403	1	20 -- Berserk Manual
+	4	50404	1	20 -- Aura of the Sword Manual
+	5	50405	1	20 -- Dash Manual
+	6	50406	1	20 -- Life Force Manual
+	7	50416	1	20 -- Strike Manual
+	8	50417	1	20 -- Bash Manual
+	9	50418	1	20 -- Pounding Manual
+	10	50419	1	20 -- Strong Body Manual
+	11	50420	1	20 -- Sword Strike Manual
+	12	50421	1	20 -- Sword Orb Manual
+	13	50431	1	20 -- Ambush Manual
+	14	50432	1	20 -- Fast Attack Manual
+	15	50433	1	20 -- Rolling Dagger Manual
+	16	50434	1	20 -- Disguise Manual
+	17	50435	1	20 -- Poisonous Cloud Manual
+	18	50436	1	20 -- Insidious Poison Manual
+	19	50446	1	20 -- Repetitive Shot Manual
+	20	50447	1	20 -- Arrow Shower Manual
+	21	50448	1	20 -- Fire Arrow Manual
+	22	50449	1	20 -- Feather Walk Manual
+	23	50450	1	20 -- Poison Arrow Manual
+	24	50451	1	20 -- Spark Manual
+	25	50461	1	20 -- Finger Strike Manual
+	26	50462	1	20 -- Dragon Swirl Manual
+	27	50463	1	20 -- Enchanted Blade Manual
+	28	50464	1	20 -- Fear Manual
+	29	50465	1	20 -- Enchanted Armour Manual
+	30	50466	1	20 -- Dispel Manual
+	31	50476	1	20 -- Dark Strike Manual
+	32	50477	1	20 -- Flame Strike Manual
+	33	50478	1	20 -- Flame Spirit Manual
+	34	50479	1	20 -- Dark Protection Manual
+	35	50480	1	20 -- Spirit Strike Manual
+	36	50481	1	20 -- Dark Orb Manual
+	37	50491	1	20 -- Flying Talisman Manual
+	38	50492	1	20 -- Shooting Dragon Manual
+	39	50493	1	20 -- Dragon's Roar Manual
+	40	50494	1	20 -- Blessing Manual
+	41	50495	1	20 -- Reflect Manual
+	42	50496	1	20 -- Dragon's Aid Manual
+	43	50506	1	20 -- Lightning Throw Manual
+	44	50507	1	20 -- Summon Lightning Manual
+	45	50508	1	20 -- Lightning Claw Manual
+	46	50509	1	20 -- Cure Manual
+	47	50510	1	20 -- Swiftness Manual
+	48	50511	1	20 -- Attack Manual
+	49	50530	1	20 -- Shred Manual
+	50	50531	1	20 -- Wolf's Breath Manual
+	51	50532	1	20 -- Wolf Pounce Manual
+	52	50533	1	20 -- Wolf's Claw Manual
+	53	50534	1	20 -- Crimson Wolf Soul Manual
+	54	50535	1	20 -- Indigo Wolf Soul Manual
+	55	25040	1	75 -- Blessing Scroll
+	56	6032	1	46	40 -- Steel Claw+2
+	57	6033	1	20	40 -- Steel Claw+3
+	58	132	1	46	40 -- Half Moon Sword+2
+	59	133	1	20	40 -- Half Moon Sword+3
+	60	1092	1	46	40 -- Chakram+2
+	61	1093	1	20	40 -- Chakram+3
+	62	3122	1	46	40 -- Lion Slayer+2
+	63	3123	1	20	40 -- Lion Slayer+3
+	64	2122	1	46	40 -- Giant Wing Bow+2
+	65	2123	1	20	40 -- Giant Wing Bow+3
+	66	5082	1	46	40 -- Steel Bug Bell+2
+	67	5083	1	20	40 -- Steel Bug Bell+3
+	68	7122	1	46	40 -- Sun Fan+2
+	69	7123	1	20	40 -- Sun Fan+3
+	70	13202	1	150	40 -- Black Round Shield+2
+	71	13203	1	50	40 -- Black Round Shield+3
+}
+Group	은장보물상자+
+{
+	Vnum	50013 -- Silver Treasure Chest+
+	1	70012	1	57 -- Goddess Tear
+	2	70008	1	57 -- White Flag
+	3	70038	1	57 -- Bravery Cape
+	4	70048	1	57 -- Cloak of Secrecy
+	5	70049	1	57 -- Lucy's Ring
+	6	70050	1	57 -- Sage King's Symbol
+	7	70051	1	57 -- Sage King's Glove
+	8	13192	1	150 -- Pentagon Shield+2
+	9	13193	1	50 -- Pentagon Shield+3
+	10	12222	1	37	40 -- Iron Helmet+2
+	11	12223	1	38	40 -- Iron Helmet+3
+	12	12362	1	37	40 -- Chain Hood+2
+	13	12363	1	38	40 -- Chain Hood+3
+	14	12502	1	37	40 -- Mocking Helmet+2
+	15	12503	1	38	40 -- Mocking Helmet+3
+	16	12642	1	37	40 -- Phoenix Hat+2
+	17	12643	1	38	40 -- Phoenix Hat+3
+	18	21512	1	37	40 -- Ebon Cloth Helmet+2
+	19	21513	1	38	40 -- Ebon Cloth Helmet+3
+	20	30015	1	40 -- Demon's Keepsake
+	21	30035	1	40 -- Face Cream
+	22	30058	1	40 -- Spider Egg Sack
+	23	30006	1	40 -- Orc Tooth
+	24	30082	1	40 -- Snake Tail+
+	25	30076	1	40 -- Orc Amulet+
+	26	30018	1	40 -- Red Hairband
+	27	30046	1	40 -- Scorpion Tail
+	28	30086	1	40 -- Demon's Keepsake+
+	29	30072	1	40 -- Bear Foot Skin+
+	30	30080	1	40 -- Curse Book+
+	31	30077	1	40 -- Orc Tooth+
+	32	30069	1	40 -- Wolf Claw+
+	33	30067	1	40 -- Snakeskin
+	34	30075	1	40 -- Shiriken+
+}

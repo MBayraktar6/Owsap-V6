@@ -1,0 +1,103 @@
+local maindialog = 0 
+local storymode = 0 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1479 ) ) 
+repeat 
+if pc . getqf ( "know_sura" ) == 1 then 
+maindialog = select ( c_locale ( 1482 ) , c_locale ( 1484 ) , c_locale ( 1488 ) , c_locale ( 1492 ) , c_locale ( 1496 ) , c_locale ( 1500 ) , c_locale ( 1504 ) ) 
+if maindialog == 1 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1483 ) ) 
+wait ( ) 
+elseif maindialog == 2 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1485 ) ) 
+wait ( ) 
+elseif maindialog == 3 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1489 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1490 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1491 ) ) 
+wait ( ) 
+elseif maindialog == 4 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1493 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1494 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1495 ) ) 
+wait ( ) 
+elseif maindialog == 5 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1497 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1498 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1499 ) ) 
+wait ( ) 
+elseif maindialog == 6 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1501 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1502 ) ) 
+storymode = select ( c_locale ( 2669 ) , c_locale ( 1504 ) ) 
+if storymode == 2 then 
+return 
+end 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1503 ) ) 
+wait ( ) 
+else 
+say ( c_locale ( 1505 ) ) 
+end 
+else 
+maindialog = select ( c_locale ( 1482 ) , c_locale ( 1480 ) ) 
+if maindialog == 1 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1483 ) ) 
+wait ( ) 
+local subdialog1 = select ( c_locale ( 1484 ) ) 
+if subdialog1 == 1 then 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1485 ) ) 
+pc . setqf ( "know_sura" , 1 ) 
+wait ( ) 
+end 
+else 
+say_title ( c_locale ( 1477 ) ) 
+say ( c_locale ( 1481 ) ) 
+maindialog = 7 
+end 
+end 
+until maindialog == 7 
+return 

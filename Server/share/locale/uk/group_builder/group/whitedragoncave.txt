@@ -1,0 +1,64 @@
+Group	whitedragoncave_01_01
+{
+	Vnum	9150
+	Leader	whitedragoncave	6784
+	1	whitedragoncave	6784
+	2	whitedragoncave	6784
+	3	whitedragoncave	6785
+}
+Group	whitedragoncave_01_02
+{
+	Vnum	9151
+	Leader	whitedragoncave	6784
+	1	whitedragoncave	6785
+	2	whitedragoncave	6786
+	3	whitedragoncave	6786
+}
+Group	whitedragoncave_01_03
+{
+	Vnum	9152
+	Leader	whitedragoncave	6784
+	1	whitedragoncave	6784
+	2	whitedragoncave	6787
+	3	whitedragoncave	6786
+}
+Group	whitedragoncave_01_04
+{
+	Vnum	9153
+	Leader	whitedragoncave	6785
+	1	whitedragoncave	6786
+	2	whitedragoncave	6784
+	3	whitedragoncave	6784
+}
+Group	whitedragoncave_01_05
+{
+	Vnum	9154
+	Leader	whitedragoncave	6785
+	1	whitedragoncave	6786
+	2	whitedragoncave	6787
+	3	whitedragoncave	6787
+}
+Group	whitedragoncave_01_06
+{
+	Vnum	9155
+	Leader	whitedragoncave	6785
+	1	whitedragoncave	6786
+	2	whitedragoncave	6784
+	3	whitedragoncave	6787
+}
+Group	whitedragoncave_01_07
+{
+	Vnum	9156
+	Leader	whitedragoncave	6788
+	1	whitedragoncave	6785
+	2	whitedragoncave	6787
+	3	whitedragoncave	6787
+}
+Group	whitedragoncave_01_08
+{
+	Vnum	9157
+	Leader	whitedragoncave	6788
+	1	whitedragoncave	6788
+	2	whitedragoncave	6786
+	3	whitedragoncave	6787
+}

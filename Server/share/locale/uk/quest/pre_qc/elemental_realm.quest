@@ -1,0 +1,26 @@
+quest elemental_realm begin
+	state start begin
+		when 3998.chat.c_locale(12083) with pc.get_map_index(359) begin
+			say(c_locale(12084))
+			if select(c_locale(12085), c_locale(12086)) == 1 then
+				if pc.get_level() < 90 then
+					say(c_locale(12087))
+					return
+				elseif pc.get_gold() < 5000000 then
+					say(c_locale(12088))
+					return
+				end
+
+				pc.change_gold(-5000000)
+				pc.warp(0, 9216 * 100)
+			end
+		end
+
+		when 3999.chat.c_locale(12089) begin
+			say(c_locale(12090))
+			if select(c_locale(12085), c_locale(12086)) == 1 then
+				pc.warp(1280 * 100, 5632 * 100)
+			end
+		end
+	end
+end

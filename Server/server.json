@@ -1,0 +1,125 @@
+{
+	"channels": {
+		/* Channel / Cores */
+		"1": 6,
+		"99": 2
+	},
+	"paths": {
+		/* Path / Folder */
+		"auth": "auth",
+		"db": "db",
+		"game": "game",
+		"share": "share"
+	},
+	"shared_paths": {
+		/* Path : Shared Path */
+		"auth": [
+			"package",
+			"panama",
+			"game",
+			"version.txt",
+			"license.txt"
+		],
+		"db": [
+			"db",
+			"license.txt"
+		],
+		"game": [
+			"data",
+			"locale",
+			"package",
+			"panama",
+			"game",
+			"cmd.txt",
+			"version.txt",
+			"license.txt"
+		]
+	},
+	"shared_libs": {
+		"auth": {
+			"unix": [],
+			"win32": [ "DevIL-1.7.8d.dll", "DevILU-1.7.8d.dll", "DevILUT-1.7.8d.dll" ]
+		},
+		"db": {
+			"unix": [],
+			"win32": []
+		},
+		"game": {
+			"unix": [],
+			"win32": [ "DevIL-1.7.8d.dll", "DevILU-1.7.8d.dll", "DevILUT-1.7.8d.dll" ]
+		}
+	},
+	"db_file": {
+		"unix": "db",
+		"win32": "db_d.exe"
+	},
+	"game_file": {
+		"unix": "game",
+		"win32": "game_d.exe"
+	},
+	"quest_script": {
+		"make": "make_quest.py",
+		"make_functions": "make_quest_function.py"
+	},
+	"packages": [
+		/* Package Name */
+		"boost-all",
+		"devil",
+		"cryptopp",
+		"openssl",
+		"gcc",
+		"llvm",
+		"gmake",
+		"makedepend",
+		"python",
+		"mysql80-server",
+		"gdb",
+		"compat8x-amd64",
+		"bpytop"
+	],
+	"locale_service": "uk",
+	"mysql": {
+		"host": "localhost",
+		"port": "3306",
+		"user": "root",
+		"password": "password",
+		"login_path": "share/my.ini",
+		"database": [
+			"account",
+			"common",
+			"hotbackup",
+			"player",
+			"log"
+		]
+	},
+	"temp_files": [
+		"pid",
+		"PTS",
+		"stdout",
+		"syslog",
+		"syserr",
+		"p2p_packet_info.txt",
+		"packet_info.txt",
+		"usage",
+		"DEV_LOG.log",
+		"mob_count",
+		"game.core",
+		"db.core",
+		"usage.txt"
+	],
+	"temp_folders": [
+		"log"
+	],
+	"backup": {
+		"types": [ "mysql", "server", "auto", "all" ],
+		"path": {
+			/* Type : Path */
+			"mysql": "../backup/mysql",
+			"server": "../backup/server",
+			"cron": "/etc/cron.d"
+		},
+		"cron_time": "0 * * * *", /* https://crontab.cronhub.io/ */
+		"cron_file": "m2backup"
+	},
+	"alias_name": "m2server"
+}

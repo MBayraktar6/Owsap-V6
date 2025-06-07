@@ -1,0 +1,8 @@
+local setting = devilcatacomb_zone . setting ( ) 
+if item . get_vnum ( ) == setting . unlock_stone then 
+item . remove ( ) 
+d . notice ( c_locale ( 829 ) ) 
+d . clear_regen ( ) 
+d . purge ( ) 
+timer ( "devilcatacomb_floor5_timer" , 2 ) 
+end 

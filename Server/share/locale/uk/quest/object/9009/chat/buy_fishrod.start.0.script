@@ -1,0 +1,21 @@
+say_title ( c_locale ( 112 ) ) 
+say ( c_locale ( 118 ) ) 
+local b = select ( c_locale ( 119 ) , c_locale ( 120 ) ) 
+if 1 == b then 
+if pc . get_money ( ) >= 3980 then 
+pc . changemoney ( - 3980 ) 
+say_title ( c_locale ( 112 ) ) 
+say ( c_locale ( 121 ) ) 
+pc . give_item2 ( 27400 , 1 ) 
+pc . give_item2 ( 27800 , 100 ) 
+pc . give_item2 ( 27801 , 20 ) 
+setstate ( "notify_event" ) 
+else 
+say_title ( c_locale ( 112 ) ) 
+say ( c_locale ( 122 ) ) 
+end 
+elseif 2 == b then 
+return 
+else 
+say ( c_locale ( 123 , b ) ) 
+end 

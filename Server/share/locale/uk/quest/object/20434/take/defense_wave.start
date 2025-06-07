@@ -1,0 +1,3 @@
+if defense_wave . in_dungeon ( d . get_map_index ( ) ) and item . get_vnum ( ) == 31107 then item . remove ( 1 ) 
+dw . set_alliance_hp_pct ( 1 ) 
+ return end 

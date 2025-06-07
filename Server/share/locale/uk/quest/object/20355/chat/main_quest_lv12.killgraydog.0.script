@@ -1,0 +1,11 @@
+say_title ( c_locale ( 4956 ) ) 
+say ( c_locale ( 4981 ) ) 
+if pc . is_gm ( ) then 
+wait ( ) 
+say_title ( c_locale ( 4964 ) ) 
+say ( c_locale ( 4965 ) ) 
+local s = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if s == 1 then 
+set_state ( "gotoboss2" ) 
+end 
+end 

@@ -1,0 +1,223 @@
+quest collect_quest_lv94 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup with pc.get_level() >= 94 begin
+			set_state(information)
+		end
+	end
+
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(20091)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_locale(642))
+			end
+			send_letter(c_locale(643))
+		end
+
+		when button or info begin
+			say_title(c_locale(643))
+			say(c_locale(644))
+		end
+
+		when __TARGET__.target.click or 20091.chat.c_locale(645) begin
+			target.delete("__TARGET__")
+			say_title(c_locale(646))
+			say(c_locale(647))
+			wait()
+			say_title(c_locale(646))
+			say(c_locale(648))
+			set_state(go_to_disciple)
+			pc.setqf("duration", 0) -- 시도 할수 있는 시간
+			pc.setqf("collect_count", 0) -- 이제껏 모은 아이템 수
+			--pc.setqf("drink_drug", 0) -- 현혹의 물약을 먹으면 1
+		end
+	end
+
+	state go_to_disciple begin
+		when letter begin
+			send_letter(c_locale(649))
+		end
+
+		when button or info begin
+			say_title(c_locale(649))
+			say(c_locale(650))
+			say_item_vnum(30252)
+			say_reward(c_locale(651, pc.getqf("collect_count")))
+		end
+
+		--[[
+		when 71035.use begin -- 현혹의 물약
+			if get_time() < pc.getqf("duration") then
+				say(c_locale(652))
+				return
+			end
+
+			if pc.getqf("drink_drug") == 1 then
+				say(c_locale(653))
+				return
+			end
+
+			if pc.count_item(30252) == 0 then
+				say(c_locale(654))
+				return
+			end
+
+			pc.remove_item(71035, 1)
+			pc.setqf("drink_drug", 1)
+		end
+		]]
+
+		--when 2412.kill or 2414.kill or 2415.kill or 2452.kill or 2454.kill begin
+		when 2414.kill or 2412.kill begin
+			local s = number(1, 400)
+			if s <= 1 then
+				pc.give_item2(30252, 1)
+				send_letter(c_locale(655))
+			end
+		end
+
+		when 20091.chat.c_locale(656) with pc.count_item(30252) > 0 begin
+			if get_time() < pc.getqf("duration") then
+				say_title(c_locale(646))
+				say(c_locale(657))
+				return
+			end
+
+			if pc.count_item(30252) <= 0 then
+				say_title(c_locale(646))
+				say(c_locale(658))
+				return
+			end
+
+			say_title(c_locale(646))
+			say(c_locale(659))
+			pc.remove_item(30252, 1)
+
+			if is_test_server() then
+				pc.setqf("duration", (get_time() + 3)) -- Test Server 3 seconds
+			else
+				pc.setqf("duration", (get_time() + (60 * 60 * 24))) -- 24 hours
+			end
+
+			wait()
+
+			local pass_percent
+			--if pc.getqf("drink_drug") == 0 then
+			if affect.find(AFFECT_RESEARCHER_ELIXIR) then
+				pass_percent = 90
+			else
+				if true == pet.is_summon(34003) or true == pet.is_summon(34001) then
+					pass_percent = 92
+				else
+					pass_percent = 60
+				end
+			end
+
+			test_chat(string.format("pass percent %d", pass_percent))
+
+			local s = number(1, 100)
+			if s <= pass_percent then
+				if pc.getqf("collect_count") < 19 then -- 10개미만
+					local index = pc.getqf("collect_count") + 1
+					pc.setqf("collect_count", index) -- 하나 구했으니 +1 해준다
+					say_title(c_locale(646))
+					say(c_locale(660))
+					say(c_locale(661, 20 - pc.getqf("collect_count")))
+					say(c_locale(662))
+					--pc.setqf("drink_drug", 0) -- 물약 초기화
+					return
+				end
+				say_title(c_locale(646))
+				say(c_locale(667))
+				pc.setqf("collect_count", 0)
+				set_state(key_item)
+			else
+				--pc.setqf("drink_drug", 0) -- 물약 초기화
+				say_title(c_locale(646))
+				say(c_locale(666))
+				return
+			end
+		end -- end of when
+	end -- end of state
+
+	state key_item begin
+		when letter begin
+			send_letter(c_locale(668))
+			if pc.count_item(30228) > 0 then
+				local v = find_npc_by_vnum(20091)
+				if v != 0 then
+					target.vid("__TARGET__", v, "")
+				end
+			end
+		end
+
+		when button or info begin
+			if pc.count_item(30228) > 0 then
+				say_title(c_locale(669))
+				say(c_locale(670))
+				return
+			end
+			say_title(c_locale(671))
+			say(c_locale(672))
+			say_item_vnum(30228)
+			say(c_locale(673))
+		end
+
+		when 2493.kill begin
+			if pc.count_item(30228) == 0 then
+				pc.give_item2(30228, 1)
+				send_letter(c_locale(674))
+			end
+		end
+
+		when 2495.kill begin
+			local s = number(1, 20)
+			if s == 1 then
+				if pc.count_item(30228) == 0 then
+					pc.give_item2(30228, 1)
+					send_letter(c_locale(674))
+				end
+			end
+		end
+
+		when __TARGET__.target.click or 20091.chat.c_locale(675) with pc.count_item(30228) > 0 begin
+			target.delete("__TARGET__")
+			if pc.count_item(30228) > 0 then
+				say_title(c_locale(646))
+				say(c_locale(676))
+
+				local result = BuildApplyCollectRewardList(94) -- locale.lua
+				local apply_data_list = result[1]
+				local apply_name_list = result[2]
+
+				if table.getn(apply_data_list) == 0 then
+					return
+				end
+
+				local s = select_table(apply_name_list)
+				local apply_vnum, apply_value, apply_duration = unpack(apply_data_list[s]) -- table.unpack (v5.2)
+				affect.add_collect(apply_vnum, apply_value, apply_duration)
+				pc.setqf("reward", s)
+
+				pc.remove_item(30228, 1)
+				pc.setqf("collect_count", 0)
+				--pc.setqf("drink_drug", 0)
+				pc.setqf("duration", 0)
+				clear_letter()
+				--set_quest_state("collect_quest_lv96", "run")
+				set_state(__COMPLETE__)
+				return
+			else
+				say_title(c_locale(646))
+				say(c_locale(677))
+				return
+			end
+		end -- end of when
+	end -- end of state
+
+	state __COMPLETE__ begin
+	end
+end

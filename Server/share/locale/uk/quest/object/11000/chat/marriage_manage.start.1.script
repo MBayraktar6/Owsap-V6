@@ -1,0 +1,4 @@
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 6585 ) ) 
+say_reward ( c_locale ( 6586 ) ) 
+pc . remove_item ( 70302 ) 

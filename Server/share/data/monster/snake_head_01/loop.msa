@@ -1,0 +1,21 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\npc2\snake_head_01\wait.GR2"
+MotionDuration           1.000000
+
+Group MotionEventData
+{
+    MotionEventDataCount     1
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         0.009732
+        
+        IndependentFlag      0
+        AttachingEnable      1
+        AttachingBoneName    "eff_attack"
+        FollowingEnable      1
+        EffectFileName       "d:/ymir work/effect/monster2/snake_head_01.mse"
+        EffectPosition       0.000000 0.000000 -50.000000
+    }
+}

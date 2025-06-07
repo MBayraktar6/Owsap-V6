@@ -1,0 +1,8 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 4940 ) ) 
+say ( c_locale ( 5082 ) ) 
+wait ( ) 
+say_title ( c_locale ( 4940 ) ) 
+say ( c_locale ( 5083 ) ) 
+wait ( ) 
+set_state ( "gotogood" ) 

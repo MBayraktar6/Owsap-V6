@@ -1,0 +1,52 @@
+local recipient 
+local title 
+local message 
+local item_vnum = 0 
+local item_count = 0 
+local gold = 0 
+local cheque = 0 
+say ( "Enter recipient's name:" ) 
+recipient = input ( ) 
+if recipient == "" then 
+say_reward ( "Error: You must specify a recipient." ) 
+return 
+end 
+say ( "Enter mail title:" ) 
+title = input ( ) 
+if title == "" then 
+say_reward ( "Error: The mail title cannot be empty." ) 
+return 
+end 
+say ( "Enter mail message (optional):" ) 
+message = input ( ) 
+say ( "Do you want to attach an item?" ) 
+if select ( "Yes" , "No" ) == 1 then 
+say ( "Enter the item VNUM (ID):" ) 
+item_vnum = tonumber ( input ( ) ) 
+if item_vnum == nil or item_vnum <= 0 then 
+say_reward ( "Error: Invalid item. No item will be attached." ) 
+item_vnum = 0 
+end 
+say ( "Enter the number of items to attach:" ) 
+item_count = tonumber ( input ( ) ) 
+if item_count == nil or item_count <= 0 then 
+say_reward ( "Error: Invalid item count. Defaulting to 1." ) 
+item_count = 1 
+end 
+end 
+say ( "Do you want to attach money?" ) 
+if select ( "Yes" , "No" ) == 1 then 
+say ( "Enter the amount of gold to attach (max 1.999.999.999):" ) 
+gold = tonumber ( input ( ) ) 
+if gold == nil or gold < 0 or gold > 2e+09 or math . floor ( gold ) ~= gold then 
+say_reward ( "Error: Invalid gold amount. No gold will be attached." ) 
+gold = 0 
+end 
+say ( "Enter the amount of cheque to attach (max 3.000):" ) 
+cheque = tonumber ( input ( ) ) 
+if cheque == nil or cheque < 0 or cheque > 3000 or math . floor ( cheque ) ~= cheque then 
+say_reward ( "Error: Invalid cheque amount. No cheque will be attached." ) 
+cheque = 0 
+end 
+end 
+game . send_gm_mail ( recipient , title , message , item_vnum , item_count , gold , cheque ) 

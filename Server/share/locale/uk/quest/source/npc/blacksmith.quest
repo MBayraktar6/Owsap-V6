@@ -1,0 +1,10 @@
+quest blacksmith begin
+	state start begin
+		when blacksmith.chat.c_locale(96) begin
+			say_title(c_locale(97))
+			say(c_locale(98))
+			say_title(c_locale(99))
+			say_reward(c_locale(100))
+		end
+	end
+end

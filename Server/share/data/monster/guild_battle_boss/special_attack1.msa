@@ -1,0 +1,172 @@
+ScriptType               MotionData
+
+MotionFileName           "D:/Ymir Work/monster2/guild_battle_boss/special_attack1.GR2"
+MotionDuration           2.333333
+Accumulation           0.00	-607.84	0.00
+
+Group MotionEventData
+{
+    MotionEventDataCount     12
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         1.120745
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger42"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/guild_battle_boss_s1_blow.mse"
+        EffectPosition       0.000000 -200.000000 0.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         1.146292
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger42"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/guild_battle_boss_s1_blow_02.mse"
+        EffectPosition       0.000000 -300.000000 70.000000
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         1.361621
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger42"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/guild_battle_boss_s1_blow_02.mse"
+        EffectPosition       0.000000 -400.000000 70.000000
+    }
+    Group Event03
+    {
+        MotionEventType      1
+        StartingTime         1.576949
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger42"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/guild_battle_boss_s1_blow_02.mse"
+        EffectPosition       0.000000 -550.000000 70.000000
+    }
+    Group Event04
+    {
+        MotionEventType      1
+        StartingTime         1.719285
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger42"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/guild_battle_boss_s1_blow_02.mse"
+        EffectPosition       0.000000 -700.000000 70.000000
+    }
+    Group Event05
+    {
+        MotionEventType      2
+        StartingTime         1.16819
+        
+        DuringTime           0.200000
+        Power                100
+        AffectingRange       200
+    }
+    Group Event06
+    {
+        MotionEventType      2
+        StartingTime         1.379869
+        
+        DuringTime           0.200000
+        Power                100
+        AffectingRange       200
+    }
+    Group Event07
+    {
+        MotionEventType      2
+        StartingTime         1.591548
+        
+        DuringTime           0.200000
+        Power                100
+        AffectingRange       300
+    }
+    Group Event08
+    {
+        MotionEventType      2
+        StartingTime         1.733883
+        
+        DuringTime           0.300000
+        Power                200
+        AffectingRange       300
+    }
+    Group Event09
+    {
+        MotionEventType      4
+        StartingTime         1.16454
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -250.000000 0.000000
+        }
+    }
+    Group Event10
+    {
+        MotionEventType      4
+        StartingTime         1.460161
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -500.000000 0.000000
+        }
+    }
+    Group Event11
+    {
+        MotionEventType      4
+        StartingTime         1.701037
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 -700.000000 0.000000
+        }
+    }
+}

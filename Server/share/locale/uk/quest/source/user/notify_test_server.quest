@@ -1,0 +1,7 @@
+quest notify_test_server begin
+	state start begin
+		when login with is_test_server() begin
+			notice(c_locale(7442))
+		end
+	end
+end

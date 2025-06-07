@@ -1,0 +1,67 @@
+local setting = blue_dragon_lair . setting ( ) 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 884 ) ) 
+if select ( c_locale ( 878 ) , c_locale ( 879 ) ) == 1 then 
+if not party . is_party ( ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 885 ) ) 
+return 
+end 
+if not party . is_leader ( ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 880 ) ) 
+return 
+end 
+local pids = { party . get_member_pids ( ) } 
+local not_enough_charged_members = { } 
+local entry_check = true 
+local charged_check = true 
+if party . get_near_count ( ) < table . getn ( pids ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 881 ) ) 
+return 
+end 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if pc . getqf ( "entries" ) >= setting . access_limit then 
+entry_check = false 
+end 
+if pc . getf ( "blue_dragon_lair" , "charged" ) ~= 1 then 
+table . insert ( not_enough_charged_members , pc . get_name ( ) ) 
+charged_check = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not entry_check then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 905 ) ) 
+return 
+end 
+if not charged_check then 
+setskin ( NOWINDOW ) 
+for i , name in next , not_enough_charged_members , nil begin 
+syschat ( c_locale ( 895 , name ) ) 
+end 
+return 
+end 
+if d . find ( party . getf ( "dungeon_index" ) ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 886 ) ) 
+return 
+end 
+local lair_reset_time = pc . getqf ( "lair_reset_time" ) 
+if pc . getqf ( "entries" ) >= setting . access_limit and lair_reset_time > get_time ( ) then 
+setskin ( NOWINDOW ) 
+syschat ( c_locale ( 904 , get_time_remaining ( lair_reset_time - get_time ( ) ) ) ) 
+return 
+end 
+local dungeon_map_index = d . create ( setting . lair_map . index ) 
+d . setf_for_map_index ( "access_lair" , 1 , dungeon_map_index ) 
+d . setf_for_map_index ( "blue_dragon_alive" , 0 , dungeon_map_index ) 
+d . setf_for_map_index ( "party_leader_pid" , party . get_leader_pid ( ) , dungeon_map_index ) 
+d . spawn_for_map_index ( setting . entry_man . vnum , setting . entry_man . x , setting . entry_man . y , dungeon_map_index ) 
+party . setf ( "dungeon_index" , dungeon_map_index ) 
+party . chat ( c_locale_string ( 1816 ) ) 
+party . chat ( c_locale_string ( 1817 ) ) 
+server_timer ( "blue_dragon_lair_1m_left_timer" , setting . entry_wait_time , dungeon_map_index ) 
+end 

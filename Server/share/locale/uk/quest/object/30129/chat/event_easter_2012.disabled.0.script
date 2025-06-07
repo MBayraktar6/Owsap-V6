@@ -1,0 +1,7 @@
+event_easter_2012 . spawn_metin_at_login ( ) 
+say_title ( c_locale ( 1041 ) ) 
+say ( c_locale ( 1042 ) ) 
+say ( c_locale ( 1043 ) ) 
+if not event_easter_2012 . has_rabbit ( ) then 
+npc . purge ( ) 
+end 

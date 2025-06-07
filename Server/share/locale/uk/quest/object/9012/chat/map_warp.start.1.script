@@ -1,0 +1,21 @@
+say_title ( c_locale ( 6444 ) ) 
+say ( c_locale ( 6454 ) ) 
+if select ( c_locale ( 6555 ) , c_locale ( 6556 ) ) == 1 then 
+say_title ( c_locale ( 6444 ) ) 
+say ( c_locale ( 6455 ) ) 
+local cost = 50000 
+if pc . get_level ( ) >= 90 then 
+cost = cost + ( ( pc . get_level ( ) - 90 ) * 10000 ) 
+end 
+say_reward ( c_locale ( 6477 , number_to_money_string ( cost ) ) ) 
+if select ( c_locale ( 6555 ) , c_locale ( 6556 ) ) == 1 and pc . get_level ( ) >= 90 and pc . get_gold ( ) >= cost then 
+pc . change_gold ( - cost ) 
+pc . warp ( 1.1043e+06 , 1.7885e+06 ) 
+else 
+if pc . get_gold ( ) < cost then 
+say_title ( c_locale ( 6444 ) ) 
+say ( c_locale ( 6435 ) ) 
+say_reward ( c_locale ( 6437 , cost ) ) 
+end 
+end 
+end 

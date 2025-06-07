@@ -1,0 +1,12 @@
+say ( c_locale ( 12084 ) ) 
+if select ( c_locale ( 12085 ) , c_locale ( 12086 ) ) == 1 then 
+if pc . get_level ( ) < 90 then 
+say ( c_locale ( 12087 ) ) 
+return 
+elseif pc . get_gold ( ) < 5e+06 then 
+say ( c_locale ( 12088 ) ) 
+return 
+end 
+pc . change_gold ( - 5e+06 ) 
+pc . warp ( 0 , 9216 * 100 ) 
+end 

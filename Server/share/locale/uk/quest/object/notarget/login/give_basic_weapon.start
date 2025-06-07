@@ -1,0 +1,26 @@
+if pc . getqf ( "basic_weapon" ) ~= 0 then 
+return 
+end 
+local item_vnum = 10 
+if pc . get_job ( ) == 3 then 
+item_vnum = 7000 
+elseif pc . get_job ( ) == 1 then 
+item_vnum = 1000 
+elseif pc . get_job ( ) == 4 then 
+item_vnum = 6000 
+end 
+local item_count = pc . count_item ( item_vnum ) 
+local equip_weapon = pc . get_weapon ( ) 
+if item_count == 0 and equip_weapon ~= item_vnum then 
+if game . get_config ( "start_with_full_set" ) > 0 then 
+pc . give_full_set ( ) 
+pc . give_item2 ( 72702 , 1 ) 
+pc . give_item2 ( 39039 , 1 ) 
+pc . give_item2 ( 39042 , 1 ) 
+else 
+pc . give_item2 ( item_vnum ) 
+pc . give_item2 ( 27001 , 5 ) 
+pc . equip_slot ( 0 ) 
+end 
+set_state ( "__COMPLETE__" ) 
+end 

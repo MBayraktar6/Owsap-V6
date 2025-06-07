@@ -1,0 +1,21 @@
+local empire = pc . get_empire ( ) 
+if empire == 2 then 
+a = select ( c_locale ( 1580 ) , c_locale ( 1581 ) , c_locale ( 1582 ) , c_locale ( 2426 ) ) 
+if 1 == a then 
+say ( c_locale ( 1588 ) ) 
+wait ( ) 
+pc . warp ( 977400 , 150100 ) 
+elseif 2 == a then 
+say ( c_locale ( 1577 ) ) 
+wait ( ) 
+pc . warp ( 977200 , 185000 ) 
+elseif 3 == a then 
+say ( c_locale ( 1585 ) ) 
+wait ( ) 
+pc . warp ( 925600 , 201200 ) 
+else 
+return 
+end 
+else 
+say ( c_locale ( 1578 ) ) 
+end 

@@ -1,0 +1,28 @@
+quest horse_guard begin
+	state start begin
+		when 20349.chat.c_locale(2094) begin
+			say_title(c_locale(2118))
+			local s = number(1, 7)
+			if 1 >= s then -- 14.29% (1/7)
+				say(c_locale(2095))
+			elseif 2 >= s then -- 14.29% (1/7)
+				say(c_locale(2096))
+			elseif 3 >= s then -- 14.29% (1/7)
+				say(c_locale(2097))
+			elseif 4 >= s then -- 14.29% (1/7)
+				say(c_locale(2098))
+			elseif 5 >= s then -- 14.29% (1/7)
+				say(c_locale(2099))
+			elseif 6 >= s then -- 14.29% (1/7)
+				say(c_locale(2100))
+			elseif 7 >= s then -- 14.29% (1/7)
+				say(c_locale(2101))
+			end
+		end
+
+		when 20349.chat.c_locale(7387) begin
+			setskin(NOWINDOW)
+			npc.open_shop(11)
+		end
+	end
+end

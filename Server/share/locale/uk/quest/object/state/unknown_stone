@@ -1,0 +1,12 @@
+unknown_stone={["start"]=0,["__COMPLETE__"]=668443392,["goto_colony_guard"]=-1455924962,["run"]=1349952704,update_counter= function ()local count = 0 
+local remain_count = 3 - pc . getqf ( "unknown_stone_count" ) 
+if remain_count < 0 then 
+remain_count = 0 
+end 
+count = count + remain_count 
+q . set_counter_value ( count ) 
+if count == 0 then 
+notice ( c_locale ( 6368 ) ) 
+set_state ( "goto_colony_guard" ) 
+end 
+end }

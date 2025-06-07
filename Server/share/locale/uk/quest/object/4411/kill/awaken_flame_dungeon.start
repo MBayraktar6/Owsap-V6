@@ -1,0 +1,8 @@
+if awaken_flame_dungeon . in_dungeon ( d . get_map_index ( ) ) and d . getf ( "level" ) == 17 then d . setf ( "finished" , 1 ) 
+d . setqf2_all_near ( "awaken_flame_dungeon" , "complete" , 1 , 800 ) 
+d . notice ( c_locale ( 11436 ) ) 
+d . notice ( c_locale ( 11471 ) ) 
+awaken_flame_dungeon . clear_server_timers ( d . get_map_index ( ) ) 
+awaken_flame_dungeon . clear_level ( ) 
+server_timer ( "awaken_flame_dungeon_end_timer" , 180 , d . get_map_index ( ) ) 
+ return end 

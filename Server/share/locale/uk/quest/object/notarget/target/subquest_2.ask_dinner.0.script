@@ -1,0 +1,7 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 5074 ) ) 
+say ( c_locale ( 8343 ) ) 
+wait ( ) 
+say_title ( c_locale ( 5074 ) ) 
+say ( c_locale ( 8344 ) ) 
+set_state ( "report" ) 

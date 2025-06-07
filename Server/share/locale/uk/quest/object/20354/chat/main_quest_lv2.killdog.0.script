@@ -1,0 +1,11 @@
+say_title ( c_locale ( 4940 ) ) 
+say ( c_locale ( 5035 ) ) 
+if pc . is_gm ( ) then 
+wait ( ) 
+say_title ( c_locale ( 5036 ) ) 
+say ( c_locale ( 5037 ) ) 
+local s = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if s == 1 then 
+set_state ( "gototeacher2" ) 
+end 
+end 

@@ -1,0 +1,218 @@
+quest subquest_1 begin
+	state start begin
+		when login or levelup with pc.get_level() >= 6 and pc.get_level() <= 11 begin
+			set_state(information)
+		end
+	end
+
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(9003)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8282))
+			end
+		end
+
+		when __TARGET__.target.click or 9003.chat.c_locale(8293) begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(1282))
+			say(c_locale(8304))
+			say_item_vnum(30130)
+			say(c_locale(8315))
+
+			local s = select(c_locale(8319), c_locale(8320))
+			if 2 == s then
+				say(c_locale(8321))
+
+				local a = select(c_locale(2625), c_locale(2600))
+				if 2 == a then
+					say_title(c_locale(1282))
+					say(c_locale(8322))
+					return
+				end
+
+				say_title(c_locale(1282))
+				say(c_locale(8323))
+
+				set_state(__GIVEUP__)
+				return
+			end
+
+			say_title(c_locale(8283))
+			say(c_locale(8284))
+
+			set_state(to_yeonnahwan)
+		end
+	end
+
+	state to_yeonnahwan begin
+		when letter begin
+			local v = find_npc_by_vnum(20005)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8285))
+			end
+			send_letter(c_locale(8285))
+		end
+
+		when button or info begin
+			say_title(c_locale(8285))
+			say_reward(c_locale(8286))
+			say_item_vnum(30130)
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(8287))
+			say(c_locale(8288))
+			say_item_vnum(30130)
+			wait()
+
+			say_title(c_locale(8287))
+			say(c_locale(8289))
+			say_item_vnum(30020)
+			wait()
+
+			set_state(hunt_for_peach)
+		end
+	end
+
+	state hunt_for_peach begin
+		when letter begin
+			send_letter(c_locale(8290))
+		end
+
+		when button or info begin
+			say_title(c_locale(8290))
+			say_reward(c_locale(8291))
+			say_item_vnum(30020)
+		end
+
+		when 20005.chat.c_locale(8292) with pc.count_item(30020) == 0 begin
+			say_title(c_locale(8287))
+			say(c_locale(8294))
+		end
+
+		when 108.kill begin
+			local s = number(1, 100)
+			if s <= 5 then
+				pc.give_item2(30020, 1)
+				set_state(go_back_to_yonah)
+			end
+		end
+	end
+
+	state go_back_to_yonah begin
+		when letter begin
+			send_letter(c_locale(8295))
+			local v = find_npc_by_vnum(20005)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8295))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(8296))
+			say_reward(c_locale(8297))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			if pc.count_item(30020) >= 1 then
+				say_title(c_locale(8287))
+				say(c_locale(8298))
+				say_item_vnum(30020)
+				say(c_locale(8299))
+				wait()
+
+				say_title(c_locale(8287))
+				say(c_locale(8300))
+				say_item_vnum(30130)
+
+				pc.remove_item(30020, 1)
+				pc.give_item2(30130, 1)
+
+				set_state(going_to_reward)
+			end
+		end
+	end
+
+	state going_to_reward begin
+		when letter begin
+			send_letter(c_locale(8301))
+			local v = find_npc_by_vnum(9003)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(8301))
+			end
+		end
+
+		when info or button begin
+			say_title(c_locale(8301))
+			say_reward(c_locale(8302))
+			say_item_vnum(30130)
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			if pc.count_item(30130) >= 1 then
+				say_title(c_locale(8303))
+				say(c_locale(8305))
+				wait()
+
+				say_title(c_locale(205))
+				say_reward(c_locale(8306))
+
+				pc.remove_item(30130)
+				pc.give_exp2(1500)
+				pc.change_money(1000)
+
+				set_quest_state("levelup", "run")
+
+				clear_letter()
+				set_state(__COMPLETE__)
+			else
+				say_title(c_locale(8303))
+				say(c_locale(8307))
+				say_item_vnum(30130)
+				wait()
+
+				say_title(c_locale(1282))
+				say(c_locale(8308))
+
+				local s = select(c_locale(8309), c_locale(8310))
+				if s == 2 then
+					say(c_locale(8311))
+
+					local a = select(c_locale(2625), c_locale(2600))
+					if 2 == a then
+						say_title(c_locale(1282))
+						say(c_locale(8312))
+						return
+					end
+
+					say_pc_name()
+					say(c_locale(8313))
+
+					clear_letter()
+					set_state(__GIVEUP__)
+					return
+				end
+
+				set_state(hunt_for_peach)
+			end
+		end
+	end
+
+	state __GIVEUP__ begin
+	end
+
+	state __COMPLETE__ begin
+	end
+end

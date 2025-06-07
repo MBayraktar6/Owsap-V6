@@ -1,0 +1,344 @@
+#
+# Arboreal Menace
+#
+# Ochao Temple, Enchanted Forest
+# metin2_map_dawnmist_dungeon_01
+# metin2_map_mt_th_dungeon_01
+#
+
+Group	OchaoTemple_1
+{
+	Vnum	6301
+	Leader	"Ochao Warrior"	6301
+	1	"Ochao Warrior"	6301
+	2	"Ochao Warrior"	6301
+}
+Group	OchaoTemple_2
+{
+	Vnum	6302
+	Leader	"Ochao Soldier"	6302
+	1	"Ochao Warrior"	6301
+	2	"Ochao Warrior"	6301
+}
+Group	OchaoTemple_3
+{
+	Vnum	6303
+	Leader	"Ochao General"	6305
+	1	"Ochao Magician"	6303
+	2	"Ochao Executioner"	6304
+}
+Group	OchaoTemple_4
+{
+	Vnum	6304
+	Leader	"Ochao General"	6305
+	1	"Ochao Warrior"	6301
+	2	"Ochao Soldier"	6302
+}
+Group	OchaoTemple_5
+{
+	Vnum	6305
+	Leader	"Ochao Executioner"	6304
+	1	"Ochao Magician"	6303
+	2	"Ochao Magician"	6303
+}
+Group	OchaoTemple_6
+{
+	Vnum	6306
+	Leader	"Ochao Bodyguard"	6311
+	1	"Ochao General"	6305
+	2	"Ochao Executioner"	6304
+	2	"Ochao Executioner"	6304
+}
+Group	OchaoTemple_7
+{
+	Vnum	6307
+	Leader	"Ochao Lord"	6390
+	1	"Ochao General"	6305
+	2	"Ochao Executioner"	6304
+	2	"Ochao Executioner"	6304
+}
+
+Group	En-Tai_01
+{
+	Vnum	6311
+	Leader	"En-Tai Warrior"	6401
+	1	"En-Tai Warrior"	6401
+	2	"En-Tai Warrior"	6401
+}
+Group	En-Tai_02
+{
+	Vnum	6312
+	Leader	"En-Tai Soldier"	6402
+	1	"En-Tai Warrior"	6401
+	2	"En-Tai Warrior"	6401
+}
+Group	En-Tai_03
+{
+	Vnum	6313
+	Leader	"En-Tai Soldier"	6402
+	1	"En-Tai Soldier"	6402
+	2	"En-Tai Soldier"	6402
+}
+Group	En-Tai_04
+{
+	Vnum	6314
+	Leader	"En-Tai Druid"	6403
+	1	"En-Tai Soldier"	6402
+	2	"En-Tai Soldier"	6402
+}
+Group	En-Tai_05
+{
+	Vnum	6315
+	Leader	"En-Tai Druid"	6403
+	1	"En-Tai Druid"	6403
+	2	"En-Tai Druid"	6403
+}
+Group	En-Tai_06
+{
+	Vnum	6316
+	Leader	"En-Tai Healer"	6404
+	1	"En-Tai Druid"	6403
+	2	"En-Tai Soldier"	6402
+	3	"En-Tai Soldier"	6402
+}
+Group	En-Tai_07
+{
+	Vnum	6317
+	Leader	"En-Tai Destroyer"	6406
+	1	"En-Tai Healer"	6404
+	2	"En-Tai Healer"	6404
+	3	"En-Tai Soldier"	6402
+	4	"En-Tai Soldier"	6402
+}
+Group	En-Tai_08
+{
+	Vnum	6318
+	Leader	"En-Tai Sovereign"	6407
+	1	"En-Tai Healer"	6404
+	2	"En-Tai Healer"	6404
+	3	"En-Tai Healer"	6404
+	4	"En-Tai Druid"	6403
+	5	"En-Tai Druid"	6403
+	6	"En-Tai Soldier"	6402
+	7	"En-Tai Soldier"	6402
+	8	"En-Tai Soldier"	6402
+	9	"En-Tai Soldier"	6402
+}
+Group	En-Tai_20
+{
+	Vnum	6330
+	Leader	"En-Tai Warrior"	6401
+	1	"En-Tai Warrior"	6401
+	2	"En-Tai Warrior"	6401
+}
+Group	En-Tai_21
+{
+	Vnum	6331
+	Leader	"En-Tai Soldier"	6402
+	1	"En-Tai Warrior"	6401
+	2	"En-Tai Warrior"	6401
+}
+Group	En-Tai_22
+{
+	Vnum	6332
+	Leader	"En-Tai Soldier"	6402
+	1	"En-Tai Soldier"	6402
+	2	"En-Tai Soldier"	6402
+}
+Group	En-Tai_23
+{
+	Vnum	6333
+	Leader	"En-Tai Druid"	6403
+	1	"En-Tai Soldier"	6402
+	2	"En-Tai Soldier"	6402
+}
+
+Group	crack_dawnmist_01
+{
+	Vnum	6401
+	Leader	"TR: En-Tai Warrior"	4260
+	1	"TR: En-Tai Warrior"	4260
+	2	"TR: En-Tai Warrior"	4260
+}
+Group	crack_dawnmist_02
+{
+	Vnum	6402
+	Leader	"TR: En-Tai Soldier"	4261
+	1	"TR: En-Tai Warrior"	4260
+	2	"TR: En-Tai Warrior"	4260
+}
+Group	crack_dawnmist_03
+{
+	Vnum	6403
+	Leader	"TR: En-Tai Soldier"	4261
+	1	"TR: En-Tai Soldier"	4261
+	2	"TR: En-Tai Soldier"	4261
+}
+Group	crack_dawnmist_04
+{
+	Vnum	6404
+	Leader	"TR: En-Tai Druid"	4262
+	1	"TR: En-Tai Soldier"	4261
+	2	"TR: En-Tai Soldier"	4261
+}
+Group	crack_dawnmist_05
+{
+	Vnum	6405
+	Leader	"TR: En-Tai Druid"	4262
+	1	"TR: En-Tai Druid"	4262
+	2	"TR: En-Tai Druid"	4262
+}
+Group	crack_dawnmist_06
+{
+	Vnum	6406
+	Leader	"TR: En-Tai Healer"	4263
+	1	"TR: En-Tai Druid"	4262
+	2	"TR: En-Tai Soldier"	4261
+	3	"TR: En-Tai Soldier"	4261
+}
+Group	crack_dawnmist_07
+{
+	Vnum	6407
+	Leader	"TR: En-Tai Destroyer"	4264
+	1	"TR: En-Tai Healer"	4263
+	2	"TR: En-Tai Healer"	4263
+	3	"TR: En-Tai Soldier"	4261
+	4	"TR: En-Tai Soldier"	4261
+}
+Group	crack_dawnmist_08
+{
+	Vnum	6408
+	Leader	"TR: En-Tai Sovereign"	4265
+	1	"TR: En-Tai Healer"	4263
+	2	"TR: En-Tai Healer"	4263
+	3	"TR: En-Tai Healer"	4263
+	4	"TR: En-Tai Druid"	4262
+	5	"TR: En-Tai Druid"	4262
+	6	"TR: En-Tai Soldier"	4261
+	7	"TR: En-Tai Soldier"	4261
+	8	"TR: En-Tai Soldier"	4261
+	9	"TR: En-Tai Soldier"	4261
+}
+Group	crack_dawnmist_10
+{
+	Vnum	6420
+	Leader	"TR: En-Tai Warrior"	4260
+	1	"TR: En-Tai Warrior"	4260
+	2	"TR: En-Tai Warrior"	4260
+}
+Group	crack_dawnmist_11
+{
+	Vnum	6421
+	Leader	"TR: En-Tai Soldier"	4261
+	1	"TR: En-Tai Warrior"	4260
+	2	"TR: En-Tai Warrior"	4260
+}
+Group	crack_dawnmist_12
+{
+	Vnum	6422
+	Leader	"TR: En-Tai Soldier"	4261
+	1	"TR: En-Tai Soldier"	4261
+	2	"TR: En-Tai Soldier"	4261
+}
+Group	crack_dawnmist_13
+{
+	Vnum	6423
+	Leader	"TR: En-Tai Druid"	4262
+	1	"TR: En-Tai Soldier"	4261
+	2	"TR: En-Tai Soldier"	4261
+}
+
+Group	awaken_dawnmist_01
+{
+	Vnum	6411
+	Leader	"RX: En-Tai Warrior"	4340
+	1	"RX: En-Tai Warrior"	4340
+	2	"RX: En-Tai Warrior"	4340
+}
+Group	awaken_dawnmist_02
+{
+	Vnum	6412
+	Leader	"RX: En-Tai Soldier"	4341
+	1	"RX: En-Tai Warrior"	4340
+	2	"RX: En-Tai Warrior"	4340
+}
+Group	awaken_dawnmist_03
+{
+	Vnum	6413
+	Leader	"RX: En-Tai Soldier"	4341
+	1	"RX: En-Tai Soldier"	4341
+	2	"RX: En-Tai Soldier"	4341
+}
+Group	awaken_dawnmist_04
+{
+	Vnum	6414
+	Leader	"RX: En-Tai Druid"	4342
+	1	"RX: En-Tai Soldier"	4341
+	2	"RX: En-Tai Soldier"	4341
+}
+Group	awaken_dawnmist_05
+{
+	Vnum	6415
+	Leader	"RX: En-Tai Druid"	4342
+	1	"RX: En-Tai Druid"	4342
+	2	"RX: En-Tai Druid"	4342
+}
+Group	awaken_dawnmist_06
+{
+	Vnum	6416
+	Leader	"RX: En-Tai Healer"	4343
+	1	"RX: En-Tai Druid"	4342
+	2	"RX: En-Tai Soldier"	4341
+	3	"RX: En-Tai Soldier"	4341
+}
+Group	awaken_dawnmist_07
+{
+	Vnum	6417
+	Leader	"RX: En-Tai Destroyer"	4344
+	1	"RX: En-Tai Healer"	4343
+	2	"RX: En-Tai Healer"	4343
+	3	"RX: En-Tai Soldier"	4341
+	4	"RX: En-Tai Soldier"	4341
+}
+Group	awaken_dawnmist_08
+{
+	Vnum	6418
+	Leader	"RX: En-Tai Sovereign"	4345
+	1	"RX: En-Tai Healer"	4343
+	2	"RX: En-Tai Healer"	4343
+	3	"RX: En-Tai Healer"	4343
+	4	"RX: En-Tai Druid"	4342
+	5	"RX: En-Tai Druid"	4342
+	6	"RX: En-Tai Soldier"	4341
+	7	"RX: En-Tai Soldier"	4341
+	8	"RX: En-Tai Soldier"	4341
+	9	"RX: En-Tai Soldier"	4341
+}
+Group	awaken_dawnmist_10
+{
+	Vnum	6430
+	Leader	"RX: En-Tai Warrior"	4340
+	1	"RX: En-Tai Warrior"	4340
+	2	"RX: En-Tai Warrior"	4340
+}
+Group	awaken_dawnmist_11
+{
+	Vnum	6431
+	Leader	"RX: En-Tai Soldier"	4341
+	1	"RX: En-Tai Warrior"	4340
+	2	"RX: En-Tai Warrior"	4340
+}
+Group	awaken_dawnmist_12
+{
+	Vnum	6432
+	Leader	"RX: En-Tai Soldier"	4341
+	1	"RX: En-Tai Soldier"	4341
+	2	"RX: En-Tai Soldier"	4341
+}
+Group	awaken_dawnmist_13
+{
+	Vnum	6433
+	Leader	"RX: En-Tai Druid"	4342
+	1	"RX: En-Tai Soldier"	4341
+	2	"RX: En-Tai Soldier"	4341
+}

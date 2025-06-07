@@ -1,0 +1,34 @@
+define WARP_COST 5000
+
+quest privateshop_warp begin
+	state start begin
+		when 20480.chat.c_locale(12779) begin
+			say_title(c_locale(12780))
+			say(c_locale(12781))
+		end
+
+		when 20480.chat.c_locale(12782) begin
+			say_title(c_locale(12780))
+			say(c_locale(12783))
+			say(c_locale(13174))
+			if select(c_locale(12784), c_locale(12785)) == 1 then
+				if pc.get_gold() < WARP_COST then
+					say_title(c_locale(12780))
+					say(c_locale(13179))
+					return
+				end
+
+				pc.changegold(-WARP_COST)
+				pc.warp(0, 358400)
+			else return end
+		end
+
+		when 20481.chat.c_locale(12786) begin
+			say_title(c_locale(12780))
+			say(c_locale(12787))
+			if select(c_locale(12784), c_locale(12785)) == 1 then
+				warp_to_village()
+			else return end
+		end
+	end
+end

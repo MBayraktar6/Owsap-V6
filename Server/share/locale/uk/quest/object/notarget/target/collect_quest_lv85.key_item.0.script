@@ -1,0 +1,5 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 550 ) ) 
+say ( c_locale ( 551 ) ) 
+pc . remove_item ( 30226 , 1 ) 
+set_state ( "__reward" ) 

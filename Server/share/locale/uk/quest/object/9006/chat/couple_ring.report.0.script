@@ -1,0 +1,7 @@
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 693 ) ) 
+say_reward ( c_locale ( 694 ) ) 
+say_item ( c_locale ( 695 ) , 70301 , c_locale ( 696 ) ) 
+pc . give_item2 ( 70301 ) 
+set_state ( "__COMPLETE__" ) 
+q . done ( ) 

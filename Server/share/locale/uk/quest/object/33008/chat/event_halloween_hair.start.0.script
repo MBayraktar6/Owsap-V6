@@ -1,0 +1,13 @@
+local setting = event_halloween_hair . setting ( ) 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1083 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1084 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1082 ) ) 
+say ( c_locale ( 1085 ) ) 
+pc . setqf ( "first_notice" , 1 ) 
+if not event_halloween_hair . is_running ( ) then 
+npc . purge ( ) 
+end 

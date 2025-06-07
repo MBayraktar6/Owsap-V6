@@ -1,0 +1,64 @@
+quest christmas_santa begin
+	state start begin
+		when 20031.click begin
+			say_title(c_locale(2434))
+			say(c_locale(2431))
+
+			local s = select(c_locale(2440), c_locale(2439))
+			if s == 1 then
+				local r = npc.get_remain_skill_book_count()
+				if r > 0 then
+					say_title(c_locale(2434))
+					say(c_locale(2437, 10000))
+					local s = select(c_locale(2435), c_locale(2436))
+					if s == 1 then
+						if npc.get_remain_skill_book_count() > 0 then
+							if pc.get_gold() >= 10000 then
+								npc.dec_remain_skill_book_count()
+								pc.change_gold(-10000)
+								pc.give_item_from_special_item_group(50300)
+							else
+								say_title(c_locale(2434))
+								say(c_locale(2433))
+							end
+						else
+							say_title(c_locale(2434))
+							say(c_locale(2438))
+						end
+					end
+				else
+					say_title(c_locale(2434))
+					say(c_locale(2438))
+				end
+			elseif s == 2 then
+				local r = npc.get_remain_material_count()
+				if r > 0 then
+					say_title(c_locale(2434))
+					say(c_locale(2429, 10000))
+					local s = select(c_locale(2435), c_locale(2436))
+					if s == 1 then
+						if npc.get_remain_material_count() > 0 then
+							if pc.get_gold() >= 10000 then
+								npc.dec_remain_material_count()
+								pc.change_gold(-10000)
+								pc.give_item_from_special_item_group(70201)
+							else
+								say_title(c_locale(2434))
+								say(c_locale(2433))
+							end
+						else
+							say_title(c_locale(2434))
+							say(c_locale(2430))
+						end
+					end
+				else
+					say_title(c_locale(2434))
+					say(c_locale(2430))
+				end
+			elseif s == 3 then
+				say_title(c_locale(2434))
+				say(c_locale(2428))
+			end
+		end
+	end
+end

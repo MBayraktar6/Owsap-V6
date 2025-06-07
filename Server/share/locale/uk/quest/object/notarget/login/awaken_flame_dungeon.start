@@ -1,0 +1,29 @@
+local setting = awaken_flame_dungeon . setting ( ) 
+local idx = pc . get_map_index ( ) 
+if idx == 369 and not is_test_server ( ) then 
+awaken_flame_dungeon . warp_out ( ) 
+elseif awaken_flame_dungeon . in_dungeon ( idx ) then 
+if not party . is_party ( ) then 
+notice ( c_locale ( 11345 ) ) 
+awaken_flame_dungeon . warp_out ( ) 
+elseif d . getf ( "created" ) == 1 and party . is_party ( ) and table . getn ( { party . get_member_pids ( ) } ) < 2 then 
+notice ( c_locale ( 11345 ) ) 
+awaken_flame_dungeon . warp_out ( ) 
+elseif get_global_time ( ) - pc . getf ( "awaken_flame_dungeon" , "exit_time" ) > 60 then 
+notice ( c_locale ( 11346 ) ) 
+awaken_flame_dungeon . warp_out ( ) 
+elseif d . getf ( "finished" ) ~= 0 then 
+notice ( c_locale ( 11347 ) ) 
+awaken_flame_dungeon . warp_out ( ) 
+else 
+if d . getf ( "created" ) ~= 1 then 
+awaken_flame_dungeon . create ( idx ) 
+end 
+if pc . get_player_id ( ) == d . getf ( "party_leader_pid" ) then 
+clear_server_timer ( "awaken_flame_dungeon_quit_timer" , idx ) 
+end 
+if d . getf ( "level" ) == 17 then 
+pc . jump ( setting . bossroom_entry_pos [ 1 ] * 100 , setting . bossroom_entry_pos [ 2 ] * 100 , idx ) 
+end 
+end 
+end 

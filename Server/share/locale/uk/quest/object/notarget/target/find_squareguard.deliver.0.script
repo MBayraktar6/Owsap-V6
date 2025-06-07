@@ -1,0 +1,5 @@
+target . delete ( "__TARGET__1" ) 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 1291 ) ) 
+clear_letter ( ) 
+set_state ( "__COMPLETE__" ) 

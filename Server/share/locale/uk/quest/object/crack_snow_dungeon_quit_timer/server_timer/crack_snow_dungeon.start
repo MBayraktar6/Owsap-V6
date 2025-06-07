@@ -1,0 +1,4 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+crack_snow_dungeon . clear_server_timers ( get_server_timer_arg ( ) ) 
+crack_snow_dungeon . clear_and_exit ( get_server_timer_arg ( ) ) 
+end 

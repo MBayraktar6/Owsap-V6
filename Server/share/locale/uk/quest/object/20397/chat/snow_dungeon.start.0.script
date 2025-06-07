@@ -1,0 +1,32 @@
+say_title ( "General Information" ) 
+if snow_dungeon . inside ( d . get_map_index ( ) ) then 
+say_reward ( "In dungeon" ) 
+end 
+say ( string . format ( "Current level : %d" , d . getf ( "level" ) ) ) 
+say ( string . format ( "Monster count : %d" , d . count_monster ( ) ) ) 
+say ( string . format ( "Dungeon map_ndex : %d" , d . get_map_index ( ) ) ) 
+say ( string . format ( "Player map_index : %d" , pc . get_map_index ( ) ) ) 
+say ( string . format ( "Access limit : %d" , pc . getf ( "snow_dungeon" , "exit_time" ) ) ) 
+say ( string . format ( "Global time : %d" , get_global_time ( ) ) ) 
+if d . is_unique_dead ( "boss_4" ) then 
+say ( "Level 7 real boss (Szel) is dead" ) 
+else 
+say ( "Level 7 real boss (Szel) is not dead" ) 
+end 
+if game . get_event_flag ( "ignore_hanma_conditions" ) > 0 then 
+say ( "Hanma conditions are off." ) 
+else 
+say ( "Hanma conditions are on." ) 
+end 
+wait ( ) 
+say_title ( "Hanma Conditions" ) 
+say_yellow ( string . format ( "Level 4 - Only with Buff (HOSIN) can deal damage on %s" , c_mob_name ( 6151 ) ) ) 
+say_yellow ( string . format ( "Level 6 - Only Shaman can deal damage on %s" , c_mob_name ( 8058 ) ) ) 
+say_yellow ( string . format ( "Level 7 - Only with Buff (GICHEON) can deal damage on %s" , c_mob_name ( 6151 ) ) ) 
+say_yellow ( string . format ( "Level 9 - Only Ninja and Shaman can deal damage on %s" , c_mob_name ( 20399 ) ) ) 
+local s = select ( "Enable Conditions" , "Disable Conditions" , "Cancel" ) 
+if s == 1 then 
+game . set_event_flag ( "ignore_hanma_conditions" , 0 ) 
+elseif s == 2 then 
+game . set_event_flag ( "ignore_hanma_conditions" , 1 ) 
+else return end 

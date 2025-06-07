@@ -1,0 +1,139 @@
+quest main_quest_lv15 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 15 begin
+			set_state(gotoboss)
+		end
+	end
+
+	state gotoboss begin
+		when letter begin
+			send_letter(c_locale(4967))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4952))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(4996))
+			say(c_locale(5007))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4956))
+			say(c_locale(5008))
+			wait()
+
+			local empire = pc.getempire()
+			if empire == 1 then
+				say_title(c_locale(4956))
+				say(c_locale(5009))
+				wait()
+
+				say_title(c_locale(4956))
+				say(c_locale(5010))
+				wait()
+
+				say_title(c_locale(4956))
+				say(c_locale(5011))
+
+			elseif empire == 2 then
+				say_title(c_locale(4956))
+				say(c_locale(5012))
+				wait()
+
+				say_title(c_locale(4956))
+				say(c_locale(5013))
+				wait()
+
+				say_title(c_locale(4956))
+				say(c_locale(5014))
+
+			elseif empire == 3 then
+				say_title(c_locale(4956))
+				say(c_locale(4997))
+				wait()
+
+				say_title(c_locale(4956))
+				say(c_locale(4998))
+				wait()
+
+				say_title(c_locale(4956))
+				say(c_locale(4999))
+
+			end
+
+			set_state(gotomusition)
+			clear_letter()
+		end
+	end
+
+	state gotomusition begin
+		when letter begin
+			send_letter(c_locale(4478))
+			local v = find_npc_by_vnum(20017)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4477))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5001))
+			say(c_locale(5002))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(38))
+			say(c_locale(5003))
+
+			clear_letter()
+			set_state(gotoboss2)
+		end
+	end
+
+	state gotoboss2 begin
+		when letter begin
+			send_letter(c_locale(5004))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4952))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5001))
+			say(c_locale(5005))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4956))
+			say(c_locale(5006))
+
+			say_title(c_locale(265))
+			say_reward(c_locale(5000))
+
+			pc.give_exp2(45000)
+			pc.change_gold(10000)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv16", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

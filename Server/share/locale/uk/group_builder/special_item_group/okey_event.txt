@@ -1,0 +1,156 @@
+Group	MerryGoldenOkeyChest
+{
+	Vnum	50267 -- Merry Golden Okey Chest
+	1	72355	1	100 -- Personal Premium Shop
+	2	30617	1	100 -- Agate
+	3	76016	1	100 -- Blessing Scroll
+	4	51505	1	100 -- Cor Draconis (Precious)
+	5	51506	1	100 -- Cor Draconis (Mystical)
+	6	71224	1	100 -- Manny
+	7	71225	1	100 -- Ellie
+	8	71189	1	100 -- Enchant Item+
+	9	76014	1	100 -- Enchant Item (b)
+	10	85003	1	100 -- Lord Sash (noble)
+	11	25041	1	100 -- Magic Stone
+	12	30618	1	100 -- Moonstone
+	13	79506	1	100 -- Okey Card Set
+	14	55404	1	100 -- Nemere's Egg
+	15	55403	1	100 -- Razador's Egg
+	16	55405	1	100 -- Blue Dragon Egg
+	17	76013	1	100 -- Reinforce Item (b)
+	18	50525	1	100 -- Soul Stone+
+	19	30616	1	100 -- Titanium Dioxide
+	20	70058	1	100 -- Teleportation Ring
+	21	50324	1	100 -- Boost Book Chest
+	22	50323	1	100 -- Ward Book Chest
+	23	27992	1	100 -- White Pearl
+	24	50926	200	100 -- Glimmerstone
+	25	39036	1	100 -- Wind Shoes
+	26	71153	1	100 -- Potion of Wisdom
+	27	50513	1	100 -- Soul Stone
+	28	경험치	700000	100 -- Exp.
+	29	돈꾸러미	700000	100 -- Yang
+	30	돈꾸러미	500000	100 -- Yang
+	31	71192	1	100 -- Thunder
+	32	71193	1	100 -- Blitzen
+}
+Group	MerrySilverOkeyChest
+{
+	Vnum	50268 -- Merry Silver Okey Chest
+	1	72355	1	100 -- Personal Premium Shop
+	2	79506	1	100 -- Okey Card Set
+	3	76016	1	100 -- Blessing Scroll
+	4	27994	1	100 -- Blood-Red Pearl
+	5	27993	1	100 -- Blue Pearl
+	6	71224	1	100 -- Manny
+	7	71225	1	100 -- Ellie
+	8	50324	1	100 -- Boost Book Chest
+	9	50323	1	100 -- Ward Book Chest
+	10	51503	1	100 -- Cor Draconis (Normal)
+	11	51504	1	100 -- Cor Draconis (Noble)
+	12	71189	1	100 -- Enchant Item+
+	13	76014	1	100 -- Enchant Item (b)
+	14	76013	1	100 -- Reinforce Item (b)
+	15	85001	1	100 -- Lord Sash (basic)
+	16	25041	1	100 -- Magic Stone
+	17	55404	1	100 -- Nemere's Egg
+	18	55403	1	100 -- Razador's Egg
+	19	55402	1	100 -- Spider Egg
+	20	70058	1	100 -- Teleportation Ring
+	21	39036	1	100 -- Wind Shoes
+	22	50926	60	100 -- Glimmerstone
+	23	71153	1	100 -- Potion of Wisdom
+	24	경험치	100000	100 -- Exp.
+	25	돈꾸러미	500000	100 -- Yang
+	26	돈꾸러미	300000	100 -- Yang
+	27	돈꾸러미	100000	100 -- Yang
+	28	71192	1	100 -- Thunder
+	29	71193	1	100 -- Blitzen
+}
+Group	MerryBronzeOkeyChest
+{
+	Vnum	50269 -- Merry Bronze Okey Chest
+	1	79506	1	100 -- Okey Card Set
+	2	경험치	100000	100 -- Exp.
+	3	돈꾸러미	100000	100 -- Yang
+	4	돈꾸러미	50000	100 -- Yang
+}
+
+Group	GoldenOkeyChest
+{
+	Vnum	50275 -- Golden Okey Chest
+	1	71148	1	100 -- Ring of Will Power
+	2	71149	1	100 -- Ring of Deadly Power
+	3	55404	1	100 -- Nemere's Egg
+	4	55403	1	100 -- Razador's Egg
+	5	85017	1	100 -- Royal Sash (noble)
+	6	51506	1	100 -- Cor Draconis (Mystical)
+	7	51505	1	100 -- Cor Draconis (Precious)
+	8	79506	1	100 -- Okey Card Set
+	9	50513	1	100 -- Soul Stone
+	10	76021	1	100 -- Sun Elixir (S)
+	11	76004	1	100 -- Moon Elixir (S)
+	12	70102	1	100 -- Zen Bean
+	13	76012	1	100 -- Potion of Speed
+	14	28443	1	100 -- Stone of Haste+4
+	15	70031	1	100 -- Fencing Pamphlet
+	16	30524	1	100 -- Flame Stone
+	17	71123	1	100 -- Dragon Scales
+	18	30195	1	100 -- Quartz Sand
+	19	27992	1	100 -- White Pearl
+	20	55003	1	100 -- Young Pet Book
+	21	55004	1	100 -- Wild Pet Book
+	22	경험치	700000	100 -- Exp.
+	23	돈꾸러미	1000000	100 -- Yang
+	24	돈꾸러미	700000	100 -- Yang
+	25	돈꾸러미	500000	100 -- Yang
+}
+Group	SilverOkeyChest
+{
+	Vnum	50276 -- Silver Okey Chest
+	1	55401	1	100 -- Monkey Egg
+	2	55402	1	100 -- Spider Egg
+	3	76021	1	100 -- Sun Elixir (S)
+	4	76004	1	100 -- Moon Elixir (S)
+	5	70102	1	100 -- Zen Bean
+	6	27987	1	100 -- Clam
+	7	76012	1	100 -- Potion of Speed
+	8	70031	1	100 -- Fencing Pamphlet
+	9	85001	1	100 -- Lord Sash (basic)
+	10	79506	1	100 -- Okey Card Set
+	11	71148	1	100 -- Ring of Will Power
+	12	71149	1	100 -- Ring of Deadly Power
+	13	55003	1	100 -- Young Pet Book
+	14	55004	1	100 -- Wild Pet Book
+	15	51505	1	100 -- Cor Draconis (Precious)
+	16	51504	1	100 -- Cor Draconis (Noble)
+	17	27994	1	100 -- Blood-Red Pearl
+	18	27993	1	100 -- Blue Pearl
+	19	경험치	500000	100 -- Exp.
+	20	돈꾸러미	500000	100 -- Yang
+	21	돈꾸러미	300000	100 -- Yang
+}
+Group	BronzeOkeyChest
+{
+	Vnum	50277 -- Bronze Okey Chest
+	1	79506	1	100 -- Okey Card Set
+	2	경험치	100000	100 -- Exp.
+	3	돈꾸러미	100000	100 -- Yang
+	4	돈꾸러미	50000	100 -- Yang
+}
+
+Group	GoldenOkeyBox
+{
+	Vnum	71194 -- Golden Okey Box
+	1	79506	5	100 -- Okey Card Set
+}
+Group	SilverOkeyBox
+{
+	Vnum	71195 -- Silver Okey Box
+	1	79506	1	100 -- Okey Card Set
+}
+Group	BronzeOkeyBox
+{
+	Vnum	71196 -- Bronze Okey Box
+	1	79505	6	100 -- Okey Collectable Card
+}

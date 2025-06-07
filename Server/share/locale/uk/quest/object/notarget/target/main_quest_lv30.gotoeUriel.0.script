@@ -1,0 +1,8 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 5097 ) ) 
+say ( c_locale ( 5098 ) ) 
+wait ( ) 
+say_title ( c_locale ( 5097 ) ) 
+say ( c_locale ( 5099 ) ) 
+clear_letter ( ) 
+set_state ( "clickstone" ) 

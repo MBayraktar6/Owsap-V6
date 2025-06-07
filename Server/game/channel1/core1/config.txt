@@ -1,0 +1,44 @@
+HOSTNAME: ch1_game1
+CHANNEL: 1
+PORT: 12101
+P2P_PORT: 12110
+DB_PORT: 11000
+DB_ADDR: localhost
+
+MAP_ALLOW: 1 3 4 5 6 21 23 24 25 26 41 43 44 45 46 91 92 93 107 112 201
+#	1		metin2_map_a1
+#	3		metin2_map_a3
+#	4		metin2_map_guild_01
+#	5		metin2_map_monkey_dungeon_11
+#	6		metin2_guild_village_01
+#	21		metin2_map_b1
+#	23		metin2_map_b3
+#	24		metin2_map_guild_02
+#	25		metin2_map_monkey_dungeon_12
+#	26		metin2_guild_village_02
+#	41		metin2_map_c1
+#	43		metin2_map_c3
+#	44		metin2_map_guild_03
+#	45		metin2_map_monkey_dungeon_13
+#	46		metin2_guild_village_03
+#	91		metin2_map_e1_01
+#	92		metin2_map_e1_02
+#	93		metin2_map_e1_03
+#	107		metin2_map_monkey_dungeon
+#	112		metin2_map_duel
+#	201		metin2_map_pvp_arena
+
+TABLE_POSTFIX:
+ITEM_ID_RANGE: 100000001 200000000
+PASSES_PER_SEC: 25
+SAVE_EVENT_SECOND_CYCLE: 180
+PING_EVENT_SECOND_CYCLE: 180
+PLAYER_SQL: localhost mt2 mt2!@# player
+COMMON_SQL: localhost mt2 mt2!@# common
+LOG_SQL: localhost mt2 mt2!@# log
+LOCALE_SERVICE: uk
+TEST_SERVER: 1
+VIEW_RANGE: 8000
+MAX_LEVEL: 120
+
+POPUP_NOTICE_URL: http://62.171.146.112/docs/

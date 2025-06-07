@@ -1,0 +1,70 @@
+#
+# Spider Dungeon 3
+#
+# ¾Ç·æ±ºµµ (Spider Dungeon 3)
+# metin2_map_spiderdungeon_03
+#
+
+Group	°Å¹Ìµ¿±¼3Ãþ_»õ³¢°Å¹Ì(PAWN)-»õ³¢°Å¹Ì(PAWN)
+{
+	Vnum	2071
+	Leader	»õ³¢°Å¹Ì	2071
+	1	»õ³¢°Å¹Ì	2071
+	2	»õ³¢°Å¹Ì	2071
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_µ¶°Å¹Ì(PAWN)-»õ³¢°Å¹Ì(PAWN)
+{
+	Vnum	2072
+	Leader	µ¶°Å¹Ì	2072
+	1	»õ³¢°Å¹Ì	2071
+	2	»õ³¢°Å¹Ì	2071
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_µ¶°Å¹Ì(PAWN)-µ¶°Å¹Ì(PAWN)
+{
+	Vnum	2073
+	Leader	µ¶°Å¹Ì	2072
+	1	µ¶°Å¹Ì	2072
+	2	»õ³¢°Å¹Ì	2071
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_ºÓÀºµ¶°Å¹Ì(S_PAWN)-µ¶°Å¹Ì(PAWN)
+{
+	Vnum	2074
+	Leader	ºÓÀºµ¶°Å¹Ì	2073
+	1	µ¶°Å¹Ì	2072
+	2	µ¶°Å¹Ì	2072
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_ºÓÀºµ¶°Å¹Ì(S_PAWN)-ºÓÀºµ¶°Å¹Ì(S_PAWN)
+{
+	Vnum	2075
+	Leader	ºÓÀºµ¶°Å¹Ì	2073
+	1	ºÓÀºµ¶°Å¹Ì	2073
+	2	µ¶°Å¹Ì	2072
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_Áý°Ô°Å¹Ì(S_PAWN)-ºÓÀºµ¶°Å¹Ì(S_PAWN)
+{
+	Vnum	2076
+	Leader	Áý°Ô°Å¹Ì	2074
+	1	ºÓÀºµ¶°Å¹Ì	2073
+	2	ºÓÀºµ¶°Å¹Ì	2073
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_Áý°Ô°Å¹Ì(S_PAWN)-Áý°Ô°Å¹Ì(S_PAWN)
+{
+	Vnum	2077
+	Leader	Áý°Ô°Å¹Ì	2074
+	1	Áý°Ô°Å¹Ì	2074
+	2	ºÓÀºµ¶°Å¹Ì	2073
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_º´Á¤°Å¹Ì(S_PAWN)-Áý°Ô°Å¹Ì(S_PAWN)
+{
+	Vnum	2078
+	Leader	º´Á¤°Å¹Ì	2075
+	1	Áý°Ô°Å¹Ì	2074
+	2	Áý°Ô°Å¹Ì	2074
+}
+Group	°Å¹Ìµ¿±¼3Ãþ_º´Á¤°Å¹Ì(S_PAWN)-º´Á¤°Å¹Ì(S_PAWN)
+{
+	Vnum	2079
+	Leader	º´Á¤°Å¹Ì	2075
+	1	º´Á¤°Å¹Ì	2075
+	2	Áý°Ô°Å¹Ì	2074
+}

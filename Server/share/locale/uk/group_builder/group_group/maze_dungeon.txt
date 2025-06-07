@@ -1,0 +1,80 @@
+Group	maze_dungeon_01_01
+{
+	Vnum	931
+	1	6801	1
+	2	6802	1
+	3	6803	1
+}
+Group	maze_dungeon_01_02
+{
+	Vnum	932
+	1	6803	1
+	2	6804	1
+	3	6805	1
+}
+Group	maze_dungeon_01_03
+{
+	Vnum	933
+	1	6805	1
+	2	6806	1
+	3	6807	1
+}
+Group	maze_dungeon_02_01
+{
+	Vnum	941
+	1	6808	1
+	2	6809	1
+	3	6810	1
+}
+Group	maze_dungeon_02_02
+{
+	Vnum	942
+	1	6809	1
+	2	6810	1
+	3	6811	1
+}
+Group	maze_dungeon_02_03
+{
+	Vnum	943
+	1	6812	1
+	2	6813	1
+}
+Group	maze_dungeon_02_04
+{
+	Vnum	944
+	1	6814	1
+	2	6815	1
+}
+Group	maze_dungeon_03_01
+{
+	Vnum	951
+	1	6816	1
+	2	6817	1
+	3	6818	1
+	4	6819	1
+}
+Group	maze_dungeon_03_02
+{
+	Vnum	952
+	1	6817	1
+	2	6818	1
+	3	6819	1
+	4	6820	1
+	5	6821	1
+}
+Group	maze_dungeon_03_03
+{
+	Vnum	953
+	1	6818	1
+	2	6819	1
+	3	6820	1
+	4	6821	1
+	5	6822	1
+}
+Group	maze_dungeon_03_04
+{
+	Vnum	954
+	1	6822	1
+	2	6823	1
+	3	6824	1
+}

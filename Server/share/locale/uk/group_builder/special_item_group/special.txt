@@ -1,0 +1,310 @@
+Group 胶企既
+{
+	Vnum	10050
+	Type	special
+	1	71148	100000	1
+	2	71149	100001	1
+	3	71158	100002	1
+	4	71135	100003	1
+	5	71136	100004	1
+	6	71143	100005	1
+	7	71145	100006	1
+	8	71188	100007	1
+	9	71199	100008	1
+	10	71202	100009	1
+	11	72054	100010	1
+	12	76030	100011	1
+	13	76047	100011	1
+	14	72703	100030	1
+	15	72704	100031	1
+	16	72705	100032	1
+	17	72706	100033	1
+	18	72709	100030	1
+	19	72710	100034	1
+	20	72711	100035	1
+	21	72712	100036	1
+}
+Group 胶企既_Element1
+{
+	Vnum	10051
+	Type	special
+	1	39119	100012	1
+}
+Group 胶企既_Element2
+{
+	Vnum	10052
+	Type	special
+	1	39120	100013	1
+}
+Group 加己
+{
+	Vnum	100000
+	Type	ATTR
+	1	66	30 -- APPLY_MALL_EXPBONUS
+	2	78	20 -- APPLY_RESIST_WARRIOR
+	3	79	20 -- APPLY_RESIST_ASSASSIN
+	4	95	20 -- APPLY_RESIST_WOLFMAN
+	5	63	30 -- APPLY_ATT_BONUS_TO_MONSTER
+	6	69	10 -- APPLY_MAX_HP_PCT
+	7	70	10 -- APPLY_MAX_SP_PCT
+	effect	"d:/ymir work/effect/etc/buff/buff_item5.mse"
+}
+Group 加己2
+{
+	Vnum	100001
+	Type	ATTR
+	1	66	30 -- APPLY_MALL_EXPBONUS
+	2	80	20 -- APPLY_RESIST_SURA
+	3	81	20 -- APPLY_RESIST_SHAMAN
+	4	95	20 -- APPLY_RESIST_WOLFMAN
+	5	63	30 -- APPLY_ATT_BONUS_TO_MONSTER
+	6	69	10 -- APPLY_MAX_HP_PCT
+	7	70	10 -- APPLY_MAX_SP_PCT
+	effect	"d:\ymir work\effect\etc\buff\buff_item5.mse"
+}
+Group 加己3
+{
+	Vnum	100002
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	64	30 -- APPLY_MALL_ATTBONUS
+	3	7	20 -- APPLY_ATT_SPEED
+	4	9	20 -- APPLY_CAST_SPEED
+	5	69	10 -- APPLY_MAX_HP_PCT
+	6	70	10 -- APPLY_MAX_SP_PCT
+	effect	"d:\ymir work\effect\etc\buff\buff_symbol1.mse"
+}
+Group 加己4
+{
+	Vnum	100003
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	7	20 -- APPLY_ATT_SPEED
+	3	9	20 -- APPLY_CAST_SPEED
+	4	64	30 -- APPLY_MALL_ATTBONUS
+	5	69	10 -- APPLY_MAX_HP_PCT
+	6	70	10 -- APPLY_MAX_SP_PCT
+	7	84	5 -- APPLY_COSTUME_ATTR_BONUS
+}
+Group 加己5
+{
+	Vnum	100004
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	64	30 -- APPLY_MALL_ATTBONUS
+	3	7	20 -- APPLY_ATT_SPEED
+	4	9	20 -- APPLY_CAST_SPEED
+	5	69	10 -- APPLY_MAX_HP_PCT
+	6	70	10 -- APPLY_MAX_SP_PCT
+}
+Group 加己6
+{
+	Vnum	100005
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	7	20 -- APPLY_ATT_SPEED
+	3	9	20 -- APPLY_CAST_SPEED
+	4	63	30 -- APPLY_ATT_BONUS_TO_MONSTER
+	5	69	10 -- APPLY_MAX_HP_PCT
+	6	70	10 -- APPLY_MAX_SP_PCT
+}
+Group 加己7
+{
+	Vnum	100006
+	Type	ATTR
+	1	66	30 -- APPLY_MALL_EXPBONUS
+	2	7	10 -- APPLY_ATT_SPEED
+	3	9	10 -- APPLY_CAST_SPEED
+	4	69	5 -- APPLY_MAX_HP_PCT
+	5	70	5 -- APPLY_MAX_SP_PCT
+	6	63	10 -- APPLY_ATT_BONUS_TO_MONSTER
+}
+Group 加己8
+{
+	Vnum	100007
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	55	30 -- APPLY_MAGIC_ATT_GRADE
+	3	7	20 -- APPLY_ATT_SPEED
+	4	9	20 -- APPLY_CAST_SPEED
+	5	69	10 -- APPLY_MAX_HP_PCT
+	6	70	10 -- APPLY_MAX_SP_PCT
+	effect	"d:/ymir work/effect/etc/buff/buff_item8.mse"
+}
+Group 加己9
+{
+	Vnum	100008
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	7	20 -- APPLY_ATT_SPEED
+	3	9	20 -- APPLY_CAST_SPEED
+	4	63	10 -- APPLY_ATT_BONUS_TO_MONSTER
+	5	69	10 -- APPLY_MAX_HP_PCT
+	6	70	10 -- APPLY_MAX_SP_PCT
+	effect	"d:/ymir work/effect/etc/buff/buff_item10.mse"
+}
+Group 加己10
+{
+	Vnum	100009
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	7	20 -- APPLY_ATT_SPEED
+	3	9	20 -- APPLY_CAST_SPEED
+	4	63	10 -- APPLY_ATT_BONUS_TO_MONSTER
+	5	64	30 -- APPLY_MALL_ATTBONUS
+	6	55	30 -- APPLY_MAGIC_ATT_GRADE
+	effect	"d:/ymir work/effect/etc/buff/buff_item13.mse"
+}
+Group 加己11
+{
+	Vnum	100010
+	Type	ATTR
+	1	64	30 -- APPLY_MALL_ATTBONUS
+	2	55	30 -- APPLY_MAGIC_ATT_GRADE
+	3	7	20 -- APPLY_ATT_SPEED
+	4	9	20 -- APPLY_CAST_SPEED
+	5	115	10 -- APPLY_RESIST_HUMAN
+	6	73	10 -- APPLY_SKILL_DEFEND_BONUS
+	effect	"d:/ymir work/effect/etc/buff/buff_item14.mse"
+}
+Group 加己12-13
+{
+	Vnum	100011
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+	2	7	20 -- APPLY_ATT_SPEED
+	3	9	20 -- APPLY_CAST_SPEED
+	4	63	10 -- APPLY_ATT_BONUS_TO_MONSTER
+	5	69	10 -- APPLY_MAX_HP_PCT
+	6	70	10 -- APPLY_MAX_SP_PCT
+	effect	"d:/ymir work/effect/etc/buff/buff_item16.mse"
+}
+Group 加己14
+{
+	Vnum	100012
+	Type	ATTR
+	1	99	10 -- APPLY_ENCHANT_ELECT
+	2	100	10 -- APPLY_ENCHANT_FIRE
+	3	101	10 -- APPLY_ENCHANT_ICE
+	4	102	10 -- APPLY_ENCHANT_WIND
+	5	103	10 -- APPLY_ENCHANT_EARTH
+	6	104	10 -- APPLY_ENCHANT_DARK
+	effect	"d:\ymir work\effect\etc\buff\buff_item18_element01.mse"
+}
+Group 加己15
+{
+	Vnum	100013
+	Type	ATTR
+	1	35	10 -- APPLY_RESIST_FIRE
+	2	36	10 -- APPLY_RESIST_ELEC
+	3	38	10 -- APPLY_RESIST_WIND
+	4	87	10 -- APPLY_RESIST_ICE
+	5	88	10 -- APPLY_RESIST_EARTH
+	6	89	10 -- APPLY_RESIST_DARK
+	effect	"d:\ymir work\effect\etc\buff\buff_item18_element02.mse"
+}
+Group 加己30
+{
+	Vnum	100030
+	Type	ATTR
+	1	53	200 -- APPLY_ATT_GRADE_BONUS
+}
+Group 加己31
+{
+	Vnum	100031
+	Type	ATTR
+	1	54	200 -- APPLY_DEF_GRADE_BONUS
+}
+Group 加己32
+{
+	Vnum	100032
+	Type	ATTR
+	1	71	15 -- APPLY_SKILL_DAMAGE_BONUS
+}
+Group 加己33
+{
+	Vnum	100033
+	Type	ATTR
+	1	73	15 -- APPLY_SKILL_DEFEND_BONUS
+}
+Group 加己34
+{
+	Vnum	100034
+	Type	ATTR
+	1	54	300 -- APPLY_DEF_GRADE_BONUS
+}
+Group 加己35
+{
+	Vnum	100035
+	Type	ATTR
+	1	73	30 -- APPLY_SKILL_DAMAGE_BONUS
+}
+Group 加己36
+{
+	Vnum	100036
+	Type	ATTR
+	1	73	30 -- APPLY_SKILL_DEFEND_BONUS
+}
+
+Group	版氰狼馆瘤
+{
+	Vnum	10000
+	Type	special
+	1	39002	110010	1 -- Experience Ring (1h)
+	2	70005	110010	1 -- Experience Ring (1h)
+	3	72001	110010	1 -- Experience Ring (10h)
+	4	72002	110010	1 -- Experience Ring (30m)
+	5	72003	110010	1 -- Experience Ring (3h)
+	6	72303	110010	1 -- Experience Ring (1h)
+	7	72049	110010	1 -- Experience Ring (30h)
+	8	72050	110010	1 -- Experience Ring (60h)
+	9	72057	110011	1 -- Double Experience Ring (36h)
+	10	72062	110012	1 -- Experience Ring +200 (3h)
+}
+Group	版氰狼馆瘤+50
+{
+	Vnum	110010
+	Type	ATTR
+	1	66	50 -- APPLY_MALL_EXPBONUS
+}
+Group	版氰狼馆瘤+100
+{
+	Vnum	110011
+	Type	ATTR
+	1	66	100 -- APPLY_MALL_EXPBONUS
+}
+Group	版氰狼馆瘤+200
+{
+	Vnum	110012
+	Type	ATTR
+	1	66	200 -- APPLY_MALL_EXPBONUS
+}
+Group	档迪狼厘癌
+{
+	Vnum	10002
+	Type	special
+	1	70043	110020	1 -- Thief's Gloves (2h)
+	2	72004	110020	1 -- Thief's Gloves (10h)
+	3	72005	110020	1 -- Thief's Gloves (30m)
+	4	72006	110020	1 -- Thief's Gloves (3h)
+}
+Group	档迪狼厘癌+50
+{
+	Vnum	110020
+	Type	ATTR
+	1	67	50 -- APPLY_MALL_ITEMBONUS
+}
+Group	腊档
+{
+	Vnum	10010
+	Type	special
+	1	72043	110100	1 -- Book of the Leader (15m)
+	2	72044	110100	1 -- Book of the Leader (30m)
+	3	72045	110100	1 -- Book of the Leader (3h)
+	4	70003	110100	1 -- Book of the Leader (2h)
+	5	71012	110100	1 -- Book of the Leader (3h)
+	6	72302	110100	1 -- Book of the Leader (2h)
+	7	76011	110100	1 -- Book of the Leader (1h)
+	8	72059	110101	1 -- Book of the Leader+ (2h)
+	9	72060	110101	1 -- Book of the Leader+ (3h)
+}

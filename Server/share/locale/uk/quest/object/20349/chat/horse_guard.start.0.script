@@ -1,0 +1,17 @@
+say_title ( c_locale ( 2118 ) ) 
+local s = number ( 1 , 7 ) 
+if 1 >= s then 
+say ( c_locale ( 2095 ) ) 
+elseif 2 >= s then 
+say ( c_locale ( 2096 ) ) 
+elseif 3 >= s then 
+say ( c_locale ( 2097 ) ) 
+elseif 4 >= s then 
+say ( c_locale ( 2098 ) ) 
+elseif 5 >= s then 
+say ( c_locale ( 2099 ) ) 
+elseif 6 >= s then 
+say ( c_locale ( 2100 ) ) 
+elseif 7 >= s then 
+say ( c_locale ( 2101 ) ) 
+end 

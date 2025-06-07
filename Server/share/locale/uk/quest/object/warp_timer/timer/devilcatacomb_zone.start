@@ -1,0 +1,12 @@
+local level = d . getf ( "level" ) 
+local level_switch = { 
+[ 3 ] = c_locale ( 835 ) , 
+[ 4 ] = c_locale ( 837 ) , 
+[ 5 ] = c_locale ( 838 ) , 
+} 
+local t = 3600 - ( get_global_time ( ) - d . getf ( "enter_time" ) ) 
+local t_r = math . mod ( t , 60 ) 
+local t_m = ( t - t_r ) / 60 
+d . notice ( level_switch [ level ] ) 
+d . notice ( c_locale ( 816 , t_m ) ) 
+d . set_warp_location ( 0 , 0 , 0 ) 

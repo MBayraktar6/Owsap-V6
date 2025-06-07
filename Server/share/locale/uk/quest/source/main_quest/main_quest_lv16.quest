@@ -1,0 +1,97 @@
+quest main_quest_lv16 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 16 begin
+			set_state(gotoboss)
+		end
+	end
+
+	state gotoboss begin
+		when letter begin
+			send_letter(c_locale(5015))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4943))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5017))
+			say(c_locale(5018))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4956))
+			say(c_locale(5019))
+
+			set_state(killrobber)
+		end
+	end
+
+	state killrobber begin
+		when letter begin
+			send_letter(c_locale(5021))
+		end
+
+		when button or info begin
+			say_title(c_locale(5021))
+			say(c_locale(5022))
+		end
+
+		when 394.kill or 393.kill or 392.kill or 391.kill or 301.kill or 302.kill or 303.kill or 304.kill begin
+			if number(1, 10) == 1 then
+				say_title(c_locale(5021))
+				say(c_locale(5023))
+
+				pc.give_item2(30001, 1)
+
+				set_state(gotoboss2)
+			end
+		end
+	end
+
+	state gotoboss2 begin
+		when letter begin
+			send_letter(c_locale(4943))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4943))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(4943))
+			say(c_locale(5024))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			if pc.count_item(30001) >= 1 then
+				say_title(c_locale(4956))
+				say(c_locale(5025))
+
+				say_title(c_locale(265))
+				say_reward(c_locale(5016))
+
+				pc.remove_item(30001)
+				pc.give_exp2(100000)
+				pc.change_money(5000)
+
+				clear_letter()
+				set_state(__COMPLETE__)
+
+				set_quest_state("main_quest_lv27", "run")
+			end
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

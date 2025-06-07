@@ -1,0 +1,233 @@
+if 52001 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52005 or 52016 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52020 or 52031 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52035 or 52046 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52050 or 52061 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52065 or 52076 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52080 or 52091 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52095 or 52106 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52110 then if pc . is_riding ( ) == true then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9975 ) ) 
+return 
+end 
+if count_item_range ( 38100 , 38102 ) >= 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9977 ) ) 
+local choice = select ( c_locale ( 9978 ) , c_locale ( 9979 ) , c_locale ( 2426 ) ) 
+if choice == 3 then 
+return 
+elseif choice == 1 then 
+local option_select = select ( c_locale ( 9980 ) , c_locale ( 9981 ) , c_locale ( 9982 ) , c_locale ( 9983 ) , c_locale ( 2426 ) ) 
+local information = { } 
+if option_select == 6 then 
+return 
+end 
+if option_select == 1 then 
+if pc . count_item ( 38100 ) >= 1 then 
+information = { 86400 * 7 , 38100 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 2 then 
+if pc . count_item ( 38101 ) >= 1 then 
+information = { 86400 * 15 , 38101 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 3 then 
+if pc . count_item ( 38102 ) >= 1 then 
+information = { 86400 * 30 , 38102 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 4 then 
+if pc . count_item ( 50068 ) >= 1 and pc . get_gold ( ) >= 200000 then 
+information = { 86400 * 1 , 50068 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+else 
+return 
+end 
+local remain_time = item . get_socket ( 0 ) 
+item . set_socket ( 0 , remain_time + information [ 1 ] ) 
+pc . remove_item ( information [ 2 ] , 1 ) 
+if option_select == 4 then 
+pc . change_gold ( - 200000 ) 
+end 
+return 
+end 
+end 
+if training_mount . check_list ( 50067 , 25 , 11 ) == 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9963 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9965 ) ) 
+local remain_time = item . get_socket ( 0 ) 
+local old_vnum = item . get_vnum ( ) 
+local new_vnum = item . get_vnum ( ) + 5 
+local extra = training_mount . extraTime ( 1 ) 
+pc . give_item2_select ( new_vnum , 1 ) 
+item . set_socket ( 0 , remain_time + extra ) 
+pc . remove_item ( old_vnum , 1 ) 
+pc . remove_item ( 50067 , 1 ) 
+end 
+ return end if 52006 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52010 or 52021 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52025 or 52036 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52040 or 52051 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52055 or 52081 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52085 or 52066 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52070 or 52096 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52100 or 52111 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52115 then if pc . is_riding ( ) == true then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9975 ) ) 
+return 
+end 
+if count_item_range ( 38100 , 38104 ) >= 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9977 ) ) 
+local choice = select ( c_locale ( 9978 ) , c_locale ( 9979 ) , c_locale ( 2426 ) ) 
+if choice == 3 then 
+return 
+elseif choice == 1 then 
+local option_select = select ( c_locale ( 9980 ) , c_locale ( 9981 ) , c_locale ( 9982 ) , c_locale ( 9983 ) , c_locale ( 2426 ) ) 
+local information = { } 
+if option_select == 6 then 
+return 
+end 
+if option_select == 1 then 
+if pc . count_item ( 38100 ) >= 1 then 
+information = { 86400 * 7 , 38100 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 2 then 
+if pc . count_item ( 38101 ) >= 1 then 
+information = { 86400 * 15 , 38101 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 3 then 
+if pc . count_item ( 38102 ) >= 1 then 
+information = { 86400 * 30 , 38102 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 4 then 
+if pc . count_item ( 50068 ) >= 1 and pc . get_gold ( ) >= 200000 then 
+information = { 86400 * 1 , 50068 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+else 
+return 
+end 
+local remain_time = item . get_socket ( 0 ) 
+item . set_socket ( 0 , remain_time + information [ 1 ] ) 
+pc . remove_item ( information [ 2 ] , 1 ) 
+if option_select == 4 then 
+pc . change_gold ( - 200000 ) 
+end 
+return 
+end 
+end 
+if training_mount . check_list ( 50068 , 35 , 20 ) == 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9964 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9965 ) ) 
+local remain_time = item . get_socket ( 0 ) 
+local old_vnum = item . get_vnum ( ) 
+local new_vnum = item . get_vnum ( ) + 5 
+local extra = training_mount . extraTime ( 1 ) 
+pc . give_item2_select ( new_vnum , 1 ) 
+item . set_socket ( 0 , remain_time + extra ) 
+pc . remove_item ( old_vnum , 1 ) 
+pc . remove_item ( 50068 , 1 ) 
+end 
+ return end if 52011 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52015 or 52026 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52031 or 52041 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52045 or 52056 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52061 or 52086 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52091 or 52071 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52075 or 52101 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52105 or 52116 <= item . get_vnum ( ) and item . get_vnum ( ) <= 52120 then if pc . is_riding ( ) == true then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9975 ) ) 
+return 
+end 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9985 ) ) 
+local choice = select ( c_locale ( 9978 ) , c_locale ( 2426 ) ) 
+if choice == 2 then 
+return 
+elseif choice == 1 then 
+local option_select = select ( c_locale ( 9980 ) , c_locale ( 9981 ) , c_locale ( 9982 ) , c_locale ( 9983 ) , c_locale ( 2426 ) ) 
+local information = { } 
+if option_select == 5 then 
+return 
+end 
+if option_select == 1 then 
+if pc . count_item ( 38100 ) >= 1 then 
+information = { 86400 * 7 , 38100 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 2 then 
+if pc . count_item ( 38101 ) >= 1 then 
+information = { 86400 * 15 , 38101 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 3 then 
+if pc . count_item ( 38102 ) >= 1 then 
+information = { 86400 * 30 , 38102 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+elseif option_select == 4 then 
+if pc . count_item ( 50068 ) >= 1 and pc . get_gold ( ) >= 200000 then 
+information = { 86400 * 1 , 50068 } 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+else 
+return 
+end 
+local remain_time = item . get_socket ( 0 ) 
+item . set_socket ( 0 , remain_time + information [ 1 ] ) 
+pc . remove_item ( information [ 2 ] , 1 ) 
+if option_select == 4 then 
+pc . change_gold ( - 200000 ) 
+end 
+return 
+end 
+ return end if item . get_vnum ( ) == 56000 then if pc . is_riding ( ) then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9975 ) ) 
+return 
+end 
+if pc . count_item ( 38103 ) >= 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9977 ) ) 
+if select ( c_locale ( 9978 ) , c_locale ( 2426 ) ) == 1 then 
+if pc . count_item ( 38103 ) >= 1 then 
+item . set_socket ( 0 , item . get_socket ( 0 ) + ( 86400 * 7 ) ) 
+pc . remove_item ( 38103 , 1 ) 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9984 ) ) 
+return 
+end 
+end 
+else 
+say ( c_locale ( 9984 ) ) 
+end 
+ return end 

@@ -1,0 +1,77 @@
+Group	eva_box
+{
+	Vnum	50124 -- Rotten Wooden Box
+	1	71114	5	40 -- Wild Boar (yellow)
+	2	71116	5	30 -- Wolf (yellow)
+	3	71118	5	20 -- Tiger (yellow)
+	4	71120	5	10 -- Lion (yellow)
+}
+Group	부서진_팔찌_상자
+{
+	Vnum	50120 -- Iron Casket
+	1	14085	1	7 -- Jade Bracelet+5
+	2	14185	1	7 -- Amethyst Bracelet+5
+	3	14125	1	7 -- Pearl Bracelet+5
+	4	14142	1	7 -- White Gold Bracelet+2
+	5	14164	1	7 -- Crystal Bracelet+4
+	6	14184	1	7 -- Amethyst Bracelet+4
+	7	14202	1	7 -- Heaven's Tear Bracelet+2
+	8	30190	1	2 -- Blood Stone
+	9	71018	1	6 -- Blessing of Life
+	10	71019	1	6 -- Blessing of Magic
+	11	71044	1	6 -- Critical Strike
+	12	71004	1	6 -- Medal of the Dragon
+	13	72003	1	3 -- Experience Ring (3h)
+	14	72006	1	3 -- Thief's Gloves
+	15	71017	1	3 -- Lucky Medal
+	16	72015	1	3 -- Fishing Book
+	17	72012	1	3 -- Lovebird Feather
+	18	27987	1	7 -- Clam
+	19	71082	1	3 -- Metin Stone(H)
+}
+Group	부서진_목걸이_상자
+{
+	Vnum	50121 -- Iron Box
+	1	16045	1	7 -- Silver Necklace+5
+	2	16065	1	7 -- Golden Necklace+5
+	3	16084	1	7 -- Jade Necklace+4
+	4	16104	1	7 -- Ebony Necklace+4
+	5	16124	1	7 -- Pearl Necklace+4
+	6	16144	1	7 -- White Gold Necklace+4
+	7	16164	1	7 -- Crystal Necklace+4
+	8	16184	1	7 -- Amethyst Necklace+4
+	9	16202	1	7 -- Heaven's Tear Necklace+2
+	10	25040	1	3 -- Blessing Scroll
+	11	70024	1	3 -- Blessing Marble
+	12	71004	1	6 -- Medal of the Dragon
+	13	72003	1	3 -- Experience Ring (3h)
+	14	71016	1	3 -- Thief's Gloves
+	15	71017	1	3 -- Lucky Medal
+	16	72015	1	3 -- Fishing Book
+	17	72012	1	3 -- Lovebird Feather
+	18	27987	1	7 -- Clam
+	19	71082	1	3 -- Metin Stone(H)
+}
+Group	부서진_귀걸이_상자
+{
+	Vnum	50122 -- Iron Chest
+	1	17084	1	7 -- Jade Earrings+4
+	2	17102	1	7 -- Ebony Earrings+2
+	3	17124	1	7 -- Pearl Earrings+4
+	4	17144	1	7 -- White Gold Earrings+4
+	5	17164	1	7 -- Crystal Earrings+4
+	6	17184	1	7 -- Amethyst Earrings+4
+	7	17202	1	7 -- Heaven's Tear Earrings+2
+	8	71034	1	6 -- Potion of Attack +15
+	9	71101	1	6 -- Potion of Haste
+	10	71020	1	6 -- Blessing of the Dragon
+	11	50124	1	5 -- Rotten Wooden Box
+	12	71004	1	5 -- Medal of the Dragon
+	13	72003	1	3 -- Experience Ring (3h)
+	14	71016	1	3 -- Thief's Gloves
+	15	71017	1	3 -- Lucky Medal
+	16	72015	1	3 -- Fishing Book
+	17	72012	1	3 -- Lovebird Feather
+	18	27987	1	5 -- Clam
+	19	71082	1	3 -- Metin Stone(H)
+}

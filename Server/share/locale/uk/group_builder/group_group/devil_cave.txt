@@ -1,0 +1,175 @@
+Group	devil_cave_1f_1
+{
+	Vnum	2501
+	1	2501	1
+	2	2502	1
+}
+Group	devil_cave_1f_2
+{
+	Vnum	2502
+	1	2501	1
+	2	2502	1
+	3	2503	1
+}
+Group	devil_cave_1f_2
+{
+	Vnum	2502
+	1	2501	1
+	2	2502	1
+	3	2503	1
+}
+Group	devil_cave_1f_3
+{
+	Vnum	2503
+	1	2502	1
+	2	2503	1
+	3	2504	1
+}
+Group	devil_cave_1f_4
+{
+	Vnum	2504
+	1	2503	1
+	2	2504	1
+	3	2505	1
+}
+Group	devil_cave_1f_5
+{
+	Vnum	2505
+	1	2504	1
+	2	2505	1
+	3	2506	1
+}
+Group	devil_cave_1f_6
+{
+	Vnum	2506
+	1	2506	1
+	2	2507	1
+	3	2508	1
+}
+Group	devil_cave_2f_1
+{
+	Vnum	2507
+	1	2504	1
+	2	2505	1
+	3	2506	1
+}
+Group	devil_cave_2f_2
+{
+	Vnum	2508
+	1	2506	1
+	2	2507	1
+	3	2508	1
+}
+Group	devil_cave_2f_3
+{
+	Vnum	2509
+	1	2507	1
+	2	2508	1
+	3	2509	1
+}
+Group	devil_cave_2f_4
+{
+	Vnum	2510
+	1	2509	1
+	2	2510	1
+	3	2511	1
+}
+Group	devil_cave_2f_5
+{
+	Vnum	2511
+	1	2510	1
+	2	2511	1
+	3	2512	1
+}
+Group	devil_cave_3f_1
+{
+	Vnum	2512
+	1	2513	1
+	2	2514	1
+	3	2515	1
+}
+Group	devil_cave_3f_2
+{
+	Vnum	2513
+	1	2516	1
+	2	2517	1
+	3	2518	1
+}
+Group	devil_cave_3f_3
+{
+	Vnum	2514
+	1	2517	1
+	2	2518	1
+	3	2519	1
+}
+Group	devil_cave_4f
+{
+	Vnum	2515
+	1	2520	1
+	2	2521	1
+	3	2522	1
+	4	2523	1
+	5	2524	1
+	6	2525	1
+}
+Group	devil_cave_5f_1
+{
+	Vnum	2516
+	1	2520	1
+	2	2521	1
+	3	2522	1
+}
+
+Group	devil_cave_5f_2
+{
+	Vnum	2517
+	1	2521	1
+	2	2522	1
+	3	2523	1
+}
+Group	devil_cave_5f_3
+{
+	Vnum	2518
+	1	2522	1
+	2	2523	1
+	3	2524	1
+}
+Group	devil_cave_5f_4
+{
+	Vnum	2519
+	1	2523	1
+	2	2524	1
+	3	2525	1
+}
+Group	devil_cave_5f_5
+{
+	Vnum	2520
+	1	2525	1
+	2	2526	1
+	3	2527	1
+}
+Group	devil_cave_6f_7f
+{
+	Vnum	2521
+	1	2520	1
+	2	2521	1
+	3	2522	1
+	4	2523	1
+	5	2524	1
+	6	2525	1
+	7	2526	1
+	8	2527	1
+}
+Group	devil_cave_2f_door
+{
+	Vnum	2550
+	1	2551	1
+	2	2552	1
+	3	2553	1
+	4	2554	1
+	5	2555	1
+	6	2556	1
+	7	2557	1
+	8	2558	1
+	9	2559	1
+}

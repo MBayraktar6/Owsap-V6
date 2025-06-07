@@ -1,0 +1,99 @@
+snow_dungeon={["start"]=0,setting= function ()return { 
+[ "entry_man" ] = 20395 , 
+[ "entry_map_index" ] = 61 , 
+[ "outside_entry_pos" ] = { 4322 , 1655 } , 
+[ "dungeon_map_index" ] = 352 , 
+[ "dungeon_man" ] = 20397 , 
+[ "dungeon_man_dir" ] = 0 , 
+[ "dungeon_man_pos" ] = { 172 , 261 } , 
+[ "dungeon_man_final_pos" ] = { 849 , 641 } , 
+[ "enter_limit_time" ] = 14400 , 
+[ "rejoin_limit_time" ] = 300 , 
+[ "mob_regen_file_path" ] = "data/dungeon/snow_dungeon/" , 
+[ "need_level" ] = 100 , 
+[ "need_assassin" ] = 1 , 
+[ "need_shaman" ] = 1 , 
+[ "check_mount" ] = 1 , 
+[ "floor_jump_delay" ] = 5 , 
+[ "floor_check_delay" ] = 5 , 
+[ "floor_pos" ] = { 
+{ 5291 , 1814 } , 
+{ 5540 , 1797 } , 
+{ 5882 , 1800 } , 
+{ 5293 , 2071 } , 
+{ 5540 , 2074 } , 
+{ 5866 , 2076 } , 
+{ 5423 , 2244 } , 
+{ 5689 , 2237 } , 
+{ 5969 , 2229 } , 
+{ 6047 , 1924 } 
+} , 
+[ "level2_key" ] = 30331 , 
+[ "level4_boss" ] = 6151 , 
+[ "level4_boss_pos" ] = { 
+{ 160 , 490 } , 
+{ 215 , 440 } , 
+{ 140 , 425 } 
+} , 
+[ "level5_key" ] = 30332 , 
+[ "level5_cube" ] = 20398 , 
+[ "level5_gen_limit" ] = 100 , 
+[ "level5_cube_pos" ] = { 
+{ 449 , 488 } , 
+{ 455 , 445 } , 
+{ 419 , 422 } , 
+{ 382 , 444 } , 
+{ 389 , 488 } 
+} , 
+[ "level6_stone" ] = 8058 , 
+[ "level6_stone_pos" ] = { 747 , 494 } , 
+[ "level7_boss" ] = 6151 , 
+[ "level7_boss_pos" ] = { 
+{ 302 , 678 } , 
+{ 281 , 657 } , 
+{ 303 , 635 } , 
+{ 324 , 656 } 
+} , 
+[ "level8_key" ] = 30333 , 
+[ "level9_stone" ] = 20399 , 
+[ "level9_stone_pos" ] = { 849 , 660 } , 
+[ "final_boss" ] = 6191 , 
+[ "final_boss_pos" ] = { 927 , 333 } , 
+} 
+end ,inside= function (idx)return idx >= 352 * 10000 and idx < ( 352 + 1 ) * 10000 
+end ,make= function ()local setting = snow_dungeon . setting ( ) 
+d . new_jump_party ( 352 , setting . floor_pos [ 1 ] [ 1 ] , setting . floor_pos [ 1 ] [ 2 ] ) 
+d . spawn_mob_ac_dir ( 20397 , 172 , 261 , 0 ) 
+d . setf ( "entered" , 0 ) 
+d . setf ( "started" , 0 ) 
+d . setf ( "level" , 0 ) 
+end ,clear_level= function ()d . clear_regen ( ) 
+d . purge_area ( 520000 , 155000 , 612000 , 228600 ) 
+end ,clear_timer= function (idx)clear_server_timer ( "snow_dungeon_floor2_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_floor3_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_floor4_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_floor5_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_floor6_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_floor7_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_floor8_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_floor9_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_45m_left_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_30m_left_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_15m_left_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_5m_left_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_1m_left_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_0m_left_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_end_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_check_timer" , idx ) 
+clear_server_timer ( "snow_dungeon_leader_out_timer" , idx ) 
+end ,go_boss= function ()if not party . is_leader ( ) then 
+say ( c_locale ( 8209 ) ) 
+return 
+end 
+say ( c_locale ( 8210 ) ) 
+if select ( c_locale ( 8211 ) , c_locale ( 8212 ) ) == 1 then 
+npc . purge ( ) 
+d . notice ( c_locale ( 8172 ) ) 
+server_timer ( "snow_dungeon_floor10_timer" , 5 , d . get_map_index ( ) ) 
+end 
+end }

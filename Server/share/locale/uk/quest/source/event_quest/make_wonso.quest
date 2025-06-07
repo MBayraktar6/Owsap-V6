@@ -1,0 +1,45 @@
+quest make_wonso begin
+	state start begin
+		when 9006.chat.c_locale(2687) with pc.countitem(50016) > 0 and pc.countitem(50019) > 0 and game.get_event_flag("newyear_wonso") > 0 begin
+			say_title(c_locale(1419))
+			say(c_locale(2684))
+			pc.removeitem(50016, 1)
+			pc.removeitem(50019, 1)
+			pc.give_item2(50020, 1)
+		end
+
+		when 9006.chat.c_locale(2688) with pc.countitem(50017) > 0 and pc.countitem(50019) > 0 and game.get_event_flag("newyear_wonso") > 0 begin
+			say_title(c_locale(1419))
+			say(c_locale(2685))
+			pc.removeitem(50017, 1)
+			pc.removeitem(50019, 1)
+			pc.give_item2(50021, 1)
+		end
+
+		when 9006.chat.c_locale(2689) with pc.countitem(50018) > 0 and pc.countitem(50019) > 0 and game.get_event_flag("newyear_wonso") > 0 begin
+			say_title(c_locale(1419))
+			say(c_locale(2686))
+			pc.removeitem(50018, 1)
+			pc.removeitem(50019, 1)
+			pc.give_item2(50022, 1)
+		end
+
+		when 9006.chat.c_locale(2682) with game.get_event_flag("newyear_wonso") > 0 and make_wonso.have_item() begin
+			say_title(c_locale(1419))
+			say(c_locale(2683))
+		end
+
+		function have_item()
+			if pc.count_item(50016) > 0 or
+				pc.count_item(50017) > 0 or
+				pc.count_item(50018) > 0 or
+				pc.count_item(50019) > 0 or
+				pc.count_item(50020) > 0 or
+				pc.count_item(50021) > 0 or
+				pc.count_item(50022) > 0 then
+				return true
+			end
+			return false
+		end
+	end
+end

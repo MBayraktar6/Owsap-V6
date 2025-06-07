@@ -1,0 +1,166 @@
+-- Filename: rainbow_stone.quest
+-- Author: Owsap
+-- Description: Perfect master all skills.
+
+quest rainbow_stone begin
+	state start begin
+		function train_horse()
+			local horse_skill_table = {
+				137, -- SKILL_HORSE_WILDATTACK
+				138, -- SKILL_HORSE_CHARGE
+				139, -- SKILL_HORSE_ESCAPE
+				140, -- SKILL_HORSE_WILDATTACK_RANGE
+			}
+
+			pc.set_skill_level(130, 30) -- SKILL_HORSE
+			pc.set_skill_level(131, 10) -- SKILL_HORSE_SUMMON
+
+			for skill, skill_vnum in ipairs(horse_skill_table) do
+				if pc.get_skill_level(skill_vnum) < 40 then
+					pc.set_skill_level(skill_vnum, 40) -- Master all skills
+				end
+			end
+		end
+
+		function train(job, group)
+			local skill_level = 40 -- Perfect Master
+			local skill_table = {}
+			local next_use_interval = 60 * 1 -- 1min
+			local mastered = true
+
+			if job == 0 and group == 1 then skill_table = { 1, 2, 3, 4, 5, 6, 176 } -- Warrior Skill Group 1
+			elseif job == 0 and group == 2 then skill_table = { 16, 17, 18, 19, 20, 21, 176 } -- Warrior Skill Group 2
+			elseif job == 1 and group == 1 then skill_table = { 31, 32, 33, 34, 35, 36, 177 } -- Ninja Skill Group 1
+			elseif job == 1 and group == 2 then skill_table = { 46, 47, 48, 49, 50, 51, 178 } -- Ninja Skill Group 2
+			elseif job == 2 and group == 1 then skill_table = { 61, 62, 63, 64, 65, 66, 179 } -- Sura Skill Group 1
+			elseif job == 2 and group == 2 then skill_table = { 76, 77, 78, 79, 80, 81, 180 } -- Sura Skill Group 2
+			elseif job == 3 and group == 1 then skill_table = { 91, 92, 93, 94, 95, 96, 181 } -- Shaman Skill Group 1
+			elseif job == 3 and group == 2 then skill_table = { 106, 107, 108, 109, 110, 111, 182 } -- Shaman Skill Group 2
+			elseif job == 4 and group == 1 then skill_table = { 170, 171, 172, 173, 174, 175, 183 } -- Wolfman Skill Group 1
+			elseif job == 4 and group == 2 then skill_table = { 0 } -- Wolfman Skill Group 2
+			elseif job == nil or group == nil then -- Unidentified job or skill group.
+				char_log(item.get_id(), "PERFECT_SKILLS", "FAIL_UNIDENTIFIED_JOB_OR_SKILL_GROUP")
+				return
+			end
+
+			if pc.is_gm() and pc.get_level() == 5 or is_test_server() then
+				local passive_skill_table = {
+					121, -- SKILL_LEADERSHIP
+					122, -- SKILL_COMBO
+					123, -- SKILL_CREATE
+					124, -- SKILL_MINING
+					126, -- SKILL_LANGUAGE1
+					127, -- SKILL_LANGUAGE2
+					128, -- SKILL_LANGUAGE3
+					129, -- SKILL_POLYMORPH
+					141, -- SKILL_ADD_HP
+					142, -- SKILL_RESIST_PENETRATE
+					133, -- SKILL_ROLE_PROFICIENCY
+					134, -- SKILL_INSIGHT
+					246, -- SKILL_HIT
+				}
+
+				for skill, skill_vnum in ipairs(passive_skill_table) do
+					table.insert(skill_table, skill_vnum)
+				end
+			end
+
+			for skill, skill_vnum in ipairs(skill_table) do
+				test_chat(string.format("%d - %d", skill, skill_vnum))
+
+				if pc.get_skill_level(skill_vnum) < skill_level then
+					mastered = false
+					pc.set_skill_level(skill_vnum, skill_level) -- Master all skills
+				end
+			end
+
+			if mastered == true then -- Check if all skills are mastered
+				test_chat(string.format("Skills are already equal or above level %d", skill_level))
+			else
+				char_log(item.get_id(), "PERFECT_SKILLS", "ITEM_REMOVE_SUCCESS")
+				item.remove()
+			end
+		end
+
+		when 50512.use begin
+			if not pc.is_gm() then
+				say("Only the game masters can reveal all skills.")
+				return
+			end
+
+			if pc.get_skill_group() == 0 then
+				if select("Skill Group 1", "Skill Group 2") == 1 then
+					pc.set_skill_group(1)
+				else
+					pc.set_skill_group(2)
+				end
+			else
+				if select("Change Skill Group", "Cancel") == 1 then
+					if pc.get_skill_group() == 1 then
+						pc.set_skill_group(2)
+					elseif pc.get_skill_group() == 2 then
+						pc.set_skill_group(1)
+					end
+				end
+			end
+
+			if pc.get_job() == 0 then -- Warrior
+				if pc.get_skill_group() == 1 then -- Skill Group 1
+					test_chat("JOB 0, SKILL GROUP 1")
+					rainbow_stone.train(0, 1)
+				elseif pc.get_skill_group() == 2 then -- Skill Group 2
+					test_chat("JOB 0, SKILL GROUP 2")
+					rainbow_stone.train(0, 2)
+				else -- No skill group detected
+					char_log(item.get_id(), "PERFECT_SKILLS", "FAIL_NO_SKILL_GROUP")
+				end
+			elseif pc.get_job() == 1 then -- Ninja
+				if pc.get_skill_group() == 1 then -- Skill Group 1
+					test_chat("JOB 1, SKILL GROUP 1")
+					rainbow_stone.train(1, 1)
+				elseif pc.get_skill_group() == 2 then -- Skill Group 2
+					test_chat("JOB 1, SKILL GROUP 2")
+					rainbow_stone.train(1, 2)
+				else -- No skill group detected
+					char_log(item.get_id(), "PERFECT_SKILLS", "FAIL_NO_SKILL_GROUP")
+				end
+			elseif pc.get_job() == 2 then -- Sura
+				if pc.get_skill_group() == 1 then -- Skill Group 1
+					test_chat("JOB 2, SKILL GROUP 1")
+					rainbow_stone.train(2, 1)
+				elseif pc.get_skill_group() == 2 then -- Skill Group 2
+					test_chat("JOB 2, SKILL GROUP 2")
+					rainbow_stone.train(2, 2)
+				else -- No skill group detected
+					char_log(item.get_id(), "PERFECT_SKILLS", "FAIL_NO_SKILL_GROUP")
+				end
+			elseif pc.get_job() == 3 then -- Shaman
+				if pc.get_skill_group() == 1 then -- Skill Group 1
+					test_chat("JOB 3, SKILL GROUP 1")
+					rainbow_stone.train(3, 1)
+				elseif pc.get_skill_group() == 2 then -- Skill Group 2
+					test_chat("JOB 3, SKILL GROUP 2")
+					rainbow_stone.train(3, 2)
+				else -- No skill group detected
+					char_log(item.get_id(), "PERFECT_SKILLS", "FAIL_NO_SKILL_GROUP")
+				end
+			elseif pc.get_job() == 4 then -- Wolfman
+				if pc.get_skill_group() == 1 then -- Skill Group 1
+					test_chat("JOB 4, SKILL GROUP 1")
+					rainbow_stone.train(4, 1)
+				elseif pc.get_skill_group() == 2 then -- Skill Group 2
+					test_chat("JOB 4, SKILL GROUP 2")
+					-- Wolfman doesn't have second skill group.
+				else -- No skill group detected
+					char_log(item.get_id(), "PERFECT_SKILLS", "FAIL_NO_SKILL_GROUP")
+				end
+			else -- Unidentified job, create char log.
+				char_log(item.get_id(), "PERFECT_SKILLS", "FAIL_UNIDENTIFIED_JOB")
+			end
+
+			rainbow_stone.train_horse()
+
+			setskin(NOWINDOW) -- No window for NPC
+		end
+	end
+end

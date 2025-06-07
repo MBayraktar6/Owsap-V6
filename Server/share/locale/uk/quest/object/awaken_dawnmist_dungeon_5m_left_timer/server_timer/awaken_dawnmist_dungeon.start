@@ -1,0 +1,5 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+d . notice ( c_locale ( 11507 , 5 ) ) 
+d . notice ( c_locale ( 11508 ) ) 
+server_timer ( "awaken_dawnmist_dungeon_1m_left_timer" , 60 * 10 , get_server_timer_arg ( ) ) 
+end 

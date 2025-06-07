@@ -1,0 +1,150 @@
+Group	lv1
+{
+	Vnum	50187 -- Apprentice Chest I
+	Type	Pct
+	1	50188	1	100 -- Apprentice Chest II
+	2	27201	20	100 -- Red Potion (S)
+	3	27204	20	100 -- Blue Potion (S)
+	4	27207	10	100 -- Green Potion (S)
+	5	27210	10	100 -- Purple Potion (S)
+	6	71155	1	100 -- Potion of Wisdom (3h)
+}
+Group	lv10
+{
+	Vnum	50188 -- Apprentice Chest II
+	Type	Pct
+	1	50189	1	100 -- Apprentice Chest III
+	2	76021	1	100 -- Sun Elixir (S)
+	3	76017	5	100 -- Potion of Attack +15
+	4	76012	5	100 -- Potion of Speed
+	5	76008	3	100 -- Medal of the Dragon
+	6	71153	3	100 -- Potion of Wisdom
+	7	56000	1	100 -- Appaloosa
+	8	56001	1	100 -- Village Travel Ticket
+}
+Group	lv20
+{
+	Vnum	50189 -- Apprentice Chest III
+	Type	Pct
+	1	50190	1	100 -- Expert Chest I
+	2	76022	1	100 -- Sun Elixir (M)
+	3	76017	5	100 -- Potion of Attack +15
+	4	76012	5	100 -- Potion of Speed
+	5	76006	1	100 -- Compass for Metin Stones
+	6	76007	1	100 -- Bravery Cape
+	7	38059	1	100 -- Emotion Mask
+	8	71153	3	100 -- Potion of Wisdom
+	9	56001	1	100 -- Village Travel Ticket
+	10	38100	1	100 -- Power Snack (7 days)
+}
+Group	lv30
+{
+	Vnum	50190 -- Expert Chest I
+	Type	Pct
+	1	50191	1	100 -- Expert Chest II
+	2	76012	5	100 -- Potion of Speed
+	3	71034	5	100 -- Potion of Attack +15
+	4	76016	5	100 -- Blessing Scroll
+	5	76011	1	100 -- Book of the Leader
+	6	76007	20	100 -- Bravery Cape
+	7	56001	1	100 -- Village Travel Ticket
+}
+Group	lv40
+{
+	Vnum	50191 -- Expert Chest II
+	Type	Pct
+	1	50192	1	100 -- Expert Chest III
+	2	76003	5	100 -- Potion of Haste
+	3	71034	5	100 -- Potion of Attack +15
+	4	71153	3	100 -- Potion of Wisdom
+	5	76011	1	100 -- Book of the Leader
+	6	76016	5	100 -- Blessing Scroll
+	7	76024	3	100 -- Green Strength
+	8	76023	3	100 -- Green Magic
+	9	76026	3	100 -- Exorcism Scroll
+}
+Group	lv50
+{
+	Vnum	50192 -- Expert Chest III
+	Type	Pct
+	1	50193	1	100 -- Master Chest I
+	2	76007	20	100 -- Bravery Cape
+	3	76003	5	100 -- Potion of Haste
+	4	71034	5	100 -- Potion of Attack +15
+	5	76019	5	100 -- Passage Ticket
+	6	76042	1	100 -- Teleportation Ring
+	7	76026	5	100 -- Exorcism Scroll
+	8	76036	5	100 -- Dragon God Attack
+	9	76035	5	100 -- Dragon God Life
+	10	76037	1	100 -- Thief's Gloves
+	11	76038	1	100 -- Lucky Medal
+}
+Group	lv60
+{
+	Vnum	50193 -- Master Chest I
+	Type	Pct
+	1	50194	1	100 -- Master Chest II
+	2	76009	3	100 -- Dragon Scroll
+	3	71034	5	100 -- Potion of Attack +15
+	4	76000	10	100 -- Peach Flower Wine
+	5	76003	5	100 -- Potion of Haste
+	6	76012	5	100 -- Potion of Speed
+	7	76026	5	100 -- Exorcism Scroll
+	8	76036	5	100 -- Dragon God Attack
+	9	76035	5	100 -- Dragon God Life
+	10	76037	1	100 -- Thief's Gloves
+	11	76038	1	100 -- Lucky Medal
+}
+Group	lv70
+{
+	Vnum	50194 -- Master Chest II
+	Type	Pct
+	1	50195	1	100 -- Master Chest III
+	2	76003	5	100 -- Potion of Haste
+	3	71034	5	100 -- Potion of Attack +15
+	4	76013	5	100 -- Reinforce Item (b)
+	5	76014	5	100 -- Enchant Item (b)
+	6	76001	1	100 -- Status Reset Document
+	7	76012	5	100 -- Potion of Speed
+	8	76026	5	100 -- Exorcism Scroll
+	9	76034	5	100 -- Concentrated Reading
+	10	76036	5	100 -- Dragon God Attack
+	11	76035	5	100 -- Dragon God Life
+	12	76037	1	100 -- Thief's Gloves
+	13	76038	1	100 -- Lucky Medal
+}
+Group	lv80
+{
+	Vnum	50195 -- Master Chest III
+	Type	Pct
+	1	50196	1	100 -- Grand Master Chest
+	2	76003	5	100 -- Potion of Haste
+	3	71034	5	100 -- Potion of Attack +15
+	4	76005	1	100 -- Moon Elixir (M)
+	5	76020	5	100 -- Researcher's Elixir
+	6	76013	5	100 -- Reinforce Item (b)
+	7	76014	5	100 -- Enchant Item (b)
+	8	76012	5	100 -- Potion of Speed
+	9	76026	5	100 -- Exorcism Scroll
+	10	76034	5	100 -- Concentrated Reading
+	11	76036	5	100 -- Dragon God Attack
+	12	76035	5	100 -- Dragon God Life
+	13	76037	1	100 -- Thief's Gloves
+	14	76038	1	100 -- Lucky Medal
+	15	76039	1	100 -- Dragon Chest
+}
+Group	lv90
+{
+	Vnum	50196 -- Grand Master Chest
+	Type	Pct
+	1	76022	1	100 -- Sun Elixir (M)
+	2	76015	2	100 -- Blessing Marble
+	3	76010	3	100 -- Blood Stone
+	4	76002	3	100 -- Shrunken Head
+	5	76013	5	100 -- Reinforce Item (b)
+	6	76014	10	100 -- Enchant Item (b)
+	7	76036	5	100 -- Dragon God Attack
+	8	76035	5	100 -- Dragon God Life
+	9	76019	5	100 -- Passage Ticket
+	10	76039	1	100 -- Dragon Chest
+}

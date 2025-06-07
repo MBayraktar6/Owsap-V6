@@ -1,0 +1,24 @@
+dawnmist_dungeon={["start"]=0,in_dungeon= function (idx)return idx >= 353 * 10000 and idx < ( 353 + 1 ) * 10000 
+end ,create= function ()d . new_jump_party ( 353 , 7780 , 15020 ) 
+d . spawn_mob ( 6408 , 69 , 941 ) 
+d . setf ( "created" , 1 ) 
+d . setf ( "finished" , 0 ) 
+d . setf ( "party_leader_pid" , party . get_leader_pid ( ) ) 
+server_timer ( "dawnmist_dungeon_15m_left_timer" , 60 * 15 , d . get_map_index ( ) ) 
+end ,clear_server_timers= function (idx)clear_server_timer ( "dawnmist_dungeon_15m_left_timer" , idx ) 
+clear_server_timer ( "dawnmist_dungeon_5m_left_timer" , idx ) 
+clear_server_timer ( "dawnmist_dungeon_1m_left_timer" , idx ) 
+clear_server_timer ( "dawnmist_dungeon_0m_left_timer" , idx ) 
+clear_server_timer ( "dawnmist_dungeon_end_timer" , idx ) 
+clear_server_timer ( "dawnmist_dungeon_quit_timer" , idx ) 
+clear_server_timer ( "dawnmist_dungeon_spawn_timer" , idx ) 
+end ,clear= function (purge)if purge then 
+d . purge ( ) 
+else 
+d . kill_all ( ) 
+end 
+end ,clear_and_exit= function ()dawnmist_dungeon . clear ( true ) 
+d . set_warp_location ( 302 , 12779 , 17345 ) 
+d . exit_all ( ) 
+end ,warp_out= function ()pc . warp ( 8158 * 100 , 15050 * 100 , 353 ) 
+end }

@@ -1,0 +1,5 @@
+pc . setqf ( "entries" , 0 ) 
+pc . setqf ( "charged" , 0 ) 
+pc . setqf ( "charge_cooldown" , 0 ) 
+pc . setqf ( "lair_reset_time" , 0 ) 
+say ( "Done" ) 

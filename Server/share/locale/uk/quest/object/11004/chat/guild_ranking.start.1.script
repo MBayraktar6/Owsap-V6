@@ -1,0 +1,2 @@
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 1750 , guild . high_ranking_string ( ) ) ) 

@@ -1,0 +1,14 @@
+if not guild_war_join . in_dungeon ( pc . get_map_index ( ) ) then local e = guild . get_any_war ( ) 
+if e == 0 then 
+say ( c_locale ( 2621 ) ) 
+else 
+say ( c_locale ( 1911 , pc . get_name ( ) ) ) 
+local s = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if s == 1 then 
+guild . war_enter ( e ) 
+else 
+setskin ( NOWINDOW ) 
+send_letter ( c_locale ( 2617 ) ) 
+end 
+end 
+ return end 

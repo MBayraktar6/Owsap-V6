@@ -1,0 +1,9 @@
+say_title ( c_locale ( 3 ) ) 
+say ( c_locale ( 4 ) ) 
+local playtime_duration = 0 and get_time ( ) or pc . get_playtime ( ) 
+if pc . getqf ( "duration" ) > playtime_duration then 
+say_reward ( string . format ( "%s %s" , c_locale ( 10 ) , acce_cloth . get_remaining_playtime ( ) ) ) 
+else 
+say ( c_locale ( 11 ) ) 
+end 
+say_reward ( c_locale ( 5643 ) ) 

@@ -1,0 +1,4 @@
+say_title ( special . daily_quest . table [ "collect" ] [ 1 ] [ "title" ] ) 
+say ( special . daily_quest . table [ "collect" ] [ 1 ] [ "desc" ] ) 
+say_reward ( special . daily_quest . table [ "collect" ] [ 1 ] [ "reward" ] ) 
+daily_quest_collect_3 . update ( ) 

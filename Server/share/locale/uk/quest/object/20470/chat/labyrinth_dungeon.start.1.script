@@ -1,0 +1,5 @@
+if pc . get_level ( ) < 110 then 
+say ( c_locale ( 11336 , 110 ) ) 
+return 
+end 
+pc . warp ( 3197 * 100 , 18045 * 100 , 363 ) 

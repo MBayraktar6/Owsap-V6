@@ -1,0 +1,10 @@
+local count = pc . getqf ( "state" ) + 1 
+if count <= 10 then 
+pc . setqf ( "state" , count ) 
+q . set_counter ( c_locale ( 4978 ) , 10 - count ) 
+if count == 10 then 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 4979 ) ) 
+set_state ( "gotoboss2" ) 
+end 
+end 

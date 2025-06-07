@@ -1,0 +1,11 @@
+local setting = blue_dragon_lair . setting ( ) 
+if d . getf ( "blue_dragon_alive" ) == 1 then 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 887 ) ) 
+return 
+end 
+say_title ( c_locale ( 883 ) ) 
+say ( c_locale ( 891 ) ) 
+if select ( c_locale ( 878 ) , c_locale ( 879 ) ) == 1 then 
+pc . warp ( setting . entry_map . x * 100 , setting . entry_map . y * 100 , setting . entry_map . index ) 
+end 

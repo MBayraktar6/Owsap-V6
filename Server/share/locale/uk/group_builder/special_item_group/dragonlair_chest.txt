@@ -1,0 +1,102 @@
+Group	QueenMeleyChest
+{
+	Vnum	50270 -- Queen Meley's Chest
+	Type	pct
+	1	7370	1	18	30 -- Lying Dragon Fan+0
+	2	5340	1	18	30 -- Dragon Ghost Bell +0
+	3	470	1	18	30 -- Dragon Tooth Blade +0
+	4	2370	1	18	30 -- Phoenix Bow +0
+	5	21544	1	10	30 -- Viridian Wood Helmet+4
+	6	21545	1	9	30 -- Viridian Wood Helmet+5
+	7	21546	1	5	30 -- Viridian Wood Helmet+6
+	8	12684	1	10	30 -- Soul Shard Hat +4
+	9	12685	1	9	30 -- Soul Shard Hat +5
+	10	12686	1	5	30 -- Soul Shard Hat +6
+	11	12404	1	10	30 -- Spider Hood +4
+	12	12405	1	9	30 -- Spider Hood +5
+	13	12406	1	5	30 -- Spider Hood +6
+	14	15434	1	10	30 -- Kingfisher Shoes +4
+	15	15435	1	9	30 -- Kingfisher Shoes +5
+	16	15436	1	5	30 -- Kingfisher Shoes +6
+	17	15374	1	10	30 -- Euphoria Shoes +4
+	18	15375	1	9	30 -- Euphoria Shoes +5
+	19	15376	1	5	30 -- Euphoria Shoes +6
+	20	27993	1	20 -- Blue Pearl
+	21	30550	10	20 -- Blue Belt
+	22	27994	1	20 -- Blood-Red Pearl
+	23	30192	5	20 -- Plant Sap
+	24	30621	3	100 -- Red Dragon Scale
+	25	30620	3	100 -- Red Dragon Horn
+	26	30622	1	20 -- Armour Design: Helm
+	27	70031	1	20 -- Fencing Pamphlet
+	28	27992	1	20 -- White Pearl
+	29	55003	1	10 -- Young Pet Book
+	30	55406	1	10 -- Red Dragon Egg
+	31	55005	1	10 -- Valiant Pet Book
+	32	55004	1	10 -- Wild Pet Book
+	33	50299	1	10 -- Crate of Boosts
+	34	50298	1	10 -- Crate of Wards
+	35	50297	1	10 -- Box of Boosts
+	36	50296	1	10 -- Box of Wards
+	37	50513	1	5 -- Soul Stone
+	38	39004	1	5 -- Blessing Marble
+	39	µ·²Ù·¯¹Ì	10000000	100 -- Yang
+	40	µ·²Ù·¯¹Ì	20000000	7 -- Yang
+	41	µ·²Ù·¯¹Ì	30000000	5 -- Yang
+	42	µ·²Ù·¯¹Ì	60000000	2 -- Yang
+}
+Group	DragonWatcherChest
+{
+	Vnum	50271 -- Dragon Watcher Chest
+	Type	pct
+	1	6090	1	18	30 -- Dragon Lord+0
+	2	1340	1	18	30 -- Five Element Blade +0
+	3	460	1	18	30 -- Rune Sword +0
+	4	3190	1	18	30 -- Solar Blade +0
+	5	12284	1	10	30 -- War Master Helmet +4
+	6	12285	1	9	30 -- War Master Helmet +5
+	7	12286	1	5	30 -- War Master Helmet +6
+	8	12544	1	10	30 -- Magic Helmet +4
+	9	12545	1	9	30 -- Magic Helmet +5
+	10	12546	1	5	30 -- Magic Helmet +6
+	11	15374	1	10	30 -- Euphoria Shoes +4
+	12	15375	1	9	30 -- Euphoria Shoes +5
+	13	15376	1	5	30 -- Euphoria Shoes +6
+	14	27993	1	20 -- Blue Pearl
+	15	27994	1	20 -- Blood-Red Pearl
+	16	30193	5	100 -- Finger Bones
+	17	30080	10	20 -- Curse Book+
+	18	30035	10	20 -- Face Cream
+	19	30011	10	20 -- Ball
+	20	30192	5	20 -- Plant Sap
+	21	30194	2	20 -- Orc Club
+	22	30042	2	20 -- Tiger Fang
+	23	30621	3	100 -- Red Dragon Scale
+	24	30620	3	100 -- Red Dragon Horn
+	25	30622	5	100 -- Armour Design: Helm
+	26	30031	10	20 -- Ornament
+	27	30083	10	20 -- Unknown Medicine+
+	28	27992	1	20 -- White Pearl
+	29	30089	10	20 -- Yeti Fur+
+	30	55003	1	10 -- Young Pet Book
+	31	55004	1	10 -- Wild Pet Book
+	32	55005	1	10 -- Valiant Pet Book
+	33	100700	1	1 -- Flame of the Dragon (B)
+	34	50297	1	10 -- Box of Boosts
+	35	50298	1	10 -- Crate of Wards
+	36	50299	1	10 -- Crate of Boosts
+	37	µ·²Ù·¯¹Ì	10000000	100 -- Yang
+	38	µ·²Ù·¯¹Ì	20000000	7 -- Yang
+	39	µ·²Ù·¯¹Ì	30000000	5 -- Yang
+	40	µ·²Ù·¯¹Ì	60000000	2 -- Yang
+}
+Group	QueenMeleyChest(P)
+{
+	Vnum	50294 -- Queen Meley's Chest
+	Type	pct
+	1	50926	200	100 -- Glimmerstone
+	2	50926	200	100 -- Glimmerstone
+	3	50926	200	100 -- Glimmerstone
+	4	50926	200	100 -- Glimmerstone
+	5	50926	200	100 -- Glimmerstone
+}

@@ -1,0 +1,31 @@
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9967 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9968 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9969 ) ) 
+local s = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if 2 == s then 
+return 
+end 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9970 ) ) 
+wait ( ) 
+if pc . count_item ( 50068 ) > 0 then 
+if horse . get_level ( ) > 1 then 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9971 ) ) 
+wait ( ) 
+say ( c_locale ( 9972 ) ) 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9973 ) ) 
+return 
+end 
+else 
+say_title ( c_mob_name ( 20349 ) ) 
+say ( c_locale ( 9974 ) ) 
+return 
+end 

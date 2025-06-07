@@ -1,0 +1,5 @@
+building.get_land_id
+building.get_land_info
+building.set_land_owner
+building.has_land
+building.reconstruct

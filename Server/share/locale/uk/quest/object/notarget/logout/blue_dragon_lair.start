@@ -1,0 +1,9 @@
+if blue_dragon_lair . inside ( pc . get_map_index ( ) ) then if pc . getqf ( "charged" ) ~= 1 then 
+local setting = blue_dragon_lair . setting ( ) 
+local entries = pc . getqf ( "entries" ) 
+if entries == 0 then 
+pc . setqf ( "lair_reset_time" , get_time ( ) + setting . lair_reset_time ) 
+end 
+pc . setqf ( "entries" , pc . getqf ( "entries" ) + 1 ) 
+end 
+ return end 

@@ -1,0 +1,133 @@
+quest make_herb_lv4 begin
+	state start begin
+		when login or levelup with pc.get_level() == 4 begin
+			set_state(information)
+		end
+	end
+
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(20084)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_locale(195))
+			end
+			send_letter(c_locale(261))
+		end
+
+		when button or info begin
+			say_title(c_locale(261))
+			say(c_locale(278))
+		end
+
+		when __TARGET__.target.click or 20084.chat.c_locale(210) begin
+			target.delete("__TARGET__")
+			say_title(c_locale(211))
+			say(c_locale(285))
+			wait()
+			say_title(c_locale(211))
+			say(c_locale(272))
+			set_state(go_to_disciple)
+			pc.setqf("collect_count", 0)
+			--pc.setqf("drink_drug", 0)
+		end
+	end
+
+	state go_to_disciple begin
+		when letter begin
+			send_letter(c_locale(214))
+		end
+
+		when button or info begin
+			say_title(c_locale(273))
+			say(c_locale(274))
+			say_item_vnum(50701)
+			say_reward(c_locale(275, pc.getqf("collect_count")))
+		end
+
+		--[[
+		when 71035.use begin
+			if pc.getqf("drink_drug") == 1 then
+				say_title(c_locale(211))
+				say(c_locale(276))
+				return
+			end
+
+			if pc.count_item(50701) == 0 then
+				say_title(c_locale(211))
+				say(c_locale(277))
+				return
+			end
+
+			pc.remove_item(71035, 1)
+			pc.setqf("drink_drug", 1)
+		end
+		]]
+
+		when 173.kill begin
+			if pc.count_item(50701) < 5 - pc.getqf("collect_count") then
+				pc.give_item2(50701, 1)
+			end
+		end
+
+		when 20084.chat.c_locale(262) with pc.count_item(50701) > 0 begin
+			say_title(c_locale(201))
+			say(c_locale(202))
+			pc.remove_item(50701, 1)
+			wait()
+
+			local pass_percent
+			--if pc.getqf("drink_drug") == 0 then
+			if affect.find(AFFECT_RESEARCHER_ELIXIR) then
+				pass_percent = 90
+			else
+				pass_percent = 100
+			end
+
+			local s = number(1, 100)
+			if s <= pass_percent then
+				if pc.getqf("collect_count") < 4 then
+					local index = pc.getqf("collect_count") + 1
+					pc.setqf("collect_count", index)
+					say_title(c_locale(211))
+					say(c_locale(263, 5 - pc.getqf("collect_count")))
+					--pc.setqf("drink_drug", 0)
+					affect.remove(AFFECT_RESEARCHER_ELIXIR)
+					return
+				end
+
+				say_title(c_locale(211))
+				say(c_locale(264))
+				say_title(c_locale(265))
+				say_reward(c_locale(266))
+				pc.setqf("collect_count", 0)
+				--pc.setqf("drink_drug", 0)
+				affect.remove(AFFECT_RESEARCHER_ELIXIR)
+
+				clear_letter()
+				set_state(__COMPLETE__)
+
+				if pc.get_job() == 3 then
+					pc.give_item2(07004)
+					say_reward(c_locale(267))
+					return
+				else
+					pc.give_item2(00014)
+					say_reward(c_locale(268))
+				end
+
+				pc.change_money(1000)
+				pc.give_exp2(500)
+				--set_quest_state("levelup", "run")
+			else
+				say_title(c_locale(211))
+				say(c_locale(269))
+				--pc.setqf("drink_drug", 0)
+				affect.remove(AFFECT_RESEARCHER_ELIXIR)
+				return
+			end
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

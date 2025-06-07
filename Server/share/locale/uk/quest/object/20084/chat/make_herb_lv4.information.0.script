@@ -1,0 +1,8 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 211 ) ) 
+say ( c_locale ( 285 ) ) 
+wait ( ) 
+say_title ( c_locale ( 211 ) ) 
+say ( c_locale ( 272 ) ) 
+set_state ( "go_to_disciple" ) 
+pc . setqf ( "collect_count" , 0 ) 

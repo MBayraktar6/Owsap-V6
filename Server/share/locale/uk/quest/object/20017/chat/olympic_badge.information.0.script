@@ -1,0 +1,25 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7529 ) ) 
+say ( c_locale ( 7530 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7531 ) ) 
+say ( c_locale ( 7532 ) ) 
+local s = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if 2 == s then 
+say ( c_locale ( 7541 ) ) 
+local a = select ( c_locale ( 4473 ) , c_locale ( 3418 ) ) 
+if 2 == a then 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7542 ) ) 
+return 
+end 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7543 ) ) 
+set_state ( "__GIVEUP__" ) 
+return 
+end 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7544 ) ) 
+set_state ( "step1" ) 

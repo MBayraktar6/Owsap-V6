@@ -1,0 +1,15 @@
+if pc . is_gm ( ) then local event = select ( "Yutnori" , "Ramadan" , "Summer" , "Valentine" , "Football" , "Normal" , "Close" ) 
+if event == 1 then 
+game . set_event_flag ( "metinstone_swap" , 1 ) 
+elseif event == 2 then 
+game . set_event_flag ( "metinstone_swap" , 2 ) 
+elseif event == 3 then 
+game . set_event_flag ( "metinstone_swap" , 3 ) 
+elseif event == 4 then 
+game . set_event_flag ( "metinstone_swap" , 4 ) 
+elseif event == 5 then 
+game . set_event_flag ( "metinstone_swap" , 5 ) 
+elseif event == 6 then 
+game . set_event_flag ( "metinstone_swap" , 0 ) 
+end 
+ return end 

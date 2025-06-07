@@ -1,0 +1,12 @@
+source_of_the_devil={["start"]=0,["__COMPLETE__"]=668443392,["bear_hunt"]=-582932855,["goto_portal_guard"]=696953376,["goto_portal_guard2"]=563221615,["run"]=1349952704,update_counter= function ()local count = 0 
+local remaining_count = 1 - pc . getqf ( "hunted_bears" ) 
+if remaining_count < 0 then 
+remaining_count = 0 
+end 
+count = count + remaining_count 
+q . set_counter_value ( count ) 
+if count == 0 then 
+notice ( c_locale ( 6378 ) ) 
+set_state ( "goto_portal_guard2" ) 
+end 
+end }

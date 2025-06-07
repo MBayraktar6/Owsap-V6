@@ -1,0 +1,23 @@
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 682 ) ) 
+local s = select ( c_locale ( 2669 ) , c_locale ( 2426 ) ) 
+if s == 1 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 683 ) ) 
+else 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 684 ) ) 
+wait ( ) 
+say_title ( c_locale ( 114 ) ) 
+say ( c_locale ( 685 ) ) 
+local s = select ( c_locale ( 686 ) , c_locale ( 2426 ) ) 
+if s == 1 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 687 ) ) 
+elseif s == 2 then 
+say_title ( c_locale ( 689 ) ) 
+say ( c_locale ( 688 ) ) 
+set_state ( "start" ) 
+q . done ( ) 
+end 
+end 

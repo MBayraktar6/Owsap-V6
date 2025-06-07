@@ -1,0 +1,13 @@
+if pc . in_dungeon ( ) and pc . get_map_index ( ) >= 660000 and pc . get_map_index ( ) < 670000 and d . getf ( "level" ) == 5 then if not npc . is_pc ( ) then 
+local KILL_COUNT_FOR_DROP_KEY = 300 
+if is_test_server ( ) then 
+KILL_COUNT_FOR_DROP_KEY = 150 
+end 
+local n = d . getf ( "count" ) + 1 
+d . setf ( "count" , n ) 
+if n == KILL_COUNT_FOR_DROP_KEY then 
+game . drop_item_with_ownership ( 50084 , 1 ) 
+d . setf ( "count" , 0 ) 
+end 
+end 
+ return end 

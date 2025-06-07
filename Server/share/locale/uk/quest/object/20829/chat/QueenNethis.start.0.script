@@ -1,0 +1,6 @@
+say_title ( mob_name ( 20829 ) ) 
+say ( "Do you want go to the Boss Level?" ) 
+local s = select ( "Yes" , "No" ) 
+if s == 1 then 
+SnakeLair . SetDungeonStep ( ) 
+end 

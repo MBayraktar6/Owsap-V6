@@ -1,0 +1,104 @@
+define MYONGHORANG_VNUM 20400 -- Myonghorang (Lycan NPC) VNUM
+define PORTAL_GUARD_VNUM 20402 -- Portal Guard (Lycan NPC) VNUM
+define METEORITE_VNUM 8115 -- Meteorite VNUM
+define METEORITE_HUNT_AMOUNT 1 -- Amount of meteorite to hunt (one)
+define METEORITE_HUNT_AMOUNT_SECOND 1 -- Amount of meteorite to hunt in the next quest (The Metin Stone) (one)
+define HUNTED_METEORITE_AMOUNT_FLAG "hunted_meteorites" -- Quest flag name for the hunted meteorite amount
+define FRAGMENT_VNUM 31094 -- Fragment VNUM
+define EXP_AMOUNT_REWARD 450 -- Amount of received exp upon quest completion
+define ITEM_ONE_REWARD 27001 -- ITEM_ONE (Red Potions (s)) received upon quest completion
+define ITEM_ONE_REWARD_AMOUNT 10 -- Amount (x10) of received ITEM_ONE upon quest completion
+
+quest meteorite_hunt begin
+	state start begin
+	end
+
+	state run begin
+		function update_counter()
+			local count = 0
+			local remaining_count = METEORITE_HUNT_AMOUNT - pc.getqf(HUNTED_METEORITE_AMOUNT_FLAG)
+
+			if remaining_count < 0 then
+				remaining_count = 0
+			end
+
+			count = count + remaining_count
+			q.set_counter_value(count)
+			if count == 0 then
+				notice_multiline(c_locale(6385), notice)
+				set_state("goto_myonghorang")
+			end
+		end
+
+		when enter begin
+			pc.setqf(HUNTED_METEORITE_AMOUNT_FLAG, 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(6381))
+			q.set_counter_name(c_locale(6413))
+			meteorite_hunt.update_counter()
+		end
+
+		when button or info begin
+			say_title(c_locale(6381))
+			say(c_locale(6382))
+		end
+
+		when PORTAL_GUARD_VNUM.chat.c_locale(6381) begin
+			say_title(c_mob_name(PORTAL_GUARD_VNUM))
+			say(c_locale(6384, METEORITE_HUNT_AMOUNT))
+		end
+
+		when METEORITE_VNUM.kill begin
+			local count = pc.getqf(HUNTED_METEORITE_AMOUNT_FLAG)
+			pc.setqf(HUNTED_METEORITE_AMOUNT_FLAG, count + 1)
+			pc.give_item2(FRAGMENT_VNUM)
+			meteorite_hunt.update_counter()
+		end
+
+		when leave begin
+			pc.setqf(HUNTED_METEORITE_AMOUNT_FLAG, 0)
+			q.done()
+		end
+	end
+
+	state goto_myonghorang begin
+		when letter begin
+			send_letter(c_locale(6388))
+			local v = find_npc_by_vnum(MYONGHORANG_VNUM)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6388))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6388))
+			say(c_locale(6385))
+		end
+
+		when __TARGET__.target.click or MYONGHORANG_VNUM.chat.c_locale(6388) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.remove_item(FRAGMENT_VNUM)
+			pc.give_exp2(EXP_AMOUNT_REWARD)
+			pc.give_item2(ITEM_ONE_REWARD, ITEM_ONE_REWARD_AMOUNT)
+
+			say_title(c_mob_name(MYONGHORANG_VNUM))
+			say(c_locale(6375))
+			say_reward(c_locale(5043, c_item_name(ITEM_ONE_REWARD), ITEM_ONE_REWARD_AMOUNT))
+			say_reward(c_locale(6882, EXP_AMOUNT_REWARD))
+			wait()
+
+			say_title(c_mob_name(MYONGHORANG_VNUM))
+			say(c_locale(6391, METEORITE_HUNT_AMOUNT_SECOND))
+
+			set_state("__COMPLETE__")
+			set_quest_state("the_metin_stone", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

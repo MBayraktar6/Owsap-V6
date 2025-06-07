@@ -1,0 +1,36 @@
+if not party . is_party ( ) then 
+say ( c_locale ( 11414 ) ) 
+return 
+end 
+if not party . is_leader ( ) then 
+say ( c_locale ( 11292 ) ) 
+return 
+end 
+if not d . all_near_to ( pc . get_x ( ) , pc . get_y ( ) ) then 
+say ( c_locale ( 11301 ) ) 
+return 
+end 
+if select ( c_locale ( 11498 ) , c_locale ( 11499 ) ) == 1 then 
+local pids = { party . get_member_pids ( ) } 
+local ticket_check = true 
+local no_ticket_members = { } 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if pc . count_item ( 31180 ) < 3 then 
+table . insert ( no_ticket_members , pc . get_name ( ) ) 
+ticket_check = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not ticket_check then 
+say_title ( c_locale ( 11496 ) ) 
+say ( c_locale ( 11497 ) ) 
+say_item_vnum ( 31180 ) 
+for i , name in next , no_ticket_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return 
+end 
+awaken_skipia_dungeon . go_boss ( ) 
+else 
+end 

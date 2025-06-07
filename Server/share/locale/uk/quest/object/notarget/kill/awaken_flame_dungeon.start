@@ -1,0 +1,7 @@
+if awaken_flame_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 12 then if number ( 1 , 100 ) <= 5 then 
+game . drop_item ( 31187 , 1 ) 
+end 
+ return end if awaken_flame_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 15 then if number ( 1 , 100 ) <= 5 then 
+game . drop_item ( 31188 , 1 ) 
+end 
+ return end 

@@ -1,0 +1,81 @@
+#
+# Conqueror's of Yohara
+#
+# Empire Castle
+# metin2_map_empirecastle
+#
+
+Group	EmpireCastle_01
+{
+	Vnum	6194
+	Leader	"Jin Bing"	6693
+	1	"Jin Bing"	6693
+	2	"Jin Bing"	6693
+	3	"Hell Hound"	6700
+	4	"Hell Hound"	6700
+}
+Group	EmpireCastle_02
+{
+	Vnum	6195
+	Leader	"Hell Hound"	6700
+	1	"Hell Hound"	6700
+	2	"Hell Hound"	6700
+	3	"Soldier Ki"	6694
+	4	"Soldier Ki"	6694
+}
+Group	EmpireCastle_03
+{
+	Vnum	6196
+	Leader	"Jin Bing"	6693
+	1	"Jin Bing"	6693
+	2	"Soldier Ki"	6694
+	3	"Frontline Mage"	6697
+	4	"Hell Hound"	6700
+	5	"Hell Hound"	6700
+}
+Group	EmpireCastle_04
+{
+	Vnum	6197
+	Leader	"Jin Bing"	6686
+	1	"Jin Bing"	6686
+	2	"Jin Bing"	6686
+	3	"Hell Hound"	6700
+	4	"Hell Hound"	6700
+}
+Group	EmpireCastle_05
+{
+	Vnum	6198
+	Leader	"Soldier Ki"	6687
+	1	"Soldier Ki"	6687
+	2	"Soldier Mao"	6688
+	3	"Hell Hound"	6700
+	4	"Hell Hound"	6700
+}
+Group	EmpireCastle_06
+{
+	Vnum	6199
+	Leader	"Frontline Mage"	6690
+	1	"Soldier Ki"	6687
+	2	"Soldier Ki"	6687
+	3	"Hell Hound"	6700
+	4	"Soldier Mao"	6688
+}
+Group	EmpireCastle_07
+{
+	Vnum	6200
+	Leader	"Kao"	6691
+	1	"Soldier Gong"	6689
+	2	"Soldier Gong"	6689
+	3	"Hell Hound"	6700
+	4	"Soldier Mao"	6688
+}
+Group	EmpireCastle_08
+{
+	Vnum	6201
+	Leader	"Kao"	6698
+	1	"Jin Bing"	6693
+	2	"Jin Bing"	6693
+	3	"Soldier Ki"	6694
+	4	"Hell Hound"	6700
+	5	"Hell Hound"	6700
+}

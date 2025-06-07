@@ -1,0 +1,5 @@
+send_letter ( c_locale ( 8279 ) ) 
+local v = find_npc_by_vnum ( 30130 ) 
+if 0 ~= v then 
+target . vid ( "__TARGET__" , v , c_mob_name ( 30130 ) ) 
+end 

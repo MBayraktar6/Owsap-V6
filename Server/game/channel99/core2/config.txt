@@ -1,0 +1,37 @@
+HOSTNAME: ch99_game2
+CHANNEL: 99
+PORT: 19901
+P2P_PORT: 19920
+DB_PORT: 11000
+DB_ADDR: localhost
+
+MAP_ALLOW: 363 364 365 366 367 368 369 370 371 400 401 402 403
+
+#	363	metin2_map_labyrinth
+#	364	metin2_map_boss_crack_skipia
+#	365	metin2_map_boss_crack_flame
+#	366	metin2_map_boss_crack_snow
+#	367	metin2_map_boss_crack_dawnmist
+#	368	metin2_map_boss_awaken_skipia
+#	369	metin2_map_boss_awaken_flame
+#	370	metin2_map_boss_awaken_snow
+#	371	metin2_map_boss_awaken_dawnmist
+#	400	metin2_map_otherworld_01
+#	401	metin2_map_otherworld_02
+#	402	metin2_map_otherworld_03
+#	403	metin2_map_otherworld_04
+
+TABLE_POSTFIX:
+ITEM_ID_RANGE: 1000000001 2000000000
+PASSES_PER_SEC: 25
+SAVE_EVENT_SECOND_CYCLE: 180
+PING_EVENT_SECOND_CYCLE: 180
+PLAYER_SQL: localhost mt2 mt2!@# player
+COMMON_SQL: localhost mt2 mt2!@# common
+LOG_SQL: localhost mt2 mt2!@# log
+LOCALE_SERVICE: uk
+TEST_SERVER: 1
+VIEW_RANGE: 8000
+MAX_LEVEL: 120
+
+POPUP_NOTICE_URL: http://62.171.146.112/docs/

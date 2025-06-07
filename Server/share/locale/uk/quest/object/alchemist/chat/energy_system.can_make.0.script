@@ -1,0 +1,13 @@
+say_title ( c_mob_name ( 20001 ) ) 
+say ( c_locale ( 968 ) ) 
+wait ( ) 
+say_title ( c_mob_name ( 20001 ) ) 
+say ( c_locale ( 969 ) ) 
+wait ( ) 
+if pc . get_level ( ) < 35 then 
+say_title ( c_mob_name ( 20001 ) ) 
+say ( c_locale ( 970 ) ) 
+else 
+say_title ( c_mob_name ( 20001 ) ) 
+say ( c_locale ( 971 ) ) 
+end 

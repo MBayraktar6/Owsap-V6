@@ -1,0 +1,38 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+local setting = snow_dungeon . setting ( ) 
+local level = d . getf ( "level" ) 
+if level == 1 and d . count_monster ( ) <= 0 then 
+d . notice ( c_locale ( 8185 ) ) 
+server_timer ( "snow_dungeon_floor2_timer" , 5 , d . get_map_index ( ) ) 
+elseif level == 3 and d . count_monster ( ) <= 0 then 
+d . notice ( c_locale ( 8186 ) ) 
+server_timer ( "snow_dungeon_floor4_timer" , 5 , d . get_map_index ( ) ) 
+elseif level == 4 and d . count_monster ( ) <= 0 then 
+if d . getf ( "level4_boss_spawn" ) == 1 then 
+d . notice ( c_locale ( 8187 ) ) 
+server_timer ( "snow_dungeon_floor5_timer" , 5 , d . get_map_index ( ) ) 
+else 
+d . setf ( "level4_boss_spawn" , 1 ) 
+d . regen_file ( "data/dungeon/snow_dungeon/" .. "sd_4.txt" ) 
+local r = number ( 1 , table . getn ( setting . level4_boss_pos ) ) 
+d . spawn_mob ( 6151 , setting . level4_boss_pos [ r ] [ 1 ] , setting . level4_boss_pos [ r ] [ 2 ] ) 
+end 
+elseif level == 6 and d . count_monster ( ) <= 0 then 
+d . notice ( c_locale ( 8188 ) ) 
+d . spawn_mob ( 8058 , setting . level6_stone_pos [ 1 ] , setting . level6_stone_pos [ 2 ] ) 
+elseif level == 7 then 
+for i = 1 , 3 begin 
+if not d . is_unique_dead ( "boss_" .. i ) then 
+if d . unique_get_hp_perc ( "boss_" .. i ) < 50 then 
+d . purge_unique ( "boss_" .. i ) 
+d . notice ( c_locale ( 8204 ) ) 
+end 
+end 
+end 
+if d . is_unique_dead ( "boss_4" ) then 
+snow_dungeon . clear_level ( ) 
+d . notice ( c_locale ( 8205 ) ) 
+server_timer ( "snow_dungeon_floor8_timer" , 5 , d . get_map_index ( ) ) 
+end 
+end 
+end 

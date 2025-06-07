@@ -1,0 +1,4 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+d . syschat ( c_locale_string ( 1819 , 15 ) ) 
+server_timer ( "blue_dragon_lair_5m_left_timer" , 60 * 10 , get_server_timer_arg ( ) ) 
+end 

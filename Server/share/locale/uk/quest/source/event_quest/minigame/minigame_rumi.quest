@@ -1,0 +1,257 @@
+define RUMI_TABLE 20417 -- Okey Table
+define RUMI_NORMAL_HIGH_REWARD 50275 -- Golden Okey Chest
+define RUMI_NORMAL_MID_REWARD 50276 -- Silver Okey Chest
+define RUMI_NORMAL_LOW_REWARD 50277 -- Bronze Okey Chest
+define RUMI_HIGH_REWARD 50267 -- Merry Golden Okey Chest
+define RUMI_MID_REWARD 50268 -- Merry Silver Okey Chest
+define RUMI_LOW_REWARD 50269 -- Merry Bronze Okey Chest
+define RUMI_RANK1_REWARD_COUNT 10
+define RUMI_RANK2_REWARD_COUNT 5
+define RUMI_RANK3_REWARD_COUNT 3
+define RUMI_RANK4_REWARD_COUNT 1
+define RUMI_REWARD_COOLDOWN 604800
+
+quest minigame_rumi begin
+	state start begin
+		when login begin
+			if game.get_event_flag("mini_game_okey_reward") == 0 and pc.getqf("reward") ~= 0 then
+				pc.setqf("reward", 0)
+			end
+		end
+
+		-- "Receive prize"
+		when RUMI_TABLE.chat.c_locale(6626) with game.get_event_flag("mini_game_okey_reward") > get_time() begin
+
+			say_title(c_mob_name(RUMI_TABLE))
+
+			-- Only the very best can stay at the top of the rankings and pick up the top prizes!
+			-- Will you be one of them?
+			say(c_locale(6628))
+			say("")
+
+			wait()
+
+			if pc.getqf("reward") > get_time() or pc.getqf("reward") ~= 0 then
+				say_title(c_mob_name(RUMI_TABLE))
+
+				-- You've already received your prize.
+				say(c_locale(6630))
+				say("")
+				return
+			end
+
+			local my_name = pc.get_name()
+			local my_rank = 0
+
+			local score_table = game.get_minigame_rumi_score(true)
+			for i, score in ipairs(score_table) do
+				if score[1] == my_name then
+					my_rank = i
+					break
+				end
+			end
+
+			if my_rank == 0 then
+				say_title(c_mob_name(RUMI_TABLE))
+
+				-- Sorry! You haven't made it into the rankings.
+				say(c_locale(6627))
+				say("")
+				return
+			end
+
+			local reward_vnum = RUMI_NORMAL_HIGH_REWARD
+			local reward_amount = RUMI_RANK4_REWARD_COUNT
+
+			if game.get_event_flag("mini_game_okey_normal") ~= 0 then
+				reward_vnum = RUMI_NORMAL_HIGH_REWARD
+			else
+				reward_vnum = RUMI_HIGH_REWARD
+			end
+
+			if my_rank == 1 then
+				reward_amount = RUMI_RANK1_REWARD_COUNT
+			elseif my_rank == 2 then
+				reward_amount = RUMI_RANK2_REWARD_COUNT
+			elseif my_rank == 3 then
+				reward_amount = RUMI_RANK3_REWARD_COUNT
+			else
+				reward_amount = RUMI_RANK4_REWARD_COUNT
+			end
+
+			say_title(c_mob_name(RUMI_TABLE))
+			say_item_vnum(reward_vnum)
+			say("")
+
+			-- You receive %d.
+			say_reward(c_locale(6629, reward_amount))
+			say("")
+
+			pc.give_item2(reward_vnum, reward_amount)
+			pc.setqf("reward", get_time() + RUMI_REWARD_COOLDOWN)
+		end
+
+		-- "Show prizes"
+		when RUMI_TABLE.chat.c_locale(6598) begin
+
+			local reward_table = {}
+			local reward_name_table = {}
+
+			if game.get_event_flag("mini_game_okey_normal") ~= 0 then
+				reward_table = { RUMI_NORMAL_HIGH_REWARD, RUMI_NORMAL_MID_REWARD, RUMI_NORMAL_LOW_REWARD }
+			else
+				reward_table = { RUMI_HIGH_REWARD, RUMI_MID_REWARD, RUMI_LOW_REWARD }
+			end
+
+			for i = 1, table.getn(reward_table) do
+				table.insert(reward_name_table, c_item_name(reward_table[i]))
+			end
+			table.insert(reward_name_table, c_locale(6609)) -- Close
+
+			local sel_reward = select_table(reward_name_table)
+			if sel_reward == table.getn(reward_name_table) then
+				return
+			end
+
+			local sig_table = show_special_item_group(reward_table[sel_reward], 14)
+
+			say_item_vnum(reward_table[sel_reward])
+			if reward_table == 1 then
+				say(c_locale(6620)) -- Requirement: 400 points or more
+				say("")
+			elseif reward_table == 2 then
+				say(c_locale(6636)) -- Requirement: 300 to 399 points
+				say("")
+			elseif reward_table == 3 then
+				say(c_locale(6602)) -- Requirement: 299 points or fewer
+				say("")
+			end
+
+			say(c_locale(6631)) -- The following items may be inside:
+			say("")
+
+			local step = 1
+			local pause = false
+			repeat
+				for i = step, table.getn(sig_table) do
+					local vnum = sig_table[i][1]
+					local count = sig_table[i][2]
+
+					if vnum == 1 then -- gold
+						say_reward(c_locale(5400, number_to_money_string(count)))
+					elseif vnum == 2 then -- exp
+						say_reward(c_locale(5399, number_to_money_string(count)))
+					else
+						say_reward(c_locale(6139, c_item_name(vnum), count))
+					end
+
+					if i == 4 and i != table.getn(sig_table) then
+						step = i + 1
+						pause = true
+						break
+					end
+
+					if sig_table[i][3] > 0 and i != table.getn(sig_table) then
+						step = sig_table[i][3] + 1
+						pause = true
+						break
+					end
+
+					pause = false
+				end
+
+				if pause then
+					say()
+					wait()
+				end
+			until pause == false
+		end
+
+		-- Rankings
+		when RUMI_TABLE.chat.c_locale(6604) begin
+			local sel_name_table = {
+				c_locale(6605), -- Top Prizes
+				c_locale(6606), -- Total Score
+				c_locale(6607) -- Highest Game Score
+			}
+
+			table.insert(sel_name_table, c_locale(6609)) -- Close
+			local sel = select_table(sel_name_table)
+			if sel == table.getn(sel_name_table) then
+				return
+			end
+
+			if sel == 1 then
+
+				say_title(sel_name_table[sel])
+
+				-- The 10 players with the highest overall score will receive additional prizes.
+				say(c_locale(6608))
+				say("")
+
+				if game.get_event_flag("mini_game_okey_normal") ~= 0 then
+					say_reward(c_locale(6610, c_item_name(RUMI_NORMAL_HIGH_REWARD), RUMI_RANK1_REWARD_COUNT))
+					say("")
+
+					say_reward(c_locale(6611, c_item_name(RUMI_NORMAL_HIGH_REWARD), RUMI_RANK2_REWARD_COUNT))
+					say("")
+
+					say_reward(c_locale(6612, c_item_name(RUMI_NORMAL_HIGH_REWARD), RUMI_RANK3_REWARD_COUNT))
+					say("")
+
+					say_reward(c_locale(6613, c_item_name(RUMI_NORMAL_HIGH_REWARD), RUMI_RANK4_REWARD_COUNT))
+					say("")
+				else
+					say_reward(c_locale(6610, c_item_name(RUMI_HIGH_REWARD), RUMI_RANK1_REWARD_COUNT))
+					say("")
+
+					say_reward(c_locale(6611, c_item_name(RUMI_HIGH_REWARD), RUMI_RANK2_REWARD_COUNT))
+					say("")
+
+					say_reward(c_locale(6612, c_item_name(RUMI_HIGH_REWARD), RUMI_RANK3_REWARD_COUNT))
+					say("")
+
+					say_reward(c_locale(6613, c_item_name(RUMI_HIGH_REWARD), RUMI_RANK4_REWARD_COUNT))
+					say("")
+				end
+
+			elseif sel == 2 then
+
+				say_title(sel_name_table[sel])
+				say("")
+
+				local score_table = game.get_minigame_rumi_score(true)
+				for i = 1, table.getn(score_table) do
+					if (i >= 7) then
+						say(c_locale(6614 + i, score_table[i][1], score_table[i][2]))
+					else
+						say(c_locale(6614 + (i - 1), score_table[i][1], score_table[i][2]))
+					end
+				end
+				say("")
+
+				say_reward(c_locale(6625, game.get_minigame_rumi_my_score(true)))
+				say("")
+
+			elseif sel == 3 then
+
+				say_title(sel_name_table[sel])
+				say("")
+
+				local score_table = game.get_minigame_rumi_score(false)
+				for i = 1, table.getn(score_table) do
+					if (i >= 7) then
+						say(c_locale(6614 + i, score_table[i][1], score_table[i][2]))
+					else
+						say(c_locale(6614 + (i - 1), score_table[i][1], score_table[i][2]))
+					end
+				end
+				say("")
+
+				say_reward(c_locale(6625, game.get_minigame_rumi_my_score(false)))
+				say("")
+
+			end
+		end
+	end
+end

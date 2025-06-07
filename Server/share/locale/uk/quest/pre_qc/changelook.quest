@@ -1,0 +1,24 @@
+quest changelook begin
+	state start begin
+		-- "Transmutation"
+		when 60003.chat.c_locale(165) begin
+			say(c_locale(166))
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+				setskin(NOWINDOW)
+				game.open_changelook(0)
+			end
+		end
+
+		-- "Mount Transformation"
+		when 60003.chat.c_locale(11774) begin
+			setskin(NOWINDOW)
+
+			if pc.get_horse() or pc.is_riding() == true then
+				syschat(c_locale(11775))
+				return
+			end
+
+			game.open_changelook(1)
+		end
+	end
+end

@@ -1,0 +1,14 @@
+dragon_soul={["start"]=0,["state_1"]=-1296991421,["state_2"]=733489913,["state_3"]=1556028015,["state_closed_season"]=-1430288148,["state_farming"]=-718086412,["state_learning"]=-252263835,get_eye_count= function ()local eye_left = pc . getf ( "dragon_soul" , "eye_left" ) 
+if eye_left <= 0 then 
+return 
+end 
+if pc . count_item ( 30270 ) >= 10 then 
+pc . setf ( "dragon_soul" , "eye_left" , eye_left - 1 ) 
+pc . remove_item ( 30270 , 10 ) 
+pc . give_item2 ( 50255 ) 
+if 1 == eye_left then 
+notice_multiline ( c_locale ( 941 ) , notice ) 
+set_state ( state_closed_season ) 
+end 
+end 
+end }

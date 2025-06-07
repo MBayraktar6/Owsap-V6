@@ -1,0 +1,72 @@
+say_title ( c_locale ( 7905 ) ) 
+say ( c_locale ( 7906 ) ) 
+local empire_names = { 
+[ 0 ] = c_locale ( 7907 ) , 
+[ 1 ] = c_locale ( 2478 ) , 
+[ 2 ] = c_locale ( 2479 ) , 
+[ 3 ] = c_locale ( 2480 ) , 
+} 
+local e = select ( empire_names [ 1 ] , empire_names [ 2 ] , empire_names [ 3 ] , empire_names [ 0 ] , c_locale ( 2426 ) ) 
+if 5 == e then 
+return 
+end 
+if 4 == e then 
+e = 0 
+end 
+say_title ( c_locale ( 7908 ) ) 
+say_reward ( __get_empire_priv_string ( e ) ) 
+say ( c_locale ( 7909 ) ) 
+local titles = { 
+c_locale ( 7910 ) , 
+c_locale ( 7911 ) , 
+c_locale ( 7912 ) , 
+c_locale ( 7913 ) , 
+} 
+local t = select ( titles [ 1 ] , titles [ 2 ] , titles [ 3 ] , titles [ 4 ] , c_locale ( 2426 ) ) 
+if 5 == t then 
+return 
+end 
+say_title ( c_locale ( 7908 ) ) 
+say_reward ( c_locale ( 7914 , empire_names [ e ] , titles [ t ] ) ) 
+say ( c_locale ( 7915 ) ) 
+local g = { 10 , 20 , 50 , 100 , 150 , 200 } 
+local p = select ( g [ 1 ] .. "%" , g [ 2 ] .. "%" , g [ 3 ] .. "%" , g [ 4 ] .. "%" , g [ 5 ] .. "%" , g [ 6 ] .. "%" , c_locale ( 2426 ) ) 
+if p == 7 then 
+return 
+end 
+say_title ( c_locale ( 7908 ) ) 
+say_reward ( c_locale ( 7894 , empire_names [ e ] , titles [ t ] , g [ p ] ) ) 
+say ( c_locale ( 7895 ) ) 
+local v = 0 
+local h = select ( c_locale ( 7896 ) , c_locale ( 7897 ) , c_locale ( 7898 ) , c_locale ( 7899 ) , c_locale ( 2426 ) ) 
+if 5 == h then 
+return 
+elseif 4 == h then 
+say_title ( c_locale ( 7908 ) ) 
+say_reward ( c_locale ( 7894 , empire_names [ e ] , titles [ t ] , g [ p ] ) ) 
+say ( c_locale ( 7900 ) ) 
+v = input ( ) 
+if v == "" then 
+v = 0 
+else 
+v = tonumber ( v ) 
+end 
+elseif 3 == h then 
+v = 24 
+elseif 2 == h then 
+v = 12 
+elseif 1 == h then 
+v = 6 
+end 
+say_title ( c_locale ( 7908 ) ) 
+say_reward ( c_locale ( 7901 , empire_names [ e ] , titles [ t ] , g [ p ] , v ) ) 
+say ( c_locale ( 7902 ) ) 
+local s = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if 1 == s then 
+say_title ( c_locale ( 7908 ) ) 
+__give_empire_priv ( e , t , g [ p ] , v * 60 * 60 ) 
+say_reward ( c_locale ( 7903 ) ) 
+else 
+say_title ( c_locale ( 7908 ) ) 
+say_reward ( c_locale ( 7904 ) ) 
+end 

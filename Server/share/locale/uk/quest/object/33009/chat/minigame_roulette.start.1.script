@@ -1,0 +1,3 @@
+say_title ( c_locale ( 11745 ) ) 
+say ( c_locale ( 11760 , pc . getqf ( "souls" ) ) ) 
+say ( c_locale ( 11761 , pc . getqf ( "used_souls" ) ) ) 

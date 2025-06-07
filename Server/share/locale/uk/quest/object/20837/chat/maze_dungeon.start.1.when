@@ -1,0 +1,1 @@
+return maze_dungeon . is_inside ( pc . get_map_index ( ) )

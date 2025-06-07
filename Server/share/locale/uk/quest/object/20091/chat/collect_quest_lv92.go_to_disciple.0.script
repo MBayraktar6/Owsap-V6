@@ -1,0 +1,65 @@
+if get_time ( ) < pc . getqf ( "duration" ) then 
+say_title ( c_locale ( 620 ) ) 
+say ( c_locale ( 631 ) ) 
+return 
+end 
+if pc . count_item ( 30251 ) <= 0 then 
+say_title ( c_locale ( 620 ) ) 
+say ( c_locale ( 632 ) ) 
+return 
+end 
+say_title ( c_locale ( 620 ) ) 
+say ( c_locale ( 633 ) ) 
+pc . remove_item ( 30251 , 1 ) 
+if is_test_server ( ) then 
+pc . setqf ( "duration" , ( get_time ( ) + 3 ) ) 
+else 
+pc . setqf ( "duration" , ( get_time ( ) + ( 60 * 60 * 12 ) ) ) 
+end 
+wait ( ) 
+local pass_percent 
+if affect . find ( AFFECT_RESEARCHER_ELIXIR ) then 
+pass_percent = 90 
+else 
+if true == pet . is_summon ( 34003 ) or true == pet . is_summon ( 34001 ) then 
+pass_percent = 92 
+else 
+pass_percent = 60 
+end 
+end 
+test_chat ( string . format ( "pass percent %d" , pass_percent ) ) 
+local s = number ( 1 , 100 ) 
+if s <= pass_percent then 
+local collect_count = pc . getqf ( "collect_count" ) 
+pc . setqf ( "collect_count" , collect_count + 1 ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+if collect_count < 9 then 
+say_title ( c_locale ( 620 ) ) 
+say ( c_locale ( 634 ) ) 
+say ( c_locale ( 635 , ( 10 - pc . getqf ( "collect_count" ) ) ) ) 
+say ( c_locale ( 636 ) ) 
+else 
+pc . setqf ( "duration" , 0 ) 
+say_title ( c_locale ( 620 ) ) 
+say ( c_locale ( 637 ) ) 
+local result = BuildApplyCollectRewardList ( 92 ) 
+local apply_data_list = result [ 1 ] 
+local apply_name_list = result [ 2 ] 
+if table . getn ( apply_data_list ) == 0 then 
+return 
+end 
+local s = select_table ( apply_name_list ) 
+local apply_vnum , apply_value , apply_duration = unpack ( apply_data_list [ s ] ) 
+affect . add_collect ( apply_vnum , apply_value , apply_duration ) 
+pc . setqf ( "reward" , s ) 
+clear_letter ( ) 
+set_quest_state ( "collect_quest_lv94" , "run" ) 
+set_state ( "__COMPLETE__" ) 
+end 
+return 
+else 
+say_title ( c_locale ( 620 ) ) 
+say ( c_locale ( 641 ) ) 
+affect . remove ( AFFECT_RESEARCHER_ELIXIR ) 
+return 
+end 

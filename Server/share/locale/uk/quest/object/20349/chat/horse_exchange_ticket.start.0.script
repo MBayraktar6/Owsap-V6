@@ -1,0 +1,13 @@
+say_title ( c_locale ( 2090 ) ) 
+say ( c_locale ( 2091 ) ) 
+local b = select ( c_locale ( 2092 ) , c_locale ( 39 ) ) 
+if 1 == b then 
+if pc . count_item ( 50005 ) >= 1 then 
+pc . removeitem ( 50005 , 1 ) 
+pc . give_item2 ( 50050 , 1 ) 
+say ( c_locale ( 2093 ) ) 
+end 
+elseif 2 == b then 
+else 
+say ( c_locale ( 123 , b ) ) 
+end 

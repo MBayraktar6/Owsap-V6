@@ -1,0 +1,19 @@
+daily_quest_combat_1={["start"]=0,["clear"]=-441323258,["complete"]=1114099747,["reward"]=1322349139,["run"]=1349952704,update= function ()daily_quest_combat_1 . update_counter ( ) 
+daily_quest_combat_1 . update_clock ( ) 
+end ,update_counter= function ()local remain = pc . getqf ( "count" ) 
+local remain_count = special . daily_quest . table [ "combat" ] [ 1 ] [ "remain_count" ] - remain 
+q . set_counter_name ( c_locale ( 11690 ) ) 
+q . set_counter_value ( remain_count ) 
+if remain_count <= 0 then 
+pc . setqf ( "count" , 0 ) 
+notice ( c_locale ( 11691 , special . daily_quest . table [ "combat" ] [ 1 ] [ "title" ] ) ) 
+set_state ( "reward" ) 
+q . done ( ) 
+end 
+end ,update_clock= function ()local left_time = special . daily_quest . limit_time - ( get_time ( ) - pc . getf ( "daily_quest_mgr" , "start_time" ) ) 
+if left_time > 0 then 
+q . set_clock ( c_locale ( 11875 ) , left_time ) 
+else 
+set_state ( "clear" ) 
+end 
+end }

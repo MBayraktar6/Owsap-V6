@@ -1,0 +1,252 @@
+quest dawnmist_dungeon begin
+	state start begin
+		function in_dungeon(idx)
+			return idx >= 353 * 10000 and idx < (353 + 1) * 10000
+		end
+
+		function create()
+			d.new_jump_party(353, 7780, 15020)
+			d.spawn_mob(6408, 69, 941)
+
+			d.setf("created", 1)
+			d.setf("finished", 0)
+			d.setf("party_leader_pid", party.get_leader_pid())
+
+			server_timer("dawnmist_dungeon_15m_left_timer", 60 * 15, d.get_map_index())
+		end
+
+		function clear_server_timers(idx)
+			clear_server_timer("dawnmist_dungeon_15m_left_timer", idx)
+			clear_server_timer("dawnmist_dungeon_5m_left_timer", idx)
+			clear_server_timer("dawnmist_dungeon_1m_left_timer", idx)
+			clear_server_timer("dawnmist_dungeon_0m_left_timer", idx)
+			clear_server_timer("dawnmist_dungeon_end_timer", idx)
+			clear_server_timer("dawnmist_dungeon_quit_timer", idx)
+			clear_server_timer("dawnmist_dungeon_spawn_timer", idx)
+		end
+
+		function clear(purge)
+			if purge then
+				d.purge()
+			else
+				d.kill_all()
+			end
+		end
+
+		function clear_and_exit()
+			dawnmist_dungeon.clear(true)
+			d.set_warp_location(302, 12779, 17345)
+			d.exit_all()
+		end
+
+		function warp_out()
+			pc.warp(8158 * 100, 15050 * 100, 353)
+		end
+
+		when login begin
+			local idx = pc.get_map_index()
+			if idx == 353 and pc.get_x() < 7880 and pc.get_y() > 14880 then
+				dawnmist_dungeon.warp_out()
+			elseif dawnmist_dungeon.in_dungeon(idx) then
+				if not party.is_party() then
+					dawnmist_dungeon.warp_out()
+				elseif d.getf("finished") == 1 then
+					dawnmist_dungeon.warp_out()
+				else
+					if pc.getqf("dawnmist_dungeon", "ticket_delete") == 0 then
+						if pc.count_item(30613) >= 1 then
+							pc.remove_item(30613, 1)
+							pc.setf("dawnmist_dungeon", "ticket_delete", 1)
+						else
+							dawnmist_dungeon.warp_out()
+						end
+					end
+
+					if pc.get_player_id() == d.getf("party_leader_pid") then
+						clear_server_timer("dawnmist_dungeon_quit_timer", idx)
+					end
+				end
+
+				pc.unmount()
+			else
+				pc.setf("dawnmist_dungeon", "ticket_delete", 0)
+			end
+		end
+
+		when logout with dawnmist_dungeon.in_dungeon(pc.get_map_index()) begin
+			if d.getf("created") == 1 then
+				pc.setf("dawnmist_dungeon", "exit_time", get_global_time())
+				if pc.get_player_id() == d.getf("party_leader_pid") then
+					server_timer("dawnmist_dungeon_quit_timer", 60, d.get_map_index())
+				end
+			end
+		end
+
+		-- "Enter Erebus"
+		when 20412.chat.c_locale(799) with pc.get_map_index() == 353 begin
+
+			-- "You can only enter if you are in a group."
+			if not party.is_party() then
+				say(c_locale(790))
+				return
+			end
+
+			-- "The group leader must enter first."
+			if not party.is_leader() then
+				say(c_locale(792))
+				return
+			end
+
+			-- "The group must consist of more than 4 members."
+			-- "Be sure to stick together!"
+			if party.get_near_count() < 2 then
+				say(c_locale(793, 2 - 1))
+				return
+			end
+
+			-- "Are you ready to enter?"
+			say(c_locale(794))
+
+			-- Yes / No
+			if select(c_locale(4473), c_locale(3418)) == 1 then
+
+				local pids = { party.get_member_pids() }
+
+				local no_ticket_members = {}
+				local ticket_check = true
+
+				local no_level_members = {}
+				local level_check = true
+
+				local mounted_members = {}
+				local mount_check = true
+
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					if pc.count_item(30613) < 1 then
+						table.insert(no_ticket_members, pc.get_name())
+						ticket_check = false
+					end
+
+					if pc.get_level() < 95 then
+						table.insert(no_level_members, pc.get_name())
+						level_check = false
+					end
+
+					if pc.is_riding() then
+						table.insert(mounted_members, pc.get_name())
+						mount_check = false
+					end
+
+					q.end_other_pc_block()
+				end
+
+				if not level_check then
+					-- "One of your number is not permitted to enter the dungeon."
+					-- "Their level is too low."
+					say(c_locale(797))
+					for i, name in next, no_level_members, nil do
+						say(color(1, 1, 0), c_locale(796) .. "    " .. name)
+					end
+					return
+				end
+
+				if not ticket_check then
+					-- "It would seem that the Stone of the Dryads isn't in your possession."
+					say(c_locale(795))
+					say_item_vnum(30613)
+
+					for i, name in next, no_ticket_members, nil do
+						say(color(1, 1, 0), c_locale(796) .. "    " .. name)
+					end
+					return
+				end
+
+				if not mount_check then
+					-- "The following group members are currently mounted."
+					-- "They must dismount if you want to enter Erebus."
+					say(c_locale(791))
+					for i, name in next, mounted_members, nil do
+						say(color(1, 1, 0), c_locale(796) .. "    " .. name)
+					end
+					return
+				end
+
+				if party.is_map_member_flag_lt("exit_time", get_global_time() - 7200) then
+					dawnmist_dungeon.create()
+				else
+					-- "You must wait two hours before you may enter again."
+					-- "At least one of you has not yet waited two hours."
+					say(c_locale(798))
+				end
+			end
+		end
+
+		when 6408.kill with dawnmist_dungeon.in_dungeon(pc.get_map_index()) begin
+			server_timer("dawnmist_dungeon_spawn_timer", 60, d.get_map_index())
+		end
+
+		when 6192.kill with dawnmist_dungeon.in_dungeon(d.get_map_index()) begin
+			d.setf("finished", 1)
+			d.setqf2_all_near("dawnmist_dungeon", "thunder_boss", 1, 800)
+
+			dawnmist_dungeon.clear_server_timers(d.get_map_index())
+			dawnmist_dungeon.clear(false)
+
+			server_timer("dawnmist_dungeon_end_timer", 180, d.get_map_index())
+		end
+
+		when dawnmist_dungeon_spawn_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.spawn_mob(6192, 69, 941)
+			end
+		end
+
+		when dawnmist_dungeon_15m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11310, 15)) -- "Time remaining: 15 min."
+				d.notice(c_locale(11311)) -- "The group will be teleported out once the time runs out."
+				server_timer("dawnmist_dungeon_5m_left_timer", 60 * 10, get_server_timer_arg())
+			end
+		end
+
+		when dawnmist_dungeon_5m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11310, 5)) -- "Time remaining: 5 min."
+				d.notice(c_locale(11311)) -- "The group will be teleported out once the time runs out."
+				server_timer("dawnmist_dungeon_1m_left_timer", 60 * 4, get_server_timer_arg())
+			end
+		end
+
+		when dawnmist_dungeon_1m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11310, 1)) -- "Time remaining: 1 min."
+				d.notice(c_locale(11311)) -- "The group will be teleported out once the time runs out."
+				server_timer("dawnmist_dungeon_0m_left_timer", 60, get_server_timer_arg())
+			end
+		end
+
+		when dawnmist_dungeon_0m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11312)) -- "Your time is up."
+				d.notice(c_locale(11313)) -- "You will be teleported out in ten seconds."
+				server_timer("dawnmist_dungeon_end_timer", 10, get_server_timer_arg())
+			end
+		end
+
+		when dawnmist_dungeon_end_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				dawnmist_dungeon.clear_server_timers(get_server_timer_arg())
+				dawnmist_dungeon.clear_and_exit()
+			end
+		end
+
+		when dawnmist_dungeon_quit_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				dawnmist_dungeon.clear_server_timers(get_server_timer_arg())
+				dawnmist_dungeon.clear_and_exit()
+			end
+		end
+	end
+end

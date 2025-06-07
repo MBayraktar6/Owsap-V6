@@ -1,0 +1,688 @@
+Group	천의동굴1F_천의얼음뿔범고래_천의빙마
+{
+	Vnum	2401
+	Leader	"천의얼음뿔범고래"	1132
+	1	"천의빙마"	1131
+	2	"천의빙마"	1131
+}
+Group	천의동굴1F_천의얼음뿔범고래_천의얼음뿔범고래
+{
+	Vnum	2402
+	Leader	"천의얼음뿔범고래"	1132
+	1	"천의얼음뿔범고래"	1132
+	2	"천의빙마"	1131
+	3	"천의빙마"	1131
+}
+Group	천의동굴1F_천의얼음뿔범고래_천의얼음뿔범고래
+{
+	Vnum	2403
+	Leader	"천의얼음뿔범고래"	1132
+	1	"천의얼음뿔범고래"	1132
+	2	"천의얼음뿔범고래"	1132
+	3	"천의빙마"	1131
+}
+Group	천의동굴1F_천의빙충_천의얼음뿔범고래
+{
+	Vnum	2404
+	Leader	"천의빙충"	1133
+	1	"천의얼음뿔범고래"	1132
+	2	"천의빙마"	1131
+	3	"천의빙마"	1131
+}
+Group	천의동굴1F_천의빙충_천의빙충
+{
+	Vnum	2405
+	Leader	"천의빙충"	1133
+	1	"천의빙충"	1133
+	2	"천의얼음뿔범고래"	1132
+	3	"천의빙마"	1131
+}
+Group	천의동굴1F_천의설구_천의빙충
+{
+	Vnum	2406
+	Leader	"천의설구"	1134
+	1	"천의빙충"	1133
+	2	"천의얼음뿔범고래"	1132
+	3	"천의빙마"	1131
+}
+Group	천의동굴1F_천의설구_천의설구
+{
+	Vnum	2407
+	Leader	"천의설구"	1134
+	1	"천의설구"	1134
+	2	"천의빙충"	1133
+}
+Group	천의동굴1F_천의빙인_천의설구
+{
+	Vnum	2408
+	Leader	"천의빙인"	1135
+	1	"천의설구"	1134
+	2	"천의설구"	1134
+	3	"천의빙충"	1133
+	4	"천의빙마"	1131
+}
+Group	천의동굴1F_천의빙인_천의빙인
+{
+	Vnum	2409
+	Leader	"천의빙인"	1135
+	1	"천의빙인"	1135
+	2	"천의설구"	1134
+	3	"천의설구"	1134
+}
+Group	천의동굴1F_천의설거인_천의빙인
+{
+	Vnum	2410
+	Leader	"천의설거인"	1136
+	1	"천의빙인"	1135
+	2	"천의빙인"	1135
+	3	"천의빙충"	1133
+	4	"천의빙충"	1133
+}
+Group	천의동굴1F_천의설거인_천의설거인
+{
+	Vnum	2411
+	Leader	"천의설거인"	1136
+	1	"천의설거인"	1136
+	2	"천의설거인"	1136
+	3	"천의빙인"	1135
+	4	"천의빙인"	1135
+	5	"천의설구"	1134
+}
+Group	천의동굴1F_천의얼음고렘_천의빙인
+{
+	Vnum	2412
+	Leader	"천의얼음고렘"	1137
+	1	"천의빙인"	1135
+	2	"천의빙인"	1135
+	3	"천의빙인"	1135
+	4	"천의설거인"	1136
+	5	"천의설거인"	1136
+}
+Group	천의동굴1F_천의얼음고렘_천의얼음고렘
+{
+	Vnum	2413
+	Leader	"천의얼음고렘"	1137
+	1	"천의얼음고렘"	1137
+	2	"천의얼음고렘"	1137
+	3	"천의설거인"	1136
+	4	"천의설거인"	1136
+	5	"천의설거인"	1136
+}
+Group	천의동굴1F_천의병사_천의병사
+{
+	Vnum	2414
+	Leader	"천의병사"	2401
+	1	"천의병사"	2401
+	2	"천의병사"	2401
+	3	"천의병사"	2401
+}
+Group	천의동굴1F_천의궁병_천의병사
+{
+	Vnum	2415
+	Leader	"천의궁병"	2402
+	1	"천의병사"	2401
+	2	"천의병사"	2401
+	3	"천의병사"	2401
+	4	"천의병사"	2401
+}
+Group	천의동굴1F_천의궁병_천의궁병
+{
+	Vnum	2416
+	Leader	"천의궁병"	2402
+	1	"천의궁병"	2402
+	2	"천의궁병"	2402
+	3	"천의병사"	2401
+	4	"천의병사"	2401
+}
+Group	천의동굴1F_천의법사_천의궁병
+{
+	Vnum	2417
+	Leader	"천의법사"	2403
+	1	"천의궁병"	2402
+	2	"천의궁병"	2402
+	3	"천의병사"	2401
+	4	"천의병사"	2401
+	5	"천의병사"	2401
+	6	"천의병사"	2401
+}
+Group	천의동굴1F_천의법사_천의궁병
+{
+	Vnum	2418
+	Leader	"천의법사"	2403
+	1	"천의법사"	2403
+	2	"천의궁병"	2402
+	3	"천의궁병"	2402
+	4	"천의궁병"	2402
+	5	"천의병사"	2401
+	6	"천의병사"	2401
+}
+Group	천의동굴1F_천의장수_천의법사
+{
+	Vnum	2419
+	Leader	"천의장수"	2404
+	1	"천의법사"	2403
+	2	"천의법사"	2403
+	3	"천의병사"	2401
+	4	"천의병사"	2401
+	5	"천의병사"	2401
+}
+Group	천의동굴1F_천의장수_천의법사
+{
+	Vnum	2420
+	Leader	"천의장수"	2404
+	1	"천의법사"	2403
+	2	"천의법사"	2403
+	3	"천의궁병"	2402
+	4	"천의궁병"	2402
+	5	"천의병사"	2401
+	6	"천의병사"	2401
+	7	"천의병사"	2401
+}
+Group	천의동굴1F_천의병사_천의병사
+{
+	Vnum	2431
+	Leader	"천의병사"	2431
+	1	"천의병사"	2431
+	2	"천의병사"	2431
+	3	"천의병사"	2431
+}
+Group	천의동굴1F_천의궁병_천의병사
+{
+	Vnum	2432
+	Leader	"천의궁병"	2432
+	1	"천의병사"	2431
+	2	"천의병사"	2431
+	3	"천의병사"	2431
+}
+Group	천의동굴1F_천의궁병_천의궁병
+{
+	Vnum	2433
+	Leader	"천의궁병"	2432
+	1	"천의궁병"	2432
+	2	"천의병사"	2431
+	3	"천의병사"	2431
+}
+Group	천의동굴1F_천의법사_천의궁병
+{
+	Vnum	2434
+	Leader	"천의법사"	2433
+	1	"천의궁병"	2432
+	2	"천의병사"	2431
+	3	"천의병사"	2431
+}
+Group	천의동굴1F_천의법사_천의궁병
+{
+	Vnum	2435
+	Leader	"천의법사"	2433
+	1	"천의궁병"	2432
+	2	"천의궁병"	2432
+	3	"천의병사"	2431
+	4	"천의병사"	2431
+}
+Group	천의동굴1F_천의장수_천의법사
+{
+	Vnum	2436
+	Leader	"천의장수"	2434
+	1	"천의법사"	2433
+	2	"천의법사"	2433
+	3	"천의병사"	2431
+	4	"천의병사"	2431
+	5	"천의병사"	2431
+}
+Group	천의동굴1F_천의장수_천의법사
+{
+	Vnum	2437
+	Leader	"천의장수"	2434
+	1	"천의법사"	2433
+	2	"천의법사"	2433
+	3	"천의궁병"	2432
+	4	"천의궁병"	2432
+	5	"천의병사"	2431
+	6	"천의병사"	2431
+	7	"천의병사"	2431
+}
+Group	천의동굴1F_설마녀
+{
+	Vnum	2448
+	Leader	"설마녀"	1192
+	1	"천의얼음고렘"	1137
+	2	"천의얼음고렘"	1137
+	3	"천의얼음고렘"	1137
+}
+
+Group	천의동굴2F_진천의병사_진천의병사
+{
+	Vnum	2421
+	Leader	"진천의병사"	2411
+	1	"진천의병사"	2411
+	2	"진천의병사"	2411
+	3	"진천의병사"	2411
+}
+Group	천의동굴2F_진천의궁병_진천의병사
+{
+	Vnum	2422
+	Leader	"진천의궁병"	2412
+	1	"진천의병사"	2411
+	2	"진천의병사"	2411
+	3	"진천의병사"	2411
+}
+Group	천의동굴2F_진천의궁병_진천의궁병
+{
+	Vnum	2423
+	Leader	"진천의궁병"	2412
+	1	"진천의궁병"	2412
+	2	"진천의병사"	2411
+	3	"진천의병사"	2411
+}
+Group	천의동굴2F_진천의법사_진천의궁병
+{
+	Vnum	2424
+	Leader	"진천의법사"	2413
+	1	"진천의궁병"	2412
+	2	"진천의병사"	2411
+	3	"진천의병사"	2411
+}
+Group	천의동굴2F_진천의법사_진천의궁병
+{
+	Vnum	2425
+	Leader	"진천의법사"	2413
+	1	"진천의궁병"	2412
+	2	"진천의궁병"	2412
+	3	"진천의병사"	2411
+	4	"진천의병사"	2411
+}
+Group	천의동굴2F_진천의장수_진천의법사
+{
+	Vnum	2426
+	Leader	"진천의장수"	2414
+	1	"진천의법사"	2413
+	2	"진천의법사"	2413
+	3	"진천의병사"	2411
+	4	"진천의병사"	2411
+	5	"진천의병사"	2411
+}
+Group	천의동굴2F_진천의장수_진천의법사
+{
+	Vnum	2427
+	Leader	"진천의장수"	2414
+	1	"진천의법사"	2413
+	2	"진천의법사"	2413
+	3	"진천의궁병"	2412
+	4	"진천의궁병"	2412
+	5	"진천의병사"	2411
+	6	"진천의병사"	2411
+	7	"진천의병사"	2411
+}
+Group	천의동굴2F_천의장군_천의장수
+{
+	Vnum	2428
+	Leader	"천의장군"	2491
+	1	"천의장수"	2404
+	2	"천의장수"	2404
+	3	"천의법사"	2403
+	4	"천의법사"	2403
+	5	"천의병사"	2401
+	6	"천의병사"	2401
+	7	"천의병사"	2401
+}
+Group	천의동굴2F_진천의장군_진천의장수
+{
+	Vnum	2429
+	Leader	"진천의장군"	2492
+	1	"진천의장수"	2414
+	2	"진천의장수"	2414
+	3	"진천의법사"	2413
+	4	"진천의법사"	2413
+	5	"진천의병사"	2411
+	6	"진천의병사"	2411
+	7	"진천의병사"	2411
+}
+Group	천의동굴2F_수룡_진천의장군
+{
+	Vnum	2430
+	Leader	"수룡"	2493
+	1	"진천의장수"	2414
+	2	"진천의장수"	2414
+	3	"진천의병사"	2411
+	4	"진천의병사"	2411
+	5	"진천의병사"	2411
+}
+Group	천의동굴2F_진천의병사_진천의병사
+{
+	Vnum	2438
+	Leader	"진천의병사"	2451
+	1	"진천의병사"	2451
+	2	"진천의병사"	2451
+	3	"진천의병사"	2451
+}
+Group	천의동굴2F_진천의궁병_진천의병사
+{
+	Vnum	2439
+	Leader	"진천의궁병"	2452
+	1	"진천의병사"	2451
+	2	"진천의병사"	2451
+	3	"진천의병사"	2451
+}
+Group	천의동굴2F_진천의궁병_진천의궁병
+{
+	Vnum	2440
+	Leader	"진천의궁병"	2452
+	1	"진천의궁병"	2452
+	2	"진천의병사"	2451
+	3	"진천의병사"	2451
+}
+Group	천의동굴2F_진천의법사_진천의궁병
+{
+	Vnum	2441
+	Leader	"진천의법사"	2453
+	1	"진천의궁병"	2452
+	2	"진천의병사"	2451
+	3	"진천의병사"	2451
+}
+Group	천의동굴2F_진천의법사_진천의궁병
+{
+	Vnum	2442
+	Leader	"진천의법사"	2453
+	1	"진천의궁병"	2452
+	2	"진천의궁병"	2452
+	3	"진천의병사"	2451
+	4	"진천의병사"	2451
+}
+Group	천의동굴2F_진천의장수_진천의법사
+{
+	Vnum	2443
+	Leader	"진천의장수"	2454
+	1	"진천의법사"	2453
+	2	"진천의법사"	2453
+	3	"진천의병사"	2451
+	4	"진천의병사"	2451
+	5	"진천의병사"	2451
+}
+Group	천의동굴2F_진천의장수_진천의법사
+{
+	Vnum	2444
+	Leader	"진천의장수"	2454
+	1	"진천의법사"	2453
+	2	"진천의법사"	2453
+	3	"진천의궁병"	2452
+	4	"진천의궁병"	2452
+	5	"진천의병사"	2451
+	6	"진천의병사"	2451
+	7	"진천의병사"	2451
+}
+Group	천의동굴2F_천의장군_천의장수
+{
+	Vnum	2445
+	Leader	"천의장군"	2494
+	1	"천의장수"	2434
+	2	"천의장수"	2434
+	3	"천의법사"	2433
+	4	"천의법사"	2433
+	5	"천의병사"	2431
+	6	"천의병사"	2431
+	7	"천의병사"	2431
+}
+Group	천의동굴2F_진천의장군_진천의장수
+{
+	Vnum	2446
+	Leader	"진천의장군"	2495
+	1	"진천의장수"	2454
+	2	"진천의장수"	2454
+	3	"진천의법사"	2453
+	4	"진천의법사"	2453
+	5	"진천의병사"	2451
+	6	"진천의병사"	2451
+	7	"진천의병사"	2451
+}
+Group	천의동굴2F_수룡_진천의장군
+{
+	Vnum	2447
+	Leader	"수룡"	2493
+	1	"수룡"	2493
+}
+
+Group	crack_skipia_01
+{
+	Vnum	4201
+	Leader	"TR: Setaou Hunter"	4201
+	1	"TR: Setaou Fighter"	4200
+	2	"TR: Setaou Fighter"	4200
+	3	"TR: Setaou Fighter"	4200
+}
+Group	crack_skipia_02
+{
+	Vnum	4202
+	Leader	"TR: Setaou Hunter"	4201
+	1	"TR: Setaou Hunter"	4201
+	2	"TR: Setaou Fighter"	4200
+	3	"TR: Setaou Fighter"	4200
+}
+Group	crack_skipia_03
+{
+	Vnum	4203
+	Leader	"TR: Setaou Mystic"	4202
+	1	"TR: Setaou Hunter"	4201
+	2	"TR: Setaou Fighter"	4200
+}
+Group	crack_skipia_04
+{
+	Vnum	4204
+	Leader	"TR: Setaou Mystic"	4202
+	1	"TR: Setaou Mystic"	4202
+	2	"TR: Setaou Hunter"	4201
+	3	"TR: Setaou Fighter"	4200
+}
+Group	crack_skipia_05
+{
+	Vnum	4205
+	Leader	"TR: Setaou Soldier"	4203
+	1	"TR: Setaou Soldier"	4203
+	2	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_06
+{
+	Vnum	4206
+	Leader	"TR: Setaou Archer"	4204
+	1	"TR: Setaou Soldier"	4203
+	2	"TR: Setaou Soldier"	4203
+	3	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_07
+{
+	Vnum	4207
+	Leader	"TR: Setaou Archer"	4204
+	1	"TR: Setaou Archer"	4204
+	2	"TR: Setaou Soldier"	4203
+	3	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_08
+{
+	Vnum	4208
+	Leader	"TR: Setaou Magistrate"	4205
+	1	"TR: Setaou Archer"	4204
+	2	"TR: Setaou Soldier"	4203
+	3	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_09
+{
+	Vnum	4209
+	Leader	"TR: Setaou Magistrate"	4205
+	1	"TR: Setaou Archer"	4204
+	2	"TR: Setaou Soldier"	4203
+	3	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_10
+{
+	Vnum	4210
+	Leader	"TR: Setaou Commander"	4206
+	1	"TR: Setaou Magistrate"	4205
+	2	"TR: Setaou Magistrate"	4205
+	3	"TR: Setaou Soldier"	4203
+	4	"TR: Setaou Soldier"	4203
+	5	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_11
+{
+	Vnum	4211
+	Leader	"TR: Setaou Commander"	4206
+	1	"TR: Setaou Magistrate"	4205
+	2	"TR: Setaou Magistrate"	4205
+	3	"TR: Setaou Archer"	4204
+	4	"TR: Setaou Archer"	4204
+	5	"TR: Setaou Soldier"	4203
+	6	"TR: Setaou Soldier"	4203
+	7	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_boss
+{
+	Vnum	4212
+	Leader	"TR: Beran-Setaou"	4400
+	1	"TR: Setaou Commander"	4206
+	2	"TR: Setaou Commander"	4206
+	3	"TR: Setaou Soldier"	4203
+	4	"TR: Setaou Soldier"	4203
+	5	"TR: Setaou Soldier"	4203
+}
+Group	crack_skipia_boss_stone_a
+{
+	Vnum	8120
+	Leader	"TR: Metin of the Mount."	8120
+}
+Group	crack_skipia_boss_stone_b
+{
+	Vnum	8121
+	Leader	"TR: Metin of Vengeance"	8121
+}
+Group	crack_skipia_boss_stone_c
+{
+	Vnum	8122
+	Leader	"TR: Metin of Solitude"	8122
+}
+Group	crack_skipia_boss_stone_d
+{
+	Vnum	8123
+	Leader	"TR: Metin of Arrogance"	8123
+}
+
+Group	awaken_skipia_01
+{
+	Vnum	4281
+	Leader	"RX: Setaou Hunter"	4281
+	1	"RX: Setaou Fighter"	4280
+	2	"RX: Setaou Fighter"	4280
+	3	"RX: Setaou Fighter"	4280
+}
+Group	awaken_skipia_02
+{
+	Vnum	4282
+	Leader	"RX: Setaou Hunter"	4281
+	1	"RX: Setaou Hunter"	4281
+	2	"RX: Setaou Fighter"	4280
+	3	"RX: Setaou Fighter"	4280
+}
+Group	awaken_skipia_03
+{
+	Vnum	4283
+	Leader	"RX: Setaou Mystic"	4282
+	1	"RX: Setaou Hunter"	4281
+	2	"RX: Setaou Fighter"	4280
+}
+Group	awaken_skipia_04
+{
+	Vnum	4284
+	Leader	"RX: Setaou Mystic"	4282
+	1	"RX: Setaou Mystic"	4282
+	2	"RX: Setaou Hunter"	4281
+	3	"RX: Setaou Fighter"	4280
+}
+Group	awaken_skipia_05
+{
+	Vnum	4285
+	Leader	"RX: Setaou Soldier"	4283
+	1	"RX: Setaou Soldier"	4283
+	2	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_06
+{
+	Vnum	4286
+	Leader	"RX: Setaou Archer"	4284
+	1	"RX: Setaou Soldier"	4283
+	2	"RX: Setaou Soldier"	4283
+	3	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_07
+{
+	Vnum	4287
+	Leader	"RX: Setaou Archer"	4284
+	1	"RX: Setaou Archer"	4284
+	2	"RX: Setaou Soldier"	4283
+	3	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_08
+{
+	Vnum	4288
+	Leader	"RX: Setaou Magistrate"	4285
+	1	"RX: Setaou Archer"	4284
+	2	"RX: Setaou Soldier"	4283
+	3	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_09
+{
+	Vnum	4289
+	Leader	"RX: Setaou Magistrate"	4285
+	1	"RX: Setaou Archer"	4284
+	2	"RX: Setaou Soldier"	4283
+	3	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_10
+{
+	Vnum	4290
+	Leader	"RX: Setaou Commander"	4286
+	1	"RX: Setaou Magistrate"	4285
+	2	"RX: Setaou Magistrate"	4285
+	3	"RX: Setaou Soldier"	4283
+	4	"RX: Setaou Soldier"	4283
+	5	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_11
+{
+	Vnum	4291
+	Leader	"RX: Setaou Commander"	4286
+	1	"RX: Setaou Magistrate"	4285
+	2	"RX: Setaou Magistrate"	4285
+	3	"RX: Setaou Archer"	4284
+	4	"RX: Setaou Archer"	4284
+	5	"RX: Setaou Soldier"	4283
+	6	"RX: Setaou Soldier"	4283
+	7	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_boss
+{
+	Vnum	4292
+	Leader	"RX: Beran-Setaou"	4410
+	1	"RX: Setaou Commander"	4286
+	2	"RX: Setaou Commander"	4286
+	3	"RX: Setaou Soldier"	4283
+	4	"RX: Setaou Soldier"	4283
+	5	"RX: Setaou Soldier"	4283
+}
+Group	awaken_skipia_boss_stone_a
+{
+	Vnum	8130
+	Leader	"RX: Metin of the Mount."	8130
+}
+Group	awaken_skipia_boss_stone_b
+{
+	Vnum	8131
+	Leader	"RX: Metin of Vengeance"	8131
+}
+Group	awaken_skipia_boss_stone_c
+{
+	Vnum	8132
+	Leader	"RX: Metin of Solitude"	8132
+}
+Group	awaken_skipia_boss_stone_d
+{
+	Vnum	8133
+	Leader	"RX: Metin of Arrogance"	8133
+}

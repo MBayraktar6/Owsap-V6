@@ -1,0 +1,10 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+local setting = awaken_snow_dungeon . setting ( ) 
+local set_level = 4 
+awaken_snow_dungeon . clear_level ( get_server_timer_arg ( ) ) 
+d . setf ( "level" , set_level ) 
+d . jump_all ( setting . floor_pos [ set_level ] [ 1 ] , setting . floor_pos [ set_level ] [ 2 ] ) 
+d . regen_file ( setting . regen_file_path .. "sd_4.txt" ) 
+d . notice ( c_locale ( 11441 ) ) 
+server_loop_timer ( "awaken_snow_dungeon_check_timer" , setting . floor_check_time , get_server_timer_arg ( ) ) 
+end 

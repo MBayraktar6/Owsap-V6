@@ -1,0 +1,300 @@
+#
+# Blazing Purgatory
+#
+# Àû·æ¼º (Red Dragon Fortress)
+# metin2_map_n_flame_dungeon_01
+#
+
+Group	Àû·æ¼º_6001_È­Á¤
+{
+	Vnum	6001
+	Leader	"È­Á¤"	6001
+	1	"È­Á¤"	6001
+}
+Group	Àû·æ¼º_6002_¿°Á¤
+{
+	Vnum	6002
+	Leader	"¿°Á¤"	6002
+	1	"È­Á¤"	6001
+}
+Group	Àû·æ¼º_6003_¿°Á¤
+{
+	Vnum	6003
+	Leader	"¿°Á¤"	6002
+	1	"¿°Á¤"	6002
+}
+Group	Àû·æ¼º_6004_±Ø¿­Á¤
+{
+	Vnum	6004
+	Leader	"±Ø¿­Á¤"	6003
+	1	"¿°Á¤"	6002
+}
+Group	Àû·æ¼º_6005_±Ø¿­Á¤
+{
+	Vnum	6005
+	Leader	"±Ø¿­Á¤"	6003
+	1	"±Ø¿­Á¤"	6003
+}
+Group	Àû·æ¼º_6006_Ç÷È­Á¤
+{
+	Vnum	6006
+	Leader	"Ç÷È­Á¤"	6004
+	1	"±Ø¿­Á¤"	6003
+	2	"¿°Á¤"	6002
+	3	"¿°Á¤"	6002
+}
+Group	Àû·æ¼º_6007_È­¸¶
+{
+	Vnum	6007
+	Leader	"È­¸¶"	6005
+	1	"Ç÷È­Á¤"	6004
+	2	"Ç÷È­Á¤"	6004
+	3	"¿°Á¤"	6002
+	4	"¿°Á¤"	6002
+}
+Group	Àû·æ¼º_6008_¿°¸¶
+{
+	Vnum	6008
+	Leader	"¿°¸¶"	6006
+	1	"È­¸¶"	6005
+	2	"Ç÷È­Á¤"	6004
+	3	"Ç÷È­Á¤"	6004
+}
+Group	Àû·æ¼º_6009_È­±«
+{
+	Vnum	6009
+	Leader	"È­±«"	6007
+	1	"¿°¸¶"	6006
+	2	"¿°¸¶"	6006
+	3	"È­¸¶"	6005
+	4	"È­¸¶"	6005
+}
+Group	Àû·æ¼º_6010_¿°±«
+{
+	Vnum	6010
+	Leader	"¿°±«"	6008
+	1	"È­±«"	6007
+	2	"¿°¸¶"	6006
+	3	"¿°¸¶"	6006
+}
+Group	Àû·æ¼º_6011_ÃÊ¿­±«
+{
+	Vnum	6011
+	Leader	"ÃÊ¿­±«"	6009
+	1	"¿°±«"	6008
+	2	"¿°±«"	6008
+	3	"È­±«"	6007
+	4	"È­±«"	6007
+}
+Group	Àû·æ¼º_6012_¾ß¸¶Ãµ
+{
+	Vnum	6012
+	Leader	"¾ß¸¶Ãµ"	6091
+	1	"ÃÊ¿­±«"	6009
+	2	"ÃÊ¿­±«"	6009
+	3	"¿°±«"	6008
+	4	"¿°±«"	6008
+	5	"¿°±«"	6008
+	6	"È­±«"	6007
+	7	"È­±«"	6007
+	8	"È­±«"	6007
+	9	"¿°¸¶"	6006
+	10	"¿°¸¶"	6006
+	11	"¿°¸¶"	6006
+}
+
+Group	crack_fire_dungeon_1
+{
+	Vnum	6021
+	Leader	"TR: Ember Flame Ghost"	4220
+	1	"TR: Ember Flame Ghost"	4220
+}
+Group	crack_fire_dungeon_2
+{
+	Vnum	6022
+	Leader	"TR: Ember Flame Tiger"	4221
+	1	"TR: Ember Flame Ghost"	4220
+}
+Group	crack_fire_dungeon_3
+{
+	Vnum	6023
+	Leader	"TR: Ember Flame Tiger"	4221
+	1	"TR: Ember Flame Tiger"	4221
+}
+Group	crack_fire_dungeon_4
+{
+	Vnum	6024
+	Leader	"TR: Ember Flame"	4222
+	1	"TR: Ember Flame Tiger"	4221
+}
+Group	crack_fire_dungeon_5
+{
+	Vnum	6025
+	Leader	"TR: Ember Flame"	4222
+	1	"TR: Ember Flame"	4222
+}
+Group	crack_fire_dungeon_6
+{
+	Vnum	6026
+	Leader	"TR: Ember Flame Warrior"	4223
+	1	"TR: Ember Flame"	4222
+	2	"TR: Ember Flame Tiger"	4221
+	3	"TR: Ember Flame Tiger"	4221
+}
+Group	crack_fire_dungeon_7
+{
+	Vnum	6027
+	Leader	"TR: Ember Flame King"	4224
+	1	"TR: Ember Flame Warrior"	4223
+	2	"TR: Ember Flame Warrior"	4223
+	3	"TR: Ember Flame Tiger"	4221
+	4	"TR: Ember Flame Tiger"	4221
+}
+Group	crack_fire_dungeon_8
+{
+	Vnum	6028
+	Leader	"TR: Ember Flame Troll"	4225
+	1	"TR: Ember Flame King"	4224
+	2	"TR: Ember Flame Warrior"	4223
+	3	"TR: Ember Flame Warrior"	4223
+}
+Group	crack_fire_dungeon_9
+{
+	Vnum	6029
+	Leader	"TR: Ember Flame Beard"	4226
+	1	"TR: Ember Flame Troll"	4225
+	2	"TR: Ember Flame Troll"	4225
+	3	"TR: Ember Flame King"	4224
+	4	"TR: Ember Flame King"	4224
+}
+Group	crack_fire_dungeon_10
+{
+	Vnum	6030
+	Leader	"TR: Ember Flame General"	4227
+	1	"TR: Ember Flame Beard"	4226
+	2	"TR: Ember Flame Troll"	4225
+	3	"TR: Ember Flame Troll"	4225
+}
+Group	crack_fire_dungeon_11
+{
+	Vnum	6031
+	Leader	"TR: Ember Flame Chief."	4228
+	1	"TR: Ember Flame General"	4227
+	2	"TR: Ember Flame General"	4227
+	3	"TR: Ember Flame Beard"	4226
+	4	"TR: Ember Flame Beard"	4226
+}
+Group	crack_fire_dungeon_boss
+{
+	Vnum	6032
+	Leader	"TR: Razador"	4401
+	1	"TR: Ember Flame Chief."	4228
+	2	"TR: Ember Flame Chief."	4228
+	3	"TR: Ember Flame General"	4227
+	4	"TR: Ember Flame General"	4227
+	5	"TR: Ember Flame General"	4227
+	6	"TR: Ember Flame Beard"	4226
+	7	"TR: Ember Flame Beard"	4226
+	8	"TR: Ember Flame Beard"	4226
+	9	"TR: Ember Flame Troll"	4225
+	10	"TR: Ember Flame Troll"	4225
+	11	"TR: Ember Flame Troll"	4225
+}
+
+Group	awaken_fire_dungeon_1
+{
+	Vnum	6101
+	Leader	"RX: Ember Flame Ghost"	4300
+	1	"RX: Ember Flame Ghost"	4300
+}
+Group	awaken_fire_dungeon_2
+{
+	Vnum	6102
+	Leader	"RX: Ember Flame Tiger"	4301
+	1	"RX: Ember Flame Ghost"	4300
+}
+Group	awaken_fire_dungeon_3
+{
+	Vnum	6103
+	Leader	"RX: Ember Flame Tiger"	4301
+	1	"RX: Ember Flame Tiger"	4301
+}
+Group	awaken_fire_dungeon_4
+{
+	Vnum	6104
+	Leader	"RX: Ember Flame"	4302
+	1	"RX: Ember Flame Tiger"	4301
+}
+Group	awaken_fire_dungeon_5
+{
+	Vnum	6105
+	Leader	"RX: Ember Flame"	4302
+	1	"RX: Ember Flame"	4302
+}
+Group	awaken_fire_dungeon_6
+{
+	Vnum	6106
+	Leader	"RX: Ember Flame Warrior"	4303
+	1	"RX: Ember Flame"	4302
+	2	"RX: Ember Flame Tiger"	4301
+	3	"RX: Ember Flame Tiger"	4301
+}
+Group	awaken_fire_dungeon_7
+{
+	Vnum	6107
+	Leader	"RX: Ember Flame King"	4304
+	1	"RX: Ember Flame Warrior"	4303
+	2	"RX: Ember Flame Warrior"	4303
+	3	"RX: Ember Flame Tiger"	4301
+	4	"RX: Ember Flame Tiger"	4301
+}
+Group	awaken_fire_dungeon_8
+{
+	Vnum	6108
+	Leader	"RX: Ember Flame Troll"	4305
+	1	"RX: Ember Flame King"	4304
+	2	"RX: Ember Flame Warrior"	4303
+	3	"RX: Ember Flame Warrior"	4303
+}
+Group	awaken_fire_dungeon_9
+{
+	Vnum	6109
+	Leader	"RX: Ember Flame Beard"	4306
+	1	"RX: Ember Flame Troll"	4305
+	2	"RX: Ember Flame Troll"	4305
+	3	"RX: Ember Flame King"	4304
+	4	"RX: Ember Flame King"	4304
+}
+Group	awaken_fire_dungeon_10
+{
+	Vnum	6110
+	Leader	"RX: Ember Flame General"	4307
+	1	"RX: Ember Flame Beard"	4306
+	2	"RX: Ember Flame Troll"	4305
+	3	"RX: Ember Flame Troll"	4305
+}
+Group	awaken_fire_dungeon_11
+{
+	Vnum	6111
+	Leader	"RX: Ember Flame Chief."	4308
+	1	"RX: Ember Flame General"	4307
+	2	"RX: Ember Flame General"	4307
+	3	"RX: Ember Flame Beard"	4306
+	4	"RX: Ember Flame Beard"	4306
+}
+Group	awaken_fire_dungeon_boss
+{
+	Vnum	6112
+	Leader	"RX: Razador"	4411
+	1	"RX: Ember Flame Chief."	4308
+	2	"RX: Ember Flame Chief."	4308
+	3	"RX: Ember Flame General"	4307
+	4	"RX: Ember Flame General"	4307
+	5	"RX: Ember Flame General"	4307
+	6	"RX: Ember Flame Beard"	4306
+	7	"RX: Ember Flame Beard"	4306
+	8	"RX: Ember Flame Beard"	4306
+	9	"RX: Ember Flame Troll"	4305
+	10	"RX: Ember Flame Troll"	4305
+	11	"RX: Ember Flame Troll"	4305
+}

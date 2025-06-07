@@ -1,0 +1,1 @@
+return game . get_event_flag ( "mini_game_okey_reward" ) > get_time ( )

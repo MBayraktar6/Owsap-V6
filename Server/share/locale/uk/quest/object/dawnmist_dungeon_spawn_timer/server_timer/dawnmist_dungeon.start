@@ -1,0 +1,3 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+d . spawn_mob ( 6192 , 69 , 941 ) 
+end 

@@ -1,0 +1,835 @@
+define ENTRY_MAN 20395
+define ENTRY_MAP_INDEX 61
+define group OUTSIDE_ENTRY_POS [ 4322, 1655 ] -- map_n_snowm_01
+define DUNGEON_MAP_INDEX 352
+define DUNGEON_MAN 20397
+define DUNGEON_MAN_DIR 0
+define group DUNGEON_MAN_POS [ 172, 261 ]
+define group DUNGEON_MAN_FINAL_POS [ 849, 641 ]
+define ENTER_LIMIT_TIME 14400 -- 4h
+define REJOIN_LIMIT_TIME 300 -- 5m
+define MOB_REGEN_FILE_PATH "data/dungeon/snow_dungeon/"
+define NEED_LEVEL 100
+define NEED_ASSASSIN 1
+define NEED_SHAMAN 1
+define CHECK_MOUNT 1
+define FLOOR_JUMP_DELAY 5
+define FLOOR_CHECK_DELAY 5
+define LEVEL2_KEY 30331
+define LEVEL2_KEY_DROP_PCT 3 -- 3%
+define LEVEL2_KEY_USE_PCT 30 -- 30%
+define LEVEL4_BOSS 6151
+define LEVEL5_KEY 30332
+define LEVEL5_KEY_DROP_PCT 3 -- 3%
+define LEVEL5_CUBE 20398
+define LEVEL5_GEN_LIMIT 100
+define LEVEL6_STONE 8058
+define LEVEL7_BOSS 6151
+define LEVEL8_KEY 30333
+define LEVEL8_KEY_DROP_PCT 3 -- 3%
+define LEVEL9_STONE 20399
+define group LEVEL9_STONE_POS [ 849, 660 ]
+define FINAL_BOSS 6191
+define group FINAL_BOSS_POS [ 927, 333 ]
+
+quest snow_dungeon begin
+	state start begin
+		function setting()
+			return {
+				["entry_man"] = ENTRY_MAN,
+				["entry_map_index"] = ENTRY_MAP_INDEX,
+				["outside_entry_pos"] = OUTSIDE_ENTRY_POS,
+				["dungeon_map_index"] = DUNGEON_MAP_INDEX,
+				["dungeon_man"] = DUNGEON_MAN,
+				["dungeon_man_dir"] = DUNGEON_MAN_DIR,
+				["dungeon_man_pos"] = DUNGEON_MAN_POS,
+				["dungeon_man_final_pos"] = DUNGEON_MAN_FINAL_POS,
+				["enter_limit_time"] = ENTER_LIMIT_TIME,
+				["rejoin_limit_time"] = REJOIN_LIMIT_TIME,
+				["mob_regen_file_path"] = MOB_REGEN_FILE_PATH,
+				["need_level"] = NEED_LEVEL,
+				["need_assassin"] = NEED_ASSASSIN,
+				["need_shaman"] = NEED_SHAMAN,
+				["check_mount"] = CHECK_MOUNT,
+				["floor_jump_delay"] = FLOOR_JUMP_DELAY,
+				["floor_check_delay"] = FLOOR_CHECK_DELAY,
+				["floor_pos"] = {
+					{ 5291, 1814 }, -- 171, 278
+					{ 5540, 1797 }, -- 420, 261
+					{ 5882, 1800 }, -- 762, 264
+					{ 5293, 2071 }, -- 173, 535
+					{ 5540, 2074 }, -- 420, 538
+					{ 5866, 2076 }, -- 746, 540
+					{ 5423, 2244 }, -- 303, 708
+					{ 5689, 2237 }, -- 569, 701
+					{ 5969, 2229 }, -- 849, 693
+					{ 6047, 1924 } -- 927, 388
+				},
+				["level2_key"] = LEVEL2_KEY,
+				["level4_boss"] = LEVEL4_BOSS,
+				["level4_boss_pos"] = {
+					{ 160, 490 },
+					{ 215, 440 },
+					{ 140, 425 }
+				},
+				["level5_key"] = LEVEL5_KEY,
+				["level5_cube"] = LEVEL5_CUBE,
+				["level5_gen_limit"] = LEVEL5_GEN_LIMIT,
+				["level5_cube_pos"] = {
+					{ 449, 488 },
+					{ 455, 445 },
+					{ 419, 422 },
+					{ 382, 444 },
+					{ 389, 488 }
+				},
+				["level6_stone"] = LEVEL6_STONE,
+				["level6_stone_pos"] = { 747, 494 },
+				["level7_boss"] = LEVEL7_BOSS,
+				["level7_boss_pos"] = {
+					{ 302, 678 },
+					{ 281, 657 },
+					{ 303, 635 },
+					{ 324, 656 }
+				},
+				["level8_key"] = LEVEL8_KEY,
+				["level9_stone"] = LEVEL9_STONE,
+				["level9_stone_pos"] = LEVEL9_STONE_POS,
+				["final_boss"] = FINAL_BOSS,
+				["final_boss_pos"] = FINAL_BOSS_POS,
+			}
+		end
+
+		function inside(idx)
+			return idx >= DUNGEON_MAP_INDEX * 10000 and idx < (DUNGEON_MAP_INDEX + 1) * 10000
+		end
+
+		function make()
+			local setting = snow_dungeon.setting()
+
+			d.new_jump_party(DUNGEON_MAP_INDEX, setting.floor_pos[1][1], setting.floor_pos[1][2])
+			d.spawn_mob_ac_dir(DUNGEON_MAN, DUNGEON_MAN_POS[1], DUNGEON_MAN_POS[2], DUNGEON_MAN_DIR)
+
+			d.setf("entered", 0)
+			d.setf("started", 0)
+			d.setf("level", 0)
+		end
+
+		function clear_level()
+			d.clear_regen()
+			d.purge_area(520000, 155000, 612000, 228600)
+		end
+
+		function clear_timer(idx)
+			clear_server_timer("snow_dungeon_floor2_timer", idx)
+			clear_server_timer("snow_dungeon_floor3_timer", idx)
+			clear_server_timer("snow_dungeon_floor4_timer", idx)
+			clear_server_timer("snow_dungeon_floor5_timer", idx)
+			clear_server_timer("snow_dungeon_floor6_timer", idx)
+			clear_server_timer("snow_dungeon_floor7_timer", idx)
+			clear_server_timer("snow_dungeon_floor8_timer", idx)
+			clear_server_timer("snow_dungeon_floor9_timer", idx)
+
+			clear_server_timer("snow_dungeon_45m_left_timer", idx)
+			clear_server_timer("snow_dungeon_30m_left_timer", idx)
+			clear_server_timer("snow_dungeon_15m_left_timer", idx)
+			clear_server_timer("snow_dungeon_5m_left_timer", idx)
+			clear_server_timer("snow_dungeon_1m_left_timer", idx)
+			clear_server_timer("snow_dungeon_0m_left_timer", idx)
+			clear_server_timer("snow_dungeon_end_timer", idx)
+
+			clear_server_timer("snow_dungeon_check_timer", idx)
+			clear_server_timer("snow_dungeon_leader_out_timer", idx)
+		end
+
+		function go_boss()
+			if not party.is_leader() then
+				say(c_locale(8209))
+				return
+			end
+
+			say(c_locale(8210))
+			if select(c_locale(8211), c_locale(8212)) == 1 then
+				npc.purge()
+
+				d.notice(c_locale(8172))
+				server_timer("snow_dungeon_floor10_timer", FLOOR_JUMP_DELAY, d.get_map_index())
+			end
+		end
+
+		when login begin
+			local idx = pc.get_map_index()
+			if idx == DUNGEON_MAP_INDEX then
+				pc.warp(OUTSIDE_ENTRY_POS[1] * 100, OUTSIDE_ENTRY_POS[2] * 100, ENTRY_MAP_INDEX)
+			elseif snow_dungeon.inside(idx) then
+				pc.set_warp_location(ENTRY_MAP_INDEX, OUTSIDE_ENTRY_POS[1], OUTSIDE_ENTRY_POS[2])
+				if d.getf("entered") == 0 then
+					if get_global_time() - pc.getf("snow_dungeon", "exit_time") < ENTER_LIMIT_TIME then
+						d.notice(c_locale(1321))
+						say(c_locale(8175))
+						timer("snow_dungeon_warp_timer", FLOOR_JUMP_DELAY)
+					elseif pc.get_level() < NEED_LEVEL then
+						d.notice(c_locale(8184))
+						say(c_locale(8184))
+						timer("snow_dungeon_warp_timer", FLOOR_JUMP_DELAY)
+					end
+				end
+			end
+		end
+
+		when snow_dungeon_warp_timer.timer begin
+			pc.warp(OUTSIDE_ENTRY_POS[1] * 100, OUTSIDE_ENTRY_POS[2] * 100, ENTRY_MAP_INDEX)
+		end
+
+		when logout begin
+			if snow_dungeon.inside(pc.get_map_index()) then
+				if d.getf("entered") == 1 then
+					pc.setf("snow_dungeon", "exit_time", get_global_time())
+				end
+
+				if party.is_leader() then
+					server_timer("snow_dungeon_leader_out_timer", REJOIN_LIMIT_TIME, d.get_map_index())
+				end
+			end
+		end
+
+		when ENTRY_MAN.chat."TEST : Reset enter time limit" with is_test_server() begin
+			pc.setf("snow_dungeon", "exit_time", get_global_time() - ENTER_LIMIT_TIME)
+			say("Done")
+		end
+
+		when ENTRY_MAN.chat.c_locale(8173) with pc.get_map_index() == ENTRY_MAP_INDEX begin
+			if not party.is_party() then
+				say(c_locale(8184))
+				return
+			end
+
+			local setting = snow_dungeon.setting()
+			local dungeon = d.find(party.getf("dungeon_index"))
+			local party_check = (d.getf_from_map_index("party_leader_pid", party.getf("dungeon_index")) == party.get_leader_pid())
+
+			if dungeon and party_check then
+				if get_global_time() - pc.getf("snow_dungeon", "exit_time") < REJOIN_LIMIT_TIME then
+					local level = d.getf_from_map_index("level", party.getf("dungeon_index"))
+					pc.warp(setting.floor_pos[level][1] * 100, setting.floor_pos[level][2] * 100, party.getf("dungeon_index"))
+				else
+					say_title(c_mob_name(ENTRY_MAN))
+					say(c_locale(8176))
+				end
+			else
+				if not party.is_leader() then
+					say(c_locale(8183))
+					return
+				end
+
+				local cannot_pass_level = {}
+				local can_pass_level = true
+				local can_pass_assassin = false
+				local can_pass_shaman = false
+				local can_pass_riding = true
+
+				local pids = { party.get_member_pids() }
+				for i, pid in next, pids, nil do
+					q.begin_other_pc_block(pid)
+
+					if pc.get_level() < setting.need_level then
+						table.insert(cannot_pass_level, pc.get_name())
+						can_pass_level = false
+					end
+
+					if setting.need_assassin == 1 then
+						if pc.get_job() == ASSASSIN then
+							can_pass_assassin = true
+						end
+					end
+
+					if setting.need_shaman == 1 then
+						if pc.get_job() == SHAMAN then
+							can_pass_shaman = true
+						end
+					end
+
+					if setting.check_mount == 1 then
+						if pc.is_mount() then
+							can_pass_riding = false
+						end
+					end
+
+					q.end_other_pc_block()
+				end
+
+				if not can_pass_level then
+					say_title(c_mob_name(ENTRY_MAN))
+					say(c_locale(8180))
+					for i, name in next, cannot_pass_level, nil do
+						say(color(1, 1, 0), " " .. name)
+					end
+					return
+				end
+
+				if setting.need_assassin == 1 then
+					if not can_pass_assassin then
+						say_title(c_mob_name(ENTRY_MAN))
+						say(c_locale(8177))
+						return
+					end
+				end
+
+				if setting.need_shaman == 1 then
+					if not can_pass_shaman then
+						say_title(c_mob_name(ENTRY_MAN))
+						say(c_locale(8177))
+						return
+					end
+				end
+
+				if setting.check_mount == 1 then
+					if not can_pass_riding then
+						say_title(c_mob_name(ENTRY_MAN))
+						say(c_locale(8174))
+						return
+					end
+				end
+
+				say_title(c_mob_name(ENTRY_MAN))
+				say(c_locale(8177))
+				say(c_locale(8178))
+				if select(c_locale(8179), c_locale(8181)) == 1 then
+					if party.is_map_member_flag_lt("exit_time", get_global_time() - ENTER_LIMIT_TIME) then
+						snow_dungeon.make()
+					else
+						say(c_locale(8182))
+					end
+				end
+			end
+		end
+
+		when DUNGEON_MAN.chat."< GM > Information" with snow_dungeon.inside(pc.get_map_index()) and pc.get_gm_level() == 5 begin
+			say_title("General Information")
+			if snow_dungeon.inside(d.get_map_index()) then
+				say_reward("In dungeon")
+			end
+			say(string.format("Current level : %d", d.getf("level")))
+			say(string.format("Monster count : %d", d.count_monster()))
+			say(string.format("Dungeon map_ndex : %d", d.get_map_index()))
+			say(string.format("Player map_index : %d", pc.get_map_index()))
+			say(string.format("Access limit : %d", pc.getf("snow_dungeon", "exit_time")))
+			say(string.format("Global time : %d", get_global_time()))
+			if d.is_unique_dead("boss_4") then
+				say("Level 7 real boss (Szel) is dead")
+			else
+				say("Level 7 real boss (Szel) is not dead")
+			end
+			if game.get_event_flag("ignore_hanma_conditions") > 0 then
+				say("Hanma conditions are off.")
+			else
+				say("Hanma conditions are on.")
+			end
+			wait()
+			say_title("Hanma Conditions")
+			say_yellow(string.format("Level 4 - Only with Buff (HOSIN) can deal damage on %s", c_mob_name(LEVEL4_BOSS)))
+			say_yellow(string.format("Level 6 - Only Shaman can deal damage on %s", c_mob_name(LEVEL6_STONE)))
+			say_yellow(string.format("Level 7 - Only with Buff (GICHEON) can deal damage on %s", c_mob_name(LEVEL4_BOSS)))
+			say_yellow(string.format("Level 9 - Only Ninja and Shaman can deal damage on %s", c_mob_name(LEVEL9_STONE)))
+			local s = select("Enable Conditions", "Disable Conditions", "Cancel")
+			if s == 1 then
+				game.set_event_flag("ignore_hanma_conditions", 0)
+			elseif s == 2 then
+				game.set_event_flag("ignore_hanma_conditions", 1)
+			else return end
+		end
+
+		when DUNGEON_MAN.chat.c_locale(8167) with snow_dungeon.inside(pc.get_map_index()) and d.getf("level") == 0 begin
+			if not party.is_leader() then
+				say(c_locale(8209))
+				return
+			end
+
+			if d.getf("started") == 0 then
+				say(c_locale(8168))
+
+				d.setf("entered", 1)
+				d.setf("started", 1)
+				d.setf("level", 1)
+
+				d.setf("party_leader_pid", party.get_leader_pid())
+				party.setf("dungeon_index", d.get_map_index())
+
+				server_timer("snow_dungeon_45m_left_timer", 15 * 60, d.get_map_index())
+				d.notice(c_locale(8169))
+
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_1.txt")
+				server_loop_timer("snow_dungeon_check_timer", FLOOR_CHECK_DELAY, d.get_map_index())
+			end
+		end
+
+		when DUNGEON_MAN.chat.c_locale(8208) with snow_dungeon.inside(pc.get_map_index()) and d.getf("level") == 9 begin
+			snow_dungeon.go_boss()
+		end
+
+		when LEVEL2_KEY.use with snow_dungeon.inside(pc.get_map_index()) and d.getf("level") == 2 begin
+			if d.getf("level2_use_key") > 0 then
+				test_chat("TEST : Key already used!")
+				return
+			end
+
+			if NEED_SHAMAN == 1 then
+				if pc.get_job() != SHAMAN then
+					say(c_locale(8190))
+					return
+				end
+			end
+
+			item.remove()
+
+			if number(1, 100) <= LEVEL2_KEY_USE_PCT or is_test_server() then
+				snow_dungeon.clear_timer()
+
+				d.setf("level2_use_key", 1)
+				d.notice(c_locale(8191))
+
+				server_timer("snow_dungeon_floor3_timer", FLOOR_JUMP_DELAY, get_server_timer_arg())
+			else
+				say(c_locale(8192))
+			end
+		end
+
+		when LEVEL8_KEY.use with snow_dungeon.inside(pc.get_map_index()) and d.getf("level") == 8 begin
+			if d.getf("level8_use_key") > 0 then
+				test_chat("TEST : Key already used!")
+				return
+			end
+
+			if NEED_ASSASSIN == 1 or NEED_SHAMAN == 1 then
+				if pc.get_job() != ASSASSIN and pc.get_job() != SHAMAN then
+					return
+				end
+			end
+
+			item.remove()
+
+			snow_dungeon.clear_timer()
+
+			d.setf("level8_use_key", 1)
+			d.notice(c_locale(8171))
+
+			server_timer("snow_dungeon_floor9_timer", 5, get_server_timer_arg())
+		end
+
+		when LEVEL5_CUBE.take with snow_dungeon.inside(d.get_map_index()) and item.get_vnum() == LEVEL5_KEY and d.getf("level") == 5 begin
+			item.remove()
+
+			if npc.get_vid() == d.get_unique_vid("cube_1") then
+				npc.purge()
+				say(c_locale(8196))
+				d.setf("cubekill", 2)
+				if d.count_monster() < LEVEL5_GEN_LIMIT then
+					d.regen_file(MOB_REGEN_FILE_PATH .. "sd_5.txt")
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("cube_2") then
+				if d.getf("cubekill") == 2 then
+					npc.purge()
+					say(c_locale(8197))
+					d.setf("cubekill", 3)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(MOB_REGEN_FILE_PATH .. "sd_5.txt")
+					end
+				else
+					say(c_locale(8198))
+					if is_test_server() then
+						say("2nd")
+					end
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("cube_3") then
+				if d.getf("cubekill") == 3 then
+					npc.purge()
+					say(c_locale(8199))
+					d.setf("cubekill", 4)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(MOB_REGEN_FILE_PATH .. "sd_5.txt")
+					end
+				else
+					say(c_locale(8198))
+					if is_test_server() then
+						say("3rd")
+					end
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("cube_4") then
+				if d.getf("cubekill") == 4 then
+					npc.purge()
+					say(c_locale(8200))
+					d.setf("cubekill", 5)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(MOB_REGEN_FILE_PATH .. "sd_5.txt")
+					end
+				else
+					say(c_locale(8198))
+					if is_test_server() then
+						say("4th")
+					end
+				end
+
+			else
+
+				if d.getf("cubekill") == 5 then
+					npc.purge()
+
+					snow_dungeon.clear_timer()
+					d.notice(c_locale(8170))
+					server_timer("snow_dungeon_floor6_timer", FLOOR_JUMP_DELAY, get_server_timer_arg())
+				else
+					say(c_locale(8198))
+					if is_test_server() then
+						say("5th")
+					end
+				end
+			end
+		end
+
+		when kill with snow_dungeon.inside(pc.get_map_index()) begin
+			local level = d.getf("level")
+
+			if level == 2 then
+				if number(1, 100) <= LEVEL2_KEY_DROP_PCT or is_test_server() then
+					game.drop_item(LEVEL2_KEY, 1)
+				end
+
+			elseif level == 5 then
+				if number(1, 100) <= LEVEL5_KEY_DROP_PCT or is_test_server() then
+					game.drop_item(LEVEL5_KEY, 1)
+				end
+
+			elseif level == 8 then
+				if NEED_ASSASSIN == 1 then
+					if pc.get_job() != ASSASSIN then
+						return
+					end
+				end
+
+				if number(1, 100) <= LEVEL8_KEY_DROP_PCT or is_test_server() then
+					game.drop_item(LEVEL8_KEY, 1)
+				end
+			end
+		end
+
+		when LEVEL6_STONE.kill with snow_dungeon.inside(pc.get_map_index()) and d.getf("level") == 6 begin
+			snow_dungeon.clear_level()
+
+			d.notice(c_locale(8202))
+			server_timer("snow_dungeon_floor7_timer", FLOOR_JUMP_DELAY, get_server_timer_arg())
+		end
+
+		when LEVEL9_STONE.kill with snow_dungeon.inside(pc.get_map_index()) and d.getf("level") == 9 begin
+			snow_dungeon.clear_level()
+
+			d.spawn_mob_ac_dir(DUNGEON_MAN, DUNGEON_MAN_FINAL_POS[1], DUNGEON_MAN_FINAL_POS[2], 1)
+		end
+
+		when FINAL_BOSS.kill with snow_dungeon.inside(pc.get_map_index()) and d.getf("level") == 10 begin
+			snow_dungeon.clear_level()
+
+			d.setqf2_all_near("snow_dungeon", "hanma_boss", 1, 800)
+			d.notice(c_locale(8214))
+			d.notice(c_locale(8215))
+
+			server_timer("snow_dungeon_end_timer", 60, d.get_map_index())
+		end
+
+		when snow_dungeon_check_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				local setting = snow_dungeon.setting()
+				local level = d.getf("level")
+
+				if level == 1 and d.count_monster() <= 0 then
+					d.notice(c_locale(8185))
+					server_timer("snow_dungeon_floor2_timer", FLOOR_JUMP_DELAY, d.get_map_index())
+
+				elseif level == 3 and d.count_monster() <= 0 then
+					d.notice(c_locale(8186))
+					server_timer("snow_dungeon_floor4_timer", FLOOR_JUMP_DELAY, d.get_map_index())
+
+				elseif level == 4 and d.count_monster() <= 0 then
+					if d.getf("level4_boss_spawn") == 1 then
+						d.notice(c_locale(8187))
+						server_timer("snow_dungeon_floor5_timer", FLOOR_JUMP_DELAY, d.get_map_index())
+					else
+						d.setf("level4_boss_spawn", 1)
+						d.regen_file(MOB_REGEN_FILE_PATH .. "sd_4.txt")
+						local r = number(1, table.getn(setting.level4_boss_pos))
+						d.spawn_mob(LEVEL4_BOSS, setting.level4_boss_pos[r][1], setting.level4_boss_pos[r][2])
+					end
+
+				elseif level == 6 and d.count_monster() <= 0 then
+					d.notice(c_locale(8188))
+					d.spawn_mob(LEVEL6_STONE, setting.level6_stone_pos[1], setting.level6_stone_pos[2])
+
+				elseif level == 7 then
+					for i = 1, 3 do
+						if not d.is_unique_dead("boss_" .. i) then
+							if d.unique_get_hp_perc("boss_" .. i) < 50 then
+								d.purge_unique("boss_" .. i)
+								d.notice(c_locale(8204))
+							end
+						end
+					end
+
+					if d.is_unique_dead("boss_4") then
+						snow_dungeon.clear_level()
+
+						d.notice(c_locale(8205))
+						server_timer("snow_dungeon_floor8_timer", FLOOR_JUMP_DELAY, d.get_map_index())
+					end
+				end
+			end
+		end
+
+		when snow_dungeon_floor2_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 2
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_2.txt")
+
+				d.notice(c_locale(8189))
+			end
+		end
+
+		when snow_dungeon_floor3_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 3
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_3.txt")
+
+				d.notice(c_locale(8169))
+			end
+		end
+
+		when snow_dungeon_floor4_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 4
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_4.txt")
+
+				d.notice(c_locale(8193))
+			end
+		end
+
+		when snow_dungeon_floor5_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+				
+				local setting = snow_dungeon.setting()
+				local level = 5
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_5.txt")
+
+				local vis = { 0, 0, 0, 0, 0 }
+				for i = 1, 5 do
+					vis[i] = 0
+				end
+				for i = 1, 5 do
+					local ran = number(1, 5)
+					local st = 0
+					for j = 1, 50 do
+						st = st + 1
+						if st > 5 then
+							st = 1
+						end
+						if vis[st] == 0 then
+							ran = ran - 1
+							if ran == 0 then
+								vis[st] = 1
+								d.set_unique("cube_" .. st, d.spawn_mob(LEVEL5_CUBE, setting.level5_cube_pos[i][1], setting.level5_cube_pos[i][2]))
+								break
+							end
+						end
+					end
+				end
+
+				d.notice(c_locale(8194))
+				d.notice(c_locale(8195))
+			end
+		end
+
+		when snow_dungeon_floor6_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 6
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_6.txt")
+
+				d.notice(c_locale(8201))
+			end
+		end
+
+		when snow_dungeon_floor7_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 7
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_7.txt")
+
+				local vis = { 0, 0, 0, 0 }
+				for i = 1, 3 do
+					vis[i] = 0
+				end
+				for i = 1, 4 do
+					local ran = number(1, 4)
+					local st = 0
+					for j = 1, 50 do
+						st = st + 1
+						if st > 4 then
+							st = 1
+						end
+						if vis[st] == 0 then
+							ran = ran - 1
+							if ran == 0 then
+								vis[st] = 1
+								d.set_unique("boss_" .. st, d.spawn_mob(LEVEL7_BOSS, setting.level7_boss_pos[i][1], setting.level7_boss_pos[i][2]))
+								break
+							end
+						end
+					end
+				end
+
+				d.notice(c_locale(8203))
+			end
+		end
+
+		when snow_dungeon_floor8_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 8
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_8.txt")
+
+				d.notice(c_locale(8206))
+			end
+		end
+
+		when snow_dungeon_floor9_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 9
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_9.txt")
+				d.spawn_mob(LEVEL9_STONE, setting.level9_stone_pos[1], setting.level9_stone_pos[2])
+
+				d.notice(c_locale(8207))
+			end
+		end
+
+		when snow_dungeon_floor10_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_level()
+
+				local setting = snow_dungeon.setting()
+				local level = 10
+
+				d.setf("level", level)
+				d.jump_all(setting.floor_pos[level][1], setting.floor_pos[level][2])
+				d.regen_file(MOB_REGEN_FILE_PATH .. "sd_10.txt")
+				d.spawn_mob(FINAL_BOSS, FINAL_BOSS_POS[1], FINAL_BOSS_POS[2])
+
+				d.notice(c_locale(8213))
+			end
+		end
+
+		when snow_dungeon_45m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(8216, 45))
+				d.notice(c_locale(8217))
+				server_timer("snow_dungeon_30m_left_timer", 15 * 60, get_server_timer_arg())
+			end
+		end
+
+		when snow_dungeon_30m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(8216, 30))
+				d.notice(c_locale(8217))
+				server_timer("snow_dungeon_15m_left_timer", 15 * 60, get_server_timer_arg())
+			end
+		end
+
+		when snow_dungeon_15m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(8216, 15))
+				d.notice(c_locale(8217))
+				server_timer("snow_dungeon_5m_left_timer", 10 * 60, get_server_timer_arg())
+			end
+		end
+
+		when snow_dungeon_5m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(8216, 5))
+				d.notice(c_locale(8217))
+				server_timer("snow_dungeon_1m_left_timer", 4 * 60, get_server_timer_arg())
+			end
+		end
+
+		when snow_dungeon_1m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(8216, 1))
+				d.notice(c_locale(8217))
+				server_timer("snow_dungeon_0m_left_timer", 60, get_server_timer_arg())
+			end
+		end
+
+		when snow_dungeon_0m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(8218))
+				d.notice(c_locale(8219))
+				server_timer("snow_dungeon_end_timer", 10, d.get_map_index())
+			end
+		end
+
+		when snow_dungeon_end_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				snow_dungeon.clear_timer(d.get_map_index())
+				d.setf("party_leader_pid", 0)
+				d.set_warp_location(ENTRY_MAP_INDEX, OUTSIDE_ENTRY_POS[1], OUTSIDE_ENTRY_POS[2])
+				d.exit_all()
+			end
+		end
+
+		when snow_dungeon_leader_out_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				server_timer("snow_dungeon_end_timer", 10, d.get_map_index())
+			end
+		end
+	end
+end

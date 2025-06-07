@@ -1,0 +1,91 @@
+quest unknown_stone begin
+	state start begin
+	end
+
+	state run begin
+		function update_counter()
+			local count = 0
+			local remain_count = 3 - pc.getqf("unknown_stone_count")
+
+			if remain_count < 0 then
+				remain_count = 0
+			end
+
+			count = count + remain_count
+			q.set_counter_value(count)
+			if count == 0 then
+				notice(c_locale(6368))
+				set_state("goto_colony_guard")
+			end
+		end
+
+		when enter begin
+			pc.setqf("unknown_stone_count", 0)
+		end
+
+		when letter begin
+			send_letter(c_locale(6363))
+			q.set_counter_name(c_locale(6363))
+			unknown_stone.update_counter()
+		end
+
+		when button or info begin
+			say_title(c_locale(6363))
+			say(c_locale(6367, pc.getqf("unknown_stone_count")))
+		end
+
+		when kill with npc.is_pc() == false begin
+			local count = pc.getqf("unknown_stone_count")
+			if number(1, 4) == 1 then
+				pc.setqf("unknown_stone_count", count + 1)
+				pc.give_item2(31093)
+				unknown_stone.update_counter()
+			end
+		end
+
+		when 20401.chat.c_locale(6363) begin
+			say_title(c_mob_name(20401))
+			say(c_locale(6365))
+		end
+
+		when leave begin
+			pc.setqf("unknown_stone_count", 0)
+			q.done()
+		end
+	end
+
+	state goto_colony_guard begin
+		when letter begin
+			send_letter(c_locale(6409))
+			local v = find_npc_by_vnum(20401)
+			if 0 ~= v then
+				target.vid("__TARGET__", v, c_locale(6409))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(6409))
+			say(c_locale(6368))
+		end
+
+		when __TARGET__.target.click or 20401.chat.c_locale(6363) begin
+			target.delete("__TARGET__")
+			clear_letter()
+
+			pc.give_exp2(300)
+			pc.give_item2(27001, 10)
+			pc.remove_item(31093, pc.count_item(31093))
+
+			say_title(c_mob_name(20401))
+			say(c_locale(6366))
+			say_reward(c_locale(5043, c_item_name(27001), 10))
+			say_reward(c_locale(6882, 300))
+
+			set_state("__COMPLETE__")
+			set_quest_state("source_of_the_devil", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

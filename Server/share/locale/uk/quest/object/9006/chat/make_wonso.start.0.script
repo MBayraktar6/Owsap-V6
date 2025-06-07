@@ -1,0 +1,5 @@
+say_title ( c_locale ( 1419 ) ) 
+say ( c_locale ( 2684 ) ) 
+pc . removeitem ( 50016 , 1 ) 
+pc . removeitem ( 50019 , 1 ) 
+pc . give_item2 ( 50020 , 1 ) 

@@ -1,0 +1,122 @@
+quest main_quest_lv3 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 3 begin
+			set_state(gototeacher)
+		end
+
+		when 20354.chat.c_locale(5067) begin
+			say_title(c_locale(4940))
+			say(c_locale(5078))
+		end
+	end
+
+	state gototeacher begin
+		when letter begin
+			send_letter(c_locale(5080))
+			local v = find_npc_by_vnum(20354)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5045))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5080))
+			say(c_locale(5081))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4940))
+			say(c_locale(5082))
+			wait()
+
+			say_title(c_locale(4940))
+			say(c_locale(5083))
+			wait()
+
+			set_state(gotogood)
+		end
+	end
+
+	state gotogood begin
+		when letter begin
+			send_letter(c_locale(5085))
+			local v = find_npc_by_vnum(9003)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5084))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5085))
+			say_reward(c_locale(5086))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(1282))
+			say(c_locale(5068))
+			wait()
+
+			say_title(c_locale(1282))
+			say(c_locale(5069))
+
+			say_item(c_locale(5070), 69000, "")
+
+			set_state(gotodefend)
+		end
+	end
+
+	state gotodefend begin
+		when letter begin
+			send_letter(c_locale(5072))
+			local v = find_npc_by_vnum(9002)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(5071))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5072))
+			say(c_locale(5073))
+			say_item(c_locale(5070), 69000, "")
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(5074))
+			say(c_locale(5075))
+			say_item(c_locale(5070), 69000, "")
+			say(c_locale(5076))
+			wait()
+
+			say_title(c_locale(5074))
+			say(c_locale(5077))
+			wait()
+
+			say_title(c_locale(205))
+			say_reward(c_locale(5079))
+
+			pc.give_exp2(850)
+			pc.change_money(5000)
+			pc.give_item2(27004, 20)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv6", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

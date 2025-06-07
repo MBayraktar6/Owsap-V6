@@ -1,0 +1,9 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+snow_dungeon . clear_level ( ) 
+local setting = snow_dungeon . setting ( ) 
+local level = 4 
+d . setf ( "level" , level ) 
+d . jump_all ( setting . floor_pos [ level ] [ 1 ] , setting . floor_pos [ level ] [ 2 ] ) 
+d . regen_file ( "data/dungeon/snow_dungeon/" .. "sd_4.txt" ) 
+d . notice ( c_locale ( 8193 ) ) 
+end 

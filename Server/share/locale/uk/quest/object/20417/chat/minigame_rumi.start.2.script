@@ -1,0 +1,62 @@
+local sel_name_table = { 
+c_locale ( 6605 ) , 
+c_locale ( 6606 ) , 
+c_locale ( 6607 ) 
+} 
+table . insert ( sel_name_table , c_locale ( 6609 ) ) 
+local sel = select_table ( sel_name_table ) 
+if sel == table . getn ( sel_name_table ) then 
+return 
+end 
+if sel == 1 then 
+say_title ( sel_name_table [ sel ] ) 
+say ( c_locale ( 6608 ) ) 
+say ( "" ) 
+if game . get_event_flag ( "mini_game_okey_normal" ) ~= 0 then 
+say_reward ( c_locale ( 6610 , c_item_name ( 50275 ) , 10 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6611 , c_item_name ( 50275 ) , 5 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6612 , c_item_name ( 50275 ) , 3 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6613 , c_item_name ( 50275 ) , 1 ) ) 
+say ( "" ) 
+else 
+say_reward ( c_locale ( 6610 , c_item_name ( 50267 ) , 10 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6611 , c_item_name ( 50267 ) , 5 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6612 , c_item_name ( 50267 ) , 3 ) ) 
+say ( "" ) 
+say_reward ( c_locale ( 6613 , c_item_name ( 50267 ) , 1 ) ) 
+say ( "" ) 
+end 
+elseif sel == 2 then 
+say_title ( sel_name_table [ sel ] ) 
+say ( "" ) 
+local score_table = game . get_minigame_rumi_score ( true ) 
+for i = 1 , table . getn ( score_table ) begin 
+if ( i >= 7 ) then 
+say ( c_locale ( 6614 + i , score_table [ i ] [ 1 ] , score_table [ i ] [ 2 ] ) ) 
+else 
+say ( c_locale ( 6614 + ( i - 1 ) , score_table [ i ] [ 1 ] , score_table [ i ] [ 2 ] ) ) 
+end 
+end 
+say ( "" ) 
+say_reward ( c_locale ( 6625 , game . get_minigame_rumi_my_score ( true ) ) ) 
+say ( "" ) 
+elseif sel == 3 then 
+say_title ( sel_name_table [ sel ] ) 
+say ( "" ) 
+local score_table = game . get_minigame_rumi_score ( false ) 
+for i = 1 , table . getn ( score_table ) begin 
+if ( i >= 7 ) then 
+say ( c_locale ( 6614 + i , score_table [ i ] [ 1 ] , score_table [ i ] [ 2 ] ) ) 
+else 
+say ( c_locale ( 6614 + ( i - 1 ) , score_table [ i ] [ 1 ] , score_table [ i ] [ 2 ] ) ) 
+end 
+end 
+say ( "" ) 
+say_reward ( c_locale ( 6625 , game . get_minigame_rumi_my_score ( false ) ) ) 
+say ( "" ) 
+end 

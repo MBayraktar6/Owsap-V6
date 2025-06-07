@@ -1,0 +1,6 @@
+local collect_count = pc . getqf ( "collect_count_1" ) 
+if number ( 1 , 10 ) == 1 or is_test_server ( ) then 
+pc . setqf ( "collect_count_1" , collect_count + 1 ) 
+pc . give_item2 ( 31097 , 1 ) 
+dawnmist_dungeon_access . collect_count_1 ( ) 
+end 

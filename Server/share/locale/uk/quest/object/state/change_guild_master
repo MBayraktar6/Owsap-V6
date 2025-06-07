@@ -1,0 +1,23 @@
+change_guild_master={["start"]=0,change_master= function (name,level_limit,time_resign_limit,time_be_other_leader,time_be_other_member,iscacheitem)local ret = guild . change_master_with_limit ( name , level_limit , time_resign_limit , time_be_other_leader , time_be_other_member , iscacheitem ) 
+local result = false 
+if ret == 0 then 
+say ( c_locale ( 158 ) ) 
+elseif ret == 1 then 
+say ( c_locale ( 159 ) ) 
+elseif ret == 2 then 
+say ( c_locale ( 160 ) ) 
+elseif ret == 3 then 
+say ( c_locale ( 161 ) ) 
+result = true 
+pc . remove_item ( 71099 ) 
+elseif ret == 4 then 
+say ( c_locale ( 162 ) ) 
+elseif ret == 5 then 
+say ( c_locale ( 164 ) ) 
+elseif ret == 6 then 
+say ( c_locale ( 155 ) ) 
+elseif ret == 7 then 
+say ( c_locale ( 156 ) ) 
+end 
+return result 
+end }

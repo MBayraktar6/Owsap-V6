@@ -1,0 +1,7 @@
+target . delete ( "__TARGET__" ) 
+clear_letter ( ) 
+pc . give_exp2 ( 300 ) 
+say_title ( c_mob_name ( 20402 ) ) 
+say ( c_locale ( 6374 ) ) 
+say_reward ( c_locale ( 6882 , 300 ) ) 
+set_state ( "bear_hunt" ) 

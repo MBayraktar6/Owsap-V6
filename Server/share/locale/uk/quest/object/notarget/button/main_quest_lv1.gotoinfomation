@@ -1,0 +1,3 @@
+say_title ( c_locale ( 4935 ) ) 
+say ( c_locale ( 4936 ) ) 
+set_state ( "gototeacher" ) 

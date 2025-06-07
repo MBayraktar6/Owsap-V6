@@ -1,0 +1,83 @@
+Group	GoldenKingLoot
+{
+	Vnum	50928 -- Golden King's Loot
+	1	25041	1	100 -- Magic Stone
+	2	76013	1	100 -- Reinforce Item (b)
+	3	76014	1	100 -- Enchant Item (b)
+	4	71189	1	100 -- Enchant Item+
+	5	39015	1	100 -- Stone of the Blacksmith
+	6	71158	1	100 -- Hero's Medal
+	7	71128	1	100 -- Battle Lion
+	8	71127	1	100 -- Storm Tiger
+	9	51505	1	100 -- Cor Draconis (Precious)
+	10	51506	1	100 -- Cor Draconis (Mystical)
+	11	51639	1	100 -- Dragon Chest
+	12	76029	1	100 -- Green Dragon Bean
+	13	30618	1	100 -- Moonstone
+	14	30617	1	100 -- Agate
+	15	30616	1	100 -- Titanium Dioxide
+	16	55403	1	100 -- Razador's Egg
+	17	55404	1	100 -- Nemere's Egg
+	18	71153	1	100 -- Potion of Wisdom
+	19	50513	1	100 -- Soul Stone
+	20	50011	1	100 -- Moonlight Treasure Chest
+	21	50108	20	100 -- Fireworks Top
+	22	50107	20	100 -- Chinese Fire Cracker
+	23	27992	1	100 -- White Pearl
+	24	76016	1	100 -- Blessing Scroll
+	25	71095	3	100 -- Passage Ticket
+	26	72727	1	100 -- Moon Elixir (S)
+	27	72723	1	100 -- Sun Elixir (S)
+	28	70069	5	100 -- Peach Flower Wine XL
+	29	76033	10	100 -- Peach Flower Wine+
+	30	72058	10	100 -- Spirit Stone Bundle
+	31	76012	5	100 -- Potion of Speed
+	32	76017	5	100 -- Potion of Attack +15
+	33	76003	5	100 -- Potion of Haste
+	34	79604	1	100 -- King Deck
+}
+Group	SilverKingLoot
+{
+	Vnum	50929 -- Silver King's Loot
+	1	25041	1	100 -- Magic Stone
+	2	71189	1	100 -- Enchant Item+
+	3	76013	1	100 -- Reinforce Item (b)
+	4	76014	1	100 -- Enchant Item (b)
+	5	85001	1	100 -- Lord Sash (basic)
+	6	51503	1	100 -- Cor Draconis (Normal)
+	7	51504	1	100 -- Cor Draconis (Noble)
+	8	76029	1	100 -- Green Dragon Bean
+	9	71153	1	100 -- Potion of Wisdom
+	10	55401	1	100 -- Monkey Egg
+	11	55402	1	100 -- Spider Egg
+	12	55403	1	100 -- Razador's Egg
+	13	55404	1	100 -- Nemere's Egg
+	14	50324	1	100 -- Boost Book Chest
+	15	50323	1	100 -- Ward Book Chest
+	16	55001	1	100 -- Protein Snack
+	17	79604	1	100 -- King Deck
+	18	27993	1	100 -- Blue Pearl
+	19	27994	1	100 -- Blood-Red Pearl
+	20	71154	1	100 -- Potion of Ascension (3h)
+	21	50108	10	100 -- Fireworks Top
+	22	50107	10	100 -- Chinese Fire Cracker
+	23	76016	1	100 -- Blessing Scroll
+	24	70058	1	100 -- Teleportation Ring
+	25	39036	1	100 -- Wind Shoes
+	26	76033	10	100 -- Peach Flower Wine+
+	27	76012	10	100 -- Potion of Speed
+	28	76017	5	100 -- Potion of Attack +15
+	29	76003	5	100 -- Potion of Haste
+	30	72058	5	100 -- Spirit Stone Bundle
+	31	µ·²Ù·¯¹Ì	500000	100 -- Yang
+	32	µ·²Ù·¯¹Ì	300000	100 -- Yang
+	33	µ·²Ù·¯¹Ì	100000	100 -- Yang
+	34	°æÇèÄ¡	100000	100 -- Exp.
+}
+Group	BronzeKingLoot
+{
+	Vnum	50930 -- Bronze King's Loot
+	1	µ·²Ù·¯¹Ì	50000	100 -- Yang
+	2	µ·²Ù·¯¹Ì	100000	100 -- Yang
+	3	°æÇèÄ¡	100000	100 -- Exp.
+}

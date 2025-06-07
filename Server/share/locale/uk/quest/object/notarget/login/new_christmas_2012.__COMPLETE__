@@ -1,0 +1,5 @@
+if not new_christmas_2012 . has_santa ( ) then 
+set_state ( "start" ) 
+set_quest_state ( "new_christmas_2012_nog" , "start" ) 
+set_quest_state ( "new_christmas_2012_sock" , "start" ) 
+end 

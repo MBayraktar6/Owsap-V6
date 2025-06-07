@@ -1,0 +1,8 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 5378 ) ) 
+wait ( ) 
+say_title ( c_locale ( 97 ) ) 
+say ( c_locale ( 5379 ) ) 
+say_item_vnum ( 30003 ) 
+set_state ( "gotowarehousekeeper" ) 

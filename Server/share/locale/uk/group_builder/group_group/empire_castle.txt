@@ -1,0 +1,24 @@
+Group	empire_castle_01
+{
+	Vnum	6711
+	1	6194	1
+	2	6195	1
+}
+Group	empire_castle_02
+{
+	Vnum	6712
+	1	6195	1
+	2	6196	1
+}
+Group	empire_castle_03
+{
+	Vnum	6713
+	1	6197	1
+	2	6198	1
+}
+Group	empire_castle_04
+{
+	Vnum	6714
+	1	6198	1
+	2	6199	1
+}

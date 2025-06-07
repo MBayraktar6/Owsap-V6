@@ -1,0 +1,62 @@
+change_empire={["start"]=0,move_pc= function ()if pc . is_engaged ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say_reward ( c_locale ( 152 ) ) 
+say ( c_locale ( 126 ) ) 
+return false 
+end 
+if pc . is_married ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say_reward ( c_locale ( 152 ) ) 
+say ( c_locale ( 127 ) ) 
+return false 
+end 
+if pc . is_polymorphed ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say_reward ( c_locale ( 128 ) ) 
+say ( c_locale ( 129 ) ) 
+return false 
+end 
+if pc . has_guild ( ) then 
+say_title ( c_locale ( 148 ) ) 
+say_reward ( c_locale ( 130 ) ) 
+say ( c_locale ( 131 ) ) 
+return false 
+end 
+if pc . get_money ( ) < 500000 then 
+say_title ( c_locale ( 148 ) ) 
+say_reward ( c_locale ( 132 ) ) 
+say ( c_locale ( 133 ) ) 
+return false 
+end 
+say ( c_locale ( 134 ) ) 
+local s = select ( c_locale ( 135 ) , c_locale ( 137 ) , c_locale ( 138 ) , c_locale ( 2426 ) ) 
+if 4 == s then 
+return false 
+end 
+say_reward ( c_locale ( 139 ) ) 
+local a = select ( c_locale ( 4473 ) , c_locale ( 2426 ) ) 
+if 2 == a then 
+return false 
+end 
+local ret = pc . change_empire ( s ) 
+local oldempire = pc . get_empire ( ) 
+if ret == 999 then 
+say_title ( c_locale ( 140 ) ) 
+say_reward ( c_locale ( 141 ) ) 
+pc . change_gold ( - 500000 ) 
+pc . remove_item ( 71054 ) 
+char_log ( 0 , "CHANGE_EMPIRE" , c_locale ( 142 , oldempire , s ) ) 
+return true 
+else 
+if ret == 1 then 
+say ( c_locale ( 143 ) ) 
+elseif ret == 2 then 
+say ( c_locale ( 144 ) ) 
+elseif ret == 3 then 
+say ( c_locale ( 145 ) ) 
+else 
+say ( c_locale ( 153 ) ) 
+end 
+end 
+return false 
+end }

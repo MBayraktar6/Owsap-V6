@@ -1,0 +1,18 @@
+if game . get_event_flag ( "spawn_pet_login" ) then local use_item = pc . getqf ( "use_item" ) 
+if use_item ~= 0 and pet . can_spawn ( ) then 
+if not item . select ( use_item ) then 
+return 
+end 
+local pet_info = pet_system . get_pet_info ( item . get_vnum ( ) ) 
+if nil ~= pet_info then 
+local vnum = pet_info [ 1 ] 
+local spawn_effect_file_name = pet_system . get_spawn_effect_file ( pet_info [ 2 ] ) 
+local loot = pet_info [ 3 ] 
+local spawn_far_away = false 
+local name = c_mob_name ( vnum ) 
+if not pet . is_summon ( vnum ) and pet . count_summoned ( ) < 1 then 
+pet . summon ( vnum , name , spawn_far_away , loot ) 
+end 
+end 
+end 
+ return end 

@@ -1,0 +1,33 @@
+quest guild_building_npc begin
+	state start begin
+		when 20044.click begin
+			if npc.get_guild() == pc.get_guild() then
+				say_title(c_locale(1676))
+				say(c_locale(1677))
+			else
+				say_title(c_locale(1676))
+				say(c_locale(1678))
+			end
+		end
+
+		when 20045.click begin
+			if npc.get_guild() == pc.get_guild() then
+				say_title(c_locale(1679))
+				say(c_locale(1680))
+			else
+				say_title(c_locale(1679))
+				say(c_locale(1681))
+			end
+		end
+
+		when 20046.click begin
+			if npc.get_guild() == pc.get_guild() then
+				say_title(c_locale(1682))
+				say(c_locale(1683))
+			else
+				say_title(c_locale(1682))
+				say(c_locale(1684))
+			end
+		end
+	end
+end

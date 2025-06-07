@@ -1,0 +1,120 @@
+quest maze_dungeon begin
+	state start begin
+		function setting()
+			return {
+				["outside_base_pos"] = { 11476, 5327, 373 }, -- 980, 975
+				["inside_base_pos"] = {
+					{ 7893, 12142, 382 }, -- (213, 110) metin2_map_maze_dungeon1
+					{ 8661, 12142, 383 }, -- (213, 110) metin2_map_maze_dungeon2
+					{ 9429, 12142, 384 }, -- (213, 110) metin2_map_maze_dungeon3
+				},
+			}
+		end
+
+		function is_inside(idx)
+			local setting = maze_dungeon.setting()
+			for k, v in ipairs(setting.inside_base_pos) do
+				if idx == v[3] then
+					return true
+				end
+			end
+			return false
+		end
+
+		when login with maze_dungeon.is_inside(pc.get_map_index()) begin
+			local setting = maze_dungeon.setting()
+			pc.set_warp_location(setting.outside_base_pos[3], setting.outside_base_pos[1], setting.outside_base_pos[2])
+		end
+
+		-- Gnoll Caves
+		when 20836.chat.c_locale(12593) begin
+			local setting = maze_dungeon.setting()
+
+			-- I'm keeping the villagers away from the caves. It's dangerous in there.
+			-- But if you have a Passage Ticket, you're probably strong enough to survive in there.
+			-- Do you really want to go inside?
+			say(c_locale(12594))
+
+			-- Please don't die. Come to me if things get dangerous. I'll take you to another place.
+			say_red(c_locale(12621))
+
+			-- Condition: Champion Level 1 or higher
+			say(c_locale(12622))
+			if select(c_locale(12595), c_locale(12596)) == 1 then -- Of course / I'd rather not
+
+				if pc.get_conqueror_level() <= 0 then
+					-- Champion Level 1 is required to enter.
+					say(c_locale(12618))
+					return
+				end
+
+				local ticket_group = { get_special_item_group(10034) }
+				local ticket_check = false
+				for i = 1, table.getn(ticket_group), 2 do
+					if pc.count_item(ticket_group[i]) >= ticket_group[i + 1] then
+						ticket_check = true
+						break
+					end
+				end
+
+				if not ticket_check then
+					-- You need a Passage Ticket.
+					say(c_locale(12597))
+					return
+				end
+
+				for i = 1, table.getn(ticket_group), 2 do
+					if pc.count_item(ticket_group[i]) >= ticket_group[i + 1] then
+						pc.remove_item(ticket_group[i], ticket_group[i + 1])
+						break
+					end
+				end
+
+				pc.warp(setting.inside_base_pos[1][1] * 100, setting.inside_base_pos[1][2] * 100, setting.inside_base_pos[1][3])
+			end
+		end
+
+		when 20837.chat."<GM> IsInDungeon?" begin
+			if maze_dungeon.is_inside(pc.get_map_index()) then
+				say("in dungeon")
+			else
+				say("not in dungeon")
+			end
+		end
+
+		-- Gnoll Caves
+		when 20837.chat.c_locale(12593) with maze_dungeon.is_inside(pc.get_map_index()) begin
+			local setting = maze_dungeon.setting()
+
+			-- Do you want to leave the dungeon?
+			say(c_locale(12598))
+			if select(c_locale(6555), c_locale(6556)) == 1 then -- Yes / No
+				pc.warp(setting.outside_base_pos[1] * 100, setting.outside_base_pos[2] * 100, setting.outside_base_pos[3])
+			end
+		end
+
+		-- Gnoll Caves
+		when 20838.chat.c_locale(12593) with maze_dungeon.is_inside(pc.get_map_index()) begin
+			local setting = maze_dungeon.setting()
+
+			-- Do you want to move deeper into the caves?
+			-- Once you reach Level 2, you will no longer be able to return to Level 1.
+			say(c_locale(12599))
+			if select(c_locale(6555), c_locale(6556)) == 1 then -- Yes / No
+				pc.warp(setting.inside_base_pos[2][1] * 100, setting.inside_base_pos[2][2] * 100, setting.inside_base_pos[2][3])
+			end
+		end
+
+		-- Gnoll Caves
+		when 20839.chat.c_locale(12593) with maze_dungeon.is_inside(pc.get_map_index()) begin
+			local setting = maze_dungeon.setting()
+
+			-- Do you want to move deeper into the caves?
+			-- Once you reach Level 3, you will no longer be able to return to Level 2.
+			say(c_locale(12600))
+			if select(c_locale(6555), c_locale(6556)) == 1 then -- Yes / No
+				pc.warp(setting.inside_base_pos[3][1] * 100, setting.inside_base_pos[3][2] * 100, setting.inside_base_pos[3][3])
+			end
+		end
+	end
+end

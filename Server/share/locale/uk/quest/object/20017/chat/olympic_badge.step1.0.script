@@ -1,0 +1,38 @@
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7534 ) ) 
+wait ( ) 
+if count_item_range ( 30265 , 30269 ) == 0 then 
+say ( c_locale ( 7537 ) ) 
+return 
+elseif olympic_badge . has_it ( ) == 0 then 
+say ( c_locale ( 7538 ) ) 
+return 
+else 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7539 ) ) 
+wait ( ) 
+pc . remove_item ( 30265 ) 
+pc . remove_item ( 30266 ) 
+pc . remove_item ( 30267 ) 
+pc . remove_item ( 30268 ) 
+pc . remove_item ( 30269 ) 
+if pc . getqf ( "medal_done" ) == 0 then 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7540 ) ) 
+say_item_vnum ( 71158 ) 
+pc . give_item2 ( 71158 ) 
+if 0 == pc . get_sex ( ) then 
+pc . give_item2 ( 71159 ) 
+say_item_vnum ( 71159 ) 
+else 
+pc . give_item2 ( 71160 ) 
+say_item_vnum ( 71160 ) 
+end 
+pc . setqf ( "medal_done" , 1 ) 
+return 
+end 
+say_title ( c_mob_name ( 20017 ) ) 
+say ( c_locale ( 7540 ) ) 
+say_item_vnum ( 50249 ) 
+pc . give_item2 ( 50249 ) 
+end 

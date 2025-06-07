@@ -1,0 +1,4 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+d . notice ( c_locale ( 863 ) ) 
+server_timer ( "devil_stone4_fail2" , ( 5 * 60 ) , get_server_timer_arg ( ) ) 
+end 

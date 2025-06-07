@@ -1,0 +1,38 @@
+local setting = event_ramadan . setting ( ) 
+if pc . count_item ( setting . bread ) == 0 then 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1177 ) ) 
+local s = select ( c_locale ( 1178 ) , c_locale ( 1179 ) ) 
+if 2 == s then 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1141 ) ) 
+return 
+end 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1142 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1143 ) ) 
+local s = select ( c_locale ( 1144 ) , c_locale ( 1145 ) ) 
+if 2 == s then 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1141 ) ) 
+return 
+end 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1146 ) ) 
+elseif pc . count_item ( setting . bread ) > 0 and pc . count_item ( setting . bread ) < 10 then 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1147 ) ) 
+elseif pc . count_item ( setting . bread ) >= 10 then 
+pc . give_item2 ( setting . candy , 1 ) 
+pc . remove_item ( setting . bread , 10 ) 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1148 ) ) 
+wait ( ) 
+say_title ( c_locale ( 1135 ) ) 
+say ( c_locale ( 1149 ) ) 
+end 
+if not event_ramadan . is_running ( ) then 
+npc . purge ( ) 
+end 

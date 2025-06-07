@@ -1,0 +1,3 @@
+say_title ( c_locale ( 4993 ) ) 
+say ( c_locale ( 4994 ) ) 
+set_state ( "gotoboss2" ) 

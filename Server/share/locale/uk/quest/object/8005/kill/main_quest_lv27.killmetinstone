@@ -1,0 +1,4 @@
+say_title ( c_locale ( 5052 ) ) 
+say ( c_locale ( 5066 ) ) 
+clear_letter ( ) 
+set_state ( "gotoboss2" ) 

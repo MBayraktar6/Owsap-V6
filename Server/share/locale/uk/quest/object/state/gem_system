@@ -1,0 +1,5 @@
+gem_system={["start"]=0,RefinePctByMapIndex= function (map_index)if map_index == 359 then 
+return 70 
+end 
+return 30 
+end }

@@ -1,0 +1,456 @@
+quest spider_dungeon_3floor_boss begin
+	state start begin
+		-- 2, ´øÀü ³¡ ½Ã°£.
+		when spider_end_timer.server_timer with game.get_event_flag("spider_dead" .. get_channel_id()) == 0 begin
+			warp_all_in_area_to_area(82700, 612700, 93700, 625700, 69100, 610800, 69100, 610800)
+			game.set_event_flag("spider_lair_ongoing_" .. get_channel_id(), 0)
+			game.set_event_flag("spider_lair_leader_" .. get_channel_id(), 0)
+			game.set_event_flag("spider_dead" .. get_channel_id(), 0)
+			purge_area(82700, 612700, 93700, 625700)
+		end
+
+		when spider_dead_timer.server_timer begin
+			warp_all_in_area_to_area(82700, 612700, 93700, 625700, 69100, 610800, 69100, 610800)
+			game.set_event_flag("spider_lair_ongoing_" .. get_channel_id(), 0)
+			game.set_event_flag("spider_lair_leader_" .. get_channel_id(), 0)
+			game.set_event_flag("spider_dead" .. get_channel_id(), 0)
+			purge_area(82700, 612700, 93700, 625700)
+		end
+
+		when login or levelup or enter with pc.get_level() >= 50 begin
+			set_state(step1)
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			say(c_locale(8252))
+		end
+	end
+
+	state step1 begin
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			say(c_locale(8252))
+		end
+
+		when 20355.chat.c_locale(8277) begin -- °æºñ´ëÀå¿¡°Ô ¸»À» °É¾î Äù½ºÆ®¸¦ ½ÃÀÛÇÑ´Ù.
+			say_title(c_mob_name(20355))
+			say(c_locale(8278))
+			set_state(step2)
+			pc.give_item2(76019)
+		end
+	end
+
+	state step2 begin -- ºñ¼®¿¡ Å¹º»À» ¶ß·¯ °¡¾ßÇÑ´Ù.
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		----------- Äù½ºÆ®ÆíÁö2 ------------
+		when letter begin
+			send_letter(c_locale(8279))
+
+			local v = find_npc_by_vnum(30130)
+			if 0 != v then
+				target.vid("__TARGET__", v, c_mob_name(30130))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(8279))
+			say(c_locale(8280))
+		end
+
+		when 30130.chat.c_locale(8279) begin
+			target.delete("__TARGET__")
+
+			say_title(pc.getname())
+			say(c_locale(8281))
+			set_state(step3)
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			say(c_locale(8252))
+		end
+
+		when 20355.chat.c_locale(8277) begin
+			say_title(c_mob_name(20355))
+			say(c_locale(8242))
+		end
+	end
+
+	state step3 begin -- Å¹º»À» ¶¹À¸´Ï °æºñ¿¡°Ô µ¹¾Æ°£´Ù.
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			say(c_locale(8252))
+		end
+
+		when letter begin
+			send_letter(c_locale(8243))
+
+			-- °æºñ´ëÀåÀ» °¡¸®Å²´Ù.
+			local v = find_npc_by_vnum(20355)
+			if 0 != v then
+				target.vid("__TARGET__", v, c_mob_name(20355))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(8243))
+			say(c_locale(8244))
+		end
+
+		-- À»µÎÁö¸¦ ¼±ÅÃÇÏ¸é ÇØ´ç Äù½ºÆ®¿¡ °ü·ÃµÈ ´ëÈ­¸¦ ³ª´­ ¼ö ÀÖ´Ù.
+		when 20355.chat.c_locale(8243) begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(20355))
+			say(c_locale(8245))
+			set_state(step4)
+		end
+	end
+
+	state step4 begin -- À»µÎÁö¿¡°Ô Å¹º»À» ¸Ã±âÀÚ.
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			say(c_locale(8252))
+		end
+
+		----------- Äù½ºÆ®ÆíÁö2 ------------
+		when letter begin
+			send_letter(c_locale(8243))
+
+			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			local v = find_npc_by_vnum(20011)
+			if 0 != v then
+				target.vid("__TARGET__", v, c_mob_name(20011))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(8243))
+			say(c_locale(8246))
+		end
+
+		when 20011.chat.c_locale(8243) begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(20011))
+			say(c_locale(8247))
+			set_state(step5)
+		end
+
+		when 20355.chat.c_locale(8243) begin
+			say_title(c_mob_name(20355))
+			say(c_locale(8245))
+		end
+	end
+
+	state step5 begin -- °æºñÇÑÅ× ÆíÁö ¹è´Þ
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			say(c_locale(8252))
+		end
+
+		when letter begin
+			send_letter(c_locale(8243))
+
+			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			local v = find_npc_by_vnum(20355)
+			if 0 != v then
+				target.vid("__TARGET__", v, c_mob_name(20355))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(8249))
+			say(c_locale(8250))
+		end
+
+		when 20355.chat.c_locale(8251) begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(20355))
+			say(c_locale(8253))
+			pc.give_item2(76019)
+			set_state(step6)
+		end
+
+		when 20011.chat.c_locale(8243) begin
+			say_title(c_mob_name(20011))
+			say(c_locale(8248))
+		end
+	end
+
+	state step6 begin -- °æºñ´Â ³ª¸¸ ÀÏ½ÃÅ²´Ù. À»µÎÁö¿Í »óÀÇÇÏÀÚ.
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			say(c_locale(8252))
+		end
+
+		when letter begin
+			send_letter(c_locale(8251))
+
+			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			local v = find_npc_by_vnum(20011)
+			if 0 != v then
+				target.vid("__TARGET__", v, c_mob_name(20011))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(8251))
+			say(c_locale(8253))
+		end
+
+		-- À»µÎÁö¸¦ ¼±ÅÃÇÏ¸é ÇØ´ç Äù½ºÆ®¿¡ °ü·ÃµÈ ´ëÈ­¸¦ ³ª´­ ¼ö ÀÖ´Ù.
+		when 20011.chat.c_locale(8251) begin
+			target.delete("__TARGET__")
+
+			say_title(c_mob_name(20011))
+			say(c_locale(8256))
+			set_state(boss_ok)
+		end
+	end
+
+	state boss_ok begin -- ¿­¼è¸¦ ¸¸µé¼ö ÀÖ°Ô µÈ ÃÖÁ¾»óÅÂ. ÀÌÁ¦ºÎÅÍ °Å¹Ì±¼ º¸½º·ë¿¡ ÀÔÀåÇÒ ¼ö ÀÖ´Ù.
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		when 20011.chat.c_locale(8254) begin
+			if pc.count_item(30025) > 0 and pc.count_item(30056) > 0 and pc.count_item(30057) > 0 and pc.count_item(30058) > 0 and pc.count_item(30059) > 0 and pc.count_item(30326) > 0 then
+				say_title(c_mob_name(20011))
+				say(c_locale(8258))
+				pc.remove_item(30025, 1)
+				pc.remove_item(30056, 1)
+				pc.remove_item(30057, 1)
+				pc.remove_item(30058, 1)
+				pc.remove_item(30059, 1)
+				pc.remove_item(30326, 1)
+				if math.random(1, 2000) <= 1000 then
+					say(c_locale(8259))
+					pc.give_item2(30324, 1)
+				else
+					say(c_locale(8260))
+				end
+			else
+				say_title(c_mob_name(20011))
+				say(c_locale(8261))
+			end
+		end
+
+		when 30130.chat."<GM> Reset Dungeon" with pc.is_gm() begin
+			pc.setqf("retry_limit_time", 0)
+			game.set_event_flag("spider_lair_ongoing_" .. get_channel_id(), 0)
+			game.set_event_flag("spider_lair_leader_" .. get_channel_id(), 0)
+			game.set_event_flag("spider_dead" .. get_channel_id(), 0)
+			say("Done")
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			if game.get_event_flag("spider_lair_ongoing_" .. get_channel_id()) == 1 then
+				local starttime = game.get_event_flag("spider_lair_start_time_" .. get_channel_id())
+				local current_time = get_global_time()
+
+				if party.get_leader_pid() == game.get_event_flag("spider_lair_leader_" .. get_channel_id()) then
+					if starttime + 300 >= current_time and party.get_leader_pid() == game.get_event_flag("spider_lair_leader_" .. get_channel_id()) and game.get_event_flag("spider_lair_ongoing_" .. get_channel_id()) == 1 then
+						say(c_locale(8263)) -- Å×½ºÆ®¿ë
+						local warp = select(c_locale(2454), c_locale(2426))
+						if warp == 1 then
+							pc.setqf("firstIn", 1)
+							pc.setqf("retry_limit_time", starttime + 1200 + 3600)
+							set_state(inLair)
+							pc.warp(88100, 614800)
+							return
+						end
+					else
+						say(c_locale(8264)) -- Å×½ºÆ®¿ë
+						return
+					end
+				else
+					local remain_time = (game.get_event_flag("spider_lair_end_time_" .. get_channel_id()) - get_global_time()) / 60
+					if remain_time < 0 then
+						say(c_locale(8275))
+						game.set_event_flag("spider_lair_ongoing_" .. get_channel_id(), 0)
+						game.set_event_flag("spider_lair_leader_" .. get_channel_id(), 0)
+						game.set_event_flag("spider_dead" .. get_channel_id(), 0)
+						return
+					end
+
+					say(c_locale(8265))
+					-- here we should change to string.format %s key
+					say(c_locale(8266, math.ceil(remain_time)))
+					return
+				end
+			elseif pc.getqf("retry_limit_time") > get_global_time() then
+				local access_limit = (pc.getqf("retry_limit_time") - get_global_time()) / 60
+				say(c_locale(8267))
+				-- here we should also change to string.format %s key
+				say(c_locale(8268, math.ceil(access_limit)))
+				return
+			elseif party.is_leader() then
+				if false == pc.can_warp() then
+					say(c_locale(8269))
+					return
+				end
+
+				if pc.count_item(30324) > 0 then
+					say(c_locale(8270))
+					local warp = select(c_locale(2454), c_locale(2426))
+					if warp == 1 then
+						set_state(inLair)
+
+						pc.remove_item(30324, 1)
+						mob.spawn(2094, 369, 551, 0, 0)
+
+						-- °ª ¼³Á¤.
+						game.set_event_flag("spider_lair_ongoing_" .. get_channel_id(), 1)
+						game.set_event_flag("spider_lair_start_time_" .. get_channel_id(), get_global_time())
+						game.set_event_flag("spider_lair_end_time_" .. get_channel_id(), get_global_time() + 1200)
+						game.set_event_flag("spider_lair_leader_" .. get_channel_id(), party.get_leader_pid())
+
+						pc.setqf("retry_limit_time", get_global_time() + 1200 + 3600)
+						pc.setqf("firstIn", 1)
+
+						server_timer("spider_end_timer", 1200)
+
+						pc.warp(88100, 614800)
+					end
+					return
+				else
+					say(c_locale(8271))
+					return
+				end
+			else -- ¸®´õ ¾Æ´Ï´Ù.
+				say(c_locale(8272))
+				return
+			end
+		end
+	end
+
+	state inLair begin
+		when 20011.chat.c_locale(8262) with is_test_server() begin -- Å×½ºÆ®¿ë
+			set_state(start)
+			say(c_locale(8273))
+		end
+
+		when login begin
+			-- Á¤»óÀûÀ¸·Î º¸½º·ë¿¡ ÀÔÀå.
+			-- if pc.getqf("firstIn") == 1 and party.get_leader_pid() == game.get_event_flag("spider_lair_leader_" .. get_channel_id()) then
+			if get_global_time() < pc.getqf("retry_limit_time") - 3600 and party.get_leader_pid() == game.get_event_flag("spider_lair_leader_" .. get_channel_id()) then
+				pc.setqf("firstIn", 0)
+			elseif pc.get_x() >= 827 and pc.get_x() <= 937 and pc.get_y() >= 6127 and pc.get_y() <= 6257 then
+				pc.warp(95900, 571000)
+				pc.remove_item(30327, 1)
+			else -- À§¿¡¼­ ÆÃ°Ü³½ À¯Àú°¡ ¹Û¿¡¼­ ·Î±×ÀÎ ÇÏ°Ô µÇ¸é, Á¢±Ù Á¦ÇÑ ½Ã°£À» ¼ÂÆÃÇØÁÜ.
+				pc.remove_item(30327, 1)
+				set_state(boss_ok)
+				local limit = pc.getqf("retry_limit_time")
+
+				if limit > (get_global_time() + 3600) then
+					limit = (get_global_time() + 3600)
+				end
+
+				pc.setqf("retry_limit_time", limit)
+
+				local duration = limit - get_global_time()
+			end
+		end
+
+		when 30130.chat.c_locale(8241) begin
+			if game.get_event_flag("spider_lair_ongoing_" .. get_channel_id()) == 1 then
+				local starttime = game.get_event_flag("spider_lair_start_time_" .. get_channel_id())
+				local current_time = get_global_time()
+
+				if party.get_leader_pid() == game.get_event_flag("spider_lair_leader_" .. get_channel_id()) then
+					if starttime + 300 >= current_time and party.get_leader_pid() == game.get_event_flag("spider_lair_leader_" .. get_channel_id()) and game.get_event_flag("spider_lair_ongoing_" .. get_channel_id()) == 1 then
+						say(c_locale(8263)) -- Å×½ºÆ®¿ë
+						local warp = select(c_locale(2454), c_locale(2426))
+						if warp == 1 then
+							pc.warp(88100, 614800)
+							return
+						end
+					end
+				end
+			end
+		end
+
+		when 2092.kill begin -- ´ë¿Õ°Å¹Ì Á×ÀÓ
+			server_timer("spider_dead_timer", 180)
+			game.set_event_flag("spider_dead" .. get_channel_id(), 1)
+			game.set_event_flag("spider_key_dropped" .. get_channel_id(), 0)
+			notice_in_map(c_locale(8274), false)
+		end
+
+		when 2094.kill begin --´ë¿Õ°Å¹Ì Á×ÀÓ
+			if game.get_event_flag("spider_key_dropped" .. get_channel_id()) == 0 then
+				game.drop_item(30327, 1)
+				game.set_event_flag("spider_key_dropped" .. get_channel_id(), 1)
+			end
+		end
+
+		when 2095.kill begin -- °Å¹Ì¾Ë Á×ÀÓ
+			local kingVid = game.get_event_flag("king_vid")
+			local remain_egg = game.get_event_flag("remain_egg" .. get_channel_id())
+
+			if game.get_event_flag("spider_dead" .. get_channel_id()) == 0 then
+				notice_in_map(c_locale(8276), false)
+			end
+
+			if remain_egg > 0 then
+				remain_egg = remain_egg - 1
+				game.set_event_flag("remain_egg" .. get_channel_id(), remain_egg)
+			end
+
+			-- °Å¹ÌÀÇ °ø°Ý·Â º¸Á¤
+			npc.set_vid_attack_mul(kingVid, 10 / (remain_egg + 1))
+
+			-- °Å¹Ì°¡ ¹Þ´Â ÇÇÇØ·® º¸Á¤
+			npc.set_vid_damage_mul(kingVid, 10 / (remain_egg + 1))
+
+			pc.aggregate_monster()
+		end
+
+		-- 2012.4.5 ÀÌ»óÇö ¸®Á¨À§Ä¡ ¼öÁ¤
+		when 30327.use with pc.get_x() >= 827 and pc.get_map_index() == 217 and pc.get_x() <= 937 and pc.get_y() >= 6127 and pc.get_y() <= 6257 begin
+			--say("¸Ê¹øÈ£ : " .. pc.get_map_index())
+			pc.remove_item(30327, 1)
+			i = mob.spawn(2095, 400, 566, 0, 0)
+			mob.spawn(2095, 400, 594, 0, 0)
+			mob.spawn(2095, 362, 600, 0, 0)
+			mob.spawn(2095, 337, 599, 0, 0)
+			mob.spawn(2095, 335, 581, 0, 0)
+			mob.spawn(2095, 344, 562, 0, 0)
+			mob.spawn(2095, 364, 588, 0, 0)
+			mob.spawn(2095, 379, 562, 0, 0)
+			mob.spawn(2095, 368, 525, 0, 0)
+
+			local kingVid = mob.spawn(2092, 367, 588, 0, 0)
+			game.set_event_flag("king_vid", kingVid)
+			--game.set_event_flag("remain_egg", 9)
+			game.set_event_flag("remain_egg" .. get_channel_id(), 9)
+		end
+	end
+end

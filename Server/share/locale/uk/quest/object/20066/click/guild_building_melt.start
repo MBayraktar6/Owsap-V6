@@ -1,0 +1,62 @@
+if npc . get_guild ( ) == pc . get_guild ( ) and pc . isguildmaster ( ) then say ( c_locale ( 1646 ) ) 
+if pc . get_gold ( ) < 3e+06 then 
+say ( c_locale ( 1647 ) ) 
+else 
+say ( c_locale ( 1648 ) ) 
+local sel = 0 
+local timetable1 = { 
+c_locale ( 1651 ) , 
+c_locale ( 1652 ) , 
+c_locale ( 1654 ) , 
+c_locale ( 1655 ) , 
+c_locale ( 1656 ) , 
+c_locale ( 1657 ) , 
+c_locale ( 2669 ) , 
+c_locale ( 1650 ) 
+} 
+local valuetable1 = { 14043 , 14045 , 14046 , 14047 , 14048 , 14049 , 0 , - 1 } 
+local timetable2 = { 
+c_locale ( 1658 ) , 
+c_locale ( 1659 ) , 
+c_locale ( 1660 ) , 
+c_locale ( 1661 ) , 
+c_locale ( 1662 ) , 
+c_locale ( 1663 ) , 
+c_locale ( 2669 ) , 
+c_locale ( 1650 ) 
+} 
+local valuetable2 = { 14050 , 14051 , 14052 , 14053 , 14054 , 14055 , 0 , - 1 } 
+local timetable3 = { 
+c_locale ( 1665 ) , 
+c_locale ( 1666 ) , 
+c_locale ( 1667 ) , 
+c_locale ( 1668 ) , 
+c_locale ( 1669 ) , 
+c_locale ( 1670 ) , 
+c_locale ( 2669 ) , 
+c_locale ( 1650 ) 
+} 
+local valuetable3 = { 14074 , 14075 , 14076 , 14077 , 14078 , 14079 , 0 , - 1 } 
+repeat 
+local s = select_table ( timetable1 ) 
+sel = valuetable1 [ s ] 
+if sel == 0 then 
+local s = select_table ( timetable2 ) 
+sel = valuetable2 [ s ] 
+if sel == 0 then 
+local s = select_table ( timetable3 ) 
+sel = valuetable3 [ s ] 
+end 
+end 
+until sel ~= 0 
+if sel ~= - 1 then 
+npc_num = sel + 20060 - 14043 
+if npc_num == npc . get_race ( ) then 
+say ( c_locale ( 1649 ) ) 
+else 
+pc . changegold ( - 3e+06 ) 
+building . reconstruct ( sel ) 
+end 
+end 
+end 
+ return end 

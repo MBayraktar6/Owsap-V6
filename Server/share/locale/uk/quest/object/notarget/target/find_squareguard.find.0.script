@@ -1,0 +1,13 @@
+target . delete ( "__TARGET__1" ) 
+say_title ( c_locale ( 1294 ) ) 
+say ( c_locale ( 1295 ) ) 
+local s = select ( c_locale ( 1296 ) ) 
+if 1 == s then 
+say_title ( c_locale ( 114 ) ) 
+say_reward ( c_locale ( 1297 ) ) 
+pc . change_money ( 200 ) 
+set_state ( "buy" ) 
+elseif 2 == s then 
+else 
+say ( c_locale ( 1298 , s ) ) 
+end 

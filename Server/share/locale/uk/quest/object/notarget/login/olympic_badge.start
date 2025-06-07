@@ -1,0 +1,2 @@
+if game . get_event_flag ( "medal_part_drop" ) >= 1 then set_state ( "information" ) 
+ return end 

@@ -1,0 +1,191 @@
+quest horse_summon begin
+	state start begin
+		function get_horse_summon_prob_pct()
+			local skill_level = pc.get_skill_level(131)
+			if skill_level == 1 then
+				return 15
+			elseif skill_level == 2 then
+				return 20
+			elseif skill_level == 3 then
+				return 30
+			elseif skill_level == 4 then
+				return 40
+			elseif skill_level == 5 then
+				return 50
+			elseif skill_level == 6 then
+				return 60
+			elseif skill_level == 7 then
+				return 70
+			elseif skill_level == 8 then
+				return 80
+			elseif skill_level == 9 then
+				return 90
+			elseif skill_level >= 10 then
+				return 100
+			end
+
+			return 10
+		end
+
+		when 20349.chat.c_locale(2191) with horse.get_grade() == 1 and pc.countitem(50051) < 1 begin
+			say_title(c_locale(2090))
+			say(c_locale(2202))
+			local b = select(c_locale(10928), c_locale(10929))
+			if 1 == b then
+				if pc.get_money() >= 400000 then
+					pc.changemoney(-400000)
+					say_title(c_locale(2090))
+					say(c_locale(2213))
+					pc.give_item2(50051, 1)
+				else
+					say_title(c_locale(2090))
+					say(c_locale(2215))
+				end
+			elseif 2 == b then return
+			else
+				say(c_locale(1298, b))
+			end
+		end
+
+		when 20349.chat.c_locale(2216) with horse.get_grade() == 2 and pc.countitem(50052) < 1 begin
+			say_title(c_locale(2090))
+			say(c_locale(2217))
+			local b = select(c_locale(10928), c_locale(10929))
+			if 1 == b then
+				if pc.get_money() >= 50000 then
+					pc.changemoney(-50000)
+					say_title(c_locale(2090))
+					say(c_locale(2218))
+					pc.give_item2(50052, 1)
+				else
+					say(c_locale(2219))
+				end
+			elseif 2 == b then return
+			else
+				say(c_locale(1298, b))
+			end
+		end
+
+		when 20349.chat.c_locale(2220) with horse.get_grade() == 3 and pc.countitem(50053) < 1 begin
+			say_title(c_locale(2090))
+			say(c_locale(2192))
+			local b = select(c_locale(10928), c_locale(10929))
+			if 1 == b then
+				if pc.get_money() >= 100000 then
+					pc.changemoney(-100000)
+					say_title(c_locale(114))
+					say(c_locale(2193))
+					pc.give_item2(50053, 1)
+				else
+					say_title(c_locale(2090))
+					say(c_locale(2219))
+				end
+			elseif 2 == b then return
+			else
+				say(c_locale(1298, b))
+			end
+		end
+
+		when 50051.use with horse.get_grade() == 0 begin
+			say_title(c_locale(114))
+			say(c_locale(2194))
+		end
+
+		when 50051.use with horse.get_grade() == 1 begin
+			if pc.getsp() >= 100 then
+				if number(1, 100) <= horse_summon.get_horse_summon_prob_pct() then
+					say_title(c_locale(114))
+					say(c_locale(2195))
+					horse.summon()
+				else
+					say_title(c_locale(114))
+					say_reward(c_locale(2196))
+				end
+				pc.change_sp(-100)
+			else
+				say_title(c_locale(114))
+				say_reward(c_locale(2197))
+			end
+		end
+
+		when 50051.use with horse.get_grade() == 2 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2198))
+		end
+
+		when 50051.use with horse.get_grade() == 3 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2206))
+		end
+
+		when 50052.use with horse.get_grade() == 0 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2200))
+		end
+
+		when 50052.use with horse.get_grade() == 1 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2201))
+		end
+
+		when 50052.use with horse.get_grade() == 2 begin
+			if pc.getsp() >= 200 then
+				if number(1, 100) <= horse_summon.get_horse_summon_prob_pct() then
+					say_title(c_locale(114))
+					say_reward(c_locale(2203))
+					horse.summon()
+				else
+					say_title(c_locale(114))
+					say_reward(c_locale(2204))
+				end
+				pc.change_sp(-200)
+			else
+				say_title(c_locale(114))
+				say_reward(c_locale(2205))
+			end
+		end
+
+		when 50052.use with horse.get_grade() == 3 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2206))
+		end
+
+		when 50053.use with horse.get_grade() == 0 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2207))
+		end
+
+		when 50053.use with horse.get_grade() == 1 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2201))
+		end
+
+		when 50053.use with horse.get_grade() == 2 begin
+			say_title(c_locale(114))
+			say_reward(c_locale(2208))
+		end
+
+		when 50053.use with horse.get_grade() == 3 begin
+			if pc.getsp() >= 300 then
+				if number(1, 100) <= horse_summon.get_horse_summon_prob_pct() then
+					say_title(c_locale(114))
+					say_reward(c_locale(2209))
+					horse.summon()
+				else
+					say_title(c_locale(114))
+					say_reward(c_locale(2210))
+				end
+				pc.change_sp(-300)
+			else
+				say_title(c_locale(114))
+				say_reward(c_locale(2211))
+			end
+		end
+	end
+
+	state __COMPLETE__ begin
+		when enter begin
+			q.done()
+		end
+	end
+end

@@ -1,0 +1,4 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_locale ( 1282 ) ) 
+say ( c_locale ( 8339 ) ) 
+set_state ( "ask_dinner" ) 

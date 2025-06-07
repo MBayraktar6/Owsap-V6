@@ -1,0 +1,8 @@
+quest item_mall begin
+	state start begin
+		when 9010.chat.c_locale(2335) with is_test_server() begin
+			setskin(NOWINDOW)
+			cmdchat(c_locale(2336))
+		end
+	end
+end

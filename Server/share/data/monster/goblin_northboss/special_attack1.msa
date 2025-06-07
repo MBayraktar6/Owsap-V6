@@ -1,0 +1,95 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\goblin_westboss\special_attack1.GR2"
+MotionDuration           2.166667
+
+Group MotionEventData
+{
+    MotionEventDataCount     6
+    Group Event00
+    {
+        MotionEventType      4
+        StartingTime         0.890916
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          2
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           180.000000
+            Position         0.000000 -330.000000 150.000000
+        }
+    }
+    Group Event01
+    {
+        MotionEventType      4
+        StartingTime         1.454988
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           180.000000
+            Position         0.000000 -330.000000 150.000000
+        }
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         0.859286
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 R Finger02"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/goblin_northboss_s1_blow.mse"
+        EffectPosition       0.000000 -100.000000 50.000000
+    }
+    Group Event03
+    {
+        MotionEventType      1
+        StartingTime         1.428629
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 R Finger02"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/goblin_northboss_s1_blow2.mse"
+        EffectPosition       0.000000 -100.000000 50.000000
+    }
+    Group Event04
+    {
+        MotionEventType      2
+        StartingTime         0.880373
+        
+        DuringTime           0.200000
+        Power                300
+        AffectingRange       200
+    }
+    Group Event05
+    {
+        MotionEventType      2
+        StartingTime         1.444445
+        
+        DuringTime           0.200000
+        Power                300
+        AffectingRange       200
+    }
+}

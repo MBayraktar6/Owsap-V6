@@ -1,0 +1,4 @@
+if awaken_snow_dungeon . in_dungeon ( pc . get_map_index ( ) ) and d . getf ( "level" ) == 9 then local setting = awaken_snow_dungeon . setting ( ) 
+awaken_snow_dungeon . clear_level ( ) 
+d . spawn_mob_ac_dir ( setting . dungeon_man , setting . dungeon_man_last_pos [ 1 ] , setting . dungeon_man_last_pos [ 2 ] , setting . dungeon_man_dir ) 
+ return end 

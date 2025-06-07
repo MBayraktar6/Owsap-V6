@@ -1,0 +1,5 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+d . notice ( c_locale ( 8218 ) ) 
+d . notice ( c_locale ( 8219 ) ) 
+server_timer ( "snow_dungeon_end_timer" , 10 , d . get_map_index ( ) ) 
+end 

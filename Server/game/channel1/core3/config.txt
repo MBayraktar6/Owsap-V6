@@ -1,0 +1,36 @@
+HOSTNAME: ch1_game3
+CHANNEL: 1
+PORT: 12103
+P2P_PORT: 12130
+DB_PORT: 11000
+DB_ADDR: localhost
+
+MAP_ALLOW: 63 64 65 66 69 70 71 104 108 109 216 217
+
+#	63	metin2_map_n_desert_01
+#	64	map_n_threeway
+#	65	metin2_map_milgyo
+#	66	metin2_map_deviltower1
+#	69	metin2_map_wl_01
+#	70	metin2_map_nusluck01
+#	71	metin2_map_spiderdungeon_02
+#	104	metin2_map_spiderdungeon
+#	108	metin2_map_monkey_dungeon2
+#	109	metin2_map_monkey_dungeon3
+#	216	metin2_map_devilscatacomb
+#	217	metin2_map_spiderdungeon_03
+
+TABLE_POSTFIX:
+ITEM_ID_RANGE: 300000001 400000000
+PASSES_PER_SEC: 25
+SAVE_EVENT_SECOND_CYCLE: 180
+PING_EVENT_SECOND_CYCLE: 180
+PLAYER_SQL: localhost mt2 mt2!@# player
+COMMON_SQL: localhost mt2 mt2!@# common
+LOG_SQL: localhost mt2 mt2!@# log
+LOCALE_SERVICE: uk
+TEST_SERVER: 1
+VIEW_RANGE: 8000
+MAX_LEVEL: 120
+
+POPUP_NOTICE_URL: http://62.171.146.112/docs/

@@ -1,0 +1,3 @@
+send_letter ( c_locale ( 6389 ) ) 
+q . set_counter_name ( c_locale ( 6413 ) ) 
+the_metin_stone . update_counter ( ) 

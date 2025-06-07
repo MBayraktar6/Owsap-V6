@@ -1,0 +1,5 @@
+if maze_dungeon . is_inside ( pc . get_map_index ( ) ) then 
+say ( "in dungeon" ) 
+else 
+say ( "not in dungeon" ) 
+end 

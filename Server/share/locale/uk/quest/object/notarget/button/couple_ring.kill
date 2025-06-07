@@ -1,0 +1,3 @@
+say_title ( c_locale ( 114 ) ) 
+say ( c_locale ( 680 ) ) 
+say_reward ( c_locale ( 681 , couple_ring . get_rest_count ( ) ) ) 

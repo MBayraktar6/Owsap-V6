@@ -1,0 +1,82 @@
+define santa 20126
+define level_limit 60
+define xmas_sock 50010
+define xmas_sock_qty 5
+define xmas_wine 71144
+define xmas_wine_qty 6
+define buff_duration 86400
+define snowman 33010
+define giftbox 70613
+
+quest snowflake_stick_event begin
+	state start begin
+		when santa.chat.c_locale(14198) begin
+			local s = select(c_locale(14199), c_locale(14200))
+
+			if pc.get_level() < level_limit then
+				say_title(c_locale(14210))
+				say(c_locale(14208))
+				return
+			end
+
+			if game.get_event_flag("snowflake_stick_event") == 0 then
+				say_title(c_locale(14210))
+				say(c_locale(14206))
+				return
+			end
+
+			if game.get_event_flag("new_xmas_event") == 0 then
+				say_title(c_locale(14210))
+				say(c_locale(14207))
+				return
+			end
+
+			local point_table = {}
+			if pc.get_conqueror_level() > 0 then
+				point_table = {
+					{ POINT_MALL_EXPBONUS, 50 },
+					{ POINT_MALL_ITEMBONUS, 10 },
+					{ POINT_ATTBONUS_MONSTER, 5 },
+				}
+			else
+				point_table = {
+					{ POINT_MALL_EXPBONUS, 30 },
+					{ POINT_MALL_ITEMBONUS, 5 },
+					{ POINT_ATTBONUS_MONSTER, 3 },
+				}
+			end
+
+			if s == 1 then
+				say_title(c_locale(14210))
+				if pc.count_item(xmas_sock) >= xmas_sock_qty then
+					say(c_locale(14202))
+
+					if affect.add_buff(AFFECT_SNOWFLAKE_STICK_EVENT_SNOWFLAKE_BUFF, point_table, 0, buff_duration, true) then
+						affect.remove_buff(AFFECT_SNOWFLAKE_STICK_EVENT_RANK_BUFF)
+
+						pc.remove_item(xmas_sock, xmas_sock_qty)
+					end
+				else
+					say(c_locale(14201))
+				end
+			else
+				say_title(c_locale(14210))
+				if pc.count_item(xmas_wine) >= xmas_wine_qty then
+					say(c_locale(14204))
+
+					if affect.add_buff(AFFECT_SNOWFLAKE_STICK_EVENT_SNOWFLAKE_BUFF, point_table, 0, buff_duration, true) then
+						affect.remove_buff(AFFECT_SNOWFLAKE_STICK_EVENT_RANK_BUFF)
+
+						pc.remove_item(xmas_wine, xmas_wine_qty)
+					end
+				else
+					say(c_locale(14203))
+				end
+			end
+		end
+
+		when kill with not npc.is_pc() and npc.get_event_race() == snowman begin
+			game.drop_item_with_ownership(giftbox)
+		end
+	end
+end

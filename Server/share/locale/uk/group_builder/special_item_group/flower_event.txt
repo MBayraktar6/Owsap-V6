@@ -1,0 +1,99 @@
+Group	ChrysanthemumBox
+{
+	Vnum	83023 -- Chrysanthemum Box
+	1	55408	1	100 -- Fat Mini Executor Egg
+	2	72059	1	100 -- Book of the Leader+
+	3	50255	1	100 -- Cor Draconis (Rough)
+	4	27209	5	100 -- Green Potion (L)
+	5	27212	5	100 -- Purple Potion (L)
+	6	76007	3	100 -- Bravery Cape
+	7	71080	1	100 -- Metin Stone(L)
+	8	71018	1	100 -- Blessing of Life
+	9	25121	1	100 -- Chrysanthemum
+	10	25122	1	100 -- May Bell
+	11	25123	1	100 -- Daffodil
+	12	25124	1	100 -- Lily
+	13	25125	1	100 -- Sunflower
+	14	55400	1	100 -- Mystery Box
+	15	경험치	300000	100 -- Exp.
+	16	돈꾸러미	250000	100 -- Yang
+}
+Group	MayBellBox
+{
+	Vnum	83024 -- May Bell Box
+	1	55408	1	100 -- Fat Mini Executor Egg
+	2	72059	1	100 -- Book of the Leader+
+	3	50255	1	100 -- Cor Draconis (Rough)
+	4	27209	3	100 -- Green Potion (L)
+	5	27212	3	100 -- Purple Potion (L)
+	6	76007	3	100 -- Bravery Cape
+	7	71080	1	100 -- Metin Stone(L)
+	8	76008	1	100 -- Medal of the Dragon
+	9	25121	1	100 -- Chrysanthemum
+	10	25122	1	100 -- May Bell
+	11	25123	1	100 -- Daffodil
+	12	25124	1	100 -- Lily
+	13	25125	1	100 -- Sunflower
+	14	경험치	200000	100 -- Exp.
+	15	돈꾸러미	200000	100 -- Yang
+}
+Group	DaffodilBox
+{
+	Vnum	83025 -- Daffodil Box
+	1	55402	1	100 -- Spider Egg
+	2	72059	1	100 -- Book of the Leader+
+	3	27206	30	100 -- Blue Potion (L)
+	4	27209	3	100 -- Green Potion (L)
+	5	27212	30	100 -- Purple Potion (L)
+	6	76007	3	100 -- Bravery Cape
+	7	71080	1	100 -- Metin Stone(L)
+	8	76000	1	100 -- Peach Flower Wine
+	9	76008	1	100 -- Medal of the Dragon
+	10	25121	1	100 -- Chrysanthemum
+	11	25122	1	100 -- May Bell
+	12	25123	1	100 -- Daffodil
+	13	25124	1	100 -- Lily
+	14	25125	1	100 -- Sunflower
+	15	경험치	150000	100 -- Exp.
+	16	돈꾸러미	150000	100 -- Yang
+}
+Group	LilyBox
+{
+	Vnum	83026 -- Lily Box
+	1	55401	1	100 -- Monkey Egg
+	2	72059	1	100 -- Book of the Leader+
+	3	27206	30	100 -- Blue Potion (L)
+	4	27209	3	100 -- Green Potion (L)
+	5	27212	30	100 -- Purple Potion (L)
+	6	76007	20	100 -- Bravery Cape
+	7	71080	1	100 -- Metin Stone(L)
+	8	76000	2	100 -- Peach Flower Wine
+	9	76008	1	100 -- Medal of the Dragon
+	10	25121	1	100 -- Chrysanthemum
+	11	25122	1	100 -- May Bell
+	12	25123	1	100 -- Daffodil
+	13	25124	1	100 -- Lily
+	14	25125	1	100 -- Sunflower
+	15	경험치	100000	100 -- Exp.
+	16	돈꾸러미	100000	100 -- Yang
+}
+Group	SunflowerBox
+{
+	Vnum	83027 -- Sunflower Box
+	1	55401	1	100 -- Monkey Egg
+	2	72059	1	100 -- Book of the Leader+
+	3	27206	30	100 -- Blue Potion (L)
+	4	27209	3	100 -- Green Potion (L)
+	5	27212	30	100 -- Purple Potion (L)
+	6	76007	20	100 -- Bravery Cape
+	7	71080	1	100 -- Metin Stone(L)
+	8	76000	1	100 -- Peach Flower Wine
+	9	76008	1	100 -- Medal of the Dragon
+	10	25121	1	100 -- Chrysanthemum
+	11	25122	1	100 -- May Bell
+	12	25123	1	100 -- Daffodil
+	13	25124	1	100 -- Lily
+	14	25125	1	100 -- Sunflower
+	15	경험치	50000	100 -- Exp.
+	16	돈꾸러미	50000	100 -- Yang
+}

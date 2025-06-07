@@ -1,0 +1,14 @@
+if d . select ( get_server_timer_arg ( ) ) then 
+if d . count_monster ( ) <= 0 then 
+if d . getf ( "level" ) == 11 then 
+d . notice ( c_locale ( 1358 ) ) 
+d . notice ( c_locale ( 1359 ) ) 
+else 
+d . notice ( c_locale ( 1358 ) ) 
+d . notice ( c_locale ( 1359 ) ) 
+end 
+d . setf ( "level" , 0 ) 
+else 
+server_timer ( "killed_A_1" , 6 , get_server_timer_arg ( ) ) 
+end 
+end 

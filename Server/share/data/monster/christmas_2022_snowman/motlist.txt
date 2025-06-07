@@ -1,0 +1,2 @@
+GENERAL WAIT wait.msa 100
+GENERAL FRONT_DEAD front_dead.msa 100

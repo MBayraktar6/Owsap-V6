@@ -1,0 +1,100 @@
+define EVENT_NPC 20003
+define EVENT_LEVEL_LIMIT 30
+define EVENT_ITEM_VNUM 70601
+define EVENT_REWARD_VNUM 70600
+define EVENT_REPEAT_TIME 86400
+
+quest soul_system begin
+	state start begin
+		when login or levelup with pc.get_level() >= EVENT_LEVEL_LIMIT begin
+			if game.get_event_flag("soul_event") > 0 and get_time() > pc.getqf("complete") then
+				set_state("information")
+			end
+		end
+	end
+
+	state information begin
+		when letter begin
+			local v = find_npc_by_vnum(EVENT_NPC)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_locale(8234))
+			end
+			send_letter(c_locale(8220))
+		end
+
+		when button or info begin
+			say_title(c_locale(8221))
+			say(c_locale(8222))
+		end
+
+		when __TARGET__.target.click or EVENT_NPC.chat.c_locale(8223) begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(8223))
+			say(c_locale(8224))
+			say(c_locale(8225))
+			say(c_locale(8226))
+			if select(c_locale(8227), c_locale(8228)) == 1 then
+				say(c_locale(8230))
+				set_state(hunt_wolves)
+			else
+				say(c_locale(8229))
+			end
+		end
+	end
+
+	state hunt_wolves begin
+		when letter begin
+			send_letter(c_locale(8220))
+		end
+
+		when button or info begin
+			say_title(c_locale(8221))
+			say(c_locale(8231))
+		end
+
+		when 102.kill or 103.kill or 104.kill or 105.kill or 106.kill or 107.kill begin
+			if math.random(1, 100) == 1 then
+				game.drop_item_with_ownership(70601, 1)
+
+				notice_multiline(c_locale(8235), notice)
+				set_state("return_to_ahyu")
+			end
+		end
+	end
+
+	state return_to_ahyu begin
+		when letter begin
+			local v = find_npc_by_vnum(EVENT_NPC)
+			if v != 0 then
+				target.vid("__TARGET__", v, c_locale(8234))
+			end
+			send_letter(c_locale(8223))
+		end
+
+		when button or info begin
+			say(c_locale(8235))
+		end
+
+		when __TARGET__.target.click or EVENT_NPC.chat.c_locale(8223) begin
+			target.delete("__TARGET__")
+
+			if pc.count_item(EVENT_ITEM_VNUM) > 0 then
+				say_title(c_locale(8234))
+				say(c_locale(8232))
+
+				pc.remove_item(EVENT_ITEM_VNUM, 1)
+				pc.give_item2(EVENT_REWARD_VNUM, 1)
+
+				pc.setqf("complete", get_time() + EVENT_REPEAT_TIME)
+				set_state("start")
+			else
+				say_title(c_locale(8234))
+				say(c_locale(8233))
+
+				pc.setqf("complete", 0)
+				set_state("hunt_wolves")
+			end
+		end
+	end
+end

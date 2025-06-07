@@ -1,0 +1,66 @@
+defense_wave={["start"]=0,in_dungeon= function (idx)return idx >= 358 * 10000 and idx < ( 358 + 1 ) * 10000 
+end ,check_party= function (pids)local no_cooldown_members = { } 
+local cooldown_check = true 
+local no_quest_members = { } 
+local quest_check = true 
+local no_ticket_members = { } 
+local ticket_check = true 
+local no_level_members = { } 
+local level_check = true 
+if not party . is_leader ( ) then 
+say ( c_locale ( 10100 ) ) 
+return false 
+end 
+if party . get_near_count ( ) < party . get_member_count ( ) then 
+say ( c_locale ( 10110 ) ) 
+return false 
+end 
+for i , pid in next , pids , nil begin 
+q . begin_other_pc_block ( pid ) 
+if pc . getf ( "defense_wave" , "cooldown" ) > get_time ( ) then 
+table . insert ( no_cooldown_members , pc . get_name ( ) ) 
+cooldown_check = false 
+end 
+if 0 ~= 0 then 
+if pc . getf ( "main_quest_meley_trail" , "__status" ) ~= main_quest_meley_trail . __COMPLETE__ then 
+table . insert ( no_quest_members , pc . get_name ( ) ) 
+quest_check = false 
+end 
+end 
+if pc . get_level ( ) < 90 then 
+table . insert ( no_level_members , pc . get_name ( ) ) 
+level_check = false 
+end 
+if not pc . has_item_from_special_item_group ( 10034 ) then 
+table . insert ( no_ticket_members , pc . get_name ( ) ) 
+ticket_check = false 
+end 
+q . end_other_pc_block ( ) 
+end 
+if not cooldown_check then 
+say ( c_locale ( 14069 ) ) 
+return false 
+end 
+if not quest_check then 
+say ( c_locale ( 10101 ) ) 
+for i , name in next , no_quest_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return false 
+end 
+if not level_check then 
+say ( c_locale ( 10102 ) ) 
+for i , name in next , no_level_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return false 
+end 
+if not ticket_check then 
+say ( c_locale ( 10103 ) ) 
+for i , name in next , no_ticket_members , nil begin 
+say ( color ( 1 , 1 , 0 ) , " " .. name ) 
+end 
+return false 
+end 
+return true 
+end }

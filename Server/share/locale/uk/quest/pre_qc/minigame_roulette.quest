@@ -1,0 +1,181 @@
+quest minigame_roulette begin
+	state start begin
+		function get_random_week_item()
+			local week_item_table = {
+				[1] = { { 30090, 10 }, { 30048, 10 }, { 30089, 10}, { 30625, 10} }, -- Monday
+				[2] = { { 30005, 10 }, { 30019, 10 }, { 30010, 10}, { 30626, 10} }, -- Tuesday
+				[3] = { { 30022, 10 }, { 27987, 10 }, { 30040, 10}, { 30627, 10} }, -- Wednesday
+				[4] = { { 30030, 10 }, { 30021, 10 }, { 30051, 10}, { 30628, 10} }, -- Thursday
+				[5] = { { 30052, 10 }, { 30520, 10 }, { 30056, 10}, { 30629, 10} }, -- Friday
+				[6] = { { 30015, 10 }, { 30199, 10 }, { 30078, 10}, { 30076, 10} }, -- Saturday
+			}
+
+			local day_of_week = tonumber(os.date("%w"))
+			local today_item_table = {}
+
+			if day_of_week == 0 then
+				-- Sunday: Gather all items from the entire week.
+				for _, day_items in ipairs(week_item_table) do
+					for _, item in ipairs(day_items) do
+						table.insert(today_item_table, item)
+					end
+				end
+			else
+				-- For other days, just pick the corresponding day's table.
+				today_item_table = week_item_table[day_of_week]
+			end
+
+			-- Pick a random item from today's (or full week's) table.
+			local random_index = math.random(1, table.getn(today_item_table))
+			local selected_item = today_item_table[random_index]
+
+			-- Return item vnum and count separately.
+			return selected_item[1], selected_item[2]
+		end
+
+		function has_sacrifice()
+			if affect.find(AFFECT_LATE_SUMMER_EVENT_BUFF) or affect.find(AFFECT_LATE_SUMMER_EVENT_PRIMIUM_BUFF) then
+				return true
+			end
+
+			return false
+		end
+
+		function is_running()
+			return (game.get_event_flag("e_late_summer") > 0)
+		end
+
+		when login or enter with minigame_roulette.is_running() begin
+			local reset_time = pc.getqf("material_reset_time")
+			if reset_time == 0 or (get_global_time() - reset_time) > 86400 then
+				pc.setqf("material_vnum", 0)
+				pc.setqf("material_count", 0)
+				pc.setqf("material_reset_time", get_global_time())
+			end
+		end
+
+		when letter with minigame_roulette.is_running() and pc.get_level() >= 30 begin
+			local v = find_npc_by_vnum(33009)
+			if v ~= 0 then
+				target.vid("__TARGET__", v, c_mob_name(33009))
+			end
+			send_letter(c_locale(11750)) -- "Ritual of Blood"
+		end
+
+		when button or info with minigame_roulette.is_running() begin
+			if pc.get_level() < 30 or minigame_roulette.has_sacrifice() then
+				say_title(c_locale(11750)) -- "Ritual of Blood"
+				-- "Your level is too low or you have already received a Blood Sacrifice."
+				say(c_locale(11758))
+				return
+			end
+			if pc.getqf("material_vnum") ~= 0 then
+				local material_vnum = pc.getqf("material_vnum")
+				local material_count = pc.getqf("material_count")
+				if pc.count_item(material_vnum) >= material_count then
+					say_title(c_locale(11750)) -- "Ritual of Blood"
+					-- "You have collected all necessary %s."
+					-- "Head to the altar to receive your Blood Sacrifice."
+					say(c_locale(11755, c_item_name(material_vnum)))
+				else
+					say_title(c_locale(11750)) -- "Ritual of Blood"
+					-- "%s x %d still isn't enough."
+					-- "Collect more to receive the Blood Sacrifice."
+					say(c_locale(11754, c_item_name(material_vnum), pc.count_item(material_vnum)))
+				end
+			else
+				say_title(c_locale(11750)) -- "Ritual of Blood"
+				say(c_locale(11751)) -- "Visit the Altar of Blood and carry out the ritual."
+			end
+		end
+
+		-- "Quest: Ritual of Blood"
+		when 33009.chat.c_locale(11744) with minigame_roulette.is_running() begin
+			target.delete("__TARGET__")
+
+			if pc.get_level() < 30 or minigame_roulette.has_sacrifice() then
+				say_title(c_locale(11750)) -- "Ritual of Blood"
+				-- "Your level is too low or you have already received a Blood Sacrifice."
+				say(c_locale(11758))
+				return
+			end
+
+			if not pc.enough_inventory(70311) then
+				say_title(c_locale(11750)) -- "Ritual of Blood"
+				-- "Your inventory is full. Come back when you have more space."
+				say(c_locale(11756))
+				return
+			end
+
+			if pc.getqf("material_vnum") ~= 0 then
+				local material_vnum = pc.getqf("material_vnum")
+				local material_count = pc.getqf("material_count")
+
+				if pc.count_item(material_vnum) >= material_count then
+					pc.remove_item(material_vnum, material_count)
+
+					pc.setqf("material_vnum", 0)
+					pc.setqf("material_count", 0)
+					pc.setqf("material_reset_time", get_global_time())
+
+					say_title(c_locale(11750)) -- "Ritual of Blood"
+					-- "You have received a Blood Sacrifice."
+					-- "Now kill a monster while the Blood Sacrifice effect is active to capture its soul."
+					say(c_locale(11757))
+
+					pc.give_item2(70311, 1)
+				else
+					say_title(c_locale(11750)) -- "Ritual of Blood"
+					-- "You still need %s x %d."
+					-- "You cannot receive a Blood Sacrifice."
+					say(c_locale(11753, c_item_name(material_vnum), material_count - pc.count_item(material_vnum)))
+				end
+			else
+				local material_vnum, material_count = minigame_roulette.get_random_week_item()
+				say_title(c_locale(11750)) -- "Ritual of Blood"
+				-- "Deliver the required %s x %d to the altar, then you can perform the ritual."
+				say(c_locale(11752, c_item_name(material_vnum), material_count))
+				pc.setqf("material_vnum", material_vnum)
+				pc.setqf("material_count", material_count)
+			end
+		end
+
+		-- "Rescue Souls"
+		when 33009.chat.c_locale(11745) with minigame_roulette.is_running() begin
+			say_title(c_locale(11745)) -- "Rescue Souls"
+			say(c_locale(11760, pc.getqf("souls")))
+			say(c_locale(11761, pc.getqf("used_souls")))
+		end
+
+		-- "Rewards"
+		when 33009.chat.c_locale(11746) with minigame_roulette.is_running() begin
+			setskin(NOWINDOW)
+			game.open_minigame_roulette(0)
+		end
+
+		-- "Special Rewards"
+		when 33009.chat.c_locale(11747) with minigame_roulette.is_running() begin
+			if pc.getqf("used_souls") < 4000 and get_global_time() > pc.getqf("ritual_expire_time") then
+				say_title(c_locale(11747)) -- "Special Rewards"
+				-- "You require 4000 souls to use that."
+				say(c_locale(11773))
+				return
+			end
+			setskin(NOWINDOW)
+			game.open_minigame_roulette(1)
+		end
+
+		-- "Rankings"
+		when 33009.chat.c_locale(11748) with minigame_roulette.is_running() begin
+			say_title(c_locale(11748)) -- "Rankings"
+			say("")
+			local score_table = game.get_minigame_roulette_score()
+			for i = 1, table.getn(score_table) do
+				say(c_locale(11762 + (i - 1), score_table[i][1], score_table[i][2]))
+			end
+			say("")
+			say(c_locale(11772, game.get_minigame_roulette_my_score()))
+			say("")
+		end
+	end
+end

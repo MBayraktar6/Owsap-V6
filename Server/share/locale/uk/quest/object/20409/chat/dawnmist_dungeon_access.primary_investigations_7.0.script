@@ -1,0 +1,7 @@
+target . delete ( "__TARGET__" ) 
+say_title ( c_mob_name ( 20409 ) ) 
+say ( c_locale ( 4536 ) ) 
+select ( c_locale ( 4537 ) ) 
+say ( c_locale ( 4538 ) ) 
+pc . give_item2 ( 31100 , 1 ) 
+set_state ( "primary_investigations_8" ) 

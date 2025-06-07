@@ -1,0 +1,7 @@
+if dawnmist_dungeon . in_dungeon ( pc . get_map_index ( ) ) then if d . getf ( "created" ) == 1 then 
+pc . setf ( "dawnmist_dungeon" , "exit_time" , get_global_time ( ) ) 
+if pc . get_player_id ( ) == d . getf ( "party_leader_pid" ) then 
+server_timer ( "dawnmist_dungeon_quit_timer" , 60 , d . get_map_index ( ) ) 
+end 
+end 
+ return end 

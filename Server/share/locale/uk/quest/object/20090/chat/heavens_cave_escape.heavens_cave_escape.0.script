@@ -1,0 +1,12 @@
+say_title ( c_locale ( 2027 ) ) 
+say ( c_locale ( 2028 ) ) 
+local a = select ( c_locale ( 2625 ) , c_locale ( 2600 ) ) 
+if a == 1 then 
+say_title ( c_locale ( 2027 ) ) 
+say ( c_locale ( 2029 ) ) 
+wait ( ) 
+pc . warp ( 284460 , 810495 ) 
+return 
+end 
+say_title ( c_locale ( 2027 ) ) 
+say ( c_locale ( 2030 ) ) 

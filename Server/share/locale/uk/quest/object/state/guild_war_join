@@ -1,0 +1,19 @@
+guild_war_join={["start"]=0,in_dungeon= function (idx)local dungeon_idx = { 
+71 , 
+72 , 
+73 , 
+104 , 
+208 , 
+215 , 
+217 , 
+} 
+for _ , value in ipairs ( dungeon_idx ) begin 
+if value == idx then 
+return true 
+end 
+end 
+if idx > 10000 then 
+return true 
+end 
+return false 
+end }

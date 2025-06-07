@@ -1,0 +1,594 @@
+define ENTRY_MAP_INDEX 363
+define group ENTRY_START_POS [ 3197, 18045 ]
+define DUNGEON_MAP_INDEX 369
+define DUNGEON_MAN 20531 -- RX: Am-heh Gorge
+define DUNGEON_MIN_GROUP 2
+define DUNGEON_EXIT_TIME 180
+define DUNGEON_REJOIN_TIME 60
+define BLOCK_DOOR 20534 -- RX: Destiny Lock
+define IN_DOOR 20535 -- RX: Dragon Gate
+define LEVEL2_STONE 20533 -- RX: Isfet Stele
+define LEVEL2_KEY 31187 -- Golden Cog Wheel (RX)
+define LEVEL2_KEY_DROP_PCT 5
+define LEVEL2_KEY_USE_PCT 30
+define LEVEL4_TARGET 4309 -- RX: Ignitor
+define LEVEL5_STONE 20533 -- RX: Isfet Stele
+define LEVEL5_REALKEY 31188 -- Maat Stone (RX)
+define LEVEL5_REALKEY_DROP_PCT 5
+define LEVEL5_GEN_LIMIT 100
+define LEVEL6_TARGET 8134 -- RX: Purgatory Fire Metin
+define FINAL_BOSS 4411 -- RX: Razador
+define REGEN_FILE_PATH "data/dungeon/awaken_flame_dungeon/"
+
+quest awaken_flame_dungeon begin
+	state start begin
+		function setting()
+			return {
+				["bossroom_entry_pos"] = { 2221, 20435 }, -- 685, 723
+				["boss_pos"] = { 686, 637 },
+				["doors_pos"] = {
+					{ 320, 394 },
+					{ 293, 359 },
+					{ 333, 321 },
+					{ 378, 320 },
+					{ 400, 355 },
+					{ 394, 401 }
+				},
+				["idoors_pos"] = {
+					{ 268, 447 },
+					{ 234, 359 },
+					{ 300, 264 },
+					{ 454, 217 },
+					{ 470, 355 },
+					{ 467, 469 }
+				},
+				["doors_dir"] = { 135, 90, 210, 152, 90, 223 },
+				["idoors_dir"] = { 135, 90, 210, 135, 90, 239 },
+				["level2_stone_pos"] = { 195, 352 },
+				["level4_target_pos"] = { 470, 175 },
+				["level5_stone_pos"] = {
+					{ 486, 345 },
+					{ 511, 336 },
+					{ 525, 349 },
+					{ 521, 365 },
+					{ 503, 372 },
+					{ 486, 365 },
+					{ 500, 354 }
+				},
+				["level6_target_pos"] = { 511, 480 },
+			}
+		end
+
+		function in_dungeon(idx)
+			return idx >= DUNGEON_MAP_INDEX * 10000 and idx < (DUNGEON_MAP_INDEX + 1) * 10000
+		end
+
+		function create(idx)
+			local setting = awaken_flame_dungeon.setting()
+
+			party.setf("dungeon_index", idx)
+
+			d.setf("created", 1)
+			d.setf("started", 0)
+			d.setf("finished", 0)
+			d.setf("party_leader_pid", party.get_leader_pid())
+
+			d.regen_file(REGEN_FILE_PATH .. "npc.txt")
+			d.setf("level", 0)
+			for i = 1, 6 do
+				d.set_unique("door" .. i, d.spawn_mob_ac_dir(BLOCK_DOOR, setting.doors_pos[i][1], setting.doors_pos[i][2], setting.doors_dir[i]))
+			end
+			for i = 1, 6 do
+				d.set_unique("idoor" .. i, d.spawn_mob_ac_dir(IN_DOOR, setting.idoors_pos[i][1], setting.idoors_pos[i][2], setting.idoors_dir[i]))
+			end
+
+			d.notice(c_locale(11501, 60)) -- Time remaining: 60 min.
+			d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+
+			server_timer("awaken_flame_dungeon_45m_left_timer", 60 * 15, idx)
+		end
+
+		function warp_out()
+			local setting = awaken_flame_dungeon.setting()
+			pc.warp(ENTRY_START_POS[1] * 100, ENTRY_START_POS[2] * 100, ENTRY_MAP_INDEX)
+		end
+
+		function go_boss()
+			local setting = awaken_flame_dungeon.setting()
+			say(c_locale(11419)) -- Would you like to go through the RX: Am-heh Gorge and face your destiny?
+			if select(c_locale(11409), c_locale(11410)) == 1 then -- Enter / Maybe later
+				d.setf("level", 17)
+				d.jump_all(setting.bossroom_entry_pos[1], setting.bossroom_entry_pos[2])
+				d.set_regen_file(REGEN_FILE_PATH .. "fd_fild_boss.txt")
+				d.spawn_mob(FINAL_BOSS, setting.boss_pos[1], setting.boss_pos[2])
+			end
+		end
+
+		function remove_door(level)
+			d.kill_unique(string.format("door%d", level))
+			d.kill_unique(string.format("idoor%d", level))
+		end
+
+		function clear_level()
+			d.setf("level", 0)
+			d.clear_regen()
+			d.purge_area(161200, 1976800, 228600, 2046200)
+		end
+
+		function clear_and_exit()
+			local setting = awaken_flame_dungeon.setting()
+			awaken_flame_dungeon.clear_level()
+			d.set_warp_location(ENTRY_MAP_INDEX, ENTRY_START_POS[1], ENTRY_START_POS[2])
+			d.exit_all()
+		end
+
+		function clear_server_timers(idx)
+			clear_server_timer("awaken_flame_dungeon_45m_left_timer", idx)
+			clear_server_timer("awaken_flame_dungeon_30m_left_timer", idx)
+			clear_server_timer("awaken_flame_dungeon_15m_left_timer", idx)
+			clear_server_timer("awaken_flame_dungeon_5m_left_timer", idx)
+			clear_server_timer("awaken_flame_dungeon_1m_left_timer", idx)
+			clear_server_timer("awaken_flame_dungeon_0m_left_timer", idx)
+			clear_server_timer("awaken_flame_dungeon_end_timer", idx)
+			clear_server_timer("awaken_flame_dungeon_killed_a", inx)
+			clear_server_timer("awaken_flame_dungeon_killed_b", inx)
+			clear_server_timer("awaken_flame_dungeon_quit_timer", idx)
+		end
+
+		when login begin
+			local setting = awaken_flame_dungeon.setting()
+			local idx = pc.get_map_index()
+
+			if idx == DUNGEON_MAP_INDEX and not is_test_server() then
+				awaken_flame_dungeon.warp_out()
+
+			elseif awaken_flame_dungeon.in_dungeon(idx) then
+
+				if not party.is_party() then
+					notice(c_locale(11345)) -- Cannot proceed, group doesn't exist. You will be teleported to the city.
+					awaken_flame_dungeon.warp_out()
+
+				elseif d.getf("created") == 1 and party.is_party() and table.getn({ party.get_member_pids() }) < DUNGEON_MIN_GROUP then
+					notice(c_locale(11345)) -- Cannot proceed, group doesn't exist. You will be teleported to the city.
+					awaken_flame_dungeon.warp_out()
+
+				elseif get_global_time() - pc.getf("awaken_flame_dungeon", "exit_time") > DUNGEON_REJOIN_TIME then
+					notice(c_locale(11346)) -- Cannot proceed, time expired. You will be teleported to the city.
+					awaken_flame_dungeon.warp_out()
+
+				elseif d.getf("finished") ~= 0 then
+					notice(c_locale(11347)) -- Cannot proceed, dungeon finished. You will be teleported to the city.
+					awaken_flame_dungeon.warp_out()
+
+				else
+					if d.getf("created") ~= 1 then
+						awaken_flame_dungeon.create(idx)
+					end
+
+					if pc.get_player_id() == d.getf("party_leader_pid") then
+						-- If the leader joins back, clear the quit timer.
+						clear_server_timer("awaken_flame_dungeon_quit_timer", idx)
+					end
+
+					if d.getf("level") == 17 then
+						-- Jump to current level (leader position)
+						pc.jump(setting.bossroom_entry_pos[1] * 100, setting.bossroom_entry_pos[2] * 100, idx)
+					end
+				end
+			end
+		end
+
+		when logout with awaken_flame_dungeon.in_dungeon(pc.get_map_index()) begin
+			if d.getf("created") == 1 then
+				pc.setf("awaken_flame_dungeon", "exit_time", get_global_time())
+
+				if pc.get_player_id() == d.getf("party_leader_pid") then
+					d.notice(c_locale(11348)) -- Cannot proceed, the group leader has disappeared.
+					server_timer("awaken_flame_dungeon_quit_timer", DUNGEON_REJOIN_TIME, d.get_map_index())
+				end
+			end
+		end
+
+		-- Awaken the RX: Am-heh Gorge
+		when DUNGEON_MAN.chat.c_locale(11420) with awaken_flame_dungeon.in_dungeon(pc.get_map_index()) and npc.lock() begin
+			local setting = awaken_flame_dungeon.setting()
+
+			if d.getf("started") ~= 1 then
+				-- The RX: Am-heh Gorge has been awoken.
+				-- Now nobody can come in - or out.
+				say(c_locale(11421))
+
+				wait()
+
+				d.setf("started", 1)
+			end
+
+			if d.getf("level") < 7 then
+				if d.getf("clear_count") == 6 then
+					d.setf("level", 7)
+				else
+					local rand = number(1, 6)
+					local setlev = 0
+					d.setf("level", 7)
+					for i = 1, 50 do
+						setlev = setlev + 1
+						if setlev > 6 then
+							setlev = 1
+						end
+						if not d.is_unique_dead("door" .. setlev) then
+							rand = rand - 1
+							if rand == 0 then
+								d.setf("level", setlev)
+								d.setf("clear_count", d.getf("clear_count") + 1)
+								break
+							end
+						end
+					end
+				end
+			end
+
+			if d.getf("level") == 1 then
+				say(c_locale(11422)) -- Task: Venture into the Demon's Ring (RX) and emerge victorious.
+				d.notice(c_locale(11422)) -- Task: Venture into the Demon's Ring (RX) and emerge victorious.
+
+				d.setf("level", 11)
+				d.regen_file(REGEN_FILE_PATH .. "fd_a.txt")
+				server_timer("awaken_flame_dungeon_killed_a", 12, d.get_map_index())
+
+				awaken_flame_dungeon.remove_door(1)
+
+			elseif d.getf("level") == 11 then
+				say(c_locale(11388)) -- Not all demons have been defeated yet.
+				say_title(c_locale(11415) .. d.count_monster()) -- Remaining:
+
+			elseif d.getf("level") == 2 then
+				say(c_locale(11423)) -- Task: find the RX: Golden Cog Wheel and use it to trigger the hidden mechanism in the Isfet Stele.
+				say(c_locale(11424)) -- The Golden Cog Wheel (RX) can be looted from demons.
+				d.notice(c_locale(11423)) -- Task: find the RX: Golden Cog Wheel and use it to trigger the hidden mechanism in the Isfet Stele.
+
+				d.setf("level", 12)
+				d.spawn_mob(LEVEL2_STONE, setting.level2_stone_pos[1], setting.level2_stone_pos[2])
+				d.set_regen_file(REGEN_FILE_PATH .. "fd_b.txt")
+
+				awaken_flame_dungeon.remove_door(2)
+
+			elseif d.getf("level") == 12 then
+				-- The mechanism in the Isfet Stele can only be triggered with the RX: Golden Cog Wheel.
+				-- Return once the task has been completed.
+				say(c_locale(11425))
+
+			elseif d.getf("level") == 3 then
+				say(c_locale(11422)) -- Task: Venture into the Demon's Ring (RX) and emerge victorious.
+				d.notice(c_locale(11422)) -- Task: Venture into the Demon's Ring (RX) and emerge victorious.
+
+				d.setf("level", 13)
+				d.regen_file(REGEN_FILE_PATH .. "fd_c.txt")
+				server_timer("awaken_flame_dungeon_killed_a", 12, d.get_map_index())
+
+				awaken_flame_dungeon.remove_door(3)
+
+			elseif d.getf("level") == 13 then
+				say(c_locale(11388)) -- Not all demons have been defeated yet.
+				say_title(c_locale(11415) .. d.count_monster()) -- Remaining:
+
+			elseif d.getf("level") == 4 then
+				say(c_locale(11426)) -- Task: defeat RX: Ignitor, Guardian of the Ember.
+				say(c_locale(11428)) -- Find and kill Ignitor (RX).
+				d.notice(c_locale(11426)) -- Task: defeat RX: Ignitor, Guardian of the Ember.
+				d.notice(c_locale(11428)) -- Find and kill Ignitor (RX).
+
+				d.setf("level", 14)
+				d.spawn_mob(LEVEL4_TARGET, setting.level4_target_pos[1], setting.level4_target_pos[2])
+				d.set_regen_file(REGEN_FILE_PATH .. "fd_d.txt")
+
+				awaken_flame_dungeon.remove_door(4)
+
+			elseif d.getf("level") == 14 then
+				-- RX: Ignitor has not yet been defeated. Try harder or meet eternal damnation.
+				-- Return once the task has been completed.
+				say(c_locale(11416))
+
+			elseif d.getf("level") == 5 then
+				say(c_locale(11429)) -- Task: Search for the Maat Stones (RX) and place them on the seven Isfet Steles in the correct order.
+				say(c_locale(11430)) -- If you use the Maat Stone (RX) on the incorrect Stele, it will break.
+
+				d.notice(c_locale(11429)) -- Task: Search for the Maat Stones (RX) and place them on the seven Isfet Steles in the correct order.
+				d.notice(c_locale(11430)) -- If you use the Maat Stone (RX) on the incorrect Stele, it will break.
+
+				d.setf("level", 15)
+				d.set_regen_file(REGEN_FILE_PATH .. "fd_e.txt")
+				local vis = { 0, 0, 0, 0, 0, 0, 0 }
+				for i = 1, 7 do
+					vis[i] = 0
+				end
+				for i = 1, 7 do
+					local ran = number(1, 7)
+					local st = 0
+					for j = 1, 50 do
+						st = st + 1
+						if st > 7 then
+							st = 1
+						end
+						if vis[st] == 0 then
+							ran = ran - 1
+							if ran == 0 then
+								vis[st] = 1
+								d.set_unique("stone5_" .. st, d.spawn_mob(LEVEL5_STONE, setting.level5_stone_pos[i][1], setting.level5_stone_pos[i][2]))
+								break
+							end
+						end
+					end
+				end
+
+				awaken_flame_dungeon.remove_door(5)
+
+			elseif d.getf("level") == 15 then
+				say(c_locale(11400)) -- It's only human to make mistakes, so choose wisely to solve the puzzle. Return once the task has been completed.
+
+			elseif d.getf("level") == 6 then
+				say(c_locale(11431)) -- Task: only those who shy not from the singing heat will be able to defeat the RX: Purgatory Fire Metin.
+				d.notice(c_locale(11431)) -- Task: only those who shy not from the singing heat will be able to defeat the RX: Purgatory Fire Metin.
+
+				d.setf("level", 16)
+				d.set_regen_file(REGEN_FILE_PATH .. "fd_f.txt")
+				d.spawn_mob(LEVEL6_TARGET, setting.level6_target_pos[1], setting.level6_target_pos[2])
+
+				awaken_flame_dungeon.remove_door(6)
+
+			elseif d.getf("level") == 16 then
+				say(c_locale(11432)) -- The RX: Purgatory Fire Metin has not been destroyed. The demons are returning!
+				say(c_locale(11433)) -- Reduce the RX: Purgatory Fire Metin to ashes. Return once the task has been completed.
+
+			elseif d.getf("level") == 7 then
+				awaken_flame_dungeon.go_boss()
+			end
+
+			npc.unlock()
+		end
+
+		when kill with awaken_flame_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 12 begin
+			if number(1, 100) <= LEVEL2_KEY_DROP_PCT then
+				game.drop_item(LEVEL2_KEY, 1)
+			end
+		end
+
+		when LEVEL2_STONE.take with awaken_flame_dungeon.in_dungeon(pc.get_map_index()) and item.get_vnum() == LEVEL2_KEY and d.getf("level") == 12 begin
+			if number(1, 100) <= LEVEL2_KEY_USE_PCT then
+				npc.purge()
+				item.remove()
+
+				d.notice(c_locale(1360)) -- The Isfet Stele has been destroyed.
+				d.notice(c_locale(11418)) -- Visit the RX: Am-heh Gorge to open a further Destiny Lock.
+
+				awaken_flame_dungeon.clear_level()
+			else
+				item.remove()
+				say(c_locale(11393)) -- This Golden Cog Wheel (RX) was a fake and has been destroyed. Find the original.
+			end
+		end
+
+		when LEVEL4_TARGET.kill with awaken_flame_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 14 begin
+			d.notice(c_locale(11434)) -- RX: Ignitor, Guardian of the Ember, has been defeated.
+			d.notice(c_locale(11418)) -- Visit the RX: Am-heh Gorge to open a further Destiny Lock.
+			awaken_flame_dungeon.clear_level()
+		end
+
+		when kill with awaken_flame_dungeon.in_dungeon(pc.get_map_index()) and d.getf("level") == 15 begin
+			if number(1, 100) <= LEVEL5_REALKEY_DROP_PCT then
+				game.drop_item(LEVEL5_REALKEY, 1)
+			end
+		end
+
+		when LEVEL5_STONE.take with awaken_flame_dungeon.in_dungeon(d.get_map_index()) and item.get_vnum() == LEVEL5_REALKEY and d.getf("level") == 15 begin
+			local setting = awaken_flame_dungeon.setting()
+
+			if npc.get_vid() == d.get_unique_vid("stone5_1") then
+				npc.purge()
+				item.remove()
+
+				say(c_locale(11402)) -- That was a wise choice. Now destroy the next Stele.
+				d.setf("stonekill", 2)
+				if d.count_monster() < LEVEL5_GEN_LIMIT then
+					d.regen_file(REGEN_FILE_PATH .. "fd_e.txt")
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("stone5_2") then
+				if d.getf("stonekill") == 2 then
+					npc.purge()
+					item.remove()
+
+					say(c_locale(11402)) -- That was a wise choice. Now destroy the next Stele.
+					d.setf("stonekill", 3)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(REGEN_FILE_PATH .. "fd_e.txt")
+					end
+				else
+					item.remove()
+					say(c_locale(1365)) -- Incorrect sequence. The Maat Stone has been destroyed as a result.
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("stone5_3") then
+				if d.getf("stonekill") == 3 then
+					npc.purge()
+					item.remove()
+
+					say(c_locale(11402)) -- That was a wise choice. Now destroy the next Stele.
+					d.setf("stonekill", 4)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(REGEN_FILE_PATH .. "fd_e.txt")
+					end
+				else
+					item.remove()
+					say(c_locale(1365)) -- Incorrect sequence. The Maat Stone has been destroyed as a result.
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("stone5_4") then
+				if d.getf("stonekill") == 4 then
+					npc.purge()
+					item.remove()
+
+					say(c_locale(11402)) -- That was a wise choice. Now destroy the next Stele.
+					d.setf("stonekill", 5)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(REGEN_FILE_PATH .. "fd_e.txt")
+					end
+				else
+					item.remove()
+					say(c_locale(1365)) -- Incorrect sequence. The Maat Stone has been destroyed as a result.
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("stone5_5") then
+				if d.getf("stonekill") == 5 then
+					npc.purge()
+					item.remove()
+
+					say(c_locale(11402)) -- That was a wise choice. Now destroy the next Stele.
+					d.setf("stonekill", 6)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(REGEN_FILE_PATH .. "fd_e.txt")
+					end
+				else
+					item.remove()
+					say(c_locale(1365)) -- Incorrect sequence. The Maat Stone has been destroyed as a result.
+					if is_test_server() then
+						say("5th")
+					end
+				end
+
+			elseif npc.get_vid() == d.get_unique_vid("stone5_6") then
+				if d.getf("stonekill") == 6 then
+					npc.purge()
+					item.remove()
+
+					say(c_locale(11403)) -- That was a wise choice. Now destroy the final Stele and Maat will be victorious over Isfet.
+					d.setf("stonekill", 7)
+					if d.count_monster() < LEVEL5_GEN_LIMIT then
+						d.regen_file(REGEN_FILE_PATH .. "fd_e.txt")
+					end
+				else
+					item.remove()
+					say(c_locale(1365)) -- Incorrect sequence. The Maat Stone has been destroyed as a result.
+				end
+			else
+				if d.getf("stonekill") == 7 then
+					npc.purge()
+					item.remove()
+
+					d.notice(c_locale(1360)) -- The Isfet Stele has been destroyed.
+					d.notice(c_locale(11418)) -- Visit the RX: Am-heh Gorge to open a further Destiny Lock.
+
+					awaken_flame_dungeon.clear_level()
+				else
+					item.remove()
+					say(c_locale(1365)) -- Incorrect sequence. The Maat Stone has been destroyed as a result.
+				end
+			end
+		end
+
+		when LEVEL6_TARGET.kill with awaken_flame_dungeon.in_dungeon(d.get_map_index()) and d.getf("level") == 16 begin
+			d.notice(c_locale(11435)) -- The RX: Purgatory Fire Metin has been destroyed.
+			d.notice(c_locale(11418)) -- Visit the RX: Am-heh Gorge to open a further Destiny Lock.
+
+			awaken_flame_dungeon.clear_level()
+		end
+
+		when FINAL_BOSS.kill with awaken_flame_dungeon.in_dungeon(d.get_map_index()) and d.getf("level") == 17 begin
+			d.setf("finished", 1)
+			d.setqf2_all_near("awaken_flame_dungeon", "complete", 1, 800)
+
+			d.notice(c_locale(11436)) -- RX: Razador has been defeated.
+			d.notice(c_locale(11471)) -- All warriors will be teleported out in one minute.
+
+			awaken_flame_dungeon.clear_server_timers(d.get_map_index())
+			awaken_flame_dungeon.clear_level()
+
+			server_timer("awaken_flame_dungeon_end_timer", DUNGEON_EXIT_TIME, d.get_map_index())
+		end
+
+		when awaken_flame_dungeon_45m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 45)) -- Time remaining: 45 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_flame_dungeon_30m_left_timer", 60 * 15, get_server_timer_arg())
+			end
+		end
+
+		when awaken_flame_dungeon_30m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 30)) -- Time remaining: 30 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_flame_dungeon_15m_left_timer", 60 * 15, get_server_timer_arg())
+			end
+		end
+
+		when awaken_flame_dungeon_15m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 15)) -- Time remaining: 15 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_flame_dungeon_5m_left_timer", 60 * 10, get_server_timer_arg())
+			end
+		end
+
+		when awaken_flame_dungeon_5m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 5)) -- Time remaining: 5 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_flame_dungeon_1m_left_timer", 60 * 4, get_server_timer_arg())
+			end
+		end
+
+		when awaken_flame_dungeon_1m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11501, 1)) -- Time remaining: 1 min.
+				d.notice(c_locale(11502)) -- The group will be teleported from the dungeon once the time runs out.
+				server_timer("awaken_flame_dungeon_0m_left_timer", 60 * 1, get_server_timer_arg())
+			end
+		end
+
+		when awaken_flame_dungeon_0m_left_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				d.notice(c_locale(11503)) -- Your time is up.
+				d.notice(c_locale(11504)) -- In a few seconds you will be teleported outside.
+				server_timer("awaken_flame_dungeon_end_timer", 10, get_server_timer_arg())
+			end
+		end
+
+		when awaken_flame_dungeon_end_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				awaken_flame_dungeon.clear_server_timers(get_server_timer_arg())
+				awaken_flame_dungeon.clear_and_exit()
+			end
+		end
+
+		when awaken_flame_dungeon_killed_a.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				if d.count_monster() <= 0 then
+					d.notice(c_locale(11314)) -- All demons have been defeated.
+					d.notice(c_locale(11418)) -- Visit the RX: Am-heh Gorge to open a further Destiny Lock.
+					d.setf("level", 0)
+				else
+					server_timer("awaken_flame_dungeon_killed_b", 6, get_server_timer_arg())
+				end
+			end
+		end
+
+		when awaken_flame_dungeon_killed_b.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				if d.count_monster() <= 0 then
+					d.notice(c_locale(11314)) -- All demons have been defeated.
+					d.notice(c_locale(11418)) -- Visit the RX: Am-heh Gorge to open a further Destiny Lock.
+					d.setf("level", 0)
+				else
+					server_timer("awaken_flame_dungeon_killed_a", 6, get_server_timer_arg())
+				end
+			end
+		end
+
+		when awaken_flame_dungeon_quit_timer.server_timer begin
+			if d.select(get_server_timer_arg()) then
+				awaken_flame_dungeon.clear_server_timers(get_server_timer_arg())
+				awaken_flame_dungeon.clear_and_exit()
+			end
+		end
+	end
+end

@@ -1,0 +1,105 @@
+quest main_quest_lv27 begin
+	state start begin
+	end
+
+	state run begin
+		when login or levelup or enter with pc.get_level() >= 27 begin
+			set_state(gotoboss)
+		end
+	end
+
+	state gotoboss begin
+		when letter begin
+			send_letter(c_locale(5052))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4952))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5052))
+			say(c_locale(5060))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4956))
+			say(c_locale(5061))
+			wait()
+
+			say_title(c_locale(4956))
+			say(c_locale(5062))
+			wait()
+
+			say_title(c_locale(5063))
+			say(c_locale(5064))
+
+			clear_letter()
+			set_state(killmetinstone)
+		end
+	end
+
+	state killmetinstone begin
+		when letter begin
+			send_letter(c_locale(5052))
+		end
+
+		when button or info begin
+			say_title(c_locale(5052))
+			say(c_locale(5065))
+		end
+
+		when 8005.kill begin
+			say_title(c_locale(5052))
+			say(c_locale(5066))
+
+			clear_letter()
+			set_state(gotoboss2)
+		end
+	end
+
+	state gotoboss2 begin
+		when letter begin
+			send_letter(c_locale(5053))
+			local v = find_npc_by_vnum(20355)
+			if 0 == v then
+			else
+				target.vid("__TARGET__", v, c_locale(4952))
+			end
+		end
+
+		when button or info begin
+			say_title(c_locale(5053))
+			say(c_locale(4984))
+		end
+
+		when __TARGET__.target.click begin
+			target.delete("__TARGET__")
+
+			say_title(c_locale(4956))
+			say(c_locale(5055))
+			wait()
+
+			say_title(c_locale(5056))
+			say_reward(c_locale(5057))
+			say_reward(c_locale(5058, c_item_name(30018)))
+			say_reward(c_locale(5058, c_item_name(30031)))
+
+			pc.give_exp2(1000000)
+			pc.change_money(15000)
+			pc.give_item2(30018, 1)
+			pc.give_item2(30031, 1)
+
+			clear_letter()
+			set_state(__COMPLETE__)
+
+			set_quest_state("main_quest_lv30", "run")
+		end
+	end
+
+	state __COMPLETE__ begin
+	end
+end

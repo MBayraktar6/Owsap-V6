@@ -1,0 +1,2 @@
+if not npc . is_pc ( ) and npc . get_event_race ( ) == 33010 then game . drop_item_with_ownership ( 70613 ) 
+ return end 

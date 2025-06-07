@@ -1,0 +1,64 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\monster2\goblin_magician\special_attack1.GR2"
+MotionDuration           1.500000
+
+Group MotionEventData
+{
+    MotionEventDataCount     4
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         1.164234
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Finger12"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/goblin_knight_s1_blow.mse"
+        EffectPosition       0.000000 0.000000 150.000000
+    }
+    Group Event01
+    {
+        MotionEventType      1
+        StartingTime         0.113139
+        
+        IndependentFlag      0
+        AttachingEnable      0
+        AttachingBoneName    "Bip01 L Hand"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/goblin_magician_s1_start.mse"
+        EffectPosition       0.000000 -30.000000 150.000000
+    }
+    Group Event02
+    {
+        MotionEventType      4
+        StartingTime         1.189781
+        DuringTime           0.200000
+        EnableHitProcess     1
+        
+        AttackType           0
+        HittingType          1
+        StiffenTime          0.000000
+        InvisibleTime        0.300000
+        ExternalForce        0.000000
+        HitLimitCount        0
+        CollisionType        4
+        
+        SphereDataCount      1
+        Group SphereData00
+        {
+            Radius           200.000000
+            Position         0.000000 0.000000 0.000000
+        }
+    }
+    Group Event03
+    {
+        MotionEventType      2
+        StartingTime         1.178832
+        
+        DuringTime           0.200000
+        Power                300
+        AffectingRange       200
+    }
+}

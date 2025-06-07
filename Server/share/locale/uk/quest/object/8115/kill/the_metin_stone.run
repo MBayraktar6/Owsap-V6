@@ -1,0 +1,3 @@
+local count = pc . getqf ( "hunted_metin_stone" ) 
+pc . setqf ( "hunted_metin_stone" , count + 1 ) 
+the_metin_stone . update_counter ( ) 

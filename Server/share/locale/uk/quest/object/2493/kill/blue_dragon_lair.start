@@ -1,0 +1,9 @@
+if blue_dragon_lair . inside ( pc . get_map_index ( ) ) then local setting = blue_dragon_lair . setting ( ) 
+game . drop_item_with_ownership ( 71123 , 1 ) 
+game . drop_item_with_ownership ( 71129 , 1 ) 
+d . clear_regen ( ) 
+d . kill_all ( ) 
+d . party_notice ( c_locale_string ( 1818 , setting . lair_exit_time ) ) 
+blue_dragon_lair . clear_server_timers ( ) 
+server_timer ( "blue_dragon_lair_end_timer" , setting . lair_exit_time , d . get_map_index ( ) ) 
+ return end 

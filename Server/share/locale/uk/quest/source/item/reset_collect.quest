@@ -1,0 +1,64 @@
+quest reset_collect_lv92_94 begin
+	state start begin
+		when 72350.use begin
+			local collect_name_table = {}
+
+			if pc.getf("collect_quest_lv92", "__status") == collect_quest_lv92.__COMPLETE__ then
+				table.insert(collect_name_table, c_locale(11821)) -- Seon-Pyeong's Research (Level 92)
+			end
+
+			if pc.getf("collect_quest_lv94", "__status") == collect_quest_lv94.__COMPLETE__ then
+				table.insert(collect_name_table, c_locale(11822)) -- Seon-Pyeong's Research (Level 94)
+			end
+
+			say_title(c_item_name(72350))
+			if table.getn(collect_name_table) == 0 then
+				-- "You can only reset the quest 'Seon-Pyeong's Research' for level 92 or 94 after you have completed it."
+				say(c_locale(11776))
+				return
+			end
+
+			table.insert(collect_name_table, c_locale(11783)) -- "Cancel"
+			say(c_locale(11777)) -- "Do you really want to reset the quest?"
+			local s = select_table(collect_name_table)
+			if s == table.getn(collect_name_table) then
+				return
+			end
+
+			say_title(collect_name_table[s])
+			say(c_locale(11778)) -- "Permanent Bonuses"
+
+			local collect_level = 0
+			if s == 1 then -- collect_quest_lv92
+				collect_level = 92
+			elseif s == 2 then -- collect_quest_lv94
+				collect_level = 94
+			end
+
+			local chosen_reward = pc.getf(string.format("collect_quest_lv%d", collect_level), "reward")
+			local apply_name = special.collect_apply_reward[collect_level][chosen_reward][1]
+			local apply_type = special.collect_apply_reward[collect_level][chosen_reward][2]
+			local apply_value = special.collect_apply_reward[collect_level][chosen_reward][3]
+
+			say_yellow(c_locale(apply_name, apply_value))
+
+			-- "Do you really want to reset the quest and the associated permanent bonus?"
+			say(c_locale(11780))
+			if select(c_locale(11781), c_locale(11782)) == 1 then -- "Yes" / "No"
+				say_title(collect_name_table[s])
+
+				say(c_locale(11784)) -- "Bonus reset successfully."
+				say_yellow(c_locale(apply_name, apply_value))
+
+				-- "Visit %s to restart the quest."
+				say_reward(c_locale(11786, c_mob_name(20091)))
+
+				affect.remove_collect(apply_type, apply_value)
+				set_quest_state(string.format("collect_quest_lv%d", collect_level), "run")
+
+				char_log(pc.get_player_id(), "RESET_COLLECT_LV92_94", "SUCCESS")
+				item.remove()
+			end
+		end
+	end
+end
