@@ -1,0 +1,39 @@
+ScriptType               MotionData
+
+MotionFileName           "D:\Ymir Work\npc2\smhgate_flower\blow.GR2"
+MotionDuration           3.333333
+
+Group MotionEventData
+{
+    MotionEventDataCount     3
+    Group Event00
+    {
+        MotionEventType      1
+        StartingTime         3.100000
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "Bone003"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smhgate_flower_blow.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+    Group Event01
+    {
+        MotionEventType      8
+        StartingTime         3.100000
+    }
+    Group Event02
+    {
+        MotionEventType      1
+        StartingTime         0.000000
+        
+        IndependentFlag      1
+        AttachingEnable      0
+        AttachingBoneName    "Bone003"
+        FollowingEnable      0
+        EffectFileName       "d:/ymir work/effect/monster2/smhgate_flower_blow_make.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+    }
+
+}

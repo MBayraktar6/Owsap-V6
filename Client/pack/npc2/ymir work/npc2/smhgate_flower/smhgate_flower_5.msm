@@ -1,0 +1,34 @@
+ScriptType            RaceDataScript
+
+BaseModelFileName     "D:\Ymir Work\npc2\smhgate_flower\smhgate_flower.GR2"
+
+Group ShapeData
+{
+    PathName 		 ""
+    ShapeDataCount 		 1
+	Group ShapeData00
+	{
+		ShapeIndex			0
+
+		Model				"D:\Ymir Work\npc2\smhgate_flower\smhgate_flower.GR2"
+		SourceSkin			"D:\Ymir Work\npc2\smhgate_flower\smhgate_flower.dds"
+		TargetSkin			"D:\Ymir Work\npc2\smhgate_flower\smhgate_flower_5.dds"
+	}
+}
+Group AttachingData
+{
+    AttachingDataCount       1
+    
+    Group AttachingData00
+    {
+        AttachingDataType    2
+        
+        isAttaching          1
+        AttachingModelIndex  0
+        AttachingBoneName    "root"
+        
+        EffectScriptName     "D:\Ymir Work\effect\monster2\smhgate_flower_05.mse"
+        EffectPosition       0.000000 0.000000 0.000000
+        EffectRotation       0.000000 0.000000 0.000000
+    }
+}
