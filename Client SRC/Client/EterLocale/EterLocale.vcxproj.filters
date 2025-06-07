@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Arabic.cpp" />
+    <ClCompile Include="Japanese.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="StringCodec.cpp" />
+    <ClCompile Include="StringCodec_Vietnamese.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Arabic.h" />
+    <ClInclude Include="CodePageId.h" />
+    <ClInclude Include="Japanese.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="StringCodec.h" />
+    <ClInclude Include="StringCodec_Vietnamese.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{009ef135-ef09-4f56-b965-39875f0761ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StringCodec">
+      <UniqueIdentifier>{8643da45-6df8-4bb9-a343-e61e26cc5e64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StringUtility">
+      <UniqueIdentifier>{4a3f74bc-290e-4909-8f13-78ad54b3285a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
