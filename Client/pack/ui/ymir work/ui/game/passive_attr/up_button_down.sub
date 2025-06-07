@@ -1,0 +1,7 @@
+title subImage
+version 1.0
+image "passive_01.dds"
+left 72
+top 176
+right 104
+bottom 208

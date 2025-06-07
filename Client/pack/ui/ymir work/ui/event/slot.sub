@@ -1,0 +1,7 @@
+title subImage
+version 1.0
+image "event_002.dds"
+left 0
+top 20
+right 48
+bottom 68

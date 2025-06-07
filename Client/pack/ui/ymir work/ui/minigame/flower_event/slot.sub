@@ -1,0 +1,7 @@
+title subImage
+version 1.0
+image "floweralram.dds"
+left 310
+top 0
+right 360
+bottom 50

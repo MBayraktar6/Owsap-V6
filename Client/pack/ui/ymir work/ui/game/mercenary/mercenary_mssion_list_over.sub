@@ -1,0 +1,7 @@
+title subImage
+version 1.0
+image "mercenary_01.dds"
+left 0
+top 400
+right 246
+bottom 440

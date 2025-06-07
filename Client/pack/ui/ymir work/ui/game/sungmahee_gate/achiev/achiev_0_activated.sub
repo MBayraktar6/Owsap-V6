@@ -1,0 +1,7 @@
+title subImage
+version 1.0
+image "smhgate_01.dds"
+left 0
+top 136
+right 64
+bottom 200
