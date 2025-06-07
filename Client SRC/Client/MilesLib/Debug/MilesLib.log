@@ -1,0 +1,15 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  Stdafx.cpp
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  Type.cpp
+  SoundManagerStream.cpp
+  SoundManager3D.cpp
+  SoundManager2D.cpp
+  SoundManager.cpp
+  SoundInstanceStream.cpp
+  SoundInstance3D.cpp
+  SoundInstance2D.cpp
+  SoundData.cpp
+  SoundBase.cpp
+  Kod Üretiliyor...
+  MilesLib.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\MilesLib\Debug\MilesLib.lib
