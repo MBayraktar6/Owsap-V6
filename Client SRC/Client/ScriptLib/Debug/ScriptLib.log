@@ -1,0 +1,10 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  StdAfx.cpp
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  Resource.cpp
+  PythonUtils.cpp
+  PythonMarshal.cpp
+  PythonLauncher.cpp
+  PythonDebugModule.cpp
+  Kod Üretiliyor...
+  ScriptLib.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\ScriptLib\Debug\ScriptLib.lib
