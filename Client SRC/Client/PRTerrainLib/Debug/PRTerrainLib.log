@@ -1,0 +1,7 @@
+﻿cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  StdAfx.cpp
+cl : komut satırı  warning D9035: 'Gm' seçeneği kullanım dışı ve ileride yayınlanacak bir sürümden çıkarılacak
+  TextureSet.cpp
+  Terrain.cpp
+  Kod Üretiliyor...
+  PRTerrainLib.vcxproj -> C:\Users\musta\OneDrive\Masaüstü\Owsap V6\Srcs\Client\PRTerrainLib\Debug\PRTerrainLib.lib
